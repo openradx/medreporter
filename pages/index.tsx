@@ -1,11 +1,15 @@
+import { ReactElement } from "react"
 import { ColorSchemeToggle } from "../components/ColorSchemeToggle/ColorSchemeToggle"
 import { Welcome } from "../components/Welcome/Welcome"
+import { MainLayout } from "../components/common/MainLayout"
 
-export default function HomePage() {
-  return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
-  )
-}
+const HomePage = () => (
+  <>
+    <Welcome />
+    <ColorSchemeToggle />
+  </>
+)
+
+HomePage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
+
+export default HomePage
