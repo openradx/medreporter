@@ -1,4 +1,13 @@
-import { createStyles, Header, Container, Group, Burger, Paper, Transition } from "@mantine/core"
+import {
+  createStyles,
+  Header,
+  Container,
+  Group,
+  Burger,
+  Paper,
+  Transition,
+  Box,
+} from "@mantine/core"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -88,16 +97,16 @@ export const PageHeader = ({ links }: PageHeaderProps) => {
   const { pathname } = useRouter()
 
   const items = links.map((link) => (
-    <Link key={link.href} href={link.href}>
-      <a
-        href={link.href}
+    <Link key={link.href} href={link.href} passHref>
+      <Box
+        component="a"
         className={cx(classes.link, { [classes.linkActive]: pathname === link.href })}
         onClick={() => {
           setOpened(false)
         }}
       >
         {link.label}
-      </a>
+      </Box>
     </Link>
   ))
 
