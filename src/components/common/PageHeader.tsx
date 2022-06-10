@@ -1,4 +1,6 @@
 import { createStyles, Header, Container, Group, Burger, Paper, Transition } from "@mantine/core"
+import Link from "next/link"
+import { useRouter } from "next/router"
 import { useState } from "react"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
 
@@ -82,22 +84,21 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ links }: PageHeaderProps) => {
   const [opened, setOpened] = useState(false)
-  const [active, setActive] = useState(links[0].href)
   const { classes, cx } = useStyles()
+  const { pathname } = useRouter()
 
   const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.href}
-      className={cx(classes.link, { [classes.linkActive]: active === link.href })}
-      onClick={(event) => {
-        event.preventDefault()
-        setActive(link.href)
-        setOpened(false)
-      }}
-    >
-      {link.label}
-    </a>
+    <Link key={link.href} href={link.href}>
+      <a
+        href={link.href}
+        className={cx(classes.link, { [classes.linkActive]: pathname === link.href })}
+        onClick={() => {
+          setOpened(false)
+        }}
+      >
+        {link.label}
+      </a>
+    </Link>
   ))
 
   return (
