@@ -1,11 +1,11 @@
 module.exports = {
-  stories: ['../**/*.story.mdx', '../**/*.story.@(js|jsx|ts|tsx)'],
+  stories: ["../**/*.story.mdx", "../**/*.story.@(js|jsx|ts|tsx)"],
   addons: [
-    'storybook-dark-mode',
+    "storybook-dark-mode",
     {
-      name: 'storybook-addon-turbo-build',
+      name: "storybook-addon-turbo-build",
       options: { optimizationLevel: 2 },
     },
   ],
-  framework: '@storybook/react',
-};
+  framework: "@storybook/react",
+}
