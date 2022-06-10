@@ -1,6 +1,6 @@
 import { createStyles, Header, Container, Group, Burger, Paper, Transition } from "@mantine/core"
 import { useState } from "react"
-import { ColorSchemeToggle } from "../ColorSchemeToggle/ColorSchemeToggle"
+import { ColorSchemeToggle } from "./ColorSchemeToggle"
 
 const HEADER_HEIGHT = 60
 
