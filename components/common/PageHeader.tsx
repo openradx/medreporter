@@ -1,5 +1,6 @@
 import { createStyles, Header, Container, Group, Burger, Paper, Transition } from "@mantine/core"
 import { useState } from "react"
+import { ColorSchemeToggle } from "../ColorSchemeToggle/ColorSchemeToggle"
 
 const HEADER_HEIGHT = 60
 
@@ -76,22 +77,22 @@ const useStyles = createStyles((theme) => ({
 }))
 
 interface PageHeaderProps {
-  links: { link: string; label: string }[]
+  links: { label: string; href: string }[]
 }
 
 export const PageHeader = ({ links }: PageHeaderProps) => {
   const [opened, setOpened] = useState(false)
-  const [active, setActive] = useState(links[0].link)
+  const [active, setActive] = useState(links[0].href)
   const { classes, cx } = useStyles()
 
   const items = links.map((link) => (
     <a
       key={link.label}
-      href={link.link}
-      className={cx(classes.link, { [classes.linkActive]: active === link.link })}
+      href={link.href}
+      className={cx(classes.link, { [classes.linkActive]: active === link.href })}
       onClick={(event) => {
         event.preventDefault()
-        setActive(link.link)
+        setActive(link.href)
         setOpened(false)
       }}
     >
@@ -102,16 +103,19 @@ export const PageHeader = ({ links }: PageHeaderProps) => {
   return (
     <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
       <Container className={classes.header}>
-        MedReporter
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
         <Burger
           opened={opened}
           onClick={() => setOpened(!opened)}
           className={classes.burger}
           size="sm"
         />
+        MedReporter
+        <Group spacing={5} className={classes.links}>
+          {items}
+        </Group>
+        <Group>
+          <ColorSchemeToggle />
+        </Group>
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (
             <Paper className={classes.dropdown} withBorder style={styles}>
