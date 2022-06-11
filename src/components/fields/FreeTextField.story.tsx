@@ -6,11 +6,17 @@ export default {
   component: FreeTextField,
 } as ComponentMeta<typeof FreeTextField>
 
-const Template: ComponentStory<typeof FreeTextField> = ({ label }) => (
-  <FreeTextField label={label} />
+const Template: ComponentStory<typeof FreeTextField> = ({ label, multiline }) => (
+  <FreeTextField label={label} multiline={multiline} />
 )
 
 export const Basic = Template.bind({})
 Basic.args = {
   label: "Free text field",
+}
+
+export const Multiline = Template.bind({})
+Multiline.args = {
+  label: "Free text field",
+  multiline: true,
 }
