@@ -1,4 +1,4 @@
-import { ComponentMeta } from "@storybook/react"
+import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { FreeTextField } from "./FreeTextField"
 
 export default {
@@ -6,4 +6,11 @@ export default {
   component: FreeTextField,
 } as ComponentMeta<typeof FreeTextField>
 
-export const Usage = () => <FreeTextField label="Free text field" />
+const Template: ComponentStory<typeof FreeTextField> = ({ label }) => (
+  <FreeTextField label={label} />
+)
+
+export const Basic = Template.bind({})
+Basic.args = {
+  label: "Free text field",
+}
