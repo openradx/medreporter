@@ -9,6 +9,7 @@ import Head from "next/head"
 import { useState } from "react"
 import { appWithReduxState } from "../hocs/appWithReduxStore"
 import { appWithSiteTranslations } from "../hocs/appWithSiteTranslations"
+import { appWithStructuredReportTranslations } from "../hocs/appWithStructuredReportTranslations"
 import { NextPageWithLayout } from "../types"
 
 // Enable additional Immer.js features
@@ -53,4 +54,8 @@ MyApp.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie("mantine-color-scheme", ctx) || "light",
 })
 
-export default compose(appWithReduxState, appWithSiteTranslations)(MyApp)
+export default compose(
+  appWithReduxState,
+  appWithSiteTranslations,
+  appWithStructuredReportTranslations
+)(MyApp)

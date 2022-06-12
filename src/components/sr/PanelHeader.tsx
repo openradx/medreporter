@@ -3,10 +3,11 @@ import { ReactNode } from "react"
 
 interface PanelHeaderProps {
   title: string
-  children?: ReactNode
+  centerIcons?: ReactNode
+  rightIcons?: ReactNode
 }
 
-export const PanelHeader = ({ title, children }: PanelHeaderProps) => (
+export const PanelHeader = ({ title, centerIcons, rightIcons }: PanelHeaderProps) => (
   <Box
     component="header"
     sx={(theme) => ({
@@ -21,7 +22,10 @@ export const PanelHeader = ({ title, children }: PanelHeaderProps) => (
   >
     <Text>{title}</Text>
     <Group spacing="sm" sx={{ flexGrow: 1, justifyContent: "center" }}>
-      {children}
+      {centerIcons}
+    </Group>
+    <Group spacing="sm" sx={{ justifyContent: "center" }}>
+      {rightIcons}
     </Group>
   </Box>
 )

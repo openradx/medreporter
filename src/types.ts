@@ -18,6 +18,16 @@ export interface I18nSiteProps {
   }
 }
 
+export interface I18nStructuredReportProps {
+  _i18nStructuredReport: {
+    initialStructureLocale: string
+    initialReportLocale: string
+    supportedStructuredReportLocales: string[]
+    structuredReportNamespaces: string[]
+    structuredReportStore: Resource
+  }
+}
+
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
 }
