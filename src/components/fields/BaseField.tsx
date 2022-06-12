@@ -44,12 +44,15 @@ export const BaseField = <T,>({
     <FieldContextProvider value={{ instanceId, fieldId, defaultValue, value, onChange }}>
       <Box
         ref={fieldEl}
-        sx={{
+        sx={(theme) => ({
+          minWidth: finalSize.minWidth,
+          [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+            minWidth: finalSize.minWidthXs,
+          },
           maxWidth: finalSize.maxWidth,
-          minWidth: { xs: finalSize.minWidthXs, sm: finalSize.minWidth },
           flexGrow: 1,
           display: !visible ? "none" : undefined,
-        }}
+        })}
       >
         {children}
       </Box>

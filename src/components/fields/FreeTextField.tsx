@@ -2,12 +2,12 @@ import { TextInput, Textarea } from "@mantine/core"
 
 interface FreeTextFieldProps {
   label: string
-  multiline?: boolean
+  variant?: "singleline" | "multiline"
 }
 
-export const FreeTextField = ({ label, multiline = false }: FreeTextFieldProps) => {
-  if (multiline) {
-    return <Textarea label={label} minRows={2} autosize maxRows={7} />
+export const FreeTextField = ({ variant = "singleline", ...rest }: FreeTextFieldProps) => {
+  if (variant === "multiline") {
+    return <Textarea autosize minRows={2} maxRows={7} {...rest} />
   }
-  return <TextInput label={label} />
+  return <TextInput {...rest} />
 }

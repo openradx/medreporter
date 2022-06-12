@@ -1,4 +1,5 @@
 import { Box, Paper } from "@mantine/core"
+import { ReactNode } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ClearButton } from "./ClearButton"
 import { PanelHeader } from "./PanelHeader"
@@ -7,7 +8,11 @@ import { StructureForm } from "./StructureForm"
 import { StructureLanguageSelector } from "./StructureLanguageSelector"
 import { UndoButton } from "./UndoButton"
 
-export const Structure = () => {
+interface StructureProps {
+  children: ReactNode
+}
+
+export const Structure = ({ children }: StructureProps) => {
   const { t } = useSiteTranslation()
 
   return (
@@ -24,7 +29,12 @@ export const Structure = () => {
           }
           rightIcons={<StructureLanguageSelector />}
         />
-        <Box sx={(theme) => ({ padding: theme.spacing.sm })}>Structure form</Box>
+        <Box
+          className="medreporter-Structure-body"
+          sx={(theme) => ({ padding: theme.spacing.sm, height: "100%" })}
+        >
+          {children}
+        </Box>
       </StructureForm>
     </Paper>
   )

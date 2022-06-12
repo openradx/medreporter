@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "../../components/common/MainLayout"
-import { Fleischner2017 } from "../../components/tools/fleischner2017"
+import { Fleischner2017 } from "../../components/tools/fleischner2017/Fleischner2017"
 import { NextPageWithLayout } from "../../types"
 import { serverSideReduxState } from "../../utils/serverSideReduxState"
 import { serverSideSiteTranslations } from "../../utils/serverSideSiteTranslations"
