@@ -24,7 +24,7 @@ export const appWithStructuredReportTranslations = <T extends AppProps>(
         structuredReportStore,
       } = serverData
 
-      const client = createClient("structured-report", {
+      const client = createClient("sr", {
         lng: initialStructureLocale,
         ns: structuredReportNamespaces,
         resources: structuredReportStore,
