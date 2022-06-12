@@ -28,8 +28,7 @@ export const structureDataSlice = createHistorySlice({
       { instanceId: string; fieldId: string; value: any }
     >((state, action) => {
       const { instanceId, fieldId, value } = action.payload
-      const newState = state
-      newState[instanceId][fieldId] = value
+      state[instanceId][fieldId] = value
     }),
   },
 })

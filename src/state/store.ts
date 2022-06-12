@@ -5,11 +5,13 @@ import { historyMiddleware } from "./historyMiddleware"
 import historyTrackerReducer from "./historyTrackerSlice"
 import languagesReducer from "./languagesSlice"
 import structureDataReducer from "./structureDataSlice"
+import structureReducer from "./structureSlice"
 
 export const reducer = {
   historyTracker: historyTrackerReducer,
   languages: languagesReducer,
   structureData: structureDataReducer,
+  structure: structureReducer,
 }
 
 export function initStore(preloadedState?: PreloadedState<CombinedState<RootState>>) {
