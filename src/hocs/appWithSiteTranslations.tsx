@@ -18,7 +18,7 @@ export const appWithSiteTranslations = <T extends AppProps>(
       if (!serverData) return null
 
       const { initialSiteLocale, siteNamespaces, siteStore } = serverData
-      const client = createClient("site", {
+      const client = createClient({
         lng: initialSiteLocale,
         ns: siteNamespaces,
         resources: siteStore,

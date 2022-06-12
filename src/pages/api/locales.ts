@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { createClient } from "../../utils/i18nServerClient"
 
-const siteLocalesApi = async (req: NextApiRequest, res: NextApiResponse) => {
+const localesApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const {
     query: { lng, ns },
   } = req
@@ -20,4 +20,4 @@ const siteLocalesApi = async (req: NextApiRequest, res: NextApiResponse) => {
   res.json(i18n.store.data)
 }
 
-export default siteLocalesApi
+export default localesApi
