@@ -16,6 +16,7 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
+    "no-param-reassign": "off",
     "react/react-in-jsx-scope": "off",
     semi: ["error", "never"],
     "@typescript-eslint/semi": "off",

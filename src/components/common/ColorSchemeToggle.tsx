@@ -1,5 +1,5 @@
 import { ActionIcon, useMantineColorScheme } from "@mantine/core"
-import { MoonIcon, SunIcon } from "@modulz/radix-icons"
+import { TbSun as SunIcon, TbMoon as MoonIcon } from "react-icons/tb"
 
 export function ColorSchemeToggle() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
@@ -12,12 +12,9 @@ export function ColorSchemeToggle() {
         backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
         color: theme.colorScheme === "dark" ? theme.colors.yellow[4] : theme.colors.blue[6],
       })}
+      aria-label="Change color scheme"
     >
-      {colorScheme === "dark" ? (
-        <SunIcon width={20} height={20} />
-      ) : (
-        <MoonIcon width={20} height={20} />
-      )}
+      {colorScheme === "dark" ? <SunIcon size={18} /> : <MoonIcon size={18} />}
     </ActionIcon>
   )
 }
