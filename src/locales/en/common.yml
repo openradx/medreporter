@@ -1,0 +1,9 @@
+LanguageSelector:
+  label: Language (Region)
+  cimode: CIMODE
+  de: German
+  en-US: English (US)
+
+PageHeader:
+  home: Home
+  tools: Tools

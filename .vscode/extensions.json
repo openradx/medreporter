@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "jock.svg",
+    "lokalise.i18n-ally",
+    "mgmcdermott.vscode-language-babel",
+    "mhutchie.git-graph",
+    "mikestead.dotenv",
+    "orta.vscode-jest",
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker",
+    "visualstudioexptteam.vscodeintellicode",
+    "wayou.vscode-todo-highlight"
+  ],
+  "unwantedRecommendations": []
+}

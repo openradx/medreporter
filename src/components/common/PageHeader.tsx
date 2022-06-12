@@ -11,7 +11,9 @@ import {
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
+import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
+import { SiteLanguageSelector } from "./SiteLanguageSelector"
 
 const HEADER_HEIGHT = 60
 
@@ -87,14 +89,17 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-interface PageHeaderProps {
-  links: { label: string; href: string }[]
-}
+const links: { label: string; href: string }[] = [
+  { label: "home", href: "/" },
+  { label: "tools", href: "/tools" },
+]
 
-export const PageHeader = ({ links }: PageHeaderProps) => {
+export const PageHeader = () => {
   const [opened, setOpened] = useState(false)
   const { classes, cx } = useStyles()
   const { pathname } = useRouter()
+
+  const { t } = useSiteTranslation()
 
   const items = links.map((link) => (
     <Link key={link.href} href={link.href} passHref>
@@ -105,7 +110,7 @@ export const PageHeader = ({ links }: PageHeaderProps) => {
           setOpened(false)
         }}
       >
-        {link.label}
+        {t(`PageHeader.${link.label}`)}
       </Box>
     </Link>
   ))
@@ -124,6 +129,7 @@ export const PageHeader = ({ links }: PageHeaderProps) => {
           {items}
         </Group>
         <Group>
+          <SiteLanguageSelector />
           <ColorSchemeToggle />
         </Group>
         <Transition transition="pop-top-right" duration={200} mounted={opened}>

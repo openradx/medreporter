@@ -5,6 +5,7 @@ import { GetServerSidePropsContext } from "next"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import { useState } from "react"
+import { appWithSiteTranslations } from "../hocs/appWithSiteTranslations"
 import { NextPageWithLayout } from "../types"
 
 interface MyAppProps extends AppProps {
@@ -45,4 +46,4 @@ MyApp.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie("mantine-color-scheme", ctx) || "light",
 })
 
-export default MyApp
+export default appWithSiteTranslations(MyApp)
