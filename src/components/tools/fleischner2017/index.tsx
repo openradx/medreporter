@@ -1,6 +1,6 @@
-import { Report } from "../../sr/Report"
-import { Structure } from "../../sr/Structure"
-import { StructuredReport } from "../../sr/StructuredReport"
+import { Report } from "../../structuredReport/Report"
+import { Structure } from "../../structuredReport/Structure"
+import { StructuredReport } from "../../structuredReport/StructuredReport"
 
 export const Fleischner2017 = () => (
   <StructuredReport>

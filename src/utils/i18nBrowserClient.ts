@@ -3,7 +3,7 @@ import HttpBackend from "i18next-http-backend"
 import BackendAdapter from "i18next-multiload-backend-adapter"
 import { defaultConfig } from "./i18nDefaultConfig"
 
-export const createClient = (type: "site" | "sr", config: InitOptions) => {
+export const createClient = (type: "site" | "structured-report", config: InitOptions) => {
   const instance = i18n.createInstance()
 
   // TODO: fix types, see https://github.com/i18next/i18next-fs-backend/issues/20
