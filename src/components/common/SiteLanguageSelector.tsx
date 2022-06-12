@@ -31,6 +31,7 @@ export const SiteLanguageSelector = () => {
 
   return (
     <LanguageSelector
+      ariaLabel="Select site language"
       currentLocale={router.locale}
       supportedLocales={supportedSiteLocales}
       onLocaleChanged={onLocaleChanged}

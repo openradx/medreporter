@@ -5,12 +5,14 @@ import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { FlagIcon } from "./FlagIcon"
 
 interface LanguageSelectorProps {
+  ariaLabel: string
   currentLocale: string
   supportedLocales: string[]
   onLocaleChanged: (locale: string) => void
 }
 
 export const LanguageSelector = ({
+  ariaLabel,
   currentLocale,
   supportedLocales,
   onLocaleChanged,
@@ -46,6 +48,7 @@ export const LanguageSelector = ({
               theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
             color: theme.colorScheme === "dark" ? theme.colors.yellow[4] : theme.colors.blue[6],
           })}
+          aria-label={ariaLabel}
         >
           <FlagIcon code={currentLocale} />
         </ActionIcon>
