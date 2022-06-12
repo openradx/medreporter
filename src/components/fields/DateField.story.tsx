@@ -6,9 +6,7 @@ export default {
   component: DateField,
 } as ComponentMeta<typeof DateField>
 
-const Template: ComponentStory<typeof DateField> = ({ label }) => (
-  <DateField label={label} />
-)
+const Template: ComponentStory<typeof DateField> = ({ label }) => <DateField label={label} />
 
 export const Basic = Template.bind({})
 Basic.args = {

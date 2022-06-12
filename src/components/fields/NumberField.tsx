@@ -15,7 +15,7 @@ export const NumberField = ({
   step,
   precision = 0,
 }: NumberFieldProps) => {
-    let stepIntervall: number
+  let stepIntervall: number
   if (step) {
     stepIntervall = step
   } else {

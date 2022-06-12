@@ -6,9 +6,7 @@ export default {
   component: NumberField,
 } as ComponentMeta<typeof NumberField>
 
-const Template: ComponentStory<typeof NumberField> = ({ label }) => (
-  <NumberField label={label} />
-)
+const Template: ComponentStory<typeof NumberField> = ({ label }) => <NumberField label={label} />
 
 export const Basic = Template.bind({})
 Basic.args = {
