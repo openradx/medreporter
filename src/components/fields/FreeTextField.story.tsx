@@ -10,13 +10,13 @@ const Template: ComponentStory<typeof FreeTextField> = ({ label, variant }) => (
   <FreeTextField label={label} variant={variant} />
 )
 
-export const Basic = Template.bind({})
-Basic.args = {
-  label: "Free text field",
+export const Singleline = Template.bind({})
+Singleline.args = {
+  label: "Free text field - singleline",
 }
 
 export const Multiline = Template.bind({})
 Multiline.args = {
-  label: "Free text field",
+  label: "Free text field - multiline",
   variant: "multiline",
 }
