@@ -26,11 +26,16 @@ export const FreeTextField = ({
   return (
     <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
       {variant === "singleline" && (
-        <TextInput onChange={(event) => onChange(event.target.value)} {...{ label, value }} />
+        <TextInput
+          autoComplete="off"
+          onChange={(event) => onChange(event.target.value)}
+          {...{ label, value }}
+        />
       )}
       {variant === "multiline" && (
         <Textarea
           autosize
+          autoComplete="off"
           minRows={2}
           maxRows={7}
           onChange={(event) => onChange(event.target.value)}
