@@ -1,3 +1,5 @@
+import { CombinedState, PreloadedState } from "@reduxjs/toolkit"
+import { RootState } from "RootTypes"
 import { Resource } from "i18next"
 import { NextPage } from "next"
 import { ReactElement, ReactNode } from "react"
@@ -18,4 +20,8 @@ export interface I18nSiteProps {
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
+}
+
+export interface ReduxStateProps {
+  _preloadedReduxState: PreloadedState<CombinedState<RootState>>
 }

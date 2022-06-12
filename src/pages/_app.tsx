@@ -1,12 +1,19 @@
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from "@mantine/core"
 import { NotificationsProvider } from "@mantine/notifications"
+import { compose } from "@reduxjs/toolkit"
 import { getCookie, setCookies } from "cookies-next"
+import { enablePatches, enableMapSet } from "immer"
 import { GetServerSidePropsContext } from "next"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import { useState } from "react"
+import { appWithReduxState } from "../hocs/appWithReduxStore"
 import { appWithSiteTranslations } from "../hocs/appWithSiteTranslations"
 import { NextPageWithLayout } from "../types"
+
+// Enable additional Immer.js features
+enablePatches() // for undo / redo
+enableMapSet() // for TransformerRegistry
 
 interface MyAppProps extends AppProps {
   colorScheme: ColorScheme
@@ -46,4 +53,4 @@ MyApp.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   colorScheme: getCookie("mantine-color-scheme", ctx) || "light",
 })
 
-export default appWithSiteTranslations(MyApp)
+export default compose(appWithReduxState, appWithSiteTranslations)(MyApp)

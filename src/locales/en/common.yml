@@ -7,3 +7,9 @@ LanguageSelector:
 PageHeader:
   home: Home
   tools: Tools
+
+Report:
+  title: Report
+
+Structure:
+  title: Structure

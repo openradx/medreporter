@@ -7,5 +7,7 @@ interface MainLayoutProps {
 }
 
 export const MainLayout = ({ children }: MainLayoutProps) => (
-  <AppShell header={<PageHeader />}>{children}</AppShell>
+  <AppShell padding="sm" header={<PageHeader />}>
+    {children}
+  </AppShell>
 )

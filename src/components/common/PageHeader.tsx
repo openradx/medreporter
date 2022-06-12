@@ -18,11 +18,6 @@ import { SiteLanguageSelector } from "./SiteLanguageSelector"
 const HEADER_HEIGHT = 60
 
 const useStyles = createStyles((theme) => ({
-  root: {
-    position: "relative",
-    zIndex: 1,
-  },
-
   dropdown: {
     position: "absolute",
     top: HEADER_HEIGHT,
@@ -116,7 +111,7 @@ export const PageHeader = () => {
   ))
 
   return (
-    <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+    <Header height={HEADER_HEIGHT}>
       <Container className={classes.header}>
         <Burger
           opened={opened}
