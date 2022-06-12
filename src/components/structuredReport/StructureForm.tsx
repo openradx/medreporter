@@ -29,9 +29,8 @@ export const StructureForm = ({ children }: StructureFormProps) => {
 
   useEffect(() => {
     let prevName = ""
-    watch((data, { name, type }) => {
+    const subscription = watch((data, { name, type }) => {
       if (!name) return
-
       if (type === "change") {
         if (name !== prevName) {
           changeStructureValueDebounced.flush()
@@ -42,6 +41,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
         changeStructureValueDebounced(instanceId, fieldId, value)
       }
     })
+    return () => subscription.unsubscribe()
   }, [watch, changeStructureValueDebounced])
 
   const initializeStructureReportDataDebounced = useDebouncedCallback(() => {
