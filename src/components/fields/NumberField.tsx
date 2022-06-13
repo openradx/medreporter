@@ -15,11 +15,11 @@ export const NumberField = ({
   step,
   precision = 0,
 }: NumberFieldProps) => {
-  let stepIntervall: number
+  let stepInterval: number
   if (step) {
-    stepIntervall = step
+    stepInterval = step
   } else {
-    stepIntervall = 1 / 10 ** precision
+    stepInterval = 1 / 10 ** precision
   }
   return (
     <NumberInput
@@ -27,7 +27,8 @@ export const NumberField = ({
       min={min}
       max={max}
       stepHoldDelay={500}
-      stepHoldInterval={stepIntervall}
+      step={stepInterval}
+      stepHoldInterval={stepInterval}
       precision={precision}
     />
   )
