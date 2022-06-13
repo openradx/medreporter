@@ -1,6 +1,5 @@
 LanguageSelector:
   as_site: As page
-  cimode: CIMODE
   de: German
   en-US: English (US)
   label: Language (Region)

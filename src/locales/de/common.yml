@@ -1,6 +1,5 @@
 LanguageSelector:
   as_site: wie Seite
-  cimode: CIMODE
   de: Deutsch
   en-US: Englisch (US)
   label: Sprache (Region)

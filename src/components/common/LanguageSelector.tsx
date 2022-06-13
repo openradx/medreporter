@@ -1,4 +1,4 @@
-import { ActionIcon, Menu } from "@mantine/core"
+import { ActionIcon, Divider, Menu } from "@mantine/core"
 import { FloatingPosition } from "@mantine/core/lib/components/Floating"
 import { TbCheck } from "react-icons/tb"
 import config from "../../app.config"
@@ -23,15 +23,11 @@ export const LanguageSelector = ({
   const { t } = useSiteTranslation()
 
   const allLocales = [...supportedLocales]
-  if (config.debugTranslations) {
-    allLocales.push("cimode")
-  }
-
   const items = allLocales
     .map((locale) => ({ locale, label: t(`LanguageSelector.${locale}`) }))
     .sort((item1, item2) => {
-      if (item1.locale === "as_site" || item2.locale === "cimode") return 0
-      if (item2.locale === "as_site" || item1.locale === "cimode") return 1
+      if (item1.locale === "as_site") return 0
+      if (item2.locale === "as_site") return 1
       return item1.label.localeCompare(item2.label)
     })
     .map((item) => (
@@ -64,6 +60,12 @@ export const LanguageSelector = ({
       <Menu.Dropdown>
         <Menu.Label>{t("LanguageSelector.label")}</Menu.Label>
         {items}
+        <Divider />
+        {config.debugTranslations && (
+          <Menu.Item icon={<FlagIcon code="cimode" />} onClick={() => onLocaleChanged("cimode")}>
+            Debug translations
+          </Menu.Item>
+        )}
       </Menu.Dropdown>
     </Menu>
   )
