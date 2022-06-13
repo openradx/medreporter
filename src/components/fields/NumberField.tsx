@@ -30,6 +30,14 @@ export const NumberField = ({
       step={stepInterval}
       stepHoldInterval={stepInterval}
       precision={precision}
+      styles={{
+        control: {
+          flexGrow: 1,
+          flex: "auto",
+          "&:hover": { flex: "0 0 60%" },
+        },
+        rightSection: { alignItems: "stretch" },
+      }}
     />
   )
 }
