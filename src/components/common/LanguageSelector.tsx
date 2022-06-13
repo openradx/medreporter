@@ -60,11 +60,13 @@ export const LanguageSelector = ({
       <Menu.Dropdown>
         <Menu.Label>{t("LanguageSelector.label")}</Menu.Label>
         {items}
-        <Divider />
         {config.debugTranslations && (
-          <Menu.Item icon={<FlagIcon code="cimode" />} onClick={() => onLocaleChanged("cimode")}>
-            Debug translations
-          </Menu.Item>
+          <>
+            <Divider />
+            <Menu.Item icon={<FlagIcon code="cimode" />} onClick={() => onLocaleChanged("cimode")}>
+              Debug translations
+            </Menu.Item>
+          </>
         )}
       </Menu.Dropdown>
     </Menu>
