@@ -1,27 +1,37 @@
-import { Select, Radio } from "@mantine/core"
-import { FieldOption } from "./fieldTypes"
+import { useModule } from "../../contexts/ModuleContext"
+import { useStructureController } from "../../hooks/useStructureController"
+import { SingleRadioInput } from "../inputs/SingleRadioInput"
+import { SingleSelectInput } from "../inputs/SingleSelectInput"
+import { BaseField } from "./BaseField"
+import { FieldOption, CommonFieldProps } from "./fieldTypes"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
 
-interface SingleChoiceFieldProps {
-  label: string
-  variant?: "checkbox" | "select"
+interface SingleChoiceFieldProps extends CommonFieldProps {
+  variant?: "radio" | "select"
   options?: FieldOption[]
+  defaultValue?: string | null
 }
 
 export const SingleChoiceField = ({
+  id: fieldId,
   label,
-  variant = "checkbox",
+  visible = true,
+  variant = "radio",
   options = DEFAULT_OPTIONS,
+  defaultValue = "",
 }: SingleChoiceFieldProps) => {
-  if (variant === "select") {
-    return <Select label={label} data={options} searchable />
-  }
+  const { instanceId } = useModule()
+  const { value, onChange } = useStructureController({
+    instanceId,
+    fieldId,
+    defaultValue,
+  })
+
   return (
-    <Radio.Group label={label} orientation="vertical" spacing="xs">
-      {options.map((option) => (
-        <Radio value={option.value} label={option.label} />
-      ))}
-    </Radio.Group>
+    <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
+      {variant === "select" && <SingleSelectInput {...{ label, value, onChange, options }} />}
+      {variant === "radio" && <SingleRadioInput {...{ label, value, onChange, options }} />}
+    </BaseField>
   )
 }

@@ -1,27 +1,37 @@
-import { MultiSelect, Checkbox } from "@mantine/core"
-import { FieldOption } from "./fieldTypes"
+import { useModule } from "../../contexts/ModuleContext"
+import { useStructureController } from "../../hooks/useStructureController"
+import { MultipleCheckboxInput } from "../inputs/MultipleCheckboxInput"
+import { MultipleSelectInput } from "../inputs/MultipleSelectInput"
+import { BaseField } from "./BaseField"
+import { FieldOption, CommonFieldProps } from "./fieldTypes"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
 
-interface MultipleChoiceFieldProps {
-  label: string
+interface MultipleChoiceFieldProps extends CommonFieldProps {
   variant?: "checkbox" | "select"
   options?: FieldOption[]
+  defaultValue?: string[]
 }
 
 export const MultipleChoiceField = ({
+  id: fieldId,
   label,
+  visible = true,
   variant = "checkbox",
   options = DEFAULT_OPTIONS,
+  defaultValue = [],
 }: MultipleChoiceFieldProps) => {
-  if (variant === "select") {
-    return <MultiSelect label={label} data={options} searchable />
-  }
+  const { instanceId } = useModule()
+  const { value, onChange } = useStructureController({
+    instanceId,
+    fieldId,
+    defaultValue,
+  })
+
   return (
-    <Checkbox.Group label={label} orientation="vertical" spacing="xs">
-      {options.map((option) => (
-        <Checkbox value={option.value} label={option.label} />
-      ))}
-    </Checkbox.Group>
+    <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
+      {variant === "select" && <MultipleSelectInput {...{ label, value, onChange, options }} />}
+      {variant === "checkbox" && <MultipleCheckboxInput {...{ label, value, onChange, options }} />}
+    </BaseField>
   )
 }
