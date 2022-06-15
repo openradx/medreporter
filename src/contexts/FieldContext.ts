@@ -2,8 +2,8 @@ import { Provider } from "react"
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 interface FieldContext<T> {
-  moduleId: string
-  fieldId: string
+  id: string
+  label: string
   defaultValue?: T
   value?: T
   onChange?: (newValue: T) => void

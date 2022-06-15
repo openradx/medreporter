@@ -15,13 +15,13 @@ interface SingleChoiceFieldProps extends CommonFieldProps {
 
 export const SingleChoiceField = ({
   id: fieldId,
-  label,
+  label = "",
   visible = true,
   variant = "radio",
   options = DEFAULT_OPTIONS,
   defaultValue = "",
 }: SingleChoiceFieldProps) => {
-  const { moduleId } = useModule()
+  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
     moduleId,
     fieldId,
@@ -29,7 +29,7 @@ export const SingleChoiceField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
       {variant === "select" && <SingleSelectInput {...{ label, value, onChange, options }} />}
       {variant === "radio" && <SingleRadioInput {...{ label, value, onChange, options }} />}
     </BaseField>

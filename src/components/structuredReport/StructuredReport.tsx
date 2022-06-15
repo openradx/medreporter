@@ -1,5 +1,8 @@
 import { Box } from "@mantine/core"
 import { ReactNode } from "react"
+import { StructuredReportContextProvider } from "../../contexts/StructuredReportContext"
+import { ReportPanel } from "./ReportPanel"
+import { StructurePanel } from "./StructurePanel"
 import { TransformerRegistryProvider } from "./TransformerRegistryProvider"
 
 // import { TransformerRegistryProvider } from "./TransformerRegistryProvider"
@@ -18,7 +21,16 @@ export const StructuredReport = ({ children }: StructuredReportProps) => (
         gap: theme.spacing.xs,
       })}
     >
-      {children}
+      <StructurePanel>
+        <StructuredReportContextProvider value={{ context: "structure" }}>
+          {children}
+        </StructuredReportContextProvider>
+      </StructurePanel>
+      <ReportPanel>
+        <StructuredReportContextProvider value={{ context: "report" }}>
+          {children}
+        </StructuredReportContextProvider>
+      </ReportPanel>
     </Box>
   </TransformerRegistryProvider>
 )

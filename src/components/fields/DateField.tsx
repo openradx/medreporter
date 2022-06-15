@@ -10,18 +10,18 @@ interface DateFieldProps extends CommonFieldProps {
 
 export const DateField = ({
   id: fieldId,
-  label,
+  label = "",
   visible = true,
   defaultValue = new Date(),
 }: DateFieldProps) => {
-  const { moduleId } = useModule()
+  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
     moduleId,
     fieldId,
     defaultValue,
   })
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
       <DateInput {...{ label, value, onChange }} />
     </BaseField>
   )

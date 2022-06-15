@@ -1,9 +1,9 @@
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 interface ModuleContext {
-  context: "structure" | "report"
-  moduleName: string
-  moduleId: string
+  name: string
+  id: string
+  title: string
 }
 
 export const [useModule, ModuleContextProvider] =

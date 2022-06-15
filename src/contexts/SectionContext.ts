@@ -1,7 +1,9 @@
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 interface SectionContext {
-  sectionId: string
+  id: string
+  title: string
+  visible: boolean
 }
 
 export const [useSection, SectionContextProvider] =

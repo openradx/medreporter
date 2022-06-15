@@ -14,7 +14,7 @@ interface NumberFieldProps extends CommonFieldProps {
 
 export const NumberField = ({
   id: fieldId,
-  label,
+  label = "",
   visible = true,
   defaultValue = 0,
   min,
@@ -22,14 +22,14 @@ export const NumberField = ({
   precision,
   step,
 }: NumberFieldProps) => {
-  const { moduleId } = useModule()
+  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
     moduleId,
     fieldId,
     defaultValue,
   })
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
       <NumberInput {...{ label, value, onChange, min, max, precision, step }} />
     </BaseField>
   )

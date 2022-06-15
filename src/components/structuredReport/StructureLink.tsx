@@ -20,8 +20,8 @@ export const StructureLink = ({ sectionId, moduleId, fieldId, children }: Struct
   const handleClick = () => {
     dispatch(
       activateSection({
-        sectionId: sectionId ?? section.sectionId,
-        scrollInto: { moduleId: moduleId ?? module.moduleId, fieldId },
+        sectionId: sectionId ?? section.id,
+        scrollInto: { moduleId: moduleId ?? module.id, fieldId },
       })
     )
   }

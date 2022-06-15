@@ -7,6 +7,7 @@ import { selectScrollInto } from "../../state/structureSlice"
 interface FieldProps<T> {
   moduleId: string
   fieldId: string
+  label: string
   visible: boolean
   defaultValue?: T
   value?: T
@@ -17,6 +18,7 @@ interface FieldProps<T> {
 export const BaseField = <T,>({
   moduleId,
   fieldId,
+  label,
   visible,
   defaultValue,
   value,
@@ -41,7 +43,7 @@ export const BaseField = <T,>({
   // TODO: for finding and group we maybe also have to return an unstyled box.
   // But some element we need for the ref for the scroll into
   return (
-    <FieldContextProvider value={{ moduleId, fieldId, defaultValue, value, onChange }}>
+    <FieldContextProvider value={{ id: fieldId, label, defaultValue, value, onChange }}>
       <Box
         ref={fieldEl}
         sx={(theme) => ({

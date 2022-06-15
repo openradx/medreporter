@@ -10,21 +10,19 @@ export const Fleischner2017 = () => (
     <Section id="default" title="Default">
       <Module name="fleischner2017" id="fleischner2017" title="Fleischner 2017">
         <Structure>
-          <FreeTextField id="tellme" label="Tell me" />
+          <FreeTextField id="foobar" label="Tell me" />
         </Structure>
         <Report>
-          <Paragraph moduleId="xxx" fieldId="" title="Default">
-            <Statement moduleId="" fieldId="">
-              fooo
-            </Statement>
-          </Paragraph>
+          {/* <Paragraph title="Default">
+            <Statement fieldId="foobar">fooo</Statement>
+          </Paragraph> */}
         </Report>
       </Module>
     </Section>
-    <Conclusions title="">
+    {/* <Conclusions>
       <Conclusion moduleId="" fieldId="">
         lkjdsflk
       </Conclusion>
-    </Conclusions>
+    </Conclusions> */}
   </StructuredReport>
 )

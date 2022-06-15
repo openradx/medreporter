@@ -1,41 +1,40 @@
-import { Box, Paper } from "@mantine/core"
-import { ReactNode } from "react"
-import { useSiteTranslation } from "../../hooks/useSiteTranslation"
-import { ClearButton } from "./ClearButton"
-import { PanelHeader } from "./PanelHeader"
-import { RedoButton } from "./RedoButton"
-import { StructureForm } from "./StructureForm"
-import { StructureLanguageSelector } from "./StructureLanguageSelector"
-import { UndoButton } from "./UndoButton"
+import { Card, Text } from "@mantine/core"
+import { ReactNode, useEffect, useRef } from "react"
+import { useModule } from "../../contexts/ModuleContext"
+import { useStructuredReport } from "../../contexts/StructuredReportContext"
+import { useAppSelector } from "../../state/store"
+import { selectScrollInto } from "../../state/structureSlice"
+import { ExternalLink } from "../fields/fieldTypes"
+import { ExternalLinks } from "./ExternalLinks"
+
+const DEFAULT_EXTERNAL_LINKS: ExternalLink[] = []
 
 interface StructureProps {
+  externalLinks?: ExternalLink[]
   children: ReactNode
 }
 
-export const Structure = ({ children }: StructureProps) => {
-  const { t } = useSiteTranslation()
+export const Structure = ({ externalLinks = DEFAULT_EXTERNAL_LINKS, children }: StructureProps) => {
+  const { context } = useStructuredReport()
+  const { id: moduleId, title: moduleTitle } = useModule()
+  const scrollInto = useAppSelector(selectScrollInto)
+  const cardEl = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (scrollInto && scrollInto.moduleId === moduleId && !scrollInto.fieldId) {
+      cardEl.current?.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [scrollInto, moduleId])
+
+  if (context === "report") return null
 
   return (
-    <Paper sx={{ flexGrow: 1 }} shadow="sm" withBorder>
-      <StructureForm>
-        <PanelHeader
-          title={t("Structure.title")}
-          centerIcons={
-            <>
-              <ClearButton />
-              <UndoButton />
-              <RedoButton />
-            </>
-          }
-          rightIcons={<StructureLanguageSelector />}
-        />
-        <Box
-          className="medreporter-Structure-body"
-          sx={(theme) => ({ padding: theme.spacing.sm, height: "100%" })}
-        >
-          {children}
-        </Box>
-      </StructureForm>
-    </Paper>
+    <Card ref={cardEl} shadow="sm" withBorder>
+      <Card.Section p="sm" withBorder>
+        <Text>{moduleTitle}</Text>
+        <ExternalLinks links={externalLinks} />
+      </Card.Section>
+      <Card.Section p="sm">{children}</Card.Section>
+    </Card>
   )
 }

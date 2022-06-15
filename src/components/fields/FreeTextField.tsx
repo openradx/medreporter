@@ -12,12 +12,12 @@ interface FreeTextFieldProps extends CommonFieldProps {
 
 export const FreeTextField = ({
   id: fieldId,
-  label,
+  label = "",
   visible = true,
   defaultValue = "",
   variant = "singleline",
 }: FreeTextFieldProps) => {
-  const { moduleId } = useModule()
+  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
     moduleId,
     fieldId,
@@ -25,7 +25,7 @@ export const FreeTextField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
       {variant === "singleline" && <SinglelineInput {...{ label, value, onChange }} />}
       {variant === "multiline" && <MultilineInput {...{ label, value, onChange }} />}
     </BaseField>

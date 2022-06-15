@@ -15,13 +15,13 @@ interface MultipleChoiceFieldProps extends CommonFieldProps {
 
 export const MultipleChoiceField = ({
   id: fieldId,
-  label,
+  label = "",
   visible = true,
   variant = "checkbox",
   options = DEFAULT_OPTIONS,
   defaultValue = [],
 }: MultipleChoiceFieldProps) => {
-  const { moduleId } = useModule()
+  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
     moduleId,
     fieldId,
@@ -29,7 +29,7 @@ export const MultipleChoiceField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
       {variant === "select" && <MultipleSelectInput {...{ label, value, onChange, options }} />}
       {variant === "checkbox" && <MultipleCheckboxInput {...{ label, value, onChange, options }} />}
     </BaseField>
