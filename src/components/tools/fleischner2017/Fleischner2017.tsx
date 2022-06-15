@@ -7,13 +7,24 @@ import { StructuredReport } from "../../structuredReport/StructuredReport"
 
 export const Fleischner2017 = () => (
   <StructuredReport>
-    <Structure>
-      <Section id="default" title="Default">
-        <Module moduleId="fleischner2017" instanceId="fleischner2017" title="Fleischner 2017">
+    <Section id="default" title="Default">
+      <Module name="fleischner2017" id="fleischner2017" title="Fleischner 2017">
+        <Structure>
           <FreeTextField id="tellme" label="Tell me" />
-        </Module>
-      </Section>
-    </Structure>
-    <Report />
+        </Structure>
+        <Report>
+          <Paragraph moduleId="xxx" fieldId="" title="Default">
+            <Statement moduleId="" fieldId="">
+              fooo
+            </Statement>
+          </Paragraph>
+        </Report>
+      </Module>
+    </Section>
+    <Conclusions title="">
+      <Conclusion moduleId="" fieldId="">
+        lkjdsflk
+      </Conclusion>
+    </Conclusions>
   </StructuredReport>
 )
