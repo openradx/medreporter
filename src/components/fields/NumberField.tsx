@@ -1,35 +1,36 @@
-import { NumberInput } from "@mantine/core"
+import { useModule } from "../../contexts/ModuleContext"
+import { useStructureController } from "../../hooks/useStructureController"
+import { NumberInput } from "../inputs/NumberInput"
+import { BaseField } from "./BaseField"
+import { CommonFieldProps } from "./fieldTypes"
 
-interface NumberFieldProps {
-  label: string
+interface NumberFieldProps extends CommonFieldProps {
+  defaultValue?: number | null
   min?: number
   max?: number
-  step?: number
   precision?: number
+  step?: number
 }
 
 export const NumberField = ({
+  id: fieldId,
   label,
-  min = 0,
-  max = 1000,
+  visible = true,
+  defaultValue = 0,
+  min,
+  max,
+  precision,
   step,
-  precision = 0,
 }: NumberFieldProps) => {
-  let stepInterval: number
-  if (step) {
-    stepInterval = step
-  } else {
-    stepInterval = 1 / 10 ** precision
-  }
+  const { instanceId } = useModule()
+  const { value, onChange } = useStructureController({
+    instanceId,
+    fieldId,
+    defaultValue,
+  })
   return (
-    <NumberInput
-      label={label}
-      min={min}
-      max={max}
-      stepHoldDelay={500}
-      step={stepInterval}
-      stepHoldInterval={stepInterval}
-      precision={precision}
-    />
+    <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
+      <NumberInput {...{ label, value, onChange, min, max, precision, step }} />
+    </BaseField>
   )
 }

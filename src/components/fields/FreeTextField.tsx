@@ -1,6 +1,7 @@
-import { TextInput, Textarea } from "@mantine/core"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
+import { MultilineInput } from "../inputs/MultilineInput"
+import { SinglelineInput } from "../inputs/SinglelineInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
@@ -25,23 +26,8 @@ export const FreeTextField = ({
 
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      {variant === "singleline" && (
-        <TextInput
-          autoComplete="off"
-          onChange={(event) => onChange(event.target.value)}
-          {...{ label, value }}
-        />
-      )}
-      {variant === "multiline" && (
-        <Textarea
-          autosize
-          autoComplete="off"
-          minRows={2}
-          maxRows={7}
-          onChange={(event) => onChange(event.target.value)}
-          {...{ label, value }}
-        />
-      )}
+      {variant === "singleline" && <SinglelineInput {...{ label, value, onChange }} />}
+      {variant === "multiline" && <MultilineInput {...{ label, value, onChange }} />}
     </BaseField>
   )
 }

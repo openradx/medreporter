@@ -1,26 +1,26 @@
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
-import { MultipleCheckboxInput } from "../inputs/MultipleCheckboxInput"
-import { MultipleSelectInput } from "../inputs/MultipleSelectInput"
+import { SingleRadioInput } from "../inputs/SingleRadioInput"
+import { SingleSelectInput } from "../inputs/SingleSelectInput"
 import { BaseField } from "./BaseField"
 import { FieldOption, CommonFieldProps } from "./fieldTypes"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
 
-interface MultipleChoiceFieldProps extends CommonFieldProps {
-  variant?: "checkbox" | "select"
+interface SingleChoiceFieldProps extends CommonFieldProps {
+  variant?: "radio" | "select"
   options?: FieldOption[]
-  defaultValue?: string[]
+  defaultValue?: string | null
 }
 
-export const MultipleChoiceField = ({
+export const SingleChoiceField = ({
   id: fieldId,
   label,
   visible = true,
-  variant = "checkbox",
+  variant = "radio",
   options = DEFAULT_OPTIONS,
-  defaultValue = [],
-}: MultipleChoiceFieldProps) => {
+  defaultValue = "",
+}: SingleChoiceFieldProps) => {
   const { instanceId } = useModule()
   const { value, onChange } = useStructureController({
     instanceId,
@@ -30,8 +30,8 @@ export const MultipleChoiceField = ({
 
   return (
     <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
-      {variant === "select" && <MultipleSelectInput {...{ label, value, onChange, options }} />}
-      {variant === "checkbox" && <MultipleCheckboxInput {...{ label, value, onChange, options }} />}
+      {variant === "select" && <SingleSelectInput {...{ label, value, onChange, options }} />}
+      {variant === "radio" && <SingleRadioInput {...{ label, value, onChange, options }} />}
     </BaseField>
   )
 }
