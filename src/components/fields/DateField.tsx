@@ -14,14 +14,14 @@ export const DateField = ({
   visible = true,
   defaultValue = new Date(),
 }: DateFieldProps) => {
-  const { instanceId } = useModule()
+  const { moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    instanceId,
+    moduleId,
     fieldId,
     defaultValue,
   })
   return (
-    <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       <DateInput {...{ label, value, onChange }} />
     </BaseField>
   )

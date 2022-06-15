@@ -22,14 +22,14 @@ export const NumberField = ({
   precision,
   step,
 }: NumberFieldProps) => {
-  const { instanceId } = useModule()
+  const { moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    instanceId,
+    moduleId,
     fieldId,
     defaultValue,
   })
   return (
-    <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       <NumberInput {...{ label, value, onChange, min, max, precision, step }} />
     </BaseField>
   )
