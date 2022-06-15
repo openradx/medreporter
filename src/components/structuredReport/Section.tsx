@@ -1,5 +1,6 @@
 import { Box } from "@mantine/core"
 import { ReactNode } from "react"
+import { SectionContextProvider } from "../../contexts/SectionContext"
 
 interface SectionProps {
   id: string
@@ -19,6 +20,6 @@ export const Section = ({ id, title, visible = true, children }: SectionProps) =
       height: "100%",
     }}
   >
-    {children}
+    <SectionContextProvider value={{ sectionId: id }}>{children}</SectionContextProvider>
   </Box>
 )

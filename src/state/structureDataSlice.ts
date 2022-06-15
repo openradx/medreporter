@@ -2,7 +2,7 @@ import { RootState } from "RootTypes"
 import { z } from "zod"
 import { createHistorySlice, withHistory } from "./historySlice"
 
-// instanceId -> fieldId -> value
+// moduleId -> fieldId -> value
 export const StructureDataSchema = z.record(z.record(z.any()))
 
 export type StructureDataState = z.infer<typeof StructureDataSchema>
@@ -25,10 +25,10 @@ export const structureDataSlice = createHistorySlice({
     ),
     changeStructureValue: withHistory<
       StructureDataState,
-      { instanceId: string; fieldId: string; value: any }
+      { moduleId: string; fieldId: string; value: any }
     >((state, action) => {
-      const { instanceId, fieldId, value } = action.payload
-      state[instanceId][fieldId] = value
+      const { moduleId, fieldId, value } = action.payload
+      state[moduleId][fieldId] = value
     }),
   },
 })

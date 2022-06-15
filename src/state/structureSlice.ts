@@ -1,18 +1,18 @@
 import { createSelector, PayloadAction } from "@reduxjs/toolkit"
 import { AppThunk, RootState } from "RootTypes"
 import { z } from "zod"
-import { createInstanceId, createSectionId } from "../utils/idUtils"
+import { createModuleId, createSectionId } from "../utils/idUtils"
 import { createHistorySlice, withHistory } from "./historySlice"
 
 const ModuleSchema = z.object({
-  moduleId: z.string(),
-  instanceId: z.string(),
+  name: z.string(),
+  id: z.string(),
 })
 
 export type ModuleState = z.infer<typeof ModuleSchema>
 
 const SectionSchema = z.object({
-  sectionId: z.string(),
+  id: z.string(),
   title: z.string().optional(),
   modules: z.array(ModuleSchema),
 })
@@ -20,14 +20,14 @@ const SectionSchema = z.object({
 export type SectionState = z.infer<typeof SectionSchema>
 
 const ScrollIntoSchema = z.object({
-  instanceId: z.string(),
+  moduleId: z.string(),
   fieldId: z.string().optional(),
 })
 
 type ScrollIntoState = z.infer<typeof ScrollIntoSchema>
 
 export const TemplateSchema = z.object({
-  templateId: z.string().nullable(),
+  id: z.string().nullable(),
   sections: z.array(SectionSchema),
   activeSectionId: z.string(),
   scrollInto: ScrollIntoSchema.nullable(),
@@ -36,7 +36,7 @@ export const TemplateSchema = z.object({
 type TemplateState = z.infer<typeof TemplateSchema>
 
 const initialState: TemplateState = {
-  templateId: null,
+  id: null,
   sections: [],
   activeSectionId: "",
   scrollInto: null,
@@ -70,7 +70,7 @@ const structureSlice = createHistorySlice({
       (state, action) => {
         const { sectionId, sectionTitle } = action.payload
         state.sections.push({
-          sectionId: sectionId ?? createSectionId(),
+          id: sectionId ?? createSectionId(),
           title: sectionTitle,
           modules: [],
         })
@@ -78,12 +78,12 @@ const structureSlice = createHistorySlice({
     ),
     removeSection: withHistory<TemplateState, { sectionId: string }>((state, action) => {
       const { sectionId } = action.payload
-      state.sections = state.sections.filter((section) => section.sectionId !== sectionId)
+      state.sections = state.sections.filter((section) => section.id !== sectionId)
     }),
     renameSection: withHistory<TemplateState, { sectionId: string; sectionTitle: string }>(
       (state, action) => {
         const { sectionId, sectionTitle } = action.payload
-        const sectionToRename = state.sections.find((section) => section.sectionId === sectionId)
+        const sectionToRename = state.sections.find((section) => section.id === sectionId)
         if (sectionToRename) {
           sectionToRename.title = sectionTitle
         }
@@ -93,26 +93,26 @@ const structureSlice = createHistorySlice({
       TemplateState,
       {
         sectionId: string
-        moduleId: string
-        instanceId?: string
+        moduleName: string
+        moduleId?: string
         moduleIndex?: number
       }
     >((state, action) => {
-      const { sectionId, instanceId, moduleIndex, ...rest } = action.payload
-      const sectionToAddModule = state.sections.find((section) => section.sectionId === sectionId)
+      const { sectionId, moduleName, moduleId, moduleIndex } = action.payload
+      const sectionToAddModule = state.sections.find((section) => section.id === sectionId)
       let index = moduleIndex
       if (index === undefined) {
         index = sectionToAddModule!.modules.length
       }
       sectionToAddModule!.modules.splice(index, 0, {
-        instanceId: instanceId ?? createInstanceId(),
-        ...rest,
+        name: moduleName,
+        id: moduleId ?? createModuleId(),
       })
     }),
-    removeModule: withHistory<TemplateState, { instanceId: string }>((state, action) => {
-      const { instanceId } = action.payload
+    removeModule: withHistory<TemplateState, { moduleId: string }>((state, action) => {
+      const { moduleId } = action.payload
       state.sections.forEach((section) => {
-        section.modules = section.modules.filter((module) => module.instanceId !== instanceId)
+        section.modules = section.modules.filter((module) => module.id !== moduleId)
       })
     }),
     moveSection: withHistory<TemplateState, { oldIndex: number; newIndex: number }>(
@@ -126,8 +126,8 @@ const structureSlice = createHistorySlice({
       { oldSectionId: string; oldIndex: number; newSectionId: string; newIndex: number }
     >((state, action) => {
       const { oldSectionId, oldIndex, newSectionId, newIndex } = action.payload
-      const oldSection = state.sections.find((section) => section.sectionId === oldSectionId)
-      const newSection = state.sections.find((section) => section.sectionId === newSectionId)
+      const oldSection = state.sections.find((section) => section.id === oldSectionId)
+      const newSection = state.sections.find((section) => section.id === newSectionId)
       newSection!.modules.splice(newIndex, 0, oldSection!.modules.splice(oldIndex, 1)[0])
     }),
   },
@@ -162,7 +162,7 @@ export default structureSlice.reducer
 
 export const selectTemplate = (state: RootState) => state.structure.present
 
-export const selectTemplateId = (state: RootState) => state.structure.present.templateId
+export const selectTemplateId = (state: RootState) => state.structure.present.id
 
 export const selectSections = (state: RootState) => state.structure.present.sections
 

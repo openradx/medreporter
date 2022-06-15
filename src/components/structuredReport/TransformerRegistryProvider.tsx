@@ -17,28 +17,28 @@ interface TransformerRegistryProviderProps {
 export const TransformerRegistryProvider = ({ children }: TransformerRegistryProviderProps) => {
   const [transformers, setTransformers] = useState<TransformerRegistryContext>(new Map())
 
-  const addTransformer: AddTransformer = useCallback((instanceId, transformer) => {
+  const addTransformer: AddTransformer = useCallback((moduleId, transformer) => {
     setTransformers((state) =>
       produce(state, (draft) => {
-        let moduleTransformers = draft.get(instanceId)
+        let moduleTransformers = draft.get(moduleId)
         if (!moduleTransformers) {
           moduleTransformers = []
-          draft.set(instanceId, moduleTransformers)
+          draft.set(moduleId, moduleTransformers)
         }
         if (moduleTransformers.includes(transformer)) {
-          throw new Error(`Module with ID ${instanceId} already has transformer in registry.`)
+          throw new Error(`Module with ID ${moduleId} already has transformer in registry.`)
         }
         moduleTransformers.push(transformer)
       })
     )
   }, [])
 
-  const removeTransformer: RemoveTransformer = useCallback((instanceId, transformer) => {
+  const removeTransformer: RemoveTransformer = useCallback((moduleId, transformer) => {
     setTransformers((state) =>
       produce(state, (draft) => {
-        const moduleTransformers = draft.get(instanceId)
+        const moduleTransformers = draft.get(moduleId)
         if (!moduleTransformers || !moduleTransformers.includes(transformer)) {
-          throw new Error(`Module with ID ${instanceId} does not have transformer in registry.`)
+          throw new Error(`Module with ID ${moduleId} does not have transformer in registry.`)
         }
         const index = moduleTransformers.indexOf(transformer)
         moduleTransformers.splice(index, 1)

@@ -2,8 +2,8 @@ import { createRequiredContext } from "../utils/createRequiredContext"
 
 interface ModuleContext {
   context: "structure" | "report"
+  moduleName: string
   moduleId: string
-  instanceId: string
 }
 
 export const [useModule, ModuleContextProvider] =

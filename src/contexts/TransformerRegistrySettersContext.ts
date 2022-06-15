@@ -2,8 +2,8 @@ import { createRequiredContext } from "../utils/createRequiredContext"
 import { Transformer } from "./TransformerRegistryContext"
 
 export type { Transformer }
-export type AddTransformer = (instanceId: string, transformer: Transformer) => void
-export type RemoveTransformer = (instanceId: string, transformer: Transformer) => void
+export type AddTransformer = (moduleId: string, transformer: Transformer) => void
+export type RemoveTransformer = (moduleId: string, transformer: Transformer) => void
 
 interface TransformerRegistrySettersContext {
   addTransformer: AddTransformer

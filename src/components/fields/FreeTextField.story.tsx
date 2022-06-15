@@ -7,7 +7,7 @@ export default {
 } as ComponentMeta<typeof FreeTextField>
 
 const Template: ComponentStory<typeof FreeTextField> = ({ label, variant }) => (
-  <FreeTextField label={label} variant={variant} />
+  <FreeTextField id="foobar" label={label} variant={variant} />
 )
 
 export const Singleline = Template.bind({})

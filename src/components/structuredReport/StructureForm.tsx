@@ -23,8 +23,8 @@ export const StructureForm = ({ children }: StructureFormProps) => {
 
   const { getValues, watch, reset } = methods
 
-  const changeStructureValueDebounced = useDebouncedCallback((instanceId, fieldId, value) => {
-    dispatch(changeStructureValue({ instanceId, fieldId, value }))
+  const changeStructureValueDebounced = useDebouncedCallback((moduleId, fieldId, value) => {
+    dispatch(changeStructureValue({ moduleId, fieldId, value }))
   }, 250)
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export const StructureForm = ({ children }: StructureFormProps) => {
           changeStructureValueDebounced.flush()
         }
         prevName = name
-        const [instanceId, fieldId] = name.split(".")
-        const value = data?.[instanceId]?.[fieldId]
-        changeStructureValueDebounced(instanceId, fieldId, value)
+        const [moduleId, fieldId] = name.split(".")
+        const value = data?.[moduleId]?.[fieldId]
+        changeStructureValueDebounced(moduleId, fieldId, value)
       }
     })
     return () => subscription.unsubscribe()
@@ -52,22 +52,22 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   const defaultValuesRef = useRef<Record<string, Record<string, any>>>({})
 
   const registerDefaultValue = useCallback(
-    (instanceId: string, fieldId: string, defaultValue: any) => {
-      if (defaultValuesRef.current[instanceId] === undefined) {
-        defaultValuesRef.current[instanceId] = { fieldId: defaultValue }
+    (moduleId: string, fieldId: string, defaultValue: any) => {
+      if (defaultValuesRef.current[moduleId] === undefined) {
+        defaultValuesRef.current[moduleId] = { fieldId: defaultValue }
       } else {
-        defaultValuesRef.current[instanceId][fieldId] = defaultValue
+        defaultValuesRef.current[moduleId][fieldId] = defaultValue
       }
       initializeStructureReportDataDebounced()
     },
     [initializeStructureReportDataDebounced]
   )
 
-  const unregisterDefaultValue = useCallback((instanceId: string, fieldId: string) => {
-    if (defaultValuesRef.current[instanceId] !== undefined) {
-      delete defaultValuesRef.current[instanceId][fieldId]
-      if (Object.keys(defaultValuesRef.current[instanceId]).length === 0) {
-        delete defaultValuesRef.current[instanceId]
+  const unregisterDefaultValue = useCallback((moduleId: string, fieldId: string) => {
+    if (defaultValuesRef.current[moduleId] !== undefined) {
+      delete defaultValuesRef.current[moduleId][fieldId]
+      if (Object.keys(defaultValuesRef.current[moduleId]).length === 0) {
+        delete defaultValuesRef.current[moduleId]
       }
     }
   }, [])

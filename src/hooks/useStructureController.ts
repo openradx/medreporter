@@ -3,26 +3,26 @@ import { useController } from "react-hook-form"
 import { useStructureForm } from "../contexts/StructureFormContext"
 
 export const useStructureController = <T>({
-  instanceId,
+  moduleId,
   fieldId,
   defaultValue,
 }: {
-  instanceId: string
+  moduleId: string
   fieldId: "present" | string
   defaultValue: T
 }): { value: T; onChange: (value: T) => void } => {
   const {
     field: { value, onChange },
-  } = useController({ name: `${instanceId}.${fieldId}`, defaultValue })
+  } = useController({ name: `${moduleId}.${fieldId}`, defaultValue })
 
   const { registerDefaultValue, unregisterDefaultValue } = useStructureForm()
 
   useEffect(() => {
-    registerDefaultValue(instanceId, fieldId, defaultValue)
+    registerDefaultValue(moduleId, fieldId, defaultValue)
     return () => {
-      unregisterDefaultValue(instanceId, fieldId)
+      unregisterDefaultValue(moduleId, fieldId)
     }
-  }, [registerDefaultValue, unregisterDefaultValue, instanceId, fieldId, defaultValue])
+  }, [registerDefaultValue, unregisterDefaultValue, moduleId, fieldId, defaultValue])
 
   const handleChange = useCallback(
     (newValue: T) => {

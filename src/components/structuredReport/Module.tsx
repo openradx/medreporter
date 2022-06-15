@@ -9,17 +9,17 @@ import { ExternalLinks } from "./ExternalLinks"
 const DEFAULT_EXTERNAL_LINKS: ExternalLink[] = []
 
 interface ModuleProps {
+  name: string
+  id: string
   title: string
-  moduleId: string
-  instanceId: string
   externalLinks?: ExternalLink[]
   children?: ReactNode
 }
 
 export const Module = ({
+  name,
+  id,
   title,
-  moduleId,
-  instanceId,
   externalLinks = DEFAULT_EXTERNAL_LINKS,
   children,
 }: ModuleProps) => {
@@ -27,10 +27,10 @@ export const Module = ({
   const cardEl = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (scrollInto && scrollInto.instanceId === instanceId && !scrollInto.fieldId) {
+    if (scrollInto && scrollInto.moduleId === id && !scrollInto.fieldId) {
       cardEl.current?.scrollIntoView({ behavior: "smooth" })
     }
-  }, [scrollInto, instanceId])
+  }, [scrollInto, id])
 
   return (
     <Card shadow="sm" withBorder>
@@ -39,7 +39,7 @@ export const Module = ({
         <ExternalLinks links={externalLinks} />
       </Card.Section>
       <Card.Section p="sm">
-        <ModuleContextProvider value={{ context: "structure", moduleId, instanceId }}>
+        <ModuleContextProvider value={{ context: "structure", moduleName: name, moduleId: id }}>
           {children}
         </ModuleContextProvider>
       </Card.Section>

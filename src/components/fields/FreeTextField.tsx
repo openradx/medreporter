@@ -16,15 +16,15 @@ export const FreeTextField = ({
   defaultValue = "",
   variant = "singleline",
 }: FreeTextFieldProps) => {
-  const { instanceId } = useModule()
+  const { moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    instanceId,
+    moduleId,
     fieldId,
     defaultValue,
   })
 
   return (
-    <BaseField {...{ instanceId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       {variant === "singleline" && (
         <TextInput
           autoComplete="off"

@@ -2,7 +2,7 @@ import { Provider } from "react"
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 interface FieldContext<T> {
-  instanceId: string
+  moduleId: string
   fieldId: string
   defaultValue?: T
   value?: T

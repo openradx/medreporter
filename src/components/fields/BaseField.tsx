@@ -5,7 +5,7 @@ import { useAppSelector } from "../../state/store"
 import { selectScrollInto } from "../../state/structureSlice"
 
 interface FieldProps<T> {
-  instanceId: string
+  moduleId: string
   fieldId: string
   visible: boolean
   defaultValue?: T
@@ -15,7 +15,7 @@ interface FieldProps<T> {
 }
 
 export const BaseField = <T,>({
-  instanceId,
+  moduleId,
   fieldId,
   visible,
   defaultValue,
@@ -28,10 +28,10 @@ export const BaseField = <T,>({
   const fieldEl = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (scrollInto && scrollInto.instanceId === instanceId && scrollInto.fieldId === fieldId) {
+    if (scrollInto && scrollInto.moduleId === moduleId && scrollInto.fieldId === fieldId) {
       fieldEl.current?.scrollIntoView({ behavior: "smooth" })
     }
-  }, [scrollInto, instanceId, fieldId])
+  }, [scrollInto, moduleId, fieldId])
 
   const fieldSize = { minWidth: "250px", minWidthXs: "100%", maxWidth: "20%" }
   const finalSize = { ...fieldSize, ...defaultSize }
@@ -41,7 +41,7 @@ export const BaseField = <T,>({
   // TODO: for finding and group we maybe also have to return an unstyled box.
   // But some element we need for the ref for the scroll into
   return (
-    <FieldContextProvider value={{ instanceId, fieldId, defaultValue, value, onChange }}>
+    <FieldContextProvider value={{ moduleId, fieldId, defaultValue, value, onChange }}>
       <Box
         ref={fieldEl}
         sx={(theme) => ({
