@@ -29,7 +29,7 @@ export const NumberField = ({
     defaultValue,
   })
   return (
-    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       <NumberInput {...{ label, value, onChange, min, max, precision, step }} />
     </BaseField>
   )

@@ -29,7 +29,7 @@ export const MultipleChoiceField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       {variant === "select" && <MultipleSelectInput {...{ label, value, onChange, options }} />}
       {variant === "checkbox" && <MultipleCheckboxInput {...{ label, value, onChange, options }} />}
     </BaseField>

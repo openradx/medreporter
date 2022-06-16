@@ -29,7 +29,7 @@ export const SingleChoiceField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       {variant === "select" && <SingleSelectInput {...{ label, value, onChange, options }} />}
       {variant === "radio" && <SingleRadioInput {...{ label, value, onChange, options }} />}
     </BaseField>

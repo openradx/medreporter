@@ -21,7 +21,7 @@ export const DateField = ({
     defaultValue,
   })
   return (
-    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       <DateInput {...{ label, value, onChange }} />
     </BaseField>
   )

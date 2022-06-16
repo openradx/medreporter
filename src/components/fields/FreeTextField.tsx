@@ -25,7 +25,7 @@ export const FreeTextField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       {variant === "singleline" && <SinglelineInput {...{ label, value, onChange }} />}
       {variant === "multiline" && <MultilineInput {...{ label, value, onChange }} />}
     </BaseField>

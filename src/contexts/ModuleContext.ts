@@ -1,9 +1,8 @@
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 interface ModuleContext {
-  name: string
   id: string
-  title: string
+  name?: string
 }
 
 export const [useModule, ModuleContextProvider] =

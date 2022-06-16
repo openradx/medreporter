@@ -10,13 +10,18 @@ import { ExternalLinks } from "./ExternalLinks"
 const DEFAULT_EXTERNAL_LINKS: ExternalLink[] = []
 
 interface StructureProps {
+  title?: string
   externalLinks?: ExternalLink[]
-  children: ReactNode
+  children?: ReactNode
 }
 
-export const Structure = ({ externalLinks = DEFAULT_EXTERNAL_LINKS, children }: StructureProps) => {
+export const Structure = ({
+  title,
+  externalLinks = DEFAULT_EXTERNAL_LINKS,
+  children,
+}: StructureProps) => {
   const { context } = useStructuredReport()
-  const { id: moduleId, title: moduleTitle } = useModule()
+  const { id: moduleId } = useModule()
   const scrollInto = useAppSelector(selectScrollInto)
   const cardEl = useRef<HTMLDivElement>(null)
 
@@ -30,10 +35,12 @@ export const Structure = ({ externalLinks = DEFAULT_EXTERNAL_LINKS, children }: 
 
   return (
     <Card ref={cardEl} shadow="sm" withBorder>
-      <Card.Section p="sm" withBorder>
-        <Text>{moduleTitle}</Text>
-        <ExternalLinks links={externalLinks} />
-      </Card.Section>
+      {(title || externalLinks.length > 0) && (
+        <Card.Section p="sm" withBorder>
+          <Text>{title}</Text>
+          <ExternalLinks links={externalLinks} />
+        </Card.Section>
+      )}
       <Card.Section p="sm">{children}</Card.Section>
     </Card>
   )
