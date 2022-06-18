@@ -1,6 +1,6 @@
 import { DevTool } from "@hookform/devtools"
 import { Box } from "@mantine/core"
-import { cloneDeep } from "lodash"
+import copy from "fast-copy"
 import { ReactNode, useCallback, useEffect, useRef } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
@@ -25,7 +25,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
 
   const changeStructureValueDebounced = useDebouncedCallback((moduleId, fieldId, value) => {
     dispatch(changeStructureValue({ moduleId, fieldId, value }))
-  }, 250)
+  }, 500)
 
   useEffect(() => {
     let prevName = ""
@@ -45,7 +45,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   }, [watch, changeStructureValueDebounced])
 
   const initializeStructureReportDataDebounced = useDebouncedCallback(() => {
-    const data = cloneDeep(getValues())
+    const data = copy(getValues())
     dispatch(setStructureData(data, { undoable: false }))
   }, 500)
 
@@ -74,7 +74,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
 
   const clearForm = useCallback(() => {
     const data = defaultValuesRef.current
-    reset(cloneDeep(data))
+    reset(copy(data))
     dispatch(setStructureData(data))
   }, [reset, dispatch])
 

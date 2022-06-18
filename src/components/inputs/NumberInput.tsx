@@ -18,31 +18,22 @@ export const NumberInput = ({
   max = 1000,
   step,
   precision = 0,
-}: NumberInputProps) => {
-  let stepInterval: number
-  if (step) {
-    stepInterval = step
-  } else {
-    stepInterval = 1 / 10 ** precision
-  }
-
-  return (
-    <MantineNumberInput
-      {...{ label, min, max }}
-      value={value ?? undefined}
-      onChange={(newValue) => onChange(newValue ?? null)}
-      stepHoldDelay={500}
-      step={stepInterval}
-      stepHoldInterval={stepInterval}
-      precision={precision}
-      styles={{
-        control: {
-          flexGrow: 1,
-          flex: "auto",
-          "&:hover": { flex: "0 0 60%" },
-        },
-        rightSection: { alignItems: "stretch" },
-      }}
-    />
-  )
-}
+}: NumberInputProps) => (
+  <MantineNumberInput
+    {...{ label, min, max }}
+    value={value ?? undefined}
+    onChange={(newValue) => onChange(newValue ?? null)}
+    step={step ?? 1 / 10 ** precision}
+    stepHoldDelay={500}
+    stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
+    precision={precision}
+    styles={{
+      control: {
+        flexGrow: 1,
+        flex: "auto",
+        "&:hover": { flex: "0 0 60%" },
+      },
+      rightSection: { alignItems: "stretch" },
+    }}
+  />
+)
