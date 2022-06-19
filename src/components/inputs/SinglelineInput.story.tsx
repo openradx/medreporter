@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { useState } from "react"
 import { SinglelineInput } from "./SinglelineInput"
 
 export default {
@@ -6,9 +7,10 @@ export default {
   component: SinglelineInput,
 } as ComponentMeta<typeof SinglelineInput>
 
-const Template: ComponentStory<typeof SinglelineInput> = ({ label, value, onChange }) => (
-  <SinglelineInput {...{ label, value, onChange }} />
-)
+const Template: ComponentStory<typeof SinglelineInput> = ({ label }) => {
+  const [value, setValue] = useState<string>("")
+  return <SinglelineInput value={value} onChange={setValue} {...{ label }} />
+}
 
 export const Singleline = Template.bind({})
 Singleline.args = {

@@ -18,13 +18,13 @@ export const MultipleCheckboxInput = ({
 }: MultipleCheckboxInputProps) => (
   <Checkbox.Group
     label={label}
-    onChange={(newValue) => onChange(newValue)}
+    onChange={onChange}
     value={value}
     orientation="vertical"
     spacing="xs"
   >
     {options.map((option) => (
-      <Checkbox value={option.value} label={option.label} />
+      <Checkbox key={option.value} value={option.value} label={option.label} />
     ))}
   </Checkbox.Group>
 )

@@ -16,11 +16,5 @@ export const MultipleSelectInput = ({
   value,
   options = DEFAULT_OPTIONS,
 }: MultipleSelectInputProps) => (
-  <MultiSelect
-    label={label}
-    value={value}
-    onChange={(newValue) => onChange(newValue)}
-    data={options}
-    searchable
-  />
+  <MultiSelect label={label} value={value} onChange={onChange} data={options} searchable />
 )

@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { useState } from "react"
 import { SingleRadioInput } from "./SingleRadioInput"
 
 export default {
@@ -6,9 +7,10 @@ export default {
   component: SingleRadioInput,
 } as ComponentMeta<typeof SingleRadioInput>
 
-const Template: ComponentStory<typeof SingleRadioInput> = ({ label, value, onChange, options }) => (
-  <SingleRadioInput {...{ label, value, onChange, options }} />
-)
+const Template: ComponentStory<typeof SingleRadioInput> = ({ label, options }) => {
+  const [value, setValue] = useState<string>("")
+  return <SingleRadioInput value={value} onChange={setValue} {...{ label, options }} />
+}
 
 export const Radio = Template.bind({})
 Radio.args = {

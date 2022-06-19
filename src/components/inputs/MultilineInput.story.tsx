@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { useState } from "react"
 import { MultilineInput } from "./MultilineInput"
 
 export default {
@@ -6,9 +7,10 @@ export default {
   component: MultilineInput,
 } as ComponentMeta<typeof MultilineInput>
 
-const Template: ComponentStory<typeof MultilineInput> = ({ label, value, onChange }) => (
-  <MultilineInput {...{ label, value, onChange }} />
-)
+const Template: ComponentStory<typeof MultilineInput> = ({ label }) => {
+  const [value, setValue] = useState<string>("")
+  return <MultilineInput value={value} onChange={setValue} {...{ label }} />
+}
 
 export const Multiline = Template.bind({})
 Multiline.args = {

@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { useState } from "react"
 import { MultipleSelectInput } from "./MultipleSelectInput"
 
 export default {
@@ -6,13 +7,10 @@ export default {
   component: MultipleSelectInput,
 } as ComponentMeta<typeof MultipleSelectInput>
 
-const Template: ComponentStory<typeof MultipleSelectInput> = ({
-  label,
-  value,
-  onChange,
-  options,
-}) => <MultipleSelectInput {...{ label, value, onChange, options }} />
-
+const Template: ComponentStory<typeof MultipleSelectInput> = ({ label, options }) => {
+  const [value, setValue] = useState<string[]>([])
+  return <MultipleSelectInput value={value} onChange={setValue} {...{ label, options }} />
+}
 export const Select = Template.bind({})
 Select.args = {
   label: "Multiple choice field - select",
