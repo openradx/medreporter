@@ -16,7 +16,7 @@ export const NumberField = ({
   id: fieldId,
   label = "",
   visible = true,
-  defaultValue = 0,
+  defaultValue = null,
   min,
   max,
   precision,
