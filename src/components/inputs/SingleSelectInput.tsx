@@ -16,11 +16,5 @@ export const SingleSelectInput = ({
   value,
   options = DEFAULT_OPTIONS,
 }: SingleSelectInputProps) => (
-  <Select
-    label={label}
-    value={value}
-    onChange={(newValue) => onChange(newValue)}
-    data={options}
-    searchable
-  />
+  <Select label={label} value={value} onChange={onChange} data={options} searchable />
 )

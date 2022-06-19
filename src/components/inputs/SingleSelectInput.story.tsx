@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { useState } from "react"
 import { SingleSelectInput } from "./SingleSelectInput"
 
 export default {
@@ -8,10 +9,13 @@ export default {
 
 const Template: ComponentStory<typeof SingleSelectInput> = ({
   label,
-  value,
-  onChange,
+
   options,
-}) => <SingleSelectInput {...{ label, value, onChange, options }} />
+}) => {
+  const [value, setValue] = useState<string | null>("")
+
+  return <SingleSelectInput value={value} onChange={setValue} {...{ label, options }} />
+}
 
 export const Select = Template.bind({})
 Select.args = {

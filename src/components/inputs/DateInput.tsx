@@ -7,5 +7,5 @@ interface DateInputProps {
 }
 
 export const DateInput = ({ label, value, onChange }: DateInputProps) => (
-  <DatePicker label={label} value={value} onChange={(newDate) => onChange(newDate)} />
+  <DatePicker label={label} value={value} onChange={onChange} />
 )

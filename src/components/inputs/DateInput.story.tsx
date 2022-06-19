@@ -8,11 +8,8 @@ export default {
 } as ComponentMeta<typeof DateInput>
 
 const Template: ComponentStory<typeof DateInput> = ({ label }) => {
-  const [localValue, setValue] = useState(new Date())
-  const onChangeInput = (inputValue: Date | null) => {
-    setValue(inputValue as Date)
-  }
-  return <DateInput label={label} value={localValue} onChange={onChangeInput} />
+  const [value, setValue] = useState<Date | null>(new Date())
+  return <DateInput value={value} onChange={setValue} {...{ label }} />
 }
 
 export const Basic = Template.bind({})

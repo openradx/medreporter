@@ -18,13 +18,13 @@ export const SingleRadioInput = ({
 }: SingleRadioInputProps) => (
   <Radio.Group
     label={label}
-    onChange={(newValue) => onChange(newValue)}
+    onChange={onChange}
     value={value ?? undefined}
     orientation="vertical"
     spacing="xs"
   >
     {options.map((option) => (
-      <Radio value={option.value} label={option.label} />
+      <Radio key={option.value} value={option.value} label={option.label} />
     ))}
   </Radio.Group>
 )
