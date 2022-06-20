@@ -1,9 +1,8 @@
 import { List } from "@mantine/core"
 import { NumberField } from "../../fields/NumberField"
-import { Structure } from "../../structuredReport/Structure"
 
-export const AdrenalWashoutStucture = () => (
-  <Structure title="Adrenal Washout">
+export const AdrenalWashoutStructure = () => (
+  <>
     <NumberField id="nonEnhanced" label="Non-enhanced phase HU" />
     <NumberField id="portalVenous" label="Portal venous phase HU" />
     <NumberField id="delayed" label="Delayed phase HU" />
@@ -14,5 +13,5 @@ export const AdrenalWashoutStucture = () => (
       </List.Item>
       <List.Item>Whenever possible the absolute washout should be preferred.</List.Item>
     </List>
-  </Structure>
+  </>
 )

@@ -5,23 +5,18 @@ import {
 } from "../../../utils/adrenalWashoutCalculations"
 import { Citation } from "../../common/Citation"
 import { Paragraph } from "../../structuredReport/Paragraph"
-import { Report } from "../../structuredReport/Report"
 import { Statement } from "../../structuredReport/Statement"
 
+type AdrenalWashoutData = {
+  nonEnhanced: number | null
+  portalVenous: number | null
+  delayed: number | null
+}
+
 export const AdrenalWashoutReport = () => {
-  const data = useReportData("adrenalWashout") as
-    | {
-        nonEnhanced: number | null
-        portalVenous: number | null
-        delayed: number | null
-      }
-    | undefined
+  const { nonEnhanced, portalVenous, delayed } = useReportData<AdrenalWashoutData>("adrenalWashout")
 
-  console.log(data)
-
-  const nonEnhanced = data?.nonEnhanced
-  const portalVenous = data?.portalVenous
-  const delayed = data?.delayed
+  console.log(nonEnhanced)
 
   let absoluteWashout: number | undefined
   if (nonEnhanced != null && portalVenous != null && delayed != null) {
@@ -66,7 +61,7 @@ export const AdrenalWashoutReport = () => {
   }
 
   return (
-    <Report>
+    <>
       Relative washout: {relativeWashout}
       Absolute washout: {absoluteWashout}
       {conclusion}
@@ -96,6 +91,6 @@ export const AdrenalWashoutReport = () => {
       <Paragraph>
         <Statement fieldId="foobar">bar</Statement>
       </Paragraph>
-    </Report>
+    </>
   )
 }

@@ -49,7 +49,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
     const data = copy(getValues())
     dispatch(setStructureData(data, { undoable: false }))
     dispatch(setDataInitialized())
-  }, 500)
+  }, 1000)
 
   const defaultValuesRef = useRef<Record<string, Record<string, any>>>({})
 

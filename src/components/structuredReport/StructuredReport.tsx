@@ -16,8 +16,11 @@ export const StructuredReport = ({ children }: StructuredReportProps) => (
   <TransformerRegistryProvider>
     <ReportData>
       <Box
+        className="medreporter-StructuredReport-root"
         sx={(theme) => ({
+          width: "100%",
           height: "100%",
+          minHeight: 0,
           display: "flex",
           alignItems: "stretch",
           gap: theme.spacing.xs,

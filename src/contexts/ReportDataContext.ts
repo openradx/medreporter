@@ -7,10 +7,10 @@ const [_useReportData, ReportDataContextProvider] =
 
 export { ReportDataContextProvider }
 
-export const useReportData = (moduleId?: string) => {
+export const useReportData = <T>(moduleId?: string) => {
   const data = _useReportData()
   if (moduleId) {
-    return data[moduleId]
+    return data[moduleId] as T
   }
-  return data
+  return data as unknown as T
 }
