@@ -1,7 +1,7 @@
 import { useModule } from "../contexts/ModuleContext"
 import { useSection } from "../contexts/SectionContext"
+import { activateSection } from "../state/displaySlice"
 import { useAppDispatch } from "../state/store"
-import { activateSection } from "../state/structureSlice"
 
 export const useStructureLink = ({
   sectionId,

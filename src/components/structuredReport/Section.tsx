@@ -2,8 +2,8 @@ import { Box, Text } from "@mantine/core"
 import { ReactNode } from "react"
 import { SectionContextProvider } from "../../contexts/SectionContext"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
+import { activateSection } from "../../state/displaySlice"
 import { useAppDispatch } from "../../state/store"
-import { activateSection } from "../../state/structureSlice"
 
 interface SectionProps {
   id: string

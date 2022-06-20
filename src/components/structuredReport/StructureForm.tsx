@@ -6,6 +6,7 @@ import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
 import config from "../../app.config"
 import { StructureFormContextProvider } from "../../contexts/StructureFormContext"
+import { setDataInitialized } from "../../state/displaySlice"
 import { useAppDispatch } from "../../state/store"
 import {
   changeStructureValue,
@@ -47,6 +48,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   const initializeStructureReportDataDebounced = useDebouncedCallback(() => {
     const data = copy(getValues())
     dispatch(setStructureData(data, { undoable: false }))
+    dispatch(setDataInitialized())
   }, 500)
 
   const defaultValuesRef = useRef<Record<string, Record<string, any>>>({})

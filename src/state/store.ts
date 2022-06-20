@@ -1,6 +1,7 @@
 import { CombinedState, configureStore, PreloadedState } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
+import displayReducer from "./displaySlice"
 import { historyMiddleware } from "./historyMiddleware"
 import historyTrackerReducer from "./historyTrackerSlice"
 import languagesReducer from "./languagesSlice"
@@ -8,6 +9,7 @@ import structureDataReducer from "./structureDataSlice"
 import structureReducer from "./structureSlice"
 
 export const reducer = {
+  display: displayReducer,
   historyTracker: historyTrackerReducer,
   languages: languagesReducer,
   structureData: structureDataReducer,

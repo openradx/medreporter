@@ -2,6 +2,7 @@ import { createSelector, PayloadAction } from "@reduxjs/toolkit"
 import { AppThunk, RootState } from "RootTypes"
 import { z } from "zod"
 import { createModuleId, createSectionId } from "../utils/idUtils"
+import { activateSection } from "./displaySlice"
 import { createHistorySlice, withHistory } from "./historySlice"
 
 const ModuleSchema = z.object({
@@ -19,18 +20,9 @@ const SectionSchema = z.object({
 
 export type SectionState = z.infer<typeof SectionSchema>
 
-const ScrollIntoSchema = z.object({
-  moduleId: z.string(),
-  fieldId: z.string().optional(),
-})
-
-type ScrollIntoState = z.infer<typeof ScrollIntoSchema>
-
 export const TemplateSchema = z.object({
   id: z.string().nullable(),
   sections: z.array(SectionSchema),
-  activeSectionId: z.string(),
-  scrollInto: ScrollIntoSchema.nullable(),
 })
 
 type TemplateState = z.infer<typeof TemplateSchema>
@@ -38,8 +30,6 @@ type TemplateState = z.infer<typeof TemplateSchema>
 const initialState: TemplateState = {
   id: null,
   sections: [],
-  activeSectionId: "",
-  scrollInto: null,
 }
 
 const structureSlice = createHistorySlice({
@@ -57,14 +47,6 @@ const structureSlice = createHistorySlice({
       }>
     ) {
       state.present = { ...state.present, ...action.payload }
-    },
-    activateSection(
-      state,
-      action: PayloadAction<{ sectionId: string; scrollInto?: ScrollIntoState }>
-    ) {
-      const { sectionId, scrollInto } = action.payload
-      state.present.activeSectionId = sectionId
-      state.present.scrollInto = scrollInto ?? null
     },
     addSection: withHistory<TemplateState, { sectionId?: string; sectionTitle: string }>(
       (state, action) => {
@@ -136,7 +118,6 @@ const structureSlice = createHistorySlice({
 export const {
   resetTemplateState,
   setTemplateDetails,
-  activateSection,
   addSection,
   removeSection,
   moveSection,
@@ -169,7 +150,3 @@ export const selectSections = (state: RootState) => state.structure.present.sect
 export const selectModules = createSelector(selectSections, (sections) =>
   sections.flatMap((section) => section.modules)
 )
-
-export const selectActiveSectionId = (state: RootState) => state.structure.present.activeSectionId
-
-export const selectScrollInto = (state: RootState) => state.structure.present.scrollInto

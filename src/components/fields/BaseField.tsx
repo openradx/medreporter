@@ -1,8 +1,8 @@
 import { Box } from "@mantine/core"
 import { PropsWithChildren, useEffect, useRef } from "react"
 import { getFieldContext } from "../../contexts/FieldContext"
+import { selectScrollInto } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
-import { selectScrollInto } from "../../state/structureSlice"
 
 interface FieldProps<T> {
   moduleId: string
