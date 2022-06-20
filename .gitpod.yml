@@ -14,22 +14,3 @@ tasks:
   - name: Test
     init: gp sync-await install
     command: yarn test
-
-vscode:
-  extensions:
-    - davidanson.vscode-markdownlint
-    - dbaeumer.vscode-eslint
-    - dsznajder.es7-react-js-snippets
-    - formulahendry.auto-rename-tag
-    - eamodio.gitlens
-    - esbenp.prettier-vscode
-    - jock.svg
-    - lokalise.i18n-ally
-    - meganrogge.template-string-converter
-    - mgmcdermott.vscode-language-babel
-    - mhutchie.git-graph
-    - mikestead.dotenv
-    - orta.vscode-jest
-    - redhat.vscode-yaml
-    - streetsidesoftware.code-spell-checker
-    - wayou.vscode-todo-highlight
