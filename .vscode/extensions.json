@@ -1,11 +1,14 @@
 {
   "recommendations": [
+    "davidanson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
     "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "jock.svg",
     "lokalise.i18n-ally",
+    "meganrogge.template-string-converter",
     "mgmcdermott.vscode-language-babel",
     "mhutchie.git-graph",
     "mikestead.dotenv",
