@@ -18,7 +18,7 @@ export const RedoButton = () => {
   }
 
   return (
-    <ActionIcon variant="light" disabled={!canRedo} onClick={handleClick} aria-label="Redo">
+    <ActionIcon variant="default" disabled={!canRedo} onClick={handleClick} aria-label="Redo">
       <MdRedo size={20} />
     </ActionIcon>
   )

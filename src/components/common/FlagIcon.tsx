@@ -1,6 +1,6 @@
 import DE from "flag-icons/flags/4x3/de.svg"
 import US from "flag-icons/flags/4x3/us.svg"
-import { HiTranslate } from "react-icons/hi"
+import { MdOutlineTranslate as LanguageIcon } from "react-icons/md"
 import { TbBug } from "react-icons/tb"
 
 const images: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
@@ -15,7 +15,7 @@ interface FlagIconProps {
 
 export const FlagIcon = ({ code, size = 18 }: FlagIconProps) => {
   if (code === "as_site") {
-    return <HiTranslate size={size} />
+    return <LanguageIcon size={size} />
   }
 
   if (code === "cimode") {

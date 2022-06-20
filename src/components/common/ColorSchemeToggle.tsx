@@ -8,8 +8,8 @@ export function ColorSchemeToggle() {
     <ActionIcon
       onClick={() => toggleColorScheme()}
       size="md"
+      variant="default"
       sx={(theme) => ({
-        backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
         color: theme.colorScheme === "dark" ? theme.colors.yellow[4] : theme.colors.blue[6],
       })}
       aria-label="Change color scheme"

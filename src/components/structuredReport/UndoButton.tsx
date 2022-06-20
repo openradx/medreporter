@@ -18,7 +18,7 @@ export const UndoButton = () => {
   }
 
   return (
-    <ActionIcon variant="light" disabled={!canUndo} onClick={handleClick} aria-label="Undo">
+    <ActionIcon variant="default" disabled={!canUndo} onClick={handleClick} aria-label="Undo">
       <MdUndo size={20} />
     </ActionIcon>
   )

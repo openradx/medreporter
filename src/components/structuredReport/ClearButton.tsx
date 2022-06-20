@@ -6,7 +6,7 @@ export const ClearButton = () => {
   const { clearForm } = useStructureForm()
 
   return (
-    <ActionIcon variant="light" onClick={clearForm} aria-label="Clear form">
+    <ActionIcon variant="default" onClick={clearForm} aria-label="Clear form">
       <AiOutlineClear size={20} />
     </ActionIcon>
   )
