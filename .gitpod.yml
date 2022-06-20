@@ -3,8 +3,33 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 tasks:
-  - init: yarn
+  - name: Dev Server
+    init: |
+      yarn
+      gp sync-done install
     command: yarn dev
+  - name: Storybook
+    init: gp sync-await install
+    command: yarn storybook
+  - name: Test
+    init: gp sync-await install
+    command: yarn test
+
 vscode:
   extensions:
+    - davidanson.vscode-markdownlint
     - dbaeumer.vscode-eslint
+    - dsznajder.es7-react-js-snippets
+    - formulahendry.auto-rename-tag
+    - eamodio.gitlens
+    - esbenp.prettier-vscode
+    - jock.svg
+    - lokalise.i18n-ally
+    - meganrogge.template-string-converter
+    - mgmcdermott.vscode-language-babel
+    - mhutchie.git-graph
+    - mikestead.dotenv
+    - orta.vscode-jest
+    - redhat.vscode-yaml
+    - streetsidesoftware.code-spell-checker
+    - wayou.vscode-todo-highlight
