@@ -16,7 +16,12 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
   const { t } = useSiteTranslation()
 
   return (
-    <Paper sx={{ flexGrow: 1 }} shadow="sm" withBorder>
+    <Paper
+      className="medreporter-StructurePanel-root"
+      sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
+      shadow="sm"
+      withBorder
+    >
       <StructureForm>
         <PanelHeader
           title={t("Structure.title")}
@@ -30,8 +35,8 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
           rightIcons={<StructureLanguageSelector />}
         />
         <Box
-          className="medreporter-Structure-body"
-          sx={(theme) => ({ padding: theme.spacing.sm, height: "100%" })}
+          className="medreporter-StructurePanel-content"
+          sx={(theme) => ({ flexGrow: 1, padding: theme.spacing.sm, overflow: "auto" })}
         >
           {children}
         </Box>

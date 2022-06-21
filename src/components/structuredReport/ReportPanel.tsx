@@ -18,7 +18,7 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
   return (
     <Paper
       className="medreporter-ReportPanel-root"
-      sx={{ flexGrow: 1, maxWidth: "30vw", display: "flex", flexDirection: "column" }}
+      sx={{ flexGrow: 1, width: "30vw", display: "flex", flexDirection: "column" }}
       shadow="sm"
       withBorder
     >
@@ -28,12 +28,11 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
         sx={(theme) => ({
           flexGrow: 1,
           padding: theme.spacing.sm,
-          minHeight: 0,
           overflowY: "auto",
         })}
       >
         {!dataInitialized && (
-          <Center>
+          <Center sx={{ height: "100%" }}>
             <Loader variant="bars" />
           </Center>
         )}

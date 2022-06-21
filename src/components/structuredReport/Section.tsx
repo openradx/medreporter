@@ -30,7 +30,6 @@ export const Section = ({ id, title, visible = true, link = false, children }: S
             display: visible ? "flex" : "none",
             flexDirection: "column",
             alignItems: "stretch",
-            height: "100%",
           }}
         >
           {children}
