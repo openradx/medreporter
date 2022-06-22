@@ -120,10 +120,10 @@ export const PageHeader = () => {
           size="sm"
         />
         MedReporter
-        <Group spacing={5} className={classes.links}>
+        <Group spacing="sm" className={classes.links}>
           {items}
         </Group>
-        <Group>
+        <Group spacing="sm">
           <SiteLanguageSelector />
           <ColorSchemeToggle />
         </Group>
