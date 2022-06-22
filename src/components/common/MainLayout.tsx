@@ -14,7 +14,7 @@ export const MainLayout = ({ structuredReport = false, children }: MainLayoutPro
   const sm = useMediaQuery(`(max-width: ${theme.breakpoints.md}px)`, false)
   const screenSize = sm ? "sm" : "lg"
 
-  const height = structuredReport ? "100vh" : undefined
+  const height = structuredReport && screenSize === "lg" ? "100vh" : undefined
 
   return (
     <ScreenContextProvider value={{ screenSize }}>
