@@ -1,4 +1,4 @@
-import { Box, Paper } from "@mantine/core"
+import { Box, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ClearButton } from "./ClearButton"
@@ -34,12 +34,9 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
           }
           rightIcons={<StructureLanguageSelector />}
         />
-        <Box
-          className="medreporter-StructurePanel-content"
-          sx={(theme) => ({ flexGrow: 1, padding: theme.spacing.sm, overflow: "auto" })}
-        >
-          {children}
-        </Box>
+        <ScrollArea className="medreporter-StructurePanel-content" sx={{ flexGrow: 1 }}>
+          <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
+        </ScrollArea>
       </StructureForm>
     </Paper>
   )

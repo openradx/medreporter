@@ -1,4 +1,4 @@
-import { Box, Center, Loader, Paper } from "@mantine/core"
+import { Box, Center, Loader, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { selectDataInitialized } from "../../state/displaySlice"
@@ -23,21 +23,16 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
       withBorder
     >
       <PanelHeader title={t("Report.title")} rightIcons={<ReportLanguageSelector />} />
-      <Box
-        className="medreporter-ReportPanel-content"
-        sx={(theme) => ({
-          flexGrow: 1,
-          padding: theme.spacing.sm,
-          overflowY: "auto",
-        })}
-      >
-        {!dataInitialized && (
-          <Center sx={{ height: "100%" }}>
-            <Loader variant="bars" />
-          </Center>
-        )}
-        {dataInitialized && children}
-      </Box>
+      {!dataInitialized && (
+        <Center sx={{ height: "100%" }}>
+          <Loader variant="bars" />
+        </Center>
+      )}
+      {dataInitialized && (
+        <ScrollArea className="medreporter-ReportPanel-content" sx={{ flexGrow: 1 }}>
+          <Box sx={(theme) => ({ padding: theme.spacing.sm, height: "100%" })}>{children}</Box>
+        </ScrollArea>
+      )}
     </Paper>
   )
 }
