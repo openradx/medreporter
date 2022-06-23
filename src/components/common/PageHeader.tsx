@@ -124,8 +124,8 @@ export const PageHeader = () => {
           {items}
         </Group>
         <Group spacing="sm">
-          <SiteLanguageSelector />
           <ColorSchemeToggle />
+          <SiteLanguageSelector />
         </Group>
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (

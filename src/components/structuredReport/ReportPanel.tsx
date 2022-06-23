@@ -5,7 +5,7 @@ import { useScreen } from "../../contexts/ScreenContext"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { selectDataInitialized } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
-import { CopyReportButton } from "./CopyReportButton"
+import { CopyButton } from "./CopyButton"
 import { PanelHeader } from "./PanelHeader"
 import { ReportLanguageSelector } from "./ReportLanguageSelector"
 
@@ -32,8 +32,12 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
     >
       <PanelHeader
         title={t("Report.title")}
-        centerIcons={<CopyReportButton />}
-        rightIcons={<ReportLanguageSelector />}
+        actions={
+          <>
+            <CopyButton />
+            <ReportLanguageSelector />
+          </>
+        }
       />
       {!dataInitialized && (
         <Center sx={{ flexGrow: 1 }}>

@@ -2,6 +2,7 @@ import { Box, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ClearButton } from "./ClearButton"
+import { InfoButton } from "./InfoButton"
 import { PanelHeader } from "./PanelHeader"
 import { RedoButton } from "./RedoButton"
 import { StructureForm } from "./StructureForm"
@@ -25,14 +26,15 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
       <StructureForm>
         <PanelHeader
           title={t("Structure.title")}
-          centerIcons={
+          actions={
             <>
               <ClearButton />
               <UndoButton />
               <RedoButton />
+              <InfoButton />
+              <StructureLanguageSelector />
             </>
           }
-          rightIcons={<StructureLanguageSelector />}
         />
         <ScrollArea className="medreporter-StructurePanel-content" sx={{ flexGrow: 1 }}>
           <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
