@@ -1,4 +1,5 @@
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from "@mantine/core"
+import { ModalsProvider } from "@mantine/modals"
 import { NotificationsProvider } from "@mantine/notifications"
 import { compose } from "@reduxjs/toolkit"
 import { getCookie, setCookies } from "cookies-next"
@@ -43,7 +44,9 @@ const MyApp = (props: MyAppProps) => {
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-          <NotificationsProvider>{getLayout(<Component {...pageProps} />)}</NotificationsProvider>
+          <NotificationsProvider>
+            <ModalsProvider>{getLayout(<Component {...pageProps} />)}</ModalsProvider>
+          </NotificationsProvider>
         </MantineProvider>
       </ColorSchemeProvider>
     </>
