@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core"
+import { Box, MediaQuery } from "@mantine/core"
 import { PropsWithChildren, useEffect, useRef } from "react"
 import { getFieldContext } from "../../contexts/FieldContext"
 import { selectScrollInto } from "../../state/displaySlice"
@@ -42,20 +42,19 @@ export const BaseField = <T,>({
   // But some element we need for the ref for the scroll into
   return (
     <FieldContextProvider value={{ id: fieldId, defaultValue, value, onChange }}>
-      <Box
-        ref={fieldEl}
-        sx={(theme) => ({
-          minWidth: finalSize.minWidth,
-          [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            minWidth: finalSize.minWidthXs,
-          },
-          maxWidth: finalSize.maxWidth,
-          flexGrow: 1,
-          display: !visible ? "none" : undefined,
-        })}
-      >
-        {children}
-      </Box>
+      <MediaQuery smallerThan="md" styles={{ minWidth: finalSize.minWidthXs }}>
+        <Box
+          ref={fieldEl}
+          sx={{
+            minWidth: finalSize.minWidth,
+            maxWidth: finalSize.maxWidth,
+            flexGrow: 1,
+            display: !visible ? "none" : undefined,
+          }}
+        >
+          {children}
+        </Box>
+      </MediaQuery>
     </FieldContextProvider>
   )
 }
