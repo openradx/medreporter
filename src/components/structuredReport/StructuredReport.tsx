@@ -26,7 +26,7 @@ export const StructuredReport = ({ children }: StructuredReportProps) => {
             height: "100%",
             minHeight: 0,
             display: "flex",
-            flexDirection: screenSize === "lg" ? "row" : "column",
+            flexDirection: screenSize === "small" ? "column" : "row",
             alignItems: "stretch",
             gap: theme.spacing.xs,
           })}

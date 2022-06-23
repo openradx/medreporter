@@ -1,7 +1,7 @@
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 interface ScreenContext {
-  screenSize: "sm" | "lg"
+  screenSize: "small" | "medium" | "large"
 }
 
 export const [useScreen, ScreenContextProvider] =

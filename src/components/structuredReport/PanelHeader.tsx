@@ -10,13 +10,11 @@ export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (
   <Box
     component="header"
     sx={(theme) => ({
-      height: 50,
       borderBottom: `1px solid ${
         theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2]
       }`,
-      padding: theme.spacing.sm,
+      padding: theme.spacing.xs,
       display: "flex",
-      alignItems: "center",
     })}
   >
     <Text>{title}</Text>

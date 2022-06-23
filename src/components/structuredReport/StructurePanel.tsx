@@ -1,8 +1,8 @@
 import { Box, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
+import { useScreen } from "../../contexts/ScreenContext"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ClearButton } from "./ClearButton"
-import { InfoButton } from "./InfoButton"
 import { PanelHeader } from "./PanelHeader"
 import { RedoButton } from "./RedoButton"
 import { StructureForm } from "./StructureForm"
@@ -15,11 +15,16 @@ interface StructurePanelProps {
 
 export const StructurePanel = ({ children }: StructurePanelProps) => {
   const { t } = useSiteTranslation()
+  const { screenSize } = useScreen()
 
   return (
     <Paper
       className="medreporter-StructurePanel-root"
-      sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
+      sx={{
+        flex: screenSize === "large" ? "1.5 1 0" : "1 1 0",
+        display: "flex",
+        flexDirection: "column",
+      }}
       shadow="sm"
       withBorder
     >
@@ -31,7 +36,6 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
               <ClearButton />
               <UndoButton />
               <RedoButton />
-              <InfoButton />
               <StructureLanguageSelector />
             </>
           }

@@ -9,7 +9,7 @@ interface CitationProps {
 export const Citation = ({ title, authors, journal }: CitationProps) => (
   <Box>
     <Text>{title}</Text>
-    <Text>{authors}</Text>
-    <Text>{journal}</Text>
+    <Text color="dimmed">{authors}</Text>
+    <Text color="dimmed">{journal}</Text>
   </Box>
 )
