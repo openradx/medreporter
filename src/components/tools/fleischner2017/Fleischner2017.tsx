@@ -13,7 +13,7 @@ export const Fleischner2017 = () => (
   <StructuredReport>
     <Section id="fleischner2017">
       <Module id="fleischner2017">
-        <Structure>
+        <Structure title="Fleischner 2017">
           <FreeTextField id="foobar" label="Tell me" />
         </Structure>
         <Report>
