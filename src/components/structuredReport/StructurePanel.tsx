@@ -1,6 +1,5 @@
-import { Box, Paper, ScrollArea } from "@mantine/core"
+import { Box, MediaQuery, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
-import { useScreen } from "../../contexts/ScreenContext"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ClearButton } from "./ClearButton"
 import { PanelHeader } from "./PanelHeader"
@@ -15,35 +14,36 @@ interface StructurePanelProps {
 
 export const StructurePanel = ({ children }: StructurePanelProps) => {
   const { t } = useSiteTranslation()
-  const { screenSize } = useScreen()
 
   return (
-    <Paper
-      className="medreporter-StructurePanel-root"
-      sx={{
-        flex: screenSize === "lg" ? "1.5 1 0" : "1 1 0",
-        display: "flex",
-        flexDirection: "column",
-      }}
-      shadow="sm"
-      withBorder
-    >
-      <StructureForm>
-        <PanelHeader
-          title={t("Structure.title")}
-          actions={
-            <>
-              <ClearButton />
-              <UndoButton />
-              <RedoButton />
-              <StructureLanguageSelector />
-            </>
-          }
-        />
-        <ScrollArea className="medreporter-StructurePanel-content" sx={{ flexGrow: 1 }}>
-          <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
-        </ScrollArea>
-      </StructureForm>
-    </Paper>
+    <MediaQuery largerThan="xl" styles={{ flex: "1.5 1 0" }}>
+      <Paper
+        className="medreporter-StructurePanel-root"
+        sx={{
+          flex: "1 1 0",
+          display: "flex",
+          flexDirection: "column",
+        }}
+        shadow="sm"
+        withBorder
+      >
+        <StructureForm>
+          <PanelHeader
+            title={t("Structure.title")}
+            actions={
+              <>
+                <ClearButton />
+                <UndoButton />
+                <RedoButton />
+                <StructureLanguageSelector />
+              </>
+            }
+          />
+          <ScrollArea className="medreporter-StructurePanel-content" sx={{ flexGrow: 1 }}>
+            <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
+          </ScrollArea>
+        </StructureForm>
+      </Paper>
+    </MediaQuery>
   )
 }

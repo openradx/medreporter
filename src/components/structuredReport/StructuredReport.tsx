@@ -1,6 +1,5 @@
-import { Box } from "@mantine/core"
+import { Box, MediaQuery } from "@mantine/core"
 import { ReactNode } from "react"
-import { useScreen } from "../../contexts/ScreenContext"
 import { StructuredReportContextProvider } from "../../contexts/StructuredReportContext"
 import { ReportData } from "./ReportData"
 import { ReportPanel } from "./ReportPanel"
@@ -13,12 +12,10 @@ interface StructuredReportProps {
   children: ReactNode
 }
 
-export const StructuredReport = ({ children }: StructuredReportProps) => {
-  const { screenSize } = useScreen()
-
-  return (
-    <TransformerRegistryProvider>
-      <ReportData>
+export const StructuredReport = ({ children }: StructuredReportProps) => (
+  <TransformerRegistryProvider>
+    <ReportData>
+      <MediaQuery smallerThan="sm" styles={{ flexDirection: "column" }}>
         <Box
           className="medreporter-StructuredReport-root"
           sx={(theme) => ({
@@ -26,7 +23,6 @@ export const StructuredReport = ({ children }: StructuredReportProps) => {
             height: "100%",
             minHeight: 0,
             display: "flex",
-            flexDirection: screenSize === "sm" ? "column" : "row",
             alignItems: "stretch",
             gap: theme.spacing.xs,
           })}
@@ -42,7 +38,7 @@ export const StructuredReport = ({ children }: StructuredReportProps) => {
             </StructuredReportContextProvider>
           </ReportPanel>
         </Box>
-      </ReportData>
-    </TransformerRegistryProvider>
-  )
-}
+      </MediaQuery>
+    </ReportData>
+  </TransformerRegistryProvider>
+)
