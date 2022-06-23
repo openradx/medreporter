@@ -1,13 +1,14 @@
 import { Box, Group, Text } from "@mantine/core"
 import { ReactNode } from "react"
-import { InfoButton } from "./InfoButton"
+import { ExternalLink, ExternalLinkProps } from "./ExternalLink"
 
 interface ModuleHeaderProps {
   title: string
+  links?: ExternalLinkProps[]
   actions?: ReactNode
 }
 
-export const ModuleHeader = ({ title, actions }: ModuleHeaderProps) => (
+export const ModuleHeader = ({ title, links, actions }: ModuleHeaderProps) => (
   <Box
     sx={(theme) => ({
       padding: theme.spacing.xs,
@@ -17,8 +18,10 @@ export const ModuleHeader = ({ title, actions }: ModuleHeaderProps) => (
   >
     <Text>{title}</Text>
     <Group spacing="sm">
+      {links?.map((link) => (
+        <ExternalLink key={link.url} url={link.url} title={link.title} />
+      ))}
       {actions}
-      <InfoButton />
     </Group>
   </Box>
 )

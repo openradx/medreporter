@@ -4,22 +4,16 @@ import { useModule } from "../../contexts/ModuleContext"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
 import { selectScrollInto } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
-import { ExternalLink } from "../fields/fieldTypes"
+import { ExternalLinkProps } from "./ExternalLink"
 import { ModuleHeader } from "./ModuleHeader"
-
-const DEFAULT_EXTERNAL_LINKS: ExternalLink[] = []
 
 interface StructureProps {
   title: string
-  externalLinks?: ExternalLink[]
+  links?: ExternalLinkProps[]
   children?: ReactNode
 }
 
-export const Structure = ({
-  title,
-  externalLinks = DEFAULT_EXTERNAL_LINKS,
-  children,
-}: StructureProps) => {
+export const Structure = ({ title, links, children }: StructureProps) => {
   const { context } = useStructuredReport()
   const { id: moduleId } = useModule()
   const scrollInto = useAppSelector(selectScrollInto)
@@ -36,7 +30,7 @@ export const Structure = ({
   return (
     <Card ref={cardEl} shadow="sm" withBorder>
       <Card.Section withBorder>
-        <ModuleHeader title={title} />
+        <ModuleHeader title={title} links={links} />
       </Card.Section>
       <Card.Section p="sm">{children}</Card.Section>
     </Card>

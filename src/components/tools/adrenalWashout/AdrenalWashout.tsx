@@ -10,7 +10,15 @@ export const AdrenalWashout = () => (
   <StructuredReport>
     <Section id="default">
       <Module id="adrenalWashout">
-        <Structure title="Adrenal Washout">
+        <Structure
+          title="Adrenal Washout"
+          links={[
+            {
+              url: "https://radiopaedia.org/articles/adrenal-washout",
+              title: "Radiopaedia | Adrenal Washout",
+            },
+          ]}
+        >
           <AdrenalWashoutStructure />
         </Structure>
         <Report>
