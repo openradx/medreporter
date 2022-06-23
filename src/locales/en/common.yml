@@ -1,4 +1,4 @@
-CopyReportButton:
+CopyButton:
   notification: Copied report to clipboard
 
 LanguageSelector:

@@ -5,7 +5,7 @@ import { MdContentCopy } from "react-icons/md"
 import { REPORT_CONTENT_ID } from "../../constants/general"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 
-export const CopyReportButton = () => {
+export const CopyButton = () => {
   const clipboard = useClipboard()
   const { t } = useSiteTranslation()
 
@@ -16,7 +16,7 @@ export const CopyReportButton = () => {
         const el = document.getElementById(REPORT_CONTENT_ID)
         clipboard.copy(el!.innerText)
         showNotification({
-          message: t("CopyReportButton.notification"),
+          message: t("CopyButton.notification"),
           color: "green",
         })
       }}
