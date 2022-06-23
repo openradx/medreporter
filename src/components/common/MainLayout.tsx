@@ -11,14 +11,14 @@ interface MainLayoutProps {
 
 export const MainLayout = ({ structuredReport = false, children }: MainLayoutProps) => {
   const theme = useMantineTheme()
-  const small = useMediaQuery(`(max-width: ${theme.breakpoints.md}px)`, false)
-  const medium = useMediaQuery(
+  const sm = useMediaQuery(`(max-width: ${theme.breakpoints.md}px)`, false)
+  const md = useMediaQuery(
     `(min-width: ${theme.breakpoints.md}px) and (max-width: ${theme.breakpoints.xl}px)`,
     false
   )
-  const screenSize = small ? "small" : medium ? "medium" : "large"
+  const screenSize = sm ? "sm" : md ? "md" : "lg"
 
-  const height = structuredReport && screenSize !== "small" ? "100vh" : undefined
+  const height = structuredReport && screenSize !== "sm" ? "100vh" : undefined
 
   return (
     <ScreenContextProvider value={{ screenSize }}>

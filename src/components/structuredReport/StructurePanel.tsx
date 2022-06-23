@@ -21,7 +21,7 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
     <Paper
       className="medreporter-StructurePanel-root"
       sx={{
-        flex: screenSize === "large" ? "1.5 1 0" : "1 1 0",
+        flex: screenSize === "lg" ? "1.5 1 0" : "1 1 0",
         display: "flex",
         flexDirection: "column",
       }}
