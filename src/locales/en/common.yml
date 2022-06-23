@@ -1,3 +1,6 @@
+CopyReportButton:
+  notification: Copied report to clipboard
+
 LanguageSelector:
   as_site: As page
   de: German

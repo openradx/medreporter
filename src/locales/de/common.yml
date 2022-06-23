@@ -1,3 +1,6 @@
+CopyReportButton:
+  notification: Befund in Ablage kopiert
+
 LanguageSelector:
   as_site: wie Seite
   de: Deutsch
