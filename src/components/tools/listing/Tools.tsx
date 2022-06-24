@@ -18,7 +18,7 @@ const tools: Tool[] = [
     tags: ["tags.radiology", "tags.ct", "tags.adrenal"],
   },
   {
-    url: "/tools/fleicher2017",
+    url: "/tools/fleischner2017",
     title: "Fleischner2017.title",
     description: "Fleischner2017.description",
     tags: ["tags.radiology", "tags.ct", "tags.lung"],
