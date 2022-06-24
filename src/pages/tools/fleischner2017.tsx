@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
-import { MainLayout } from "../../components/common/MainLayout"
+import { StructuredReportLayout } from "../../components/common/StructuredReportLayout"
 import { Fleischner2017 } from "../../components/tools/fleischner2017/Fleischner2017"
 import { NextPageWithLayout } from "../../types"
 import { serverSideReduxState } from "../../utils/serverSideReduxState"
@@ -9,7 +9,9 @@ import { serverSideStructuredReportTranslations } from "../../utils/serverSideSt
 
 const Fleischner2017Page: NextPageWithLayout = () => <Fleischner2017 />
 
-Fleischner2017Page.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
+Fleischner2017Page.getLayout = (page: ReactElement) => (
+  <StructuredReportLayout>{page}</StructuredReportLayout>
+)
 
 export default Fleischner2017Page
 

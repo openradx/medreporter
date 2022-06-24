@@ -6,5 +6,5 @@ interface StructuredReportLayoutProps {
 }
 
 export const StructuredReportLayout = ({ children }: StructuredReportLayoutProps) => (
-  <MainLayout structuredReport>{children}</MainLayout>
+  <MainLayout fullScreen>{children}</MainLayout>
 )
