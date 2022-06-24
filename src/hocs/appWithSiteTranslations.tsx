@@ -5,14 +5,14 @@ import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
 
 interface AppProps {
-  pageProps: Partial<I18nSiteProps>
+  pageProps?: Partial<I18nSiteProps>
 }
 
 export const appWithSiteTranslations = <T extends AppProps>(
   WrappedComponent: ComponentType<T>
 ): ComponentType<T> => {
   const AppWithSiteTranslations = (props: AppProps) => {
-    const serverData = props.pageProps._i18nSite
+    const serverData = props.pageProps?._i18nSite
 
     const i18n = useMemo(() => {
       if (!serverData) return null
