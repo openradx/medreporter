@@ -7,7 +7,6 @@ interface Tool {
   title: string
   description: string
   tags?: string[]
-  authors?: string[]
 }
 
 const tools: Tool[] = [
@@ -28,15 +27,24 @@ const tools: Tool[] = [
 export const Tools = () => {
   const { t } = useSiteTranslation("tools")
 
+  const preparedTools: Required<Tool>[] = tools
+    .map((tool) => ({
+      ...tool,
+      title: t(tool.title),
+      description: t(tool.description),
+      tags: (tool.tags ?? []).map((tag) => t(tag)),
+    }))
+    .sort((tool1, tool2) => tool1.title.localeCompare(tool2.title))
+
   return (
     <Grid>
-      {tools.map((tool) => (
+      {preparedTools.map((tool) => (
         <Grid.Col key={tool.url} sm={12} md={6} lg={4}>
           <ToolCard
             url={tool.url}
-            title={t(tool.title)}
-            description={t(tool.description)}
-            tags={(tool.tags ?? []).map((tag) => t(tag))}
+            title={tool.title}
+            description={tool.description}
+            tags={tool.tags}
           />
         </Grid.Col>
       ))}
