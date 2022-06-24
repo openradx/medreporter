@@ -1,0 +1,16 @@
+tags:
+  adrenal: Adrenal
+  ct: CT
+  lung: Lung
+  radiology: Radiology
+
+AdrenalWashout:
+  title: Adrenal Washout
+  description: >
+    Characterization of adrenal lesions to detect adenomas.
+
+Fleischner2017:
+  title: Fleischner 2017 Guideline
+  description: >
+    Management recommendations of indeterminate pulmonary nodules
+    from the Fleischner society.

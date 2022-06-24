@@ -1,0 +1,16 @@
+tags:
+  adrenal: Nebenniere
+  ct: CT
+  lung: Lunge
+  radiology: Radiologie
+
+AdrenalWashout:
+  title: Nebennieren Washout
+  description: >
+    Charakterisierung von Nebennierenläsion zur Erkennung von Adenomen.
+
+Fleischner2017:
+  title: Fleischner 2017 Richtlinien
+  description: >
+    Empfehlung der Fleischner Fachgesellschaft zum Management unbestimmter
+    Lungenrundherde.
