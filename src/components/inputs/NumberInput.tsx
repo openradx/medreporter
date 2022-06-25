@@ -24,7 +24,7 @@ export const NumberInput = ({
     value={value ?? undefined}
     onChange={(newValue) => onChange(newValue ?? null)}
     step={step ?? 1 / 10 ** precision}
-    stepHoldDelay={500}
+    stepHoldDelay={300}
     stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
     precision={precision}
     styles={{
