@@ -29,7 +29,7 @@ export const Tools = () => {
 
   const preparedTools: Required<Tool>[] = tools
     .map((tool) => ({
-      ...tool,
+      url: tool.url,
       title: t(tool.title),
       description: t(tool.description),
       tags: (tool.tags ?? []).map((tag) => t(tag)),
