@@ -16,6 +16,7 @@
 ## Julia
 
 - Main Page
+- Collapse report panel
 - [NumberInput] Increase/descrease by scrolling
 - Field extras
 - External link images (Next.js Image component, why?)
