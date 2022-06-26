@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
-import { InfoOverlay } from "../overlays/InfoOverlay"
+import { InfoOverlay } from "../structuredReport/InfoOverlay"
 import { NumberInput } from "./NumberInput"
 
 export default {
@@ -31,8 +31,8 @@ Basic.args = {
   label: "Number field",
 }
 
-export const withOverlay = Template.bind({})
-withOverlay.args = {
+export const WithOverlay = Template.bind({})
+WithOverlay.args = {
   label: "With Overlay",
   extras: <InfoOverlay title="Foo" content="bar" />,
 }

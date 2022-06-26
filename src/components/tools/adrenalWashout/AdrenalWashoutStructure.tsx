@@ -1,6 +1,6 @@
 import { List } from "@mantine/core"
 import { NumberField } from "../../fields/NumberField"
-import { InfoOverlay } from "../../overlays/InfoOverlay"
+import { InfoOverlay } from "../../structuredReport/InfoOverlay"
 
 export const AdrenalWashoutStructure = () => (
   <>

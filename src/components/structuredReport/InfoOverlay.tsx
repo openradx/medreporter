@@ -20,21 +20,12 @@ export const InfoOverlay = ({ title, content }: InfoOverlayProps) => {
 
   return (
     <>
-      <Tooltip label="Open Info" position="bottom" transition="scale-y">
-        <ActionIcon onClick={handleClickOpen} sx={{ p: "0", pl: "4px", pointerEvents: "auto" }}>
-          <InfoIcon fontSize="small" />
+      <Tooltip label="Open Info" position="top" transition="pop" openDelay={1000}>
+        <ActionIcon sx={{ marginLeft: 4 }} size={20} onClick={handleClickOpen}>
+          <InfoIcon />
         </ActionIcon>
       </Tooltip>
-      <Modal
-        opened={open}
-        onClose={handleClose}
-        title={title}
-        overflow="inside"
-        closeOnEscape
-        closeOnClickOutside={false}
-        transition="scale-y"
-        size="md"
-      >
+      <Modal opened={open} onClose={handleClose} title={title} overflow="inside" size="md">
         {content}
       </Modal>
     </>
