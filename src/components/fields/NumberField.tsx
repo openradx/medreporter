@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { NumberInput } from "../inputs/NumberInput"
@@ -10,6 +11,7 @@ interface NumberFieldProps extends CommonFieldProps {
   max?: number
   precision?: number
   step?: number
+  extras?: ReactElement
 }
 
 export const NumberField = ({
@@ -21,6 +23,7 @@ export const NumberField = ({
   max,
   precision,
   step,
+  extras,
 }: NumberFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -30,7 +33,7 @@ export const NumberField = ({
   })
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      <NumberInput {...{ label, value, onChange, min, max, precision, step }} />
+      <NumberInput {...{ label, value, onChange, min, max, precision, step, extras }} />
     </BaseField>
   )
 }

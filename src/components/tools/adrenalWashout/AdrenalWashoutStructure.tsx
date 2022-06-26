@@ -1,9 +1,14 @@
 import { List } from "@mantine/core"
 import { NumberField } from "../../fields/NumberField"
+import { InfoOverlay } from "../../overlays/InfoOverlay"
 
 export const AdrenalWashoutStructure = () => (
   <>
-    <NumberField id="nonEnhanced" label="Non-enhanced phase HU" />
+    <NumberField
+      id="nonEnhanced"
+      label="Non-enhanced phase HU"
+      extras={<InfoOverlay title="Foo" content="bar" />}
+    />
     <NumberField id="portalVenous" label="Portal venous phase HU" />
     <NumberField id="delayed" label="Delayed phase HU" />
     <List>

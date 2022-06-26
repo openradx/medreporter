@@ -1,4 +1,5 @@
-import { NumberInput as MantineNumberInput } from "@mantine/core"
+import { Group, NumberInput as MantineNumberInput } from "@mantine/core"
+import { ReactElement } from "react"
 
 interface NumberInputProps {
   label?: string
@@ -8,6 +9,7 @@ interface NumberInputProps {
   max?: number
   step?: number
   precision?: number
+  extras?: ReactElement
 }
 
 export const NumberInput = ({
@@ -18,9 +20,16 @@ export const NumberInput = ({
   max = 1000,
   step,
   precision = 0,
+  extras,
 }: NumberInputProps) => (
   <MantineNumberInput
-    {...{ label, min, max }}
+    label={
+      <Group sx={{ display: "flex", flexDirection: "row", alignContent: "center" }} spacing={1}>
+        {label}
+        {extras}
+      </Group>
+    }
+    {...{ min, max }}
     value={value ?? undefined}
     onChange={(newValue) => onChange(newValue ?? null)}
     step={step ?? 1 / 10 ** precision}

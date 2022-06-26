@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { DateInput } from "../inputs/DateInput"
@@ -6,6 +7,7 @@ import { CommonFieldProps } from "./fieldTypes"
 
 interface DateFieldProps extends CommonFieldProps {
   defaultValue?: Date | null
+  extras?: ReactElement
 }
 
 export const DateField = ({
@@ -13,6 +15,7 @@ export const DateField = ({
   label = "",
   visible = true,
   defaultValue = new Date(),
+  extras,
 }: DateFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -22,7 +25,7 @@ export const DateField = ({
   })
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      <DateInput {...{ label, value, onChange }} />
+      <DateInput {...{ label, value, onChange, extras }} />
     </BaseField>
   )
 }
