@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
+import { InfoOverlay } from "../overlays/InfoOverlay"
 import { NumberInput } from "./NumberInput"
 
 export default {
@@ -7,12 +8,31 @@ export default {
   component: NumberInput,
 } as ComponentMeta<typeof NumberInput>
 
-const Template: ComponentStory<typeof NumberInput> = ({ label, min, max, precision, step }) => {
+const Template: ComponentStory<typeof NumberInput> = ({
+  label,
+  min,
+  max,
+  precision,
+  step,
+  extras,
+}) => {
   const [value, setValue] = useState<number | null>(0)
-  return <NumberInput value={value} onChange={setValue} {...{ label, min, max, precision, step }} />
+  return (
+    <NumberInput
+      value={value}
+      onChange={setValue}
+      {...{ label, min, max, precision, step, extras }}
+    />
+  )
 }
 
 export const Basic = Template.bind({})
 Basic.args = {
   label: "Number field",
+}
+
+export const withOverlay = Template.bind({})
+withOverlay.args = {
+  label: "With Overlay",
+  extras: <InfoOverlay title="Foo" content="bar" />,
 }

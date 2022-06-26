@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { MultilineInput } from "../inputs/MultilineInput"
@@ -8,6 +9,7 @@ import { CommonFieldProps } from "./fieldTypes"
 interface FreeTextFieldProps extends CommonFieldProps {
   defaultValue?: string
   variant?: "singleline" | "multiline"
+  extras?: ReactElement
 }
 
 export const FreeTextField = ({
@@ -16,6 +18,7 @@ export const FreeTextField = ({
   visible = true,
   defaultValue = "",
   variant = "singleline",
+  extras,
 }: FreeTextFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -26,8 +29,8 @@ export const FreeTextField = ({
 
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      {variant === "singleline" && <SinglelineInput {...{ label, value, onChange }} />}
-      {variant === "multiline" && <MultilineInput {...{ label, value, onChange }} />}
+      {variant === "singleline" && <SinglelineInput {...{ label, value, onChange, extras }} />}
+      {variant === "multiline" && <MultilineInput {...{ label, value, onChange, extras }} />}
     </BaseField>
   )
 }
