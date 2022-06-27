@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 
 interface PanelHeaderProps {
   title: string
-  actions?: ReactNode
+  actions?: ReactNode // TODO: improve type
 }
 
 export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (

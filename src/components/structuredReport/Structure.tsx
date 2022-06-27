@@ -31,14 +31,18 @@ export const Structure = ({ title, links, info, children }: StructureProps) => {
   const actions =
     links?.map((link) => <ExternalLink key={link.url} url={link.url} title={link.title} />) ?? []
 
-  if (info) {
-    actions.push(info)
-  }
-
   return (
     <Card ref={cardEl} shadow="sm" withBorder>
       <Card.Section withBorder>
-        <ModuleHeader title={title} actions={actions} />
+        <ModuleHeader
+          title={title}
+          actions={
+            <>
+              {actions}
+              {info}
+            </>
+          }
+        />
       </Card.Section>
       <Card.Section p="sm">{children}</Card.Section>
     </Card>
