@@ -18,7 +18,7 @@ export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (
     })}
   >
     <Text>{title}</Text>
-    <Group spacing="sm" sx={{ flexGrow: 1, justifyContent: "center" }}>
+    <Group spacing="xs" sx={{ flexGrow: 1, justifyContent: "center" }}>
       {actions}
     </Group>
   </Box>
