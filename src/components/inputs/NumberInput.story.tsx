@@ -34,5 +34,5 @@ Basic.args = {
 export const WithOverlay = Template.bind({})
 WithOverlay.args = {
   label: "With Overlay",
-  extras: <FieldInfo title="Foo" content="bar" />,
+  extras: <FieldInfo title="Foo">foobar</FieldInfo>,
 }
