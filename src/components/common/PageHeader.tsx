@@ -123,7 +123,7 @@ export const PageHeader = () => {
         <Group spacing="sm" className={classes.links}>
           {items}
         </Group>
-        <Group spacing="sm">
+        <Group spacing="xs">
           <ColorSchemeToggle />
           <SiteLanguageSelector />
         </Group>

@@ -3,6 +3,7 @@ import { Report } from "../../structuredReport/Report"
 import { Section } from "../../structuredReport/Section"
 import { Structure } from "../../structuredReport/Structure"
 import { StructuredReport } from "../../structuredReport/StructuredReport"
+import { AdrenalWashoutInfo } from "./AdrenalWashoutInfo"
 import { AdrenalWashoutReport } from "./AdrenalWashoutReport"
 import { AdrenalWashoutStructure } from "./AdrenalWashoutStructure"
 
@@ -18,6 +19,7 @@ export const AdrenalWashout = () => (
               title: "Radiopaedia | Adrenal Washout",
             },
           ]}
+          info={<AdrenalWashoutInfo />}
         >
           <AdrenalWashoutStructure />
         </Structure>

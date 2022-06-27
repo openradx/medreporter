@@ -24,9 +24,15 @@ export const ExternalLink = ({ url, title }: ExternalLinkProps) => {
   if (!title) title = url
 
   return (
-    <ActionIcon component="a" rel="noopener noreferrer" target="_blank" href={url}>
+    <ActionIcon
+      variant="default"
+      component="a"
+      rel="noopener noreferrer"
+      target="_blank"
+      href={url}
+    >
       <Tooltip label={title} position="bottom">
-        <div>{logo ? <Image src={logo} alt={title} width={24} height={24} /> : <LinkIcon />}</div>
+        <div>{logo ? <Image src={logo} alt={title} width={20} height={20} /> : <LinkIcon />}</div>
       </Tooltip>
     </ActionIcon>
   )
