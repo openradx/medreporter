@@ -17,7 +17,8 @@
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "start-storybook -p 7001",
     "storybook:build": "build-storybook",
-    "svg:extract_ids": "node -r @swc-node/register scripts/parseSVG.ts"
+    "svg:options": "node -r @swc-node/register scripts/parseSVG.ts --output options",
+    "svg:translations": "node -r @swc-node/register scripts/parseSVG.ts --output translations"
   },
   "dependencies": {
     "@hookform/devtools": "^4.1.0",
@@ -75,6 +76,7 @@
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "babel-loader": "^8.2.4",
+    "commander": "^9.3.0",
     "eslint": "^8.11.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "^16.1.4",

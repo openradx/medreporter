@@ -1,30 +1,51 @@
 /*
  * Usage:
- * node -r @swc-node/register scripts/parseSVG.ts public/images/arteriesBrain.svg
+ * node -r @swc-node/register scripts/parseSVG.ts --output options public/images/arteriesBrain.svg
+ * node -r @swc-node/register scripts/parseSVG.ts --output translations public/images/arteriesBrain.svg
  * or (by using scripts entry in package.json)
- * yarn svg:extract_ids ./public/images/arteriesBrain.svg
+ * yarn svg:options ./public/images/arteriesBrain.svg
+ * yarn svg:translations ./public/images/arteriesBrain.svg
  */
+import { Option, program } from "commander"
 import { readFileSync } from "fs"
 import { parse, Node, ElementNode } from "svg-parser"
 import { stringify } from "yaml"
 
-const filename = process.argv[2]
+program
+  .description("Parses a SVG file and extracts information.")
+  .argument("<svg_file>")
+  .addOption(
+    new Option("-o, --output <format>", "Output format")
+      .choices(["options", "translations"])
+      .makeOptionMandatory()
+  )
+  .parse(process.argv)
 
-if (!filename) {
+const filepath = program.args[0]
+const output = program.opts().output as "options" | "translations"
+
+if (!filepath || !filepath.endsWith(".svg")) {
   // eslint-disable-next-line no-console
   console.error("You must provide a SVG filename!")
   process.exit()
 }
 
-const svgString = readFileSync(filename, "utf-8")
+const imageName = filepath.replace(/^.*[\\/]/, "").replace(/\.[^/.]+$/, "")
+
+const svgString = readFileSync(filepath, "utf-8")
 const root = parse(svgString)
-const result: Record<string, string> = {}
+
+const ids: string[] = []
 
 const travel = (node: Node) => {
   if (node.type === "element") {
     const element = node as ElementNode
     if (element.properties && "id" in element.properties) {
-      result[element.properties.id] = element.properties.id as string
+      const id = element.properties.id as string
+      if (id in ids) {
+        throw new Error(`Image contains duplicate IDs: ${id}`)
+      }
+      ids.push(id)
       return
     }
     element.children.forEach((child) => {
@@ -37,5 +58,16 @@ const travel = (node: Node) => {
 
 travel(root.children[0])
 
-// eslint-disable-next-line no-console
-console.log(stringify(result))
+if (output === "options") {
+  const result = ids.map((id) => ({ value: id, label: `${imageName}.${id}` }))
+  // eslint-disable-next-line no-console
+  console.log(result)
+}
+
+if (output === "translations") {
+  const result = stringify({
+    [imageName]: Object.fromEntries(ids.map((id) => [id, "_____"])),
+  })
+  // eslint-disable-next-line no-console
+  console.log(result)
+}
