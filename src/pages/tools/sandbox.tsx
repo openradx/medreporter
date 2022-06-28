@@ -1,0 +1,26 @@
+import { GetServerSideProps } from "next"
+import { ReactElement } from "react"
+import { StructuredReportLayout } from "../../components/common/StructuredReportLayout"
+import { Sandbox } from "../../components/tools/sandbox/Sandbox"
+import { NextPageWithLayout } from "../../types"
+import { serverSideReduxState } from "../../utils/serverSideReduxState"
+import { serverSideSiteTranslations } from "../../utils/serverSideSiteTranslations"
+import { serverSideStructuredReportTranslations } from "../../utils/serverSideStructuredReportTranslations"
+
+const SandboxPage: NextPageWithLayout = () => <Sandbox />
+
+SandboxPage.getLayout = (page: ReactElement) => (
+  <StructuredReportLayout>{page}</StructuredReportLayout>
+)
+
+export default SandboxPage
+
+export const getServerSideProps: GetServerSideProps = async ({ locale, locales }) => ({
+  props: {
+    ...(await serverSideSiteTranslations(locale!, locales!)),
+    ...(await serverSideStructuredReportTranslations(locale!, locale!, locales!, [
+      "adrenalWashout",
+    ])),
+    ...(await serverSideReduxState({})),
+  },
+})

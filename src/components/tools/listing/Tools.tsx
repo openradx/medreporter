@@ -11,6 +11,12 @@ interface Tool {
 
 const tools: Tool[] = [
   {
+    url: "/tools/sandbox",
+    title: "Sandbox.title",
+    description: "Sandbox.description",
+    tags: ["tags.radiology"],
+  },
+  {
     url: "/tools/adrenal-washout",
     title: "AdrenalWashout.title",
     description: "AdrenalWashout.description",
