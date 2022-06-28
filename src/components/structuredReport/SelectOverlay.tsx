@@ -117,9 +117,8 @@ export const SelectOverlay = ({ svgImage, mapping = DEFAULT_MAPPING }: SelectOve
         }}
         size="80%"
       >
-        <Tooltip
+        <Tooltip.Floating
           label={tooltipTitle}
-          withArrow
           position="top"
           sx={{ visibility: tooltipTitle ? "visible" : "hidden" }}
         >
@@ -132,14 +131,15 @@ export const SelectOverlay = ({ svgImage, mapping = DEFAULT_MAPPING }: SelectOve
               justifyContent: "center",
               outline: "none",
               "& svg": {
-                maxHeight: "100%",
+                maxWidth: "70vw",
+                maxHeight: "70vh",
                 cursor: "default",
-              },
-              [`& ${hoverTagName}[id]:hover`]: {
-                fill: "orange",
-                fillOpacity: 1,
-                stroke: "",
-                strokeWidth: "",
+                [`& ${hoverTagName}[id]:hover`]: {
+                  fill: "orange",
+                  fillOpacity: 1,
+                  stroke: "",
+                  strokeWidth: "",
+                },
               },
               "& [id]": { cursor: "pointer" },
               "& text": { pointerEvents: "none" },
@@ -147,11 +147,19 @@ export const SelectOverlay = ({ svgImage, mapping = DEFAULT_MAPPING }: SelectOve
             }}
           >
             {svgImage}
-            <ActionIcon sx={{ position: "absolute", right: 8, bottom: 16 }}>
-              <ResetIcon />
-            </ActionIcon>
+            <Tooltip label={t("SelectOverlay.reset")!}>
+              <ActionIcon
+                onClick={(event: { stopPropagation: () => void }) => {
+                  event.stopPropagation()
+                  onChange?.(multiple ? [] : null)
+                }}
+                sx={{ position: "absolute", right: 8, bottom: 16 }}
+              >
+                <ResetIcon />
+              </ActionIcon>
+            </Tooltip>
           </Box>
-        </Tooltip>
+        </Tooltip.Floating>
       </Modal>
     </>
   )
