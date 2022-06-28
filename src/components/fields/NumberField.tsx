@@ -10,6 +10,7 @@ interface NumberFieldProps extends CommonFieldProps {
   max?: number
   precision?: number
   step?: number
+  unit?: string
 }
 
 export const NumberField = ({
@@ -21,6 +22,7 @@ export const NumberField = ({
   max,
   precision,
   step,
+  unit,
 }: NumberFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -30,7 +32,7 @@ export const NumberField = ({
   })
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      <NumberInput {...{ label, value, onChange, min, max, precision, step }} />
+      <NumberInput {...{ label, value, onChange, min, max, precision, step, unit }} />
     </BaseField>
   )
 }

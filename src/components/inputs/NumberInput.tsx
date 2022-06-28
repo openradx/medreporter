@@ -8,6 +8,7 @@ interface NumberInputProps {
   max?: number
   step?: number
   precision?: number
+  unit?: string
 }
 
 export const NumberInput = ({
@@ -18,6 +19,7 @@ export const NumberInput = ({
   max = 1000,
   step,
   precision = 0,
+  unit,
 }: NumberInputProps) => (
   <MantineNumberInput
     {...{ label, min, max }}
@@ -27,6 +29,7 @@ export const NumberInput = ({
     stepHoldDelay={500}
     stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
     precision={precision}
+    icon={unit && <p>{unit}</p>}
     styles={{
       control: {
         flexGrow: 1,
@@ -34,6 +37,8 @@ export const NumberInput = ({
         "&:hover": { flex: "0 0 60%" },
       },
       rightSection: { alignItems: "stretch" },
+      icon: { right: 24, left: "auto" },
+      withIcon: { paddingLeft: 12, paddingRight: 61 },
     }}
   />
 )
