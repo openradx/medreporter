@@ -47,6 +47,7 @@
     "react-i18next": "^11.17.1",
     "react-icons": "^4.4.0",
     "react-redux": "^8.0.2",
+    "svg-parser": "^2.0.4",
     "underscore": "^1.13.4",
     "use-debounce": "^8.0.1",
     "zod": "^3.17.3"
