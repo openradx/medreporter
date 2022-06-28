@@ -4,6 +4,7 @@ import { useModule } from "../../contexts/ModuleContext"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
 import { selectScrollInto } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
+import { ActionsGroup } from "../common/ActionsGroup"
 import { ExternalLink, ExternalLinkProps } from "./ExternalLink"
 import { ModuleHeader } from "./ModuleHeader"
 
@@ -37,10 +38,10 @@ export const Structure = ({ title, links, info, children }: StructureProps) => {
         <ModuleHeader
           title={title}
           actions={
-            <>
+            <ActionsGroup>
               {actions}
               {info}
-            </>
+            </ActionsGroup>
           }
         />
       </Card.Section>

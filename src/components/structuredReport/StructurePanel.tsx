@@ -1,6 +1,7 @@
 import { Box, MediaQuery, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
+import { ActionsGroup } from "../common/ActionsGroup"
 import { ClearButton } from "./ClearButton"
 import { PanelHeader } from "./PanelHeader"
 import { RedoButton } from "./RedoButton"
@@ -31,12 +32,12 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
           <PanelHeader
             title={t("Structure.title")}
             actions={
-              <>
+              <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
                 <ClearButton />
                 <UndoButton />
                 <RedoButton />
                 <StructureLanguageSelector />
-              </>
+              </ActionsGroup>
             }
           />
           <ScrollArea className="medreporter-StructurePanel-content" sx={{ flexGrow: 1 }}>

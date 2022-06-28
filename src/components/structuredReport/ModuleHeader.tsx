@@ -1,9 +1,9 @@
-import { Box, Group, Text } from "@mantine/core"
-import { ReactNode } from "react"
+import { Box, Text } from "@mantine/core"
+import { ReactElement } from "react"
 
 interface ModuleHeaderProps {
   title: string
-  actions?: ReactNode // TODO: improve type
+  actions?: ReactElement
 }
 
 export const ModuleHeader = ({ title, actions }: ModuleHeaderProps) => (
@@ -15,6 +15,6 @@ export const ModuleHeader = ({ title, actions }: ModuleHeaderProps) => (
     })}
   >
     <Text>{title}</Text>
-    <Group spacing="xs">{actions}</Group>
+    {actions}
   </Box>
 )

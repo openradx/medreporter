@@ -12,6 +12,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
+import { ActionsGroup } from "./ActionsGroup"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
 import { SiteLanguageSelector } from "./SiteLanguageSelector"
 
@@ -123,10 +124,10 @@ export const PageHeader = () => {
         <Group spacing="sm" className={classes.links}>
           {items}
         </Group>
-        <Group spacing="xs">
+        <ActionsGroup>
           <ColorSchemeToggle />
           <SiteLanguageSelector />
-        </Group>
+        </ActionsGroup>
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (
             <Paper className={classes.dropdown} withBorder style={styles}>

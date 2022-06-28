@@ -1,9 +1,9 @@
-import { Box, Group, Text } from "@mantine/core"
-import { ReactNode } from "react"
+import { Box, Text } from "@mantine/core"
+import { ReactElement } from "react"
 
 interface PanelHeaderProps {
   title: string
-  actions?: ReactNode // TODO: improve type
+  actions?: ReactElement
 }
 
 export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (
@@ -18,8 +18,6 @@ export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (
     })}
   >
     <Text>{title}</Text>
-    <Group spacing="xs" sx={{ flexGrow: 1, justifyContent: "center" }}>
-      {actions}
-    </Group>
+    {actions}
   </Box>
 )

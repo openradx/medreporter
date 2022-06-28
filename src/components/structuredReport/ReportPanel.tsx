@@ -4,6 +4,7 @@ import { REPORT_CONTENT_ID } from "../../constants/general"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { selectDataInitialized } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
+import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
 import { PanelHeader } from "./PanelHeader"
 import { ReportLanguageSelector } from "./ReportLanguageSelector"
@@ -30,10 +31,10 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
       <PanelHeader
         title={t("Report.title")}
         actions={
-          <>
+          <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
             <CopyButton />
             <ReportLanguageSelector />
-          </>
+          </ActionsGroup>
         }
       />
       {!dataInitialized && (
