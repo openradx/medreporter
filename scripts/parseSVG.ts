@@ -1,3 +1,9 @@
+/*
+ * Usage:
+ * node -r @swc-node/register scripts/parseSVG.ts public/images/arteriesBrain.svg
+ * or (by using scripts entry in package.json)
+ * yarn svg:extract_ids ./public/images/arteriesBrain.svg
+ */
 import { readFileSync } from "fs"
 import { parse, Node, ElementNode } from "svg-parser"
 import { stringify } from "yaml"
@@ -5,6 +11,7 @@ import { stringify } from "yaml"
 const filename = process.argv[2]
 
 if (!filename) {
+  // eslint-disable-next-line no-console
   console.error("You must provide a SVG filename!")
   process.exit()
 }
@@ -20,15 +27,15 @@ const travel = (node: Node) => {
       result[element.properties.id] = element.properties.id as string
       return
     }
-    for (const child of element.children) {
+    element.children.forEach((child) => {
       if (typeof child !== "string") {
         travel(child)
       }
-    }
+    })
   }
 }
 
 travel(root.children[0])
-console.log(stringify(result))
 
-//yarn ts-node scripts/parseSVG.ts app/core/images/anatomy/
+// eslint-disable-next-line no-console
+console.log(stringify(result))
