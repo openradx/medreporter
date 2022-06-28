@@ -1,10 +1,8 @@
-import { DevTool } from "@hookform/devtools"
 import { Box } from "@mantine/core"
 import copy from "fast-copy"
 import { ReactNode, useCallback, useEffect, useRef } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
-import config from "../../app.config"
 import { StructureFormContextProvider } from "../../contexts/StructureFormContext"
 import { setDataInitialized } from "../../state/displaySlice"
 import { useAppDispatch } from "../../state/store"
@@ -91,9 +89,10 @@ export const StructureForm = ({ children }: StructureFormProps) => {
         >
           {children}
         </Box>
-        {config.reactHookFormDevToolsEnabled && (
+        {/* TODO: see https://github.com/react-hook-form/devtools/issues/141 */}
+        {/* {config.reactHookFormDevToolsEnabled && (
           <DevTool placement="top-right" control={methods?.control} />
-        )}
+        )} */}
       </FormProvider>
     </StructureFormContextProvider>
   )

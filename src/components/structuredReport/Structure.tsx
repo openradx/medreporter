@@ -1,19 +1,20 @@
 import { Card } from "@mantine/core"
-import { ReactNode, useEffect, useRef } from "react"
+import { ReactElement, ReactNode, useEffect, useRef } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
 import { selectScrollInto } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
-import { ExternalLinkProps } from "./ExternalLink"
+import { ExternalLink, ExternalLinkProps } from "./ExternalLink"
 import { ModuleHeader } from "./ModuleHeader"
 
 interface StructureProps {
   title: string
   links?: ExternalLinkProps[]
+  info?: ReactElement
   children?: ReactNode
 }
 
-export const Structure = ({ title, links, children }: StructureProps) => {
+export const Structure = ({ title, links, info, children }: StructureProps) => {
   const { context } = useStructuredReport()
   const { id: moduleId } = useModule()
   const scrollInto = useAppSelector(selectScrollInto)
@@ -27,10 +28,21 @@ export const Structure = ({ title, links, children }: StructureProps) => {
 
   if (context === "report") return null
 
+  const actions =
+    links?.map((link) => <ExternalLink key={link.url} url={link.url} title={link.title} />) ?? []
+
   return (
     <Card ref={cardEl} shadow="sm" withBorder>
       <Card.Section withBorder>
-        <ModuleHeader title={title} links={links} />
+        <ModuleHeader
+          title={title}
+          actions={
+            <>
+              {actions}
+              {info}
+            </>
+          }
+        />
       </Card.Section>
       <Card.Section p="sm">{children}</Card.Section>
     </Card>

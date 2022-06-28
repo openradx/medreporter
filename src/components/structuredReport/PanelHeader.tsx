@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 
 interface PanelHeaderProps {
   title: string
-  actions?: ReactNode
+  actions?: ReactNode // TODO: improve type
 }
 
 export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (
@@ -18,7 +18,7 @@ export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (
     })}
   >
     <Text>{title}</Text>
-    <Group spacing="sm" sx={{ flexGrow: 1, justifyContent: "center" }}>
+    <Group spacing="xs" sx={{ flexGrow: 1, justifyContent: "center" }}>
       {actions}
     </Group>
   </Box>
