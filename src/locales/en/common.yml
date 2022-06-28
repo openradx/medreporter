@@ -14,5 +14,9 @@ PageHeader:
 Report:
   title: Report
 
+SelectOverlay:
+  openGraphic: Open graphic
+  reset: Reset
+
 Structure:
   title: Structure

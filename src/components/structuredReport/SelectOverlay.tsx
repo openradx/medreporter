@@ -38,6 +38,8 @@ export const SelectOverlay = ({ svgImage, mapping = DEFAULT_MAPPING }: SelectOve
     setHoverTagName(tagName || "")
   }
 
+  const getCssId = (optionId: string) => mapping[optionId] || optionId
+
   const getOptionId = (cssId: string) =>
     Object.keys(mapping).find((optionId) => mapping[optionId] === cssId) || cssId
 
@@ -71,6 +73,32 @@ export const SelectOverlay = ({ svgImage, mapping = DEFAULT_MAPPING }: SelectOve
       }
     }
   }
+
+  const selectedCss = () => {
+    const cssClicked = {
+      fill: "red",
+      fillOpacity: 1,
+      stroke: "#C1272D",
+      strokeWidth: "0.5pt",
+    }
+    if (multiple) {
+      const values = value as string[]
+      return Object.fromEntries(
+        values.map((optionId) => {
+          const cssId = getCssId(optionId)
+          const cssSelector = `& #${cssId}`
+          return [cssSelector, cssClicked]
+        })
+      )
+    }
+    if (value) {
+      const cssId = getCssId(value as string)
+      const cssSelector = `& #${cssId}`
+      return { [cssSelector]: cssClicked }
+    }
+    return {}
+  }
+
   return (
     <>
       <Tooltip label={t("SelectOverlay.openGraphic")!} position="top" withArrow={false}>
@@ -89,9 +117,8 @@ export const SelectOverlay = ({ svgImage, mapping = DEFAULT_MAPPING }: SelectOve
         }}
         size="80%"
       >
-        <Tooltip
+        <Tooltip.Floating
           label={tooltipTitle}
-          withArrow
           position="top"
           sx={{ visibility: tooltipTitle ? "visible" : "hidden" }}
         >
@@ -104,25 +131,35 @@ export const SelectOverlay = ({ svgImage, mapping = DEFAULT_MAPPING }: SelectOve
               justifyContent: "center",
               outline: "none",
               "& svg": {
-                maxHeight: "100%",
+                maxWidth: "70vw",
+                maxHeight: "70vh",
                 cursor: "default",
-              },
-              [`& ${hoverTagName}[id]:hover`]: {
-                fill: "orange",
-                fillOpacity: 1,
-                stroke: "",
-                strokeWidth: "",
+                [`& ${hoverTagName}[id]:hover`]: {
+                  fill: "orange",
+                  fillOpacity: 1,
+                  stroke: "",
+                  strokeWidth: "",
+                },
               },
               "& [id]": { cursor: "pointer" },
               "& text": { pointerEvents: "none" },
+              ...selectedCss(),
             }}
           >
             {svgImage}
-            <ActionIcon sx={{ position: "absolute", right: 8, bottom: 16 }}>
-              <ResetIcon />
-            </ActionIcon>
+            <Tooltip label={t("SelectOverlay.reset")!}>
+              <ActionIcon
+                onClick={(event: { stopPropagation: () => void }) => {
+                  event.stopPropagation()
+                  onChange?.(multiple ? [] : null)
+                }}
+                sx={{ position: "absolute", right: 8, bottom: 16 }}
+              >
+                <ResetIcon />
+              </ActionIcon>
+            </Tooltip>
           </Box>
-        </Tooltip>
+        </Tooltip.Floating>
       </Modal>
     </>
   )

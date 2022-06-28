@@ -14,3 +14,8 @@ Fleischner2017:
   description: >
     Management recommendations of indeterminate pulmonary nodules
     from the Fleischner society.
+
+Sandbox:
+  title: Sandbox
+  description:  > 
+    Testing environment for fields, layout, extras

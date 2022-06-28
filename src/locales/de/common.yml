@@ -14,5 +14,9 @@ PageHeader:
 Report:
   title: Befund
 
+SelectOverlay:
+  openGraphic: Grafik öffnen
+  reset: Zurücksetzen
+
 Structure:
   title: Struktur

@@ -9,8 +9,8 @@ export const AdrenalWashoutStructure = () => (
     <NumberField id="delayed" label="Delayed phase HU" min={MIN_HU} max={MAX_HU} />
     <List>
       <List.Item>
-        The ROI should cover approximately two-third of the lesion without including the perphery to
-        reduce partial volume averaging effects of the surrounding fat.
+        The ROI should cover approximately two-third of the lesion without including the periphery
+        to reduce partial volume averaging effects of the surrounding fat.
       </List.Item>
       <List.Item>Whenever possible the absolute washout should be preferred.</List.Item>
     </List>
