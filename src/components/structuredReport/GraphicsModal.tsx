@@ -10,10 +10,10 @@ interface GraphicsModalProps {
   opened: boolean
   onClose: () => void
   svg: ReactElement
-  labels: { [optionId: string]: string }
+  labels: { [value: string]: string }
   value: string | string[] | null
   onChange: (value: string | string[] | null) => void
-  mapping?: Record<string, string>
+  mapping?: { [value: string]: string }
 }
 
 export const GraphicsModal = ({
@@ -29,37 +29,39 @@ export const GraphicsModal = ({
   const [tooltipTitle, setTooltipTitle] = useState("")
   const [hoverTagName, setHoverTagName] = useState("")
 
+  const getSvgId = (optionValue: string) => mapping[optionValue] || optionValue
+
+  const getOptionValue = (svgId: string) =>
+    Object.keys(mapping).find((optionValue) => mapping[optionValue] === svgId) || svgId
+
   const { t } = useSiteTranslation()
 
   const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
     const target = event.target as HTMLElement
-    const optionId = target.parentElement?.id ? target.parentElement?.id : target.id
+    const svgId = target.parentElement?.id ? target.parentElement?.id : target.id
     const tagName = target.parentElement?.id ? target.parentElement.tagName : target.tagName
-    const label = labels[optionId] ?? optionId
+
+    const optionValue = getOptionValue(svgId)
+    const label = labels[optionValue] ?? svgId
     setTooltipTitle(label || "")
     setHoverTagName(tagName || "")
   }
-
-  const getCssId = (optionId: string) => mapping[optionId] || optionId
-
-  const getOptionId = (cssId: string) =>
-    Object.keys(mapping).find((optionId) => mapping[optionId] === cssId) || cssId
 
   const multiple = Array.isArray(value)
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     event.stopPropagation()
     const target = event.target as HTMLElement
-    const cssId = target.parentElement?.id ? target.parentElement?.id : target.id
-    if (cssId) {
-      const optionId = getOptionId(cssId)
+    const svgId = target.parentElement?.id ? target.parentElement?.id : target.id
+    if (svgId) {
+      const optionValue = getOptionValue(svgId)
       if (multiple) {
         if (!Array.isArray(value)) {
           throw new Error("Value in multiple must be an array.")
         }
-        const indexToRemove = value.indexOf(optionId)
+        const indexToRemove = value.indexOf(optionValue)
         if (indexToRemove === -1) {
-          onChange?.([...value, optionId])
+          onChange?.([...value, optionValue])
         } else {
           onChange?.([...value.slice(0, indexToRemove), ...value.slice(indexToRemove + 1)])
         }
@@ -67,8 +69,8 @@ export const GraphicsModal = ({
         if (typeof value !== "string" && value !== null) {
           throw new Error("Value in single must be a string or null.")
         }
-        if (optionId !== value) {
-          onChange?.(optionId)
+        if (optionValue !== value) {
+          onChange?.(optionValue)
         } else {
           onChange?.(null)
         }
@@ -86,16 +88,16 @@ export const GraphicsModal = ({
     if (multiple) {
       const values = value as string[]
       return Object.fromEntries(
-        values.map((optionId) => {
-          const cssId = getCssId(optionId)
-          const cssSelector = `& #${cssId}`
+        values.map((optionValue) => {
+          const svgId = getSvgId(optionValue)
+          const cssSelector = `& #${svgId}`
           return [cssSelector, cssClicked]
         })
       )
     }
     if (value) {
-      const cssId = getCssId(value as string)
-      const cssSelector = `& #${cssId}`
+      const svgId = getSvgId(value as string)
+      const cssSelector = `& #${svgId}`
       return { [cssSelector]: cssClicked }
     }
     return {}
