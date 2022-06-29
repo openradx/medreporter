@@ -1,4 +1,4 @@
-import { Card } from "@mantine/core"
+import { Box, Paper } from "@mantine/core"
 import { ReactElement, ReactNode, useEffect, useRef } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
@@ -33,19 +33,17 @@ export const Structure = ({ title, links, info, children }: StructureProps) => {
     links?.map((link) => <ExternalLink key={link.url} url={link.url} title={link.title} />) ?? []
 
   return (
-    <Card ref={cardEl} shadow="sm" withBorder>
-      <Card.Section withBorder>
-        <ModuleHeader
-          title={title}
-          actions={
-            <ActionsGroup>
-              {actions}
-              {info}
-            </ActionsGroup>
-          }
-        />
-      </Card.Section>
-      <Card.Section p="sm">{children}</Card.Section>
-    </Card>
+    <Paper ref={cardEl} shadow="md" withBorder>
+      <ModuleHeader
+        title={title}
+        actions={
+          <ActionsGroup>
+            {actions}
+            {info}
+          </ActionsGroup>
+        }
+      />
+      <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
+    </Paper>
   )
 }

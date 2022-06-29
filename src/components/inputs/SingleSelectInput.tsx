@@ -30,5 +30,6 @@ export const SingleSelectInput = ({
     onChange={onChange}
     data={options}
     searchable
+    withinPortal
   />
 )

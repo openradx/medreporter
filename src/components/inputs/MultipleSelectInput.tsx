@@ -30,5 +30,6 @@ export const MultipleSelectInput = ({
     onChange={onChange}
     data={options}
     searchable
+    withinPortal
   />
 )
