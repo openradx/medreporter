@@ -1,11 +1,9 @@
-import ArteriesBrain from "../../../../public/images/arteriesBrain.svg"
-import BonesFeetBothSides from "../../../../public/images/bonesFeetBothSides.svg"
 import { DateField } from "../../fields/DateField"
 import { FreeTextField } from "../../fields/FreeTextField"
 import { MultipleChoiceField } from "../../fields/MultipleChoiceField"
 import { NumberField } from "../../fields/NumberField"
 import { SingleChoiceField } from "../../fields/SingleChoiceField"
-import { SelectOverlay } from "../../structuredReport/SelectOverlay"
+import { BrainArteries } from "../../graphics/BrainArteries"
 
 export const SandboxStructure = () => {
   const optionsArteries = [
@@ -42,40 +40,6 @@ export const SandboxStructure = () => {
     { value: "leftM2Superior", label: "leftM2Superior" },
   ]
 
-  const mappingArteries = {
-    basilaris: "basilaris",
-    basilarisHead: "basilarisHead",
-    ACA: "ACA",
-    rightV4: "rightV4",
-    rightPICA: "rightPICA",
-    rightSCA: "rightSCA",
-    rightP1: "rightP1",
-    rightP2: "rightP2",
-    rightACP: "rightACP",
-    rightA1: "rightA1",
-    rightA2: "rightA2",
-    rightACMT: "rightACMT",
-    rightM1Proximal: "rightM1Proximal",
-    rightM1Distal: "rightM1Distal",
-    rightM1Bifurcation: "rightM1Bifurcation",
-    rightM2Inferior: "rightM2Inferior",
-    rightM2Superior: "rightM2Superior",
-    leftV4: "leftV4",
-    leftPICA: "leftPICA",
-    leftSCA: "leftSCA",
-    leftP1: "leftP1",
-    leftP2: "leftP2",
-    leftACP: "leftACP",
-    leftA1: "leftA1",
-    leftA2: "leftA2",
-    leftACMT: "leftACMT",
-    leftM1Proximal: "leftM1Proximal",
-    leftM1Distal: "leftM1Distal",
-    leftM1Bifurcation: "leftM1Bifurcation",
-    leftM2Inferior: "leftM2Inferior",
-    leftM2Superior: "leftM2Superior",
-  }
-
   return (
     <>
       <DateField id="date" label="Todays date" />
@@ -85,13 +49,13 @@ export const SandboxStructure = () => {
         label="Arteries of the brain"
         variant="select"
         options={optionsArteries}
-        extras={<SelectOverlay svgImage={<ArteriesBrain />} mapping={mappingArteries} />}
+        extras={<BrainArteries />}
       />
       <MultipleChoiceField
         id="bones_feet"
         label="Bones of the feet"
         variant="select"
-        extras={<SelectOverlay svgImage={<BonesFeetBothSides />} />}
+        extras={<BrainArteries />}
       />
       <FreeTextField id="text" label="Some text" variant="multiline" />
     </>

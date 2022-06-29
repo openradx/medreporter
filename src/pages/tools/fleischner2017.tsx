@@ -20,6 +20,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, locales }
     ...(await serverSideSiteTranslations(locale!, locales!)),
     ...(await serverSideStructuredReportTranslations(locale!, locale!, locales!, [
       "fleischner2017",
+      "graphics",
     ])),
     ...(await serverSideReduxState({})),
   },
