@@ -1,0 +1,695 @@
+BrainArteries:
+  title: Circulus arteriosus cerebri  
+  leftM2Superior: superiores M2-Segment links
+  leftM2Inferior: inferiores M2-Segment links
+  leftM1Bifurcation: Mediabifurkation links
+  leftM1Distal: distales M1-Segment links
+  leftM1Proximal: proximales M1-Segment links
+  leftACMT: Carotis-T links
+  leftA1: A1-Segment links
+  leftA2: A2-Segment links
+  leftACI: A. carotis interna links
+  leftACP: A. communicans posterior links
+  leftP2: P2-Segment links
+  leftP1: P1-Segment links
+  leftSCA: A. superior cerebelli links
+  leftAICA: A. inferior anterior cerebelli links
+  leftPICA: A. inferior posterior cerebelli links
+  leftV4: V4-Segment links
+  rightM2Superior: superiores M2-Segment rechts
+  rightM2Inferior: inferiores M2-Segment rechts
+  rightM1Bifurcation: Mediabifurkation rechts
+  rightM1Distal: distales M1-Segment rechts
+  rightM1Proximal: proximales M1-Segment rechts
+  rightACMT: Carotis-T rechts
+  rightA1: A1-Segment rechts
+  rightA2: A2-Segment rechts
+  rightACI: A. carotis interna rechts
+  rightACP: A. communicans posterior rechts
+  rightP2: P2-Segment rechts
+  rightP1: P1-Segment rechts
+  rightSCA: A. superior cerebelli rechts
+  rightAICA: A. inferior anterior cerebelli rechts
+  rightPICA: A. inferior posterior cerebelli rechts
+  rightV4: V4-Segment rechts
+  ACA: A. communicans anterior
+  basilarisHead: Basilariskopf
+  basilaris: A. basilaris
+
+BonesFeet:
+  title: Knochen des Fußes
+  rightTalus: Talus rechts
+  rightCalcaneus: Calcaneus rechts
+  rightNavicular: Os naviculare rechts
+  rightCuboid: Os cuboideum rechts
+  rightLateralCuneiform: Os cuneiforme laterale rechts
+  rightIntermediateCuneiform: Os cuneiforme intermedium rechts
+  rightMedialCuneiform: Os cuneiforme mediale rechts
+  rightSesamoid: Os sesamoideum rechts
+  rightMetatarsal1: Os metatarsale I rechts
+  rightMetatarsal2: Os metatarsale II rechts
+  rightMetatarsal3: Os metatarsale III rechts
+  rightMetatarsal4: Os metatarsale IV rechts
+  rightMetatarsal5: Os metatarsale V rechts
+  rightProximalPhalanx1: Phalanx proximalis I rechts
+  rightProximalPhalanx2: Phalanx proximalis II rechts
+  rightProximalPhalanx3: Phalanx proximalis III rechts
+  rightProximalPhalanx4: Phalanx proximalis IV rechts
+  rightProximalPhalanx5: Phalanx proximalis V rechts
+  rightMiddlePhalanx2: Phalanx media II rechts
+  rightMiddlePhalanx3: Phalanx media III rechts
+  rightMiddlePhalanx4: Phalanx media IV rechts
+  rightMiddlePhalanx5: Phalanx media V rechts
+  rightDistalPhalanx1: Phalanx distalis I rechts
+  rightDistalPhalanx2: Phalanx distalis II rechts
+  rightDistalPhalanx3: Phalanx distalis III rechts
+  rightDistalPhalanx4: Phalanx distalis IV rechts
+  rightDistalPhalanx5: Phalanx distalis V rechts
+  leftTalus: Talus links
+  leftCalcaneus: Calcaneus links
+  leftNavicular: Os naviculare links
+  leftCuboid: Os cuboideum links
+  leftLateralCuneiform: Os cuneiforme laterale links
+  leftIntermediateCuneiform: Os cuneiforme intermedium links
+  leftMedialCuneiform: Os cuneiforme mediale links
+  leftSesamoid: Os sesamoideum links
+  leftMetatarsal1: Os metatarsale I links
+  leftMetatarsal2: Os metatarsale II links
+  leftMetatarsal3: Os metatarsale III links
+  leftMetatarsal4: Os metatarsale IV links
+  leftMetatarsal5: Os metatarsale V links
+  leftProximalPhalanx1: Phalanx proximalis I links
+  leftProximalPhalanx2: Phalanx proximalis II links
+  leftProximalPhalanx3: Phalanx proximalis III links
+  leftProximalPhalanx4: Phalanx proximalis IV links
+  leftProximalPhalanx5: Phalanx proximalis V links
+  leftMiddlePhalanx2: Phalanx media II links
+  leftMiddlePhalanx3: Phalanx media III links
+  leftMiddlePhalanx4: Phalanx media IV links
+  leftMiddlePhalanx5: Phalanx media V links
+  leftDistalPhalanx1: Phalanx distalis I links
+  leftDistalPhalanx2: Phalanx distalis II links
+  leftDistalPhalanx3: Phalanx distalis III links
+  leftDistalPhalanx4: Phalanx distalis IV links
+  leftDistalPhalanx5: Phalanx distalis V links
+
+BonesFeetRheuma:
+  title: Knochen des Fußes Rheuma
+  leftTalus: Talus links
+  leftCalcaneus: Calcaneus links
+  leftNavicular: Os naviculare links
+  leftCuboid: Os cuboideum links
+  leftLateralCuneiform: Os cuneiforme laterale links
+  leftIntermediateCuneiform: Os cuneiforme intermedium links
+  leftMedialCuneiform: Os cuneiforme mediale links
+  leftMetatarsal1HeadFibular: Fibulaseitiger Kopf des Os metatarsale I links
+  leftMetatarsal1Shaft: Schaft des Os metatarsale I links
+  leftMetatarsal1BaseFibular: Fibulaseitige Basis des Os metatarsale I links
+  leftMetatarsal1BaseTibial: Tibiaseitige Basis des Os metatarsale I links
+  leftMetatarsal1HeadTibial: Tibiaseitige Basis des Os metatarsale I links
+  leftSesamoid: Os sesamoideum links
+  leftMetatarsal2Shaft: Schaft des Os metatarsale II links
+  leftMetatarsal2BaseFibular: Fibulaseitige Basis des Os metatarsale II links
+  leftMetatarsal2BaseTibial: Tibiaseitige Basis des Os metatarsale II links
+  leftMetatarsal2HeadTibial: Tibiaseitige Basis des Os metatarsale II links
+  leftMetatarsal2HeadFibular: Fibulaseitiger Kopf des Os metatarsale II links
+  leftMetatarsal3HeadFibular: Fibulaseitiger Kopf des Os metatarsale III links
+  leftMetatarsal3Shaft: Schaft des Os metatarsale III links
+  leftMetatarsal3BaseFibular: Fibulaseitige Basis des Os metatarsale III links
+  leftMetatarsal3BaseTibial: Tibiaseitige Basis des Os metatarsale III links
+  leftMetatarsal3HeadTibial: Tibiaseitiger Kopf des Os metatarsale III links
+  leftMetatarsal4HeadFibular: Fibulaseitiger Kopf des Os metatarsale IV links
+  leftMetatarsal4Shaft: Schaft des Os metatarsale IV links
+  leftMetatarsal4BaseFibular: Fibulaseitige Basis des Os metatarsale IV links
+  leftMetatarsal4BaseTibial: Tibiaseitige Basis des Os metatarsale IV links
+  leftMetatarsal4HeadTibial: Tibiaseitiger Kopf des Os metatarsale IV links
+  leftMetatarsal5HeadFibular: Fibulaseitiger Kopf des Os metatarsale V links
+  leftMetatarsal5BaseFibular: Fibulaseitige Basis des Os metatarsale V links
+  leftMetatarsal5BaseTibial: Tibiaseitige Basis des Os metatarsale V links
+  leftMetatarsal5Shaft: Schaft des Os metatarsale V links
+  leftMetatarsal5HeadTibial: Tibiaseitiger Kopf des Os metatarsale V links
+  leftProximalPhalanx1Shaft: Schaft der Phalanx proximalis I links
+  leftProximalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx proximalis I links
+  leftProximalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx proximalis I links
+  leftProximalPhalanx1HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis I links
+  leftProximalPhalanx1HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I links
+  leftProximalPhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I links
+  leftProximalPhalanx2Shaft: Schaft der Phalanx proximalis II links
+  leftProximalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx proximalis II links
+  leftProximalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx proximalis II links
+  leftProximalPhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis II links
+  leftProximalPhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis II links
+  leftProximalPhalanx3Shaft: Schaft der Phalanx proximalis III links
+  leftProximalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx proximalis III links
+  leftProximalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx proximalis III links
+  leftProximalPhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis III links
+  leftProximalPhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis IV links
+  leftProximalPhalanx4Shaft: Schaft der Phalanx proximalis IV links
+  leftProximalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx proximalis IV links
+  leftProximalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx proximalis IV links
+  leftProximalPhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis IV links
+  leftProximalPhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis V links
+  leftProximalPhalanx5Shaft: Schaft der Phalanx proximalis V links
+  leftProximalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx proximalis V links
+  leftProximalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx proximalis V links
+  leftProximalPhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis V links
+  leftDistalPhalanx1TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis I links
+  leftDistalPhalanx1Shaft: Schaft der Phalanx distalis I links
+  leftDistalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx distalis I links
+  leftDistalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx distalis I links
+  leftDistalPhalanx1TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis I links
+  leftMiddlePhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx media II links
+  leftMiddlePhalanx2Shaft: Schaft der Phalanx media II links
+  leftMiddlePhalanx2BaseTibial: Tibiaseitige Basis der Phalanx media II links
+  leftMiddlePhalanx2BaseFibular: Fibulaseitige Basis der Phalanx media II links
+  leftMiddlePhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx media II links
+  leftMiddlePhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx media III links
+  leftMiddlePhalanx3Shaft: Schaft der Phalanx media III links
+  leftMiddlePhalanx3BaseFibular: Fibulaseitige Basis der Phalanx media III links
+  leftMiddlePhalanx3BaseTibial: Tibiaseitige Basis der Phalanx media III links
+  leftMiddlePhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx media III links
+  leftMiddlePhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx media IV links
+  leftMiddlePhalanx4BaseFibular: Fibulaseitige Basis der Phalanx media IV links
+  leftMiddlePhalanx4BaseTibial: Tibiaseitige Basis der Phalanx media IV links
+  leftMiddlePhalanx4Shaft: Schaft der Phalanx media IV links
+  leftMiddlePhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx media IV links
+  leftDistalPhalanx2TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis II links
+  leftDistalPhalanx2Shaft: Schaft der Phalanx distali II links
+  leftDistalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx distalis II links
+  leftDistalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx distalis II links
+  leftDistalPhalanx2TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis II links
+  leftDistalPhalanx3TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis III links
+  leftDistalPhalanx3Shaft: Schaft der Phalanx distalis III links
+  leftDistalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx distalis III links
+  leftDistalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx distalis III links
+  leftDistalPhalanx3TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis III links
+  leftDistalPhalanx4TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis IV links
+  leftDistalPhalanx4Shaft: Schaft der Phalanx distalis IV links
+  leftDistalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx distalis IV links
+  leftDistalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx distalis IV links
+  leftDistalPhalanx4TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis IV links
+  leftMiddlePhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx media V links
+  leftMiddlePhalanx5Shaft: Schaft der Phalanx media V links
+  leftMiddlePhalanx5BaseTibial: Tibiaseitige Basis der Phalanx media V links
+  leftMiddlePhalanx5BaseFibular: Fibulaseitige Basis der Phalanx media V links
+  leftMiddlePhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx media V links
+  leftDistalPhalanx5TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis V links
+  leftDistalPhalanx5Shaft: Schaft der Phalanx distalis V links
+  leftDistalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx distalis V links
+  leftDistalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx distalis V links
+  leftDistalPhalanx5TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis V links
+  rightTalus: Talus rechts
+  rightCalcaneus: Calcaneus rechts
+  rightNavicular: Os naviculare rechts
+  rightCuboid: Os cuboideum rechts
+  rightLateralCuneiform: Os cuneiforme laterale rechts
+  rightIntermediateCuneiform: Os cuneiforme intermedium rechts
+  rightMedialCuneiform: Os cuneiforme mediale rechts
+  rightMetatarsal1HeadFibular: Fibulaseitiger Kopf des Os metatarsale I rechts
+  rightMetatarsal1Shaft: Schaft des Os metatarsale I rechts
+  rightMetatarsal1BaseFibular: Fibulaseitige Basis des Os metatarsale I rechts
+  rightMetatarsal1BaseTibial: Tibiaseitige Basis des Os metatarsale I rechts
+  rightMetatarsal1HeadTibial: Tibiaseitige Basis des Os metatarsale I rechts
+  rightSesamoid: Os sesamoideum rechts
+  rightMetatarsal2Shaft: Schaft des Os metatarsale II rechts
+  rightMetatarsal2BaseFibular: Fibulaseitige Basis des Os metatarsale II rechts
+  rightMetatarsal2BaseTibial: Tibiaseitige Basis des Os metatarsale II rechts
+  rightMetatarsal2HeadTibial: Tibiaseitige Basis des Os metatarsale II rechts
+  rightMetatarsal2HeadFibular: Fibulaseitiger Kopf des Os metatarsale II rechts
+  rightMetatarsal3HeadFibular: Fibulaseitiger Kopf des Os metatarsale III rechts
+  rightMetatarsal3Shaft: Schaft des Os metatarsale III rechts
+  rightMetatarsal3BaseFibular: Fibulaseitige Basis des Os metatarsale III rechts
+  rightMetatarsal3BaseTibial: Tibiaseitige Basis des Os metatarsale III rechts
+  rightMetatarsal3HeadTibial: Tibiaseitiger Kopf des Os metatarsale III rechts
+  rightMetatarsal4HeadFibular: Fibulaseitiger Kopf des Os metatarsale IV rechts
+  rightMetatarsal4Shaft: Schaft des Os metatarsale IV rechts
+  rightMetatarsal4BaseFibular: Fibulaseitige Basis des Os metatarsale IV rechts
+  rightMetatarsal4BaseTibial: Tibiaseitige Basis des Os metatarsale IV rechts
+  rightMetatarsal4HeadTibial: Tibiaseitiger Kopf des Os metatarsale IV rechts
+  rightMetatarsal5HeadFibular: Fibulaseitiger Kopf des Os metatarsale V rechts
+  rightMetatarsal5BaseFibular: Fibulaseitige Basis des Os metatarsale V rechts
+  rightMetatarsal5BaseTibial: Tibiaseitige Basis des Os metatarsale V rechts
+  rightMetatarsal5Shaft: Schaft des Os metatarsale V rechts
+  rightMetatarsal5HeadTibial: Tibiaseitiger Kopf des Os metatarsale V rechts
+  rightProximalPhalanx1Shaft: Schaft der Phalanx proximalis I rechts
+  rightProximalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx proximalis I rechts
+  rightProximalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx proximalis I rechts
+  rightProximalPhalanx1HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis I rechts
+  rightProximalPhalanx1HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I rechts
+  rightProximalPhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I rechts
+  rightProximalPhalanx2Shaft: Schaft der Phalanx proximalis II rechts
+  rightProximalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx proximalis II rechts
+  rightProximalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx proximalis II rechts
+  rightProximalPhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis II rechts
+  rightProximalPhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis II rechts
+  rightProximalPhalanx3Shaft: Schaft der Phalanx proximalis III rechts
+  rightProximalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx proximalis III rechts
+  rightProximalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx proximalis III rechts
+  rightProximalPhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis III rechts
+  rightProximalPhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis IV rechts
+  rightProximalPhalanx4Shaft: Schaft der Phalanx proximalis IV rechts
+  rightProximalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx proximalis IV rechts
+  rightProximalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx proximalis IV rechts
+  rightProximalPhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis IV rechts
+  rightProximalPhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis V rechts
+  rightProximalPhalanx5Shaft: Schaft der Phalanx proximalis V rechts
+  rightProximalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx proximalis V rechts
+  rightProximalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx proximalis V rechts
+  rightProximalPhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis V rechts
+  rightDistalPhalanx1TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis I rechts
+  rightDistalPhalanx1Shaft: Schaft der Phalanx distalis I rechts
+  rightDistalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx distalis I rechts
+  rightDistalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx distalis I rechts
+  rightDistalPhalanx1TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis I rechts
+  rightMiddlePhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx media II rechts
+  rightMiddlePhalanx2Shaft: Schaft der Phalanx media II rechts
+  rightMiddlePhalanx2BaseTibial: Tibiaseitige Basis der Phalanx media II rechts
+  rightMiddlePhalanx2BaseFibular: Fibulaseitige Basis der Phalanx media II rechts
+  rightMiddlePhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx media II rechts
+  rightMiddlePhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx media III rechts
+  rightMiddlePhalanx3Shaft: Schaft der Phalanx media III rechts
+  rightMiddlePhalanx3BaseFibular: Fibulaseitige Basis der Phalanx media III rechts
+  rightMiddlePhalanx3BaseTibial: Tibiaseitige Basis der Phalanx media III rechts
+  rightMiddlePhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx media III rechts
+  rightMiddlePhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx media IV rechts
+  rightMiddlePhalanx4BaseFibular: Fibulaseitige Basis der Phalanx media IV rechts
+  rightMiddlePhalanx4BaseTibial: Tibiaseitige Basis der Phalanx media IV rechts
+  rightMiddlePhalanx4Shaft: Schaft der Phalanx media IV rechts
+  rightMiddlePhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx media IV rechts
+  rightDistalPhalanx2TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis II rechts
+  rightDistalPhalanx2Shaft: Schaft der Phalanx distali II rechts
+  rightDistalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx distalis II rechts
+  rightDistalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx distalis II rechts
+  rightDistalPhalanx2TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis II rechts
+  rightDistalPhalanx3TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis III rechts
+  rightDistalPhalanx3Shaft: Schaft der Phalanx distalis III rechts
+  rightDistalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx distalis III rechts
+  rightDistalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx distalis III rechts
+  rightDistalPhalanx3TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis III rechts
+  rightDistalPhalanx4TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis IV rechts
+  rightDistalPhalanx4Shaft: Schaft der Phalanx distalis IV rechts
+  rightDistalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx distalis IV rechts
+  rightDistalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx distalis IV rechts
+  rightDistalPhalanx4TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis IV rechts
+  rightMiddlePhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx media V rechts
+  rightMiddlePhalanx5Shaft: Schaft der Phalanx media V rechts
+  rightMiddlePhalanx5BaseTibial: Tibiaseitige Basis der Phalanx media V rechts
+  rightMiddlePhalanx5BaseFibular: Fibulaseitige Basis der Phalanx media V rechts
+  rightMiddlePhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx media V rechts
+  rightDistalPhalanx5TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis V rechts
+  rightDistalPhalanx5Shaft: Schaft der Phalanx distalis V rechts
+  rightDistalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx distalis V rechts
+  rightDistalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx distalis V rechts
+  rightDistalPhalanx5TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis V rechts
+
+BonesHands:
+  title: Knochen der Hand
+  leftCapitate: Os capitatum links
+  leftDistalPhalanx1: Phalanx distalis I links
+  leftDistalPhalanx2: Phalanx distalis II links
+  leftDistalPhalanx3: Phalanx distalis III links
+  leftDistalPhalanx4: Phalanx distalis IV links
+  leftDistalPhalanx5: Phalanx distalis V links
+  leftHamate: Os hamatum links
+  leftLunate: Os lunatum links
+  leftMetacarpal1: Os metacarpale I links
+  leftMetacarpal2: Os metacarpale II links
+  leftMetacarpal3: Os metacarpale III links
+  leftMetacarpal4: Os metacarpale IV links
+  leftMetacarpal5: Os metacarpale V links
+  leftMiddlePhalanx2: Phalanx media II links
+  leftMiddlePhalanx3: Phalanx media III links
+  leftMiddlePhalanx4: Phalanx media IV links
+  leftMiddlePhalanx5: Phalanx media V links
+  leftPisiforme: Os pisiforme links
+  leftProximalPhalanx1: Phalanx proximalis I links
+  leftProximalPhalanx2: Phalanx proximalis II links
+  leftProximalPhalanx3: Phalanx proximalis III links
+  leftProximalPhalanx4: Phalanx proximalis IV links
+  leftProximalPhalanx5: Phalanx proximalis V links
+  leftRadius: Radius links
+  leftScaphoid: Os scaphoideum links
+  leftTrapezium: Os trapezium links
+  leftTrapezoideum: Os trapezoideum links
+  leftTriquetrum: Os triquetrum links
+  leftUlna: Ulna links
+  rightCapitate: Os capitatum rechts
+  rightDistalPhalanx1: Phalanx distalis I links
+  rightDistalPhalanx2: Phalanx distalis II links
+  rightDistalPhalanx3: Phalanx distalis III links
+  rightDistalPhalanx4: Phalanx distalis IV links
+  rightDistalPhalanx5: Phalanx distalis V links
+  rightHamate: Os hamatum rechts
+  rightLunate: Os lunatum rechts
+  rightMetacarpal1: Os metacarpale I rechts
+  rightMetacarpal2: Os metacarpale II rechts
+  rightMetacarpal3: Os metacarpale III rechts
+  rightMetacarpal4: Os metacarpale IV rechts
+  rightMetacarpal5: Os metacarpale V rechts
+  rightMiddlePhalanx2: Phalanx media II rechts
+  rightMiddlePhalanx3: Phalanx media III rechts
+  rightMiddlePhalanx4: Phalanx media IV rechts
+  rightMiddlePhalanx5: Phalanx media V rechts
+  rightPisiforme: Os pisiforme rechts
+  rightProximalPhalanx1: Phalanx proximalis I rechts
+  rightProximalPhalanx2: Phalanx proximalis II rechts
+  rightProximalPhalanx3: Phalanx proximalis III rechts
+  rightProximalPhalanx4: Phalanx proximalis IV rechts
+  rightProximalPhalanx5: Phalanx proximalis V rechts
+  rightRadius: Radius rechts
+  rightScaphoid: Os scaphoideum rechts
+  rightTrapezium: Os trapezium rechts
+  rightTrapezoideum: Os trapezoideum rechts
+  rightTriquetrum: Os triquetrum rechts
+  rightUlna: Ulna rechts
+
+BonesHandsRheuma:
+  title: Knochen der Hand Rheuma
+  leftMetacarpal5HeadRadial: Radialseitiger Kopf des linken Os metacarpale V
+  leftMetacarpal5Shaft: Schaft des linken Os metacarpale V
+  leftMetacarpal5BaseRadial: Radialseitige Basis des linken Os metacarpale V
+  leftMetacarpal5BaseUlnar: Ulnarseitige Basis des linken Os metacarpale V
+  leftMetacarpal5HeadUlnar: Ulnarseitiger Kopf des linken Os metacarpale V
+  leftMetacarpal4HeadRadial: Radialseitiger Kopf des linken Os metacarpale IV
+  leftMetacarpal4BaseRadial: Radialseitige Basis des linken Os metacarpale IV
+  leftMetacarpal4BaseUlnar: Ulnarseitige Basis des linken Os metacarpale IV
+  leftMetacarpal4Shaft: Schaft des linken Os metacarpale IV
+  leftMetacarpal4HeadUlnar: Ulnarseitiger Kopf des linken Os metacarpale IV
+  leftProximalPhalanx5HeadRadial: Radialseitiger Kopf des linken Os metacarpale V
+  leftProximalPhalanx5Shaft: Schaft der linken Phalanx proximalis V
+  leftProximalPhalanx5BaseRadial: Radialseitige Basis der linken Phalanx proximalis V
+  leftProximalPhalanx5BaseUlnar: Ulnarseitige Basis der linken Phalanx proximalis V
+  leftProximalPhalanx5HeadUlnar: Ulnarseitiger Kopf der linken Phalanx proximalis V
+  leftMiddlePhalanx5HeadUlnar: Ulnarseitiger Kopf der linken Phalanx media V
+  leftMiddlePhalanx5HeadRadial: Radialseitiger Kopf der linken Phalanx media V
+  leftMiddlePhalanx5BaseRadial: Radialseitige Basis der linken Phalanx media V
+  leftMiddlePhalanx5BaseUlnar: Ulnarseitige Basis der linken Phalanx media V
+  leftMiddlePhalanx5Shaft: Schaft der linken Phalanx media V
+  leftDistalPhalanx5TuftRadial: Radialseitiger Nagelkranz der linken Phalanx distalis V
+  leftDistalPhalanx5Shaft: Schaft der linken Phalanx distalis V
+  leftDistalPhalanx5BaseRadial: Radialseitige Basis der linken Phalanx distalis V
+  leftDistalPhalanx5BaseUlnar: Ulnarseitige Basis der linken Phalanx distalis V
+  leftDistalPhalanx5TuftUlnar: Ulnarseitiger Nagelkranz der linken Phalanx distalis V
+  leftProximalPhalanx4HeadRadial: Radialseitiger Kopf der linken Phalanx proximalis IV
+  leftProximalPhalanx4Shaft: Schaft der linken Phalanx proximalis IV
+  leftProximalPhalanx4BaseRadial: Radialseitige Basis der linken Phalanx proximalis IV
+  leftProximalPhalanx4BaseUlnar: Ulnarseitige Basis der linken Phalanx proximalis IV
+  leftProximalPhalanx4HeadUlnar: Ulnarseitiger Kopf der linken Phalanx proximalis IV
+  leftMiddlePhalanx4HeadRadial: Radialseitiger Kopf der linken Phalanx media IV
+  leftMiddlePhalanx4BaseRadial: Radialseitige Basis der linken Phalanx media IV
+  leftMiddlePhalanx4BaseUlnar: Ulnarseitige Basis der linken Phalanx media IV
+  leftMiddlePhalanx4Shaft: Schaft der linken Phalanx media IV
+  leftMiddlePhalanx4HeadUlnar: Ulnarseitiger Kopf der linken Phalanx media IV
+  leftDistalPhalanx4TuftRadial: Radialseitiger Nagelkranz der linken Phalanx distalis IV
+  leftDistalPhalanx4Shaft: Schaft der linken Phalanx distalis IV
+  leftDistalPhalanx4BaseRadial: Radialseitige Basis der linken Phalanx distalis IV
+  leftDistalPhalanx4BaseUlnar: Ulnarseitige Basis der linken Phalanx distalis IV
+  leftDistalPhalanx4TuftUlnar: Ulnarseitiger Nagelkranz der linken Phalanx distalis IV
+  leftMetacarpal3HeadRadial: Radialseitiger Kopf des linken Os metacarpale III
+  leftMetacarpal3Shaft: Schaft des linken Os metacarpale III
+  leftMetacarpal3BaseRadial: Radialseitige Basis des linken Os metacarpale III
+  leftMetacarpal3BaseUlnar: Ulnarseitige Basis des linken Os metacarpale III
+  leftMetacarpal3HeadUlnar: Ulnarseitiger Kopf des linken Os metacarpale III
+  leftProximalPhalanx3HeadRadial: Radialseitiger Kopf der linken Phalanx proximalis III
+  leftProximalPhalanx3Shaft: Schaft der linken Phalanx proximalis III
+  leftProximalPhalanx3BaseRadial: Radialseitige Basis der linken Phalanx proximalis III
+  leftProximalPhalanx3BaseUlnar: Ulnarseitige Basis der linken Phalanx proximalis III
+  leftProximalPhalanx3HeadlUlnar: Ulnarseitiger Kopf der linken Phalanx proximalis III
+  leftMiddlePhalanx3HeadRadial: Radialseitiger Kopf der linken Phalanx media III
+  leftMiddlePhalanx3Shaft: Schaft der linken Phalanx media III
+  leftMiddlePhalanx3BaseRadial: Radialseitige Basis der Phalanx media III
+  leftMiddlePhalanx3BaseUlnar: Ulnarseitige Basis der linken Phalanx media III
+  leftMiddlePhalanx3HeadUlnar: Ulnarseitiger Kopf der linken Phalanx media III
+  leftDistalPhalanx3TuftRadial: Radialseitiger Nagelkranz der linken Phalanx distalis III
+  leftDistalPhalanx3Shaft: Schaft der linken Phalanx distalis III
+  leftDistalPhalanx3BaseRadial: Radialseitige Basis der linken Phalanx distalis III
+  leftDistalPhalanx3BaseUlnar: Ulnarseitige Basis der linken Phalanx distalis III
+  leftDistalPhalanx3TuftUlnar: Ulnarseitiger Nagelkranz der linken Phalanx distalis III
+  leftMetacarpal2HeadRadial: Radialseitiger Kopf des linken Os metacarpale II
+  leftMetacarpale2Shaft: Schaft des linken Os metacarpale II
+  leftMetacarpal2BaseRadial: Radialseitige Basis des linken Os metacarpale II
+  leftMetacarpal2BaseUlnar: Ulnarseitige Basis des linken Os metacarpale II
+  leftMetacarpal2HeadUlnar: Ulnarseitiger Kopf des linken Os metacarpale II
+  leftProximalPhalanx2HeadRadial: Radialseitiger Kopf der linken Phalanx proximalis II
+  leftProximalPhalanx2Shaft: Schaft der linken Phalanx proximalis II
+  leftProximalPhalanx2BaseRadial: Radialseitige Basis der linken Phalanx proximalis II
+  leftProximalPhalanx2BaseUlnar: Ulnarseitige Basis der linken Phalanx proximalis II
+  leftProximalPhalanx2HeadUlnar: Ulnarseitiger Kopf der linken Phalanx proximalis II
+  leftMiddlePhalanx2HeadRadial: Radialseitiger Kpf der linken Phalanx media II
+  leftMiddlePhalanx2Shaft: Schaft der linken Phalanx media II
+  leftMiddlePhalanx2BaseRadial: Radialseitige Basis der linken Phalanx media II
+  leftMiddlePhalanx2BaseUlnar: Ulnarseitige Basis der linken Phalanx media II
+  leftMiddlePhalanx2HeadUlnar: Ulnarseitiger Kopf der linken Phalanx media II
+  leftDistalPhalanx2TuftRadial: Radialseitiger Nagelkranz der linken Phalanx distalis II
+  leftDistalPhalanx2Shaft: Schaft der linken Phalanx distalis II
+  leftDistalPhalanx2BaseRadial: Radialseitige Basis der linken Phalanx distalis II
+  leftDistalPhalanx2BaseUlnar: Ulnarseitige Basis der linken Phalanx distalis II
+  leftDistalPhalanx2TuftUlnar: Ulnarseitiger Nagelkranz der linken Phalanx distalis II
+  leftMetacarpal1HeadRadial: Radialseitiger Kopf des linken Os metacarpale I
+  leftMetacarpal1BaseRadial: Radialseitige Basis des linken Os metacarpale I
+  leftMetacarpal1BaseUlnar: Ulnarseitige Basis des linken Os metacarpale I
+  leftMetacarpal1Shaft: Schaft des linken Os metacarpale I
+  leftMetacarpal1HeadUlnar: Ulnarseitiger Kopf des linken Os metacarpale I
+  leftProximalPhalanx1BaseUlnar: Ulnarseitige Basis der linken Phalanx proximalis I
+  leftProximalPhalanx1BaseRadial: Radialseitige Basis der linken Phalanx proximalis I
+  leftProximalPhalanx1Shaft: Schaft der linken Phalanx proximalis I
+  leftProximalPhalanx1HeadRadial: Radialseitiger Kopf der linken Phalanx proximalis I
+  leftProximalPhalanx1HeadUlnar: Ulnarseitiger Kopf der linken Phalanx proximalis I
+  leftDistalPhalanx1TuftRadial: Radialseitiger Nagelkranz der linken Phalanx distalis I
+  leftDistalPhalanx1Shaft: Schaft der linken Phalanx distalis I
+  leftDistalPhalanx1BaseRadial: Radialseitige Basis der linken Phalanx distalis I
+  leftDistalPhalanx1BaseUlnar: Ulnarseitige Basis der linken Phalanx distalis I
+  leftDistalPhalanx1TuftUlnar: Ulnarseitiger Nagelkranz der linken Phalanx distalis I
+  leftTrapezium: Os trapezium links
+  leftTrapezoid: Os trapezoideum links
+  leftScaphoid: Os scaphoideum links
+  leftCapitate: Os capitatum links
+  leftHamate: Os hamatum links
+  leftPisiform: Os pisiforme links
+  leftTriquetral: Os triquetrum links
+  leftLunate: Os lunatum links
+  leftRadius: Radius links
+  leftRadialStyloidProcess: Processus styloideus radii links
+  leftUlna: Ulna links
+  leftUlnarStyloidProcess: Processus styloideus ulnae links
+  rightMetacarpal5HeadRadial: Radialseitiger Kopf des rechten Os metacarpale V
+  rightMetacarpal5Shaft: Schaft des rechten Os metacarpale V
+  rightMetacarpal5BaseRadial: Radialseitige Basis des rechten Os metacarpale V
+  rightMetacarpal5BaseUlnar: Ulnarseitige Basis des rechten Os metacarpale V
+  rightMetacarpal5HeadUlnar: Ulnarseitiger Kopf des rechten Os metacarpale V
+  rightMetacarpal4HeadRadial: Radialseitiger Kopf des rechten Os metacarpale IV
+  rightMetacarpal4BaseRadial: Radialseitige Basis des rechten Os metacarpale IV
+  rightMetacarpal4BaseUlnar: Ulnarseitige Basis des rechten Os metacarpale IV
+  rightMetacarpal4Shaft: Schaft des rechten Os metacarpale IV
+  rightMetacarpal4HeadUlnar: Ulnarseitiger Kopf des rechten Os metacarpale IV
+  rightProximalPhalanx5HeadRadial: Radialseitiger Kopf des rechten Os metacarpale V
+  rightProximalPhalanx5Shaft: Schaft der rechten Phalanx proximalis V
+  rightProximalPhalanx5BaseRadial: Radialseitige Basis der rechten Phalanx proximalis V
+  rightProximalPhalanx5BaseUlnar: Ulnarseitige Basis der rechten Phalanx proximalis V
+  rightProximalPhalanx5HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx proximalis V
+  rightMiddlePhalanx5HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx media V
+  rightMiddlePhalanx5HeadRadial: Radialseitiger Kopf der rechten Phalanx media V
+  rightMiddlePhalanx5BaseRadial: Radialseitige Basis der rechten Phalanx media V
+  rightMiddlePhalanx5BaseUlnar: Ulnarseitige Basis der rechten Phalanx media V
+  rightMiddlePhalanx5Shaft: Schaft der rechten Phalanx media V
+  rightDistalPhalanx5TuftRadial: Radialseitiger Nagelkranz der rechten Phalanx distalis V
+  rightDistalPhalanx5Shaft: Schaft der rechten Phalanx distalis V
+  rightDistalPhalanx5BaseRadial: Radialseitige Basis der rechten Phalanx distalis V
+  rightDistalPhalanx5BaseUlnar: Ulnarseitige Basis der rechten Phalanx distalis V
+  rightDistalPhalanx5TuftUlnar: Ulnarseitiger Nagelkranz der rechten Phalanx distalis V
+  rightProximalPhalanx4HeadRadial: Radialseitiger Kopf der rechten Phalanx proximalis IV
+  rightProximalPhalanx4Shaft: Schaft der rechten Phalanx proximalis IV
+  rightProximalPhalanx4BaseRadial: Radialseitige Basis der rechten Phalanx proximalis IV
+  rightProximalPhalanx4BaseUlnar: Ulnarseitige Basis der rechten Phalanx proximalis IV
+  rightProximalPhalanx4HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx proximalis IV
+  rightMiddlePhalanx4HeadRadial: Radialseitiger Kopf der rechten Phalanx media IV
+  rightMiddlePhalanx4BaseRadial: Radialseitige Basis der rechten Phalanx media IV
+  rightMiddlePhalanx4BaseUlnar: Ulnarseitige Basis der rechten Phalanx media IV
+  rightMiddlePhalanx4Shaft: Schaft der rechten Phalanx media IV
+  rightMiddlePhalanx4HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx media IV
+  rightDistalPhalanx4TuftRadial: Radialseitiger Nagelkranz der rechten Phalanx distalis IV
+  rightDistalPhalanx4Shaft: Schaft der rechten Phalanx distalis IV
+  rightDistalPhalanx4BaseRadial: Radialseitige Basis der rechten Phalanx distalis IV
+  rightDistalPhalanx4BaseUlnar: Ulnarseitige Basis der rechten Phalanx distalis IV
+  rightDistalPhalanx4TuftUlnar: Ulnarseitiger Nagelkranz der rechten Phalanx distalis IV
+  rightMetacarpal3HeadRadial: Radialseitiger Kopf des rechten Os metacarpale III
+  rightMetacarpal3Shaft: Schaft des rechten Os metacarpale III
+  rightMetacarpal3BaseRadial: Radialseitige Basis des rechten Os metacarpale III
+  rightMetacarpal3BaseUlnar: Ulnarseitige Basis des rechten Os metacarpale III
+  rightMetacarpal3HeadUlnar: Ulnarseitiger Kopf des rechten Os metacarpale III
+  rightProximalPhalanx3HeadRadial: Radialseitiger Kopf der rechten Phalanx proximalis III
+  rightProximalPhalanx3Shaft: Schaft der rechten Phalanx proximalis III
+  rightProximalPhalanx3BaseRadial: Radialseitige Basis der rechten Phalanx proximalis III
+  rightProximalPhalanx3BaseUlnar: Ulnarseitige Basis der rechten Phalanx proximalis III
+  rightProximalPhalanx3HeadlUlnar: Ulnarseitiger Kopf der rechten Phalanx proximalis III
+  rightMiddlePhalanx3HeadRadial: Radialseitiger Kopf der rechten Phalanx media III
+  rightMiddlePhalanx3Shaft: Schaft der rechten Phalanx media III
+  rightMiddlePhalanx3BaseRadial: Radialseitige Basis der Phalanx media III
+  rightMiddlePhalanx3BaseUlnar: Ulnarseitige Basis der rechten Phalanx media III
+  rightMiddlePhalanx3HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx media III
+  rightDistalPhalanx3TuftRadial: Radialseitiger Nagelkranz der rechten Phalanx distalis III
+  rightDistalPhalanx3Shaft: Schaft der rechten Phalanx distalis III
+  rightDistalPhalanx3BaseRadial: Radialseitige Basis der rechten Phalanx distalis III
+  rightDistalPhalanx3BaseUlnar: Ulnarseitige Basis der rechten Phalanx distalis III
+  rightDistalPhalanx3TuftUlnar: Ulnarseitiger Nagelkranz der rechten Phalanx distalis III
+  rightMetacarpal2HeadRadial: Radialseitiger Kopf des rechten Os metacarpale II
+  rightMetacarpale2Shaft: Schaft des rechten Os metacarpale II
+  rightMetacarpal2BaseRadial: Radialseitige Basis des rechten Os metacarpale II
+  rightMetacarpal2BaseUlnar: Ulnarseitige Basis des rechten Os metacarpale II
+  rightMetacarpal2HeadUlnar: Ulnarseitiger Kopf des rechten Os metacarpale II
+  rightProximalPhalanx2HeadRadial: Radialseitiger Kopf der rechten Phalanx proximalis II
+  rightProximalPhalanx2Shaft: Schaft der rechten Phalanx proximalis II
+  rightProximalPhalanx2BaseRadial: Radialseitige Basis der rechten Phalanx proximalis II
+  rightProximalPhalanx2BaseUlnar: Ulnarseitige Basis der rechten Phalanx proximalis II
+  rightProximalPhalanx2HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx proximalis II
+  rightMiddlePhalanx2HeadRadial: Radialseitiger Kpf der rechten Phalanx media II
+  rightMiddlePhalanx2Shaft: Schaft der rechten Phalanx media II
+  rightMiddlePhalanx2BaseRadial: Radialseitige Basis der rechten Phalanx media II
+  rightMiddlePhalanx2BaseUlnar: Ulnarseitige Basis der rechten Phalanx media II
+  rightMiddlePhalanx2HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx media II
+  rightDistalPhalanx2TuftRadial: Radialseitiger Nagelkranz der rechten Phalanx distalis II
+  rightDistalPhalanx2Shaft: Schaft der rechten Phalanx distalis II
+  rightDistalPhalanx2BaseRadial: Radialseitige Basis der rechten Phalanx distalis II
+  rightDistalPhalanx2BaseUlnar: Ulnarseitige Basis der rechten Phalanx distalis II
+  rightDistalPhalanx2TuftUlnar: Ulnarseitiger Nagelkranz der rechten Phalanx distalis II
+  rightMetacarpal1HeadRadial: Radialseitiger Kopf des rechten Os metacarpale I
+  rightMetacarpal1BaseRadial: Radialseitige Basis des rechten Os metacarpale I
+  rightMetacarpal1BaseUlnar: Ulnarseitige Basis des rechten Os metacarpale I
+  rightMetacarpal1Shaft: Schaft des rechten Os metacarpale I
+  rightMetacarpal1HeadUlnar: Ulnarseitiger Kopf des rechten Os metacarpale I
+  rightProximalPhalanx1BaseUlnar: Ulnarseitige Basis der rechten Phalanx proximalis I
+  rightProximalPhalanx1BaseRadial: Radialseitige Basis der rechten Phalanx proximalis I
+  rightProximalPhalanx1Shaft: Schaft der rechten Phalanx proximalis I
+  rightProximalPhalanx1HeadRadial: Radialseitiger Kopf der rechten Phalanx proximalis I
+  rightProximalPhalanx1HeadUlnar: Ulnarseitiger Kopf der rechten Phalanx proximalis I
+  rightDistalPhalanx1TuftRadial: Radialseitiger Nagelkranz der rechten Phalanx distalis I
+  rightDistalPhalanx1Shaft: Schaft der rechten Phalanx distalis I
+  rightDistalPhalanx1BaseRadial: Radialseitige Basis der rechten Phalanx distalis I
+  rightDistalPhalanx1BaseUlnar: Ulnarseitige Basis der rechten Phalanx distalis I
+  rightDistalPhalanx1TuftUlnar: Ulnarseitiger Nagelkranz der rechten Phalanx distalis I
+  rightTrapezium: Os trapezium rechts
+  rightTrapezoid: Os trapezoideum rechts
+  rightScaphoid: Os scaphoideum rechts
+  rightCapitate: Os capitatum rechts
+  rightHamate: Os hamatum rechts
+  rightPisiform: Os pisiforme rechts
+  rightTriquetral: Os triquetrum rechts
+  rightLunate: Os lunatum rechts
+  rightRadius: Radius rechts
+  rightRadialStyloidProcess: Processus styloideus radii rechts
+  rightUlna: Ulna rechts
+  rightUlnarStyloidProcess: Processus styloideus ulnae rechts
+
+CervicalLymphnodes:
+  title: Cervicale Lymphknoten
+  leftLevelVII: Level VII links
+  leftLevelVI: Level VI links
+  leftLevelVB: Level VB links
+  leftLevelVA: Level VA links
+  leftLevelIV: Level IV links
+  leftLevelIII: Level III links
+  leftLevelIIB: Level IIB links
+  leftLevelIA: Level IA links
+  leftLevelIB: Level IB links
+  leftLevelIIA: Level IIA links
+  rightLevelVII: Level VII rechts
+  rightLevelVI: Level VI rechts
+  rightLevelVB: Level VB rechts
+  rightLevelVA: Level VA rechts
+  rightLevelIV: Level IV rechts
+  rightLevelIII: Level III rechts
+  rightLevelIIB: Level IIB rechts
+  rightLevelIA: Level IA rechts
+  rightLevelIB: Level IB rechts
+  rightLevelIIA: Level IIA rechts
+
+LungSegments:
+  title: Lungensegmente
+  rightSegment1: Segment 1 rechts
+  rightSegment2: Segment 2 rechts
+  rightSegment3: Segment 3 rechts
+  rightSegment4: Segment 4 rechts
+  rightSegment5: Segment 5 rechts
+  rightSegment6: Segment 6 rechts
+  rightSegment7: Segment 7 rechts
+  rightSegment8: Segment 8 rechts
+  rightSegment9: Segment 9 rechts
+  rightSegment10: Segment 10 rechts
+  leftSegment12: Segment 1/2 links
+  leftSegment3: Segment 3 links
+  leftSegment4: Segment 4 links
+  leftSegment5: Segment 5 links
+  leftSegment6: Segment 6 links
+  leftSegment7: Segment 7 links
+  leftSegment8: Segment 8 links
+  leftSegment9: Segment 9 links
+  leftSegment10: Segment 10 links
+
+MediastinalLymphnodes:
+  title: Mediastinale Lymphknoten
+  level3P: Level 3P
+  level11L: Level 11L
+  level11R: Level 11R
+  level10L: Level 10L
+  level10R: Level 10R
+  level9: Level 9
+  level8: Level 8
+  level7: Level 7
+  level6: Level 6
+  level5: Level 5
+  level4L: Level 4L
+  level4R: Level 4R
+  level3A: Level 3A
+  level2L: Level 2L
+  level2R: Level 2R
+  level1: Level 1
+
+PulmonalArteries:
+  title: Pulmonalarterien
+  LLLBasalAnterior: A. segmentalis basalis anterior links (VIII)
+  LLLBasalLateral: A. segmentalis basalis lateralis links (IX)
+  LLLBasalAnteriorLateral: (VIII/IX)
+  LLLBasalPosterior: A. segmentalis basalis posterior links (X)
+  LLLBasalMedial: A. segmentalis basalis medialis links (VII)
+  LLLBasalPosteriorMedial: (VII/X)
+  LLLSuperior: A. segmentalis superior links (VI)
+  LLL: Unterlappenarterie links
+  Lingula: A. lingularis (IV/V)
+  LULAnterior: A. segmentalis anterior links (III)
+  LULPosterior: A. segmentalis posterior links (I/II)
+  LULApicoposteriorTrunk: Apicoposteriorer Truncus (I/II)
+  LULApical: A. segmentalis apicalis (I/II)
+  LeftUpperLobe: Oberlappenarterie
+  LeftMain: Hauptstamm links
+  RLLSuperior: A. segmentalis superior rechts (VI)
+  RLLBasalLateral: A. segmentalis basalis lateralis rechts (IX)
+  RLLBasalPosterior: A. segmentalis basalis posterior rechts (X)
+  RLLBasalLateralPosterior: (IX/X)
+  RLLBasalMedial: A. segmentalis basalis medialis (VII)
+  RLLBasalAnterior: A. segmentalis basalis anterior (VIII)
+  RLL: Unterlappenarterie rechts
+  RMLMedial: A. segmentalis medialis (V)
+  RMLLateral: A. segmentalis lateralis (IV)
+  RML: Mittellappenarterie
+  RULPosterior: A. segmentalis posterior rechts (II)
+  RULApical: A. segmentalis apicalis rechts (I)
+  RULAnterior: A. segmentalis anterior rechts (III)
+  RUL: Oberlappenarterie rechts
+  RightMain: Hauptstamm rechts
+  PulmonaryTrunk: Truncus pulmonalis
+
+VentriclesBrain:
+  title: Ventrikelsystem des Gehirns
+  RightLateralAperture: Recessus lateralis rechts
+  LeftLateralAperture: Recessus lateralis rechts
+  Fourth: Ventriculus quartus
+  CerebralAqueduct: Aqueductus mesencephali
+  Third: Ventriculus tertius
+  RightInterventricularForamen: Foramen interventriculare rechts
+  RightTemporalHorn: Cornu temporale, Ventriculus lateralis rechts
+  RightOccipitalHorn: Cornu occipitale, Ventriculus lateralis rechts
+  RightFrontalHorn: Cornu frontale, Ventriculus lateralis rechts
+  LeftInterventricularForamen: Foramen interventriculare links
+  LeftTemporalHorn: Cornu temporale, Ventriculus lateralis links
+  LeftOccipitalHorn: Cornu occipitale, Ventriculus lateralis links
+  LeftFrontalHorn: Cornu frontale, Ventriculus lateralis links
