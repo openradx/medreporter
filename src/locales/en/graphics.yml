@@ -1,0 +1,37 @@
+BrainArteries:
+  title: Circulus arteriosus cerebri
+  leftM2Superior: ____
+  leftM2Inferior: _____
+  leftM1Bifurcation: _____
+  leftM1Distal: _____
+  leftM1Proximal: _____
+  leftACMT: _____
+  leftA1: _____
+  leftA2: _____
+  leftACI: _____
+  leftACP: _____
+  leftP2: _____
+  leftP1: _____
+  leftSCA: _____
+  leftAICA: _____
+  leftPICA: _____
+  leftV4: _____
+  rightM2Superior: _____
+  rightM2Inferior: _____
+  rightM1Bifurcation: _____
+  rightM1Distal: _____
+  rightM1Proximal: _____
+  rightACMT: _____
+  rightA1: _____
+  rightA2: _____
+  rightACI: _____
+  rightACP: _____
+  rightP2: _____
+  rightP1: _____
+  rightSCA: _____
+  rightAICA: _____
+  rightPICA: _____
+  rightV4: _____
+  ACA: _____
+  basilarisHead: _____
+  basilaris: _____

@@ -4,8 +4,8 @@ import { createRequiredContext } from "../utils/createRequiredContext"
 interface FieldContext<T> {
   id: string
   defaultValue?: T
-  value?: T
-  onChange?: (newValue: T) => void
+  value: T
+  onChange: (newValue: T) => void
 }
 
 let singleton: any = null

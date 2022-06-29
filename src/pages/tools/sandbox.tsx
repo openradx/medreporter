@@ -19,7 +19,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, locales }
   props: {
     ...(await serverSideSiteTranslations(locale!, locales!)),
     ...(await serverSideStructuredReportTranslations(locale!, locale!, locales!, [
-      "adrenalWashout",
+      "sandboxTool",
+      "graphics",
     ])),
     ...(await serverSideReduxState({})),
   },
