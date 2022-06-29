@@ -1,3 +1,4 @@
+import dayjs from "dayjs"
 import { ReactElement } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
@@ -6,7 +7,7 @@ import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
 interface DateFieldProps extends CommonFieldProps {
-  defaultValue?: Date | null
+  defaultValue?: string | null
   extras?: ReactElement
 }
 
@@ -14,18 +15,29 @@ export const DateField = ({
   id: fieldId,
   label = "",
   visible = true,
-  defaultValue = new Date(),
+  defaultValue = null,
   extras,
 }: DateFieldProps) => {
+  let serializableDefaultValue: string | null = null
+  if (defaultValue) {
+    serializableDefaultValue = dayjs(defaultValue).toISOString()
+  }
+
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
     moduleId,
     fieldId,
-    defaultValue,
+    defaultValue: serializableDefaultValue,
   })
+
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      <DateInput {...{ label, value, onChange, extras }} />
+      <DateInput
+        label={label}
+        value={value ? new Date(value) : null}
+        onChange={(date) => onChange(date ? date.toISOString() : null)}
+        extras={extras}
+      />
     </BaseField>
   )
 }
