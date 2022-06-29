@@ -1,4 +1,4 @@
-import { ActionIcon, Tooltip } from "@mantine/core"
+import { ActionIcon, Tabs, Tooltip } from "@mantine/core"
 import { ReactNode, useState } from "react"
 import { AiOutlineInfoCircle as InfoIcon } from "react-icons/ai"
 import { InfoModal } from "./InfoModal"
@@ -19,7 +19,13 @@ export const ModuleInfo = ({ title, children }: ModuleInfoProps) => {
         </ActionIcon>
       </Tooltip>
       <InfoModal title={title} opened={open} onClose={() => setOpen(false)}>
-        {children}
+        <Tabs defaultValue="references">
+          <Tabs.List>
+            <Tabs.Tab value="foo">Foo</Tabs.Tab>
+            <Tabs.Tab value="references">References</Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel value="references">{children}</Tabs.Panel>
+        </Tabs>
       </InfoModal>
     </>
   )
