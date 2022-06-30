@@ -31,7 +31,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   const [modified, setModified] = useState(false)
 
   const changeStructureValueDebounced = useDebouncedCallback((moduleId, fieldId, value) => {
-    dispatch(changeStructureValue({ moduleId, fieldId, value }))
+    dispatch(changeStructureValue({ moduleId, fieldId, value: copy(value) }))
   }, 500)
 
   useEffect(() => {
@@ -53,8 +53,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   }, [watch, changeStructureValueDebounced])
 
   const initializeStructureReportDataDebounced = useDebouncedCallback(() => {
-    const data = copy(getValues())
-    dispatch(setStructureData(data, { undoable: false }))
+    dispatch(setStructureData(copy(getValues()), { undoable: false }))
     dispatch(setDataInitialized())
   }, 800)
 
@@ -63,9 +62,9 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   const registerDefaultValue = useCallback(
     (moduleId: string, fieldId: string, defaultValue: any) => {
       if (defaultValuesRef.current[moduleId] === undefined) {
-        defaultValuesRef.current[moduleId] = { [fieldId]: defaultValue }
+        defaultValuesRef.current[moduleId] = { [fieldId]: copy(defaultValue) }
       } else {
-        defaultValuesRef.current[moduleId][fieldId] = defaultValue
+        defaultValuesRef.current[moduleId][fieldId] = copy(defaultValue)
       }
       initializeStructureReportDataDebounced()
     },
@@ -85,7 +84,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
     changeStructureValueDebounced.flush()
     const data = defaultValuesRef.current
     reset(copy(data))
-    dispatch(setStructureData(data))
+    dispatch(setStructureData(copy(data)))
     setModified(false)
   }, [reset, dispatch])
 
