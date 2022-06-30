@@ -1,5 +1,4 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
-import { FloatingPosition } from "@mantine/core/lib/components/Floating"
 import { TbCheck } from "react-icons/tb"
 import config from "../../app.config"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
@@ -10,7 +9,6 @@ interface LanguageSelectorProps {
   currentLocale: string
   supportedLocales: string[]
   onLocaleChanged: (locale: string) => void
-  position?: FloatingPosition
 }
 
 export const LanguageSelector = ({
@@ -18,7 +16,6 @@ export const LanguageSelector = ({
   currentLocale,
   supportedLocales,
   onLocaleChanged,
-  position = "bottom",
 }: LanguageSelectorProps) => {
   const { t } = useSiteTranslation()
 
@@ -42,7 +39,7 @@ export const LanguageSelector = ({
     ))
 
   return (
-    <Menu width={250} shadow="md" position={position}>
+    <Menu width={250} shadow="md">
       <Menu.Target>
         <ActionIcon size="md" aria-label={ariaLabel} variant="default">
           <FlagIcon code={currentLocale} />

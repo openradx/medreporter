@@ -37,7 +37,6 @@ export const StructureLanguageSelector = () => {
       currentLocale={currentLanguage}
       supportedLocales={["as_site", ...supportedStructuredReportLocales]}
       onLocaleChanged={onLanguageChanged}
-      position="bottom-end"
     />
   )
 }
