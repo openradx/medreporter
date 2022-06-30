@@ -7,6 +7,7 @@ import { BaseField } from "./BaseField"
 import { FieldOption, CommonFieldProps } from "./fieldTypes"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
+const DEFAULT_VALUE: string[] = []
 
 interface MultipleChoiceFieldProps extends CommonFieldProps {
   variant?: "checkbox" | "select"
@@ -21,7 +22,7 @@ export const MultipleChoiceField = ({
   visible = true,
   variant = "checkbox",
   options = DEFAULT_OPTIONS,
-  defaultValue = [],
+  defaultValue = DEFAULT_VALUE,
   extras,
 }: MultipleChoiceFieldProps) => {
   const { id: moduleId } = useModule()
