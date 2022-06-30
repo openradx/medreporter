@@ -29,30 +29,27 @@ export const historyTrackerSlice = createSlice({
 export const { forwardTracker, undoTracker, redoTracker } = historyTrackerSlice.actions
 
 export const undo = (): AppThunk<RootState | void> => (dispatch, getState) => {
-  const current = getState().historyTracker.current
+  const { current } = getState().historyTracker
   if (current > 0) {
     dispatch(undoHistory(current))
     dispatch(undoTracker())
-    return getState()
   }
+  return getState()
 }
 
 export const redo = (): AppThunk<RootState | void> => (dispatch, getState) => {
   const tracker = getState().historyTracker
   if (tracker.current < tracker.mostRecent) {
     dispatch(redoTracker())
-    const current = getState().historyTracker.current
+    const { current } = getState().historyTracker
     dispatch(redoHistory(current))
-    return getState()
   }
+  return getState()
 }
 
 export default historyTrackerSlice.reducer
 
-export const selectCanUndo = (state: RootState) => {
-  return state.historyTracker.current > 0
-}
+export const selectCanUndo = (state: RootState) => state.historyTracker.current > 0
 
-export const selectCanRedo = (state: RootState) => {
-  return state.historyTracker.current < state.historyTracker.mostRecent
-}
+export const selectCanRedo = (state: RootState) =>
+  state.historyTracker.current < state.historyTracker.mostRecent
