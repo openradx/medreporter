@@ -1,11 +1,17 @@
 import { Box } from "@mantine/core"
 import copy from "fast-copy"
-import { ReactNode, useCallback, useEffect, useRef } from "react"
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
 import { StructureFormContextProvider } from "../../contexts/StructureFormContext"
 import { setDataInitialized } from "../../state/displaySlice"
-import { useAppDispatch } from "../../state/store"
+import {
+  selectCanRedo,
+  selectCanUndo,
+  undo as doUndo,
+  redo as doRedo,
+} from "../../state/historyTrackerSlice"
+import { useAppDispatch, useAppSelector } from "../../state/store"
 import {
   changeStructureValue,
   setStructureData,
@@ -21,6 +27,8 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   const dispatch = useAppDispatch()
 
   const { getValues, watch, reset } = methods
+
+  const [modified, setModified] = useState(false)
 
   const changeStructureValueDebounced = useDebouncedCallback((moduleId, fieldId, value) => {
     dispatch(changeStructureValue({ moduleId, fieldId, value }))
@@ -39,6 +47,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
         const value = data?.[moduleId]?.[fieldId]
         changeStructureValueDebounced(moduleId, fieldId, value)
       }
+      setModified(true)
     })
     return () => subscription.unsubscribe()
   }, [watch, changeStructureValueDebounced])
@@ -73,14 +82,41 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   }, [])
 
   const clearForm = useCallback(() => {
+    changeStructureValueDebounced.flush()
     const data = defaultValuesRef.current
     reset(copy(data))
     dispatch(setStructureData(data))
+    setModified(false)
   }, [reset, dispatch])
+
+  const canUndo = useAppSelector(selectCanUndo)
+  const canRedo = useAppSelector(selectCanRedo)
+
+  const undo = useCallback(() => {
+    changeStructureValueDebounced.flush()
+    const state = dispatch(doUndo())
+    reset(copy(state.structureData.present))
+    setModified(true)
+  }, [])
+  const redo = useCallback(() => {
+    changeStructureValueDebounced.flush()
+    const state = dispatch(doRedo())
+    reset(copy(state.structureData.present))
+    setModified(true)
+  }, [])
 
   return (
     <StructureFormContextProvider
-      value={{ registerDefaultValue, unregisterDefaultValue, clearForm }}
+      value={{
+        modified,
+        canUndo,
+        canRedo,
+        undo,
+        redo,
+        registerDefaultValue,
+        unregisterDefaultValue,
+        clearForm,
+      }}
     >
       <FormProvider {...methods}>
         <Box

@@ -3,10 +3,10 @@ import { AiOutlineClear } from "react-icons/ai"
 import { useStructureForm } from "../../contexts/StructureFormContext"
 
 export const ClearButton = () => {
-  const { clearForm } = useStructureForm()
+  const { modified, clearForm } = useStructureForm()
 
   return (
-    <ActionIcon variant="default" onClick={clearForm} aria-label="Clear form">
+    <ActionIcon variant="default" disabled={!modified} onClick={clearForm} aria-label="Clear form">
       <AiOutlineClear size={20} />
     </ActionIcon>
   )

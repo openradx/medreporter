@@ -1,6 +1,6 @@
 BrainArteries:
   title: Circulus arteriosus cerebri
- leftM2Superior: Left superior M2-segment
+  leftM2Superior: Left superior M2-segment
   leftM2Inferior: Left inferior M2-segment
   leftM1Bifurcation: Bifurcation of left MCA
   leftM1Distal: Left distal M1-segment

@@ -1,24 +1,12 @@
 import { ActionIcon } from "@mantine/core"
-import { useFormContext } from "react-hook-form"
 import { MdRedo } from "react-icons/md"
-import { redo, selectCanRedo } from "../../state/historyTrackerSlice"
-import { useAppDispatch, useAppSelector } from "../../state/store"
+import { useStructureForm } from "../../contexts/StructureFormContext"
 
 export const RedoButton = () => {
-  const { reset } = useFormContext()
-  const dispatch = useAppDispatch()
-  const canRedo = useAppSelector(selectCanRedo)
-
-  const handleClick = () => {
-    const state = dispatch(redo())
-    if (state) {
-      const structureData = state.structureData.present
-      reset(structureData)
-    }
-  }
+  const { canRedo, redo } = useStructureForm()
 
   return (
-    <ActionIcon variant="default" disabled={!canRedo} onClick={handleClick} aria-label="Redo">
+    <ActionIcon variant="default" disabled={!canRedo} onClick={() => redo()} aria-label="Redo">
       <MdRedo size={20} />
     </ActionIcon>
   )
