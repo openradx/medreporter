@@ -63,7 +63,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
   const registerDefaultValue = useCallback(
     (moduleId: string, fieldId: string, defaultValue: any) => {
       if (defaultValuesRef.current[moduleId] === undefined) {
-        defaultValuesRef.current[moduleId] = { fieldId: defaultValue }
+        defaultValuesRef.current[moduleId] = { [fieldId]: defaultValue }
       } else {
         defaultValuesRef.current[moduleId][fieldId] = defaultValue
       }
