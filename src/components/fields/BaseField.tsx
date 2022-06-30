@@ -1,4 +1,4 @@
-import { Box, MediaQuery } from "@mantine/core"
+import { Box } from "@mantine/core"
 import { PropsWithChildren, useEffect, useRef } from "react"
 import { getFieldContext } from "../../contexts/FieldContext"
 import { selectScrollInto } from "../../state/displaySlice"
@@ -11,7 +11,6 @@ interface FieldProps<T> {
   defaultValue: T
   value: T
   onChange: (newValue: T) => void
-  defaultSize?: Record<string, string>
 }
 
 export const BaseField = <T,>({
@@ -21,7 +20,6 @@ export const BaseField = <T,>({
   defaultValue,
   value,
   onChange,
-  defaultSize,
   children,
 }: PropsWithChildren<FieldProps<T>>) => {
   const scrollInto = useAppSelector(selectScrollInto)
@@ -33,28 +31,15 @@ export const BaseField = <T,>({
     }
   }, [scrollInto, moduleId, fieldId])
 
-  const fieldSize = { minWidth: "250px", minWidthXs: "100%", maxWidth: "20%" }
-  const finalSize = { ...fieldSize, ...defaultSize }
-
   const { FieldContextProvider } = getFieldContext<T>()
 
   // TODO: for finding and group we maybe also have to return an unstyled box.
   // But some element we need for the ref for the scroll into
   return (
     <FieldContextProvider value={{ id: fieldId, defaultValue, value, onChange }}>
-      <MediaQuery smallerThan="md" styles={{ minWidth: finalSize.minWidthXs }}>
-        <Box
-          ref={fieldEl}
-          sx={{
-            minWidth: finalSize.minWidth,
-            maxWidth: finalSize.maxWidth,
-            flexGrow: 1,
-            display: !visible ? "none" : undefined,
-          }}
-        >
-          {children}
-        </Box>
-      </MediaQuery>
+      <Box ref={fieldEl} sx={{ display: !visible ? "none" : undefined }}>
+        {children}
+      </Box>
     </FieldContextProvider>
   )
 }

@@ -3,9 +3,7 @@ import {
   calcAbsoluteAdrenalWashout,
   calcRelativeAdrenalWashout,
 } from "../../../utils/adrenalWashoutCalculations"
-import { Citation } from "../../common/Citation"
 import { Paragraph } from "../../structuredReport/Paragraph"
-import { References } from "../../structuredReport/References"
 import { Statement } from "../../structuredReport/Statement"
 
 type AdrenalWashoutData = {
