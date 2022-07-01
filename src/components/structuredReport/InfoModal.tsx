@@ -1,6 +1,6 @@
-import { Modal, ModalProps, useMantineTheme } from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
-import { ReactNode } from "react"
+import { Modal, Tabs } from "@mantine/core"
+import { Children, isValidElement, ReactElement, ReactNode } from "react"
+import { useScreenSize } from "../../hooks/useScreenSize"
 
 interface InfoModalProps {
   title: string
@@ -10,15 +10,44 @@ interface InfoModalProps {
 }
 
 export const InfoModal = ({ title, opened, onClose, children }: InfoModalProps) => {
-  const theme = useMantineTheme()
-  const isSmallScreen = useMediaQuery(`(max-width: ${theme.breakpoints.md}px)`)
+  const tabTitles: string[] = []
+  const infoTabs: ReactElement[] = []
 
-  // TODO:
-  const size: ModalProps["size"] = isSmallScreen ? "xs" : "xl"
+  Children.forEach(children, (child) => {
+    if (isValidElement(child) && typeof child.type !== "string") {
+      const { name } = child.type
+      if (name === "InfoTab") {
+        const tabTitle = child.props.title as string
+        tabTitles.push(tabTitle)
+        infoTabs.push(child)
+      }
+    }
+  })
+
+  const screenSize = useScreenSize()
 
   return (
-    <Modal opened={opened} onClose={onClose} title={title} overflow="inside" size={size}>
-      {children}
+    <Modal
+      opened={opened}
+      onClose={onClose}
+      title={title}
+      size={screenSize}
+      styles={{ header: { marginBottom: 8 } }}
+    >
+      <Tabs defaultValue={tabTitles[0]}>
+        <Tabs.List>
+          {tabTitles.map((tabTitle) => (
+            <Tabs.Tab key={tabTitle} value={tabTitle}>
+              {tabTitle}
+            </Tabs.Tab>
+          ))}
+        </Tabs.List>
+        {infoTabs.map((infoTab, index) => (
+          <Tabs.Panel key={tabTitles[index]} value={tabTitles[index]} pt="sm">
+            {infoTab}
+          </Tabs.Panel>
+        ))}
+      </Tabs>
     </Modal>
   )
 }
