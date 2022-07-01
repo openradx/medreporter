@@ -6,8 +6,4 @@ interface HintProps {
   children: ReactNode
 }
 
-export const Hint = ({ children }: HintProps) => (
-  <Alert icon={<HintIcon />} sx={{ display: "inline-block" }}>
-    {children}
-  </Alert>
-)
+export const Hint = ({ children }: HintProps) => <Alert icon={<HintIcon />}>{children}</Alert>

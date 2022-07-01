@@ -1,9 +1,9 @@
 import { Box, Text } from "@mantine/core"
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 
 interface ModuleHeaderProps {
   title: string
-  actions?: ReactElement
+  actions?: ReactNode
 }
 
 export const ModuleHeader = ({ title, actions }: ModuleHeaderProps) => (
