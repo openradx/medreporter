@@ -1,7 +1,6 @@
 import { useReportData } from "../../../contexts/ReportDataContext"
 import { Citation } from "../../common/Citation"
 import { Paragraph } from "../../structuredReport/Paragraph"
-import { References } from "../../structuredReport/References"
 import { Statement } from "../../structuredReport/Statement"
 
 type SandboxData = {
@@ -25,13 +24,11 @@ export const SandboxReport = () => {
       <Paragraph>Selected bones: {bones_feet}</Paragraph>
       <Paragraph>Some text: {text}</Paragraph>
       {conclusion}
-      <References>
-        <Citation
-          title="Technical and Interpretive Pitfalls in Adrenal Imaging"
-          authors="Gurinder Nandra, Oliver Duxbury, Pawan Patel, Jaymin H. Patel, Nirav Patel, and Ioannis Vlahos"
-          journal="RadioGraphics 2020 40:4, 1041-1060"
-        />
-      </References>
+      <Citation
+        title="Technical and Interpretive Pitfalls in Adrenal Imaging"
+        authors="Gurinder Nandra, Oliver Duxbury, Pawan Patel, Jaymin H. Patel, Nirav Patel, and Ioannis Vlahos"
+        journal="RadioGraphics 2020 40:4, 1041-1060"
+      />
       <Paragraph>
         <Statement fieldId="foobar">fooo</Statement>
       </Paragraph>
