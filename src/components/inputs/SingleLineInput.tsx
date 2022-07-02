@@ -1,23 +1,19 @@
-import { TextInput, Group } from "@mantine/core"
+import { TextInput } from "@mantine/core"
 import { ReactElement } from "react"
+import { InputLabel } from "./InputLabel"
 
 interface SingleLineInputProps {
   label?: string
-  onChange: (value: string) => void
   value: string
+  onChange: (value: string) => void
   extras?: ReactElement
 }
 
-export const SingleLineInput = ({ label, onChange, value, extras }: SingleLineInputProps) => (
+export const SingleLineInput = ({ label, value, onChange, extras }: SingleLineInputProps) => (
   <TextInput
     autoComplete="off"
     onChange={(event) => onChange(event.target.value)}
-    label={
-      <Group sx={{ display: "flex", flexDirection: "row", alignContent: "center" }} spacing={1}>
-        {label}
-        {extras}
-      </Group>
-    }
+    label={(label || extras) && <InputLabel label={label} extras={extras} />}
     {...{ value }}
   />
 )

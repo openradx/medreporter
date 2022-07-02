@@ -1,6 +1,6 @@
-import { Group } from "@mantine/core"
 import { DatePicker } from "@mantine/dates"
 import { ReactElement } from "react"
+import { InputLabel } from "./InputLabel"
 
 interface DateInputProps {
   label?: string
@@ -11,12 +11,7 @@ interface DateInputProps {
 
 export const DateInput = ({ label, value, onChange, extras }: DateInputProps) => (
   <DatePicker
-    label={
-      <Group sx={{ display: "flex", flexDirection: "row", alignContent: "center" }} spacing={1}>
-        {label}
-        {extras}
-      </Group>
-    }
+    label={(label || extras) && <InputLabel label={label} extras={extras} />}
     value={value}
     onChange={onChange}
   />

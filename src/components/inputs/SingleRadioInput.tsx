@@ -1,31 +1,27 @@
-import { Radio, Group } from "@mantine/core"
+import { Radio } from "@mantine/core"
 import { ReactElement } from "react"
 import { FieldOption } from "../fields/fieldTypes"
+import { InputLabel } from "./InputLabel"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
 
 interface SingleRadioInputProps {
   label?: string
   options?: FieldOption[]
-  onChange: (value: string) => void
   value: string | null
+  onChange: (value: string) => void
   extras?: ReactElement
 }
 
 export const SingleRadioInput = ({
   label,
+  options = DEFAULT_OPTIONS,
   value,
   onChange,
-  options = DEFAULT_OPTIONS,
   extras,
 }: SingleRadioInputProps) => (
   <Radio.Group
-    label={
-      <Group sx={{ display: "flex", flexDirection: "row", alignContent: "center" }} spacing={1}>
-        {label}
-        {extras}
-      </Group>
-    }
+    label={(label || extras) && <InputLabel label={label} extras={extras} />}
     onChange={onChange}
     value={value ?? undefined}
     orientation="vertical"

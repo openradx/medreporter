@@ -1,6 +1,7 @@
-import { Group, NumberInput as MantineNumberInput } from "@mantine/core"
+import { NumberInput as MantineNumberInput } from "@mantine/core"
 import { ReactElement, useState } from "react"
 import { ScrollBlocker } from "../common/ScrollBlocker"
+import { InputLabel } from "./InputLabel"
 
 const SCROLL_SENSITIVITY = 4
 
@@ -17,8 +18,8 @@ interface NumberInputProps {
 
 export const NumberInput = ({
   label,
-  onChange,
   value,
+  onChange,
   min,
   max,
   step,
@@ -32,12 +33,7 @@ export const NumberInput = ({
       <MantineNumberInput
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
-        label={
-          <Group sx={{ display: "flex", flexDirection: "row", alignContent: "center" }} spacing={4}>
-            {label}
-            {extras}
-          </Group>
-        }
+        label={(label || extras) && <InputLabel label={label} extras={extras} />}
         {...{ min, max }}
         value={value ?? undefined}
         onChange={(newValue) => onChange(newValue ?? null)}
