@@ -22,6 +22,6 @@ export const SandboxStructure = () => (
       variant="select"
       extras={<BrainArteries />}
     />
-    <FreeTextField id="text" label="Some text" variant="multiline" />
+    <FreeTextField id="text" label="Some text" multiline />
   </>
 )

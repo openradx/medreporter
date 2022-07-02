@@ -1,14 +1,14 @@
 import { Textarea } from "@mantine/core"
 import { ReactElement } from "react"
 
-interface MultilineInputProps {
+interface MultiLineInputProps {
   label?: string
   onChange: (value: string) => void
   value: string
   extras?: ReactElement
 }
 
-export const MultilineInput = ({ label, onChange, value, extras }: MultilineInputProps) => (
+export const MultiLineInput = ({ label, onChange, value, extras }: MultiLineInputProps) => (
   <Textarea
     autosize
     autoComplete="off"

@@ -1,14 +1,14 @@
 import { TextInput, Group } from "@mantine/core"
 import { ReactElement } from "react"
 
-interface SinglelineInputProps {
+interface SingleLineInputProps {
   label?: string
   onChange: (value: string) => void
   value: string
   extras?: ReactElement
 }
 
-export const SinglelineInput = ({ label, onChange, value, extras }: SinglelineInputProps) => (
+export const SingleLineInput = ({ label, onChange, value, extras }: SingleLineInputProps) => (
   <TextInput
     autoComplete="off"
     onChange={(event) => onChange(event.target.value)}
