@@ -1,11 +1,13 @@
 import { Group, NumberInput as MantineNumberInput } from "@mantine/core"
-import { ReactElement, useRef, useState } from "react"
+import { ReactElement, useState } from "react"
 import { ScrollBlocker } from "../common/ScrollBlocker"
+
+const SCROLL_SENSITIVITY = 4
 
 interface NumberInputProps {
   label?: string
-  onChange: (value: number | null) => void
   value: number | null
+  onChange: (value: number | null) => void
   min?: number
   max?: number
   step?: number
@@ -23,20 +25,11 @@ export const NumberInput = ({
   precision = 0,
   extras,
 }: NumberInputProps) => {
-  const inputEl = useRef<HTMLInputElement>(null)
   const [focus, setFocus] = useState(false)
-
-  const handleWheel = (up: boolean) => {
-    const el = inputEl.current!
-    const key = up ? "ArrowUp" : "ArrowDown"
-    el.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true }))
-    el.dispatchEvent(new KeyboardEvent("keyup", { key, bubbles: true }))
-  }
 
   return (
     <ScrollBlocker focus={focus}>
       <MantineNumberInput
-        ref={inputEl}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         label={
@@ -49,9 +42,13 @@ export const NumberInput = ({
         value={value ?? undefined}
         onChange={(newValue) => onChange(newValue ?? null)}
         onWheel={(event) => {
-          if (focus) {
-            event.deltaY < -4 && handleWheel(true)
-            event.deltaY > 4 && handleWheel(false)
+          let key: "ArrowUp" | "ArrowDown" | null = null
+          if (focus && event.deltaY < -SCROLL_SENSITIVITY) key = "ArrowUp"
+          else if (focus && event.deltaY > SCROLL_SENSITIVITY) key = "ArrowDown"
+
+          if (key) {
+            event.currentTarget.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true }))
+            event.currentTarget.dispatchEvent(new KeyboardEvent("keyup", { key, bubbles: true }))
           }
         }}
         step={step ?? 1 / 10 ** precision}
