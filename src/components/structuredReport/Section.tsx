@@ -8,12 +8,12 @@ import { useAppDispatch } from "../../state/store"
 interface SectionProps {
   id: string
   title?: string
-  visible?: boolean
+  active?: boolean
   link?: boolean
   children?: ReactNode
 }
 
-export const Section = ({ id, title, visible = true, link = false, children }: SectionProps) => {
+export const Section = ({ id, title, active = true, link = false, children }: SectionProps) => {
   const { context } = useStructuredReport()
   const dispatch = useAppDispatch()
 
@@ -21,13 +21,15 @@ export const Section = ({ id, title, visible = true, link = false, children }: S
     dispatch(activateSection({ sectionId: id }))
   }
 
+  if (title === undefined) title = id
+
   return (
-    <SectionContextProvider value={{ id, visible }}>
+    <SectionContextProvider value={{ id, title, active }}>
       {context === "structure" && (
         <Box
           className="medreporter-Section-structure"
           sx={{
-            display: visible ? "flex" : "none",
+            display: active ? "flex" : "none",
             flexDirection: "column",
             alignItems: "stretch",
           }}
