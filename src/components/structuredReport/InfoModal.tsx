@@ -40,16 +40,16 @@ export const InfoModal = ({ title, opened, onClose, children }: InfoModalProps) 
       size={screenSize}
       styles={{ header: { marginBottom: 8 } }}
     >
-      <Tabs defaultValue={tabTitles[0]}>
+      <Tabs defaultValue="tab0">
         <Tabs.List>
-          {tabTitles.map((tabTitle) => (
-            <Tabs.Tab key={tabTitle} value={tabTitle}>
+          {tabTitles.map((tabTitle, index) => (
+            <Tabs.Tab key={`tab${index}`} value={`tab${index}`}>
               {tabTitle}
             </Tabs.Tab>
           ))}
         </Tabs.List>
         {infoTabs.map((infoTab, index) => (
-          <Tabs.Panel key={tabTitles[index]} value={tabTitles[index]} pt="sm">
+          <Tabs.Panel key={`tab${index}`} value={`tab${index}`} pt="sm">
             {infoTab}
           </Tabs.Panel>
         ))}
