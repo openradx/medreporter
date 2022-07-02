@@ -1,4 +1,4 @@
-import { Badge, Card, Group, Text } from "@mantine/core"
+import { Badge, Card, Group, Stack, Text } from "@mantine/core"
 import Link from "next/link"
 
 interface ToolCardProps {
@@ -11,17 +11,19 @@ interface ToolCardProps {
 export const ToolCard = ({ title, description, url, tags }: ToolCardProps) => (
   <Link href={url} passHref>
     <Card component="a" withBorder>
-      <Text weight={500}>{title}</Text>
-      <Text pt="xs" size="sm" color="dimmed">
-        {description}
-      </Text>
-      <Group pt="xs" spacing={4}>
-        {tags.map((tag) => (
-          <Badge sx={{ cursor: "pointer" }} key={tag}>
-            {tag}
-          </Badge>
-        ))}
-      </Group>
+      <Stack spacing={4} sx={{ height: 130 }}>
+        <Text weight={500}>{title}</Text>
+        <Text size="sm" color="dimmed" sx={{ flexGrow: 1 }}>
+          {description}
+        </Text>
+        <Group pt="xs" spacing={4}>
+          {tags.map((tag) => (
+            <Badge sx={{ cursor: "pointer" }} key={tag}>
+              {tag}
+            </Badge>
+          ))}
+        </Group>
+      </Stack>
     </Card>
   </Link>
 )
