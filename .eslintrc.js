@@ -17,6 +17,9 @@ module.exports = {
   },
   rules: {
     "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "no-plusplus": "off",
+    "no-continue": "off",
     "react/react-in-jsx-scope": "off",
     semi: ["error", "never"],
     "@typescript-eslint/semi": "off",

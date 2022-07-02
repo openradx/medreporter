@@ -19,14 +19,13 @@ export const serverSideStructuredReportTranslations = async (
   await initPromise
 
   const languages: Set<string> = new Set()
-  await Promise.all(
-    locales.map(async (locale) => {
-      await i18n.changeLanguage(locale)
-      i18n.languages.forEach((lng) => {
-        languages.add(lng)
-      })
-    })
-  )
+  for (const locale of locales) {
+    // eslint-disable-next-line no-await-in-loop
+    await i18n.changeLanguage(locale)
+    for (const lng of i18n.languages) {
+      languages.add(lng)
+    }
+  }
 
   const structuredReportStore: Resource = {}
   languages.forEach((language) => {
