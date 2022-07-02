@@ -1,31 +1,28 @@
 import { Box, Paper } from "@mantine/core"
-import { ReactElement, ReactNode, useEffect, useRef } from "react"
+import { ReactNode, useEffect, useRef } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
 import { selectScrollInto } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
-import { ExternalLink, ExternalLinkProps } from "./ExternalLink"
+import { ExternalLink } from "./ExternalLink"
 import { ModuleHeader } from "./ModuleHeader"
 
 interface StructureProps {
-  title: string
-  links?: ExternalLinkProps[]
-  info?: ReactElement
   children?: ReactNode
 }
 
-export const Structure = ({ title, links, info, children }: StructureProps) => {
+export const Structure = ({ children }: StructureProps) => {
   const { context } = useStructuredReport()
-  const { id: moduleId } = useModule()
+  const { id, title, links, info } = useModule()
   const scrollInto = useAppSelector(selectScrollInto)
   const cardEl = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (scrollInto && scrollInto.moduleId === moduleId && !scrollInto.fieldId) {
+    if (scrollInto && scrollInto.moduleId === id && !scrollInto.fieldId) {
       cardEl.current?.scrollIntoView({ behavior: "smooth" })
     }
-  }, [scrollInto, moduleId])
+  }, [scrollInto, id])
 
   if (context === "report") return null
 

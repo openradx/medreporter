@@ -1,5 +1,6 @@
-import { Modal, Tabs } from "@mantine/core"
+import { Group, Modal, Tabs } from "@mantine/core"
 import { Children, isValidElement, ReactElement, ReactNode } from "react"
+import { TbInfoCircle as InfoIcon } from "react-icons/tb"
 import { useScreenSize } from "../../hooks/useScreenSize"
 
 interface InfoModalProps {
@@ -30,7 +31,12 @@ export const InfoModal = ({ title, opened, onClose, children }: InfoModalProps) 
     <Modal
       opened={opened}
       onClose={onClose}
-      title={title}
+      title={
+        <Group spacing="xs">
+          <InfoIcon size={20} />
+          {title}
+        </Group>
+      }
       size={screenSize}
       styles={{ header: { marginBottom: 8 } }}
     >

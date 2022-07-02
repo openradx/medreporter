@@ -12,8 +12,8 @@ import { StructuredReport } from "../../structuredReport/StructuredReport"
 export const Fleischner2017 = () => (
   <StructuredReport>
     <Section id="fleischner2017">
-      <Module id="fleischner2017">
-        <Structure title="Fleischner 2017">
+      <Module id="fleischner2017" title="Fleischner 2017">
+        <Structure>
           <FreeTextField id="foobar" label="Tell me" />
         </Structure>
         <Report>

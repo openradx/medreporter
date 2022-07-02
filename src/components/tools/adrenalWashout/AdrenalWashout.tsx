@@ -10,17 +10,18 @@ import { AdrenalWashoutStructure } from "./AdrenalWashoutStructure"
 export const AdrenalWashout = () => (
   <StructuredReport>
     <Section id="default">
-      <Module id="adrenalWashout">
-        <Structure
-          title="Adrenal Washout"
-          links={[
-            {
-              url: "https://radiopaedia.org/articles/adrenal-washout",
-              title: "Radiopaedia | Adrenal Washout",
-            },
-          ]}
-          info={<AdrenalWashoutInfo />}
-        >
+      <Module
+        id="adrenalWashout"
+        title="Adrenal Washout"
+        links={[
+          {
+            url: "https://radiopaedia.org/articles/adrenal-washout",
+            title: "Radiopaedia | Adrenal Washout",
+          },
+        ]}
+        info={<AdrenalWashoutInfo />}
+      >
+        <Structure>
           <AdrenalWashoutStructure />
         </Structure>
         <Report>

@@ -4,7 +4,7 @@ import { InfoTab } from "../../structuredReport/InfoTab"
 import { ModuleInfo } from "../../structuredReport/ModuleInfo"
 
 export const AdrenalWashoutInfo = () => (
-  <ModuleInfo title="Adrenal Washout">
+  <ModuleInfo>
     <InfoTab title="References">
       <Stack>
         <Citation
