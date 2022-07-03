@@ -7,13 +7,21 @@ interface SingleLineInputProps {
   value: string
   onChange: (value: string) => void
   extras?: ReactElement
+  width?: number
 }
 
-export const SingleLineInput = ({ label, value, onChange, extras }: SingleLineInputProps) => (
+export const SingleLineInput = ({
+  label,
+  value,
+  onChange,
+  extras,
+  width,
+}: SingleLineInputProps) => (
   <TextInput
     autoComplete="off"
     onChange={(event) => onChange(event.target.value)}
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
-    {...{ value }}
+    value={value}
+    styles={{ wrapper: { width } }}
   />
 )

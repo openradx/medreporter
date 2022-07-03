@@ -14,6 +14,7 @@ interface NumberInputProps {
   step?: number
   precision?: number
   extras?: ReactElement
+  width?: number
 }
 
 export const NumberInput = ({
@@ -25,6 +26,7 @@ export const NumberInput = ({
   step,
   precision = 0,
   extras,
+  width,
 }: NumberInputProps) => {
   const [focus, setFocus] = useState(false)
 
@@ -52,6 +54,7 @@ export const NumberInput = ({
         stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
         precision={precision}
         styles={{
+          wrapper: { width },
           control: {
             flexGrow: 1,
             flex: "auto",
