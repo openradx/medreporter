@@ -1,6 +1,7 @@
-import { Group } from "@mantine/core"
+import { Box, Group } from "@mantine/core"
 import { DimensionsInput } from "./DimensionsInput"
 import { FollowUpToggle } from "./FollowUpToggle"
+import { MeasurementsToolbox } from "./MeasurementsToolbox"
 import { RowsInput } from "./RowsInput"
 import { MeasurementsAction } from "./measurementTypes"
 
@@ -27,5 +28,8 @@ export const ControlPanel = ({
     <FollowUpToggle label={labels.followUp} followUp={followUp} dispatch={dispatch} />
     <RowsInput label={labels.rows} rows={rows} dispatch={dispatch} />
     <DimensionsInput label={labels.dimensions} dimensions={dimensions} dispatch={dispatch} />
+    <Box sx={{ alignSelf: "center" }}>
+      <MeasurementsToolbox />
+    </Box>
   </Group>
 )

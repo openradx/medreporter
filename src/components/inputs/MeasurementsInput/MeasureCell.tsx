@@ -17,6 +17,7 @@ export const MeasureCell = memo(
     <td>
       <NumberInput
         min={0}
+        max={9999}
         onChange={(newValue) => {
           dispatch({
             type: "changeMeasureCell",

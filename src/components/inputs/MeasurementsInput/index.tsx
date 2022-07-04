@@ -1,12 +1,20 @@
-import { Box } from "@mantine/core"
-import { ReactElement, useCallback, useRef } from "react"
+import { Box, Stack } from "@mantine/core"
+import { ReactElement, useCallback, useEffect, useRef, useState } from "react"
+import { useDebouncedCallback } from "use-debounce"
 import { MeasurementsContextProvider } from "../../../contexts/MeasurementsContext"
-import { getMeasurementsDataParams, measurementsReducer } from "../../../utils/measurementUtils"
+import {
+  calcStats,
+  createStatsText,
+  getMeasurementsDataParams,
+  measurementsReducer,
+} from "../../../utils/measurementUtils"
 import { InputLabel } from "../InputLabel"
 import { ControlPanel } from "./ControlPanel"
 import { DataRow } from "./DataRow"
 import { HeaderRow } from "./HeaderRow"
 import { MeasurementsAction, MeasurementsData, MeasurementsStats } from "./measurementTypes"
+
+const STATS_DEBOUNCE = 500
 
 interface MeasurementsInputProps {
   label?: string
@@ -18,7 +26,8 @@ interface MeasurementsInputProps {
     dimensions: string
   }
   value: MeasurementsData
-  onChange: (data: MeasurementsData, stats: MeasurementsStats) => void
+  onChange: (data: MeasurementsData) => void
+  onStats?: (stats: MeasurementsStats) => void
   extras?: ReactElement
 }
 
@@ -33,6 +42,7 @@ export const MeasurementsInput = ({
   },
   value,
   onChange,
+  onStats,
   extras,
 }: MeasurementsInputProps) => {
   const data = value
@@ -41,20 +51,28 @@ export const MeasurementsInput = ({
   const dataRef = useRef(data)
   dataRef.current = data
 
-  const onChangeRef = useRef(onChange)
-  onChangeRef.current = onChange
+  const [stats, setStats] = useState<MeasurementsStats>({
+    previousSum: null,
+    currentSum: null,
+    percentageChange: null,
+  })
+
+  const updateStats = useDebouncedCallback(() => {
+    const newStats = calcStats(dataRef.current)
+    setStats(newStats)
+    typeof onStats === "function" && onStats(newStats)
+  }, STATS_DEBOUNCE)
+
+  useEffect(() => {
+    updateStats()
+  }, [data])
 
   const dispatch = useCallback((action: MeasurementsAction) => {
-    onChangeRef.current(measurementsReducer(dataRef.current, action), {
-      // TODO:
-      currentSum: 0,
-      percentageChange: 0,
-      previousSum: 0,
-    })
+    onChange(measurementsReducer(dataRef.current, action))
   }, [])
 
   return (
-    <Box sx={{ minWidth: 0, maxWidth: "fit-content" }}>
+    <Stack spacing="xs">
       <Box
         sx={{
           display: "flex",
@@ -67,14 +85,14 @@ export const MeasurementsInput = ({
           {(label || extras) && <InputLabel label={label} extras={extras} />}
         </MeasurementsContextProvider>
       </Box>
+      <ControlPanel
+        labels={labels}
+        followUp={params.followUp}
+        rows={params.rows}
+        dimensions={params.dimensions}
+        dispatch={dispatch}
+      />
       <Box sx={{ overflow: "auto" }}>
-        <ControlPanel
-          labels={labels}
-          followUp={params.followUp}
-          rows={params.rows}
-          dimensions={params.dimensions}
-          dispatch={dispatch}
-        />
         <table>
           <tbody>
             <HeaderRow labels={labels} followUp={params.followUp} dimensions={params.dimensions} />
@@ -91,6 +109,7 @@ export const MeasurementsInput = ({
           </tbody>
         </table>
       </Box>
-    </Box>
+      <Box>{createStatsText(stats)}</Box>
+    </Stack>
   )
 }
