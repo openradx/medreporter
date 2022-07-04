@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
-import { createEmptyMeasurements } from "../../utils/measurementUtils"
+import { calcStats, createEmptyMeasurements } from "../../utils/measurementUtils"
 import { MeasurementsInput } from "./MeasurementsInput"
 import { MeasurementsData } from "./MeasurementsInput/measurementTypes"
 
@@ -11,8 +11,11 @@ export default {
 
 const Template: ComponentStory<typeof MeasurementsInput> = ({ label, extras }) => {
   const [value, setValue] = useState<MeasurementsData>(createEmptyMeasurements(false, 3, 2))
+  const stats = calcStats(value)
 
-  return <MeasurementsInput value={value} onChange={setValue} {...{ label, extras }} />
+  return (
+    <MeasurementsInput value={value} onChange={setValue} stats={stats} {...{ label, extras }} />
+  )
 }
 
 export const Basic = Template.bind({})

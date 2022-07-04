@@ -1,9 +1,7 @@
 import { Box, Stack } from "@mantine/core"
-import { ReactElement, useCallback, useEffect, useRef, useState } from "react"
-import { useDebouncedCallback } from "use-debounce"
+import { ReactElement, useCallback, useRef } from "react"
 import { MeasurementsContextProvider } from "../../../contexts/MeasurementsContext"
 import {
-  calcStats,
   createStatsText,
   getMeasurementsDataParams,
   measurementsReducer,
@@ -13,8 +11,6 @@ import { ControlPanel } from "./ControlPanel"
 import { DataRow } from "./DataRow"
 import { HeaderRow } from "./HeaderRow"
 import { MeasurementsAction, MeasurementsData, MeasurementsStats } from "./measurementTypes"
-
-const STATS_DEBOUNCE = 500
 
 interface MeasurementsInputProps {
   label?: string
@@ -27,7 +23,7 @@ interface MeasurementsInputProps {
   }
   value: MeasurementsData
   onChange: (data: MeasurementsData) => void
-  onStats?: (stats: MeasurementsStats) => void
+  stats?: MeasurementsStats
   extras?: ReactElement
 }
 
@@ -42,7 +38,7 @@ export const MeasurementsInput = ({
   },
   value,
   onChange,
-  onStats,
+  stats,
   extras,
 }: MeasurementsInputProps) => {
   const data = value
@@ -50,22 +46,6 @@ export const MeasurementsInput = ({
 
   const dataRef = useRef(data)
   dataRef.current = data
-
-  const [stats, setStats] = useState<MeasurementsStats>({
-    previousSum: null,
-    currentSum: null,
-    percentageChange: null,
-  })
-
-  const updateStats = useDebouncedCallback(() => {
-    const newStats = calcStats(dataRef.current)
-    setStats(newStats)
-    typeof onStats === "function" && onStats(newStats)
-  }, STATS_DEBOUNCE)
-
-  useEffect(() => {
-    updateStats()
-  }, [data])
 
   const dispatch = useCallback((action: MeasurementsAction) => {
     onChange(measurementsReducer(dataRef.current, action))
@@ -109,7 +89,7 @@ export const MeasurementsInput = ({
           </tbody>
         </table>
       </Box>
-      <Box>{createStatsText(stats)}</Box>
+      {stats && <Box>{createStatsText(stats)}</Box>}
     </Stack>
   )
 }
