@@ -17,6 +17,9 @@ import { NextPageWithLayout } from "../types"
 enablePatches() // for undo / redo
 enableMapSet() // for TransformerRegistry
 
+const fontFamily =
+  "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+
 interface MyAppProps extends AppProps {
   colorScheme: ColorScheme
   Component: NextPageWithLayout
@@ -43,7 +46,11 @@ const MyApp = (props: MyAppProps) => {
       </Head>
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
+        <MantineProvider
+          theme={{ colorScheme, fontFamily, headings: { fontFamily } }}
+          withGlobalStyles
+          withNormalizeCSS
+        >
           <NotificationsProvider>
             <ModalsProvider>{getLayout(<Component {...pageProps} />)}</ModalsProvider>
           </NotificationsProvider>

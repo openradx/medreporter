@@ -4,11 +4,18 @@ import { useDarkMode } from "storybook-dark-mode"
 
 export const parameters = { layout: "padded" }
 
+const fontFamily =
+  "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+
 function ThemeWrapper(props: { children: React.ReactNode }) {
   return (
     <ColorSchemeProvider colorScheme="light" toggleColorScheme={() => {}}>
       <MantineProvider
-        theme={{ colorScheme: useDarkMode() ? "dark" : "light" }}
+        theme={{
+          colorScheme: useDarkMode() ? "dark" : "light",
+          fontFamily,
+          headings: { fontFamily },
+        }}
         withGlobalStyles
         withNormalizeCSS
       >
