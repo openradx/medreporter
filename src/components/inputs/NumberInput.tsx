@@ -1,5 +1,5 @@
 import { NumberInput as MantineNumberInput } from "@mantine/core"
-import { ReactElement, useState } from "react"
+import { ReactNode, useState } from "react"
 import { ScrollBlocker } from "../common/ScrollBlocker"
 import { InputLabel } from "./InputLabel"
 
@@ -13,7 +13,7 @@ interface NumberInputProps {
   max?: number
   step?: number
   precision?: number
-  extras?: ReactElement
+  extras?: ReactNode
   width?: number
 }
 

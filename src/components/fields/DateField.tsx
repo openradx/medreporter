@@ -1,5 +1,5 @@
 import dayjs from "dayjs"
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { DateInput } from "../inputs/DateInput"
@@ -8,7 +8,7 @@ import { CommonFieldProps } from "./fieldTypes"
 
 interface DateFieldProps extends CommonFieldProps {
   defaultValue?: string | null
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const DateField = ({

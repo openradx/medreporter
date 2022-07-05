@@ -1,12 +1,12 @@
 import { DatePicker } from "@mantine/dates"
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { InputLabel } from "./InputLabel"
 
 interface DateInputProps {
   label?: string
   value: Date | null
   onChange: (value: Date | null) => void
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const DateInput = ({ label, value, onChange, extras }: DateInputProps) => (

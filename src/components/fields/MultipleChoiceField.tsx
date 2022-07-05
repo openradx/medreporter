@@ -1,10 +1,10 @@
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { MultipleCheckboxInput } from "../inputs/MultipleCheckboxInput"
 import { MultipleSelectInput } from "../inputs/MultipleSelectInput"
 import { BaseField } from "./BaseField"
-import { FieldOption, CommonFieldProps } from "./fieldTypes"
+import { CommonFieldProps, FieldOption } from "./fieldTypes"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
 const DEFAULT_VALUE: string[] = []
@@ -13,7 +13,7 @@ interface MultipleChoiceFieldProps extends CommonFieldProps {
   variant?: "checkbox" | "select"
   options?: FieldOption[]
   defaultValue?: string[]
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const MultipleChoiceField = ({

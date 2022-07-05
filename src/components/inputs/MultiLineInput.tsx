@@ -1,12 +1,12 @@
 import { Textarea } from "@mantine/core"
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { InputLabel } from "./InputLabel"
 
 interface MultiLineInputProps {
   label?: string
   value: string
   onChange: (value: string) => void
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const MultiLineInput = ({ label, value, onChange, extras }: MultiLineInputProps) => (

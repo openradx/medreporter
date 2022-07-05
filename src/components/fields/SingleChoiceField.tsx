@@ -1,10 +1,10 @@
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { SingleRadioInput } from "../inputs/SingleRadioInput"
 import { SingleSelectInput } from "../inputs/SingleSelectInput"
 import { BaseField } from "./BaseField"
-import { FieldOption, CommonFieldProps } from "./fieldTypes"
+import { CommonFieldProps, FieldOption } from "./fieldTypes"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
 
@@ -12,7 +12,7 @@ interface SingleChoiceFieldProps extends CommonFieldProps {
   variant?: "radio" | "select"
   options?: FieldOption[]
   defaultValue?: string | null
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const SingleChoiceField = ({

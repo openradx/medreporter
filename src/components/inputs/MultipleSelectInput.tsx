@@ -1,5 +1,5 @@
 import { MultiSelect } from "@mantine/core"
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { FieldOption } from "../fields/fieldTypes"
 import { InputLabel } from "./InputLabel"
 
@@ -10,7 +10,7 @@ interface MultipleSelectInputProps {
   options?: FieldOption[]
   value: string[]
   onChange: (value: string[]) => void
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const MultipleSelectInput = ({

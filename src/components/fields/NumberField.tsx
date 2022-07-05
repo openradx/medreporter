@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { NumberInput } from "../inputs/NumberInput"
@@ -11,7 +11,7 @@ interface NumberFieldProps extends CommonFieldProps {
   max?: number
   precision?: number
   step?: number
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const NumberField = ({

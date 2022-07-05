@@ -1,5 +1,5 @@
 import { Select } from "@mantine/core"
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { FieldOption } from "../fields/fieldTypes"
 import { InputLabel } from "./InputLabel"
 
@@ -10,7 +10,7 @@ interface SingleSelectInputProps {
   options?: FieldOption[]
   value: string | null
   onChange: (value: string | null) => void
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const SingleSelectInput = ({

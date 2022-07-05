@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { useTransformer } from "../../hooks/useTransformer"
@@ -12,7 +12,7 @@ const DEFAULT_MEASUREMENTS_DATA = createEmptyMeasurements(false, 3, 2)
 
 interface MeasurementsFieldProps extends CommonFieldProps {
   defaultValue?: MeasurementsData
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const MeasurementsField = ({

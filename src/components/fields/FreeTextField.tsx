@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactNode } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { MultiLineInput } from "../inputs/MultiLineInput"
@@ -9,7 +9,7 @@ import { CommonFieldProps } from "./fieldTypes"
 interface FreeTextFieldProps extends CommonFieldProps {
   defaultValue?: string
   multiline?: boolean
-  extras?: ReactElement
+  extras?: ReactNode
 }
 
 export const FreeTextField = ({
