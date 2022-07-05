@@ -4,8 +4,6 @@
 
 ## Kai
 
-- [NumberInput] Investigate blur event (clamping), will be fixed with https://github.com/mantinedev/mantine/pull/1689
-- [MeasurementsField]
 - Text / HTML export
 - [Tools] Adrenal washout
 - [Tools] Adrenal MRI Calculator (SI-Index)
