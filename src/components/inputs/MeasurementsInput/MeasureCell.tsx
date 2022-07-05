@@ -29,6 +29,7 @@ export const MeasureCell = memo(
         }}
         value={value}
         width={70}
+        autoHideControls
       />
     </td>
   )

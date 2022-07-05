@@ -15,6 +15,7 @@ interface NumberInputProps {
   precision?: number
   extras?: ReactNode
   width?: number
+  autoHideControls?: boolean
 }
 
 export const NumberInput = ({
@@ -27,14 +28,20 @@ export const NumberInput = ({
   precision = 0,
   extras,
   width,
+  autoHideControls = false,
 }: NumberInputProps) => {
   const [focus, setFocus] = useState(false)
+  const [hovered, setHovered] = useState(false)
 
   return (
     <ScrollBlocker focus={focus}>
       <MantineNumberInput
         label={(label || extras) && <InputLabel label={label} extras={extras} />}
         autoComplete="off"
+        wrapperProps={{
+          onMouseEnter: () => setHovered(true),
+          onMouseLeave: () => setHovered(false),
+        }}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         value={value ?? undefined}
@@ -62,7 +69,10 @@ export const NumberInput = ({
             flex: "auto",
             "&:hover": { flex: "0 0 60%" },
           },
-          rightSection: { alignItems: "stretch" },
+          rightSection: {
+            alignItems: "stretch",
+            display: !autoHideControls || focus || hovered ? undefined : "none",
+          },
         }}
       />
     </ScrollBlocker>
