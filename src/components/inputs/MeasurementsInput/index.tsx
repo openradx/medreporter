@@ -1,16 +1,12 @@
 import { Box, Stack } from "@mantine/core"
-import { ReactElement, useCallback, useRef } from "react"
+import { ReactNode, useCallback, useRef } from "react"
 import { MeasurementsContextProvider } from "../../../contexts/MeasurementsContext"
-import {
-  createStatsText,
-  getMeasurementsDataParams,
-  measurementsReducer,
-} from "../../../utils/measurementUtils"
+import { getMeasurementsDataParams, measurementsReducer } from "../../../utils/measurementUtils"
 import { InputLabel } from "../InputLabel"
 import { ControlPanel } from "./ControlPanel"
 import { DataRow } from "./DataRow"
 import { HeaderRow } from "./HeaderRow"
-import { MeasurementsAction, MeasurementsData, MeasurementsStats } from "./measurementTypes"
+import { MeasurementsAction, MeasurementsData } from "./measurementTypes"
 
 interface MeasurementsInputProps {
   label?: string
@@ -23,8 +19,8 @@ interface MeasurementsInputProps {
   }
   value: MeasurementsData
   onChange: (data: MeasurementsData) => void
-  stats?: MeasurementsStats
-  extras?: ReactElement
+  footer?: ReactNode
+  extras?: ReactNode
 }
 
 export const MeasurementsInput = ({
@@ -38,7 +34,7 @@ export const MeasurementsInput = ({
   },
   value,
   onChange,
-  stats,
+  footer,
   extras,
 }: MeasurementsInputProps) => {
   const data = value
@@ -89,7 +85,7 @@ export const MeasurementsInput = ({
           </tbody>
         </table>
       </Box>
-      {stats && <Box>{createStatsText(stats)}</Box>}
+      {footer}
     </Stack>
   )
 }
