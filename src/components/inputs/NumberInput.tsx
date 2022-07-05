@@ -33,10 +33,10 @@ export const NumberInput = ({
   return (
     <ScrollBlocker focus={focus}>
       <MantineNumberInput
+        label={(label || extras) && <InputLabel label={label} extras={extras} />}
+        autoComplete="off"
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
-        label={(label || extras) && <InputLabel label={label} extras={extras} />}
-        {...{ min, max }}
         value={value ?? undefined}
         onChange={(newValue) => onChange(newValue ?? null)}
         onWheel={(event) => {
@@ -49,6 +49,8 @@ export const NumberInput = ({
             event.currentTarget.dispatchEvent(new KeyboardEvent("keyup", { key, bubbles: true }))
           }
         }}
+        min={min}
+        max={max}
         step={step ?? 1 / 10 ** precision}
         stepHoldDelay={300}
         stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}

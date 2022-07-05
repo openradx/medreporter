@@ -18,10 +18,10 @@ export const SingleLineInput = ({
   width,
 }: SingleLineInputProps) => (
   <TextInput
-    autoComplete="off"
-    onChange={(event) => onChange(event.target.value)}
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
+    autoComplete="off"
     value={value}
+    onChange={(event) => onChange(event.target.value)}
     styles={{ wrapper: { width } }}
   />
 )
