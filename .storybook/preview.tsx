@@ -2,12 +2,12 @@ import { MantineProvider, ColorSchemeProvider } from "@mantine/core"
 import { NotificationsProvider } from "@mantine/notifications"
 import { useDarkMode } from "storybook-dark-mode"
 
-export const parameters = { layout: "padded" }
+export const parameters = { layout: "centered" }
 
 const fontFamily =
   "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
 
-function ThemeWrapper(props: { children: React.ReactNode }) {
+const ThemeWrapper = (props: { children: React.ReactNode }) => {
   return (
     <ColorSchemeProvider colorScheme="light" toggleColorScheme={() => {}}>
       <MantineProvider
