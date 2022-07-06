@@ -1,6 +1,5 @@
 import { Box, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
-import { MeasurementsContextProvider } from "../../../contexts/MeasurementsContext"
 import { getMeasurementsDataParams, measurementsReducer } from "../../../utils/measurementUtils"
 import { InputLabel } from "../InputLabel"
 import { ControlPanel } from "./ControlPanel"
@@ -16,6 +15,8 @@ interface MeasurementsInputProps {
     followUp: string
     rows: string
     dimensions: string
+    clearAll: string
+    shiftCurrent: string
   }
   value: MeasurementsData
   onChange: (data: MeasurementsData) => void
@@ -31,6 +32,8 @@ export const MeasurementsInput = ({
     followUp: "Follow up",
     rows: "Rows",
     dimensions: "Dimensions",
+    clearAll: "Clear all",
+    shiftCurrent: "Shift current to previous",
   },
   value,
   onChange,
@@ -49,17 +52,8 @@ export const MeasurementsInput = ({
 
   return (
     <Stack spacing="xs">
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "nowrap",
-          minWidth: 0,
-          maxWidth: "100%",
-        }}
-      >
-        <MeasurementsContextProvider value={{ dispatch }}>
-          {(label || extras) && <InputLabel label={label} extras={extras} />}
-        </MeasurementsContextProvider>
+      <Box sx={{ marginLeft: 35 }}>
+        {(label || extras) && <InputLabel label={label} extras={extras} />}
       </Box>
       <ControlPanel
         labels={labels}

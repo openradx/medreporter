@@ -176,7 +176,7 @@ export const measurementsReducer = (
   action: MeasurementsAction
 ): MeasurementsData => {
   switch (action.type) {
-    case "changeMeasureCell": {
+    case "changeNumberValue": {
       const { row, measureType, dimension, value } = action
       return produce(data, (draft) => {
         const values = draft[row][measureType]
@@ -185,7 +185,7 @@ export const measurementsReducer = (
         }
       })
     }
-    case "changeTextCell": {
+    case "changeTextValue": {
       const { rowNumber, textType, value } = action
       return produce(data, (draft) => {
         draft[rowNumber][textType] = value

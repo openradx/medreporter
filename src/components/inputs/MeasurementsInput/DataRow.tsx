@@ -1,5 +1,5 @@
 import { Box } from "@mantine/core"
-import { MeasureCell } from "./MeasureCell"
+import { NumberCell } from "./NumberCell"
 import { TextCell } from "./TextCell"
 import { MeasurementsAction } from "./measurementTypes"
 
@@ -25,12 +25,12 @@ interface DataRowProps {
 
 export const DataRow = ({ rowData, rowNumber, followUp, dimensions, dispatch }: DataRowProps) => (
   <tr>
-    <Box component="th" sx={{ paddingRight: 8, textAlign: "right" }}>
+    <Box component="th" sx={{ paddingRight: 5, textAlign: "right", minWidth: 30 }}>
       {rowNumber + 1}
     </Box>
     {followUp &&
       [...Array(dimensions)].map((_, dimension) => (
-        <MeasureCell
+        <NumberCell
           key={dimension}
           rowNumber={rowNumber}
           type="previous"
@@ -40,7 +40,7 @@ export const DataRow = ({ rowData, rowNumber, followUp, dimensions, dispatch }: 
         />
       ))}
     {[...Array(dimensions)].map((_, dimension) => (
-      <MeasureCell
+      <NumberCell
         key={dimension}
         rowNumber={rowNumber}
         type="current"

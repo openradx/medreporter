@@ -9,17 +9,15 @@ interface FollowUpToggleProps {
 }
 
 export const FollowUpToggle = memo(({ label, followUp, dispatch }: FollowUpToggleProps) => (
-  <Checkbox.Group
+  <Checkbox
     label={label}
-    value={followUp ? ["followUp"] : []}
-    onChange={(newValue) => {
-      const checked = newValue[0] === "followUp"
+    checked={followUp}
+    onChange={(event) => {
       dispatch({
         type: "changeFollowUp",
-        hasPrevious: checked,
+        hasPrevious: event.currentTarget.checked,
       })
     }}
-  >
-    <Checkbox value="followUp" checked={followUp} />
-  </Checkbox.Group>
+    sx={{ marginTop: 20 }}
+  />
 ))

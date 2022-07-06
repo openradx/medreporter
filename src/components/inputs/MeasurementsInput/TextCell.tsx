@@ -17,7 +17,7 @@ export const TextCell = memo(({ rowNumber, type, value, dispatch }: TextCellProp
       value={value}
       onChange={(newValue) => {
         dispatch({
-          type: "changeTextCell",
+          type: "changeTextValue",
           rowNumber,
           textType: type,
           value: newValue,

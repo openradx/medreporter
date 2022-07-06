@@ -26,13 +26,18 @@ export type MeasurementsStats = {
 
 export type MeasurementsAction =
   | {
-      type: "changeMeasureCell"
+      type: "changeNumberValue"
       row: number
       measureType: "previous" | "current"
       dimension: 0 | 1 | 2
       value: number | null
     }
-  | { type: "changeTextCell"; rowNumber: number; textType: "location" | "reference"; value: string }
+  | {
+      type: "changeTextValue"
+      rowNumber: number
+      textType: "location" | "reference"
+      value: string
+    }
   | { type: "changeFollowUp"; hasPrevious: boolean }
   | {
       type: "changeRows"

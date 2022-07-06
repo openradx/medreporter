@@ -4,7 +4,7 @@ import { MeasurementsAction } from "./measurementTypes"
 
 type MeasureType = "previous" | "current"
 
-interface MeasureCellProps {
+interface NumberCellProps {
   rowNumber: number
   type: MeasureType
   dimension: 0 | 1 | 2
@@ -12,15 +12,15 @@ interface MeasureCellProps {
   dispatch: (action: MeasurementsAction) => void
 }
 
-export const MeasureCell = memo(
-  ({ rowNumber, type, dimension, value, dispatch }: MeasureCellProps) => (
+export const NumberCell = memo(
+  ({ rowNumber, type, dimension, value, dispatch }: NumberCellProps) => (
     <td>
       <NumberInput
         min={0}
         max={9999}
         onChange={(newValue) => {
           dispatch({
-            type: "changeMeasureCell",
+            type: "changeNumberValue",
             row: rowNumber,
             measureType: type,
             dimension,
