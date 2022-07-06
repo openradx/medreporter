@@ -3,7 +3,7 @@ import { useState } from "react"
 import { SingleRadioInput } from "./SingleRadioInput"
 
 export default {
-  title: "Single choice field - radio",
+  title: "Inputs / SingleRadioInput",
   component: SingleRadioInput,
 } as ComponentMeta<typeof SingleRadioInput>
 
@@ -12,12 +12,12 @@ const Template: ComponentStory<typeof SingleRadioInput> = ({ label, options }) =
   return <SingleRadioInput value={value} onChange={setValue} {...{ label, options }} />
 }
 
-export const Radio = Template.bind({})
-Radio.args = {
-  label: "Single choice field - radio",
+export const Basic = Template.bind({})
+Basic.args = {
+  label: "Pneumothorax side",
   options: [
-    { value: "one", label: "One" },
-    { value: "two", label: "Two" },
-    { value: "three", label: "Three" },
+    { value: "left", label: "Left" },
+    { value: "right", label: "Right" },
+    { value: "both", label: "Both sides" },
   ],
 }

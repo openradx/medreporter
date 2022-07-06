@@ -3,7 +3,7 @@ import { useState } from "react"
 import { MultipleCheckboxInput } from "./MultipleCheckboxInput"
 
 export default {
-  title: "Multiple choice field - checkbox",
+  title: "Inputs / MultipleCheckboxInput",
   component: MultipleCheckboxInput,
 } as ComponentMeta<typeof MultipleCheckboxInput>
 
@@ -13,12 +13,13 @@ const Template: ComponentStory<typeof MultipleCheckboxInput> = ({ label, options
   return <MultipleCheckboxInput value={value} onChange={setValue} {...{ label, options }} />
 }
 
-export const Checkbox = Template.bind({})
-Checkbox.args = {
-  label: "Multiple choice field - checkbox",
+export const Basic = Template.bind({})
+Basic.args = {
+  label: "Brain lobe",
   options: [
-    { value: "one", label: "One" },
-    { value: "two", label: "Two" },
-    { value: "three", label: "Three" },
+    { value: "frontal", label: "Frontal lobe" },
+    { value: "temporal", label: "Temporal lobe" },
+    { value: "parietal", label: "Parietal lobe" },
+    { value: "occipital", label: "Occipital lobe" },
   ],
 }

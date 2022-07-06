@@ -1,27 +1,33 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
+import { InputLayout } from "../storybook/InputLayout"
 import { MultipleSelectInput } from "./MultipleSelectInput"
 
 export default {
-  title: "Multiple choice field - select",
+  title: "Inputs / MultipleSelectInput",
   component: MultipleSelectInput,
 } as ComponentMeta<typeof MultipleSelectInput>
 
 const Template: ComponentStory<typeof MultipleSelectInput> = ({ label, options }) => {
   const [value, setValue] = useState<string[]>([])
-  return <MultipleSelectInput value={value} onChange={setValue} {...{ label, options }} />
+  return (
+    <InputLayout>
+      <MultipleSelectInput value={value} onChange={setValue} {...{ label, options }} />
+    </InputLayout>
+  )
 }
-export const Select = Template.bind({})
-Select.args = {
-  label: "Multiple choice field - select",
+export const Basic = Template.bind({})
+Basic.args = {
+  label: "Brain arteries",
   options: [
-    { value: "one", label: "One" },
-    { value: "two", label: "Two" },
-    { value: "three", label: "Three" },
-    { value: "four", label: "Four" },
-    { value: "five", label: "Five" },
-    { value: "six", label: "Six" },
-    { value: "seven", label: "Seven" },
-    { value: "eight", label: "Eight" },
+    { value: "aci", label: "A. carotis interna" },
+    { value: "aca", label: "A. cerebri anterior" },
+    { value: "mca", label: "A. cerebri media" },
+    { value: "pca", label: "A. cerebri posterior" },
+    { value: "suca", label: "A. cerebelli superior" },
+    { value: "aica", label: "A. cerebelli inferior anterior" },
+    { value: "pica", label: "A. cerebelli inferior posterior" },
+    { value: "ba", label: "A. basilaris" },
+    { value: "va", label: "A. vertebralis" },
   ],
 }

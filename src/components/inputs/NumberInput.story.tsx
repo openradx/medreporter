@@ -1,10 +1,11 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
+import { InputLayout } from "../storybook/InputLayout"
 import { FieldInfo } from "../structuredReport/FieldInfo"
 import { NumberInput } from "./NumberInput"
 
 export default {
-  title: "Number field",
+  title: "Inputs / NumberInput",
   component: NumberInput,
 } as ComponentMeta<typeof NumberInput>
 
@@ -18,21 +19,23 @@ const Template: ComponentStory<typeof NumberInput> = ({
 }) => {
   const [value, setValue] = useState<number | null>(0)
   return (
-    <NumberInput
-      value={value}
-      onChange={setValue}
-      {...{ label, min, max, precision, step, extras }}
-    />
+    <InputLayout>
+      <NumberInput
+        value={value}
+        onChange={setValue}
+        {...{ label, min, max, precision, step, extras }}
+      />
+    </InputLayout>
   )
 }
 
 export const Basic = Template.bind({})
 Basic.args = {
-  label: "Number field",
+  label: "Pneumothorax size",
 }
 
-export const WithOverlay = Template.bind({})
-WithOverlay.args = {
-  label: "With Overlay",
-  extras: <FieldInfo title="Foo">foobar</FieldInfo>,
+export const WithInfo = Template.bind({})
+WithInfo.args = {
+  label: "Pneumothorax size",
+  extras: <FieldInfo title="Pneumothorax">Just some info about a pneumothorax.</FieldInfo>,
 }

@@ -5,7 +5,7 @@ import { MeasurementsInput } from "./MeasurementsInput"
 import { MeasurementsData } from "./MeasurementsInput/measurementTypes"
 
 export default {
-  title: "Measurements input",
+  title: "Inputs / MeasurementsInput",
   component: MeasurementsInput,
 } as ComponentMeta<typeof MeasurementsInput>
 
@@ -21,5 +21,5 @@ const Template: ComponentStory<typeof MeasurementsInput> = ({ label, extras }) =
 
 export const Basic = Template.bind({})
 Basic.args = {
-  label: "Measurements input",
+  label: "Primary targets",
 }

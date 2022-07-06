@@ -1,18 +1,23 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
+import { InputLayout } from "../storybook/InputLayout"
 import { MultiLineInput } from "./MultiLineInput"
 
 export default {
-  title: "Free text input - multiline",
+  title: "Inputs  / MultiLineInput",
   component: MultiLineInput,
 } as ComponentMeta<typeof MultiLineInput>
 
 const Template: ComponentStory<typeof MultiLineInput> = ({ label }) => {
   const [value, setValue] = useState<string>("")
-  return <MultiLineInput value={value} onChange={setValue} {...{ label }} />
+  return (
+    <InputLayout>
+      <MultiLineInput value={value} onChange={setValue} {...{ label }} />
+    </InputLayout>
+  )
 }
 
-export const MultiLine = Template.bind({})
-MultiLine.args = {
-  label: "Free text input - multiline",
+export const Basic = Template.bind({})
+Basic.args = {
+  label: "Additional findings",
 }
