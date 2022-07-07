@@ -9,7 +9,7 @@ interface SingleRadioInputProps {
   label?: string
   options?: FieldOption[]
   value: string | null
-  onChange: (value: string) => void
+  onChange: (value: string | null) => void
   extras?: ReactNode
 }
 
@@ -28,7 +28,16 @@ export const SingleRadioInput = ({
     spacing="xs"
   >
     {options.map((option) => (
-      <Radio key={option.value} value={option.value} label={option.label} />
+      <Radio
+        key={option.value}
+        value={option.value}
+        label={option.label}
+        onClick={() => {
+          if (value === option.value) {
+            onChange(null)
+          }
+        }}
+      />
     ))}
   </Radio.Group>
 )
