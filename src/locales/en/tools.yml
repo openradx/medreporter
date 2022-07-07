@@ -15,7 +15,11 @@ Fleischner2017:
     Management recommendations of indeterminate pulmonary nodules
     from the Fleischner society.
 
+MeasurementsTable:
+  title: Measurements table
+  description: Tabular acquisition of measurements with calculation of dynamics.
+
 Sandbox:
   title: Sandbox
-  description:  > 
+  description: >
     Testing environment for fields, layout, extras

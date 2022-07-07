@@ -15,7 +15,11 @@ Fleischner2017:
     Empfehlung der Fleischner Fachgesellschaft zum Management unbestimmter
     Lungenrundherde.
 
+MeasurementsTable:
+  title: Messtabelle
+  description: Tabellarische Erfassung von Messwerten mit Dynamikberechnung.
+
 Sandbox:
   title: Sandbox
-  description:  > 
+  description: >
     Testumgebung für Felder, Layout, Extras etc.

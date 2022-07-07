@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
 import { AiOutlineInfoCircle as InfoIcon } from "react-icons/ai"
 import { InputLayout } from "../storybook/InputLayout"
-import { FieldInfo } from "../structuredReport/FieldInfo"
 import { NumberInput } from "./NumberInput"
 
 export default {

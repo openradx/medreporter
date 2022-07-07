@@ -1,5 +1,6 @@
-import { ReactNode } from "react"
+import { ReactNode, useCallback } from "react"
 import { useModule } from "../../contexts/ModuleContext"
+import { Transformer } from "../../contexts/TransformerRegistryContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { useTransformer } from "../../hooks/useTransformer"
 import { calcStats, createEmptyMeasurements } from "../../utils/measurementUtils"
@@ -29,12 +30,19 @@ export const MeasurementsField = ({
     defaultValue,
   })
 
-  useTransformer((reportData) => {
-    const data = reportData[moduleId][fieldId] as MeasurementsData
-    const stats = calcStats(data)
-    const transformed: MeasurementsTransformed = { data, stats }
-    reportData[moduleId][fieldId] = transformed
-  })
+  const transformer = useCallback<Transformer>(
+    (reportData) => {
+      const data = reportData[moduleId]?.[fieldId] as MeasurementsData
+      if (data) {
+        const stats = calcStats(data)
+        const transformed: MeasurementsTransformed = { data, stats }
+        reportData[moduleId][fieldId] = transformed
+      }
+    },
+    [fieldId, moduleId]
+  )
+
+  useTransformer(transformer)
 
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>

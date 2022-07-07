@@ -11,12 +11,6 @@ interface Tool {
 
 const tools: Tool[] = [
   {
-    url: "/tools/sandbox",
-    title: "Sandbox.title",
-    description: "Sandbox.description",
-    tags: ["tags.radiology"],
-  },
-  {
     url: "/tools/adrenal-washout",
     title: "AdrenalWashout.title",
     description: "AdrenalWashout.description",
@@ -27,6 +21,18 @@ const tools: Tool[] = [
     title: "Fleischner2017.title",
     description: "Fleischner2017.description",
     tags: ["tags.radiology", "tags.ct", "tags.lung"],
+  },
+  {
+    url: "/tools/measurements-table",
+    title: "MeasurementsTable.title",
+    description: "MeasurementsTable.description",
+    tags: ["tags.radiology"],
+  },
+  {
+    url: "/tools/sandbox",
+    title: "Sandbox.title",
+    description: "Sandbox.description",
+    tags: ["tags.radiology"],
   },
 ]
 
