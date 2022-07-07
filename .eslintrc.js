@@ -3,9 +3,10 @@ module.exports = {
     "mantine",
     "plugin:@next/next/recommended",
     "plugin:jest/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
   ],
-  plugins: ["testing-library", "jest"],
+  plugins: ["testing-library", "jest", "react-hooks"],
   overrides: [
     {
       files: ["**/?(*.)+(spec|test).[jt]s?(x)"],
