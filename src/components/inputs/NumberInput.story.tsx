@@ -1,5 +1,7 @@
+import { ActionIcon } from "@mantine/core"
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
+import { AiOutlineInfoCircle as InfoIcon } from "react-icons/ai"
 import { InputLayout } from "../storybook/InputLayout"
 import { FieldInfo } from "../structuredReport/FieldInfo"
 import { NumberInput } from "./NumberInput"
@@ -34,8 +36,12 @@ Basic.args = {
   label: "Pneumothorax size",
 }
 
-export const WithInfo = Template.bind({})
-WithInfo.args = {
+export const WithExtras = Template.bind({})
+WithExtras.args = {
   label: "Pneumothorax size",
-  extras: <FieldInfo title="Pneumothorax">Just some info about a pneumothorax.</FieldInfo>,
+  extras: (
+    <ActionIcon>
+      <InfoIcon />
+    </ActionIcon>
+  ),
 }
