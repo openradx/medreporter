@@ -13,6 +13,7 @@ const ThemeWrapper = (props: { children: React.ReactNode }) => {
       <MantineProvider
         theme={{
           colorScheme: useDarkMode() ? "dark" : "light",
+          cursorType: "pointer",
           fontFamily,
           headings: { fontFamily },
         }}

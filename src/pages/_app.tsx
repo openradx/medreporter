@@ -47,7 +47,7 @@ const MyApp = (props: MyAppProps) => {
 
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
         <MantineProvider
-          theme={{ colorScheme, fontFamily, headings: { fontFamily } }}
+          theme={{ colorScheme, cursorType: "pointer", fontFamily, headings: { fontFamily } }}
           withGlobalStyles
           withNormalizeCSS
         >
