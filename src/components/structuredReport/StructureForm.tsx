@@ -86,7 +86,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
     reset(copy(data))
     dispatch(setStructureData(copy(data)))
     setModified(false)
-  }, [reset, dispatch])
+  }, [changeStructureValueDebounced, dispatch, reset])
 
   const canUndo = useAppSelector(selectCanUndo)
   const canRedo = useAppSelector(selectCanRedo)
@@ -96,13 +96,14 @@ export const StructureForm = ({ children }: StructureFormProps) => {
     const state = dispatch(doUndo())
     reset(copy(state.structureData.present))
     setModified(true)
-  }, [])
+  }, [changeStructureValueDebounced, dispatch, reset])
+
   const redo = useCallback(() => {
     changeStructureValueDebounced.flush()
     const state = dispatch(doRedo())
     reset(copy(state.structureData.present))
     setModified(true)
-  }, [])
+  }, [changeStructureValueDebounced, dispatch, reset])
 
   return (
     <StructureFormContextProvider
