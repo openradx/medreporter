@@ -4,6 +4,7 @@
 
 ## Kai
 
+- Wrap modules in error boundaries from Blitz
 - Text / HTML export
 - [Tools] Adrenal washout
 - [Tools] Adrenal MRI Calculator (SI-Index)
