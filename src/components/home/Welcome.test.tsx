@@ -2,11 +2,8 @@ import { render, screen } from "@testing-library/react"
 import { Welcome } from "./Welcome"
 
 describe("Welcome component", () => {
-  it("has correct Next.js theming section link", () => {
+  it("has MedReporter title", () => {
     render(<Welcome />)
-    expect(screen.getByText("this guide")).toHaveAttribute(
-      "href",
-      "https://mantine.dev/theming/next/"
-    )
+    expect(screen.getByText(/MedReporter/)).toBeInTheDocument()
   })
 })
