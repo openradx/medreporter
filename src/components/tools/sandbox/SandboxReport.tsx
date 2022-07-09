@@ -12,7 +12,7 @@ type SandboxData = {
 }
 
 export const SandboxReport = () => {
-  const { date, number, arteries, bones_feet, text } = useReportData<SandboxData>("sandbox")
+  const { date, number, arteries, bones_feet, text } = useReportData(true) as SandboxData
 
   const conclusion = ""
 

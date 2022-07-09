@@ -13,7 +13,7 @@ type AdrenalWashoutData = {
 }
 
 export const AdrenalWashoutReport = () => {
-  const { nonEnhanced, portalVenous, delayed } = useReportData<AdrenalWashoutData>("adrenalWashout")
+  const { nonEnhanced, portalVenous, delayed } = useReportData(true) as AdrenalWashoutData
 
   // console.log(nonEnhanced)
 

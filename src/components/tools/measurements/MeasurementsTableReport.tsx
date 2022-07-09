@@ -1,14 +1,15 @@
+import { ReactNode } from "react"
 import { useReportData } from "../../../contexts/ReportDataContext"
-import { MeasurementsTransformed } from "../../fields/fieldTypes"
+import { Paragraph } from "../../structuredReport/Paragraph"
 
 type MeasurementsData = {
-  measurements: MeasurementsTransformed
+  measurements: ReactNode
 }
 
 export const MeasurementsTableReport = () => {
-  const { measurements } = useReportData<MeasurementsData>("measurements")
+  const { measurements } = useReportData(true) as MeasurementsData
 
   console.log(measurements)
 
-  return null
+  return <Paragraph>{measurements}</Paragraph>
 }
