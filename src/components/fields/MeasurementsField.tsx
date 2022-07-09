@@ -3,11 +3,12 @@ import { useModule } from "../../contexts/ModuleContext"
 import { Transformer } from "../../contexts/TransformerRegistryContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { useTransformer } from "../../hooks/useTransformer"
-import { calcStats, createEmptyMeasurements } from "../../utils/measurementUtils"
+import { calcStats, createEmptyMeasurements, createStatsText } from "../../utils/measurementUtils"
+import { MeasurementsTableText } from "../generators/MeasurmentsText"
 import { MeasurementsInput } from "../inputs/MeasurementsInput"
 import { MeasurementsData } from "../inputs/MeasurementsInput/measurementTypes"
 import { BaseField } from "./BaseField"
-import { CommonFieldProps, MeasurementsTransformed } from "./fieldTypes"
+import { CommonFieldProps } from "./fieldTypes"
 
 const DEFAULT_MEASUREMENTS_DATA = createEmptyMeasurements(false, 3, 2)
 
@@ -34,9 +35,8 @@ export const MeasurementsField = ({
     (reportData) => {
       const data = reportData[moduleId]?.[fieldId] as MeasurementsData
       if (data) {
-        const stats = calcStats(data)
-        const transformed: MeasurementsTransformed = { data, stats }
-        reportData[moduleId][fieldId] = transformed
+        const newStats = createStatsText(calcStats(data))
+        reportData[moduleId][fieldId] = <MeasurementsTableText data={data} stats={newStats} />
       }
     },
     [fieldId, moduleId]
