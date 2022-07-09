@@ -1,6 +1,9 @@
 CopyButton:
   notification: Befund in Ablage kopiert
 
+FieldInfo:
+  title: Weitere Informationen
+
 LanguageSelector:
   as_site: wie Seite
   de: Deutsch

@@ -1,6 +1,9 @@
 CopyButton:
   notification: Copied report to clipboard
 
+FieldInfo:
+  title: Additional infos
+
 LanguageSelector:
   as_site: As page
   de: German

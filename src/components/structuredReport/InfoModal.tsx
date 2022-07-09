@@ -13,16 +13,18 @@ interface InfoModalProps {
 export const InfoModal = ({ title, opened, onClose, children }: InfoModalProps) => {
   const tabTitles: string[] = []
   const infoTabs: ReactElement[] = []
+  const otherContent: ReactNode[] = []
 
   Children.forEach(children, (child) => {
     if (isValidElement(child) && typeof child.type !== "string") {
-      const { name } = child.type
-      if (name === "InfoTab") {
+      if (child.type.name === "InfoTab") {
         const tabTitle = child.props.title as string
         tabTitles.push(tabTitle)
         infoTabs.push(child)
+        return
       }
     }
+    otherContent.push(child)
   })
 
   const screenSize = useScreenSize()
@@ -40,20 +42,23 @@ export const InfoModal = ({ title, opened, onClose, children }: InfoModalProps) 
       size={screenSize}
       styles={{ header: { marginBottom: 8 } }}
     >
-      <Tabs defaultValue="tab0">
-        <Tabs.List>
-          {tabTitles.map((tabTitle, index) => (
-            <Tabs.Tab key={`tab${index}`} value={`tab${index}`}>
-              {tabTitle}
-            </Tabs.Tab>
+      {tabTitles.length > 0 && (
+        <Tabs defaultValue="tab0">
+          <Tabs.List>
+            {tabTitles.map((tabTitle, index) => (
+              <Tabs.Tab key={`tab${index}`} value={`tab${index}`}>
+                {tabTitle}
+              </Tabs.Tab>
+            ))}
+          </Tabs.List>
+          {infoTabs.map((infoTab, index) => (
+            <Tabs.Panel key={`tab${index}`} value={`tab${index}`} pt="sm">
+              {infoTab}
+            </Tabs.Panel>
           ))}
-        </Tabs.List>
-        {infoTabs.map((infoTab, index) => (
-          <Tabs.Panel key={`tab${index}`} value={`tab${index}`} pt="sm">
-            {infoTab}
-          </Tabs.Panel>
-        ))}
-      </Tabs>
+        </Tabs>
+      )}
+      {otherContent}
     </Modal>
   )
 }
