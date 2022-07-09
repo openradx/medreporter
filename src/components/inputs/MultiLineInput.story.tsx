@@ -10,6 +10,7 @@ export default {
 
 const Template: ComponentStory<typeof MultiLineInput> = ({ label }) => {
   const [value, setValue] = useState<string>("")
+
   return (
     <InputLayout>
       <MultiLineInput value={value} onChange={setValue} {...{ label }} />

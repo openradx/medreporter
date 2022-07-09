@@ -8,7 +8,8 @@ export default {
 } as ComponentMeta<typeof SingleRadioInput>
 
 const Template: ComponentStory<typeof SingleRadioInput> = ({ label, options }) => {
-  const [value, setValue] = useState<string>("")
+  const [value, setValue] = useState<string | null>(null)
+
   return <SingleRadioInput value={value} onChange={setValue} {...{ label, options }} />
 }
 

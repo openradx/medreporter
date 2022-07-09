@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import "dayjs/locale/de"
 import { useState } from "react"
 import { InputLayout } from "../storybook/InputLayout"
 import { DateInput } from "./DateInput"
@@ -12,7 +13,7 @@ const Template: ComponentStory<typeof DateInput> = ({ label }) => {
   const [value, setValue] = useState<Date | null>(new Date())
   return (
     <InputLayout>
-      <DateInput value={value} onChange={setValue} {...{ label }} />
+      <DateInput label={label} value={value} onChange={setValue} locale="de" />
     </InputLayout>
   )
 }

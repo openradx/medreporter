@@ -10,6 +10,7 @@ export default {
 
 const Template: ComponentStory<typeof SingleLineInput> = ({ label }) => {
   const [value, setValue] = useState<string>("")
+
   return (
     <InputLayout>
       <SingleLineInput value={value} onChange={setValue} {...{ label }} />

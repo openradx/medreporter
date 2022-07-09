@@ -10,6 +10,7 @@ export default {
 
 const Template: ComponentStory<typeof MultipleSelectInput> = ({ label, options }) => {
   const [value, setValue] = useState<string[]>([])
+
   return (
     <InputLayout>
       <MultipleSelectInput value={value} onChange={setValue} {...{ label, options }} />

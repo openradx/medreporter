@@ -19,6 +19,7 @@ const Template: ComponentStory<typeof NumberInput> = ({
   extras,
 }) => {
   const [value, setValue] = useState<number | null>(0)
+
   return (
     <InputLayout>
       <NumberInput
