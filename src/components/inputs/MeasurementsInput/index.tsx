@@ -46,9 +46,12 @@ export const MeasurementsInput = ({
   const dataRef = useRef(data)
   dataRef.current = data
 
-  const dispatch = useCallback((action: MeasurementsAction) => {
-    onChange(measurementsReducer(dataRef.current, action))
-  }, [])
+  const dispatch = useCallback(
+    (action: MeasurementsAction) => {
+      onChange(measurementsReducer(dataRef.current, action))
+    },
+    [onChange]
+  )
 
   return (
     <Stack spacing="xs">
