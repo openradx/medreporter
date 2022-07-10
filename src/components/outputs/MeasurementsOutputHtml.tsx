@@ -84,7 +84,7 @@ interface MeasurementsTableHtmlProps {
   }
 }
 
-export const MeasurementsHtmlOutput = ({
+export const MeasurementsOutputHtml = ({
   data,
   stats,
   label,

@@ -140,7 +140,7 @@ interface MeasurementsTableTextProps {
   }
 }
 
-export const MeasurementsTextOutput = ({
+export const MeasurementsOutputText = ({
   data,
   stats,
   label,

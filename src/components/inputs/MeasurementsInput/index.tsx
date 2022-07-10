@@ -1,5 +1,6 @@
 import { Box, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
+import { useStructureTranslation } from "../../../hooks/useStructureTranslation"
 import { getMeasurementsDataParams, measurementsReducer } from "../../../utils/measurementUtils"
 import { InputLabel } from "../InputLabel"
 import { ControlPanel } from "./ControlPanel"
@@ -9,15 +10,6 @@ import { MeasurementsAction, MeasurementsData } from "./measurementTypes"
 
 interface MeasurementsInputProps {
   label?: string
-  labels?: {
-    location: string
-    reference: string
-    followUp: string
-    rows: string
-    dimensions: string
-    clearAll: string
-    shiftCurrent: string
-  }
   value: MeasurementsData
   onChange: (data: MeasurementsData) => void
   footer?: ReactNode
@@ -26,15 +18,6 @@ interface MeasurementsInputProps {
 
 export const MeasurementsInput = ({
   label,
-  labels = {
-    location: "Location",
-    reference: "Reference",
-    followUp: "Follow up",
-    rows: "Rows",
-    dimensions: "Dimensions",
-    clearAll: "Clear all",
-    shiftCurrent: "Shift current to previous",
-  },
   value,
   onChange,
   footer,
@@ -52,6 +35,17 @@ export const MeasurementsInput = ({
     },
     [onChange]
   )
+
+  const { t } = useStructureTranslation()
+  const labels = {
+    location: t("MeasurementsInput.location"),
+    reference: t("MeasurementsInput.reference"),
+    followUp: t("MeasurementsInput.followUp"),
+    rows: t("MeasurementsInput.rows"),
+    dimensions: t("MeasurementsInput.dimensions"),
+    clearAll: t("MeasurementsInput.clearAll"),
+    shiftCurrent: t("MeasurementsInput.shiftCurrent"),
+  }
 
   return (
     <Stack spacing="xs">

@@ -1,13 +1,17 @@
 Conclusions:
   title: Beurteilung
 
-MeasurementsField:
-  clearAll: Alles löschen
-  current: Aktuell
-  dimensions: Dimensionen
-  followUp: Folgeuntersuchung
-  location: Lokalisation
+MeasurementsOutput:
   previous: Zuvor
+  current: Aktuell
+  location: Lokalisation
   reference: Referenz
+
+MeasurementsInput:
+  location: Lokalisation
+  reference: Referenz
+  followUp: Folgeuntersuchung
   rows: Zeilen
+  dimensions: Dimensionen
+  clearAll: Alles löschen
   shiftCurrent: Aktuell verschieben
