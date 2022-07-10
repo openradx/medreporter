@@ -14,7 +14,12 @@ PageHeader:
   home: Home
   tools: Tools
 
-Report:
+ReportFormat:
+  html: HTML
+  text: Text
+  title: Report format
+
+ReportPanel:
   title: Report
 
 SelectOverlay:

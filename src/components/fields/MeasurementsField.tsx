@@ -3,7 +3,10 @@ import { useModule } from "../../contexts/ModuleContext"
 import { Transformer } from "../../contexts/TransformerRegistryContext"
 import { useStructureController } from "../../hooks/useStructureController"
 import { useTransformer } from "../../hooks/useTransformer"
+import { selectReportFormat } from "../../state/displaySlice"
+import { useAppSelector } from "../../state/store"
 import { calcStats, createEmptyMeasurements, createStatsText } from "../../utils/measurementUtils"
+import { MeasurementsTableHtml } from "../generators/MeasurementsHtml"
 import { MeasurementsTableText } from "../generators/MeasurmentsText"
 import { MeasurementsInput } from "../inputs/MeasurementsInput"
 import { MeasurementsData } from "../inputs/MeasurementsInput/measurementTypes"
@@ -31,15 +34,21 @@ export const MeasurementsField = ({
     defaultValue,
   })
 
+  const reportFormat = useAppSelector(selectReportFormat)
+
   const transformer = useCallback<Transformer>(
     (reportData) => {
       const data = reportData[moduleId]?.[fieldId] as MeasurementsData
       if (data) {
-        const newStats = createStatsText(calcStats(data))
-        reportData[moduleId][fieldId] = <MeasurementsTableText data={data} stats={newStats} />
+        const stats = createStatsText(calcStats(data))
+        if (reportFormat === "text") {
+          reportData[moduleId][fieldId] = <MeasurementsTableText data={data} stats={stats} />
+        } else {
+          reportData[moduleId][fieldId] = <MeasurementsTableHtml data={data} stats={stats} />
+        }
       }
     },
-    [fieldId, moduleId]
+    [fieldId, moduleId, reportFormat]
   )
 
   useTransformer(transformer)

@@ -7,6 +7,7 @@ import { useAppSelector } from "../../state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
 import { PanelHeader } from "./PanelHeader"
+import { ReportFormat } from "./ReportFormat"
 import { ReportLanguageSelector } from "./ReportLanguageSelector"
 
 interface ReportPanelProps {
@@ -29,10 +30,11 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
       withBorder
     >
       <PanelHeader
-        title={t("Report.title")}
+        title={t("ReportPanel.title")}
         actions={
           <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
             <CopyButton />
+            <ReportFormat />
             <ReportLanguageSelector />
           </ActionsGroup>
         }

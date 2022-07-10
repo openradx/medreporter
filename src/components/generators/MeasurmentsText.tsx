@@ -1,4 +1,4 @@
-import { getMeasurementsDataParams } from "../../utils/measurementUtils"
+import { checkDataRowEmpty, getMeasurementsDataParams } from "../../utils/measurementUtils"
 import { MeasurementsData, MeasurementsRow } from "../inputs/MeasurementsInput/measurementTypes"
 
 const NEWLINE_CHAR = "\n"
@@ -119,7 +119,9 @@ const createTableRow = (data: MeasurementsRow, colSizes: ColSizes, followUp: boo
 const createTableBody = (data: MeasurementsData, colSizes: ColSizes, followUp: boolean) => {
   const rows: string[] = []
   data.forEach((rowData) => {
-    rows.push(createTableRow(rowData, colSizes, followUp))
+    if (!checkDataRowEmpty(rowData)) {
+      rows.push(createTableRow(rowData, colSizes, followUp))
+    }
   })
   return rows.join(NEWLINE_CHAR)
 }

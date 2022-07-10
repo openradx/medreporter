@@ -14,7 +14,12 @@ PageHeader:
   home: Home
   tools: Werkzeuge
 
-Report:
+ReportFormat:
+  html: HTML
+  text: Text
+  title: Befundformatierung
+
+ReportPanel:
   title: Befund
 
 SelectOverlay:

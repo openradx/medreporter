@@ -1,6 +1,6 @@
 import { Box } from "@mantine/core"
 import { ReactElement } from "react"
-import { getMeasurementsDataParams } from "../../utils/measurementUtils"
+import { checkDataRowEmpty, getMeasurementsDataParams } from "../../utils/measurementUtils"
 import { MeasurementsData, MeasurementsRow } from "../inputs/MeasurementsInput/measurementTypes"
 
 const MULTIPLICATOR = " x "
@@ -73,7 +73,9 @@ const createTableRow = (data: MeasurementsRow) => (
 const createTableBody = (data: MeasurementsData) => {
   const rows: ReactElement[] = []
   data.forEach((rowData) => {
-    rows.push(createTableRow(rowData))
+    if (!checkDataRowEmpty(rowData)) {
+      rows.push(createTableRow(rowData))
+    }
   })
   return <tbody>{rows}</tbody>
 }
