@@ -23,6 +23,7 @@ export const SingleChoiceField = ({
   options = DEFAULT_OPTIONS,
   defaultValue = "",
   extras,
+  disabled,
 }: SingleChoiceFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -34,7 +35,7 @@ export const SingleChoiceField = ({
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
       {variant === "select" && (
-        <SingleSelectInput {...{ label, value, onChange, options, extras }} />
+        <SingleSelectInput {...{ label, value, onChange, options, extras, disabled }} />
       )}
       {variant === "radio" && <SingleRadioInput {...{ label, value, onChange, options, extras }} />}
     </BaseField>

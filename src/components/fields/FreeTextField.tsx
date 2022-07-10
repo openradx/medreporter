@@ -19,6 +19,7 @@ export const FreeTextField = ({
   defaultValue = "",
   multiline = false,
   extras,
+  disabled,
 }: FreeTextFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -29,8 +30,8 @@ export const FreeTextField = ({
 
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      {!multiline && <SingleLineInput {...{ label, value, onChange, extras }} />}
-      {multiline && <MultiLineInput {...{ label, value, onChange, extras }} />}
+      {!multiline && <SingleLineInput {...{ label, value, onChange, extras, disabled }} />}
+      {multiline && <MultiLineInput {...{ label, value, onChange, extras, disabled }} />}
     </BaseField>
   )
 }

@@ -11,6 +11,7 @@ interface SingleSelectInputProps {
   value: string | null
   onChange: (value: string | null) => void
   extras?: ReactNode
+  disabled?: boolean
 }
 
 export const SingleSelectInput = ({
@@ -19,12 +20,14 @@ export const SingleSelectInput = ({
   value,
   onChange,
   extras,
+  disabled,
 }: SingleSelectInputProps) => (
   <Select
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
     value={value}
     onChange={onChange}
     data={options}
+    disabled={disabled}
     searchable
     clearable
     withinPortal

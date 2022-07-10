@@ -17,6 +17,7 @@ export const DateField = ({
   visible = true,
   defaultValue = null,
   extras,
+  disabled,
 }: DateFieldProps) => {
   let serializableDefaultValue: string | null = null
   if (defaultValue) {
@@ -37,6 +38,7 @@ export const DateField = ({
         value={value ? new Date(value) : null}
         onChange={(date) => onChange(date ? date.toISOString() : null)}
         extras={extras}
+        disabled={disabled}
       />
     </BaseField>
   )

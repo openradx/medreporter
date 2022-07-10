@@ -16,6 +16,7 @@ interface NumberInputProps {
   extras?: ReactNode
   width?: number
   autoHideControls?: boolean
+  disabled?: boolean
 }
 
 export const NumberInput = ({
@@ -27,6 +28,7 @@ export const NumberInput = ({
   step,
   precision = 0,
   extras,
+  disabled,
   width,
   autoHideControls = false,
 }: NumberInputProps) => {
@@ -63,6 +65,7 @@ export const NumberInput = ({
         stepHoldDelay={300}
         stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
         precision={precision}
+        disabled={disabled}
         styles={{
           wrapper: { width },
           control: {

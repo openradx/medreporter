@@ -11,6 +11,7 @@ interface MultipleSelectInputProps {
   value: string[]
   onChange: (value: string[]) => void
   extras?: ReactNode
+  disabled?: boolean
 }
 
 export const MultipleSelectInput = ({
@@ -19,12 +20,14 @@ export const MultipleSelectInput = ({
   value,
   onChange,
   extras,
+  disabled,
 }: MultipleSelectInputProps) => (
   <MultiSelect
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
     value={value}
     onChange={onChange}
     data={options}
+    disabled={disabled}
     searchable
     withinPortal
   />

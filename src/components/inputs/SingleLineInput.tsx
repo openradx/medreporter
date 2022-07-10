@@ -7,6 +7,7 @@ interface SingleLineInputProps {
   value: string
   onChange: (value: string) => void
   extras?: ReactNode
+  disabled?: boolean
   width?: number
 }
 
@@ -15,6 +16,7 @@ export const SingleLineInput = ({
   value,
   onChange,
   extras,
+  disabled,
   width,
 }: SingleLineInputProps) => (
   <TextInput
@@ -22,6 +24,7 @@ export const SingleLineInput = ({
     autoComplete="off"
     value={value}
     onChange={(event) => onChange(event.target.value)}
+    disabled={disabled}
     styles={{ wrapper: { width } }}
   />
 )

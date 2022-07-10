@@ -2,6 +2,7 @@ export interface CommonFieldProps {
   id: string
   label?: string
   visible?: boolean
+  disabled?: boolean
 }
 export interface ExternalLink {
   url: string
