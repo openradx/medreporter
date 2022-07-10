@@ -246,6 +246,13 @@ export const measurementsReducer = (
       const { followUp, rows, dimensions } = getMeasurementsDataParams(data)
       return createEmptyMeasurements(followUp, rows, dimensions)
     }
+    case "clearReferences": {
+      return produce(data, (draft) => {
+        draft.forEach((rowData) => {
+          rowData.reference = ""
+        })
+      })
+    }
     case "shiftCurrent": {
       return produce(data, (draft) => {
         draft.forEach((rowData) => {

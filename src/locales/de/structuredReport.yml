@@ -2,16 +2,17 @@ Conclusions:
   title: Beurteilung
 
 MeasurementsOutput:
-  previous: Zuvor
   current: Aktuell
   location: Lokalisation
+  previous: Zuvor
   reference: Referenz
 
 MeasurementsInput:
+  clearAll: Alles löschen
+  clearReferences: Referenzen löschen
+  dimensions: Dimensionen
+  followUp: Folgeuntersuchung
   location: Lokalisation
   reference: Referenz
-  followUp: Folgeuntersuchung
   rows: Zeilen
-  dimensions: Dimensionen
-  clearAll: Alles löschen
   shiftCurrent: Aktuell verschieben

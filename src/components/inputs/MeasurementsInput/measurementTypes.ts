@@ -45,4 +45,5 @@ export type MeasurementsAction =
     }
   | { type: "changeDimensions"; dimensions: 1 | 2 | 3 }
   | { type: "clearAll" }
+  | { type: "clearReferences" }
   | { type: "shiftCurrent" }

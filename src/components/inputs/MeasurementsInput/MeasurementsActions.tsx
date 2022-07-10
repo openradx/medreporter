@@ -5,6 +5,7 @@ import { MeasurementsAction } from "./measurementTypes"
 interface MeasurementsActionsProps {
   labels: {
     clearAll: string
+    clearReferences: string
     shiftCurrent: string
   }
   dispatch: (action: MeasurementsAction) => void
@@ -19,6 +20,9 @@ export const MeasurementsActions = ({ labels, dispatch }: MeasurementsActionsPro
     </Menu.Target>
     <Menu.Dropdown>
       <Menu.Item onClick={() => dispatch({ type: "clearAll" })}>{labels.clearAll}</Menu.Item>
+      <Menu.Item onClick={() => dispatch({ type: "clearReferences" })}>
+        {labels.clearReferences}
+      </Menu.Item>
       <Menu.Item onClick={() => dispatch({ type: "shiftCurrent" })}>
         {labels.shiftCurrent}
       </Menu.Item>
