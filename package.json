@@ -56,8 +56,8 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@next/eslint-plugin-next": "^12.1.4",
-    "@storybook/addon-essentials": "^6.5.8",
-    "@storybook/react": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/react": "^6.5.9",
     "@svgr/webpack": "^6.2.1",
     "@swc-node/register": "^1.5.1",
     "@testing-library/dom": "^8.12.0",
