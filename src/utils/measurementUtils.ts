@@ -59,7 +59,7 @@ export const createEmptyMeasurements = (
   return data
 }
 
-function checkDataRowEmpty(dataRow: MeasurementsRow) {
+export const checkDataRowEmpty = (dataRow: MeasurementsRow) => {
   for (const measureType of ["previous", "current"] as const) {
     const values = dataRow[measureType]
     if (values === undefined) {
@@ -81,7 +81,7 @@ function checkDataRowEmpty(dataRow: MeasurementsRow) {
   return true
 }
 
-export function calcStats(data: MeasurementsData): MeasurementsStats {
+export const calcStats = (data: MeasurementsData): MeasurementsStats => {
   const valid = {
     previous: true,
     current: true,
@@ -142,7 +142,7 @@ export function calcStats(data: MeasurementsData): MeasurementsStats {
   }
 }
 
-export function createStatsText(stats: MeasurementsStats): string {
+export const createStatsText = (stats: MeasurementsStats): string => {
   const { previousSum, currentSum, percentageChange } = stats
 
   let txt = `${String.fromCharCode(0x2211)} ` // sum symbol

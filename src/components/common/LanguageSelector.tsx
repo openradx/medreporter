@@ -1,5 +1,5 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
-import { TbCheck } from "react-icons/tb"
+import { TbCheck as CheckIcon } from "react-icons/tb"
 import config from "../../app.config"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { FlagIcon } from "./FlagIcon"
@@ -31,7 +31,7 @@ export const LanguageSelector = ({
       <Menu.Item
         key={item.locale}
         icon={<FlagIcon code={item.locale} />}
-        rightSection={item.locale === currentLocale ? <TbCheck /> : null}
+        rightSection={item.locale === currentLocale ? <CheckIcon /> : null}
         onClick={() => onLocaleChanged(item.locale)}
       >
         {item.label}
@@ -39,7 +39,7 @@ export const LanguageSelector = ({
     ))
 
   return (
-    <Menu width={250} shadow="md">
+    <Menu width={250}>
       <Menu.Target>
         <ActionIcon size="md" aria-label={ariaLabel} variant="default">
           <FlagIcon code={currentLocale} />
