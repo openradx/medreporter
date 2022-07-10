@@ -8,14 +8,16 @@ interface DateInputProps {
   value: Date | null
   onChange: (value: Date | null) => void
   extras?: ReactNode
+  disabled?: boolean
 }
 
-export const DateInput = ({ label, locale, value, onChange, extras }: DateInputProps) => (
+export const DateInput = ({ label, locale, value, onChange, extras, disabled }: DateInputProps) => (
   <DatePicker
     locale={locale}
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
     value={value}
     onChange={onChange}
+    disabled={disabled}
     allowFreeInput
   />
 )

@@ -11,6 +11,7 @@ interface SingleRadioInputProps {
   value: string | null
   onChange: (value: string | null) => void
   extras?: ReactNode
+  disabled?: boolean
 }
 
 export const SingleRadioInput = ({
@@ -19,6 +20,7 @@ export const SingleRadioInput = ({
   value,
   onChange,
   extras,
+  disabled,
 }: SingleRadioInputProps) => (
   <Radio.Group
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
@@ -37,6 +39,7 @@ export const SingleRadioInput = ({
             onChange(null)
           }
         }}
+        disabled={disabled}
       />
     ))}
   </Radio.Group>

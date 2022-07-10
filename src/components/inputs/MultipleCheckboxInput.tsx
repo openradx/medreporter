@@ -11,6 +11,7 @@ interface MultipleCheckboxInputProps {
   value: string[]
   onChange: (value: string[]) => void
   extras?: ReactNode
+  disabled?: boolean
 }
 
 export const MultipleCheckboxInput = ({
@@ -19,6 +20,7 @@ export const MultipleCheckboxInput = ({
   value,
   onChange,
   extras,
+  disabled,
 }: MultipleCheckboxInputProps) => (
   <Checkbox.Group
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
@@ -28,7 +30,7 @@ export const MultipleCheckboxInput = ({
     spacing="xs"
   >
     {options.map((option) => (
-      <Checkbox key={option.value} value={option.value} label={option.label} />
+      <Checkbox key={option.value} value={option.value} label={option.label} disabled={disabled} />
     ))}
   </Checkbox.Group>
 )
