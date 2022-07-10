@@ -4,6 +4,8 @@
 
 ## Kai
 
+- Use title attribute on ActionIcon
+- Remove "...Button" from components (e.g. UndoButton => Undo)
 - Wrap modules in error boundaries from Blitz
 - Text / HTML export
 - [Tools] Adrenal washout
