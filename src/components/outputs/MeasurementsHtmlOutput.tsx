@@ -102,7 +102,7 @@ interface MeasurementsTableHtmlProps {
   referenceLabel: string
 }
 
-export const MeasurementsTableHtml = ({
+export const MeasurementsHtmlOutput = ({
   data,
   stats,
   tableLabel,

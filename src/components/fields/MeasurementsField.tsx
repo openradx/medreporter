@@ -6,10 +6,10 @@ import { useTransformer } from "../../hooks/useTransformer"
 import { selectReportFormat } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
 import { calcStats, createEmptyMeasurements, createStatsText } from "../../utils/measurementUtils"
-import { MeasurementsTableHtml } from "../generators/MeasurementsHtml"
-import { MeasurementsTableText } from "../generators/MeasurmentsText"
 import { MeasurementsInput } from "../inputs/MeasurementsInput"
 import { MeasurementsData } from "../inputs/MeasurementsInput/measurementTypes"
+import { MeasurementsHtmlOutput } from "../outputs/MeasurementsHtmlOutput"
+import { MeasurementsTextOutput } from "../outputs/MeasurmentsTextOutput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
@@ -42,9 +42,9 @@ export const MeasurementsField = ({
       if (data) {
         const stats = createStatsText(calcStats(data))
         if (reportFormat === "text") {
-          reportData[moduleId][fieldId] = <MeasurementsTableText data={data} stats={stats} />
+          reportData[moduleId][fieldId] = <MeasurementsTextOutput data={data} stats={stats} />
         } else {
-          reportData[moduleId][fieldId] = <MeasurementsTableHtml data={data} stats={stats} />
+          reportData[moduleId][fieldId] = <MeasurementsHtmlOutput data={data} stats={stats} />
         }
       }
     },
