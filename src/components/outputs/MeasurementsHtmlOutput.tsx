@@ -66,7 +66,7 @@ const createTableFooter = (followUp: boolean, stats: string) => {
   return (
     <tfoot>
       <tr>
-        <td colSpan={colspan}>{stats}</td>
+        <th colSpan={colspan}>{stats}</th>
       </tr>
     </tfoot>
   )
