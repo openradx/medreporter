@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
 import { calcStats, createEmptyMeasurements, createStatsText } from "../../utils/measurementUtils"
+import { StructuredReportTranslations } from "../storybook/StructuredReportTranslations"
 import { MeasurementsInput } from "./MeasurementsInput"
 import { MeasurementsData } from "./MeasurementsInput/measurementTypes"
 
@@ -15,7 +16,9 @@ const Template: ComponentStory<typeof MeasurementsInput> = ({ label, extras }) =
   const footer = createStatsText(stats)
 
   return (
-    <MeasurementsInput value={value} onChange={setValue} footer={footer} {...{ label, extras }} />
+    <StructuredReportTranslations>
+      <MeasurementsInput value={value} onChange={setValue} footer={footer} {...{ label, extras }} />
+    </StructuredReportTranslations>
   )
 }
 

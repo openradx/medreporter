@@ -1,4 +1,4 @@
-import i18n, { InitOptions } from "i18next"
+import i18next, { InitOptions } from "i18next"
 import Backend from "i18next-fs-backend"
 import { LoadPathOption } from "i18next-http-backend"
 import path from "path"
@@ -10,7 +10,7 @@ const loadPath: LoadPathOption = () => {
 }
 
 export const createClient = (config: InitOptions) => {
-  const instance = i18n.createInstance()
+  const instance = i18next.createInstance()
 
   const initPromise = instance.use(Backend).init({
     ...defaultConfig,
