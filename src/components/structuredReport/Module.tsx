@@ -13,7 +13,7 @@ interface ModuleProps {
 
 export const Module = ({ id, name, title, links, info, children }: ModuleProps) => {
   if (name === undefined) name = id
-  if (title === undefined) title = id
+
   return (
     <ModuleContextProvider value={{ id, name, title, links, info }}>
       {children}

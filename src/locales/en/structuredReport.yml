@@ -1,2 +1,13 @@
 Conclusions:
   title: Conclusions
+
+MeasurementsField:
+  clearAll: Clear all
+  current: Current
+  dimensions: Dimensions
+  followUp: Follow up
+  location: Location
+  previous: Previous
+  reference: Reference
+  rows: Rows
+  shiftCurrent: Shift current

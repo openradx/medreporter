@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core"
+import { Box, Table } from "@mantine/core"
 import { ReactElement } from "react"
 import { checkDataRowEmpty, getMeasurementsDataParams } from "../../utils/measurementUtils"
 import { MeasurementsData, MeasurementsRow } from "../inputs/MeasurementsInput/measurementTypes"
@@ -30,17 +30,7 @@ const createMeasureCellRow = (data: MeasurementsRow) => {
       continue
     }
     const measureText = values.filter((v) => v != null).join(MULTIPLICATOR)
-    measureCells.push(
-      <Box
-        key={measureType}
-        component="td"
-        sx={{
-          border: "1px solid black",
-        }}
-      >
-        {measureText}
-      </Box>
-    )
+    measureCells.push(<td key={measureType}>{measureText}</td>)
   }
   return <>{measureCells}</>
 }
@@ -49,17 +39,7 @@ const createDescriptionCellRow = (data: MeasurementsRow) => {
   const descriptionCells: ReactElement[] = []
   for (const descriptionType of ["location", "reference"] as const) {
     const value = data[descriptionType]
-    descriptionCells.push(
-      <Box
-        key={descriptionType}
-        component="td"
-        sx={{
-          border: "1px solid black",
-        }}
-      >
-        {value}
-      </Box>
-    )
+    descriptionCells.push(<td key={descriptionType}>{value}</td>)
   }
   return <>{descriptionCells}</>
 }
@@ -95,37 +75,37 @@ const createTableFooter = (followUp: boolean, stats: string) => {
 interface MeasurementsTableHtmlProps {
   data: MeasurementsData
   stats: string
-  tableLabel: string
-  previousLabel: string
-  currentLabel: string
-  locationLabel: string
-  referenceLabel: string
+  label: string
+  labels: {
+    previous: string
+    current: string
+    location: string
+    reference: string
+  }
 }
 
 export const MeasurementsHtmlOutput = ({
   data,
   stats,
-  tableLabel,
-  previousLabel,
-  currentLabel,
-  locationLabel,
-  referenceLabel,
+  label,
+  labels,
 }: MeasurementsTableHtmlProps) => {
   const { followUp } = getMeasurementsDataParams(data)
 
   return (
-    <table
-      style={{
-        border: "1px solid black",
-        borderCollapse: "collapse",
-      }}
-    >
+    <Table>
       <Box component="caption" sx={{ textAlign: "left" }}>
-        {tableLabel}
+        {label}
       </Box>
-      {createTableHeader(followUp, previousLabel, currentLabel, locationLabel, referenceLabel)}
+      {createTableHeader(
+        followUp,
+        labels.previous,
+        labels.current,
+        labels.location,
+        labels.reference
+      )}
       {createTableBody(data)}
       {createTableFooter(followUp, stats)}
-    </table>
+    </Table>
   )
 }

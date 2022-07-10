@@ -5,7 +5,7 @@ import { createRequiredContext } from "../utils/createRequiredContext"
 interface ModuleContext {
   id: string
   name: string
-  title: string
+  title?: string
   links?: ExternalLinkProps[]
   info?: ReactNode
 }

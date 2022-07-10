@@ -1,7 +1,9 @@
-import { ReactNode, useCallback } from "react"
+import { ReactNode, useCallback, useMemo } from "react"
 import { useModule } from "../../contexts/ModuleContext"
 import { Transformer } from "../../contexts/TransformerRegistryContext"
+import { useReportTranslation } from "../../hooks/useReportTranslation"
 import { useStructureController } from "../../hooks/useStructureController"
+import { useStructureTranslation } from "../../hooks/useStructureTranslation"
 import { useTransformer } from "../../hooks/useTransformer"
 import { selectReportFormat } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
@@ -36,26 +38,55 @@ export const MeasurementsField = ({
 
   const reportFormat = useAppSelector(selectReportFormat)
 
+  const { t: st } = useStructureTranslation()
+  const structureLabels = useMemo(
+    () => ({
+      location: st("MeasurementsField.location"),
+      reference: st("MeasurementsField.reference"),
+      followUp: st("MeasurementsField.followUp"),
+      rows: st("MeasurementsField.rows"),
+      dimensions: st("MeasurementsField.dimensions"),
+      clearAll: st("MeasurementsField.clearAll"),
+      shiftCurrent: st("MeasurementsField.shiftCurrent"),
+    }),
+    [st]
+  )
+
+  const { t: rt } = useReportTranslation()
+  const reportLabels = useMemo(
+    () => ({
+      previous: rt("MeasurementsField.previous"),
+      current: rt("MeasurementsField.current"),
+      location: rt("MeasurementsField.location"),
+      reference: rt("MeasurementsField.reference"),
+    }),
+    [rt]
+  )
+
   const transformer = useCallback<Transformer>(
     (reportData) => {
       const data = reportData[moduleId]?.[fieldId] as MeasurementsData
       if (data) {
         const stats = createStatsText(calcStats(data))
         if (reportFormat === "text") {
-          reportData[moduleId][fieldId] = <MeasurementsTextOutput data={data} stats={stats} />
+          reportData[moduleId][fieldId] = (
+            <MeasurementsTextOutput data={data} stats={stats} label={label} labels={reportLabels} />
+          )
         } else {
-          reportData[moduleId][fieldId] = <MeasurementsHtmlOutput data={data} stats={stats} />
+          reportData[moduleId][fieldId] = (
+            <MeasurementsHtmlOutput data={data} stats={stats} label={label} labels={reportLabels} />
+          )
         }
       }
     },
-    [fieldId, moduleId, reportFormat]
+    [fieldId, label, moduleId, reportFormat, reportLabels]
   )
 
   useTransformer(transformer)
 
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      <MeasurementsInput {...{ label, value, onChange, extras }} />
+      <MeasurementsInput labels={structureLabels} {...{ label, value, onChange, extras }} />
     </BaseField>
   )
 }

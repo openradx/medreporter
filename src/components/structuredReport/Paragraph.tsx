@@ -5,4 +5,8 @@ interface ParagraphProps {
   children?: ReactNode
 }
 
-export const Paragraph = ({ children }: ParagraphProps) => <Box>{children}</Box>
+export const Paragraph = ({ children }: ParagraphProps) => (
+  <Box className="medreporter-Paragraph-root" sx={{ display: "inline-block" }}>
+    {children}
+  </Box>
+)

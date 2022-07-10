@@ -21,8 +21,6 @@ export const Section = ({ id, title, active = true, link = false, children }: Se
     dispatch(activateSection({ sectionId: id }))
   }
 
-  if (title === undefined) title = id
-
   return (
     <SectionContextProvider value={{ id, title, active }}>
       {context === "structure" && (

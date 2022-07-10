@@ -131,8 +131,8 @@ const createTableFooter = (stats: string) => stats
 interface MeasurementsTableTextProps {
   data: MeasurementsData
   stats: string
-  label?: string
-  labels?: {
+  label: string
+  labels: {
     previous: string
     current: string
     location: string
@@ -144,12 +144,7 @@ export const MeasurementsTextOutput = ({
   data,
   stats,
   label,
-  labels = {
-    previous: "Previous",
-    current: "Current",
-    location: "Location",
-    reference: "Reference",
-  },
+  labels,
 }: MeasurementsTableTextProps) => {
   const colSizes = calcColSizes(
     data,

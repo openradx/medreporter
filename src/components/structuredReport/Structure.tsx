@@ -29,17 +29,21 @@ export const Structure = ({ children }: StructureProps) => {
   const actions =
     links?.map((link) => <ExternalLink key={link.url} url={link.url} title={link.title} />) ?? []
 
+  const needsHeader = title || info || actions.length > 0
+
   return (
     <Paper ref={cardEl} shadow="md" withBorder>
-      <ModuleHeader
-        title={title}
-        actions={
-          <ActionsGroup>
-            {actions}
-            {info}
-          </ActionsGroup>
-        }
-      />
+      {needsHeader && (
+        <ModuleHeader
+          title={title}
+          actions={
+            <ActionsGroup>
+              {actions}
+              {info}
+            </ActionsGroup>
+          }
+        />
+      )}
       <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
     </Paper>
   )

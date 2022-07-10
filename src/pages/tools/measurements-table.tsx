@@ -18,7 +18,9 @@ export default MeasurementsTablePage
 export const getServerSideProps: GetServerSideProps = async ({ locale, locales }) => ({
   props: {
     ...(await serverSideSiteTranslations(locale!, locales!)),
-    ...(await serverSideStructuredReportTranslations(locale!, locale!, locales!, ["measurements"])),
+    ...(await serverSideStructuredReportTranslations(locale!, locale!, locales!, [
+      "measurementsTable",
+    ])),
     ...(await serverSideReduxState({})),
   },
 })

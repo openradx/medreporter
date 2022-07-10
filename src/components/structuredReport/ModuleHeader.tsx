@@ -2,7 +2,7 @@ import { Box, Text } from "@mantine/core"
 import { ReactNode } from "react"
 
 interface ModuleHeaderProps {
-  title: string
+  title?: string
   actions?: ReactNode
 }
 
