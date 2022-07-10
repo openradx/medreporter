@@ -41,21 +41,22 @@ export const NumberInput = ({
         wrapperProps={{
           onMouseEnter: () => setHovered(true),
           onMouseLeave: () => setHovered(false),
+          onWheel: (event: WheelEvent) => {
+            let key: "ArrowUp" | "ArrowDown" | null = null
+            if (focus && event.deltaY < -SCROLL_SENSITIVITY) key = "ArrowUp"
+            else if (focus && event.deltaY > SCROLL_SENSITIVITY) key = "ArrowDown"
+
+            if (key && event.currentTarget instanceof Element) {
+              const input = event.currentTarget.querySelector("input")
+              input!.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true }))
+              input!.dispatchEvent(new KeyboardEvent("keyup", { key, bubbles: true }))
+            }
+          },
         }}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         value={value ?? undefined}
         onChange={(newValue) => onChange(newValue ?? null)}
-        onWheel={(event) => {
-          let key: "ArrowUp" | "ArrowDown" | null = null
-          if (focus && event.deltaY < -SCROLL_SENSITIVITY) key = "ArrowUp"
-          else if (focus && event.deltaY > SCROLL_SENSITIVITY) key = "ArrowDown"
-
-          if (key) {
-            event.currentTarget.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true }))
-            event.currentTarget.dispatchEvent(new KeyboardEvent("keyup", { key, bubbles: true }))
-          }
-        }}
         min={min}
         max={max}
         step={step ?? 1 / 10 ** precision}
