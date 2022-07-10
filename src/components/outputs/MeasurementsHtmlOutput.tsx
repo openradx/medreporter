@@ -63,8 +63,8 @@ const createDescriptionCellRow = (data: MeasurementsRow) => {
   }
   return <>{descriptionCells}</>
 }
-const createTableRow = (data: MeasurementsRow) => (
-  <tr>
+const createTableRow = (data: MeasurementsRow, rowIndex: number) => (
+  <tr key={rowIndex}>
     {createMeasureCellRow(data)}
     {createDescriptionCellRow(data)}
   </tr>
@@ -72,9 +72,9 @@ const createTableRow = (data: MeasurementsRow) => (
 
 const createTableBody = (data: MeasurementsData) => {
   const rows: ReactElement[] = []
-  data.forEach((rowData) => {
+  data.forEach((rowData, index) => {
     if (!checkDataRowEmpty(rowData)) {
-      rows.push(createTableRow(rowData))
+      rows.push(createTableRow(rowData, index))
     }
   })
   return <tbody>{rows}</tbody>
