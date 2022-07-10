@@ -1,9 +1,10 @@
 import i18n, { InitOptions } from "i18next"
 import Backend from "i18next-fs-backend"
+import { LoadPathOption } from "i18next-http-backend"
 import path from "path"
 import { defaultConfig } from "./i18nDefaultConfig"
 
-function loadPath() {
+const loadPath: LoadPathOption = () => {
   const localesPath = path.join(process.cwd(), "src", "locales")
   return `${localesPath}/{{lng}}/{{ns}}.yml`
 }
