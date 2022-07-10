@@ -60,17 +60,13 @@ const createTableBody = (data: MeasurementsData) => {
   return <tbody>{rows}</tbody>
 }
 
-const createTableFooter = (followUp: boolean, stats: string) => {
-  const colspan = followUp ? 4 : 3
-
-  return (
-    <tfoot>
-      <tr>
-        <th colSpan={colspan}>{stats}</th>
-      </tr>
-    </tfoot>
-  )
-}
+const createTableFooter = (stats: string) => (
+  <tfoot>
+    <tr>
+      <th colSpan={8}>{stats}</th>
+    </tr>
+  </tfoot>
+)
 
 interface MeasurementsTableHtmlProps {
   data: MeasurementsData
@@ -105,7 +101,7 @@ export const MeasurementsOutputHtml = ({
         labels.reference
       )}
       {createTableBody(data)}
-      {createTableFooter(followUp, stats)}
+      {createTableFooter(stats)}
     </Table>
   )
 }

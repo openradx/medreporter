@@ -74,9 +74,18 @@ export const MeasurementsInput = ({
               />
             ))}
           </tbody>
+          {footer && (
+            <tfoot>
+              <tr>
+                <th />
+                <th colSpan={8}>
+                  <Box sx={{ display: "flex" }}>{footer}</Box>
+                </th>
+              </tr>
+            </tfoot>
+          )}
         </table>
       </Box>
-      {footer}
     </Stack>
   )
 }
