@@ -22,8 +22,7 @@ export const appWithSiteTranslations = <T extends AppProps>(
         lng: initialSiteLocale,
         ns: siteNamespaces,
         resources: siteStore,
-        defaultNS: "common",
-        fallbackNS: "common",
+        fallbackNS: siteNamespaces,
       })
       return client.i18n
     }, [serverData])

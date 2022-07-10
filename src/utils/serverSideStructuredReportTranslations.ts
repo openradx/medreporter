@@ -9,7 +9,7 @@ export const serverSideStructuredReportTranslations = async (
   additionalStructuredReportNamespaces: string[] = []
 ): Promise<I18nStructuredReportProps> => {
   const locales = Array.from(new Set([initialStructureLocale, initialReportLocale]))
-  const structuredReportNamespaces = ["structuredReport", ...additionalStructuredReportNamespaces]
+  const structuredReportNamespaces = [...additionalStructuredReportNamespaces, "structuredReport"]
 
   const { i18n, initPromise } = createClient({
     preload: locales,

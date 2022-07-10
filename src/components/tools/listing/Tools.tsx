@@ -37,7 +37,7 @@ const tools: Tool[] = [
 ]
 
 export const Tools = () => {
-  const { t } = useSiteTranslation("tools")
+  const { t } = useSiteTranslation()
 
   const preparedTools: Required<Tool>[] = tools
     .map((tool) => ({

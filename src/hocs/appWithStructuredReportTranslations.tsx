@@ -28,8 +28,7 @@ export const appWithStructuredReportTranslations = <T extends AppProps>(
         lng: initialStructureLocale,
         ns: structuredReportNamespaces,
         resources: structuredReportStore,
-        defaultNS: "structuredReport",
-        fallbackNS: "structuredReport",
+        fallbackNS: structuredReportNamespaces,
       })
 
       const i18nStructure = client.i18n

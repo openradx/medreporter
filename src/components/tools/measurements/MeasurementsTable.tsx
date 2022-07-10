@@ -8,7 +8,7 @@ import { MeasurementsTableReport } from "./MeasurementsTableReport"
 import { MeasurementsTableStructure } from "./MeasurementsTableStructure"
 
 export const MeasurementsTable = () => {
-  const { t } = useStructureTranslation("measurementsTable")
+  const { t } = useStructureTranslation()
 
   return (
     <StructuredReport>

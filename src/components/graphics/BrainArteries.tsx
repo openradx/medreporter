@@ -47,7 +47,7 @@ export const options = [
 ]
 
 export const BrainArteries = () => {
-  const { t } = useStructureTranslation("graphics")
+  const { t } = useStructureTranslation()
 
   return <FieldGraphics title={t("BrainArteries.title")} svg={<BrainArteriesSvg />} labels={{}} />
 }
