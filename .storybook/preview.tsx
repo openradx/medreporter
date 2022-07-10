@@ -1,5 +1,6 @@
-import { MantineProvider, ColorSchemeProvider } from "@mantine/core"
+import { ColorSchemeProvider, MantineProvider } from "@mantine/core"
 import { NotificationsProvider } from "@mantine/notifications"
+import React from "react"
 import { useDarkMode } from "storybook-dark-mode"
 
 export const parameters = { layout: "padded" }
