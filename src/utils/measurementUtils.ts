@@ -193,7 +193,7 @@ export const measurementsReducer = (
     }
     case "changeFollowUp": {
       const { hasPrevious } = action
-      const dimensions = data[0].current.length
+      const { dimensions } = getMeasurementsDataParams(data)
       return produce(data, (draft) => {
         draft.forEach((rowData) => {
           if (hasPrevious) {
@@ -206,8 +206,7 @@ export const measurementsReducer = (
     }
     case "changeRows": {
       const { rows } = action
-      const followUp = "previous" in data[0]
-      const dimensions = data[0].current.length
+      const { followUp, dimensions } = getMeasurementsDataParams(data)
       return produce(data, (draft) => {
         const diff = rows - data.length
         if (diff > 0) {
@@ -222,7 +221,7 @@ export const measurementsReducer = (
     }
     case "changeDimensions": {
       const { dimensions } = action
-      const followUp = "previous" in data[0]
+      const { followUp } = getMeasurementsDataParams(data)
       const measureTypes = followUp ? (["previous", "current"] as const) : (["current"] as const)
       return produce(data, (draft) => {
         draft.forEach((rowData) => {
@@ -244,9 +243,7 @@ export const measurementsReducer = (
       })
     }
     case "clearAll": {
-      const followUp = "previous" in data[0]
-      const rows = data.length
-      const dimensions = data[0].current.length
+      const { followUp, rows, dimensions } = getMeasurementsDataParams(data)
       return createEmptyMeasurements(followUp, rows, dimensions)
     }
     case "shiftCurrent": {
