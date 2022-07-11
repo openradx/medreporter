@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { useState } from "react"
-import { calcStats, createEmptyMeasurements, createStatsText } from "../../utils/measurementUtils"
+import { calcStats, createEmptyMeasurements, createStatsText } from "../../utils/measurementsUtils"
 import { StructuredReportTranslations } from "../storybook/StructuredReportTranslations"
 import { MeasurementsInput } from "./MeasurementsInput"
-import { MeasurementsData } from "./MeasurementsInput/measurementTypes"
+import { MeasurementsData } from "./MeasurementsInput/measurementsTypes"
 
 export default {
   title: "Inputs / MeasurementsInput",

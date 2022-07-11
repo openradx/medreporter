@@ -1,5 +1,5 @@
-import { checkDataRowEmpty, getMeasurementsDataParams } from "../../utils/measurementUtils"
-import { MeasurementsData, MeasurementsRow } from "../inputs/MeasurementsInput/measurementTypes"
+import { checkDataRowEmpty, getMeasurementsDataParams } from "../../utils/measurementsUtils"
+import { MeasurementsData, MeasurementsRow } from "../inputs/MeasurementsInput/measurementsTypes"
 
 const NEWLINE_CHAR = "\n"
 const DELIMITER = " "

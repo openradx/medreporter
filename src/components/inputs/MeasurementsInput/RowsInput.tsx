@@ -1,6 +1,6 @@
 import { memo } from "react"
 import { NumberInput } from "../NumberInput"
-import { MeasurementsAction } from "./measurementTypes"
+import { MeasurementsAction } from "./measurementsTypes"
 
 const ROWS_MIN = 1
 const ROWS_MAX = 20

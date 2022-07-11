@@ -1,6 +1,6 @@
 import { ActionIcon, Menu } from "@mantine/core"
 import { BsTools as ToolIcon } from "react-icons/bs"
-import { MeasurementsAction } from "./measurementTypes"
+import { MeasurementsAction } from "./measurementsTypes"
 
 interface MeasurementsActionsProps {
   labels: {

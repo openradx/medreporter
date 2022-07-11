@@ -1,6 +1,6 @@
 import { Checkbox } from "@mantine/core"
 import { memo } from "react"
-import { MeasurementsAction } from "./measurementTypes"
+import { MeasurementsAction } from "./measurementsTypes"
 
 interface FollowUpToggleProps {
   label: string

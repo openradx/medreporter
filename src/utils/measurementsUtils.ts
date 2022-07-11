@@ -6,7 +6,7 @@ import {
   MeasurementsRow,
   MeasurementsStats,
   MeasureValues,
-} from "../components/inputs/MeasurementsInput/measurementTypes"
+} from "../components/inputs/MeasurementsInput/measurementsTypes"
 
 export const getMeasurementsDataParams = (data: MeasurementsData): MeasurementsDataParams => {
   const rows = data.length

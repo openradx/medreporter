@@ -3,7 +3,7 @@ import { DimensionsInput } from "./DimensionsInput"
 import { FollowUpToggle } from "./FollowUpToggle"
 import { MeasurementsActions } from "./MeasurementsActions"
 import { RowsInput } from "./RowsInput"
-import { MeasurementsAction } from "./measurementTypes"
+import { MeasurementsAction } from "./measurementsTypes"
 
 interface ControlPanelProps {
   labels: {

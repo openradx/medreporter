@@ -1,12 +1,12 @@
 import { Box, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
 import { useStructureTranslation } from "../../../hooks/useStructureTranslation"
-import { getMeasurementsDataParams, measurementsReducer } from "../../../utils/measurementUtils"
+import { getMeasurementsDataParams, measurementsReducer } from "../../../utils/measurementsUtils"
 import { InputLabel } from "../InputLabel"
 import { ControlPanel } from "./ControlPanel"
 import { DataRow } from "./DataRow"
 import { HeaderRow } from "./HeaderRow"
-import { MeasurementsAction, MeasurementsData } from "./measurementTypes"
+import { MeasurementsAction, MeasurementsData } from "./measurementsTypes"
 
 interface MeasurementsInputProps {
   label?: string

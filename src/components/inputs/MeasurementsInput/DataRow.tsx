@@ -1,7 +1,7 @@
 import { Box } from "@mantine/core"
 import { NumberCell } from "./NumberCell"
 import { TextCell } from "./TextCell"
-import { MeasurementsAction } from "./measurementTypes"
+import { MeasurementsAction } from "./measurementsTypes"
 
 export type MeasureValues =
   | [number | null]

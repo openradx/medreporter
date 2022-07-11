@@ -1,6 +1,6 @@
 import { memo } from "react"
 import { NumberInput } from "../NumberInput"
-import { MeasurementsAction } from "./measurementTypes"
+import { MeasurementsAction } from "./measurementsTypes"
 
 type MeasureType = "previous" | "current"
 

@@ -10,9 +10,9 @@ import {
   checkAllDataEmpty,
   createEmptyMeasurements,
   createStatsText,
-} from "../../utils/measurementUtils"
+} from "../../utils/measurementsUtils"
 import { MeasurementsInput } from "../inputs/MeasurementsInput"
-import { MeasurementsData } from "../inputs/MeasurementsInput/measurementTypes"
+import { MeasurementsData } from "../inputs/MeasurementsInput/measurementsTypes"
 import { MeasurementsOutput } from "../outputs/MeasurementsOutput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"

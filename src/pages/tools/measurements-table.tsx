@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { StructuredReportLayout } from "../../components/common/StructuredReportLayout"
-import { MeasurementsTable } from "../../components/tools/measurements/MeasurementsTable"
+import { MeasurementsTable } from "../../components/tools/measurementsTable/MeasurementsTable"
 import { NextPageWithLayout } from "../../types"
 import { serverSideReduxState } from "../../utils/serverSideReduxState"
 import { serverSideSiteTranslations } from "../../utils/serverSideSiteTranslations"

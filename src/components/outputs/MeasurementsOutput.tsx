@@ -1,5 +1,5 @@
 import { useReportTranslation } from "../../hooks/useReportTranslation"
-import { MeasurementsData } from "../inputs/MeasurementsInput/measurementTypes"
+import { MeasurementsData } from "../inputs/MeasurementsInput/measurementsTypes"
 import { MeasurementsOutputHtml } from "./MeasurementsOutputHtml"
 import { MeasurementsOutputText } from "./MeasurmentsOutputText"
 
