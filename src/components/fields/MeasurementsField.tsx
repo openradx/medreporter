@@ -5,7 +5,12 @@ import { useStructureController } from "../../hooks/useStructureController"
 import { useTransformer } from "../../hooks/useTransformer"
 import { selectReportFormat } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
-import { calcStats, createEmptyMeasurements, createStatsText } from "../../utils/measurementUtils"
+import {
+  calcStats,
+  checkAllDataEmpty,
+  createEmptyMeasurements,
+  createStatsText,
+} from "../../utils/measurementUtils"
 import { MeasurementsInput } from "../inputs/MeasurementsInput"
 import { MeasurementsData } from "../inputs/MeasurementsInput/measurementTypes"
 import { MeasurementsOutput } from "../outputs/MeasurementsOutput"
@@ -39,10 +44,14 @@ export const MeasurementsField = ({
     (reportData) => {
       const data = reportData[moduleId]?.[fieldId] as MeasurementsData
       if (data) {
-        const stats = createStatsText(calcStats(data))
-        reportData[moduleId][fieldId] = (
-          <MeasurementsOutput format={reportFormat} data={data} stats={stats} label={label} />
-        )
+        if (checkAllDataEmpty(data)) {
+          reportData[moduleId][fieldId] = null
+        } else {
+          const stats = createStatsText(calcStats(data))
+          reportData[moduleId][fieldId] = (
+            <MeasurementsOutput format={reportFormat} data={data} stats={stats} label={label} />
+          )
+        }
       }
     },
     [fieldId, label, moduleId, reportFormat]

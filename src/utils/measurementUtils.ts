@@ -81,6 +81,15 @@ export const checkDataRowEmpty = (dataRow: MeasurementsRow) => {
   return true
 }
 
+export const checkAllDataEmpty = (data: MeasurementsData) => {
+  for (const row of data) {
+    if (!checkDataRowEmpty(row)) {
+      return false
+    }
+  }
+  return true
+}
+
 export const calcStats = (data: MeasurementsData): MeasurementsStats => {
   const valid = {
     previous: true,
