@@ -9,9 +9,10 @@ interface TextCellProps {
   type: textType
   value: string
   dispatch: (action: MeasurementsAction) => void
+  disabled: boolean
 }
 
-export const TextCell = memo(({ rowNumber, type, value, dispatch }: TextCellProps) => (
+export const TextCell = memo(({ rowNumber, type, value, dispatch, disabled }: TextCellProps) => (
   <td>
     <SingleLineInput
       value={value}
@@ -23,6 +24,7 @@ export const TextCell = memo(({ rowNumber, type, value, dispatch }: TextCellProp
           value: newValue,
         })
       }}
+      disabled={disabled}
       width={200}
     />
   </td>

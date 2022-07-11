@@ -10,14 +10,19 @@ export default {
   component: MeasurementsInput,
 } as ComponentMeta<typeof MeasurementsInput>
 
-const Template: ComponentStory<typeof MeasurementsInput> = ({ label, extras }) => {
+const Template: ComponentStory<typeof MeasurementsInput> = ({ label, extras, disabled }) => {
   const [value, setValue] = useState<MeasurementsData>(createEmptyMeasurements(false, 3, 2))
   const stats = calcStats(value)
   const footer = createStatsText(stats)
 
   return (
     <StructuredReportTranslations>
-      <MeasurementsInput value={value} onChange={setValue} footer={footer} {...{ label, extras }} />
+      <MeasurementsInput
+        value={value}
+        onChange={setValue}
+        footer={footer}
+        {...{ label, extras, disabled }}
+      />
     </StructuredReportTranslations>
   )
 }

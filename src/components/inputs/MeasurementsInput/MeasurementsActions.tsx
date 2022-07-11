@@ -9,12 +9,13 @@ interface MeasurementsActionsProps {
     shiftCurrent: string
   }
   dispatch: (action: MeasurementsAction) => void
+  disabled: boolean
 }
 
-export const MeasurementsActions = ({ labels, dispatch }: MeasurementsActionsProps) => (
+export const MeasurementsActions = ({ labels, dispatch, disabled }: MeasurementsActionsProps) => (
   <Menu>
     <Menu.Target>
-      <ActionIcon title="Measurement tools" sx={{ marginTop: 20 }}>
+      <ActionIcon title="Measurement tools" sx={{ marginTop: 20 }} disabled={disabled}>
         <ToolIcon />
       </ActionIcon>
     </Menu.Target>

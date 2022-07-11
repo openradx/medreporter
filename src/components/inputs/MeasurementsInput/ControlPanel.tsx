@@ -11,12 +11,14 @@ interface ControlPanelProps {
     rows: string
     dimensions: string
     clearAll: string
+    clearReferences: string
     shiftCurrent: string
   }
   followUp: boolean
   rows: number
   dimensions: 1 | 2 | 3
   dispatch: (action: MeasurementsAction) => void
+  disabled: boolean
 }
 
 export const ControlPanel = ({
@@ -25,13 +27,24 @@ export const ControlPanel = ({
   rows,
   dimensions,
   dispatch,
+  disabled,
 }: ControlPanelProps) => (
   <Group spacing="lg" sx={{ marginLeft: 35 }}>
-    <FollowUpToggle label={labels.followUp} followUp={followUp} dispatch={dispatch} />
-    <RowsInput label={labels.rows} rows={rows} dispatch={dispatch} />
-    <DimensionsInput label={labels.dimensions} dimensions={dimensions} dispatch={dispatch} />
+    <FollowUpToggle
+      label={labels.followUp}
+      followUp={followUp}
+      dispatch={dispatch}
+      disabled={disabled}
+    />
+    <RowsInput label={labels.rows} rows={rows} dispatch={dispatch} disabled={disabled} />
+    <DimensionsInput
+      label={labels.dimensions}
+      dimensions={dimensions}
+      dispatch={dispatch}
+      disabled={disabled}
+    />
     <Box sx={{ alignSelf: "center" }}>
-      <MeasurementsActions labels={labels} dispatch={dispatch} />
+      <MeasurementsActions labels={labels} dispatch={dispatch} disabled={disabled} />
     </Box>
   </Group>
 )

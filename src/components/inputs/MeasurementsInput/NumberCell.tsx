@@ -10,10 +10,11 @@ interface NumberCellProps {
   dimension: 0 | 1 | 2
   value: number | null
   dispatch: (action: MeasurementsAction) => void
+  disabled: boolean
 }
 
 export const NumberCell = memo(
-  ({ rowNumber, type, dimension, value, dispatch }: NumberCellProps) => (
+  ({ rowNumber, type, dimension, value, dispatch, disabled }: NumberCellProps) => (
     <td>
       <NumberInput
         min={0}
@@ -28,6 +29,7 @@ export const NumberCell = memo(
           })
         }}
         value={value}
+        disabled={disabled}
         width={70}
         autoHideControls
       />

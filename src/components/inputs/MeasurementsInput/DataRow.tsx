@@ -21,9 +21,17 @@ interface DataRowProps {
   followUp: boolean
   dimensions: 1 | 2 | 3
   dispatch: (action: MeasurementsAction) => void
+  disabled: boolean
 }
 
-export const DataRow = ({ rowData, rowNumber, followUp, dimensions, dispatch }: DataRowProps) => (
+export const DataRow = ({
+  rowData,
+  rowNumber,
+  followUp,
+  dimensions,
+  dispatch,
+  disabled,
+}: DataRowProps) => (
   <tr>
     <Box component="th" sx={{ paddingRight: 5, textAlign: "right", minWidth: 30 }}>
       {rowNumber + 1}
@@ -37,6 +45,7 @@ export const DataRow = ({ rowData, rowNumber, followUp, dimensions, dispatch }: 
           dimension={dimension as 0 | 1 | 2}
           value={rowData.previous![dimension] ?? null}
           dispatch={dispatch}
+          disabled={disabled}
         />
       ))}
     {[...Array(dimensions)].map((_, dimension) => (
@@ -47,14 +56,22 @@ export const DataRow = ({ rowData, rowNumber, followUp, dimensions, dispatch }: 
         dimension={dimension as 0 | 1 | 2}
         value={rowData.current[dimension]}
         dispatch={dispatch}
+        disabled={disabled}
       />
     ))}
-    <TextCell rowNumber={rowNumber} type="location" value={rowData.location} dispatch={dispatch} />
+    <TextCell
+      rowNumber={rowNumber}
+      type="location"
+      value={rowData.location}
+      dispatch={dispatch}
+      disabled={disabled}
+    />
     <TextCell
       rowNumber={rowNumber}
       type="reference"
       value={rowData.reference}
       dispatch={dispatch}
+      disabled={disabled}
     />
   </tr>
 )

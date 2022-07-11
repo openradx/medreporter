@@ -14,6 +14,7 @@ interface MeasurementsInputProps {
   onChange: (data: MeasurementsData) => void
   footer?: ReactNode
   extras?: ReactNode
+  disabled?: boolean
 }
 
 export const MeasurementsInput = ({
@@ -22,6 +23,7 @@ export const MeasurementsInput = ({
   onChange,
   footer,
   extras,
+  disabled = false,
 }: MeasurementsInputProps) => {
   const data = value
   const params = getMeasurementsDataParams(data)
@@ -59,6 +61,7 @@ export const MeasurementsInput = ({
         rows={params.rows}
         dimensions={params.dimensions}
         dispatch={dispatch}
+        disabled={disabled}
       />
       <Box sx={{ overflow: "auto" }}>
         <table>
@@ -72,6 +75,7 @@ export const MeasurementsInput = ({
                 followUp={params.followUp}
                 dimensions={params.dimensions}
                 dispatch={dispatch}
+                disabled={disabled}
               />
             ))}
           </tbody>

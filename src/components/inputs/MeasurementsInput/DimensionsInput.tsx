@@ -9,24 +9,28 @@ interface DimensionsInputProps {
   label: string
   dimensions: 1 | 2 | 3
   dispatch: (action: MeasurementsAction) => void
+  disabled: boolean
 }
 
-export const DimensionsInput = memo(({ label, dimensions, dispatch }: DimensionsInputProps) => (
-  <NumberInput
-    label={label}
-    min={DIMENSIONS_MIN}
-    max={DIMENSIONS_MAX}
-    value={dimensions}
-    onChange={(newDimensions) => {
-      if (newDimensions === null) newDimensions = dimensions
-      if (newDimensions < DIMENSIONS_MIN) newDimensions = DIMENSIONS_MIN
-      if (newDimensions > DIMENSIONS_MAX) newDimensions = DIMENSIONS_MAX
+export const DimensionsInput = memo(
+  ({ label, dimensions, dispatch, disabled }: DimensionsInputProps) => (
+    <NumberInput
+      label={label}
+      min={DIMENSIONS_MIN}
+      max={DIMENSIONS_MAX}
+      value={dimensions}
+      onChange={(newDimensions) => {
+        if (newDimensions === null) newDimensions = dimensions
+        if (newDimensions < DIMENSIONS_MIN) newDimensions = DIMENSIONS_MIN
+        if (newDimensions > DIMENSIONS_MAX) newDimensions = DIMENSIONS_MAX
 
-      dispatch({
-        type: "changeDimensions",
-        dimensions: newDimensions as 1 | 2 | 3,
-      })
-    }}
-    width={60}
-  />
-))
+        dispatch({
+          type: "changeDimensions",
+          dimensions: newDimensions as 1 | 2 | 3,
+        })
+      }}
+      disabled={disabled}
+      width={60}
+    />
+  )
+)
