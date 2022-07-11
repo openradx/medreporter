@@ -4,7 +4,7 @@ import { TbInfoCircle as InfoIcon } from "react-icons/tb"
 import { useScreenSize } from "../../hooks/useScreenSize"
 
 interface InfoModalProps {
-  title: string
+  title?: string
   opened: boolean
   onClose: () => void
   children: ReactNode
