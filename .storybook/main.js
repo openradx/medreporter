@@ -9,5 +9,5 @@ module.exports = {
     },
   ],
   framework: "@storybook/react",
-  staticDirs: ["../src/locales"],
+  staticDirs: ["../app/core/locales"],
 }
