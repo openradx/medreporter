@@ -18,7 +18,7 @@ export const SandboxReport = () => {
 
   return (
     <>
-      <Paragraph>Today: {date}</Paragraph>
+      <Paragraph>Today {date?.toDateString()}</Paragraph>
       <Paragraph>Random number: {number}</Paragraph>
       <Paragraph>Selected artery: {arteries}</Paragraph>
       <Paragraph>Selected bones: {bones_feet}</Paragraph>

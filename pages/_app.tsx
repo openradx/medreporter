@@ -2,7 +2,7 @@ import { MantineProvider, ColorScheme, ColorSchemeProvider } from "@mantine/core
 import { ModalsProvider } from "@mantine/modals"
 import { NotificationsProvider } from "@mantine/notifications"
 import { compose } from "@reduxjs/toolkit"
-import { getCookie, setCookies } from "cookies-next"
+import { getCookie, setCookie } from "cookies-next"
 import { enablePatches, enableMapSet } from "immer"
 import { GetServerSidePropsContext } from "next"
 import { AppProps } from "next/app"
@@ -32,7 +32,7 @@ const MyApp = (props: MyAppProps) => {
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (colorScheme === "dark" ? "light" : "dark")
     setColorScheme(nextColorScheme)
-    setCookies("mantine-color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 })
+    setCookie("mantine-color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 })
   }
 
   const getLayout = Component.getLayout ?? ((page) => page)
