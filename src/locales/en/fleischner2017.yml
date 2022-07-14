@@ -1,0 +1,14 @@
+Fleischner2017Report:
+  noSuggestionPossible: No suggestion possible
+  optionalAt3Months: optional CT at 12 months (particularly with suspicious nodule morphology and/or upper lobe location)
+  noFollowUp: no routine follow-up required
+  ct6To12MonthsAnd18To24: CT at 6-12 months, then CT at 18-24 months
+  ct6to12MonthsAndConsider18To24: CT at 6-12 months, then consider CT at 18-24 months
+  ct3MonthsPETSampling: consider CT at 3 months, PET/CT, or tissue sampling
+  optionalAt12Months: optional CT at 12 months
+  ct3To6MonthsAnd18To24: CT at 3-6 months, then CT at 18-24 months
+  ct3To6MonthsAndConsider18To24: CT at 3-6 months, then consider CT at 18-24 months
+  ct6To12Months2Years5Years: CT at 6-12 months, then if persistent, CT every 2 years until 5 years
+  ct3To6MonthsAnnual: CT at 3-6 months, then if persistent and solid component remains <6 mm, annual CT until 5 years
+  ct3To6Months2And4Years: CT at 3-6 months, then if stable consider CT at 2 and 4 years in high-risk patients
+  ct3To6MonthsMostSuspicious: CT at 3-6 months, then subsequent management based on the most suspicious nodule(s)
