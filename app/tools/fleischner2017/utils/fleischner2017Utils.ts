@@ -4,7 +4,7 @@ export function calcAverageDiameter(longaxis: number, shortaxis: number): number
 
 export enum Suggestion {
   NoSuggestionPossible = "noSuggestionPossible",
-  OptionalAt3Months = "optionalAt3Months",
+  OptionalAt12MonthsSuspicious = "optionalAt12MonthsSuspicious",
   NoFollowUp = "noFollowUp",
   Ct6To12MonthsAnd18To24 = "ct6To12MonthsAnd18To24",
   Ct6To12MonthsAndConsider18To24 = "ct6to12MonthsAndConsider18To24",
@@ -36,7 +36,7 @@ export const defineFleischner2017 = (
     if (count === "single") {
       if (averageDiameter < 6) {
         if (riskFactors) {
-          suggestion = Suggestion.OptionalAt3Months
+          suggestion = Suggestion.OptionalAt12MonthsSuspicious
         }
         if (!riskFactors) {
           suggestion = Suggestion.NoFollowUp

@@ -1,0 +1,44 @@
+description: >
+  Empfehlungen zum Follow-Up und Management für unklare pulmonale Noduli als Zufallsbefunde, veröffentlicht durch die Fleischner Society.
+
+hint1: > 
+  Die Guideline ist nicht anwendbar auf Lungenkrebsscreening (siehe LungRads), Patienten unter 35 Jahren oder Patienten mit einer 
+  vorliegenden Tumoranamnese oder Immunsuppression.
+
+longaxis: 
+  label: Längsdurchmesser
+
+shortaxis: 
+  label: Kurzachsendurchmesser
+
+structure: 
+  label: Struktur
+  solid: Solide
+  partsolid: Teils solide
+  groundglass: Milchglas
+
+count: 
+  label: Anzahl
+  single: Singulär
+  multiple: Multiple
+
+riskFactors: 
+  label: Risikofaktoren
+  yes: Ja
+  no: Nein
+  
+noSuggestionPossible: Keine Empfehlung möglich.
+optionalAt12MonthsSuspicious: Optionales CT nach 12 Monaten, insbesondere bei suspekter Morphologie und/oder Lokalisation im Oberlappen.
+noFollowUp: Kein Follow-Up notwendig.
+ct6To12MonthsAnd18To24: CT nach 6-12 Monaten, anschließend CT nach 18-24 Monaten.
+ct6to12MonthsAndConsider18To24: CT nach 6-12 Monaten, anschließend gegebenenfalls CT nach 18-24 Monaten.
+ct3MonthsPETSampling: CT nach 3 Monaten oder weitere Abklärung mittels PET-CT oder Biopsie.
+optionalAt12Months: Optionales CT nach 12 Monaten.
+ct3To6MonthsAnd18To24: CT nach 3-6 Monaten, anschließend CT nach 18-24 Monaten.
+ct3To6MonthsAndConsider18To24: CT nach 3-6 Monaten, anschließend gegebenenfalls CT nach 18-24 Monaten.
+ct6To12Months2Years5Years: CT nach 6-12 Monaten, anschließend falls persistierend CT alle  2 Jahre bis 5 Jahre nach Erstbildgebung.
+ct3To6MonthsAnnual: CT nach 3-6 Monaten, anschließend falls persistierend und solide Komponente weiter unter 6 mm jährliches CT bis 5 Jahre.
+ct3To6Months2And4Years: CT nach 3-6 Monaten, anschließend falls stabil gegebenenfalls CT nach 2 und 4 Jahren bei Risikopatienten.
+ct3To6MonthsMostSuspicious: CT nach 3-6 Monaten, anschließend weiteres Management basierend auf dem suspektesten Nodulus.
+
+recommendation: Empfehlung

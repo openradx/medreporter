@@ -5,64 +5,61 @@ import { Grid } from "../../../core/components/structuredReport/Grid"
 import { GridItem } from "../../../core/components/structuredReport/GridItem"
 import { Hint } from "../../../core/components/structuredReport/Hint"
 import { Hints } from "../../../core/components/structuredReport/Hints"
+import { useStructureTranslation } from "../../../core/hooks/useStructureTranslation"
 import { RiskFactorsInfo } from "./RiskFactorsInfo"
 
 export const Fleischner2017Structure = () => {
-  const optionsStructure = [
-    { value: "solid", label: "solid" },
-    { value: "partsolid", label: "partsolid" },
-    { value: "groundglass", label: "groundglass" },
-  ]
-  const optionsCount = [
-    { value: "single", label: "single" },
-    { value: "multiple", label: "multiple" },
-  ]
-  const optionsRiskFactors = [
-    { value: "yes", label: "Yes" },
-    { value: "no", label: "No" },
-  ]
+  const { t } = useStructureTranslation()
   return (
     <Grid>
       <GridItem size="lg">
-        <Description>
-          Follow-up and management recommendations for indeterminate pulmonary nodules detected
-          incidentally on CT published by the Fleischner Society.
-        </Description>
+        <Description>{t("description")}</Description>
       </GridItem>
       <GridItem>
-        <NumberField id="longaxis" label="Short axis diameter" min={0} defaultValue={0} />
+        <NumberField id="longaxis" label={t("longaxis.label")} min={0} defaultValue={0} />
       </GridItem>
       <GridItem>
-        <NumberField id="shortaxis" label="Long axis diameter" min={0} defaultValue={0} />
+        <NumberField id="shortaxis" label={t("shortaxis.label")} min={0} defaultValue={0} />
       </GridItem>
       <GridItem>
         <SingleChoiceField
           id="structure"
-          label="Structure"
+          label={t("structure.label")}
           variant="radio"
-          options={optionsStructure}
+          options={[
+            { value: "solid", label: t("structure.solid") },
+            { value: "partsolid", label: t("structure.partsolid") },
+            { value: "groundglass", label: t("structure.groundglass") },
+          ]}
         />
       </GridItem>
       <GridItem>
-        <SingleChoiceField id="count" label="Count" variant="radio" options={optionsCount} />
+        <SingleChoiceField
+          id="count"
+          label={t("count.label")}
+          variant="radio"
+          options={[
+            { value: "single", label: t("count.single") },
+            { value: "multiple", label: t("count.multiple") },
+          ]}
+        />
       </GridItem>
       <GridItem>
         <SingleChoiceField
           variant="radio"
           id="riskFactors"
-          label="Risk factors"
-          options={optionsRiskFactors}
+          label={t("riskFactors.label")}
+          options={[
+            { value: "yes", label: t("riskFactors.yes") },
+            { value: "no", label: t("riskFactors.no") },
+          ]}
           extras={<RiskFactorsInfo />}
           defaultValue="no"
         />
       </GridItem>
       <GridItem size="lg">
         <Hints>
-          <Hint>
-            The guideline does not apply to lung cancer screening (see LungRads instead), patients
-            younger than 35 years, or patients with a history of primary cancer or
-            immunosuppression.
-          </Hint>
+          <Hint>{t("hint1")}</Hint>
         </Hints>
       </GridItem>
     </Grid>

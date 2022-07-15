@@ -23,7 +23,9 @@ export const Fleischner2017Report = () => {
 
   return (
     <>
-      <Paragraph>Recommendation: {conclusion}</Paragraph>
+      <Paragraph>
+        {t("recommendation")}: {conclusion}
+      </Paragraph>
     </>
   )
 }
