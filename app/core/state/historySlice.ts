@@ -18,40 +18,39 @@ export type HistoryState<T> = {
   future: PatchesState
 }
 
-export const withHistory = <S, P>(reducerFn: CaseReducer<S, PayloadAction<P>>) => {
-  return {
-    reducer(
-      draftState: Draft<HistoryState<S>>,
-      action: PayloadAction<P, string, { undoable?: boolean; historyCurrent?: number }>
-    ) {
-      const { historyCurrent } = action.meta
-      if (historyCurrent == null) {
-        const result = reducerFn(draftState.present, action)
-        if (result !== undefined) draftState.present = result as Draft<S>
-      } else {
-        const state = original(draftState) as HistoryState<S>
-        const [nextState, redoPatch, undoPatch] = castDraft(
-          produceWithPatches<HistoryState<S>, Draft<HistoryState<S>>>(state, (draft) => {
-            const result = reducerFn(draft.present, action)
-            if (result !== undefined) draft.present = result as Draft<S>
-          })
-        )
+export const withHistory = <S, P>(reducerFn: CaseReducer<S, PayloadAction<P>>) => ({
+  reducer(
+    draftState: Draft<HistoryState<S>>,
+    action: PayloadAction<P, string, { undoable?: boolean; historyCurrent?: number }>
+  ) {
+    const { historyCurrent } = action.meta
+    if (historyCurrent == null) {
+      const result = reducerFn(draftState.present, action)
+      if (result !== undefined) draftState.present = result as Draft<S>
+      return undefined
+    }
 
-        return produce(nextState, (draft) => {
-          draft.past[historyCurrent] = {
-            undo: undoPatch,
-            redo: redoPatch,
-          }
-          draft.future = {}
-        })
+    const state = original(draftState) as HistoryState<S>
+    const [nextState, redoPatch, undoPatch] = castDraft(
+      produceWithPatches<HistoryState<S>, Draft<HistoryState<S>>>(state, (draft) => {
+        const result = reducerFn(draft.present, action)
+        if (result !== undefined) draft.present = result as Draft<S>
+      })
+    )
+
+    return produce(nextState, (draft) => {
+      draft.past[historyCurrent] = {
+        undo: undoPatch,
+        redo: redoPatch,
       }
-    },
-    prepare(payload: P, options?: { undoable: boolean }) {
-      const undoable = options?.undoable ?? true
-      return { payload, meta: { undoable } }
-    },
-  }
-}
+      draft.future = {}
+    })
+  },
+  prepare(payload: P, options?: { undoable: boolean }) {
+    const undoable = options?.undoable ?? true
+    return { payload, meta: { undoable } }
+  },
+})
 
 export const createHistorySlice = <T, Reducers extends SliceCaseReducers<HistoryState<T>>>({
   name,
@@ -74,7 +73,7 @@ export const createHistorySlice = <T, Reducers extends SliceCaseReducers<History
     reducers: { ...reducers },
     extraReducers: (builder) => {
       builder
-        .addCase(undoHistory, <T>(state: Draft<HistoryState<T>>, action: PayloadAction<number>) => {
+        .addCase(undoHistory, <V>(state: Draft<HistoryState<V>>, action: PayloadAction<number>) => {
           const historyCurrent = action.payload
           const historyEntry = state.past[historyCurrent]
           if (historyEntry) {
@@ -83,7 +82,7 @@ export const createHistorySlice = <T, Reducers extends SliceCaseReducers<History
             delete state.past[historyCurrent]
           }
         })
-        .addCase(redoHistory, <T>(state: Draft<HistoryState<T>>, action: PayloadAction<number>) => {
+        .addCase(redoHistory, <V>(state: Draft<HistoryState<V>>, action: PayloadAction<number>) => {
           const historyCurrent = action.payload
           const historyEntry = state.future[historyCurrent]
           if (historyEntry) {
