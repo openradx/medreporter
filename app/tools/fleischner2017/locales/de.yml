@@ -27,6 +27,18 @@ riskFactors:
   yes: Ja
   no: Nein
   
+riskFactorsInfo: 
+  label: Risikofaktoren
+  1: Raucheranamnese
+  2: Kontakt zu Asbest, Radium oder Uran
+  3: Familienanamnese mit Lungenkrebs
+  4: Alter
+  5: weibliches Geschlecht
+  6: Schwarze Menschen oder Hawaiianer
+  7: Spikulierung
+  8: Anzahl (unter 5 Noduli erhöht das Risiko für Malignität)
+  9: Emphysem oder pulmonale Fibrose (insbesondere IPF)
+
 noSuggestionPossible: Keine Empfehlung möglich.
 optionalAt12MonthsSuspicious: Optionales CT nach 12 Monaten, insbesondere bei suspekter Morphologie und/oder Lokalisation im Oberlappen.
 noFollowUp: Kein Follow-Up notwendig.

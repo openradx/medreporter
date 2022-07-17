@@ -26,26 +26,27 @@ export const defineFleischner2017 = (
   longaxis: number,
   shortaxis: number,
   structure: "solid" | "groundglass" | "partsolid",
-  count: "single" | "multiple",
-  riskFactors: boolean
+  count: "single" | "multiple" | null,
+  riskFactors: "yes" | "no" | null
 ): Fleischner2017Result => {
   const averageDiameter: number | undefined = calcAverageDiameter(longaxis, shortaxis)
+  const risk = riskFactors === "yes"
   let suggestion: Suggestion = Suggestion.NoSuggestionPossible
 
   if (structure === "solid") {
     if (count === "single") {
       if (averageDiameter < 6) {
-        if (riskFactors) {
+        if (risk) {
           suggestion = Suggestion.OptionalAt12MonthsSuspicious
         }
-        if (!riskFactors) {
+        if (!risk) {
           suggestion = Suggestion.NoFollowUp
         }
       } else if (averageDiameter >= 6 && averageDiameter <= 8) {
-        if (riskFactors) {
+        if (risk) {
           suggestion = Suggestion.Ct3To6MonthsAnd18To24
         }
-        if (!riskFactors) {
+        if (!risk) {
           suggestion = Suggestion.Ct3To6MonthsAndConsider18To24
         }
       } else if (averageDiameter > 8) {
@@ -53,25 +54,24 @@ export const defineFleischner2017 = (
       }
     } else if (count === "multiple") {
       if (averageDiameter < 6) {
-        if (riskFactors) {
+        if (risk) {
           suggestion = Suggestion.OptionalAt12Months
         }
-        if (!riskFactors) {
+        if (!risk) {
           suggestion = Suggestion.NoFollowUp
         }
       } else if (averageDiameter >= 6) {
-        if (riskFactors) {
+        if (risk) {
           suggestion = Suggestion.Ct3To6MonthsAnd18To24
         }
-        if (!riskFactors) {
+        if (!risk) {
           suggestion = Suggestion.Ct3To6MonthsAndConsider18To24
         }
       }
     }
+  } else if (averageDiameter < 6 && (structure === "partsolid" || structure === "groundglass")) {
+    suggestion = Suggestion.NoFollowUp
   } else if (count === "single") {
-    if (averageDiameter < 6) {
-      suggestion = Suggestion.NoFollowUp
-    }
     if (averageDiameter >= 6) {
       if (structure === "groundglass") {
         suggestion = Suggestion.Ct6To12Months2Years5Years

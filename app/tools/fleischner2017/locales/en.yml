@@ -26,6 +26,18 @@ riskFactors:
   yes: Yes
   no: No
 
+riskFactorsInfo: 
+  label: Risk factors
+  1: History of heavy smoking
+  2: Exposure to asbestos, radium or uranium
+  3: Family history of lung cancer
+  4: Older age
+  5: "Sex: Female"
+  6: "Race: Black and native Hawaiian"
+  7: Marginal spiculatio
+  8: Multiplicity (under 5 nodules increases risk for malignancy)
+  9: Emphysema and pulmonary fibrosis (particularly IPF)
+
 noSuggestionPossible: No suggestion possible
 optionalAt12MonthsSuspicious: optional CT at 12 months (particularly with suspicious nodule morphology and/or upper lobe location)
 noFollowUp: no routine follow-up required
