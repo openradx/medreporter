@@ -1,6 +1,7 @@
 import { NumberField } from "../../../core/components/fields/NumberField"
 import { Description } from "../../../core/components/structuredReport/Description"
 import { Grid } from "../../../core/components/structuredReport/Grid"
+import { GridGroup } from "../../../core/components/structuredReport/GridGroup"
 import { GridItem } from "../../../core/components/structuredReport/GridItem"
 import { Hint } from "../../../core/components/structuredReport/Hint"
 import { Hints } from "../../../core/components/structuredReport/Hints"
@@ -14,15 +15,17 @@ export const AdrenalWashoutStructure = () => (
         tomography.
       </Description>
     </GridItem>
-    <GridItem>
-      <NumberField id="nonEnhanced" label="Non-enhanced phase HU" min={MIN_HU} max={MAX_HU} />
-    </GridItem>
-    <GridItem>
-      <NumberField id="portalVenous" label="Portal venous phase HU" min={MIN_HU} max={MAX_HU} />
-    </GridItem>
-    <GridItem>
-      <NumberField id="delayed" label="Delayed phase HU" min={MIN_HU} max={MAX_HU} />
-    </GridItem>
+    <GridGroup label="Density (HU)">
+      <GridItem size="md">
+        <NumberField id="nonEnhanced" label="Non-enhanced phase HU" min={MIN_HU} max={MAX_HU} />
+      </GridItem>
+      <GridItem size="md">
+        <NumberField id="portalVenous" label="Portal venous phase HU" min={MIN_HU} max={MAX_HU} />
+      </GridItem>
+      <GridItem size="md">
+        <NumberField id="delayed" label="Delayed phase HU" min={MIN_HU} max={MAX_HU} />
+      </GridItem>
+    </GridGroup>
     <GridItem size="lg">
       <Hints>
         <Hint>
