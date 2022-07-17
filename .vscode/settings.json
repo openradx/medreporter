@@ -2,5 +2,6 @@
   "jest.autoRun": "off",
   "i18n-ally.localesPaths": ["src/locales"],
   "i18n-ally.keystyle": "nested",
-  "cSpell.diagnosticLevel": "Hint"
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.language" : "en, de-de"
 }
