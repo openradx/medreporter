@@ -1,6 +1,6 @@
 {
   "jest.autoRun": "off",
-  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.localesPaths": ["app/core/locales/*", "app/tools/*/locales"],
   "i18n-ally.keystyle": "nested",
   "cSpell.diagnosticLevel": "Hint"
 }

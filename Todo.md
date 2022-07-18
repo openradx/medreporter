@@ -11,7 +11,7 @@
 - [Tools] Adrenal washout
 - [Tools] Adrenal MRI Calculator (SI-Index)
 - [Tools] ILD Classification
-- [Tools] Measurements Tool
+- [MeasurementTable] Allow to import table
 - Bring in modules and templates (MedTL)
 
 ## Julia

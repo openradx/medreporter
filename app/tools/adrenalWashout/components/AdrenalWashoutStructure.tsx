@@ -6,34 +6,33 @@ import { GridItem } from "../../../core/components/structuredReport/GridItem"
 import { Hint } from "../../../core/components/structuredReport/Hint"
 import { Hints } from "../../../core/components/structuredReport/Hints"
 import { MAX_HU, MIN_HU } from "../../../core/constants/general"
+import { useStructureTranslation } from "../../../core/hooks/useStructureTranslation"
 
-export const AdrenalWashoutStructure = () => (
-  <Grid>
-    <GridItem size="lg">
-      <Description>
-        Characterization of adrenal lesions to detect adenomas by using contrast enhanced computed
-        tomography.
-      </Description>
-    </GridItem>
-    <GridGroup label="Density (HU)">
-      <GridItem size="md">
-        <NumberField id="nonEnhanced" label="Non-enhanced phase HU" min={MIN_HU} max={MAX_HU} />
+export const AdrenalWashoutStructure = () => {
+  const { t } = useStructureTranslation()
+
+  return (
+    <Grid>
+      <GridItem size="lg">
+        <Description>{t("description")}</Description>
       </GridItem>
-      <GridItem size="md">
-        <NumberField id="portalVenous" label="Portal venous phase HU" min={MIN_HU} max={MAX_HU} />
+      <GridGroup label={t("density")}>
+        <GridItem size="md">
+          <NumberField id="nonEnhanced" label={t("nonEnhanced")} min={MIN_HU} max={MAX_HU} />
+        </GridItem>
+        <GridItem size="md">
+          <NumberField id="portalVenous" label={t("portalVenous")} min={MIN_HU} max={MAX_HU} />
+        </GridItem>
+        <GridItem size="md">
+          <NumberField id="delayed" label={t("delayed")} min={MIN_HU} max={MAX_HU} />
+        </GridItem>
+      </GridGroup>
+      <GridItem size="xl">
+        <Hints>
+          <Hint>{t("roiHint")}</Hint>
+          <Hint>{t("absoluteHint")}</Hint>
+        </Hints>
       </GridItem>
-      <GridItem size="md">
-        <NumberField id="delayed" label="Delayed phase HU" min={MIN_HU} max={MAX_HU} />
-      </GridItem>
-    </GridGroup>
-    <GridItem size="lg">
-      <Hints>
-        <Hint>
-          The ROI should cover approximately two-third of the lesion without including the
-          periphery.
-        </Hint>
-        <Hint>Whenever possible the absolute washout should be preferred.</Hint>
-      </Hints>
-    </GridItem>
-  </Grid>
-)
+    </Grid>
+  )
+}
