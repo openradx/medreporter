@@ -1,17 +1,21 @@
 import { FieldInfo } from "../../../core/components/structuredReport/FieldInfo"
+import { useStructureTranslation } from "../../../core/hooks/useStructureTranslation"
 
-export const RiskFactorsInfo = () => (
-  <FieldInfo title="Risk factors">
-    <ul>
-      <li>History of heavy smoking</li>
-      <li>Exposure to asbestos, radium or uranium</li>
-      <li>Family history of lung cancer</li>
-      <li>Older age</li>
-      <li>Sex: Female</li>
-      <li>Race: Black and native Hawaiian</li>
-      <li>Marginal spiculation</li>
-      <li>Multiplicity (under 5 nodules increases risk for malignancy)</li>
-      <li>Emphysema and pulmonary fibrosis (particularly IPF)</li>
-    </ul>
-  </FieldInfo>
-)
+export const RiskFactorsInfo = () => {
+  const { t } = useStructureTranslation()
+  return (
+    <FieldInfo title={t("riskFactorsInfo.label")}>
+      <ul>
+        <li> {t("riskFactorsInfo.1")} </li>
+        <li> {t("riskFactorsInfo.2")} </li>
+        <li> {t("riskFactorsInfo.3")} </li>
+        <li> {t("riskFactorsInfo.4")} </li>
+        <li> {t("riskFactorsInfo.5")} </li>
+        <li> {t("riskFactorsInfo.6")} </li>
+        <li> {t("riskFactorsInfo.7")} </li>
+        <li> {t("riskFactorsInfo.8")} </li>
+        <li> {t("riskFactorsInfo.9")} </li>
+      </ul>
+    </FieldInfo>
+  )
+}
