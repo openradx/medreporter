@@ -1,3 +1,5 @@
+import { List } from "../../../core/components/structuredReport/List"
+import { ListItem } from "../../../core/components/structuredReport/ListItem"
 import { Paragraph } from "../../../core/components/structuredReport/Paragraph"
 import { Statement } from "../../../core/components/structuredReport/Statement"
 import { useReportData } from "../../../core/contexts/ReportDataContext"
@@ -24,14 +26,14 @@ export const AdrenalWashoutReport = () => {
 
   return (
     <>
-      Relative washout: {relativeWashout}
-      Absolute washout: {absoluteWashout}
-      {conclusion}
       <Paragraph>
-        <Statement fieldId="foobar">fooo</Statement>
+        <Statement>{conclusion}</Statement>
       </Paragraph>
       <Paragraph>
-        <Statement fieldId="foobar">bar</Statement>
+        <List>
+          <ListItem>Relative washout: {relativeWashout}</ListItem>
+          <ListItem>Absolute washout: {absoluteWashout}</ListItem>
+        </List>
       </Paragraph>
     </>
   )

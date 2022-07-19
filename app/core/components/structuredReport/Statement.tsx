@@ -1,4 +1,5 @@
 import { Box } from "@mantine/core"
+import { ReactNode } from "react"
 import { useStructureLink } from "../../hooks/useStructureLink"
 
 interface StatementProps {
@@ -6,7 +7,7 @@ interface StatementProps {
   sectionId?: string
   moduleId?: string
   fieldId?: string
-  children: string
+  children?: ReactNode
 }
 
 export const Statement = ({

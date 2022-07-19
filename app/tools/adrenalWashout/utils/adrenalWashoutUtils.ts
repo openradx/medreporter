@@ -42,11 +42,17 @@ export const calcAdrenalWashout = (
   let absoluteWashout: number | null = null
   if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
     absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
+    if (absoluteWashout !== null) {
+      absoluteWashout = Math.round(absoluteWashout)
+    }
   }
 
   let relativeWashout: number | null = null
   if (portalVenous !== null && delayed !== null) {
     relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
+    if (relativeWashout !== null) {
+      relativeWashout = Math.round(relativeWashout)
+    }
   }
 
   let suggestion: Suggestion = Suggestion.NoSuggestionPossible
