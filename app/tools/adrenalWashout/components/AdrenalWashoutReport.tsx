@@ -4,7 +4,11 @@ import { Paragraph } from "../../../core/components/structuredReport/Paragraph"
 import { Statement } from "../../../core/components/structuredReport/Statement"
 import { useReportData } from "../../../core/contexts/ReportDataContext"
 import { useReportTranslation } from "../../../core/hooks/useReportTranslation"
-import { calcAdrenalWashout } from "../utils/adrenalWashoutUtils"
+import {
+  calcAbsoluteAdrenalWashout,
+  calcRelativeAdrenalWashout,
+  makeSuggestion,
+} from "../utils/adrenalWashoutUtils"
 
 type AdrenalWashoutData = {
   nonEnhanced: number | null
@@ -16,10 +20,14 @@ export const AdrenalWashoutReport = () => {
   const { nonEnhanced, portalVenous, delayed } = useReportData(true) as AdrenalWashoutData
   const { t } = useReportTranslation()
 
-  const { suggestion, absoluteWashout, relativeWashout } = calcAdrenalWashout(
+  const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
+  const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
+  const suggestion = makeSuggestion(
     nonEnhanced,
     portalVenous,
-    delayed
+    delayed,
+    absoluteWashout,
+    relativeWashout
   )
 
   const conclusion = t(suggestion)

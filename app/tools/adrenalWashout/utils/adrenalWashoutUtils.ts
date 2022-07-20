@@ -1,15 +1,26 @@
-const calcAbsoluteAdrenalWashout = (
-  nonEnhanced: number,
-  portalVenous: number,
-  delayed: number
+export const calcAbsoluteAdrenalWashout = (
+  nonEnhanced: number | null,
+  portalVenous: number | null,
+  delayed: number | null
 ): number | null => {
+  if (nonEnhanced === null || portalVenous === null || delayed === null) {
+    return null
+  }
+
   if (nonEnhanced >= portalVenous) {
     return null
   }
   return ((portalVenous - delayed) / (portalVenous - nonEnhanced)) * 100
 }
 
-const calcRelativeAdrenalWashout = (portalVenous: number, delayed: number): number | null => {
+export const calcRelativeAdrenalWashout = (
+  portalVenous: number | null,
+  delayed: number | null
+): number | null => {
+  if (portalVenous === null || delayed === null) {
+    return null
+  }
+
   if (portalVenous === 0) {
     return null
   }
@@ -17,6 +28,7 @@ const calcRelativeAdrenalWashout = (portalVenous: number, delayed: number): numb
 }
 
 export enum Suggestion {
+  MissingValues = "missingValues",
   NoSuggestionPossible = "noSuggestionPossible",
   DensityLowerZeroAdenoma = "densityLowerZeroAdenoma",
   DensityLowerTenAdenoma = "densityLowerTenAdenoma",
@@ -28,66 +40,50 @@ export enum Suggestion {
   LowRelativeWashoutAlternative = "lowRelativeWashoutAdenoma",
 }
 
-export type AdrenalWashoutResult = {
-  suggestion: Suggestion
-  absoluteWashout: number | null
-  relativeWashout: number | null
-}
-
-export const calcAdrenalWashout = (
+export const makeSuggestion = (
   nonEnhanced: number | null,
   portalVenous: number | null,
-  delayed: number | null
-): AdrenalWashoutResult => {
-  let absoluteWashout: number | null = null
-  if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
-    absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
-    if (absoluteWashout !== null) {
-      absoluteWashout = Math.round(absoluteWashout)
-    }
+  delayed: number | null,
+  absoluteWashout: number | null,
+  relativeWashout: number | null
+): Suggestion => {
+  if (nonEnhanced === null && portalVenous === null && delayed === null) {
+    return Suggestion.MissingValues
   }
-
-  let relativeWashout: number | null = null
-  if (portalVenous !== null && delayed !== null) {
-    relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
-    if (relativeWashout !== null) {
-      relativeWashout = Math.round(relativeWashout)
-    }
-  }
-
-  let suggestion: Suggestion = Suggestion.NoSuggestionPossible
 
   if (nonEnhanced !== null) {
     if (nonEnhanced < 0) {
-      suggestion = Suggestion.DensityLowerZeroAdenoma
-    } else if (nonEnhanced < 10) {
-      suggestion = Suggestion.DensityLowerTenAdenoma
-    } else if (nonEnhanced >= 43) {
-      suggestion = Suggestion.HighDensityMalignancy
+      return Suggestion.DensityLowerZeroAdenoma
+    }
+
+    if (nonEnhanced < 10) {
+      return Suggestion.DensityLowerTenAdenoma
+    }
+
+    if (nonEnhanced >= 43) {
+      return Suggestion.HighDensityMalignancy
     }
   }
 
-  if (suggestion === Suggestion.NoSuggestionPossible) {
-    if (portalVenous != null && portalVenous >= 130) {
-      suggestion = Suggestion.HighEnhancementPheochromocytoma
-    } else if (absoluteWashout !== null) {
-      if (absoluteWashout >= 60) {
-        suggestion = Suggestion.HighAbsoluteWashoutAdenoma
-      } else {
-        suggestion = Suggestion.LowAbsoluteWashoutAlternative
-      }
-    } else if (relativeWashout !== null) {
-      if (relativeWashout >= 40) {
-        suggestion = Suggestion.HighRelativeWashoutAdenoma
-      } else {
-        suggestion = Suggestion.LowRelativeWashoutAlternative
-      }
-    }
+  if (portalVenous != null && portalVenous >= 130) {
+    return Suggestion.HighEnhancementPheochromocytoma
   }
 
-  return {
-    suggestion,
-    absoluteWashout,
-    relativeWashout,
+  if (absoluteWashout !== null) {
+    if (absoluteWashout >= 60) {
+      return Suggestion.HighAbsoluteWashoutAdenoma
+    }
+    // absoluteWashout < 60
+    return Suggestion.LowAbsoluteWashoutAlternative
   }
+
+  if (relativeWashout !== null) {
+    if (relativeWashout >= 40) {
+      return Suggestion.HighRelativeWashoutAdenoma
+    }
+    // relativeWashout < 40
+    return Suggestion.LowRelativeWashoutAlternative
+  }
+
+  return Suggestion.NoSuggestionPossible
 }
