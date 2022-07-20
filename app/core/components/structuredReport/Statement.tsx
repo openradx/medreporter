@@ -21,13 +21,13 @@ export const Statement = ({
 
   return (
     <Box
-      component="span"
+      component="div"
       sx={{
         "&:after": { content: "' '" },
       }}
     >
       <Box
-        component="span"
+        component="div"
         onClick={() => link && activateLink()}
         sx={{
           ...(link && {

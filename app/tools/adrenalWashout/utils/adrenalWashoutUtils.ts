@@ -10,7 +10,8 @@ export const calcAbsoluteAdrenalWashout = (
   if (nonEnhanced >= portalVenous) {
     return null
   }
-  return ((portalVenous - delayed) / (portalVenous - nonEnhanced)) * 100
+  const result = ((portalVenous - delayed) / (portalVenous - nonEnhanced)) * 100
+  return Math.round(result)
 }
 
 export const calcRelativeAdrenalWashout = (
@@ -24,7 +25,8 @@ export const calcRelativeAdrenalWashout = (
   if (portalVenous === 0) {
     return null
   }
-  return ((portalVenous - delayed) / portalVenous) * 100
+  const result = ((portalVenous - delayed) / portalVenous) * 100
+  return Math.round(result)
 }
 
 export enum Suggestion {

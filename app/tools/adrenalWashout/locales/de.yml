@@ -1,15 +1,15 @@
 # Structure
-description: |
+description: >
   Charakterisierung von unklaren Nebennierenläsionen zur Erkennung von
   Nebennierenadenomen im CT.
 density: Dichte (HE)
 nonEnhanced: Native Phase
 portalVenous: Venöse Phase
 delayed: Spätphase
-roiHint: |
-  Die Messung (ROI) sollte etwa zwei drittel der Läsion abdecken ohne die
+roiHint: >
+  Die Messung (ROI) sollte etwa zwei Drittel der Läsion abdecken ohne die
   Peripherie miteinzubeziehen.
-absoluteHint: |
+absoluteHint: >
   Wenn möglich sollte die absolute Auswaschung (Washout) gegenüber der
   relativen Auswaschung bevorzugt werden.
 
@@ -18,33 +18,33 @@ relativeWashout: Relative Auswaschung
 absoluteWashout: Absolute Auswaschung
 notCalculable: Nicht berechenbar
 missingValues: Fehlende Angabe von Dichtewerten.
-noSuggestionPossible: |
-  Mit den eingegebenen Werten ist keine Einschätzung der unklaren Nebennierenläsion
+noSuggestionPossible: >
+  Mit den eingegebenen Werten ist keine Einschätzung der Nebennierenläsion
   möglich. Eine ergänzende Bildgebung, wie FDG-PET/CT oder MRT mit In-Phase (IP)
   und Out-of-Phase (OOP) Sequenzen sollte erwogen werden.
-densityLowerZeroAdenoma: |
+densityLowerZeroAdenoma: >
   Eine Nebennierenläsion mit einer Dichte < 0 HE in einer nativen Phase ist hoch
   spezifisch für ein fettreiches Adenom (47% sensitiv, 100% spezifisch)
-densityLowerTenAdenoma: |
+densityLowerTenAdenoma: >
   Eine Nebennierenläsion mit einer Dichte < 10 HE in einer nativen Phase ist relativ
   spezifisch für ein fettreiches Adneom (71% sensitiv, 98% spezifisch)
-highDensityMalignancy: |
+highDensityMalignancy: >
   Eine Nebennierenläsion mit einer Dichte > 43 HE in einem nativen CT, die weder verkalkt
   noch hämorrhagisch transformiert ist, ist malignomsuspekt unabhängig von der Auswaschung
   (Washout). Anstatt eine Auswaschung (Washout) zu beurteilen kann ein FDG-PET/CT
   erwogen werden.
-highEnhancementPheochromocytoma: |
+highEnhancementPheochromocytoma: >
   Eine Nebennierenläsion, die um > 130 HE anreichert ist verdächtig auf ein
   hypervaskularisiertes Phäochromozytom.
-highAbsoluteWashoutAdenoma: |
+highAbsoluteWashoutAdenoma: >
   Eine Nebennierenläsion, die um > 60% auswäscht (absolutes Washout), entspricht
   am ehesten einem Nebennierenadenom.
-lowAbsoluteWashoutAdenoma: |
+lowAbsoluteWashoutAdenoma: >
   Eine Nebennierenläsion, die < 60% auswäscht (absolutes Washout), entspricht
   am ehesten keinem Nebennierenadenom.
-highRelativeWashoutAdenoma: |
+highRelativeWashoutAdenoma: >
   Eine Nebennierenläsion, die um > 40% auswäscht (relatives Washout), entspricht
   am ehesten einem Nebennierenadenom.
-lowRelativeWashoutAdenoma: |
+lowRelativeWashoutAdenoma: >
   Eine Nebennierenläsion, die < 40% auswäscht (relatives Washout), entspricht
   am ehesten keinem Nebennierenadenom.
