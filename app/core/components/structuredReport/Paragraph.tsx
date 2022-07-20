@@ -6,7 +6,7 @@ interface ParagraphProps {
 }
 
 export const Paragraph = ({ children }: ParagraphProps) => (
-  <Box className="medreporter-Paragraph-root" sx={{ display: "inline-block" }}>
+  <Box className="medreporter-Paragraph-root" sx={{ display: "block" }}>
     {children}
   </Box>
 )

@@ -11,6 +11,7 @@ interface NumberFieldProps extends CommonFieldProps {
   max?: number
   precision?: number
   step?: number
+  startValue?: number
   extras?: ReactNode
 }
 
@@ -23,6 +24,7 @@ export const NumberField = ({
   max,
   precision,
   step,
+  startValue,
   extras,
   disabled,
 }: NumberFieldProps) => {
@@ -34,7 +36,9 @@ export const NumberField = ({
   })
   return (
     <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      <NumberInput {...{ label, value, onChange, min, max, precision, step, extras, disabled }} />
+      <NumberInput
+        {...{ label, value, onChange, min, max, precision, step, startValue, extras, disabled }}
+      />
     </BaseField>
   )
 }

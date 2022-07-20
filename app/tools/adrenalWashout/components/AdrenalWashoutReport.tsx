@@ -39,8 +39,12 @@ export const AdrenalWashoutReport = () => {
       </Paragraph>
       <Paragraph>
         <List>
-          <ListItem>Relative washout: {relativeWashout}</ListItem>
-          <ListItem>Absolute washout: {absoluteWashout}</ListItem>
+          <ListItem>
+            {t("relativeWashout")}: {relativeWashout ?? t("notCalculable")}
+          </ListItem>
+          <ListItem>
+            {t("absoluteWashout")}: {absoluteWashout ?? t("notCalculable")}
+          </ListItem>
         </List>
       </Paragraph>
     </>

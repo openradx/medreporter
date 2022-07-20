@@ -3,5 +3,15 @@
   "i18n-ally.localesPaths": ["app/core/locales/*", "app/tools/*/locales"],
   "i18n-ally.keystyle": "nested",
   "cSpell.diagnosticLevel": "Hint",
-  "cSpell.language" : "en, de-de"
+  "cSpell.language": "en, de-de",
+  "cSpell.words": [
+    "Adneom",
+    "Dichtewerte",
+    "Dichtewerten",
+    "hypervaskularisiertes",
+    "malignomsuspekt",
+    "Nebennierenläsion",
+    "Nebennierenläsionen",
+    "Phäochromozytom"
+  ]
 }

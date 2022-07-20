@@ -12,6 +12,7 @@ interface NumberInputProps {
   min?: number
   max?: number
   step?: number
+  startValue?: number
   precision?: number
   extras?: ReactNode
   width?: number
@@ -26,6 +27,7 @@ export const NumberInput = ({
   min,
   max,
   step,
+  startValue,
   precision = 0,
   extras,
   disabled,
@@ -62,6 +64,7 @@ export const NumberInput = ({
         min={min}
         max={max}
         step={step ?? 1 / 10 ** precision}
+        startValue={startValue}
         stepHoldDelay={300}
         stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
         precision={precision}

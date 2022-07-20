@@ -14,6 +14,10 @@ absoluteHint: |
   relativen Auswaschung bevorzugt werden.
 
 # Report
+relativeWashout: Relative Auswaschung
+absoluteWashout: Absolute Auswaschung
+notCalculable: Nicht berechenbar
+missingValues: Fehlende Angabe von Dichtewerten.
 noSuggestionPossible: |
   Mit den eingegebenen Werten ist keine Einschätzung der unklaren Nebennierenläsion
   möglich. Eine ergänzende Bildgebung, wie FDG-PET/CT oder MRT mit In-Phase (IP)
@@ -30,7 +34,7 @@ highDensityMalignancy: |
   (Washout). Anstatt eine Auswaschung (Washout) zu beurteilen kann ein FDG-PET/CT
   erwogen werden.
 highEnhancementPheochromocytoma: |
-  Eine Nebennierenläsion, die um > 130 HE mehranreichert ist verdächtig auf ein
+  Eine Nebennierenläsion, die um > 130 HE anreichert ist verdächtig auf ein
   hypervaskularisiertes Phäochromozytom.
 highAbsoluteWashoutAdenoma: |
   Eine Nebennierenläsion, die um > 60% auswäscht (absolutes Washout), entspricht

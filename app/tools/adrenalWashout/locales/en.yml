@@ -13,6 +13,10 @@ absoluteHint: |
   Whenever possible the absolute washout should be preferred.
 
 # Report
+relativeWashout: Relative washout
+absoluteWashout: Absolute washout
+notCalculable: Not calculable
+missingValues: Missing specification of density values.
 noSuggestionPossible: |
   With the values entered, no assessment of the indeterminate adrenal lesion is possible.
   Complementary imaging such as FDG-PET/CT or MRI with in-phase (IP) and
