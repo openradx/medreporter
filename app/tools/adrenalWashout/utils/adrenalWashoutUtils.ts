@@ -29,7 +29,7 @@ export const calcRelativeAdrenalWashout = (
   return Math.round(result)
 }
 
-export enum Suggestion {
+export enum AdrenalWashoutSuggestion {
   MissingValues = "missingValues",
   NoSuggestionPossible = "noSuggestionPossible",
   DensityLowerZeroAdenoma = "densityLowerZeroAdenoma",
@@ -42,50 +42,52 @@ export enum Suggestion {
   LowRelativeWashoutAlternative = "lowRelativeWashoutAdenoma",
 }
 
-export const makeSuggestion = (
+export const makeAdrenalWashoutSuggestion = (
   nonEnhanced: number | null,
   portalVenous: number | null,
-  delayed: number | null,
-  absoluteWashout: number | null,
-  relativeWashout: number | null
-): Suggestion => {
+  delayed: number | null
+): AdrenalWashoutSuggestion => {
   if (nonEnhanced === null && portalVenous === null && delayed === null) {
-    return Suggestion.MissingValues
+    return AdrenalWashoutSuggestion.MissingValues
   }
 
   if (nonEnhanced !== null) {
     if (nonEnhanced < 0) {
-      return Suggestion.DensityLowerZeroAdenoma
+      return AdrenalWashoutSuggestion.DensityLowerZeroAdenoma
     }
 
     if (nonEnhanced < 10) {
-      return Suggestion.DensityLowerTenAdenoma
+      return AdrenalWashoutSuggestion.DensityLowerTenAdenoma
     }
 
     if (nonEnhanced >= 43) {
-      return Suggestion.HighDensityMalignancy
+      return AdrenalWashoutSuggestion.HighDensityMalignancy
     }
   }
 
   if (portalVenous != null && portalVenous >= 130) {
-    return Suggestion.HighEnhancementPheochromocytoma
+    return AdrenalWashoutSuggestion.HighEnhancementPheochromocytoma
   }
+
+  const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
 
   if (absoluteWashout !== null) {
     if (absoluteWashout >= 60) {
-      return Suggestion.HighAbsoluteWashoutAdenoma
+      return AdrenalWashoutSuggestion.HighAbsoluteWashoutAdenoma
     }
     // absoluteWashout < 60
-    return Suggestion.LowAbsoluteWashoutAlternative
+    return AdrenalWashoutSuggestion.LowAbsoluteWashoutAlternative
   }
+
+  const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
 
   if (relativeWashout !== null) {
     if (relativeWashout >= 40) {
-      return Suggestion.HighRelativeWashoutAdenoma
+      return AdrenalWashoutSuggestion.HighRelativeWashoutAdenoma
     }
     // relativeWashout < 40
-    return Suggestion.LowRelativeWashoutAlternative
+    return AdrenalWashoutSuggestion.LowRelativeWashoutAlternative
   }
 
-  return Suggestion.NoSuggestionPossible
+  return AdrenalWashoutSuggestion.NoSuggestionPossible
 }

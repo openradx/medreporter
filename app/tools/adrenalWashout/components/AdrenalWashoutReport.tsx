@@ -7,7 +7,7 @@ import { useReportTranslation } from "../../../core/hooks/useReportTranslation"
 import {
   calcAbsoluteAdrenalWashout,
   calcRelativeAdrenalWashout,
-  makeSuggestion,
+  makeAdrenalWashoutSuggestion,
 } from "../utils/adrenalWashoutUtils"
 
 type AdrenalWashoutData = {
@@ -22,7 +22,7 @@ export const AdrenalWashoutReport = () => {
 
   const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
   const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
-  const suggestion = makeSuggestion(
+  const suggestion = makeAdrenalWashoutSuggestion(
     nonEnhanced,
     portalVenous,
     delayed,
@@ -40,10 +40,10 @@ export const AdrenalWashoutReport = () => {
       <Paragraph>
         <List>
           <ListItem>
-            {t("relativeWashout")}: {relativeWashout ?? t("notCalculable")}
+            {t("absoluteWashout")}: {absoluteWashout ?? t("notCalculable")}
           </ListItem>
           <ListItem>
-            {t("absoluteWashout")}: {absoluteWashout ?? t("notCalculable")}
+            {t("relativeWashout")}: {relativeWashout ?? t("notCalculable")}
           </ListItem>
         </List>
       </Paragraph>

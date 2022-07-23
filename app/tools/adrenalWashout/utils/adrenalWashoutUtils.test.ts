@@ -1,8 +1,8 @@
 import {
   calcAbsoluteAdrenalWashout,
   calcRelativeAdrenalWashout,
-  makeSuggestion,
-  Suggestion,
+  makeAdrenalWashoutSuggestion,
+  AdrenalWashoutSuggestion,
 } from "./adrenalWashoutUtils"
 
 describe("Calculate absolute adrenal washout", () => {
@@ -25,14 +25,9 @@ describe("Calculate relative adrenal washout", () => {
 
 describe("Adrenal washout suggestions", () => {
   it.each([
-    [-1, 0, 0, 0, null, Suggestion.DensityLowerZeroAdenoma],
-    [1, 0, 0, 0, null, Suggestion.DensityLowerTenAdenoma],
-  ])(
-    "should be calculated correctly",
-    (nonEnhanced, portalVenous, delayed, absoluteWashout, relativeWashout, result) => {
-      expect(
-        makeSuggestion(nonEnhanced, portalVenous, delayed, absoluteWashout, relativeWashout)
-      ).toBe(result)
-    }
-  )
+    [-1, 0, 0, AdrenalWashoutSuggestion.DensityLowerZeroAdenoma],
+    [1, 0, 0, AdrenalWashoutSuggestion.DensityLowerTenAdenoma],
+  ])("should be calculated correctly", (nonEnhanced, portalVenous, delayed, result) => {
+    expect(makeAdrenalWashoutSuggestion(nonEnhanced, portalVenous, delayed)).toBe(result)
+  })
 })
