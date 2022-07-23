@@ -22,13 +22,7 @@ export const AdrenalWashoutReport = () => {
 
   const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
   const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
-  const suggestion = makeAdrenalWashoutSuggestion(
-    nonEnhanced,
-    portalVenous,
-    delayed,
-    absoluteWashout,
-    relativeWashout
-  )
+  const suggestion = makeAdrenalWashoutSuggestion(nonEnhanced, portalVenous, delayed)
 
   const conclusion = t(suggestion)
 
