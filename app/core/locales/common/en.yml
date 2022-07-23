@@ -1,5 +1,6 @@
 CopyButton:
-  notification: Copied report to clipboard
+  success: Copied report to clipboard
+  error: Copy to clipboard failed. Please copy manually.
 
 FieldInfo:
   title: Additional infos

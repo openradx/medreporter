@@ -1,23 +1,27 @@
 import { Box } from "@mantine/core"
 import { ReactNode } from "react"
+import { REPORT_CONTENT_ID } from "../../constants/general"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
-import { selectReportFormat } from "../../state/displaySlice"
-import { useAppSelector } from "../../state/store"
 
 interface ReportProps {
-  children: ReactNode
+  children?: ReactNode
 }
 
 export const Report = ({ children }: ReportProps) => {
   const { context } = useStructuredReport()
-  const reportFormat = useAppSelector(selectReportFormat)
 
   if (context === "structure") return null
 
-  if (reportFormat === "text") {
-    return <pre>{children}</pre>
-  }
-
-  // html
-  return <Box sx={{ display: "flex", flexDirection: "column" }}>{children}</Box>
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        whiteSpace: "pre-wrap",
+        fontFamily: "monospace",
+      }}
+    >
+      <div id={REPORT_CONTENT_ID}>{children}</div>
+    </Box>
+  )
 }

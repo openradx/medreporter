@@ -1,22 +1,20 @@
 import { Box } from "@mantine/core"
-import { ReactNode } from "react"
-import { selectReportFormat } from "../../state/displaySlice"
-import { useAppSelector } from "../../state/store"
+import { ReactNode, useRef } from "react"
 
 interface ParagraphProps {
   children?: ReactNode
 }
 
 export const Paragraph = ({ children }: ParagraphProps) => {
-  const reportFormat = useAppSelector(selectReportFormat)
-
-  if (reportFormat === "text") {
-    return <>{children}</>
-  }
+  const elementRef = useRef<HTMLDivElement>(null)
+  const siblings = elementRef.current?.parentElement?.children ?? []
+  const last = siblings.length === 0 || siblings[siblings.length - 1] === elementRef.current
 
   return (
-    <Box className="medreporter-Paragraph-root" sx={{ display: "flex", flexDirection: "column" }}>
+    <Box ref={elementRef}>
       {children}
+      <br />
+      {!last && <br />}
     </Box>
   )
 }

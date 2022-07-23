@@ -1,6 +1,5 @@
 import { Box, Center, Loader, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
-import { REPORT_CONTENT_ID } from "../../constants/general"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { selectDataInitialized } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
@@ -46,9 +45,7 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
       )}
       {dataInitialized && (
         <ScrollArea className="medreporter-ReportPanel-content" sx={{ flexGrow: 1 }}>
-          <Box sx={(theme) => ({ padding: theme.spacing.sm, height: "100%" })}>
-            <Box id={REPORT_CONTENT_ID}>{children}</Box>
-          </Box>
+          <Box sx={(theme) => ({ padding: theme.spacing.sm, height: "100%" })}>{children}</Box>
         </ScrollArea>
       )}
     </Paper>

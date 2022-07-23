@@ -1,5 +1,5 @@
 import { Box } from "@mantine/core"
-import { ReactNode } from "react"
+import { ReactNode, useRef } from "react"
 import { useStructureLink } from "../../hooks/useStructureLink"
 
 interface StatementProps {
@@ -19,15 +19,14 @@ export const Statement = ({
 }: StatementProps) => {
   const activateLink = useStructureLink({ sectionId, moduleId, fieldId })
 
+  const elementRef = useRef<HTMLSpanElement>(null)
+  const siblings = elementRef.current?.parentElement?.children ?? []
+  const last = siblings.length === 0 || siblings[siblings.length - 1] === elementRef.current
+
   return (
-    <Box
-      component="div"
-      sx={{
-        "&:after": { content: "' '" },
-      }}
-    >
+    <span ref={elementRef}>
       <Box
-        component="div"
+        component="span"
         onClick={() => link && activateLink()}
         sx={{
           ...(link && {
@@ -38,6 +37,7 @@ export const Statement = ({
       >
         {children}
       </Box>
-    </Box>
+      {!last && " "}
+    </span>
   )
 }

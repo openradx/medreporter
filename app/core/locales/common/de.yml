@@ -1,5 +1,6 @@
 CopyButton:
-  notification: Befund in Ablage kopiert
+  success: Befund in Ablage kopiert
+  error: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.
 
 FieldInfo:
   title: Weitere Informationen

@@ -1,3 +1,4 @@
+import { Box } from "@mantine/core"
 import { ReactNode } from "react"
 import { selectReportFormat } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
@@ -9,10 +10,17 @@ interface ListProps {
 export const List = ({ children }: ListProps) => {
   const reportFormat = useAppSelector(selectReportFormat)
 
-  if (reportFormat === "text") {
-    return <>{children}</>
-  }
-
-  // html
-  return <ul>{children}</ul>
+  return (
+    <Box
+      component="ul"
+      sx={{
+        margin: 0,
+        padding: 0,
+        paddingLeft: reportFormat === "html" ? 18 : 0,
+        listStyleType: reportFormat === "html" ? "square" : "none",
+      }}
+    >
+      {children}
+    </Box>
+  )
 }

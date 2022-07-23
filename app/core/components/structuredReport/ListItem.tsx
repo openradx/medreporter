@@ -1,3 +1,4 @@
+import { Box } from "@mantine/core"
 import { ReactNode } from "react"
 import { selectReportFormat } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
@@ -9,15 +10,10 @@ interface ListItemProps {
 export const ListItem = ({ children }: ListItemProps) => {
   const reportFormat = useAppSelector(selectReportFormat)
 
-  if (reportFormat === "text") {
-    return (
-      <>
-        - {children}
-        {"\n"}
-      </>
-    )
-  }
-
-  // html
-  return <li>{children}</li>
+  return (
+    <Box component="li">
+      {reportFormat === "text" && "- "}
+      {children}
+    </Box>
+  )
 }

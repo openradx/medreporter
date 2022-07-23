@@ -157,7 +157,7 @@ export const MeasurementsOutputText = ({
   const { followUp } = getMeasurementsDataParams(data)
 
   return (
-    <pre>
+    <>
       {label}
       {NEWLINE_CHAR}
       {createTableHeader(
@@ -173,6 +173,6 @@ export const MeasurementsOutputText = ({
       {NEWLINE_CHAR}
       {createTableFooter(stats)}
       {NEWLINE_CHAR}
-    </pre>
+    </>
   )
 }
