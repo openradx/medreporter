@@ -1,17 +1,38 @@
-import { makeAdrenalWashoutSuggestion, AdrenalWashoutSuggestion } from "./adrenalWashoutUtils"
+import {
+  calcAbsoluteAdrenalWashout,
+  calcRelativeAdrenalWashout,
+  makeSuggestion,
+  Suggestion,
+} from "./adrenalWashoutUtils"
 
-describe("calcAdrenalWashout", () => {
+describe("Calculate absolute adrenal washout", () => {
+  it.each([[null, null, null, null]])(
+    "should be calculated correctly",
+    (nonEnhanced, portalVenous, delayed, result) => {
+      expect(calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)).toBe(result)
+    }
+  )
+})
+
+describe("Calculate relative adrenal washout", () => {
+  it.each([[null, null, null]])(
+    "shout be calculated correctly",
+    (portalVenous, delayed, result) => {
+      expect(calcRelativeAdrenalWashout(portalVenous, delayed)).toBe(result)
+    }
+  )
+})
+
+describe("Adrenal washout suggestions", () => {
   it.each([
-    [-1, 0, 0, AdrenalWashoutSuggestion.DensityLowerZeroAdenoma, 0, null],
-    [1, 0, 0, AdrenalWashoutSuggestion.DensityLowerTenAdenoma, null, null],
+    [-1, 0, 0, 0, null, Suggestion.DensityLowerZeroAdenoma],
+    [1, 0, 0, 0, null, Suggestion.DensityLowerTenAdenoma],
   ])(
-    "should calculate correct result",
-    (nonEnhanced, portalVenous, delayed, suggestion, absoluteWashout, relativeWashout) => {
-      expect(makeAdrenalWashoutSuggestion(nonEnhanced, portalVenous, delayed)).toMatchObject({
-        suggestion,
-        absoluteWashout,
-        relativeWashout,
-      })
+    "should be calculated correctly",
+    (nonEnhanced, portalVenous, delayed, absoluteWashout, relativeWashout, result) => {
+      expect(
+        makeSuggestion(nonEnhanced, portalVenous, delayed, absoluteWashout, relativeWashout)
+      ).toBe(result)
     }
   )
 })
