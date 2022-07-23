@@ -23,6 +23,10 @@ export const Statement = ({
   const siblings = elementRef.current?.parentElement?.children ?? []
   const last = siblings.length === 0 || siblings[siblings.length - 1] === elementRef.current
 
+  if (typeof children === "string") {
+    children = children.trim()
+  }
+
   return (
     <span ref={elementRef}>
       <Box
