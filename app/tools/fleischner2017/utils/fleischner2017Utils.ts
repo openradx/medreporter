@@ -15,7 +15,7 @@ export enum Suggestion {
   Ct6To12Months2Years5Years = "ct6To12Months2Years5Years",
   Ct3To6MonthsAnnual = "ct3To6MonthsAnnual",
   Ct3To6Months2And4Years = "ct3To6Months2And4Years",
-  Ct3To6MonthsMostSuspicious = "Ct3To6MonthsMostSuspicious",
+  Ct3To6MonthsMostSuspicious = "ct3To6MonthsMostSuspicious",
 }
 
 export type Fleischner2017Result = {
@@ -69,6 +69,13 @@ export const defineFleischner2017 = (
         }
       }
     }
+  } else if (count === "multiple") {
+    if (averageDiameter < 6) {
+      suggestion = Suggestion.Ct3To6Months2And4Years
+    }
+    if (averageDiameter >= 6) {
+      suggestion = Suggestion.Ct3To6MonthsMostSuspicious
+    }
   } else if (averageDiameter < 6 && (structure === "partsolid" || structure === "groundglass")) {
     suggestion = Suggestion.NoFollowUp
   } else if (count === "single") {
@@ -79,13 +86,6 @@ export const defineFleischner2017 = (
       if (structure === "partsolid") {
         suggestion = Suggestion.Ct3To6MonthsAnnual
       }
-    }
-  } else if (count === "multiple") {
-    if (averageDiameter < 6) {
-      suggestion = Suggestion.Ct3To6Months2And4Years
-    }
-    if (averageDiameter >= 6) {
-      suggestion = Suggestion.Ct3To6MonthsMostSuspicious
     }
   }
   return { suggestion }
