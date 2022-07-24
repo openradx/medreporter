@@ -22,6 +22,7 @@ const tools: Tool[] = [
     description: "Fleischner2017.description",
     tags: ["tags.radiology", "tags.ct", "tags.lung"],
   },
+  { url: "/tools/gfr", title: "GFR.title", description: "gfr.description", tags: ["tags.kidney"] },
   {
     url: "/tools/measurements-table",
     title: "MeasurementsTable.title",
