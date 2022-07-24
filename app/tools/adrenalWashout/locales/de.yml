@@ -30,8 +30,8 @@ densityLowerTenAdenoma: >
   spezifisch für ein fettreiches Adneom (71% sensitiv, 98% spezifisch).
 highDensityMalignancy: >
   Eine Nebennierenläsion mit einer Dichte > 43 HE in einem nativen CT, die weder verkalkt
-  noch hämorrhagisch transformiert ist, ist malignomsuspekt unabhängig von der Auswaschung
-  (Washout). Anstatt das Washout zu beurteilen kann ein FDG-PET/CT erwogen werden.
+  noch hämorrhagisch transformiert ist, ist malignomsuspekt unabhängig von dem Washout.
+  Anstatt das Washout zu beurteilen kann ein FDG-PET/CT erwogen werden.
 highEnhancementPheochromocytoma: >
   Eine Nebennierenläsion, die um > 130 HE anreichert ist verdächtig auf ein
   hypervaskularisiertes Phäochromozytom.
