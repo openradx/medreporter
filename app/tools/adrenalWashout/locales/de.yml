@@ -10,12 +10,12 @@ roiHint: >
   Die Messung (ROI) sollte etwa zwei Drittel der Läsion abdecken ohne die
   Peripherie miteinzubeziehen.
 absoluteHint: >
-  Wenn möglich sollte die absolute Auswaschung (Washout) gegenüber der
-  relativen Auswaschung bevorzugt werden.
+  Wenn möglich sollte das absolute Washout gegenüber dem relativen Washout
+  bevorzugt werden.
 
 # Report
-relativeWashout: Relative Auswaschung
-absoluteWashout: Absolute Auswaschung
+relativeWashout: Relatives Washout
+absoluteWashout: Absolutes Washout
 notCalculable: Nicht berechenbar
 missingValues: Fehlende Angabe von Dichtewerten.
 noSuggestionPossible: >
@@ -31,20 +31,19 @@ densityLowerTenAdenoma: >
 highDensityMalignancy: >
   Eine Nebennierenläsion mit einer Dichte > 43 HE in einem nativen CT, die weder verkalkt
   noch hämorrhagisch transformiert ist, ist malignomsuspekt unabhängig von der Auswaschung
-  (Washout). Anstatt eine Auswaschung (Washout) zu beurteilen kann ein FDG-PET/CT
-  erwogen werden.
+  (Washout). Anstatt das Washout zu beurteilen kann ein FDG-PET/CT erwogen werden.
 highEnhancementPheochromocytoma: >
   Eine Nebennierenläsion, die um > 130 HE anreichert ist verdächtig auf ein
   hypervaskularisiertes Phäochromozytom.
 highAbsoluteWashoutAdenoma: >
-  Eine Nebennierenläsion, die um > 60% auswäscht (absolutes Washout), entspricht
+  Eine Nebennierenläsion, die ein absolutes Washout > 60% hat, entspricht
   am ehesten einem Nebennierenadenom.
 lowAbsoluteWashoutAdenoma: >
-  Eine Nebennierenläsion, die < 60% auswäscht (absolutes Washout), entspricht
+  Eine Nebennierenläsion, die ein absolutes Washout < 60% hat, entspricht
   am ehesten keinem Nebennierenadenom.
 highRelativeWashoutAdenoma: >
-  Eine Nebennierenläsion, die um > 40% auswäscht (relatives Washout), entspricht
+  Eine Nebennierenläsion, die ein relatives Washout > 40% hat, entspricht
   am ehesten einem Nebennierenadenom.
 lowRelativeWashoutAdenoma: >
-  Eine Nebennierenläsion, die < 40% auswäscht (relatives Washout), entspricht
+  Eine Nebennierenläsion, die ein relatives Washout < 40% hat, entspricht
   am ehesten keinem Nebennierenadenom.
