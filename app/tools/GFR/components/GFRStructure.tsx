@@ -13,13 +13,13 @@ export const GFRStructure = () => (
       </Description>
     </GridItem>
     <GridItem>
-      <NumberField label="Creatinine in mg/dl" id="creatinine" precision={2} />
+      <NumberField label="Creatinine in mg/dl" id="creatinine" precision={2} min={0} />
     </GridItem>
     <GridItem>
-      <NumberField label="Age" id="age" />
+      <NumberField label="Age" id="age" min={0} />
     </GridItem>
     <GridItem>
-      <NumberField label="Weight in kg" id="weight" />
+      <NumberField label="Weight in kg" id="weight" min={0} />
     </GridItem>
     <GridItem>
       <SingleChoiceField
