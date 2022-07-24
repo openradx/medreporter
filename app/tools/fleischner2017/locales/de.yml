@@ -1,33 +1,36 @@
+# Structure
 description: >
   Empfehlungen zum Follow-Up und Management für unklare pulmonale Noduli als Zufallsbefunde, veröffentlicht durch die Fleischner Society.
 
-hint1: > 
+hint1: >
   Die Guideline ist nicht anwendbar auf Lungenkrebsscreening (siehe LungRads), Patienten unter 35 Jahren oder Patienten mit einer 
   vorliegenden Tumoranamnese oder Immunsuppression.
 
-longaxis: 
+diameter: Durchmesser (mm)
+
+longaxis:
   label: Längsdurchmesser
 
-shortaxis: 
+shortaxis:
   label: Kurzachsendurchmesser
 
-structure: 
+structure:
   label: Struktur
   solid: Solide
   partsolid: Teils solide
   groundglass: Milchglas
 
-count: 
+count:
   label: Anzahl
   single: Singulär
   multiple: Multiple
 
-riskFactors: 
+riskFactors:
   label: Risikofaktoren
   yes: Ja
   no: Nein
-  
-riskFactorsInfo: 
+
+riskFactorsInfo:
   label: Risikofaktoren
   1: Raucheranamnese
   2: Kontakt zu Asbest, Radium oder Uran
@@ -39,6 +42,7 @@ riskFactorsInfo:
   8: Anzahl (unter 5 Noduli erhöht das Risiko für Malignität)
   9: Emphysem oder pulmonale Fibrose (insbesondere IPF)
 
+# Report
 noSuggestionPossible: Keine Empfehlung möglich.
 optionalAt12MonthsSuspicious: Optionales CT nach 12 Monaten, insbesondere bei suspekter Morphologie und/oder Lokalisation im Oberlappen.
 noFollowUp: Kein Follow-Up notwendig.

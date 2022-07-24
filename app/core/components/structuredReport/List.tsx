@@ -1,5 +1,6 @@
 import { Box } from "@mantine/core"
 import { ReactNode } from "react"
+import { useStructuredReport } from "../../contexts/StructuredReportContext"
 import { selectReportFormat } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
 
@@ -8,7 +9,9 @@ interface ListProps {
 }
 
 export const List = ({ children }: ListProps) => {
+  const { context } = useStructuredReport()
   const reportFormat = useAppSelector(selectReportFormat)
+  const reportText = context === "report" && reportFormat === "text"
 
   return (
     <Box
@@ -16,8 +19,8 @@ export const List = ({ children }: ListProps) => {
       sx={{
         margin: 0,
         padding: 0,
-        paddingLeft: reportFormat === "html" ? 18 : 0,
-        listStyleType: reportFormat === "html" ? "square" : "none",
+        paddingLeft: !reportText ? 18 : 0,
+        listStyleType: !reportText ? "square" : "none",
       }}
     >
       {children}

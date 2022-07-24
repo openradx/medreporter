@@ -1,50 +1,52 @@
 import { Stack } from "@mantine/core"
 import { Citation } from "../../../core/components/common/Citation"
 import { InfoTab } from "../../../core/components/structuredReport/InfoTab"
+import { List } from "../../../core/components/structuredReport/List"
+import { ListItem } from "../../../core/components/structuredReport/ListItem"
 import { ModuleInfo } from "../../../core/components/structuredReport/ModuleInfo"
 
 export const Fleischner2017Info = () => (
   <ModuleInfo>
     <InfoTab title="Measurement/reporting">
-      <Stack>
-        <ul>
-          <li>Images should be acquired in full inspiration and reconstructed in thin slice.</li>
-          <li>
-            Nodules should be measured on axial plane in lung window. Sagittal or coronal plane may
-            be used if the longest diameters lie in those planes.
-          </li>
-          <li>
-            When multiple nodules are present, only the largest or morphologically most suspicious
-            need to be measured and have their location(s) reported.
-          </li>
-          <li>
-            Typical perifissural nodules (triangular or oval in the axial plane, and flat or
-            lentiform in the sagittal and coronal planes) not necessarily require follow-up even if
-            measuring greater than 6 mm.
-          </li>
-          <li>
-            Reporting:
-            <ul>
-              <li>
-                Nodules smaller than 3 mm should not be measured and should be described as
-                micronodules.
-              </li>
-              <li>
-                Nodules between 3 and 10 mm should be specified with the average of short and long
-                axis.
-              </li>
-              <li>
-                Nodules bigger than 10 mm an masses should be described in long and short axis
-                separately.
-              </li>
-              <li>
-                In part-solid nodules solid components over 3 mm should have the maximal diameter
-                reported
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </Stack>
+      <List>
+        <ListItem>
+          Images should be acquired in full inspiration and reconstructed in thin slice.
+        </ListItem>
+        <ListItem>
+          Nodules should be measured on axial plane in lung window. Sagittal or coronal plane may be
+          used if the longest diameters lie in those planes.
+        </ListItem>
+        <ListItem>
+          When multiple nodules are present, only the largest or morphologically most suspicious
+          need to be measured and have their location(s) reported.
+        </ListItem>
+        <ListItem>
+          Typical perifissural nodules (triangular or oval in the axial plane, and flat or lentiform
+          in the sagittal and coronal planes) not necessarily require follow-up even if measuring
+          greater than 6 mm.
+        </ListItem>
+        <ListItem>
+          Reporting:
+          <List>
+            <ListItem>
+              Nodules smaller than 3 mm should not be measured and should be described as
+              micronodules.
+            </ListItem>
+            <ListItem>
+              Nodules between 3 and 10 mm should be specified with the average of short and long
+              axis.
+            </ListItem>
+            <ListItem>
+              Nodules bigger than 10 mm an masses should be described in long and short axis
+              separately.
+            </ListItem>
+            <ListItem>
+              In part-solid nodules solid components over 3 mm should have the maximal diameter
+              reported
+            </ListItem>
+          </List>
+        </ListItem>
+      </List>
     </InfoTab>
     <InfoTab title="References">
       <Stack>

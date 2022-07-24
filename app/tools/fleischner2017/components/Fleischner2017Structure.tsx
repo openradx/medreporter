@@ -2,6 +2,7 @@ import { NumberField } from "../../../core/components/fields/NumberField"
 import { SingleChoiceField } from "../../../core/components/fields/SingleChoiceField"
 import { Description } from "../../../core/components/structuredReport/Description"
 import { Grid } from "../../../core/components/structuredReport/Grid"
+import { GridGroup } from "../../../core/components/structuredReport/GridGroup"
 import { GridItem } from "../../../core/components/structuredReport/GridItem"
 import { Hint } from "../../../core/components/structuredReport/Hint"
 import { Hints } from "../../../core/components/structuredReport/Hints"
@@ -12,15 +13,17 @@ export const Fleischner2017Structure = () => {
   const { t } = useStructureTranslation()
   return (
     <Grid>
-      <GridItem size="lg">
+      <GridItem size="xl">
         <Description>{t("description")}</Description>
       </GridItem>
-      <GridItem>
-        <NumberField id="longaxis" label={t("longaxis.label")} min={0} defaultValue={0} />
-      </GridItem>
-      <GridItem>
-        <NumberField id="shortaxis" label={t("shortaxis.label")} min={0} defaultValue={0} />
-      </GridItem>
+      <GridGroup label={t("diameter")}>
+        <GridItem>
+          <NumberField id="longaxis" label={t("longaxis.label")} min={0} defaultValue={0} />
+        </GridItem>
+        <GridItem>
+          <NumberField id="shortaxis" label={t("shortaxis.label")} min={0} defaultValue={0} />
+        </GridItem>
+      </GridGroup>
       <GridItem>
         <SingleChoiceField
           id="structure"
@@ -57,7 +60,7 @@ export const Fleischner2017Structure = () => {
           defaultValue="no"
         />
       </GridItem>
-      <GridItem size="lg">
+      <GridItem size="xl">
         <Hints>
           <Hint>{t("hint1")}</Hint>
         </Hints>
