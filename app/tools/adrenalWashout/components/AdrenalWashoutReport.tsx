@@ -20,9 +20,27 @@ export const AdrenalWashoutReport = () => {
   const { nonEnhanced, portalVenous, delayed } = useReportData(true) as AdrenalWashoutData
   const { t } = useReportTranslation()
 
-  const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
-  const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
   const suggestion = makeAdrenalWashoutSuggestion(nonEnhanced, portalVenous, delayed)
+
+  let absoluteWashoutText = t("absoluteWashoutRequirements")
+  if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
+    const result = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
+    if (Number.isNaN(result) || !Number.isFinite(result) || result < 0 || result > 100) {
+      absoluteWashoutText = t("absoluteWashoutInvalid")
+    } else {
+      absoluteWashoutText = t("absoluteWashoutWithValue", { value: result.toFixed(0) })
+    }
+  }
+
+  let relativeWashoutText = t("relativeWashoutRequirements")
+  if (portalVenous !== null && delayed != null) {
+    const result = calcRelativeAdrenalWashout(portalVenous, delayed)
+    if (Number.isNaN(result) || !Number.isFinite(result) || result < 0 || result > 100) {
+      relativeWashoutText = t("relativeWashoutInvalid")
+    } else {
+      relativeWashoutText = t("relativeWashoutWithValue", { value: result.toFixed(0) })
+    }
+  }
 
   const conclusion = t(suggestion)
 
@@ -33,12 +51,8 @@ export const AdrenalWashoutReport = () => {
       </Paragraph>
       <Paragraph>
         <List>
-          <ListItem>
-            {t("absoluteWashout")}: {absoluteWashout ?? t("notCalculable")}
-          </ListItem>
-          <ListItem>
-            {t("relativeWashout")}: {relativeWashout ?? t("notCalculable")}
-          </ListItem>
+          <ListItem>{absoluteWashoutText}</ListItem>
+          <ListItem>{relativeWashoutText}</ListItem>
         </List>
       </Paragraph>
     </>

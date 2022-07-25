@@ -13,9 +13,16 @@ absoluteHint: >
   Whenever possible the absolute washout should be preferred.
 
 # Report
-relativeWashout: Relative washout
-absoluteWashout: Absolute washout
-notCalculable: Not calculable
+absoluteWashoutRequirements: >
+  Absolute washout requires non enhanced, portal venous and delayed phase.
+relativeWashoutRequirements: >
+  Relative washout requires portal and delayed phase.
+relativeWashoutWithValue: "Relative washout: {{value}}%"
+absoluteWashoutWithValue: "Absolute washout: {{value}}%"
+relativeWashoutInvalid: "Relative Washout: Invalide density values"
+absoluteWashoutInvalid: "Absolute Washout: Invalide density values"
+
+# Suggestion categories
 missingValues: Missing specification of density values.
 noSuggestionPossible: >
   With the values entered, no assessment of the indeterminate adrenal lesion is possible.

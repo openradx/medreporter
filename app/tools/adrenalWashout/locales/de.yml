@@ -14,9 +14,16 @@ absoluteHint: >
   bevorzugt werden.
 
 # Report
-relativeWashout: Relatives Washout
-absoluteWashout: Absolutes Washout
-notCalculable: Nicht berechenbar
+absoluteWashoutRequirements: >
+  Absolutes Washout benötigt eine native, portal-venöse und späte Phase.
+relativeWashoutRequirements: >
+  Relatives Washout benötigt eine portal-venöse und späte Phase.
+relativeWashoutWithValue: "Relatives Washout: {{value}}%"
+absoluteWashoutWithValue: "Absolutes Washout: {{value}}%"
+relativeWashoutInvalid: "Relatives Washout: Invalide Dichtewerte"
+absoluteWashoutInvalid: "Absolutes Washout: Invalide Dichtewerte"
+
+# Suggestion categories
 missingValues: Fehlende Angabe von Dichtewerten.
 noSuggestionPossible: >
   Mit den eingegebenen Werten ist keine Einschätzung der Nebennierenläsion
@@ -26,7 +33,7 @@ densityLowerZeroAdenoma: >
   Eine Nebennierenläsion mit einer Dichte < 0 HE in einer nativen Phase ist hoch
   spezifisch für ein fettreiches Adenom (47% sensitiv, 100% spezifisch).
 densityLowerTenAdenoma: >
-  Eine Nebennierenläsion mit einer Dichte < 10 HE in einer nativen Phase ist relativ
+  Eine Nebennierenläsion mit einer Dichte < 10 HE in einer nativen Phase ist recht
   spezifisch für ein fettreiches Adneom (71% sensitiv, 98% spezifisch).
 highDensityMalignancy: >
   Eine Nebennierenläsion mit einer Dichte > 43 HE in einem nativen CT, die weder verkalkt

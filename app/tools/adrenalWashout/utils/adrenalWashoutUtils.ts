@@ -1,33 +1,11 @@
 export const calcAbsoluteAdrenalWashout = (
-  nonEnhanced: number | null,
-  portalVenous: number | null,
-  delayed: number | null
-): number | null => {
-  if (nonEnhanced === null || portalVenous === null || delayed === null) {
-    return null
-  }
+  nonEnhanced: number,
+  portalVenous: number,
+  delayed: number
+): number => ((portalVenous - delayed) / (portalVenous - nonEnhanced)) * 100
 
-  if (nonEnhanced >= portalVenous) {
-    return null
-  }
-  const result = ((portalVenous - delayed) / (portalVenous - nonEnhanced)) * 100
-  return Math.round(result)
-}
-
-export const calcRelativeAdrenalWashout = (
-  portalVenous: number | null,
-  delayed: number | null
-): number | null => {
-  if (portalVenous === null || delayed === null) {
-    return null
-  }
-
-  if (portalVenous === 0) {
-    return null
-  }
-  const result = ((portalVenous - delayed) / portalVenous) * 100
-  return Math.round(result)
-}
+export const calcRelativeAdrenalWashout = (portalVenous: number, delayed: number): number =>
+  ((portalVenous - delayed) / portalVenous) * 100
 
 export enum AdrenalWashoutSuggestion {
   MissingValues = "missingValues",
@@ -69,24 +47,26 @@ export const makeAdrenalWashoutSuggestion = (
     return AdrenalWashoutSuggestion.HighEnhancementPheochromocytoma
   }
 
-  const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
-
-  if (absoluteWashout !== null) {
-    if (absoluteWashout >= 60) {
-      return AdrenalWashoutSuggestion.HighAbsoluteWashoutAdenoma
+  if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
+    const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
+    if (absoluteWashout !== null) {
+      if (absoluteWashout >= 60) {
+        return AdrenalWashoutSuggestion.HighAbsoluteWashoutAdenoma
+      }
+      // absoluteWashout < 60
+      return AdrenalWashoutSuggestion.LowAbsoluteWashoutAlternative
     }
-    // absoluteWashout < 60
-    return AdrenalWashoutSuggestion.LowAbsoluteWashoutAlternative
   }
 
-  const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
-
-  if (relativeWashout !== null) {
-    if (relativeWashout >= 40) {
-      return AdrenalWashoutSuggestion.HighRelativeWashoutAdenoma
+  if (portalVenous !== null && delayed !== null) {
+    const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
+    if (relativeWashout !== null) {
+      if (relativeWashout >= 40) {
+        return AdrenalWashoutSuggestion.HighRelativeWashoutAdenoma
+      }
+      // relativeWashout < 40
+      return AdrenalWashoutSuggestion.LowRelativeWashoutAlternative
     }
-    // relativeWashout < 40
-    return AdrenalWashoutSuggestion.LowRelativeWashoutAlternative
   }
 
   return AdrenalWashoutSuggestion.NoSuggestionPossible
