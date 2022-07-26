@@ -1,20 +1,21 @@
 import { Box } from "@mantine/core"
-import { ReactNode, useRef } from "react"
+import { cloneElement, isValidElement, ReactNode } from "react"
+import flattenChildren from "react-keyed-flatten-children"
 
 interface ParagraphProps {
+  last?: boolean
   children?: ReactNode
 }
 
-export const Paragraph = ({ children }: ParagraphProps) => {
-  const elementRef = useRef<HTMLDivElement>(null)
-  const siblings = elementRef.current?.parentElement?.children ?? []
-  const last = siblings.length === 0 || siblings[siblings.length - 1] === elementRef.current
-
-  return (
-    <Box ref={elementRef}>
-      {children}
-      <br />
-      {!last && <br />}
-    </Box>
-  )
-}
+export const Paragraph = ({ last, children }: ParagraphProps) => (
+  <Box>
+    {flattenChildren(children).map((child, index, array) => {
+      if (isValidElement(child) && child.type === Paragraph) {
+        return cloneElement(child, { last: index === array.length - 1 })
+      }
+      return child
+    })}
+    <br />
+    {!last && <br />}
+  </Box>
+)
