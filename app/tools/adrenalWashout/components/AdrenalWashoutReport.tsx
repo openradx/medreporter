@@ -52,7 +52,7 @@ export const AdrenalWashoutReport = () => {
       </Paragraph>
       <Paragraph>
         {suggestions.map((suggestion) => (
-          <Statement>{t(suggestion)}</Statement>
+          <Statement key={suggestion}>{t(suggestion)}</Statement>
         ))}
       </Paragraph>
     </>
