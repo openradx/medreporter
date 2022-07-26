@@ -42,7 +42,7 @@ export const GFRReport = () => {
   let mayo = "Creatinine, age and gender are required"
   if (age !== null && age < 18) {
     mayo =
-      "The Mayo equation is used for adults, for children use the Counahan-Barratt equation or Schwartz equation instead."
+      "The Mayo Clinic equation is used for adults, for children use the Counahan-Barratt equation or Schwartz equation instead."
   } else if (creatinine !== null && age !== null && gender !== null) {
     const result = calcMayo(creatinine, age, gender)
     mayo = `${result.toFixed(2)} ml/min/1,73qm`
@@ -51,7 +51,7 @@ export const GFRReport = () => {
   let counahan = "Creatinine and height are required"
   if (age !== null && age >= 18) {
     counahan =
-      "The Counahan-Barratt equation is used for children, for adults use the Mayo equation, the CKD-EPI equation or the Cockroft-Gault equation instead."
+      "The Counahan-Barratt equation is used for children, for adults use the Mayo Clinic equation, the CKD-EPI equation or the Cockroft-Gault equation instead."
   } else if (creatinine !== null && height !== null) {
     const result = calcCounahan(creatinine, height)
     counahan = `${result.toFixed(2)} ml/min/1,73qm`
@@ -60,7 +60,7 @@ export const GFRReport = () => {
   let schwartzRev = "Creatinine and height are required"
   if (age !== null && age >= 18) {
     schwartzRev =
-      "The Schwartz equation is used for children, for adults use the Mayo equation, the CKD-EPI equation or the Cockroft-Gault equation instead."
+      "The Schwartz equation is used for children, for adults use the Mayo Clinic equation, the CKD-EPI equation or the Cockroft-Gault equation instead."
   } else if (creatinine !== null && height !== null) {
     const result = calcSchwartzRev(creatinine, height)
     schwartzRev = `${result.toFixed(2)} ml/min/1,73qm`
@@ -69,7 +69,7 @@ export const GFRReport = () => {
   let schwartzOrig = "Creatinine, height, age and gender are required"
   if (age !== null && age >= 18) {
     schwartzOrig =
-      "The Schwartz equation is used for children, for adults use the Mayo equation, the CKD-EPI equation or the Cockroft-Gault equation instead."
+      "The Schwartz equation is used for children, for adults use the Mayo Clinic equation, the CKD-EPI equation or the Cockroft-Gault equation instead."
   } else if (creatinine !== null && height !== null && age !== null && gender !== null) {
     const result = calcSchwartzOrig(creatinine, height, age, gender)
     schwartzOrig = `${result.toFixed(2)} ml/min/1,73qm`
