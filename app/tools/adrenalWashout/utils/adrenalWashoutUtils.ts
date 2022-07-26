@@ -24,37 +24,41 @@ export const makeAdrenalWashoutSuggestion = (
   nonEnhanced: number | null,
   portalVenous: number | null,
   delayed: number | null
-): AdrenalWashoutSuggestion => {
+): AdrenalWashoutSuggestion[] => {
+  const suggestions: AdrenalWashoutSuggestion[] = []
+
   if (nonEnhanced === null && portalVenous === null && delayed === null) {
-    return AdrenalWashoutSuggestion.MissingValues
+    suggestions.push(AdrenalWashoutSuggestion.MissingValues)
+    return suggestions
   }
 
   if (nonEnhanced !== null) {
     if (nonEnhanced < 0) {
-      return AdrenalWashoutSuggestion.DensityLowerZeroAdenoma
+      suggestions.push(AdrenalWashoutSuggestion.DensityLowerZeroAdenoma)
     }
 
     if (nonEnhanced < 10) {
-      return AdrenalWashoutSuggestion.DensityLowerTenAdenoma
+      suggestions.push(AdrenalWashoutSuggestion.DensityLowerTenAdenoma)
     }
 
     if (nonEnhanced >= 43) {
-      return AdrenalWashoutSuggestion.HighDensityMalignancy
+      suggestions.push(AdrenalWashoutSuggestion.HighDensityMalignancy)
     }
   }
 
   if (portalVenous != null && portalVenous >= 130) {
-    return AdrenalWashoutSuggestion.HighEnhancementPheochromocytoma
+    suggestions.push(AdrenalWashoutSuggestion.HighEnhancementPheochromocytoma)
   }
 
   if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
     const absoluteWashout = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
     if (absoluteWashout !== null) {
       if (absoluteWashout >= 60) {
-        return AdrenalWashoutSuggestion.HighAbsoluteWashoutAdenoma
+        suggestions.push(AdrenalWashoutSuggestion.HighAbsoluteWashoutAdenoma)
+      } else {
+        // absoluteWashout < 60
+        suggestions.push(AdrenalWashoutSuggestion.LowAbsoluteWashoutAlternative)
       }
-      // absoluteWashout < 60
-      return AdrenalWashoutSuggestion.LowAbsoluteWashoutAlternative
     }
   }
 
@@ -62,12 +66,17 @@ export const makeAdrenalWashoutSuggestion = (
     const relativeWashout = calcRelativeAdrenalWashout(portalVenous, delayed)
     if (relativeWashout !== null) {
       if (relativeWashout >= 40) {
-        return AdrenalWashoutSuggestion.HighRelativeWashoutAdenoma
+        suggestions.push(AdrenalWashoutSuggestion.HighRelativeWashoutAdenoma)
+      } else {
+        // relativeWashout < 40
+        suggestions.push(AdrenalWashoutSuggestion.LowRelativeWashoutAlternative)
       }
-      // relativeWashout < 40
-      return AdrenalWashoutSuggestion.LowRelativeWashoutAlternative
     }
   }
 
-  return AdrenalWashoutSuggestion.NoSuggestionPossible
+  if (suggestions.length === 0) {
+    suggestions.push(AdrenalWashoutSuggestion.NoSuggestionPossible)
+  }
+
+  return suggestions
 }

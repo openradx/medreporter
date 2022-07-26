@@ -20,8 +20,6 @@ export const AdrenalWashoutReport = () => {
   const { nonEnhanced, portalVenous, delayed } = useReportData(true) as AdrenalWashoutData
   const { t } = useReportTranslation()
 
-  const suggestion = makeAdrenalWashoutSuggestion(nonEnhanced, portalVenous, delayed)
-
   let absoluteWashoutText = t("absoluteWashoutRequirements")
   if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
     const result = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
@@ -42,18 +40,20 @@ export const AdrenalWashoutReport = () => {
     }
   }
 
-  const conclusion = t(suggestion)
+  const suggestions = makeAdrenalWashoutSuggestion(nonEnhanced, portalVenous, delayed)
 
   return (
     <>
-      <Paragraph>
-        <Statement>{conclusion}</Statement>
-      </Paragraph>
       <Paragraph>
         <List>
           <ListItem>{absoluteWashoutText}</ListItem>
           <ListItem>{relativeWashoutText}</ListItem>
         </List>
+      </Paragraph>
+      <Paragraph>
+        {suggestions.map((suggestion) => (
+          <Statement>{t(suggestion)}</Statement>
+        ))}
       </Paragraph>
     </>
   )
