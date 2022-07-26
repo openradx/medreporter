@@ -21,26 +21,36 @@ export const SingleRadioInput = ({
   onChange,
   extras,
   disabled,
-}: SingleRadioInputProps) => (
-  <Radio.Group
-    label={(label || extras) && <InputLabel label={label} extras={extras} />}
-    onChange={onChange}
-    value={value ?? undefined}
-    orientation="vertical"
-    spacing="xs"
-  >
-    {options.map((option) => (
-      <Radio
-        key={option.value}
-        value={option.value}
-        label={option.label}
-        onClick={() => {
-          if (value === option.value) {
-            onChange(null)
-          }
-        }}
-        disabled={disabled}
-      />
-    ))}
-  </Radio.Group>
-)
+}: SingleRadioInputProps) => {
+  value = value === null ? "" : value
+
+  return (
+    <Radio.Group
+      label={(label || extras) && <InputLabel label={label} extras={extras} />}
+      onChange={(newValue) => {
+        if (!newValue) {
+          onChange(null)
+        } else {
+          onChange(newValue)
+        }
+      }}
+      value={value ?? undefined}
+      orientation="vertical"
+      spacing="xs"
+    >
+      {options.map((option) => (
+        <Radio
+          key={option.value}
+          value={option.value}
+          label={option.label}
+          onClick={() => {
+            if (value === option.value) {
+              onChange(null)
+            }
+          }}
+          disabled={disabled}
+        />
+      ))}
+    </Radio.Group>
+  )
+}

@@ -21,7 +21,7 @@ export const SingleChoiceField = ({
   visible = true,
   variant = "radio",
   options = DEFAULT_OPTIONS,
-  defaultValue = "",
+  defaultValue = null,
   extras,
   disabled,
 }: SingleChoiceFieldProps) => {
