@@ -70,3 +70,35 @@ export function calcMayo(creatinine: number, age: number, gender: Gender): numbe
   const Mayo = Math.exp(1.911 + 5.249 / crea - 2.114 / crea ** 2 - 0.00686 * age - GF)
   return Mayo
 }
+
+export function calcCounahan(creatinine: number, height: number): number {
+  const Counahan = (0.43 * height) / creatinine
+  return Counahan
+}
+
+export function calcSchwartzRev(creatinine: number, height: number): number {
+  const SchwartzRev = (0.413 * height) / creatinine
+  return SchwartzRev
+}
+
+export function calcSchwartzOrig(
+  creatinine: number,
+  height: number,
+  age: number,
+  gender: Gender
+): number {
+  let k: number
+  if (age <= 1) {
+    k = 0.33
+  } else if (age > 1 && age < 2) {
+    k = 0.45
+  } else if (age >= 2 && age <= 12) {
+    k = 0.55
+  } else if (gender === "female") {
+    k = 0.55
+  } else {
+    k = 0.7
+  }
+  const SchwartzOrig = (k * height) / creatinine
+  return SchwartzOrig
+}

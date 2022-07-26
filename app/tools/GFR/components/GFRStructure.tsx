@@ -22,6 +22,9 @@ export const GFRStructure = () => (
       <NumberField label="Weight in kg" id="weight" min={0} />
     </GridItem>
     <GridItem>
+      <NumberField label="Height in cm" id="height" min={0} />
+    </GridItem>
+    <GridItem>
       <SingleChoiceField
         label="gender"
         id="gender"
