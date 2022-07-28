@@ -1,7 +1,5 @@
 import { Box } from "@mantine/core"
-import { cloneElement, isValidElement, ReactNode } from "react"
-import flattenChildren from "react-keyed-flatten-children"
-import { Statement } from "./Statement"
+import { ReactNode } from "react"
 
 interface ParagraphProps {
   last?: boolean
@@ -10,13 +8,7 @@ interface ParagraphProps {
 
 export const Paragraph = ({ last, children }: ParagraphProps) => (
   <Box>
-    {flattenChildren(children).map((child, index, array) => {
-      if (isValidElement(child) && child.type === Statement) {
-        return cloneElement(child, { last: index === array.length - 1 })
-      }
-      return child
-    })}
-    <br />
+    <Box>{children}</Box>
     {!last && <br />}
   </Box>
 )

@@ -11,11 +11,11 @@ interface ListItemProps {
 export const ListItem = ({ children }: ListItemProps) => {
   const { context } = useStructuredReport()
   const reportFormat = useAppSelector(selectReportFormat)
-  const reportText = context === "report" && reportFormat === "text"
+  const isTextFormat = context === "report" && reportFormat === "text"
 
   return (
     <Box component="li">
-      {reportText && "- "}
+      {isTextFormat && "- "}
       {children}
     </Box>
   )

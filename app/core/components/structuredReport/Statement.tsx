@@ -26,11 +26,12 @@ export const Statement = ({
   }
 
   return (
-    <Box component="span">
+    <Box component="div" sx={{ display: "inline-block" }}>
       <Box
-        component="span"
+        component="div"
         onClick={() => link && activateLink()}
         sx={{
+          display: "inline-block",
           ...(link && {
             cursor: "pointer",
             "&:hover": { textDecoration: "underline", textDecorationStyle: "dotted" },

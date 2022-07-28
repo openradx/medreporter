@@ -1,9 +1,7 @@
 import { Box } from "@mantine/core"
-import { cloneElement, isValidElement, ReactNode } from "react"
-import flattenChildren from "react-keyed-flatten-children"
+import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "../../constants/general"
 import { useStructuredReport } from "../../contexts/StructuredReportContext"
-import { Paragraph } from "./Paragraph"
 
 interface ReportProps {
   children?: ReactNode
@@ -16,6 +14,7 @@ export const Report = ({ children }: ReportProps) => {
 
   return (
     <Box
+      id={REPORT_CONTENT_ID}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -23,14 +22,7 @@ export const Report = ({ children }: ReportProps) => {
         fontFamily: "monospace",
       }}
     >
-      <div id={REPORT_CONTENT_ID}>
-        {flattenChildren(children).map((child, index, array) => {
-          if (isValidElement(child) && child.type === Paragraph) {
-            return cloneElement(child, { last: index === array.length - 1 })
-          }
-          return child
-        })}
-      </div>
+      {children}
     </Box>
   )
 }

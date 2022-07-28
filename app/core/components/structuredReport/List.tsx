@@ -11,7 +11,7 @@ interface ListProps {
 export const List = ({ children }: ListProps) => {
   const { context } = useStructuredReport()
   const reportFormat = useAppSelector(selectReportFormat)
-  const reportText = context === "report" && reportFormat === "text"
+  const isTextFormat = context === "report" && reportFormat === "text"
 
   return (
     <Box
@@ -19,8 +19,8 @@ export const List = ({ children }: ListProps) => {
       sx={{
         margin: 0,
         padding: 0,
-        paddingLeft: !reportText ? 18 : 0,
-        listStyleType: !reportText ? "square" : "none",
+        paddingLeft: !isTextFormat ? 18 : 0,
+        listStyleType: !isTextFormat ? "square" : "none",
       }}
     >
       {children}
