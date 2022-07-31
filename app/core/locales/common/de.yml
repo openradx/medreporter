@@ -11,6 +11,9 @@ LanguageSelector:
   en-US: Englisch (US)
   label: Sprache (Region)
 
+Loading:
+  defaultMessage: Laden ...
+
 PageHeader:
   home: Home
   tools: Werkzeuge

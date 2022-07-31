@@ -4,6 +4,8 @@
 
 ## Kai
 
+- PaperHeader component
+- use Paper instead of Box for headers
 - configurable gap after paragraph
 - Use title attribute on ActionIcon
 - Remove "...Button" from components (e.g. UndoButton => Undo)
