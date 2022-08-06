@@ -1,0 +1,228 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// --------------------------------------
+
+model Institute {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+
+  memberships  Membership[]
+  reports      Report[]
+  currentUsers User[]
+}
+
+model Membership {
+  id   Int            @id @default(autoincrement())
+  role MembershipRole
+
+  institute   Institute @relation(fields: [instituteId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  instituteId Int
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId Int
+
+  @@unique([instituteId, userId])
+}
+
+enum MembershipRole {
+  OWNER
+  ADMIN
+  MEMBER
+}
+
+model User {
+  id             Int      @id @default(autoincrement())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  username       String   @unique
+  email          String   @unique
+  hashedPassword String?
+  role           UserRole @default(USER)
+
+  fullName String?
+  about    String?
+
+  currentInstitute   Institute? @relation(fields: [currentInstituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  currentInstituteId Int?
+
+  tokens      Token[]
+  sessions    Session[]
+  memberships Membership[]
+  modules     Module[]
+  reports     Report[]
+  templates   Template[]
+}
+
+enum UserRole {
+  SUPERADMIN
+  ORGANIZER
+  USER
+}
+
+model Session {
+  id                 Int       @id @default(autoincrement())
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  expiresAt          DateTime?
+  handle             String    @unique
+  hashedSessionToken String?
+  antiCSRFToken      String?
+  publicData         String?
+  privateData        String?
+
+  user   User? @relation(fields: [userId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  userId Int?
+}
+
+model Token {
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  hashedToken String
+  type        TokenType
+  expiresAt   DateTime
+  sentTo      String
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId Int
+
+  @@unique([hashedToken, type])
+}
+
+enum TokenType {
+  RESET_PASSWORD
+}
+
+model Module {
+  id            Int           @id @default(autoincrement())
+  moduleId      String        @unique
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  languages     String[]
+  sourceCode    String
+  document      Json
+  releaseStatus ReleaseStatus
+
+  author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId Int
+
+  translations ModuleTranslation[]
+}
+
+model ModuleTranslation {
+  id          Int                    @id @default(autoincrement())
+  language    String
+  default     Boolean
+  title       String
+  description String
+  tags        ModuleTagTranslation[]
+
+  module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  moduleId Int
+
+  @@unique([language, moduleId])
+}
+
+model ModuleTagTranslation {
+  id       Int    @id @default(autoincrement())
+  language String
+  label    String
+
+  moduleTranslation   ModuleTranslation @relation(fields: [moduleTranslationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  moduleTranslationId Int
+}
+
+model Template {
+  id            Int           @id @default(autoincrement())
+  templateId    String        @unique
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  languages     String[]
+  sourceCode    String
+  document      Json
+  releaseStatus ReleaseStatus
+
+  author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId Int
+
+  translations TemplateTranslation[]
+}
+
+model TemplateTranslation {
+  id          Int                      @id @default(autoincrement())
+  language    String
+  default     Boolean
+  title       String
+  description String
+  tags        TemplateTagTranslation[]
+
+  template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  templateId Int
+
+  @@unique([language, templateId])
+}
+
+model TemplateTagTranslation {
+  id       Int    @id @default(autoincrement())
+  language String
+  label    String
+
+  TemplateTranslation   TemplateTranslation @relation(fields: [templateTranslationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  templateTranslationId Int
+}
+
+enum ReleaseStatus {
+  DRAFT
+  UNPUBLISHED
+  PUBLISHED
+  DEPRECIATED
+}
+
+model Report {
+  id         Int        @id @default(autoincrement())
+  reportId   String     @unique
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  visibility Visibility
+
+  template      Json
+  structureData Json
+  reportFormat  Json
+
+  details ReportDetail[]
+
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId    Int
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId Int?
+}
+
+enum Visibility {
+  PRIVATE
+  INSTITUTE
+  PUBLIC
+}
+
+model ReportDetail {
+  id       Int       @id @default(autoincrement())
+  key      String
+  string   String?
+  dateTime DateTime?
+  int      BigInt?
+  float    Float?
+
+  report   Report? @relation(fields: [reportId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  reportId Int?
+
+  @@unique([reportId, key])
+}

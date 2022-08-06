@@ -20,6 +20,9 @@
     "svg:options": "node -r @swc-node/register scripts/parseSVG.ts --output options",
     "svg:translations": "node -r @swc-node/register scripts/parseSVG.ts --output translations"
   },
+  "prisma": {
+    "schema": "db/schema.prisma"
+  },
   "dependencies": {
     "@blitzjs/auth": "^2.0.0-alpha.67",
     "@blitzjs/next": "^2.0.0-alpha.67",
@@ -34,6 +37,7 @@
     "@mantine/next": "^5.0.0",
     "@mantine/notifications": "^5.0.0",
     "@next/bundle-analyzer": "^12.1.4",
+    "@prisma/client": "^4.1.1",
     "@reduxjs/toolkit": "^1.8.2",
     "blitz": "^2.0.0-alpha.67",
     "cookies-next": "^2.1.1",
