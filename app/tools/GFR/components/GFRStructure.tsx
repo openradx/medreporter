@@ -26,17 +26,17 @@ export const GFRStructure = () => (
     </GridItem>
     <GridItem>
       <SingleChoiceField
-        label="gender"
+        label="Gender"
         id="gender"
         options={[
-          { value: "male", label: "male" },
-          { value: "female", label: "female" },
+          { value: "male", label: "Male" },
+          { value: "female", label: "Female" },
         ]}
       />
     </GridItem>
     <GridItem>
       <SingleChoiceField
-        label="ethnicity"
+        label="Ethnicity"
         id="ethnicity"
         options={[
           { value: "africanAmerican", label: "African American" },
