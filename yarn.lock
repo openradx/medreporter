@@ -1318,30 +1318,7 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blitzjs/auth@2.0.0-alpha.65", "@blitzjs/auth@^2.0.0-alpha.65":
-  version "2.0.0-alpha.65"
-  resolved "https://registry.yarnpkg.com/@blitzjs/auth/-/auth-2.0.0-alpha.65.tgz#b8e049011563ab17890a9e31ed8f62b6cddb875f"
-  integrity sha512-fTwPAol2j8dv6NCGFjd6NiNje2tuMBMBcuQq+fsUMsPrmtC5MR8BJO28B9ubGc8vSqmto67qjEAKU064tDWZJg==
-  dependencies:
-    "@types/b64-lite" "1.3.0"
-    "@types/cookie-session" "2.0.44"
-    "@types/passport" "1.0.7"
-    "@types/secure-password" "3.1.1"
-    b64-lite "1.4.0"
-    bad-behavior "1.0.1"
-    blitz "2.0.0-alpha.65"
-    cookie "0.4.1"
-    cookie-session "2.0.0"
-    debug "4.3.3"
-    http "0.0.1-security"
-    jsonwebtoken "8.5.1"
-    nanoid "3.2.0"
-    passport "0.5.2"
-    path "0.12.7"
-    secure-password "4.0.0"
-    url "0.11.0"
-
-"@blitzjs/auth@2.0.0-danger.67":
+"@blitzjs/auth@2.0.0-danger.67", "@blitzjs/auth@^2.0.0-alpha.67":
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/@blitzjs/auth/-/auth-2.0.0-danger.67.tgz#0993fc91942a027445287dca223bacfd9b609ba7"
   integrity sha512-WLF9zjZh3NU8p991U1YdM3vml8tyeFTwZhuoVox9JkgF1rQcGGHda+2/tpomvKAaLbUHOZAu5nxt5LP5sq6gSw==
@@ -1364,35 +1341,6 @@
     secure-password "4.0.0"
     supports-color "8"
     url "0.11.0"
-
-"@blitzjs/generator@2.0.0-alpha.65":
-  version "2.0.0-alpha.65"
-  resolved "https://registry.yarnpkg.com/@blitzjs/generator/-/generator-2.0.0-alpha.65.tgz#b663359d5b80294de7187a3907862d8da57f6194"
-  integrity sha512-e6QNoqewzELoPxcqaYZ5cxvGFE8PxrdcMcqq4lq+Yqub1Cxic44BtYE1yQe1arFtaIkEMEGcuBGKY4JvCJnA7g==
-  dependencies:
-    "@babel/core" "7.12.10"
-    "@babel/plugin-transform-typescript" "7.12.1"
-    "@babel/preset-env" "7.12.10"
-    "@babel/types" "7.12.10"
-    "@mrleebo/prisma-ast" "0.2.6"
-    chalk "^4.1.0"
-    console-table-printer "2.10.0"
-    cross-spawn "7.0.3"
-    diff "5.0.0"
-    enquirer "2.3.6"
-    fs-extra "10.0.1"
-    got "^11.8.1"
-    jscodeshift "0.13.0"
-    mem-fs "1.2.0"
-    mem-fs-editor "8.0.0"
-    npm-which "3.0.1"
-    ora "5.3.0"
-    pluralize "8.0.0"
-    prettier "^2.5.1"
-    recast "0.20.5"
-    tslog "3.3.1"
-    username "5.1.0"
-    vinyl "2.2.1"
 
 "@blitzjs/generator@2.0.0-danger.67":
   version "2.0.0-danger.67"
@@ -1424,7 +1372,7 @@
     username "5.1.0"
     vinyl "2.2.1"
 
-"@blitzjs/next@^2.0.0-alpha.65":
+"@blitzjs/next@^2.0.0-alpha.67":
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/@blitzjs/next/-/next-2.0.0-danger.67.tgz#6272a00ed547ee991d9bbc7cf4283b4cd7499a21"
   integrity sha512-vaZ8iYzuydRTqohZJPhEyQexcb1nrJi9cmRf1u0ZvoIPZsXpT/Zjpq0pj6FtS29Rr1yrOcrKqh5Ps5LWGoj4Eg==
@@ -1438,7 +1386,7 @@
     superjson "1.8.0"
     supports-color "8"
 
-"@blitzjs/rpc@2.0.0-danger.67":
+"@blitzjs/rpc@2.0.0-danger.67", "@blitzjs/rpc@^2.0.0-alpha.67":
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/@blitzjs/rpc/-/rpc-2.0.0-danger.67.tgz#967b4e5f8630d47e465d5278d4eb44606f94edeb"
   integrity sha512-O0N+Fd3Q4aQeGCdGTcXbKBBLUmbbVsL2vAzWqSHm14eh8mpilVvD8/SZdCqZdPYTszSaAd3117ENvMw4kC+B5g==
@@ -1451,20 +1399,6 @@
     debug "4.3.3"
     superjson "1.8.0"
     supports-color "8"
-    zod "3.17.3"
-
-"@blitzjs/rpc@^2.0.0-alpha.65":
-  version "2.0.0-alpha.65"
-  resolved "https://registry.yarnpkg.com/@blitzjs/rpc/-/rpc-2.0.0-alpha.65.tgz#5d39318e2fc9245954e76a7677314d67280651d8"
-  integrity sha512-aiQnkWCAYMVIPJHyUQ2AdOlvABVXD/emeZAMkdnbUr1OwTyt3Ykjly3KY55tU2rtzQ4ZrfBhd+Veh5/n61cjHQ==
-  dependencies:
-    "@blitzjs/auth" "2.0.0-alpha.65"
-    "@tanstack/react-query" "4.0.10"
-    b64-lite "1.4.0"
-    bad-behavior "1.0.1"
-    chalk "^4.1.0"
-    debug "4.3.3"
-    superjson "1.8.0"
     zod "3.17.3"
 
 "@chevrotain/types@^9.1.0":
@@ -5094,42 +5028,7 @@ bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blitz@2.0.0-alpha.65:
-  version "2.0.0-alpha.65"
-  resolved "https://registry.yarnpkg.com/blitz/-/blitz-2.0.0-alpha.65.tgz#bf174a569b07547250942429bfaa1eaf7cc81b1e"
-  integrity sha512-kpuPy9z+vpezas7fDQb73KJ5ol4xUZm1/Xx2jeQbf5gaIhjsOjqqN4j79xcc1RTv5yM2R4CcSGBtD1nJNQTi2g==
-  dependencies:
-    "@blitzjs/generator" "2.0.0-alpha.65"
-    arg "5.0.1"
-    boxen "7.0.0"
-    chalk "^4.1.0"
-    console-table-printer "2.10.0"
-    cross-spawn "7.0.3"
-    debug "4.3.3"
-    detect-port "1.3.0"
-    dotenv "16.0.0"
-    dotenv-expand "8.0.3"
-    envinfo "7.8.1"
-    esbuild "0.14.34"
-    find-up "4.1.0"
-    fs-extra "10.0.1"
-    hasbin "1.2.3"
-    node-fetch "3.2.3"
-    npm-which "3.0.1"
-    ora "5.3.0"
-    os-name "5.0.1"
-    p-event "4.2.0"
-    pkg-dir "5.0.0"
-    prompts "2.4.2"
-    resolve-cwd "3.0.0"
-    resolve-from "5.0.0"
-    superjson "1.8.0"
-    ts-node "10.7.0"
-    tsconfig-paths "4.0.0"
-    tslog "3.3.1"
-    watchpack "2.1.1"
-
-blitz@2.0.0-danger.67, blitz@^2.0.0-alpha.65:
+blitz@2.0.0-danger.67, blitz@^2.0.0-alpha.67:
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/blitz/-/blitz-2.0.0-danger.67.tgz#27101a01f7e36b4f1f5f04c8ef589b69ac330030"
   integrity sha512-paUVgKL/aTwc2EwNjZv73oDFqt3d3u1T2ewcLS7pD4LQSyST3BRfsnxrxmEUMD/UwzS705mDOX33seVdSzufuQ==
