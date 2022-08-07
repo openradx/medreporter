@@ -1,3 +1,10 @@
+general:
+  errors:
+    unknownError: >
+      Entschuldige, ein unerwarteter Fehler ist aufgetreten.
+      Bitte versuche es später erneut. Wenn der Fehler anhält,
+      dann kontaktiere bitte unseren Support.
+
 CopyButton:
   success: Befund in Ablage kopiert
   error: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.
@@ -5,11 +12,29 @@ CopyButton:
 FieldInfo:
   title: Weitere Informationen
 
+ForgotPasswordForm:
+  email: E-Mail
+  message: >
+    Wenn deine E-Mail in unserem System ist, wirst du in Kürze eine
+    Anleitung zum Zurücksetzen deines Passwortes erhalten.
+  send: Anleitung senden
+  submitted: Anfrage gesendet
+  title: Passwort vergessen?
+
 LanguageSelector:
   as_site: wie Seite
   de: Deutsch
   en-US: Englisch (US)
   label: Sprache (Region)
+
+LoginForm:
+  authError: Ungültige Anmeldedaten
+  forgotPassword: Passwort vergessen?
+  logIn: Anmelden
+  password: Passwort
+  signUp: Registrieren
+  title: Anmeldung
+  usernameOrEmail: Benutzername oder E-Mail
 
 PageHeader:
   home: Home
@@ -26,6 +51,16 @@ ReportPanel:
 SelectOverlay:
   openGraphic: Grafik öffnen
   reset: Zurücksetzen
+
+SignupForm:
+  about: Über dich selbst
+  email: E-Mail
+  emailAlreadyUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
+  fullName: Vollständiger Name
+  password: Passwort
+  submit: Registrieren
+  title: Erstelle einen Account
+  username: Benutzername
 
 Structure:
   title: Struktur

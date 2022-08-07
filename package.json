@@ -30,6 +30,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.4.0",
     "@hookform/devtools": "^4.1.0",
+    "@hookform/resolvers": "^2.9.7",
     "@mantine/core": "^5.0.0",
     "@mantine/dates": "^5.0.0",
     "@mantine/hooks": "^5.0.0",

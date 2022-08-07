@@ -1,3 +1,9 @@
+general:
+  errors:
+    unknownError: >
+      Sorry, we had an unexpected error. Please try again later.
+      If the error persists then please contact our support.
+
 CopyButton:
   success: Copied report to clipboard
   error: Copy to clipboard failed. Please copy manually.
@@ -5,11 +11,29 @@ CopyButton:
 FieldInfo:
   title: Additional infos
 
+ForgotPasswordForm:
+  email: Email
+  message: >
+    If your email is in our system, you will receive instructions to
+    reset your password shortly.
+  send: Send Reset Password Instructions
+  submitted: Request Submitted
+  title: Forgot your password?
+
 LanguageSelector:
   as_site: As page
   de: German
   en-US: English (US)
   label: Language (Region)
+
+LoginForm:
+  authError: Invalid account credentials
+  forgotPassword: Forgot your password?
+  logIn: Log in
+  password: Password
+  signUp: Sign up
+  title: Login
+  usernameOrEmail: Username or Email
 
 PageHeader:
   home: Home
@@ -26,6 +50,16 @@ ReportPanel:
 SelectOverlay:
   openGraphic: Open graphic
   reset: Reset
+
+SignupForm:
+  about: About yourself
+  email: Email
+  emailAlreadyUsed: This email is already being used.
+  fullName: Full name
+  password: Password
+  submit: Create account
+  title: Create an Account
+  username: Username
 
 Structure:
   title: Structure
