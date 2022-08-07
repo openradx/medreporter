@@ -4,6 +4,7 @@
 
 ## Kai
 
+- Add https://github.com/i18next/i18next-parser or i18next-scanner
 - configurable gap after paragraph
 - Use title attribute on ActionIcon
 - Remove "...Button" from components (e.g. UndoButton => Undo)
