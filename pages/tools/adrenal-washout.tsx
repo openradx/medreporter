@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
-import { StructuredReportLayout } from "../../app/core/components/common/StructuredReportLayout"
+import { MainLayout } from "../../app/core/components/common/MainLayout"
 import { NextPageWithLayout } from "../../app/core/types"
 import { serverSideReduxState } from "../../app/core/utils/serverSideReduxState"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
@@ -9,9 +9,7 @@ import { AdrenalWashout } from "../../app/tools/adrenalWashout/components/Adrena
 
 const AdrenalWashoutPage: NextPageWithLayout = () => <AdrenalWashout />
 
-AdrenalWashoutPage.getLayout = (page: ReactElement) => (
-  <StructuredReportLayout>{page}</StructuredReportLayout>
-)
+AdrenalWashoutPage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
 
 export default AdrenalWashoutPage
 
