@@ -66,8 +66,8 @@ MyApp.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
 })
 
 export default compose(
-  withBlitz,
   appWithReduxState,
   appWithSiteTranslations,
-  appWithStructuredReportTranslations
+  appWithStructuredReportTranslations,
+  withBlitz
 )(MyApp)
