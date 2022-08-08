@@ -16,8 +16,8 @@ ForgotPasswordForm:
   message: >
     If your email is in our system, you will receive instructions to
     reset your password shortly.
-  send: Send Reset Password Instructions
-  submitted: Request Submitted
+  send: Send reset password instructions
+  submitted: Request submitted
   title: Forgot your password?
 
 LanguageSelector:
@@ -33,7 +33,7 @@ LoginForm:
   password: Password
   signUp: Sign up
   title: Login
-  usernameOrEmail: Username or Email
+  usernameOrEmail: Username or email
 
 PageHeader:
   home: Home
