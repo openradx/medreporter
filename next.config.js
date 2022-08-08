@@ -22,7 +22,7 @@ module.exports = withBundleAnalyzer(
         const { I18NextHMRPlugin } = require("i18next-hmr/plugin")
         config.plugins.push(
           new I18NextHMRPlugin({
-            localesDir: path.resolve(__dirname, "app"),
+            localesDir: path.resolve(__dirname, "app/core/locales"),
           })
         )
       }
