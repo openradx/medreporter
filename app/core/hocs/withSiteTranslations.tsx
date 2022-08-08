@@ -6,14 +6,14 @@ import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
 
 let i18nextHmrInitialized = false
-const setupI18nextHmr = (i18nInstance: i18n) => {
+const setupI18nextHmr = async (i18nInstance: i18n) => {
   if (!i18nextHmrInitialized && process.env.NODE_ENV !== "production") {
     if (typeof window !== "undefined") {
-      const { applyClientHMR } = require("i18next-hmr/client")
-      applyClientHMR(() => i18nInstance)
+      const { applyClientHMR } = await import("i18next-hmr/client")
+      applyClientHMR(i18nInstance)
     } else {
-      const { applyServerHMR } = require("i18next-hmr/server")
-      applyServerHMR(() => i18nInstance)
+      const { applyServerHMR } = await import("i18next-hmr/server")
+      applyServerHMR(i18nInstance)
     }
     i18nextHmrInitialized = true
   }
