@@ -21,6 +21,16 @@ enableMapSet() // for TransformerRegistry
 const fontFamily =
   "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
 
+if (process.env.NODE_ENV !== "production") {
+  if (typeof window !== "undefined") {
+    const { applyClientHMR } = require("i18next-hmr/client")
+    applyClientHMR(() => i18n)
+  } else {
+    const { applyServerHMR } = require("i18next-hmr/server")
+    applyServerHMR(() => i18n)
+  }
+}
+
 interface MyAppProps extends AppProps {
   colorScheme: ColorScheme
   Component: NextPageWithLayout

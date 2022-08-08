@@ -1,3 +1,4 @@
+const path = require("path")
 const { withBlitz } = require("@blitzjs/next")
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
@@ -16,6 +17,16 @@ module.exports = withBundleAnalyzer(
       ignoreDuringBuilds: true,
     },
     webpack(config) {
+      // Setup i18next-hmr
+      if (config.mode === "development") {
+        const { I18NextHMRPlugin } = require("i18next-hmr/plugin")
+        config.plugins.push(
+          new I18NextHMRPlugin({
+            localesDir: path.resolve(__dirname, "app"),
+          })
+        )
+      }
+
       // Load SVG graphics with SVGR
       config.module?.rules?.push({
         test: /\.svg$/,
