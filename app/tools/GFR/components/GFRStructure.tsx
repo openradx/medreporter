@@ -2,6 +2,7 @@ import { NumberField } from "../../../core/components/fields/NumberField"
 import { SingleChoiceField } from "../../../core/components/fields/SingleChoiceField"
 import { Description } from "../../../core/components/structuredReport/Description"
 import { Grid } from "../../../core/components/structuredReport/Grid"
+import { GridGroup } from "../../../core/components/structuredReport/GridGroup"
 import { GridItem } from "../../../core/components/structuredReport/GridItem"
 
 export const GFRStructure = () => (
@@ -12,11 +13,13 @@ export const GFRStructure = () => (
         Cockroft-Gault equation.
       </Description>
     </GridItem>
+    <GridGroup>
+      <GridItem>
+        <NumberField label="Age" id="age" min={0} />
+      </GridItem>
+    </GridGroup>
     <GridItem>
       <NumberField label="Creatinine in mg/dl" id="creatinine" precision={2} min={0} />
-    </GridItem>
-    <GridItem>
-      <NumberField label="Age" id="age" min={0} />
     </GridItem>
     <GridItem>
       <NumberField label="Weight in kg" id="weight" min={0} />
