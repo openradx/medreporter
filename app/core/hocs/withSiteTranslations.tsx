@@ -8,10 +8,10 @@ interface AppProps {
   pageProps?: Partial<I18nSiteProps>
 }
 
-export const appWithSiteTranslations = <T extends AppProps>(
+export const withSiteTranslations = <T extends AppProps>(
   WrappedComponent: ComponentType<T>
 ): ComponentType<T> => {
-  const AppWithSiteTranslations = (props: AppProps) => {
+  const WithSiteTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nSite
 
     const i18n = useMemo(() => {
@@ -40,5 +40,5 @@ export const appWithSiteTranslations = <T extends AppProps>(
     )
   }
 
-  return hoistNonReactStatics(AppWithSiteTranslations, WrappedComponent)
+  return hoistNonReactStatics(WithSiteTranslations, WrappedComponent)
 }

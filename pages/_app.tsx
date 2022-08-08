@@ -9,9 +9,9 @@ import { AppProps } from "next/app"
 import Head from "next/head"
 import { useState } from "react"
 import { withBlitz } from "../app/blitz-client"
-import { appWithReduxState } from "../app/core/hocs/appWithReduxState"
-import { appWithSiteTranslations } from "../app/core/hocs/appWithSiteTranslations"
-import { appWithStructuredReportTranslations } from "../app/core/hocs/appWithStructuredReportTranslations"
+import { withReduxState } from "../app/core/hocs/withReduxState"
+import { withSiteTranslations } from "../app/core/hocs/withSiteTranslations"
+import { withStructuredReportTranslations } from "../app/core/hocs/withStructuredReportTranslations"
 import { NextPageWithLayout } from "../app/core/types"
 
 // Enable additional Immer.js features
@@ -66,8 +66,8 @@ MyApp.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
 })
 
 export default compose(
-  appWithReduxState,
-  appWithSiteTranslations,
-  appWithStructuredReportTranslations,
+  withSiteTranslations,
+  withStructuredReportTranslations,
+  withReduxState,
   withBlitz
 )(MyApp)

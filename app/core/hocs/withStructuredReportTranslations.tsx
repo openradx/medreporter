@@ -8,10 +8,10 @@ interface AppProps {
   pageProps?: Partial<I18nStructuredReportProps>
 }
 
-export const appWithStructuredReportTranslations = <T extends AppProps>(
+export const withStructuredReportTranslations = <T extends AppProps>(
   WrappedComponent: React.ComponentType<T>
 ): React.ComponentType<T> => {
-  const AppWithStructuredReportTranslations = (props: AppProps) => {
+  const WithStructuredReportTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nStructuredReport
 
     const i18nInstances = useMemo(() => {
@@ -59,5 +59,5 @@ export const appWithStructuredReportTranslations = <T extends AppProps>(
     )
   }
 
-  return hoistNonReactStatics(AppWithStructuredReportTranslations, WrappedComponent)
+  return hoistNonReactStatics(WithStructuredReportTranslations, WrappedComponent)
 }

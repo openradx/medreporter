@@ -8,10 +8,10 @@ interface AppProps {
   pageProps?: Partial<ReduxStateProps>
 }
 
-export const appWithReduxState = <T extends AppProps>(
+export const withReduxState = <T extends AppProps>(
   WrappedComponent: React.ComponentType<T>
 ): ComponentType<T> => {
-  const AppWithReduxState = (props: AppProps) => {
+  const WithReduxState = (props: AppProps) => {
     const preloadedState = props.pageProps?._preloadedReduxState
     const store = useMemo(() => {
       if (!preloadedState) return null
@@ -30,5 +30,5 @@ export const appWithReduxState = <T extends AppProps>(
     )
   }
 
-  return hoistNonReactStatics(AppWithReduxState, WrappedComponent)
+  return hoistNonReactStatics(WithReduxState, WrappedComponent)
 }
