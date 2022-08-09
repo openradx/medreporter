@@ -1,4 +1,5 @@
 const path = require("path")
+const glob = require("glob")
 const { withBlitz } = require("@blitzjs/next")
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
@@ -20,11 +21,22 @@ module.exports = withBundleAnalyzer(
       // Setup i18next-hmr
       if (config.mode === "development") {
         const { I18NextHMRPlugin } = require("i18next-hmr/plugin")
+
+        // Site locales
         config.plugins.push(
           new I18NextHMRPlugin({
             localesDir: path.resolve(__dirname, "app/core/locales"),
           })
         )
+
+        // Tools locales
+        glob.sync("app/tools/*/locales").forEach((toolsLocales) => {
+          config.plugins.push(
+            new I18NextHMRPlugin({
+              localesDir: path.resolve(__dirname, toolsLocales),
+            })
+          )
+        })
       }
 
       // Load SVG graphics with SVGR
