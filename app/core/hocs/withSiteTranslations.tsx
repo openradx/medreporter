@@ -1,23 +1,9 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
-import { i18n } from "i18next"
 import { ComponentType, useMemo } from "react"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
 import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
-
-let i18nextHmrInitialized = false
-const setupI18nextHmr = async (i18nInstance: i18n) => {
-  if (!i18nextHmrInitialized && process.env.NODE_ENV !== "production") {
-    if (typeof window !== "undefined") {
-      const { applyClientHMR } = await import("i18next-hmr/client")
-      applyClientHMR(i18nInstance)
-    } else {
-      const { applyServerHMR } = await import("i18next-hmr/server")
-      applyServerHMR(i18nInstance)
-    }
-    i18nextHmrInitialized = true
-  }
-}
+import { setupI18nextHmr } from "../utils/i18nextUtils"
 
 interface AppProps {
   pageProps?: Partial<I18nSiteProps>
@@ -42,7 +28,9 @@ export const withSiteTranslations = <T extends AppProps>(
       return client.i18n
     }, [serverData])
 
-    setupI18nextHmr(i18nInstance!)
+    if (i18nInstance) {
+      setupI18nextHmr(i18nInstance)
+    }
 
     if (!serverData || !i18nInstance) {
       return <WrappedComponent {...(props as T)} />
