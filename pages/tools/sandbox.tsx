@@ -1,13 +1,13 @@
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
-import { NextPageWithLayout } from "../../app/core/types"
+import { PageWithLayout } from "../../app/core/types"
 import { serverSideReduxState } from "../../app/core/utils/serverSideReduxState"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 import { serverSideStructuredReportTranslations } from "../../app/core/utils/serverSideStructuredReportTranslations"
 import { Sandbox } from "../../app/tools/sandbox/components/Sandbox"
 
-const SandboxPage: NextPageWithLayout = () => <Sandbox />
+const SandboxPage: PageWithLayout = () => <Sandbox />
 
 SandboxPage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
 

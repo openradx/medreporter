@@ -1,7 +1,7 @@
+import { BlitzPage } from "@blitzjs/next"
 import { CombinedState, PreloadedState } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 import { Resource } from "i18next"
-import { NextPage } from "next"
 import { ReactElement, ReactNode } from "react"
 
 export interface I18nSiteProps {
@@ -23,7 +23,7 @@ export interface I18nStructuredReportProps {
   }
 }
 
-export type NextPageWithLayout = NextPage & {
+export type PageWithLayout = BlitzPage & {
   getLayout?: (page: ReactElement) => ReactNode
 }
 

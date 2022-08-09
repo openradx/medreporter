@@ -1,16 +1,19 @@
+import { Routes } from "@blitzjs/next"
 import { Container } from "@mantine/core"
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { ForgotPasswordForm } from "../../app/auth/components/ForgotPasswordForm"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
-import { NextPageWithLayout } from "../../app/core/types"
+import { PageWithLayout } from "../../app/core/types"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 
-const ForgotPasswordPage: NextPageWithLayout = () => (
+const ForgotPasswordPage: PageWithLayout = () => (
   <Container size="sm">
     <ForgotPasswordForm />
   </Container>
 )
+
+ForgotPasswordPage.redirectAuthenticatedTo = Routes.HomePage()
 
 ForgotPasswordPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 

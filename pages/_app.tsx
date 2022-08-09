@@ -12,7 +12,7 @@ import { withBlitz } from "../app/blitz-client"
 import { withReduxState } from "../app/core/hocs/withReduxState"
 import { withSiteTranslations } from "../app/core/hocs/withSiteTranslations"
 import { withStructuredReportTranslations } from "../app/core/hocs/withStructuredReportTranslations"
-import { NextPageWithLayout } from "../app/core/types"
+import { PageWithLayout } from "../app/core/types"
 
 // Enable additional Immer.js features
 enablePatches() // for undo / redo
@@ -23,7 +23,7 @@ const fontFamily =
 
 interface MyAppProps extends AppProps {
   colorScheme: ColorScheme
-  Component: NextPageWithLayout
+  Component: PageWithLayout
 }
 
 const MyApp = (props: MyAppProps) => {

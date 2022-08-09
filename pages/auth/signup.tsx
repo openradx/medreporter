@@ -5,10 +5,10 @@ import { useRouter } from "next/router"
 import { ReactElement } from "react"
 import { SignupForm } from "../../app/auth/components/SignupForm"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
-import { NextPageWithLayout } from "../../app/core/types"
+import { PageWithLayout } from "../../app/core/types"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 
-const SignupPage: NextPageWithLayout = () => {
+const SignupPage: PageWithLayout = () => {
   const router = useRouter()
 
   return (
@@ -17,6 +17,8 @@ const SignupPage: NextPageWithLayout = () => {
     </Container>
   )
 }
+
+SignupPage.redirectAuthenticatedTo = Routes.HomePage()
 
 SignupPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
