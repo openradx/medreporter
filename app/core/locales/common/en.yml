@@ -47,6 +47,15 @@ ReportFormat:
 ReportPanel:
   title: Report
 
+ResetPasswordForm:
+  confirmPasswordLabel: Confirm New Password
+  homepage: homepage
+  newPasswordLabel: New Password
+  redirect: Go to the
+  reset: Reset Password
+  success: Password reset successfully
+  title: Set a new Password
+
 SelectOverlay:
   openGraphic: Open graphic
   reset: Reset

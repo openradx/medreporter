@@ -48,6 +48,15 @@ ReportFormat:
 ReportPanel:
   title: Befund
 
+ResetPasswordForm:
+  confirmPasswordLabel: Passwort bestätigen
+  homepage: Startseite
+  newPasswordLabel: Neues Passwort
+  redirect: Gehe zur
+  reset: Bestätigen
+  success: Neues Passwort erfolgreich gesetzt
+  title: Passwort zurücksetzen
+
 SelectOverlay:
   openGraphic: Grafik öffnen
   reset: Zurücksetzen
