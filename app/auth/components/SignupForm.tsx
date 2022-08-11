@@ -26,7 +26,7 @@ export const SignupForm = (props: SignupFormProps) => {
           try {
             await signupMutation(values)
             props.onSuccess?.()
-            return true
+            return null
           } catch (error) {
             if (uniqueConstraintFailed(error, "email")) {
               return { email: t("SignupForm.emailAlreadyUsed") }

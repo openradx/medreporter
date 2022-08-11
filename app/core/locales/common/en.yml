@@ -4,6 +4,10 @@ general:
       Sorry, we had an unexpected error. Please try again later.
       If the error persists then please contact our support.
 
+AccountControl:
+  profile: User profile
+  logOut: Log out
+
 CopyButton:
   success: Copied report to clipboard
   error: Copy to clipboard failed. Please copy manually.

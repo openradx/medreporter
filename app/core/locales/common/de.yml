@@ -5,6 +5,10 @@ general:
       Bitte versuche es später erneut. Wenn der Fehler anhält,
       dann kontaktiere bitte unseren Support.
 
+AccountControl:
+  profile: Benutzerprofil
+  logOut: Ausloggen
+
 CopyButton:
   success: Befund in Ablage kopiert
   error: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.

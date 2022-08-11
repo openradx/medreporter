@@ -25,7 +25,7 @@ export const ForgotPasswordForm = () => {
           onSubmit={async (values) => {
             try {
               await forgotPasswordMutation(values)
-              return true
+              return null
             } catch (error) {
               return {
                 [SUBMIT_FORM_ERROR]: t("general.errors.unknownError"),

@@ -12,9 +12,9 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
+import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
-import { LoginButton } from "./LoginButton"
 import { SiteLanguageSelector } from "./SiteLanguageSelector"
 
 const HEADER_HEIGHT = 60
@@ -128,7 +128,7 @@ export const PageHeader = () => {
         <ActionsGroup>
           <ColorSchemeToggle />
           <SiteLanguageSelector />
-          <LoginButton />
+          <AccountControl />
         </ActionsGroup>
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (

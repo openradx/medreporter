@@ -29,7 +29,7 @@ export const ResetPasswordForm = () => {
           onSubmit={async (values) => {
             try {
               await resetPasswordMutation(values)
-              return true
+              return null
             } catch (error) {
               const err = error as Error
               if (err.name === "ResetPasswordError") {

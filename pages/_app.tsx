@@ -9,6 +9,7 @@ import { AppProps } from "next/app"
 import Head from "next/head"
 import { useState } from "react"
 import { withBlitz } from "../app/blitz-client"
+import { withInitialPublicData } from "../app/core/hocs/withInitialPublicData"
 import { withReduxState } from "../app/core/hocs/withReduxState"
 import { withSiteTranslations } from "../app/core/hocs/withSiteTranslations"
 import { withStructuredReportTranslations } from "../app/core/hocs/withStructuredReportTranslations"
@@ -66,6 +67,7 @@ MyApp.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
 })
 
 export default compose(
+  withInitialPublicData,
   withSiteTranslations,
   withStructuredReportTranslations,
   withReduxState,
