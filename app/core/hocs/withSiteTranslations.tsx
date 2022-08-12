@@ -3,7 +3,7 @@ import { ComponentType, useMemo } from "react"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
 import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
-import { setupI18nextHmr } from "../utils/i18nextUtils"
+import { setupI18nextHmr } from "../utils/setupI18nextHmr"
 
 interface AppProps {
   pageProps?: Partial<I18nSiteProps>

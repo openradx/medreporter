@@ -6,8 +6,8 @@ export const setupI18nextHmr = async (i18nInstance: i18n) => {
       const { applyClientHMR } = await import("i18next-hmr/client")
       applyClientHMR(i18nInstance)
     } else {
-      const { applyServerHMR } = await import("i18next-hmr/server")
-      applyServerHMR(i18nInstance)
+      // const { applyServerHMR } = await import("i18next-hmr/server")
+      // applyServerHMR(i18nInstance)
     }
   }
 }

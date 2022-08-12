@@ -6,6 +6,11 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 })
 
+const localesDirs = [
+  path.resolve(__dirname, "app/core/locales"),
+  ...glob.sync("app/tools/*/locales").map((dir) => path.resolve(__dirname, dir)),
+]
+
 module.exports = withBundleAnalyzer(
   withBlitz({
     reactStrictMode: true,
@@ -21,22 +26,7 @@ module.exports = withBundleAnalyzer(
       // Setup i18next-hmr
       if (config.mode === "development") {
         const { I18NextHMRPlugin } = require("i18next-hmr/plugin")
-
-        // Site locales
-        config.plugins.push(
-          new I18NextHMRPlugin({
-            localesDir: path.resolve(__dirname, "app/core/locales"),
-          })
-        )
-
-        // Tools locales
-        glob.sync("app/tools/*/locales").forEach((toolsLocales) => {
-          config.plugins.push(
-            new I18NextHMRPlugin({
-              localesDir: path.resolve(__dirname, toolsLocales),
-            })
-          )
-        })
+        config.plugins.push(new I18NextHMRPlugin({ localesDirs }))
       }
 
       // Load SVG graphics with SVGR
