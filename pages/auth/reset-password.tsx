@@ -11,8 +11,6 @@ const ResetPasswordPage: PageWithLayout = () => (
   </Container>
 )
 
-ResetPasswordPage.redirectAuthenticatedTo = "/"
-
 ResetPasswordPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
 export const getStaticProps: GetServerSideProps = async ({ locale, locales }) => ({

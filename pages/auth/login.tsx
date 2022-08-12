@@ -25,8 +25,6 @@ const LoginPage: PageWithLayout = () => {
   )
 }
 
-LoginPage.redirectAuthenticatedTo = Routes.HomePage()
-
 LoginPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default LoginPage

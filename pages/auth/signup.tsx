@@ -18,8 +18,6 @@ const SignupPage: PageWithLayout = () => {
   )
 }
 
-SignupPage.redirectAuthenticatedTo = Routes.HomePage()
-
 SignupPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default SignupPage

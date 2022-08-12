@@ -13,8 +13,6 @@ const ForgotPasswordPage: PageWithLayout = () => (
   </Container>
 )
 
-ForgotPasswordPage.redirectAuthenticatedTo = Routes.HomePage()
-
 ForgotPasswordPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default ForgotPasswordPage
