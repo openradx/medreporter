@@ -15,7 +15,6 @@ export const GridGroup = ({ label, children }: GridGroupProps) => {
       </>
     )
   }
-
   return (
     <Grid.Col span={12}>
       <Box
@@ -27,11 +26,13 @@ export const GridGroup = ({ label, children }: GridGroupProps) => {
           }`,
         })}
       >
-        <Box component="legend" sx={{ padding: "0 6px" }}>
-          <Text size="sm" weight={700}>
-            {label}
-          </Text>
-        </Box>
+        {label && (
+          <Box component="legend" sx={{ padding: "0 6px" }}>
+            <Text size="sm" weight={700}>
+              {label}
+            </Text>
+          </Box>
+        )}
         <Grid>{children}</Grid>
       </Box>
     </Grid.Col>
