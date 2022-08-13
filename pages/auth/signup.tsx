@@ -6,6 +6,7 @@ import { ReactElement } from "react"
 import { SignupForm } from "../../app/auth/components/SignupForm"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
 import { PageWithLayout } from "../../app/core/types"
+import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInitialPublicData"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 
 const SignupPage: PageWithLayout = () => {
@@ -22,8 +23,9 @@ SignupPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default SignupPage
 
-export const getStaticProps: GetServerSideProps = async ({ locale, locales }) => ({
+export const getServerSideProps: GetServerSideProps = async ({ req, res, locale, locales }) => ({
   props: {
+    ...(await serverSideInitialPublicData(req, res)),
     ...(await serverSideSiteTranslations(locale!, locales!)),
   },
 })
