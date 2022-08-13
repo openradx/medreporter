@@ -35,13 +35,9 @@ export const makeAdrenalWashoutSuggestion = (
   if (nonEnhanced !== null) {
     if (nonEnhanced < 0) {
       suggestions.push(AdrenalWashoutSuggestion.DensityLowerZeroAdenoma)
-    }
-
-    if (nonEnhanced < 10) {
+    } else if (nonEnhanced < 10) {
       suggestions.push(AdrenalWashoutSuggestion.DensityLowerTenAdenoma)
-    }
-
-    if (nonEnhanced >= 43) {
+    } else if (nonEnhanced >= 43) {
       suggestions.push(AdrenalWashoutSuggestion.HighDensityMalignancy)
     }
   }
