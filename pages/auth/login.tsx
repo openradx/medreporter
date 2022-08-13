@@ -1,4 +1,3 @@
-import { Routes } from "@blitzjs/next"
 import { Container } from "@mantine/core"
 import { GetServerSideProps } from "next"
 import { useRouter } from "next/router"
