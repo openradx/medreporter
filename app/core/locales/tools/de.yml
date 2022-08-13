@@ -16,6 +16,13 @@ Fleischner2017:
     Empfehlung der Fleischner Fachgesellschaft zum Management unbestimmter
     Lungenrundherde.
 
+GFR:
+  title: GFR Rechner
+  description: >
+    Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault) 
+    und Kinder (Schwartz (orig./rev.), Counahan-Barret).
+
+
 MeasurementsTable:
   title: Messtabelle
   description: Tabellarische Erfassung von Messwerten mit Dynamikberechnung.

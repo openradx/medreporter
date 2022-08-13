@@ -1,0 +1,35 @@
+# Structure
+description: >
+  A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
+  and children (Schwartz (orig./rev.), Counahan-Barret).
+
+age: Age
+
+creatinine: Creatinine in mg/dl
+
+weight: Weight in kg
+
+height: Height in cm
+
+gender: Gender
+male: Male
+female: Female
+
+ethnicity: Ethnicity
+africanAmerican: African American
+others: Others
+
+#Report
+CKDRequired: Creatinine, age, gender and ethnicity are required.
+
+CockcroftRequired: Creatinine, age, weight and gender are required.
+
+MayoRequired: Creatinine, age and gender are required.
+
+CounahanRequired: Creatinine and height are required.
+
+schwartzRevRequired: Creatinine and height are required.
+
+schwartzOrigRequired: Creatinine, height, age and gender are required.
+
+ageMissing: Please fill in the age of the patient first to define which equations should be used.

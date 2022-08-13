@@ -1,7 +1,7 @@
 tags:
   adrenal: Adrenal
   ct: CT
-  kidney: Niere
+  kidney: Kidney
   lung: Lung
   radiology: Radiology
 
@@ -15,6 +15,13 @@ Fleischner2017:
   description: >
     Management recommendations of indeterminate pulmonary nodules
     from the Fleischner society.
+
+GFR: 
+  title: GFR Calculator
+  description: >
+    A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
+    and children (Schwartz (orig./rev.), Counahan-Barret).
+
 
 MeasurementsTable:
   title: Measurements table
