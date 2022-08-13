@@ -1,6 +1,5 @@
 import { generateToken, hash256 } from "@blitzjs/auth"
 import { resolver } from "@blitzjs/rpc"
-import chalk from "chalk"
 import db from "../../../db"
 import { forgotPasswordMailer } from "../../../mailers/forgotPasswordMailer"
 import { ForgotPassword } from "../validations"
@@ -35,7 +34,7 @@ export default resolver.pipe(resolver.zod(ForgotPassword), async ({ email }) => 
     await forgotPasswordMailer({ to: user.email, token }).send()
   } else {
     // eslint-disable-next-line no-console
-    console.log(chalk.red(`Non existing email to reset password: ${email}`))
+    console.log("\x1b[31m", `Non existing email to reset password: ${email}`, "\x1b[0m")
 
     // 7. If no user found wait the same time so attackers can't tell the difference
     // eslint-disable-next-line no-promise-executor-return
