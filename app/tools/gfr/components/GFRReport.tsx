@@ -60,7 +60,13 @@ export const GFRReport = () => {
   }
 
   if (age === null) {
-    return t("ageMissing")
+    return (
+      <>
+        <Paragraph>
+          <Statement>{t("ageMissing")}</Statement>
+        </Paragraph>
+      </>
+    )
   }
 
   if (age >= 18) {
