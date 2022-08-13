@@ -4,7 +4,7 @@ import { GridItem } from "../../../core/components/structuredReport/GridItem"
 
 export const MeasurementsTableStructure = () => (
   <Grid>
-    <GridItem size="lg">
+    <GridItem size="xl">
       <MeasurementsField id="measurements" />
     </GridItem>
   </Grid>
