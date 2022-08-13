@@ -12,9 +12,9 @@ ToolsPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default ToolsPage
 
-export const getServerSideProps = gSSP(async ({ req, res, locale, locales }) => ({
+export const getServerSideProps = gSSP(async (ctx) => ({
   props: {
-    ...(await serverSideInitialPublicData(req, res)),
-    ...(await serverSideSiteTranslations(locale!, locales!, ["tools"])),
+    ...(await serverSideInitialPublicData(ctx)),
+    ...(await serverSideSiteTranslations(ctx, ["tools"])),
   },
 }))

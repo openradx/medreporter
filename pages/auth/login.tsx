@@ -28,11 +28,9 @@ LoginPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default LoginPage
 
-export const getServerSideProps: GetServerSideProps = gSSP(
-  async ({ req, res, locale, locales }) => ({
-    props: {
-      ...(await serverSideInitialPublicData(req, res)),
-      ...(await serverSideSiteTranslations(locale!, locales!)),
-    },
-  })
-)
+export const getServerSideProps: GetServerSideProps = gSSP(async (ctx) => ({
+  props: {
+    ...(await serverSideInitialPublicData(ctx)),
+    ...(await serverSideSiteTranslations(ctx)),
+  },
+}))

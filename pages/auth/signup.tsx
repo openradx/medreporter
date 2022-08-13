@@ -23,9 +23,9 @@ SignupPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default SignupPage
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res, locale, locales }) => ({
+export const getServerSideProps: GetServerSideProps = async (ctx) => ({
   props: {
-    ...(await serverSideInitialPublicData(req, res)),
-    ...(await serverSideSiteTranslations(locale!, locales!)),
+    ...(await serverSideInitialPublicData(ctx)),
+    ...(await serverSideSiteTranslations(ctx)),
   },
 })

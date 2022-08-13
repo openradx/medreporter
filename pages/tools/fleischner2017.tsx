@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
 import { PageWithLayout } from "../../app/core/types"
+import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInitialPublicData"
 import { serverSideReduxState } from "../../app/core/utils/serverSideReduxState"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 import { serverSideStructuredReportTranslations } from "../../app/core/utils/serverSideStructuredReportTranslations"
@@ -13,13 +14,11 @@ Fleischner2017Page.getLayout = (page: ReactElement) => <MainLayout fullScreen>{p
 
 export default Fleischner2017Page
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, locales }) => ({
+export const getServerSideProps: GetServerSideProps = async (ctx) => ({
   props: {
-    ...(await serverSideSiteTranslations(locale!, locales!)),
-    ...(await serverSideStructuredReportTranslations(locale!, locale!, locales!, [
-      "fleischner2017",
-      "graphics",
-    ])),
+    ...(await serverSideInitialPublicData(ctx)),
+    ...(await serverSideSiteTranslations(ctx)),
+    ...(await serverSideStructuredReportTranslations(ctx, ["fleischner2017", "graphics"])),
     ...(await serverSideReduxState({})),
   },
 })

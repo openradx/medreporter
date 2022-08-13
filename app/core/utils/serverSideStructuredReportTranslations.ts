@@ -1,14 +1,16 @@
 import { Resource } from "i18next"
+import { GetStaticPropsContext } from "next"
 import { I18nStructuredReportProps } from "../types"
 import { createClient } from "./i18nServerClient"
 
 export const serverSideStructuredReportTranslations = async (
-  initialStructureLocale: string,
-  initialReportLocale: string,
-  supportedStructuredReportLocales: string[],
+  ctx: GetStaticPropsContext,
   additionalStructuredReportNamespaces: string[] = []
 ): Promise<I18nStructuredReportProps> => {
+  const initialStructureLocale = ctx.locale!
+  const initialReportLocale = ctx.locale!
   const locales = Array.from(new Set([initialStructureLocale, initialReportLocale]))
+  const supportedStructuredReportLocales = ctx.locales!
   const structuredReportNamespaces = [...additionalStructuredReportNamespaces, "structuredReport"]
 
   const { i18n, initPromise } = createClient({

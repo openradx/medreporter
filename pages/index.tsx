@@ -12,9 +12,9 @@ HomePage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default HomePage
 
-export const getServerSideProps = gSSP(async ({ req, res, locale, locales }) => ({
+export const getServerSideProps = gSSP(async (ctx) => ({
   props: {
-    ...(await serverSideInitialPublicData(req, res)),
-    ...(await serverSideSiteTranslations(locale!, locales!)),
+    ...(await serverSideInitialPublicData(ctx)),
+    ...(await serverSideSiteTranslations(ctx)),
   },
 }))

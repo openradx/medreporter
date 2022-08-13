@@ -3,6 +3,7 @@ import { GetServerSideProps } from "next"
 import { ResetPasswordForm } from "../../app/auth/components/ResetPasswordForm"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
 import { PageWithLayout } from "../../app/core/types"
+import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInitialPublicData"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 
 const ResetPasswordPage: PageWithLayout = () => (
@@ -13,9 +14,10 @@ const ResetPasswordPage: PageWithLayout = () => (
 
 ResetPasswordPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
-export const getStaticProps: GetServerSideProps = async ({ locale, locales }) => ({
+export const getServerSideProps: GetServerSideProps = async (ctx) => ({
   props: {
-    ...(await serverSideSiteTranslations(locale!, locales!)),
+    ...(await serverSideInitialPublicData(ctx)),
+    ...(await serverSideSiteTranslations(ctx)),
   },
 })
 
