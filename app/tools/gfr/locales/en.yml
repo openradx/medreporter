@@ -1,0 +1,4 @@
+# Structure
+description: >
+  A tool to calculate the GFR using the CKD-EPI equation, the Mayo equation and the 
+  Cockroft-Gault equation.
