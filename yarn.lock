@@ -1318,7 +1318,7 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blitzjs/auth@2.0.0-danger.67", "@blitzjs/auth@^2.0.0-alpha.68":
+"@blitzjs/auth@2.0.0-danger.67", "@blitzjs/auth@^2.0.0-alpha.70":
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/@blitzjs/auth/-/auth-2.0.0-danger.67.tgz#0993fc91942a027445287dca223bacfd9b609ba7"
   integrity sha512-WLF9zjZh3NU8p991U1YdM3vml8tyeFTwZhuoVox9JkgF1rQcGGHda+2/tpomvKAaLbUHOZAu5nxt5LP5sq6gSw==
@@ -1372,7 +1372,7 @@
     username "5.1.0"
     vinyl "2.2.1"
 
-"@blitzjs/next@^2.0.0-alpha.68":
+"@blitzjs/next@^2.0.0-alpha.70":
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/@blitzjs/next/-/next-2.0.0-danger.67.tgz#6272a00ed547ee991d9bbc7cf4283b4cd7499a21"
   integrity sha512-vaZ8iYzuydRTqohZJPhEyQexcb1nrJi9cmRf1u0ZvoIPZsXpT/Zjpq0pj6FtS29Rr1yrOcrKqh5Ps5LWGoj4Eg==
@@ -1386,7 +1386,7 @@
     superjson "1.8.0"
     supports-color "8"
 
-"@blitzjs/rpc@2.0.0-danger.67", "@blitzjs/rpc@^2.0.0-alpha.68":
+"@blitzjs/rpc@2.0.0-danger.67", "@blitzjs/rpc@^2.0.0-alpha.70":
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/@blitzjs/rpc/-/rpc-2.0.0-danger.67.tgz#967b4e5f8630d47e465d5278d4eb44606f94edeb"
   integrity sha512-O0N+Fd3Q4aQeGCdGTcXbKBBLUmbbVsL2vAzWqSHm14eh8mpilVvD8/SZdCqZdPYTszSaAd3117ENvMw4kC+B5g==
@@ -5077,7 +5077,7 @@ bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blitz@2.0.0-danger.67, blitz@^2.0.0-alpha.68:
+blitz@2.0.0-danger.67, blitz@^2.0.0-alpha.70:
   version "2.0.0-danger.67"
   resolved "https://registry.yarnpkg.com/blitz/-/blitz-2.0.0-danger.67.tgz#27101a01f7e36b4f1f5f04c8ef589b69ac330030"
   integrity sha512-paUVgKL/aTwc2EwNjZv73oDFqt3d3u1T2ewcLS7pD4LQSyST3BRfsnxrxmEUMD/UwzS705mDOX33seVdSzufuQ==
