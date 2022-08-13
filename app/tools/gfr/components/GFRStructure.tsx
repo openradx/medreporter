@@ -15,35 +15,35 @@ export const GFRStructure = () => {
       </GridItem>
       <GridGroup>
         <GridItem>
-          <NumberField label="Age" id="age" min={0} />
+          <NumberField label={t("age")} id="age" min={0} />
         </GridItem>
       </GridGroup>
       <GridItem>
-        <NumberField label="Creatinine in mg/dl" id="creatinine" precision={2} min={0} />
+        <NumberField label={t("creatinine")} id="creatinine" precision={2} min={0} />
       </GridItem>
       <GridItem>
-        <NumberField label="Weight in kg" id="weight" min={0} />
+        <NumberField label={t("weight")} id="weight" min={0} />
       </GridItem>
       <GridItem>
-        <NumberField label="Height in cm" id="height" min={0} />
+        <NumberField label={t("height")} id="height" min={0} />
       </GridItem>
       <GridItem>
         <SingleChoiceField
-          label="Gender"
+          label={t("gender")}
           id="gender"
           options={[
-            { value: "male", label: "Male" },
-            { value: "female", label: "Female" },
+            { value: "male", label: t("male") },
+            { value: "female", label: t("female") },
           ]}
         />
       </GridItem>
       <GridItem>
         <SingleChoiceField
-          label="Ethnicity"
+          label={t("ethnicity")}
           id="ethnicity"
           options={[
-            { value: "africanAmerican", label: "African American" },
-            { value: "others", label: "Others" },
+            { value: "africanAmerican", label: t("africanAmerican") },
+            { value: "others", label: t("others") },
           ]}
         />
       </GridItem>
