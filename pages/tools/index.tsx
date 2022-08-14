@@ -1,10 +1,10 @@
 import { ReactElement } from "react"
 import { gSSP } from "../../app/blitz-server"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
-import { Tools } from "../../app/core/components/tools/Tools"
 import { PageWithLayout } from "../../app/core/types"
 import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInitialPublicData"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
+import { Tools } from "../../app/tools/tools/components/Tools"
 
 const ToolsPage: PageWithLayout = () => <Tools />
 

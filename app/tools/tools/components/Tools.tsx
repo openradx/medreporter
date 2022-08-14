@@ -1,5 +1,5 @@
 import { Grid } from "@mantine/core"
-import { useSiteTranslation } from "../../hooks/useSiteTranslation"
+import { useSiteTranslation } from "../../../core/hooks/useSiteTranslation"
 import { ToolCard } from "./ToolCard"
 
 interface Tool {
