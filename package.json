@@ -24,9 +24,9 @@
     "schema": "db/schema.prisma"
   },
   "dependencies": {
-    "@blitzjs/auth": "^2.0.0-alpha.70",
-    "@blitzjs/next": "^2.0.0-alpha.70",
-    "@blitzjs/rpc": "^2.0.0-alpha.70",
+    "@blitzjs/auth": "^2.0.0-alpha.71",
+    "@blitzjs/next": "^2.0.0-alpha.71",
+    "@blitzjs/rpc": "^2.0.0-alpha.71",
     "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.4.0",
     "@hookform/devtools": "^4.1.0",
@@ -40,7 +40,7 @@
     "@next/bundle-analyzer": "^12.1.4",
     "@prisma/client": "^4.1.1",
     "@reduxjs/toolkit": "^1.8.2",
-    "blitz": "^2.0.0-alpha.70",
+    "blitz": "^2.0.0-alpha.71",
     "cookies-next": "^2.1.1",
     "dayjs": "^1.11.0",
     "fast-copy": "^2.1.3",
