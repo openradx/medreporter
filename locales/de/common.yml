@@ -1,9 +1,19 @@
 general:
+  buttons:
+    add: Hinzufügen
+    cancel: Abbrechen
+    delete: Löschen
+    save: Sichern
+
   errors:
+    errorTitle: Ein Fehler ist aufgetreten
     unknownError: >
       Entschuldige, ein unerwarteter Fehler ist aufgetreten.
       Bitte versuche es später erneut. Wenn der Fehler anhält,
       dann kontaktiere bitte unseren Support.
+
+  misc:
+    noData: Keine Datensätze verfügbar
 
 AccountControl:
   profile: Benutzerprofil

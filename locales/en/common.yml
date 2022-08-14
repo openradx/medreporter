@@ -1,8 +1,18 @@
 general:
+  buttons:
+    add: Add
+    cancel: Cancel
+    delete: Delete
+    save: Save
+
   errors:
+    errorTitle: An error occurred
     unknownError: >
       Sorry, we had an unexpected error. Please try again later.
       If the error persists then please contact our support.
+
+  misc:
+    noData: No data available
 
 AccountControl:
   profile: User profile

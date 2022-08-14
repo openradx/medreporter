@@ -26,6 +26,7 @@ export default resolver.pipe(
       roles: [user.role],
       currentInstituteId: null,
     })
+
     return user
   }
 )

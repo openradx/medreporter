@@ -1,5 +1,28 @@
 AddUserButton:
-  label: Add new user
+  label: Benutzer hinzufügen
+
+AddUserModal:
+  duplicateEmail: Email Adresse existiert bereits
+  title: Benutzer hinzufügen
+
+DeleteUserButton:
+  confirmDialogTitle: Benutzer löschen
+  confirmDialogMessage: Möchtest Du den Benutzer "{{username}}" wirklich unwiderruflich löschen?
+
+EditUserDialog:
+  duplicateEmail: Email Adresse existiert bereit
+  title: User editieren
+
+UserForm:
+  about: Über Sie selbst
+  email: E-Mail
+  fullName: Vollständiger Name
+  organizerRole: Organisator
+  password: Passwort
+  role: Rolle
+  superadminRole: Super Admininistrator
+  username: Benutzername
+  userRole: Normaler Nutzer
 
 UsersManager:
   filterUsers: Benutzer filtern

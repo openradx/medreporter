@@ -26,5 +26,7 @@ module.exports = {
     "@typescript-eslint/semi": "off",
     quotes: "off",
     "@typescript-eslint/quotes": ["error", "double"],
+    "no-return-await": "off",
+    "@typescript-eslint/return-await": "off",
   },
 }

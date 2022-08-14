@@ -1,5 +1,28 @@
 AddUserButton:
   label: Add new user
 
+AddUserDialog:
+  duplicateEmail: E-Mail address already exists
+  title: Add new user
+
+DeleteUserButton:
+  confirmDialogTitle: Delete user
+  confirmDialogMessage: Do you really want to irreversibly delete the user "{{email}}"?
+
+EditUserDialog:
+  duplicateEmail: E-mail address already exists
+  title: Edit user
+
+UserForm:
+  about: About yourself
+  email: Email
+  fullName: Full name
+  organizerRole: Organizer
+  password: Password
+  role: Role
+  superadminRole: Superadmin
+  username: Username
+  userRole: User
+
 UsersManager:
   filterUsers: Filter users
