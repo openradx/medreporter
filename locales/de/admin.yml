@@ -12,13 +12,21 @@ AddUserModal:
   duplicateEmail: Email Adresse existiert bereits
   title: Benutzer hinzufügen
 
-DeleteUserButton:
-  confirmDialogTitle: Benutzer löschen
-  confirmDialogMessage: Möchtest Du den Benutzer "{{username}}" wirklich unwiderruflich löschen?
+AdminFeatures:
+  manageUsersTitle: Benutzerverwaltung
+  manageUsersDescription: Hinzufügen, Löschen und editieren von Benutzern
+  manageInstitutesTitle: Institutsverwaltung
+  manageInstitutesDescription: >
+    Hinzufügen, löschen und editieren von Instituten und deren Mitglieder.
+  noAdminRights: Kein Admin Rechts
 
 DeleteInstituteButton:
   confirmDialogTitle: Insitut löschen
   confirmDialogMessage: Wollen Sie das Insititut "{{name}}" wirklich unwiderruflich löschen?
+
+DeleteUserButton:
+  confirmDialogTitle: Benutzer löschen
+  confirmDialogMessage: Möchtest Du den Benutzer "{{username}}" wirklich unwiderruflich löschen?
 
 EditInstituteModal:
   duplicateName: Institutsname bereits vergeben

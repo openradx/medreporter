@@ -1,0 +1,61 @@
+import { Routes } from "@blitzjs/next"
+import { Grid, Text } from "@mantine/core"
+import { MembershipRole, UserRole } from "@prisma/client"
+import { RouteUrlObject } from "blitz"
+import { useAppSession } from "app/core/hooks/useAppSession"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { AdminFeatureCard } from "./AdminFeatureCard"
+
+interface AdminFeature {
+  url: RouteUrlObject
+  title: string
+  description: string
+}
+
+export const AdminFeatures = () => {
+  const { t } = useSiteTranslation()
+  const session = useAppSession()
+
+  const isSuperadmin = session.roles?.includes(UserRole.SUPERADMIN) ?? false
+  const canManageInstitutes =
+    (session.roles?.includes(MembershipRole.OWNER) ||
+      session.roles?.includes(MembershipRole.ADMIN)) ??
+    false
+
+  const features: AdminFeature[] = []
+
+  if (isSuperadmin) {
+    features.push({
+      url: Routes.ManageUsersPage(),
+      title: "AdminFeatures.manageUsersTitle",
+      description: "AdminFeatures.manageUsersDescription",
+    })
+  }
+
+  if (isSuperadmin || canManageInstitutes) {
+    features.push({
+      url: Routes.ManageInstitutesPage(),
+      title: "AdminFeatures.manageInstitutesTitle",
+      description: "AdminFeatures.manageUsersDescription",
+    })
+  }
+
+  return (
+    <>
+      {features.length === 0 && <Text>{t("AdminFeatures.noAdminRights")}</Text>}
+      {features.length > 0 && (
+        <Grid>
+          {features.map((feature) => (
+            <Grid.Col key={feature.url.pathname} sm={12} md={6} lg={4}>
+              <AdminFeatureCard
+                url={feature.url}
+                title={t(feature.title)}
+                description={t(feature.description)}
+              />
+            </Grid.Col>
+          ))}
+        </Grid>
+      )}
+    </>
+  )
+}

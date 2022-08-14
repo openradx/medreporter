@@ -17,6 +17,8 @@ export const AccountControl = () => {
   const session = useAppSession({ suspense: false })
   const [logoutMutation] = useMutation(logout)
 
+  console.log(session)
+
   return (
     <>
       {session.isLoading && <ActionIcon variant="default" loading />}

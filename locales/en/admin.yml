@@ -12,6 +12,14 @@ AddUserModal:
   duplicateEmail: E-Mail address already exists
   title: Add new user
 
+AdminFeatures:
+  manageUsersTitle: Manage users
+  manageUsersDescription: Add, delete and edit users.
+  manageInstitutesTitle: Manage institutes
+  manageInstitutesDescription: >
+    Add, delete and edit institutes and their memberships.
+  noAdminRights: No admin rights
+
 DeleteInstituteButton:
   confirmDialogTitle: Delete institute
   confirmDialogMessage: Do you really want to irreversibly delete the insitute "{{name}}"?
