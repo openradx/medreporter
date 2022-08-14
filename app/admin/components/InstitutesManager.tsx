@@ -3,17 +3,17 @@ import { FilterInput } from "app/core/components/common/FilterInput"
 import { FilterProvider } from "app/core/components/common/FilterProvider"
 import { SuspenseLoader } from "app/core/components/common/SuspenseLoader"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
-import { UserList } from "./UserList"
+import { InstituteList } from "./InstituteList"
 
-export const UsersManager = () => {
+export const InstitutesManager = () => {
   const { t } = useSiteTranslation()
 
   return (
     <FilterProvider>
       <Stack>
-        <FilterInput label={t("UsersManager.filterUsers")} />
+        <FilterInput label={t("InstitutesManager.filterInstitutes")} />
         <SuspenseLoader>
-          <UserList />
+          <InstituteList />
         </SuspenseLoader>
       </Stack>
     </FilterProvider>

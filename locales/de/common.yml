@@ -2,6 +2,7 @@ general:
   buttons:
     add: Hinzufügen
     cancel: Abbrechen
+    close: Schließen
     delete: Löschen
     save: Sichern
 

@@ -19,7 +19,7 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
   const [createUserMutation] = useMutation(createUser)
 
   return (
-    <Modal title={t("AddUserDialog.title")} opened={opened} onClose={onClose}>
+    <Modal title={t("AddUserModal.title")} opened={opened} onClose={onClose}>
       <Stack>
         <UserForm
           id="add-user-form"
@@ -33,7 +33,7 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
               return null
             } catch (error) {
               if (uniqueConstraintFailed(error, "email")) {
-                return { email: t("AddUserDialog.duplicateEmail") }
+                return { email: t("AddUserModal.duplicateEmail") }
               }
               return { [SUBMIT_FORM_ERROR]: (error as Error).toString() }
             }

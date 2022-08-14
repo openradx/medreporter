@@ -1,26 +1,26 @@
 import { Container } from "@mantine/core"
-import { UsersManager } from "app/admin/components/UsersManager"
+import { InstitutesManager } from "app/admin/components/InstitutesManager"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
 import { PageWithLayout } from "app/core/types"
 import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
 import { serverSideSiteTranslations } from "app/core/utils/serverSideSiteTranslations"
 
-const ManageUsersPage: PageWithLayout = () => (
+const ManageInstitutesPage: PageWithLayout = () => (
   <Container size="md">
-    <UsersManager />
+    <InstitutesManager />
   </Container>
 )
 
-ManageUsersPage.authenticate = true
+ManageInstitutesPage.authenticate = true
 
-ManageUsersPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
+ManageInstitutesPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
 export const getServerSideProps = gSSP(async (ctx) => ({
   props: {
     ...(await serverSideInitialPublicData(ctx)),
-    ...(await serverSideSiteTranslations(ctx, ["admin"])),
+    ...(await serverSideSiteTranslations(ctx)),
   },
 }))
 
-export default ManageUsersPage
+export default ManageInstitutesPage

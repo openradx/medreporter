@@ -1,3 +1,10 @@
+AddInstituteButton:
+  label: Neues Institut hinzufügen
+
+AddInstituteModal:
+  duplicateName: Institutsname bereits vergeben
+  title: Institut hinzufügen
+
 AddUserButton:
   label: Benutzer hinzufügen
 
@@ -9,9 +16,31 @@ DeleteUserButton:
   confirmDialogTitle: Benutzer löschen
   confirmDialogMessage: Möchtest Du den Benutzer "{{username}}" wirklich unwiderruflich löschen?
 
-EditUserDialog:
+DeleteInstituteButton:
+  confirmDialogTitle: Insitut löschen
+  confirmDialogMessage: Wollen Sie das Insititut "{{name}}" wirklich unwiderruflich löschen?
+
+EditInstituteModal:
+  duplicateName: Institutsname bereits vergeben
+  title: Institut editieren
+
+EditUserModal:
   duplicateEmail: Email Adresse existiert bereit
   title: User editieren
+
+InstitutesManager:
+  filterInstitutes: Institute filtern
+
+InstituteForm:
+  name: Name
+
+ManageMembershipsModal:
+  admins: Administratoren
+  members: Mitglieder
+  owners: Eigentümer
+
+MembershipAdder:
+  label: Benutzer hinzufügen
 
 UserForm:
   about: Über Sie selbst

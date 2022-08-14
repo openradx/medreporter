@@ -2,27 +2,27 @@ import { invalidateQuery, useMutation } from "@blitzjs/rpc"
 import { ActionIcon, Text } from "@mantine/core"
 import { openConfirmModal, openModal } from "@mantine/modals"
 import { MdDelete as DeleteIcon } from "react-icons/md"
-import { User } from "db"
+import { Institute } from "db"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
-import deleteUser from "../mutations/deleteUser"
-import getUsers from "../queries/getUsers"
+import deleteInstitute from "../mutations/deleteInstitute"
+import getInstitutes from "../queries/getInstitutes"
 
-interface DeleteUserButtonProps {
-  user: User
+interface DeleteInstituteButtonProps {
+  institute: Institute
 }
 
-export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
+export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps) => {
   const { t } = useSiteTranslation()
-  const [deleteUserMutation] = useMutation(deleteUser)
+  const [deleteInstituteMutation] = useMutation(deleteInstitute)
 
   return (
     <ActionIcon
       color="red"
       onClick={() =>
         openConfirmModal({
-          title: t("DeleteUserButton.confirmDialogTitle"),
+          title: t("DeleteInstituteButton.confirmDialogTitle"),
           children: (
-            <Text>{t("DeleteUserButton.confirmDialogMessage", { username: user.username })}</Text>
+            <Text>{t("DeleteInstituteButton.confirmDialogMessage", { name: institute.name })}</Text>
           ),
           labels: {
             confirm: t("general.buttons.delete"),
@@ -31,8 +31,8 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
           confirmProps: { color: "red" },
           onConfirm: async () => {
             try {
-              await deleteUserMutation({ id: user.id })
-              invalidateQuery(getUsers)
+              await deleteInstituteMutation({ id: institute.id })
+              invalidateQuery(getInstitutes)
             } catch (error) {
               const { message } = error as Error
               openModal({

@@ -1,17 +1,46 @@
+AddInstituteButton:
+  label: Add new institute
+
+AddInstituteModal:
+  duplicateName: Institute name already being used
+  title: Add institute
+
 AddUserButton:
   label: Add new user
 
-AddUserDialog:
+AddUserModal:
   duplicateEmail: E-Mail address already exists
   title: Add new user
+
+DeleteInstituteButton:
+  confirmDialogTitle: Delete institute
+  confirmDialogMessage: Do you really want to irreversibly delete the insitute "{{name}}"?
 
 DeleteUserButton:
   confirmDialogTitle: Delete user
   confirmDialogMessage: Do you really want to irreversibly delete the user "{{email}}"?
 
-EditUserDialog:
+EditInstituteModal:
+  duplicateName: Institute name already being used
+  title: Edit institute
+
+EditUserModal:
   duplicateEmail: E-mail address already exists
   title: Edit user
+
+InstitutesManager:
+  filterInstitutes: Filter institutes
+
+InstituteForm:
+  name: Name
+
+ManageMembershipsModal:
+  admins: Admins
+  members: Members
+  owners: Owners
+
+MembershipAdder:
+  label: Add user
 
 UserForm:
   about: About yourself

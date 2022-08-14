@@ -1,0 +1,16 @@
+import { Button } from "@mantine/core"
+import { useState } from "react"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { AddInstituteModal } from "./AddInstituteModal"
+
+export const AddInstituteButton = () => {
+  const { t } = useSiteTranslation()
+  const [opened, setOpened] = useState(false)
+
+  return (
+    <>
+      <Button onClick={() => setOpened(true)}>{t("AddInstituteButton.label")}</Button>
+      {opened && <AddInstituteModal opened={opened} onClose={() => setOpened(false)} />}
+    </>
+  )
+}
