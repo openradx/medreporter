@@ -22,7 +22,6 @@ GFR:
     Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault) 
     und Kinder (Schwartz (orig./rev.), Counahan-Barret).
 
-
 MeasurementsTable:
   title: Messtabelle
   description: Tabellarische Erfassung von Messwerten mit Dynamikberechnung.

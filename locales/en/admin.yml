@@ -1,0 +1,5 @@
+AddUserButton:
+  label: Add new user
+
+UsersManager:
+  filterUsers: Filter users
