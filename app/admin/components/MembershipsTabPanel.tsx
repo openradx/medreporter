@@ -11,7 +11,7 @@ interface MembershipsTabPanelProps {
 }
 
 export const MembershipsTabPanel = ({ tabValue, institute, role }: MembershipsTabPanelProps) => (
-  <Tabs.Panel value={tabValue}>
+  <Tabs.Panel value={tabValue} pt={4}>
     <SuspenseLoader>
       <MembershipAdder instituteId={institute.id} role={role} />
       <MembershipList instituteId={institute.id} role={role} />

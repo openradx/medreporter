@@ -23,11 +23,11 @@ export const MembershipList = ({ instituteId, role }: MembershipListProps) => {
       {memberships.length === 0 && <Text>{t("general.misc.noData")}</Text>}
       {memberships.length > 0 && (
         <ScrollArea>
-          <Table sx={{ minWidth: 800 }} verticalSpacing="md">
+          <Table verticalSpacing="xs">
             <tbody>
               {memberships.map((membership) => (
                 <tr key={membership.id}>
-                  <td>{membership.user.email}</td>
+                  <td>{membership.user.username}</td>
                   <td>
                     <Group spacing={0} position="right">
                       <RemoveMembershipButton membership={membership} />

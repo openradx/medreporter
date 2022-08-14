@@ -19,7 +19,7 @@ ManageInstitutesPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
 export const getServerSideProps = gSSP(async (ctx) => ({
   props: {
     ...(await serverSideInitialPublicData(ctx)),
-    ...(await serverSideSiteTranslations(ctx)),
+    ...(await serverSideSiteTranslations(ctx, ["admin"])),
   },
 }))
 
