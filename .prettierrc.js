@@ -3,5 +3,5 @@ module.exports = {
   singleQuote: false,
   semi: false,
   printWidth: 100,
-  importOrder: ["db", "^app[./](.*)$", "^[./]"],
+  importOrder: ["^db", "^app/", "^[./]"],
 }

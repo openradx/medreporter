@@ -1,6 +1,6 @@
 import { resolver } from "@blitzjs/rpc"
-import db, { UserRole } from "db"
 import { z } from "zod"
+import db, { UserRole } from "db"
 
 const DeleteUser = z.object({
   id: z.number(),

@@ -1,12 +1,12 @@
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
-import { MainLayout } from "../../app/core/components/common/MainLayout"
-import { PageWithLayout } from "../../app/core/types"
-import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInitialPublicData"
-import { serverSideReduxState } from "../../app/core/utils/serverSideReduxState"
-import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
-import { serverSideStructuredReportTranslations } from "../../app/core/utils/serverSideStructuredReportTranslations"
-import { Sandbox } from "../../app/tools/sandbox/components/Sandbox"
+import { MainLayout } from "app/core/components/common/MainLayout"
+import { PageWithLayout } from "app/core/types"
+import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
+import { serverSideReduxState } from "app/core/utils/serverSideReduxState"
+import { serverSideSiteTranslations } from "app/core/utils/serverSideSiteTranslations"
+import { serverSideStructuredReportTranslations } from "app/core/utils/serverSideStructuredReportTranslations"
+import { Sandbox } from "app/tools/sandbox/components/Sandbox"
 
 const SandboxPage: PageWithLayout = () => <Sandbox />
 

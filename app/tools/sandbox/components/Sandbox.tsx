@@ -1,8 +1,8 @@
-import { Module } from "../../../core/components/structuredReport/Module"
-import { Report } from "../../../core/components/structuredReport/Report"
-import { Section } from "../../../core/components/structuredReport/Section"
-import { Structure } from "../../../core/components/structuredReport/Structure"
-import { StructuredReport } from "../../../core/components/structuredReport/StructuredReport"
+import { Module } from "app/core/components/structuredReport/Module"
+import { Report } from "app/core/components/structuredReport/Report"
+import { Section } from "app/core/components/structuredReport/Section"
+import { Structure } from "app/core/components/structuredReport/Structure"
+import { StructuredReport } from "app/core/components/structuredReport/StructuredReport"
 import { SandboxReport } from "./SandboxReport"
 import { SandboxStructure } from "./SandboxStructure"
 
