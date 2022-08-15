@@ -1,4 +1,13 @@
-import { createStyles, Header, Container, Group, Burger, Box } from "@mantine/core"
+import {
+  createStyles,
+  Header,
+  Container,
+  Group,
+  Burger,
+  Box,
+  Transition,
+  Paper,
+} from "@mantine/core"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -121,6 +130,13 @@ export const PageHeader = () => {
           <SiteLanguageSelector />
           <AccountControl />
         </ActionsGroup>
+        <Transition transition="pop-top-right" duration={200} mounted={opened}>
+          {(styles) => (
+            <Paper className={classes.dropdown} withBorder style={styles}>
+              {items}
+            </Paper>
+          )}
+        </Transition>
       </Container>
     </Header>
   )
