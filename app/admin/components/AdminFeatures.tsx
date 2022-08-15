@@ -2,12 +2,15 @@ import { Routes } from "@blitzjs/next"
 import { Grid, Text } from "@mantine/core"
 import { MembershipRole, UserRole } from "@prisma/client"
 import { RouteUrlObject } from "blitz"
+import { ReactNode } from "react"
+import { MdBusiness as InstituteIcon, MdPeople as UserIcon } from "react-icons/md"
 import { useAppSession } from "app/core/hooks/useAppSession"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { AdminFeatureCard } from "./AdminFeatureCard"
 
 interface AdminFeature {
   url: RouteUrlObject
+  icon: ReactNode
   title: string
   description: string
 }
@@ -27,6 +30,7 @@ export const AdminFeatures = () => {
   if (isSuperadmin) {
     features.push({
       url: Routes.ManageUsersPage(),
+      icon: <UserIcon size={18} />,
       title: "AdminFeatures.manageUsersTitle",
       description: "AdminFeatures.manageUsersDescription",
     })
@@ -35,8 +39,9 @@ export const AdminFeatures = () => {
   if (isSuperadmin || canManageInstitutes) {
     features.push({
       url: Routes.ManageInstitutesPage(),
+      icon: <InstituteIcon size={18} />,
       title: "AdminFeatures.manageInstitutesTitle",
-      description: "AdminFeatures.manageUsersDescription",
+      description: "AdminFeatures.manageInstitutesDescription",
     })
   }
 
@@ -49,6 +54,7 @@ export const AdminFeatures = () => {
             <Grid.Col key={feature.url.pathname} sm={12} md={6} lg={4}>
               <AdminFeatureCard
                 url={feature.url}
+                icon={feature.icon}
                 title={t(feature.title)}
                 description={t(feature.description)}
               />

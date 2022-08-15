@@ -17,7 +17,7 @@ AdminFeatures:
   manageUsersDescription: Hinzufügen, Löschen und editieren von Benutzern
   manageInstitutesTitle: Institutsverwaltung
   manageInstitutesDescription: >
-    Hinzufügen, löschen und editieren von Instituten und deren Mitglieder.
+    Hinzufügen, löschen und editieren von Instituten und deren Mitgliedern.
   noAdminRights: Kein Admin Rechts
 
 DeleteInstituteButton:
