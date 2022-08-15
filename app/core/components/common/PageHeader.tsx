@@ -1,13 +1,15 @@
+import { Routes } from "@blitzjs/next"
 import {
-  createStyles,
-  Header,
-  Container,
-  Group,
-  Burger,
   Box,
-  Transition,
+  Burger,
+  Container,
+  createStyles,
+  Group,
+  Header,
   Paper,
+  Transition,
 } from "@mantine/core"
+import { RouteUrlObject } from "blitz"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -86,23 +88,36 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-const links: { label: string; href: string }[] = [
-  { label: "home", href: "/" },
-  { label: "tools", href: "/tools" },
+interface NavLink {
+  url: RouteUrlObject
+  label: string
+}
+
+const links: NavLink[] = [
+  { url: Routes.HomePage(), label: "home" },
+  { url: Routes.ToolsPage(), label: "tools" },
 ]
 
 export const PageHeader = () => {
   const [opened, setOpened] = useState(false)
   const { classes, cx } = useStyles()
   const { pathname } = useRouter()
-
   const { t } = useSiteTranslation()
 
+  const isCurrentPath = (link: NavLink) => {
+    if (link.url.pathname === "/") {
+      return pathname === link.url.pathname
+    }
+    return pathname.includes(link.url.pathname)
+  }
+
   const items = links.map((link) => (
-    <Link key={link.href} href={link.href} passHref>
+    <Link key={link.url.pathname} href={link.url} passHref>
       <Box
         component="a"
-        className={cx(classes.link, { [classes.linkActive]: pathname === link.href })}
+        className={cx(classes.link, {
+          [classes.linkActive]: isCurrentPath(link),
+        })}
         onClick={() => {
           setOpened(false)
         }}

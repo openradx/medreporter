@@ -52,7 +52,7 @@ LoginForm:
   usernameOrEmail: Benutzername oder E-Mail
 
 PageHeader:
-  home: Home
+  home: Startseite
   tools: Werkzeuge
 
 ReportFormat:
