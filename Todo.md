@@ -18,13 +18,16 @@
 
 ## Julia
 
+- MedReporter Logo
+- Lung arteries image
+- Startpage (ideas)
+- Table component
 - Nicer icon for hint
 - Main Page
 - Collapse report panel
 - [NumberInput] Increase/descrease by scrolling
 - Field extras
 - External link images (Next.js Image component, why?)
-- MedTL Logo
 - [Tools] Fleischner 2017
 - [Tools] Adrenal washout
 - [Tools] Adrenal MRI Calculator (SI-Index)
