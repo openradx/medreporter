@@ -17,6 +17,7 @@ general:
     noData: Keine Datensätze verfügbar
 
 AccountControl:
+  admin: Verwaltung
   profile: Benutzerprofil
   logOut: Ausloggen
 

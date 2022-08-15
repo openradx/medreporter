@@ -1,8 +1,11 @@
 import { Routes } from "@blitzjs/next"
 import { useMutation } from "@blitzjs/rpc"
 import { ActionIcon, Menu } from "@mantine/core"
+import { NextLink } from "@mantine/next"
+import { MembershipRole, UserRole } from "@prisma/client"
 import Link from "next/link"
 import {
+  MdBuild as AdminIcon,
   MdLogout as LogoutIcon,
   MdOutlineAccountCircle as AccountIcon,
   MdOutlineLogin as LoginIcon,
@@ -17,7 +20,14 @@ export const AccountControl = () => {
   const session = useAppSession({ suspense: false })
   const [logoutMutation] = useMutation(logout)
 
-  console.log(session)
+  const canAdministrate = session.roles?.some((role) => {
+    const adminRoles: (UserRole | MembershipRole)[] = [
+      UserRole.SUPERADMIN,
+      MembershipRole.ADMIN,
+      MembershipRole.OWNER,
+    ]
+    return adminRoles.includes(role)
+  })
 
   return (
     <>
@@ -40,6 +50,15 @@ export const AccountControl = () => {
           <Menu.Dropdown>
             <Menu.Label>{session.username}</Menu.Label>
             <Menu.Item icon={<ProfileIcon size={18} />}>{t("AccountControl.profile")}</Menu.Item>
+            {canAdministrate && (
+              <Menu.Item
+                component={NextLink}
+                href={Routes.AdminPage()}
+                icon={<AdminIcon size={18} />}
+              >
+                {t("AccountControl.admin")}
+              </Menu.Item>
+            )}
             <Menu.Item icon={<LogoutIcon size={18} />} onClick={() => logoutMutation()}>
               {t("AccountControl.logOut")}
             </Menu.Item>
