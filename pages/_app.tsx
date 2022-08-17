@@ -8,12 +8,12 @@ import { GetServerSidePropsContext } from "next"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import { useState } from "react"
-import { withBlitz } from "../app/blitz-client"
-import { withInitialPublicData } from "../app/core/hocs/withInitialPublicData"
-import { withReduxState } from "../app/core/hocs/withReduxState"
-import { withSiteTranslations } from "../app/core/hocs/withSiteTranslations"
-import { withStructuredReportTranslations } from "../app/core/hocs/withStructuredReportTranslations"
-import { PageWithLayout } from "../app/core/types"
+import { withBlitz } from "app/blitz-client"
+import { withInitialPublicData } from "app/core/hocs/withInitialPublicData"
+import { withReduxState } from "app/core/hocs/withReduxState"
+import { withSiteTranslations } from "app/core/hocs/withSiteTranslations"
+import { withStructuredReportTranslations } from "app/core/hocs/withStructuredReportTranslations"
+import { PageWithLayout } from "app/core/types"
 
 // Enable additional Immer.js features
 enablePatches() // for undo / redo
