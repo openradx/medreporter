@@ -3,6 +3,7 @@ import { useMemo } from "react"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
 import { I18nStructuredReportProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
+import { registerInstance } from "../utils/i18nextReloader"
 
 interface AppProps {
   pageProps?: Partial<I18nStructuredReportProps>
@@ -46,6 +47,9 @@ export const withStructuredReportTranslations = <T extends AppProps>(
     if (!serverData || !i18nInstances) {
       return <WrappedComponent {...(props as T)} />
     }
+
+    registerInstance(i18nInstances.i18nStructure)
+    registerInstance(i18nInstances.i18nReport)
 
     return (
       <I18nStructuredReportContextProvider

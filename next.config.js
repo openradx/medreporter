@@ -16,6 +16,17 @@ module.exports = withBundleAnalyzer(
       ignoreDuringBuilds: true,
     },
     webpack(config) {
+      if (config.mode === "development") {
+        // Watch changes of locales to reload i18next resources on the client
+        const { FileWatchHMRPlugin } = require("file-watch-hmr/plugin")
+        const path = require("path")
+        config.plugins.push(
+          new FileWatchHMRPlugin({
+            folders: [path.resolve(__dirname, "locales")],
+          })
+        )
+      }
+
       // Load SVG graphics with SVGR
       config.module?.rules?.push({
         test: /\.svg$/,

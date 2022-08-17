@@ -3,6 +3,7 @@ import { ComponentType, useMemo } from "react"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
 import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
+import { registerInstance } from "../utils/i18nextReloader"
 
 interface AppProps {
   pageProps?: Partial<I18nSiteProps>
@@ -30,6 +31,8 @@ export const withSiteTranslations = <T extends AppProps>(
     if (!serverData || !i18n) {
       return <WrappedComponent {...(props as T)} />
     }
+
+    registerInstance(i18n)
 
     return (
       <I18nSiteContextProvider
