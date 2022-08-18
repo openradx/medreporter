@@ -1,5 +1,6 @@
 import { Routes } from "@blitzjs/next"
 import {
+  Anchor,
   Box,
   Burger,
   Container,
@@ -93,10 +94,7 @@ interface NavLink {
   label: string
 }
 
-const links: NavLink[] = [
-  { url: Routes.HomePage(), label: "home" },
-  { url: Routes.ToolsPage(), label: "tools" },
-]
+const links: NavLink[] = [{ url: Routes.ToolsPage(), label: "tools" }]
 
 export const PageHeader = () => {
   const [opened, setOpened] = useState(false)
@@ -136,7 +134,9 @@ export const PageHeader = () => {
           className={classes.burger}
           size="sm"
         />
-        MedReporter
+        <Link href={Routes.HomePage()} passHref>
+          <Anchor sx={{ "&:hover": { textDecoration: "none" } }}>MedReporter</Anchor>
+        </Link>
         <Group spacing="sm" className={classes.links}>
           {items}
         </Group>
