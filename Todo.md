@@ -4,6 +4,7 @@
 
 ## Kai
 
+- Maybe rename useReportData to useReportOutput
 - Incorporate https://www.npmjs.com/package/i18n-unused
 - Add pageTitle to each page
 - Add https://github.com/i18next/i18next-parser or i18next-scanner
