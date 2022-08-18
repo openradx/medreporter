@@ -6,6 +6,7 @@ tasks:
   - name: Dev Server
     init: |
       yarn
+      blitz prisma migrate dev
       blitz db seed
       gp sync-done install
     command: yarn dev
