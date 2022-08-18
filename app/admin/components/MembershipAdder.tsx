@@ -27,7 +27,7 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
     const userId = parseInt(selectedUserId, 10)
     await createMembershipMutation({ instituteId, userId, role })
     setSelectedUserId(null)
-    invalidateQuery(getMemberships)
+    invalidateQuery(getMemberships, {})
     invalidateQuery(getUsersForMembership, {})
   }
 

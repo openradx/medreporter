@@ -27,7 +27,7 @@ export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) =
           onSubmit={async (values) => {
             try {
               await createInstituteMutation(values)
-              invalidateQuery(getInstitutes)
+              invalidateQuery(getInstitutes, {})
               onClose()
               return null
             } catch (error) {

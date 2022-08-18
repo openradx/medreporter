@@ -28,7 +28,7 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
           onSubmit={async (values) => {
             try {
               await createUserMutation(values)
-              invalidateQuery(getUsers)
+              invalidateQuery(getUsers, {})
               onClose()
               return null
             } catch (error) {

@@ -21,7 +21,7 @@ export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonPro
       onClick={async () => {
         try {
           await deleteMembershipMutation({ id: membership.id })
-          invalidateQuery(getInstituteUsers)
+          invalidateQuery(getInstituteUsers, {})
         } catch (error) {
           const { message } = error as Error
           openModal({
