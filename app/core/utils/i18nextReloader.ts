@@ -1,7 +1,7 @@
 import { applyClientHMR } from "file-watch-hmr"
 import { i18n } from "i18next"
 
-const instances: i18n[] = []
+const instances: Record<string, i18n> = {}
 
 const isDevelopment = process.env.NODE_ENV === "development"
 const isClient = typeof window !== "undefined"
@@ -12,7 +12,7 @@ if (isDevelopment && isClient) {
     const lng = segments[segments.length - 2]
     const ns = segments[segments.length - 1].replace(/\.[^/.]+$/, "")
 
-    for (const instance of instances) {
+    for (const instance of Object.values(instances)) {
       instance.reloadResources(lng, ns).then(() => {
         if (lng === instance.language) {
           instance.changeLanguage(lng)
@@ -22,8 +22,6 @@ if (isDevelopment && isClient) {
   })
 }
 
-export const registerInstance = (instance: i18n) => {
-  if (!instances.includes(instance)) {
-    instances.push(instance)
-  }
+export const registerInstance = (key: string, instance: i18n) => {
+  instances[key] = instance
 }

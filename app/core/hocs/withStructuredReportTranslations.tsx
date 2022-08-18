@@ -48,8 +48,8 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       return <WrappedComponent {...(props as T)} />
     }
 
-    registerInstance(i18nInstances.i18nStructure)
-    registerInstance(i18nInstances.i18nReport)
+    registerInstance("structure", i18nInstances.i18nStructure)
+    registerInstance("report", i18nInstances.i18nReport)
 
     return (
       <I18nStructuredReportContextProvider

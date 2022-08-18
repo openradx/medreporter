@@ -32,7 +32,7 @@ export const withSiteTranslations = <T extends AppProps>(
       return <WrappedComponent {...(props as T)} />
     }
 
-    registerInstance(i18n)
+    registerInstance("site", i18n)
 
     return (
       <I18nSiteContextProvider
