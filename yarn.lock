@@ -1318,10 +1318,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@blitzjs/auth@2.0.0-beta.1", "@blitzjs/auth@^2.0.0-beta.1":
-  version "2.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@blitzjs/auth/-/auth-2.0.0-beta.1.tgz#efbb0ead7ddafbabc4f67b60fa9a6f88830a1cfb"
-  integrity sha512-KlhMq8FZxwV1OJjMJ4Qcx5NsWuXQBGjpoiAOciXLQ1wqov8lqLPUQW/cEqvBTun7JZjJ7JVpZ3uGsBW31tS4Rg==
+"@blitzjs/auth@2.0.0-beta.2", "@blitzjs/auth@^2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@blitzjs/auth/-/auth-2.0.0-beta.2.tgz#6e5e392d0c946be9a88ee62457dd4e92f61d8e2c"
+  integrity sha512-PdmhnjjRyLLMhCn5gS2KLw8trOblGacTQyamq/xvcUpjiuTeBG3OxfRUZNSaFx7LIED6l/BbmZS0K+RPF+yfTw==
   dependencies:
     "@types/b64-lite" "1.3.0"
     "@types/cookie-session" "2.0.44"
@@ -1329,7 +1329,7 @@
     "@types/secure-password" "3.1.1"
     b64-lite "1.4.0"
     bad-behavior "1.0.1"
-    blitz "2.0.0-beta.1"
+    blitz "2.0.0-beta.2"
     cookie "0.4.1"
     cookie-session "2.0.0"
     debug "4.3.3"
@@ -1342,10 +1342,10 @@
     supports-color "8.1.1"
     url "0.11.0"
 
-"@blitzjs/generator@2.0.0-beta.1":
-  version "2.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@blitzjs/generator/-/generator-2.0.0-beta.1.tgz#26298fcc096a57fcc475bfb69769acfa61e7427b"
-  integrity sha512-Q9URrRROC9tUkxCztNni6Yt+7eIe3p9rKUzQYKC7IoNRihbFPEu8bYvJRHpsdR9UBw/5xDCl9FoeaIb1C+TL0A==
+"@blitzjs/generator@2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@blitzjs/generator/-/generator-2.0.0-beta.2.tgz#3379704a536f129cb2053cc4a4cdc80e04184b03"
+  integrity sha512-AeyoYR2VT/CqiykHk5LbnbS2fYg5Ll/DjB8JP4Ij42m0o8qnuA/qFRxcUjgz/VnQX7EGUX92agAt2JFBiYgN6A==
   dependencies:
     "@babel/core" "7.12.10"
     "@babel/plugin-transform-typescript" "7.12.1"
@@ -1372,12 +1372,12 @@
     username "5.1.0"
     vinyl "2.2.1"
 
-"@blitzjs/next@^2.0.0-beta.1":
-  version "2.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@blitzjs/next/-/next-2.0.0-beta.1.tgz#bdddfc3457cc2c60f0e1b862d51b75618f138503"
-  integrity sha512-jNL/1VgM4ur6RcBELTMhjAJ0mWeyhiXpLUAuAF2ga66J3FhgotBxsW7QdkL3qIDXtfci+srbx+uwTV2sNJ2FPQ==
+"@blitzjs/next@^2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@blitzjs/next/-/next-2.0.0-beta.2.tgz#ac34c412931d4fc65ffe04689afbace86fd33dd4"
+  integrity sha512-1tiBGVDYYFQdN18S9eH3gO6WMJ23P7LMxrO5ecCR6hPdBMC3XWNlqms8t2mmoxsHp48E2yB7fZ2xb1BZUz1E8A==
   dependencies:
-    "@blitzjs/rpc" "2.0.0-beta.1"
+    "@blitzjs/rpc" "2.0.0-beta.2"
     "@tanstack/react-query" "4.0.10"
     "@types/hoist-non-react-statics" "3.3.1"
     debug "4.3.3"
@@ -1386,12 +1386,12 @@
     superjson "1.8.0"
     supports-color "8.1.1"
 
-"@blitzjs/rpc@2.0.0-beta.1", "@blitzjs/rpc@^2.0.0-beta.1":
-  version "2.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@blitzjs/rpc/-/rpc-2.0.0-beta.1.tgz#115e4b1eec9bc3cfc43f807ad239f466201a5adb"
-  integrity sha512-mwQJCDNQi7VtcTvcc/YZ+bry0zVYfGOlhBgv/wofZq6gpFRUuq0uZspuGCnrNtUWZrUdQkUf1fkMGsNdTZUPTg==
+"@blitzjs/rpc@2.0.0-beta.2", "@blitzjs/rpc@^2.0.0-beta.2":
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@blitzjs/rpc/-/rpc-2.0.0-beta.2.tgz#7c3e5c8931ef0e72972cd7fe86e582efac1501b1"
+  integrity sha512-fYE+EjJdZpMnh3C71A4BVkFMBGcJU++9Zcx1aCYj1O7sm8biVrhmE/Q7XZos6OQr0jXTUj4FCsprIdZjrT2o0Q==
   dependencies:
-    "@blitzjs/auth" "2.0.0-beta.1"
+    "@blitzjs/auth" "2.0.0-beta.2"
     "@tanstack/react-query" "4.0.10"
     b64-lite "1.4.0"
     bad-behavior "1.0.1"
@@ -5071,12 +5071,12 @@ bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blitz@2.0.0-beta.1, blitz@^2.0.0-beta.1:
-  version "2.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/blitz/-/blitz-2.0.0-beta.1.tgz#5d570ea58524bef48a8421a3ad4abd04e8f41991"
-  integrity sha512-BCPX2Vb07+C07ErL6wNQyutbD5z5ij/wJm9cU9tjTp8Zv2nJJ0iAAKSriEqdz1Mij0+W00wB2REBW/Wi6dvGSQ==
+blitz@2.0.0-beta.2, blitz@^2.0.0-beta.2:
+  version "2.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/blitz/-/blitz-2.0.0-beta.2.tgz#2620bc00d2816bc9be6a45d5ab8332146c3c5873"
+  integrity sha512-n9PfZa0mcfHL/zhrFfTT4TtR5I8FSEIYx4+BM+H8M6LlrZ2P9m7OPTAsUOlpoLScMmydZzS0HYqw0bMqclXH3g==
   dependencies:
-    "@blitzjs/generator" "2.0.0-beta.1"
+    "@blitzjs/generator" "2.0.0-beta.2"
     arg "5.0.1"
     boxen "7.0.0"
     chalk "^4.1.0"
