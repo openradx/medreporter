@@ -6,7 +6,7 @@ import { LanguageSelector } from "./LanguageSelector"
 export const SiteLanguageSelector = () => {
   const router = useRouter()
   const { supportedSiteLocales } = useI18nSite()
-  const { i18n } = useSiteTranslation()
+  const { t, i18n } = useSiteTranslation()
 
   const onLocaleChanged = (locale: string) => {
     i18n.changeLanguage(locale, () => {
@@ -31,7 +31,7 @@ export const SiteLanguageSelector = () => {
 
   return (
     <LanguageSelector
-      ariaLabel="Select site language"
+      actionTitle={t("SiteLanguageSelector.actionTitle")}
       currentLocale={router.locale}
       supportedLocales={supportedSiteLocales}
       onLocaleChanged={onLocaleChanged}

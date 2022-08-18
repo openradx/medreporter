@@ -1,4 +1,4 @@
-import { ActionIcon, Tooltip } from "@mantine/core"
+import { ActionIcon } from "@mantine/core"
 import { ReactElement, useState } from "react"
 import { BiImageAlt as ImageIcon } from "react-icons/bi"
 import { getFieldContext } from "../../contexts/FieldContext"
@@ -25,11 +25,14 @@ export const FieldGraphics = ({ title, svg, labels, mapping }: FieldGraphicsProp
 
   return (
     <>
-      <Tooltip label={t("SelectOverlay.openGraphic")!} position="top" withArrow={false}>
-        <ActionIcon onClick={handleClickOpen} sx={{ pointerEvents: "auto" }} size={20}>
-          <ImageIcon />
-        </ActionIcon>
-      </Tooltip>
+      <ActionIcon
+        title={t("FieldGraphics.actionTitle")}
+        onClick={handleClickOpen}
+        sx={{ pointerEvents: "auto" }}
+        size={20}
+      >
+        <ImageIcon />
+      </ActionIcon>
       <GraphicsModal
         title={title}
         opened={open}

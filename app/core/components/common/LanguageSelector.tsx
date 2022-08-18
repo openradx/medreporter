@@ -5,14 +5,14 @@ import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { FlagIcon } from "./FlagIcon"
 
 interface LanguageSelectorProps {
-  ariaLabel: string
+  actionTitle: string
   currentLocale: string
   supportedLocales: string[]
   onLocaleChanged: (locale: string) => void
 }
 
 export const LanguageSelector = ({
-  ariaLabel,
+  actionTitle,
   currentLocale,
   supportedLocales,
   onLocaleChanged,
@@ -41,7 +41,7 @@ export const LanguageSelector = ({
   return (
     <Menu width={250}>
       <Menu.Target>
-        <ActionIcon size="md" aria-label={ariaLabel} variant="default">
+        <ActionIcon size="md" title={actionTitle} variant="default">
           <FlagIcon code={currentLocale} />
         </ActionIcon>
       </Menu.Target>

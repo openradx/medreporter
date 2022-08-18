@@ -2,7 +2,7 @@ import { Box, MediaQuery, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ActionsGroup } from "../common/ActionsGroup"
-import { ClearButton } from "./ClearButton"
+import { ClearStructureButton } from "./ClearStructureButton"
 import { PanelHeader } from "./PanelHeader"
 import { RedoButton } from "./RedoButton"
 import { StructureForm } from "./StructureForm"
@@ -33,7 +33,7 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
             title={t("Structure.title")}
             actions={
               <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
-                <ClearButton />
+                <ClearStructureButton />
                 <UndoButton />
                 <RedoButton />
                 <StructureLanguageSelector />

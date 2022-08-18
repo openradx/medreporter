@@ -2,6 +2,7 @@ general:
   buttons:
     add: Add
     cancel: Cancel
+    clear: Clear
     close: Close
     delete: Delete
     save: Save
@@ -16,16 +17,30 @@ general:
     noData: No data available
 
 AccountControl:
+  accountTitle: Account
   admin: Administration
   profile: User profile
+  logInTitle: Log in
   logOut: Log out
+
+ClearStructureButton:
+  actionTitle: Clear structure form
+
+ColorSchemeToggle:
+  actionTitle: Toggle theme
 
 CopyButton:
   success: Copied report to clipboard
   error: Copy to clipboard failed. Please copy manually.
 
+ExternalLink:
+  actionTitle: Open external link
+
+FieldGraphics:
+  actionTitle: Open graphics for selection
+
 FieldInfo:
-  title: Additional infos
+  actionTitle: Additional infos
 
 ForgotPasswordForm:
   email: Email
@@ -35,6 +50,9 @@ ForgotPasswordForm:
   send: Send reset password instructions
   submitted: Request submitted
   title: Forgot your password?
+
+GraphicsModal:
+  resetTitle: Reset selection
 
 LanguageSelector:
   as_site: As page
@@ -51,14 +69,26 @@ LoginForm:
   title: Login
   usernameOrEmail: Username or email
 
+MeasurementsActions:
+  actionTitle: Measurement actions
+
+ModuleInfo:
+  actionTitle: Modul info
+
 PageHeader:
   home: Home
   tools: Tools
 
+RedoButton:
+  actionTitle: Redo
+
 ReportFormat:
+  actionTitle: Change report format
   html: HTML
   text: Text
-  title: Report format
+
+ReportLanguageSelector:
+  actionTitle: Report language
 
 ReportPanel:
   title: Report
@@ -72,10 +102,6 @@ ResetPasswordForm:
   success: Password reset successfully
   title: Set a new Password
 
-SelectOverlay:
-  openGraphic: Open graphic
-  reset: Reset
-
 SignupForm:
   about: About yourself
   email: Email
@@ -86,5 +112,14 @@ SignupForm:
   title: Create an Account
   username: Username
 
+SiteLanguageSelector:
+  actionTitle: General language
+
 Structure:
   title: Structure
+
+StructureLanguageSelector:
+  actionTitle: Structure language
+
+UndoButton:
+  actionTitle: Undo

@@ -34,7 +34,7 @@ export const AccountControl = () => {
       {session.isLoading && <ActionIcon variant="default" loading />}
       {!session.isLoading && !session.userId && (
         <Link href={Routes.LoginPage()} passHref>
-          <ActionIcon variant="default">
+          <ActionIcon title={t("AccountControl.logInTitle")} variant="default">
             <LoginIcon size={18} />
           </ActionIcon>
         </Link>
@@ -42,7 +42,7 @@ export const AccountControl = () => {
       {!session.isLoading && session.userId && (
         <Menu width={250}>
           <Menu.Target>
-            <ActionIcon variant="default">
+            <ActionIcon title={t("AccountControl.accountTitle")} variant="default">
               <AccountIcon size={20} />
             </ActionIcon>
           </Menu.Target>

@@ -1,5 +1,6 @@
 import { ActionIcon, TextInput } from "@mantine/core"
 import { MdSearch as FilterIcon, MdClear as ClearIcon } from "react-icons/md"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { useFilter } from "../../contexts/FilterContext"
 
 interface FilterInputProps {
@@ -7,6 +8,7 @@ interface FilterInputProps {
 }
 
 export const FilterInput = ({ label }: FilterInputProps) => {
+  const { t } = useSiteTranslation()
   const { filter, setFilter } = useFilter()
 
   return (
@@ -16,7 +18,7 @@ export const FilterInput = ({ label }: FilterInputProps) => {
       autoComplete="off"
       icon={<FilterIcon />}
       rightSection={
-        <ActionIcon onClick={() => setFilter("")}>
+        <ActionIcon title={t("general.buttons.clear")} onClick={() => setFilter("")}>
           <ClearIcon />
         </ActionIcon>
       }

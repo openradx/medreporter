@@ -21,16 +21,24 @@ AdminFeatures:
   noAdminRights: No admin rights
 
 DeleteInstituteButton:
+  actionTitle: Delete institute
   confirmDialogTitle: Delete institute
   confirmDialogMessage: Do you really want to irreversibly delete the insitute "{{name}}"?
 
 DeleteUserButton:
+  actionTitle: Delete user
   confirmDialogTitle: Delete user
   confirmDialogMessage: Do you really want to irreversibly delete the user "{{email}}"?
+
+EditInstituteButton:
+  actionTitle: Edit institute
 
 EditInstituteModal:
   duplicateName: Institute name already being used
   title: Edit institute
+
+EditUserButton:
+  actionTitle: Edit user
 
 EditUserModal:
   duplicateEmail: E-mail address already exists
@@ -42,13 +50,20 @@ InstitutesManager:
 InstituteForm:
   name: Name
 
+ManageMembershipsButton:
+  actionTitle: Manage memberships
+
 ManageMembershipsModal:
   admins: Admins
   members: Members
   owners: Owners
 
 MembershipAdder:
+  actionTitle: Add selected user
   label: Add user
+
+RemoveMembershipButton:
+  actionTitle: Remove membership
 
 UserForm:
   about: About yourself

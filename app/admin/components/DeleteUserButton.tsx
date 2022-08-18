@@ -17,6 +17,7 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
 
   return (
     <ActionIcon
+      title={t("DeleteUserButton.actionTitle")}
       color="red"
       onClick={() =>
         openConfirmModal({

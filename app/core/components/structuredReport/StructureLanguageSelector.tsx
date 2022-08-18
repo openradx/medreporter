@@ -8,7 +8,7 @@ import { LanguageSelector } from "../common/LanguageSelector"
 
 export const StructureLanguageSelector = () => {
   const { supportedStructuredReportLocales } = useI18nStructuredReport()
-  const { i18n: i18nSite } = useSiteTranslation()
+  const { t, i18n: i18nSite } = useSiteTranslation()
   const { i18n: i18nStructure } = useStructureTranslation()
 
   const currentLanguage = useAppSelector(selectStructureLanguage)
@@ -33,7 +33,7 @@ export const StructureLanguageSelector = () => {
 
   return (
     <LanguageSelector
-      ariaLabel="Select structure language"
+      actionTitle={t("StructureLanguageSelector.actionTitle")}
       currentLocale={currentLanguage}
       supportedLocales={["as_site", ...supportedStructuredReportLocales]}
       onLocaleChanged={onLanguageChanged}

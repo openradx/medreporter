@@ -1,6 +1,7 @@
 import { ActionIcon, Tooltip } from "@mantine/core"
 import Image from "next/image"
 import { BiLink as LinkIcon } from "react-icons/bi"
+import { useStructureTranslation } from "app/core/hooks/useStructureTranslation"
 
 export interface ExternalLinkProps {
   url: string
@@ -8,6 +9,8 @@ export interface ExternalLinkProps {
 }
 
 export const ExternalLink = ({ url, title }: ExternalLinkProps) => {
+  const { t } = useStructureTranslation()
+
   let logo = ""
   if (url.includes("radiopaedia.org")) {
     logo = "/images/logo_radiopaedia.png"
@@ -25,6 +28,7 @@ export const ExternalLink = ({ url, title }: ExternalLinkProps) => {
 
   return (
     <ActionIcon
+      title={t("ExternalLink.actionTitle")}
       variant="default"
       component="a"
       rel="noopener noreferrer"

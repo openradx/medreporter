@@ -146,17 +146,16 @@ export const GraphicsModal = ({
           }}
         >
           {svg}
-          <Tooltip label={t("SelectOverlay.reset")!}>
-            <ActionIcon
-              onClick={(event: { stopPropagation: () => void }) => {
-                event.stopPropagation()
-                onChange?.(multiple ? [] : null)
-              }}
-              sx={{ position: "absolute", right: 8, bottom: 16 }}
-            >
-              <ResetIcon />
-            </ActionIcon>
-          </Tooltip>
+          <ActionIcon
+            title={t("GraphicsModal.resetTitle")}
+            onClick={(event: { stopPropagation: () => void }) => {
+              event.stopPropagation()
+              onChange?.(multiple ? [] : null)
+            }}
+            sx={{ position: "absolute", right: 8, bottom: 16 }}
+          >
+            <ResetIcon />
+          </ActionIcon>
         </Box>
       </Tooltip.Floating>
     </Modal>

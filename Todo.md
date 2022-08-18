@@ -1,9 +1,10 @@
 # Todo
 
-- Rename LanguageSelector to LocaleSelector, and so on
-
 ## Kai
 
+- AccountControl -> AccountOptions
+- Make Measurements field smaller
+- Make Measurments output nice
 - Maybe rename useReportData to useReportOutput
 - Incorporate https://www.npmjs.com/package/i18n-unused
 - Add pageTitle to each page
@@ -37,3 +38,7 @@
 - [Tools] Fazekas scale
 - [Tools] PI-RADS
 - [Tools] Liver Lab
+
+## Maybe
+
+- Rename LanguageSelector to LocaleSelector, and so on

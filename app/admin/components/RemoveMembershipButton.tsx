@@ -17,6 +17,7 @@ export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonPro
 
   return (
     <ActionIcon
+      title={t("RemoveMembershipButton.actionTitle")}
       color="red"
       onClick={async () => {
         try {

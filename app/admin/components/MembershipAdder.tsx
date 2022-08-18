@@ -40,7 +40,12 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
       searchable
       onKeyPress={(event) => event.key === "Enter" && handleAddMembership()}
       rightSection={
-        <ActionIcon variant="filled" color="green" onClick={handleAddMembership}>
+        <ActionIcon
+          title={t("MembershipAdder.actionTitle")}
+          variant="filled"
+          color="green"
+          onClick={handleAddMembership}
+        >
           <AddIcon size={20} />
         </ActionIcon>
       }

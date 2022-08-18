@@ -13,7 +13,7 @@ export const ReportFormat = () => {
   return (
     <Menu width={100}>
       <Menu.Target>
-        <ActionIcon variant="default" title={t("ReportFormat.title")}>
+        <ActionIcon title={t("ReportFormat.actionTitle")} variant="default">
           <ReportFormatIcon />
         </ActionIcon>
       </Menu.Target>

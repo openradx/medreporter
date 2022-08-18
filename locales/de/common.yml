@@ -2,6 +2,7 @@ general:
   buttons:
     add: Hinzufügen
     cancel: Abbrechen
+    clear: Löschen
     close: Schließen
     delete: Löschen
     save: Sichern
@@ -17,16 +18,33 @@ general:
     noData: Keine Datensätze verfügbar
 
 AccountControl:
+  accountTitle: Benutzerkonto
   admin: Verwaltung
   profile: Benutzerprofil
+  logInTitle: Einloggen
   logOut: Ausloggen
+
+ClearStructureButton:
+  actionTitle: Strukturformular zurücksetzen
+
+ColorSchemeToggle:
+  actionTitle: Farbschema wechseln
 
 CopyButton:
   success: Befund in Ablage kopiert
   error: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.
 
+ExternalLink:
+  actionTitle: Externen Link öffnen
+
+FieldGraphics:
+  actionTitle: Auswahlgrafik öffnen
+
 FieldInfo:
-  title: Weitere Informationen
+  actionTitle: Weitere Informationen
+
+GraphicsModal:
+  resetTitle: Auswahl zurücksetzen
 
 ForgotPasswordForm:
   email: E-Mail
@@ -52,14 +70,26 @@ LoginForm:
   title: Anmeldung
   usernameOrEmail: Benutzername oder E-Mail
 
+MeasurementsActions:
+  actionTitle: Aktionen Messwerkzeug
+
+ModuleInfo:
+  actionTitle: Modulinformation
+
 PageHeader:
   home: Startseite
   tools: Werkzeuge
 
+RedoButton:
+  actionTitle: Wiederherstellen
+
 ReportFormat:
+  actionTitle: Befundformatierung ändern
   html: HTML
   text: Text
-  title: Befundformatierung
+
+ReportLanguageSelector:
+  actionTitle: Sprache Befund
 
 ReportPanel:
   title: Befund
@@ -73,10 +103,6 @@ ResetPasswordForm:
   success: Neues Passwort erfolgreich gesetzt
   title: Passwort zurücksetzen
 
-SelectOverlay:
-  openGraphic: Grafik öffnen
-  reset: Zurücksetzen
-
 SignupForm:
   about: Über dich selbst
   email: E-Mail
@@ -87,5 +113,14 @@ SignupForm:
   title: Erstelle einen Account
   username: Benutzername
 
+SiteLanguageSelector:
+  actionTitle: Sprache allgemein
+
 Structure:
   title: Struktur
+
+StructureLanguageSelector:
+  actionTitle: Sprache Struktur
+
+UndoButton:
+  actionTitle: Rückgängig machen

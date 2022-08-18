@@ -21,16 +21,24 @@ AdminFeatures:
   noAdminRights: Kein Admin Rechts
 
 DeleteInstituteButton:
-  confirmDialogTitle: Insitut löschen
-  confirmDialogMessage: Wollen Sie das Insititut "{{name}}" wirklich unwiderruflich löschen?
+  actionTitle: Institut löschen
+  confirmDialogTitle: Institut löschen
+  confirmDialogMessage: Wollen Sie das Institut "{{name}}" wirklich unwiderruflich löschen?
 
 DeleteUserButton:
+  actionTitle: Benutzer löschen
   confirmDialogTitle: Benutzer löschen
   confirmDialogMessage: Möchtest Du den Benutzer "{{username}}" wirklich unwiderruflich löschen?
+
+EditInstituteButton:
+  actionTitle: Institut ändern
 
 EditInstituteModal:
   duplicateName: Institutsname bereits vergeben
   title: Institut editieren
+
+EditUserButton:
+  actionTitle: Benutzer ändern
 
 EditUserModal:
   duplicateEmail: Email Adresse existiert bereit
@@ -42,13 +50,20 @@ InstitutesManager:
 InstituteForm:
   name: Name
 
+ManageMembershipsButton:
+  actionTitle: Mitglieder verwalten
+
 ManageMembershipsModal:
   admins: Administratoren
   members: Mitglieder
   owners: Eigentümer
 
 MembershipAdder:
+  actionTitle: Ausgewählten Benutzer hinzufügen
   label: Benutzer hinzufügen
+
+RemoveMembershipButton:
+  actionTitle: Mitgliedschaft entfernen
 
 UserForm:
   about: Über Sie selbst
@@ -57,7 +72,7 @@ UserForm:
   organizerRole: Organisator
   password: Passwort
   role: Rolle
-  superadminRole: Super Admininistrator
+  superadminRole: Superadmin
   username: Benutzername
   userRole: Normaler Nutzer
 
