@@ -18,7 +18,9 @@
     "storybook": "start-storybook -p 7001",
     "storybook:build": "build-storybook",
     "svg:options": "node -r @swc-node/register scripts/parseSVG.ts --output options",
-    "svg:translations": "node -r @swc-node/register scripts/parseSVG.ts --output translations"
+    "svg:translations": "node -r @swc-node/register scripts/parseSVG.ts --output translations",
+    "i18n:missed": "i18n-unused display-missed",
+    "i18n:unused": "i18n-unused display-unused"
   },
   "prisma": {
     "schema": "db/schema.prisma"
@@ -103,6 +105,7 @@
     "eslint-plugin-storybook": "^0.6.4",
     "eslint-plugin-testing-library": "^5.2.0",
     "file-watch-hmr": "^0.1.1",
+    "i18n-unused": "^0.10.0",
     "jest": "^27.5.1",
     "js-yaml": "^4.1.0",
     "prettier": "^2.6.2",

@@ -2,6 +2,7 @@
 
 ## Kai
 
+- Add https://github.com/edvardchen/eslint-plugin-i18next
 - AccountControl -> AccountOptions
 - Make Measurements field smaller
 - Make Measurments output nice
