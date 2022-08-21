@@ -31,8 +31,8 @@ export const AdminFeatures = () => {
     features.push({
       url: Routes.ManageUsersPage(),
       icon: <UserIcon size={18} />,
-      title: "AdminFeatures.manageUsersTitle",
-      description: "AdminFeatures.manageUsersDescription",
+      title: t("AdminFeatures.manageUsersTitle"),
+      description: t("AdminFeatures.manageUsersDescription"),
     })
   }
 
@@ -40,8 +40,8 @@ export const AdminFeatures = () => {
     features.push({
       url: Routes.ManageInstitutesPage(),
       icon: <InstituteIcon size={18} />,
-      title: "AdminFeatures.manageInstitutesTitle",
-      description: "AdminFeatures.manageInstitutesDescription",
+      title: t("AdminFeatures.manageInstitutesTitle"),
+      description: t("AdminFeatures.manageInstitutesDescription"),
     })
   }
 
@@ -55,8 +55,8 @@ export const AdminFeatures = () => {
               <AdminFeatureCard
                 url={feature.url}
                 icon={feature.icon}
-                title={t(feature.title)}
-                description={t(feature.description)}
+                title={feature.title}
+                description={feature.description}
               />
             </Grid.Col>
           ))}

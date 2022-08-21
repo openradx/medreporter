@@ -94,13 +94,13 @@ interface NavLink {
   label: string
 }
 
-const links: NavLink[] = [{ url: Routes.ToolsPage(), label: "tools" }]
-
 export const PageHeader = () => {
   const [opened, setOpened] = useState(false)
   const { classes, cx } = useStyles()
   const { pathname } = useRouter()
   const { t } = useSiteTranslation()
+
+  const links: NavLink[] = [{ url: Routes.ToolsPage(), label: t("PageHeader.tools") }]
 
   const isCurrentPath = (link: NavLink) => {
     if (link.url.pathname === "/") {
@@ -120,7 +120,7 @@ export const PageHeader = () => {
           setOpened(false)
         }}
       >
-        {t(`PageHeader.${link.label}`)}
+        {link.label}
       </Box>
     </Link>
   ))
