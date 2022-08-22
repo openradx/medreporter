@@ -1,9 +1,11 @@
-import { MantineProvider, ColorScheme, ColorSchemeProvider } from "@mantine/core"
+import { ErrorBoundary, ErrorComponent, ErrorFallbackProps } from "@blitzjs/next"
+import { ColorScheme, ColorSchemeProvider, MantineProvider } from "@mantine/core"
 import { ModalsProvider } from "@mantine/modals"
 import { NotificationsProvider } from "@mantine/notifications"
 import { compose } from "@reduxjs/toolkit"
+import { AuthenticationError, AuthorizationError } from "blitz"
 import { getCookie, setCookie } from "cookies-next"
-import { enablePatches, enableMapSet } from "immer"
+import { enableMapSet, enablePatches } from "immer"
 import { GetServerSidePropsContext } from "next"
 import { AppProps } from "next/app"
 import Head from "next/head"
@@ -21,6 +23,28 @@ enableMapSet() // for TransformerRegistry
 
 const fontFamily =
   "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+
+const RootErrorFallback = ({ error }: ErrorFallbackProps) => {
+  if (error instanceof AuthenticationError) {
+    return <div>Error: You are not authenticated</div>
+  }
+
+  if (error instanceof AuthorizationError) {
+    return (
+      <ErrorComponent
+        statusCode={error.statusCode}
+        title="Sorry, you are not authorized to access this"
+      />
+    )
+  }
+
+  return (
+    <ErrorComponent
+      statusCode={(error as any)?.statusCode || 400}
+      title={error.message || error.name}
+    />
+  )
+}
 
 interface MyAppProps extends AppProps {
   colorScheme: ColorScheme
@@ -40,7 +64,7 @@ const MyApp = (props: MyAppProps) => {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
-    <>
+    <ErrorBoundary FallbackComponent={RootErrorFallback}>
       <Head>
         <title>MedReporter</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
@@ -58,7 +82,7 @@ const MyApp = (props: MyAppProps) => {
           </NotificationsProvider>
         </MantineProvider>
       </ColorSchemeProvider>
-    </>
+    </ErrorBoundary>
   )
 }
 
