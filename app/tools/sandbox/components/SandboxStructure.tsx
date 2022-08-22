@@ -1,3 +1,5 @@
+import { Hint } from "app/core/components/structuredReport/Hint"
+import { Hints } from "app/core/components/structuredReport/Hints"
 import { DateField } from "../../../core/components/fields/DateField"
 import { FreeTextField } from "../../../core/components/fields/FreeTextField"
 import { MultipleChoiceField } from "../../../core/components/fields/MultipleChoiceField"
@@ -23,5 +25,14 @@ export const SandboxStructure = () => (
       extras={<BrainArteries />}
     />
     <FreeTextField id="text" label="Some text" multiline />
+    <Hints>
+      <Hint type="info">
+        Some info. Some info. Some info. Some info. Some info. Some info. Some info. Some info. Some
+        info.
+      </Hint>
+      <Hint type="warning">
+        Warning! Warning! Warning! Warning! Warning! Warning! Warning! Warning! Warning! Warning!
+      </Hint>
+    </Hints>
   </>
 )
