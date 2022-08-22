@@ -4,7 +4,7 @@ import { AiOutlineExclamationCircle as WarningIcon } from "react-icons/ai"
 import { RiLightbulbLine as HintIcon } from "react-icons/ri"
 
 interface HintProps {
-  type: "warning" | "hint"
+  type: "warning" | "info"
   children: ReactNode
 }
 

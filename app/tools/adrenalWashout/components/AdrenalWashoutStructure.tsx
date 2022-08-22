@@ -41,8 +41,8 @@ export const AdrenalWashoutStructure = () => {
       </GridGroup>
       <GridItem size="xl">
         <Hints>
-          <Hint type="hint">{t("roiHint")}</Hint>
-          <Hint type="hint">{t("absoluteHint")}</Hint>
+          <Hint type="info">{t("roiHint")}</Hint>
+          <Hint type="info">{t("absoluteHint")}</Hint>
         </Hints>
       </GridItem>
     </Grid>
