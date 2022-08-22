@@ -16,17 +16,16 @@
 - [Tools] ILD Classification
 - [MeasurementTable] Allow to import table
 - Bring in modules and templates (MedTL)
+- Table component
+
 
 ## Julia
 
 - MedReporter Logo
 - Lung arteries image
 - Startpage (ideas)
-- Table component
-- Nicer icon for hint
 - Main Page
 - Collapse report panel
-- [NumberInput] Increase/descrease by scrolling
 - Field extras
 - External link images (Next.js Image component, why?)
 - [Tools] Fleischner 2017

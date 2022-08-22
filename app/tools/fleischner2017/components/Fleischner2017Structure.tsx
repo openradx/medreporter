@@ -62,7 +62,7 @@ export const Fleischner2017Structure = () => {
       </GridItem>
       <GridItem size="xl">
         <Hints>
-          <Hint>{t("hint1")}</Hint>
+          <Hint type="warning">{t("hint1")}</Hint>
         </Hints>
       </GridItem>
     </Grid>

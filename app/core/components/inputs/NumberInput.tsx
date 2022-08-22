@@ -80,6 +80,7 @@ export const NumberInput = ({
             alignItems: "stretch",
             display: !autoHideControls || focus || hovered ? undefined : "none",
           },
+          label: { maxWidth: "100%" },
         }}
       />
     </ScrollBlocker>
