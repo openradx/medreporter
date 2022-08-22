@@ -6,7 +6,7 @@ interface HintsProps {
 }
 
 export const Hints = ({ children }: HintsProps) => (
-  <Stack spacing="xs" sx={{ alignItems: "flex-start" }}>
+  <Stack spacing="xs" sx={{ alignItems: "flex-start", paddingTop: "8px" }}>
     {children}
   </Stack>
 )
