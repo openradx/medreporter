@@ -20,6 +20,9 @@ AdminFeatures:
     Hinzufügen, löschen und editieren von Instituten und deren Mitgliedern.
   noAdminRights: Kein Admin Rechts
 
+AdminPage:
+  title: Verwaltung
+
 DeleteInstituteButton:
   actionTitle: Institut löschen
   confirmDialogTitle: Institut löschen
@@ -50,6 +53,9 @@ InstitutesManager:
 InstituteForm:
   name: Name
 
+ManageInstitutesPage:
+  title: Institute verwalten
+
 ManageMembershipsButton:
   actionTitle: Mitglieder verwalten
 
@@ -57,6 +63,9 @@ ManageMembershipsModal:
   admins: Administratoren
   members: Mitglieder
   owners: Eigentümer
+
+ManageUsersPage:
+  title: Benutzer verwalten
 
 MembershipAdder:
   actionTitle: Ausgewählten Benutzer hinzufügen

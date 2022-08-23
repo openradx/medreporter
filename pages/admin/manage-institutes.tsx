@@ -2,15 +2,24 @@ import { Container } from "@mantine/core"
 import { InstitutesManager } from "app/admin/components/InstitutesManager"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
+import { PageHead } from "app/core/components/common/PageHead"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { PageWithLayout } from "app/core/types"
 import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
 import { serverSideSiteTranslations } from "app/core/utils/serverSideSiteTranslations"
 
-const ManageInstitutesPage: PageWithLayout = () => (
-  <Container size="md">
-    <InstitutesManager />
-  </Container>
-)
+const ManageInstitutesPage: PageWithLayout = () => {
+  const { t } = useSiteTranslation()
+
+  return (
+    <>
+      <PageHead title={t("ManageInstitutesPage.title")} />
+      <Container size="md">
+        <InstitutesManager />
+      </Container>
+    </>
+  )
+}
 
 ManageInstitutesPage.authenticate = true
 

@@ -2,15 +2,24 @@ import { Container } from "@mantine/core"
 import { AdminFeatures } from "app/admin/components/AdminFeatures"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
+import { PageHead } from "app/core/components/common/PageHead"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { PageWithLayout } from "app/core/types"
 import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
 import { serverSideSiteTranslations } from "app/core/utils/serverSideSiteTranslations"
 
-const AdminPage: PageWithLayout = () => (
-  <Container size="md">
-    <AdminFeatures />
-  </Container>
-)
+const AdminPage: PageWithLayout = () => {
+  const { t } = useSiteTranslation()
+
+  return (
+    <>
+      <PageHead title={t("AdminPage.title")} />
+      <Container size="md">
+        <AdminFeatures />
+      </Container>
+    </>
+  )
+}
 
 AdminPage.authenticate = true
 
