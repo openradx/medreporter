@@ -51,6 +51,9 @@ ForgotPasswordForm:
   submitted: Request submitted
   title: Forgot your password?
 
+ForgotPasswordPage:
+  title: Forgot password
+
 GraphicsModal:
   resetTitle: Reset selection
 
@@ -68,6 +71,9 @@ LoginForm:
   signUp: Sign up
   title: Login
   usernameOrEmail: Username or email
+
+LoginPage:
+  title: Login
 
 MeasurementsActions:
   actionTitle: Measurement actions
@@ -102,6 +108,9 @@ ResetPasswordForm:
   success: Password reset successfully
   title: Set a new Password
 
+ResetPasswordPage:
+  title: Reset password
+
 SignupForm:
   about: About yourself
   email: Email
@@ -111,6 +120,9 @@ SignupForm:
   submit: Create account
   title: Create an Account
   username: Username
+
+SignupPage:
+  title: Signup
 
 SiteLanguageSelector:
   actionTitle: General language

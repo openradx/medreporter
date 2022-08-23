@@ -2,25 +2,31 @@ import { Container } from "@mantine/core"
 import { GetServerSideProps } from "next"
 import { useRouter } from "next/router"
 import { ReactElement } from "react"
-import { LoginForm } from "../../app/auth/components/LoginForm"
-import { gSSP } from "../../app/blitz-server"
-import { MainLayout } from "../../app/core/components/common/MainLayout"
-import { PageWithLayout } from "../../app/core/types"
-import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInitialPublicData"
-import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
+import { LoginForm } from "app/auth/components/LoginForm"
+import { gSSP } from "app/blitz-server"
+import { MainLayout } from "app/core/components/common/MainLayout"
+import { PageHead } from "app/core/components/common/PageHead"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { PageWithLayout } from "app/core/types"
+import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
+import { serverSideSiteTranslations } from "app/core/utils/serverSideSiteTranslations"
 
 const LoginPage: PageWithLayout = () => {
+  const { t } = useSiteTranslation()
   const router = useRouter()
 
   return (
-    <Container size="sm">
-      <LoginForm
-        onSuccess={() => {
-          const next = router.query.next ? decodeURIComponent(router.query.next as string) : "/"
-          router.push(next)
-        }}
-      />
-    </Container>
+    <>
+      <PageHead title={t("LoginPage.title")} />
+      <Container size="sm">
+        <LoginForm
+          onSuccess={() => {
+            const next = router.query.next ? decodeURIComponent(router.query.next as string) : "/"
+            router.push(next)
+          }}
+        />
+      </Container>
+    </>
   )
 }
 

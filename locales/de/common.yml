@@ -21,8 +21,8 @@ AccountControl:
   accountTitle: Benutzerkonto
   admin: Verwaltung
   profile: Benutzerprofil
-  logInTitle: Einloggen
-  logOut: Ausloggen
+  logInTitle: Anmelden
+  logOut: Abmelden
 
 ClearStructureButton:
   actionTitle: Strukturformular zurücksetzen
@@ -55,6 +55,9 @@ ForgotPasswordForm:
   submitted: Anfrage gesendet
   title: Passwort vergessen?
 
+ForgotPasswordPage:
+  title: Passwort vergessen
+
 LanguageSelector:
   as_site: wie Seite
   de: Deutsch
@@ -69,6 +72,9 @@ LoginForm:
   signUp: Registrieren
   title: Anmeldung
   usernameOrEmail: Benutzername oder E-Mail
+
+LoginPage:
+  title: Anmeldung
 
 MeasurementsActions:
   actionTitle: Aktionen Messwerkzeug
@@ -103,6 +109,9 @@ ResetPasswordForm:
   success: Neues Passwort erfolgreich gesetzt
   title: Passwort zurücksetzen
 
+ResetPasswordPage:
+  title: Passwort zurücksetzen
+
 SignupForm:
   about: Über dich selbst
   email: E-Mail
@@ -112,6 +121,9 @@ SignupForm:
   submit: Registrieren
   title: Erstelle einen Account
   username: Benutzername
+
+SignupPage:
+  title: Registrierung
 
 SiteLanguageSelector:
   actionTitle: Sprache allgemein
