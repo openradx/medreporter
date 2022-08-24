@@ -24,6 +24,9 @@ AccountControl:
   logInTitle: Anmelden
   logOut: Abmelden
 
+AdrenalWashoutPage:
+  title: Nebennieren Washout
+
 ClearStructureButton:
   actionTitle: Strukturformular zurücksetzen
 
@@ -43,8 +46,8 @@ FieldGraphics:
 FieldInfo:
   actionTitle: Weitere Informationen
 
-GraphicsModal:
-  resetTitle: Auswahl zurücksetzen
+Fleischner2017Page:
+  title: Fleischner 2017
 
 ForgotPasswordForm:
   email: E-Mail
@@ -57,6 +60,15 @@ ForgotPasswordForm:
 
 ForgotPasswordPage:
   title: Passwort vergessen
+
+GFRPage:
+  title: GFR
+
+GraphicsModal:
+  resetTitle: Auswahl zurücksetzen
+
+HomePage:
+  title: Startseite
 
 LanguageSelector:
   as_site: wie Seite
@@ -78,6 +90,9 @@ LoginPage:
 
 MeasurementsActions:
   actionTitle: Aktionen Messwerkzeug
+
+MeasurementsTablePage:
+  title: Messtabelle
 
 ModuleInfo:
   actionTitle: Modulinformation
@@ -133,6 +148,9 @@ Structure:
 
 StructureLanguageSelector:
   actionTitle: Sprache Struktur
+
+ToolsPage:
+  title: Werkzeuge
 
 UndoButton:
   actionTitle: Rückgängig machen

@@ -23,6 +23,9 @@ AccountControl:
   logInTitle: Log in
   logOut: Log out
 
+AdrenalWashoutPage:
+  title: Adrenal washout
+
 ClearStructureButton:
   actionTitle: Clear structure form
 
@@ -42,6 +45,9 @@ FieldGraphics:
 FieldInfo:
   actionTitle: Additional infos
 
+Fleischner2017Page:
+  title: Fleischner 2017
+
 ForgotPasswordForm:
   email: Email
   message: >
@@ -54,8 +60,14 @@ ForgotPasswordForm:
 ForgotPasswordPage:
   title: Forgot password
 
+GFRPage:
+  title: GFR
+
 GraphicsModal:
   resetTitle: Reset selection
+
+HomePage:
+  title: Homepage
 
 LanguageSelector:
   as_site: As page
@@ -77,6 +89,9 @@ LoginPage:
 
 MeasurementsActions:
   actionTitle: Measurement actions
+
+MeasurementsTablePage:
+  title: Measurements table
 
 ModuleInfo:
   actionTitle: Modul info
@@ -132,6 +147,9 @@ Structure:
 
 StructureLanguageSelector:
   actionTitle: Structure language
+
+ToolsPage:
+  title: Tools
 
 UndoButton:
   actionTitle: Undo

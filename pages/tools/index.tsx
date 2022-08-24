@@ -1,4 +1,6 @@
 import { ReactElement } from "react"
+import { PageHead } from "app/core/components/common/PageHead"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { gSSP } from "../../app/blitz-server"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
 import { PageWithLayout } from "../../app/core/types"
@@ -6,7 +8,16 @@ import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInit
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 import { Tools } from "../../app/tools/tools/components/Tools"
 
-const ToolsPage: PageWithLayout = () => <Tools />
+const ToolsPage: PageWithLayout = () => {
+  const { t } = useSiteTranslation()
+
+  return (
+    <>
+      <PageHead title={t("ToolsPage.title")} />
+      <Tools />
+    </>
+  )
+}
 
 ToolsPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 

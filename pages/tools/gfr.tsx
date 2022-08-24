@@ -1,5 +1,7 @@
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
+import { PageHead } from "app/core/components/common/PageHead"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { MainLayout } from "../../app/core/components/common/MainLayout"
 import { PageWithLayout } from "../../app/core/types"
 import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInitialPublicData"
@@ -8,7 +10,16 @@ import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteT
 import { serverSideStructuredReportTranslations } from "../../app/core/utils/serverSideStructuredReportTranslations"
 import { GFR } from "../../app/tools/gfr/components/GFR"
 
-const GFRPage: PageWithLayout = () => <GFR />
+const GFRPage: PageWithLayout = () => {
+  const { t } = useSiteTranslation()
+
+  return (
+    <>
+      <PageHead title={t("GFRPage.title")} />
+      <GFR />
+    </>
+  )
+}
 
 GFRPage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
 
