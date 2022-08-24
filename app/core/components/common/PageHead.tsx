@@ -5,9 +5,13 @@ interface PageHeadProps {
   description?: string
 }
 
-export const PageHead = ({ title, description }: PageHeadProps) => (
-  <Head>
-    <title key="title">{title} - MedReporter</title>
-    <meta key="description" name="description" content={description} />
-  </Head>
-)
+export const PageHead = ({ title, description }: PageHeadProps) => {
+  const titleContent = `${title} - MedReporter`
+
+  return (
+    <Head>
+      <title key="title">{titleContent}</title>
+      <meta key="description" name="description" content={description} />
+    </Head>
+  )
+}
