@@ -3,21 +3,21 @@
 ## Kai
 
 - Add https://github.com/edvardchen/eslint-plugin-i18next
+- MeasurementsTable -> MeasurementsTool
+- PageHeader -> NavBar
+- PanelHeader -> PanelToolbar
 - AccountControl -> AccountOptions
+- ...Button -> ...Action (e.g. UndoButton -> UndoAction)
 - Make Measurements field smaller
 - Make Measurments output nice
 - Maybe rename useReportData to useReportOutput
-- Add pageTitle to each page
-- Add https://github.com/i18next/i18next-parser or i18next-scanner
 - configurable gap after paragraph
-- Remove "...Button" from components (e.g. UndoButton => Undo)
 - Wrap modules in error boundaries from Blitz
 - Text / HTML export
 - [Tools] ILD Classification
 - [MeasurementTable] Allow to import table
 - Bring in modules and templates (MedTL)
 - Table component
-
 
 ## Julia
 
