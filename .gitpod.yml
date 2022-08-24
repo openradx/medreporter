@@ -4,6 +4,9 @@ image:
 
 tasks:
   - name: Dev Server
+    before: |
+      echo "@medtl:registry=https://$NPM_REGISTRY_HOST/" > ~/.npmrc
+      echo "//$NPM_REGISTRY_HOST/:_authToken=\"$NPM_REGISTRY_TOKEN\"" >> ~/.npmrc
     init: |
       yarn install
       blitz prisma migrate dev
