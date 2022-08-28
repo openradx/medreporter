@@ -2,6 +2,9 @@
 
 ## Kai
 
+- move medtlUtils -> medtl
+- rename i18n keys to snake case with function, e.g. button_xxx, link_xxx, text_xxx
+- check where useMemo is really needed
 - Add https://github.com/edvardchen/eslint-plugin-i18next
 - MeasurementsTable -> MeasurementsTool
 - PageHeader -> NavBar

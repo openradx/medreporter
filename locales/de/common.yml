@@ -97,8 +97,14 @@ MeasurementsTablePage:
 ModuleInfo:
   actionTitle: Modulinformation
 
+ModulesPage:
+  title: Module
+
+ModuleSelectorWithTags:
+  filterInputLabel: Module filtern
+
 PageHeader:
-  home: Startseite
+  modules: Module
   tools: Werkzeuge
 
 RedoButton:
@@ -148,6 +154,9 @@ Structure:
 
 StructureLanguageSelector:
   actionTitle: Sprache Struktur
+
+TagList:
+  title: Tags
 
 ToolsPage:
   title: Werkzeuge

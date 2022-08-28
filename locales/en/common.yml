@@ -10,9 +10,8 @@ general:
   errors:
     errorTitle: An error occurred
     unknownError: >
-      Sorry, we had an unexpected error. Please try again later.
-      If the error persists then please contact our support.
-
+      Sorry, we had an unexpected error. Please try again later. If the error
+      persists then please contact our support.
   misc:
     noData: No data available
 
@@ -51,8 +50,8 @@ Fleischner2017Page:
 ForgotPasswordForm:
   email: Email
   message: >
-    If your email is in our system, you will receive instructions to
-    reset your password shortly.
+    If your email is in our system, you will receive instructions to reset your
+    password shortly.
   send: Send reset password instructions
   submitted: Request submitted
   title: Forgot your password?
@@ -96,8 +95,17 @@ MeasurementsTablePage:
 ModuleInfo:
   actionTitle: Modul info
 
+ModuleList:
+  button_create_new_module: Create new module
+
+ModulesPage:
+  title: Modules
+
+ModuleSelectorWithTags:
+  filterInputLabel: Filter modules
+
 PageHeader:
-  home: Home
+  modules: Modules
   tools: Tools
 
 RedoButton:
@@ -147,6 +155,9 @@ Structure:
 
 StructureLanguageSelector:
   actionTitle: Structure language
+
+TagList:
+  title: Tags
 
 ToolsPage:
   title: Tools

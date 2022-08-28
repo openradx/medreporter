@@ -1,6 +1,6 @@
 import { SecurePassword } from "@blitzjs/auth"
 import { faker } from "@faker-js/faker"
-import { Institute, MembershipRole, User, UserRole } from "@prisma/client"
+import { Institute, MembershipRole, ReleaseStatus, User, UserRole } from "@prisma/client"
 import db from "./index"
 
 const EXAMPLE_USERS = 100
@@ -10,6 +10,8 @@ const EXAMPLE_INSTITUTES = 10
 const EXAMPLE_MEMBERSHIPS_MEMBER = 500
 const EXAMPLE_MEMBERSHIPS_ADMIN = 100
 const EXAMPLE_MEMBERSHIPS_OWNER = 10
+
+const EXAMPLE_MODULES = 300
 
 const createSuperadmin = async () => {
   const hashedPassword = await SecurePassword.hash("roentgen")
@@ -66,6 +68,25 @@ const createExampleMembership = async (
     },
   })
 
+const createExampleModule = async (userId: number) =>
+  db.module.create({
+    data: {
+      moduleId: faker.unique(faker.internet.domainWord),
+      sourceCode: "",
+      releaseStatus: ReleaseStatus.DRAFT,
+      authorId: userId,
+      document: {},
+      translations: {
+        create: {
+          title: faker.lorem.sentence(),
+          description: faker.lorem.paragraph(),
+          default: true,
+          language: "en",
+        },
+      },
+    },
+  })
+
 const seed = async () => {
   const userCount = await db.user.count()
   if (userCount) {
@@ -115,6 +136,21 @@ const seed = async () => {
     }
     for (let i = 0; i < EXAMPLE_MEMBERSHIPS_OWNER; i++) {
       createExampleMembership(combinations.pop()!, MembershipRole.OWNER)
+    }
+  }
+
+  const modulesCount = await db.module.count()
+  if (modulesCount) {
+    // eslint-disable-next-line no-console
+    console.info("Modules present. Skipping modules generation.")
+  } else {
+    // eslint-disable-next-line no-console
+    console.info("Generating example modules.")
+    for (let i = 0; i < EXAMPLE_MODULES; i++) {
+      const skip = Math.floor(Math.random() * userCount)
+      // eslint-disable-next-line no-await-in-loop
+      const user = (await db.user.findMany({ take: 1, skip })).at(0)!
+      createExampleModule(user.id)
     }
   }
 }
