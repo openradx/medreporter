@@ -28,8 +28,8 @@ MayoRequired: Kreatinin, Alter und Geschlecht werden zur Berechnung benötigt.
 
 CounahanRequired: Kreatinin und Größe werden zur Berechnung benötigt.
 
-schwartzRevRequired: Kreatinin und Größe werden zur Berechnung benötigt.
+SchwartzRevRequired: Kreatinin und Größe werden zur Berechnung benötigt.
 
-schwartzOrigRequired: Kreatinin, Größe, Alter und Geschlecht werden zur Berechnung benötigt.
+SchwartzOrigRequired: Kreatinin, Größe, Alter und Geschlecht werden zur Berechnung benötigt.
 
 ageMissing: Bitte gib zunächst das Alter des Patienten an um zu definieren, welche Formeln angewandt werden müssen.

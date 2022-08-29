@@ -47,13 +47,13 @@ export const GFRReport = () => {
     counahan = `${result.toFixed(2)} ml/min/1,73qm`
   }
 
-  let schwartzRev = t("schwartzRevRequired")
+  let schwartzRev = t("SchwartzRevRequired")
   if (creatinine !== null && height !== null) {
     const result = calcSchwartzRev(creatinine, height)
     schwartzRev = `${result.toFixed(2)} ml/min/1,73qm`
   }
 
-  let schwartzOrig = t("schwartzOrigRequired")
+  let schwartzOrig = t("SchwartzOrigRequired")
   if (creatinine !== null && height !== null && age !== null && gender !== null) {
     const result = calcSchwartzOrig(creatinine, height, age, gender)
     schwartzOrig = `${result.toFixed(2)} ml/min/1,73qm`

@@ -28,8 +28,8 @@ MayoRequired: Creatinine, age and gender are required.
 
 CounahanRequired: Creatinine and height are required.
 
-schwartzRevRequired: Creatinine and height are required.
+SchwartzRevRequired: Creatinine and height are required.
 
-schwartzOrigRequired: Creatinine, height, age and gender are required.
+SchwartzOrigRequired: Creatinine, height, age and gender are required.
 
 ageMissing: Please fill in the age of the patient first to define which equations should be used.
