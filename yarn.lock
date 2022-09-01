@@ -2068,59 +2068,60 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@medtl/interpreter@*":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@medtl/interpreter/-/interpreter-0.6.0.tgz#959c4cfe600ae1095fa0e1219980e7d8ce0c3581"
-  integrity sha512-uqpJe6H+6zdOiSznKS3Tum/OhbY3Lz4woh5/S9gXOIzWtkR/zqredFXLVRaK4g/xGNuKYWV9Iq+z9TfzBI/T1Q==
+"@medreporter/medtl-interpreter@*":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@medreporter/medtl-interpreter/-/medtl-interpreter-0.9.0.tgz#9eb080b384d0b3c0919b9967ec46e5bf00068771"
+  integrity sha512-COdkrvuJWWxSPju1KmkGTKb/xuftrYaWEYqkxiu27+qsrXeew7vgWnHBpIRQtutZatUlKr26moAEzafTxoJAAg==
   dependencies:
-    "@medtl/parser" "0.6.0"
+    "@medreporter/medtl-parser" "0.9.0"
+    "@medreporter/medtl-schema" "0.9.0"
 
-"@medtl/language-service@*", "@medtl/language-service@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@medtl/language-service/-/language-service-0.6.0.tgz#7ca473d205477edd0f8b34ebf4333f2e3bf107d9"
-  integrity sha512-92tziHvRrk9qCxbzVYDdsS0JHaXtvx5T6csYojUW321L78z9ExMUAh1dyOkDVqj3+5Pmf057BPdyayE1s+ltWg==
+"@medreporter/medtl-language-service@*", "@medreporter/medtl-language-service@0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@medreporter/medtl-language-service/-/medtl-language-service-0.9.0.tgz#eb6533215c2514b4ace384751b6ff7ddb582e0e1"
+  integrity sha512-XEifZSIZfmOZw1s2DOUCnQS5dw+YEmjL4IuBUUcNIWzYsmKqizYIXUyQCrHZEYxbiQwB5kIdu7SljErVyOFnEw==
   dependencies:
-    "@medtl/parser" "0.6.0"
-    "@medtl/prettier-plugin" "0.6.0"
-    "@medtl/schema" "0.6.0"
+    "@medreporter/medtl-parser" "0.9.0"
+    "@medreporter/medtl-schema" "0.9.0"
+    "@medreporter/prettier-plugin-medtl" "0.9.0"
     prettier "^2.5.1"
     vscode-languageserver-textdocument "^1.0.4"
     vscode-languageserver-types "^3.16.0"
 
-"@medtl/monaco-plugin@*":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@medtl/monaco-plugin/-/monaco-plugin-0.6.0.tgz#3178bf70005e6bd3b815ed9e98a6d04de1eec3eb"
-  integrity sha512-cIUbnC8ir2LzVUw8gBmGt5HPHMB1xchOQ75Wm/eM9K2/MLTKBW4SploF7cGA7EaTAcV2EMUcTqhmWqnC5YZqVw==
-  dependencies:
-    "@medtl/language-service" "0.6.0"
-    vscode-languageserver-textdocument "^1.0.4"
-    vscode-languageserver-types "^3.16.0"
-
-"@medtl/parser@*", "@medtl/parser@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@medtl/parser/-/parser-0.6.0.tgz#7e075dc2908582184b4e1964e2435451fc29e15f"
-  integrity sha512-czjFaShpJnL692jX1eOlDaZJckVxGijPlOv8MsOw59nOE+P3ulr+LvtBTVnY4r9vC7fB9UdWjd5QZ6x5zRDuVg==
+"@medreporter/medtl-parser@*", "@medreporter/medtl-parser@0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@medreporter/medtl-parser/-/medtl-parser-0.9.0.tgz#9c015e38e3819740e260b9c7392b8548acd0ab3c"
+  integrity sha512-q5GIOe4lSuq+jcTmuaS2Mr1gV6JRMkABZXSXwZLuPF9sSuYNbmnmNKjKCTbl6gC9jlKUPLNPvKtUxIzlgyhbSw==
   dependencies:
     chevrotain "^10.1.2"
     underscore "^1.13.2"
 
-"@medtl/prettier-plugin@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@medtl/prettier-plugin/-/prettier-plugin-0.6.0.tgz#e831cd050b240531625ca8cfa454c6b3da3cf3ea"
-  integrity sha512-b63BDZIM++JZx3ejta6d2Iwi6kULsOoxxsk/WADNUsLv/4rDRLhf7AzLTEMXdnSVOoqC1A2Y/pqrjvnIo89HJQ==
+"@medreporter/medtl-schema@*", "@medreporter/medtl-schema@0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@medreporter/medtl-schema/-/medtl-schema-0.9.0.tgz#50dba5702aa10d8336a73f58c1b5c5324c5a8bb8"
+  integrity sha512-1plVz6GPa8mfEuZ/eEZgQ8oDHflbj6pAXhbfL8QabnbLDaFzsCh0tkVykZhJz3IdPiYRkZjhLzO/fjVRffd82A==
   dependencies:
-    "@medtl/parser" "0.6.0"
-    prettier "^2.5.1"
-
-"@medtl/schema@*", "@medtl/schema@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@medtl/schema/-/schema-0.6.0.tgz#288221cb7b38f62dde146b3cbb11e2c828c3b0a6"
-  integrity sha512-m8zH+TK4e8x/xoG+N7hpCBSePR6y/DLQAHZiersh8O7Nuw2dF+vlHzKy9oBrgnY4CwyajMI9Bc1MGJt/O3YOFg==
-  dependencies:
-    "@medtl/parser" "0.6.0"
+    "@medreporter/medtl-parser" "0.9.0"
     chevrotain "^10.1.1"
     underscore "^1.13.2"
     zod "^3.11.6"
+
+"@medreporter/monaco-plugin-medtl@*":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@medreporter/monaco-plugin-medtl/-/monaco-plugin-medtl-0.9.0.tgz#24abbc44b75407d9ccf6a64954452dd74a9d4788"
+  integrity sha512-ZNAJeeBQ+bduIjYGSBBwlu9mznb3juIvfnJrsNOOSSBPHVx1Ms4BxesU2rnCn9Q/dyAow2LrF5Rx+gr3lPh+vA==
+  dependencies:
+    "@medreporter/medtl-language-service" "0.9.0"
+    vscode-languageserver-textdocument "^1.0.4"
+    vscode-languageserver-types "^3.16.0"
+
+"@medreporter/prettier-plugin-medtl@0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@medreporter/prettier-plugin-medtl/-/prettier-plugin-medtl-0.9.0.tgz#c9ea38342045b1a21ace4852f947c04462233b4b"
+  integrity sha512-qDoogpJeFhhnL4qcgLNG9GfZF/FHFUa9DY0KxoHHnqe7vhecKYJGADdoWQ/N22AkEPlmfaBaNS4pjnY3pqr+og==
+  dependencies:
+    "@medreporter/medtl-parser" "0.9.0"
+    prettier "^2.5.1"
 
 "@mrleebo/prisma-ast@0.2.6":
   version "0.2.6"
