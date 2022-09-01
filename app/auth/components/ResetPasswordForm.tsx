@@ -19,13 +19,11 @@ export const ResetPasswordForm = () => {
       {isSuccess ? (
         <Alert title={t("ResetPasswordForm.message_success")}>
           {t("ResetPasswordForm.text_redirect")}{" "}
-          <PageLink route={Routes.HomePage()}>
-            {t("ResetPasswordForm.link_label_homepage")}
-          </PageLink>
+          <PageLink route={Routes.HomePage()}>{t("ResetPasswordForm.link_homepage")}</PageLink>
         </Alert>
       ) : (
         <SubmitForm
-          submitText={t("ResetPasswordForm.button_label_reset")}
+          submitText={t("ResetPasswordForm.button_reset")}
           schema={ResetPassword}
           initialValues={{ password: "", passwordConfirmation: "", token: query.token as string }}
           onSubmit={async (values) => {

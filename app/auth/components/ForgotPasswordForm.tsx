@@ -19,7 +19,7 @@ export const ForgotPasswordForm = () => {
         </Alert>
       ) : (
         <SubmitForm
-          submitText={t("ForgotPasswordForm.button_label_send")}
+          submitText={t("ForgotPasswordForm.button_send")}
           schema={ForgotPassword}
           initialValues={{ email: "" }}
           onSubmit={async (values) => {

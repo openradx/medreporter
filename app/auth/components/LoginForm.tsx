@@ -21,7 +21,7 @@ export const LoginForm = (props: LoginFormProps) => {
     <Stack spacing="md">
       <Title order={3}>{t("LoginForm.title_log_in")}</Title>
       <SubmitForm
-        submitText={t("LoginForm.button_label_log_in")}
+        submitText={t("LoginForm.button_log_in")}
         schema={Login}
         initialValues={{ usernameOrEmail: "", password: "" }}
         onSubmit={async (values) => {
@@ -67,9 +67,9 @@ export const LoginForm = (props: LoginFormProps) => {
       </SubmitForm>
       <Stack spacing="xs">
         <PageLink route={Routes.ForgotPasswordPage()}>
-          {t("LoginForm.link_label_forgot_password")}
+          {t("LoginForm.link_forgot_password")}
         </PageLink>
-        <PageLink route={Routes.SignupPage()}>{t("LoginForm.link_label_sign_up")}</PageLink>
+        <PageLink route={Routes.SignupPage()}>{t("LoginForm.link_sign_up")}</PageLink>
       </Stack>
     </Stack>
   )

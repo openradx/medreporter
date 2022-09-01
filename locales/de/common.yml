@@ -12,30 +12,31 @@ general:
     Support.
   misc_no_data: Keine Datensätze verfügbar
 AccountControl:
+  menu_title_account: Benutzerkonto
   option_profile: Benutzerprofil
   option_log_in: Anmelden
   option_log_out: Abmelden
   option_admin: Verwaltung
-  menu_title_account: Benutzerkonto
 AdrenalWashoutPage:
   tool_title: Nebennieren Washout
 ClearStructureButton:
-  button_label_clear_structure: Strukturformular zurücksetzen
+  button_clear_structure: Strukturformular zurücksetzen
 ColorSchemeToggle:
-  button_label_toggle_theme: Farbschema wechseln
+  button_toggle_theme: Farbschema wechseln
 CopyButton:
-  error_message_copy_report: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.
-  success_message_copy_report: Befund in Ablage kopiert
+  button_copy: Befund in Zwischenablage kopieren
+  error_message_copy_report: Kopieren in Zwischenablage fehlgeschlagen. Bitte manuell kopieren.
+  success_message_copy_report: Befund in Zwischenablage kopiert
 ExternalLink:
-  button_label_open_link: Externen Link öffnen
+  button_external_link: Externen Link öffnen
 FieldGraphics:
-  button_label_open_graphic: Auswahlgrafik öffnen
+  button_graphic: Auswahlgrafik öffnen
 FieldInfo:
-  button_label_info: Weitere Informationen
+  button_info: Weitere Informationen
 Fleischner2017Page:
   tool_title: Fleischner 2017
 ForgotPasswordForm:
-  button_label_send: Anleitung senden
+  button_send: Anleitung senden
   form_title: Passwort vergessen?
   input_label_email: E-Mail
   message_email: >
@@ -47,7 +48,7 @@ ForgotPasswordPage:
 GFRPage:
   tool_title: GFR
 GraphicsModal:
-  button_title_reset: Auswahl zurücksetzen
+  button_reset: Auswahl zurücksetzen
 HomePage:
   page_title: Startseite
 languages:
@@ -58,61 +59,60 @@ LanguageSelector:
   menu_title_languages: Sprache (Region)
 LoginForm:
   auth_error_message: Ungültige Anmeldedaten
-  button_label_log_in: Anmelden
-  link_label_forgot_password: Passwort vergessen?
-  link_label_sign_up: Registrieren
+  button_log_in: Anmelden
+  link_forgot_password: Passwort vergessen?
+  link_sign_up: Registrieren
   input_label_password: Passwort
   input_label_username_or_email: Benutzername oder E-Mail
   title_log_in: Anmeldung
 LoginPage:
   page_title: Anmeldung
 MeasurementsActions:
-  button_title: Aktionen Messwerkzeug
+  button: Aktionen Messwerkzeug
 MeasurementsTablePage:
   page_title: Messtabelle
 ModuleInfo:
-  button_title_info: Modulinformation
+  button_info: Modulinformation
 PageHeader:
-  link_label_home: Startseite
-  link_label_tools: Werkzeuge
+  link_tools: Werkzeuge
 RedoButton:
-  button_title_redo: Wiederherstellen
+  button_redo: Wiederherstellen
 ReportFormat:
-  button_title_format: Befundformatierung ändern
+  button_format: Befundformatierung ändern
   format_html: HTML
   format_text: Text
 ReportLanguageSelector:
-  button_title_language_report: Sprache Befund
+  button_language_report: Sprache Befund
 ReportPanel:
   title: Befund
 ResetPasswordForm:
-  button_label_reset: Bestätigen
+  button_reset: Bestätigen
+  form_title: Passwort zurücksetzen
   input_label_confirm_password: Passwort bestätigen
   input_label_new_password: Neues Passwort
-  link_label_homepage: Startseite
-  text_redirect: Gehe zur
+  link_homepage: Startseite
   message_success: Neues Passwort erfolgreich gesetzt
-  form_title: Passwort zurücksetzen
+  text_redirect: Gehe zur
 ResetPasswordPage:
   page_title: Passwort zurücksetzen
 SignupForm:
+  button_submit: Registrieren
+  form_title: Erstelle einen Account
   input_label_about: Über dich selbst
   input_label_email: E-Mail
-  message_email_used: Zu dieser E-Mail-Adresse existiert bereits ein Account.
   input_label_full_name: Vollständiger Name
   input_label_password: Passwort
-  form_title: Erstelle einen Account
-  button_label_submit: Registrieren
   input_label_username: Benutzername
+  message_email_used: Zu dieser E-Mail-Adresse existiert bereits ein Account.
 SignupPage:
   page_title: Registrierung
 SiteLanguageSelector:
-  button_title_language_general: Sprache allgemein
+  button_language_general: Sprache allgemein
 Structure:
   title: Struktur
 StructureLanguageSelector:
-  button_title_language_structure: Sprache Struktur
+  button_language_structure: Sprache Struktur
 ToolsPage:
   page_title: Werkzeuge
 UndoButton:
-  button_title_undo: Rückgängig machen
+  button_undo: Rückgängig machen

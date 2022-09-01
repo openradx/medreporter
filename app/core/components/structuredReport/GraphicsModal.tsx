@@ -147,7 +147,7 @@ export const GraphicsModal = ({
         >
           {svg}
           <ActionIcon
-            title={t("GraphicsModal.button_title_reset")}
+            title={t("GraphicsModal.button_reset")}
             onClick={(event: { stopPropagation: () => void }) => {
               event.stopPropagation()
               onChange?.(multiple ? [] : null)

@@ -9,7 +9,7 @@ export const ClearStructureButton = () => {
 
   return (
     <ActionIcon
-      title={t("ClearStructureButton.button_label_clear")}
+      title={t("ClearStructureButton.button_clear_structure")}
       variant="default"
       disabled={!modified}
       onClick={clearForm}

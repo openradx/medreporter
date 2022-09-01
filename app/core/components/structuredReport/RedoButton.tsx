@@ -9,7 +9,7 @@ export const RedoButton = () => {
 
   return (
     <ActionIcon
-      title={t("RedoButton.button_title_redo")}
+      title={t("RedoButton.button_redo")}
       variant="default"
       disabled={!canRedo}
       onClick={() => redo()}

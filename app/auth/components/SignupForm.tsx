@@ -19,7 +19,7 @@ export const SignupForm = (props: SignupFormProps) => {
     <Stack spacing="md">
       <Title order={3}>{t("SignupForm.form_title")}</Title>
       <SubmitForm
-        submitText={t("SignupForm.button_label_submit")}
+        submitText={t("SignupForm.button_submit")}
         schema={Signup}
         initialValues={{ username: "", email: "", password: "", fullName: "", about: "" }}
         onSubmit={async (values) => {

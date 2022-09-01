@@ -9,6 +9,7 @@ export const CopyButton = () => {
 
   return (
     <ActionIcon
+      title={t("CopyButton.button_copy")}
       variant="default"
       onClick={() => {
         // Copy to clipboard is a tricky thing. There is an old API used

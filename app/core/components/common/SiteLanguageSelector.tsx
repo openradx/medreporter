@@ -31,7 +31,7 @@ export const SiteLanguageSelector = () => {
 
   return (
     <LanguageSelector
-      actionTitle={t("SiteLanguageSelector.button_title_language_general")}
+      actionTitle={t("SiteLanguageSelector.button_language_general")}
       currentLocale={router.locale}
       supportedLocales={supportedSiteLocales}
       onLocaleChanged={onLocaleChanged}

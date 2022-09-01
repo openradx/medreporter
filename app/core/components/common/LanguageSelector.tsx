@@ -47,7 +47,7 @@ export const LanguageSelector = ({
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Label>{t("LanguageSelector.menu_label_languages")}</Menu.Label>
+        <Menu.Label>{t("LanguageSelector.menu_title_languages")}</Menu.Label>
         {items}
         {config.debugTranslations && (
           <>
