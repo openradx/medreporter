@@ -28,7 +28,7 @@ export const ExternalLink = ({ url, title }: ExternalLinkProps) => {
 
   return (
     <ActionIcon
-      title={t("ExternalLink.actionTitle")}
+      title={t("ExternalLink.button_label_open_link")}
       variant="default"
       component="a"
       rel="noopener noreferrer"

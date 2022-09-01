@@ -26,7 +26,7 @@ export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonPro
         } catch (error) {
           const { message } = error as Error
           openModal({
-            title: t("general.errors.errorTitle"),
+            title: t("general.error_title"),
             children: message,
           })
         }

@@ -1,156 +1,118 @@
 general:
-  buttons:
-    add: Hinzufügen
-    cancel: Abbrechen
-    clear: Löschen
-    close: Schließen
-    delete: Löschen
-    save: Sichern
-
-  errors:
-    errorTitle: Ein Fehler ist aufgetreten
-    unknownError: >
-      Entschuldige, ein unerwarteter Fehler ist aufgetreten.
-      Bitte versuche es später erneut. Wenn der Fehler anhält,
-      dann kontaktiere bitte unseren Support.
-
-  misc:
-    noData: Keine Datensätze verfügbar
-
+  button_add: Hinzufügen
+  button_cancel: Abbrechen
+  button_clear: Löschen
+  button_close: Schließen
+  button_delete: Löschen
+  button_save: Sichern
+  error_title: Ein Fehler ist aufgetreten
+  error_text_unknown: >
+    Entschuldige, ein unerwarteter Fehler ist aufgetreten. Bitte versuche es
+    später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren
+    Support.
+  misc_no_data: Keine Datensätze verfügbar
 AccountControl:
-  accountTitle: Benutzerkonto
-  admin: Verwaltung
-  profile: Benutzerprofil
-  logInTitle: Anmelden
-  logOut: Abmelden
-
+  option_profile: Benutzerprofil
+  option_log_in: Anmelden
+  option_log_out: Abmelden
+  option_admin: Verwaltung
+  menu_title_account: Benutzerkonto
 AdrenalWashoutPage:
-  title: Nebennieren Washout
-
+  tool_title: Nebennieren Washout
 ClearStructureButton:
-  actionTitle: Strukturformular zurücksetzen
-
+  button_label_clear_structure: Strukturformular zurücksetzen
 ColorSchemeToggle:
-  actionTitle: Farbschema wechseln
-
+  button_label_toggle_theme: Farbschema wechseln
 CopyButton:
-  success: Befund in Ablage kopiert
-  error: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.
-
+  error_message_copy_report: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.
+  success_message_copy_report: Befund in Ablage kopiert
 ExternalLink:
-  actionTitle: Externen Link öffnen
-
+  button_label_open_link: Externen Link öffnen
 FieldGraphics:
-  actionTitle: Auswahlgrafik öffnen
-
+  button_label_open_graphic: Auswahlgrafik öffnen
 FieldInfo:
-  actionTitle: Weitere Informationen
-
+  button_label_info: Weitere Informationen
 Fleischner2017Page:
-  title: Fleischner 2017
-
+  tool_title: Fleischner 2017
 ForgotPasswordForm:
-  email: E-Mail
-  message: >
-    Wenn deine E-Mail in unserem System ist, wirst du in Kürze eine
-    Anleitung zum Zurücksetzen deines Passwortes erhalten.
-  send: Anleitung senden
-  submitted: Anfrage gesendet
-  title: Passwort vergessen?
-
+  button_label_send: Anleitung senden
+  form_title: Passwort vergessen?
+  input_label_email: E-Mail
+  message_email: >
+    Wenn deine E-Mail in unserem System ist, wirst du in Kürze eine Anleitung
+    zum Zurücksetzen deines Passwortes erhalten.
+  message_submitted: Anfrage gesendet
 ForgotPasswordPage:
-  title: Passwort vergessen
-
+  page_title: Passwort vergessen
 GFRPage:
-  title: GFR
-
+  tool_title: GFR
 GraphicsModal:
-  resetTitle: Auswahl zurücksetzen
-
+  button_title_reset: Auswahl zurücksetzen
 HomePage:
-  title: Startseite
-
-LanguageSelector:
+  page_title: Startseite
+languages:
   as_site: wie Seite
   de: Deutsch
   en-US: Englisch (US)
-  label: Sprache (Region)
-
+LanguageSelector:
+  menu_title_languages: Sprache (Region)
 LoginForm:
-  authError: Ungültige Anmeldedaten
-  forgotPassword: Passwort vergessen?
-  logIn: Anmelden
-  password: Passwort
-  signUp: Registrieren
-  title: Anmeldung
-  usernameOrEmail: Benutzername oder E-Mail
-
+  auth_error_message: Ungültige Anmeldedaten
+  button_label_log_in: Anmelden
+  link_label_forgot_password: Passwort vergessen?
+  link_label_sign_up: Registrieren
+  input_label_password: Passwort
+  input_label_username_or_email: Benutzername oder E-Mail
+  title_log_in: Anmeldung
 LoginPage:
-  title: Anmeldung
-
+  page_title: Anmeldung
 MeasurementsActions:
-  actionTitle: Aktionen Messwerkzeug
-
+  button_title: Aktionen Messwerkzeug
 MeasurementsTablePage:
-  title: Messtabelle
-
+  page_title: Messtabelle
 ModuleInfo:
-  actionTitle: Modulinformation
-
+  button_title_info: Modulinformation
 PageHeader:
-  home: Startseite
-  tools: Werkzeuge
-
+  link_label_home: Startseite
+  link_label_tools: Werkzeuge
 RedoButton:
-  actionTitle: Wiederherstellen
-
+  button_title_redo: Wiederherstellen
 ReportFormat:
-  actionTitle: Befundformatierung ändern
-  html: HTML
-  text: Text
-
+  button_title_format: Befundformatierung ändern
+  format_html: HTML
+  format_text: Text
 ReportLanguageSelector:
-  actionTitle: Sprache Befund
-
+  button_title_language_report: Sprache Befund
 ReportPanel:
   title: Befund
-
 ResetPasswordForm:
-  confirmPasswordLabel: Passwort bestätigen
-  homepage: Startseite
-  newPasswordLabel: Neues Passwort
-  redirect: Gehe zur
-  reset: Bestätigen
-  success: Neues Passwort erfolgreich gesetzt
-  title: Passwort zurücksetzen
-
+  button_label_reset: Bestätigen
+  input_label_confirm_password: Passwort bestätigen
+  input_label_new_password: Neues Passwort
+  link_label_homepage: Startseite
+  text_redirect: Gehe zur
+  message_success: Neues Passwort erfolgreich gesetzt
+  form_title: Passwort zurücksetzen
 ResetPasswordPage:
-  title: Passwort zurücksetzen
-
+  page_title: Passwort zurücksetzen
 SignupForm:
-  about: Über dich selbst
-  email: E-Mail
-  emailAlreadyUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
-  fullName: Vollständiger Name
-  password: Passwort
-  submit: Registrieren
-  title: Erstelle einen Account
-  username: Benutzername
-
+  input_label_about: Über dich selbst
+  input_label_email: E-Mail
+  message_email_used: Zu dieser E-Mail-Adresse existiert bereits ein Account.
+  input_label_full_name: Vollständiger Name
+  input_label_password: Passwort
+  form_title: Erstelle einen Account
+  button_label_submit: Registrieren
+  input_label_username: Benutzername
 SignupPage:
-  title: Registrierung
-
+  page_title: Registrierung
 SiteLanguageSelector:
-  actionTitle: Sprache allgemein
-
+  button_title_language_general: Sprache allgemein
 Structure:
   title: Struktur
-
 StructureLanguageSelector:
-  actionTitle: Sprache Struktur
-
+  button_title_language_structure: Sprache Struktur
 ToolsPage:
-  title: Werkzeuge
-
+  page_title: Werkzeuge
 UndoButton:
-  actionTitle: Rückgängig machen
+  button_title_undo: Rückgängig machen

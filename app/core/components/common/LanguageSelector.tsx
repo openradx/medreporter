@@ -21,7 +21,7 @@ export const LanguageSelector = ({
 
   const allLocales = [...supportedLocales]
   const items = allLocales
-    .map((locale) => ({ locale, label: t(`LanguageSelector.${locale}`) }))
+    .map((locale) => ({ locale, label: t(`languages.${locale}`) }))
     .sort((item1, item2) => {
       if (item1.locale === "as_site") return 0
       if (item2.locale === "as_site") return 1
@@ -47,7 +47,7 @@ export const LanguageSelector = ({
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Label>{t("LanguageSelector.label")}</Menu.Label>
+        <Menu.Label>{t("LanguageSelector.menu_label_languages")}</Menu.Label>
         {items}
         {config.debugTranslations && (
           <>

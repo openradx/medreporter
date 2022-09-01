@@ -15,15 +15,17 @@ export const ResetPasswordForm = () => {
 
   return (
     <Stack spacing="md">
-      <Title order={3}>{t("ResetPasswordForm.title")}</Title>
+      <Title order={3}>{t("ResetPasswordForm.form_title")}</Title>
       {isSuccess ? (
-        <Alert title={t("ResetPasswordForm.success")}>
-          {t("ResetPasswordForm.redirect")}{" "}
-          <PageLink route={Routes.HomePage()}>{t("ResetPasswordForm.homepage")}</PageLink>
+        <Alert title={t("ResetPasswordForm.message_success")}>
+          {t("ResetPasswordForm.text_redirect")}{" "}
+          <PageLink route={Routes.HomePage()}>
+            {t("ResetPasswordForm.link_label_homepage")}
+          </PageLink>
         </Alert>
       ) : (
         <SubmitForm
-          submitText={t("ResetPasswordForm.reset")}
+          submitText={t("ResetPasswordForm.button_label_reset")}
           schema={ResetPassword}
           initialValues={{ password: "", passwordConfirmation: "", token: query.token as string }}
           onSubmit={async (values) => {
@@ -35,7 +37,7 @@ export const ResetPasswordForm = () => {
               if (err.name === "ResetPasswordError") {
                 return { [SUBMIT_FORM_ERROR]: err.message }
               }
-              return { [SUBMIT_FORM_ERROR]: t("general.errors.unknownError") }
+              return { [SUBMIT_FORM_ERROR]: t("general.error_text_unknown") }
             }
           }}
         >
@@ -44,7 +46,7 @@ export const ResetPasswordForm = () => {
               name="password"
               render={({ field: { value, onChange }, fieldState: { error } }) => (
                 <TextInput
-                  label={t("ResetPasswordForm.newPasswordLabel")}
+                  label={t("ResetPasswordForm.input_label_new_password")}
                   value={value}
                   onChange={onChange}
                   error={error ? error.message : null}
@@ -57,7 +59,7 @@ export const ResetPasswordForm = () => {
               name="passwordConfirmation"
               render={({ field: { value, onChange }, fieldState: { error } }) => (
                 <TextInput
-                  label={t("ResetPasswordForm.confirmPasswordLabel")}
+                  label={t("ResetPasswordForm.input_label_confirm_password")}
                   value={value}
                   onChange={onChange}
                   error={error ? error.message : null}

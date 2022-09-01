@@ -17,7 +17,7 @@ const SignupPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("SignupPage.title")} />
+      <PageHead title={t("SignupPage.page_title")} />
       <Container size="sm">
         <SignupForm onSuccess={() => router.push(Routes.HomePage())} />
       </Container>

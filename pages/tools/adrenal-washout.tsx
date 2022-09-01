@@ -15,7 +15,7 @@ const AdrenalWashoutPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("AdrenalWashoutPage.title")} />
+      <PageHead title={t("AdrenalWashoutPage.tool_title")} />
       <AdrenalWashout />
     </>
   )

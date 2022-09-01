@@ -33,7 +33,7 @@ export const StructureLanguageSelector = () => {
 
   return (
     <LanguageSelector
-      actionTitle={t("StructureLanguageSelector.actionTitle")}
+      actionTitle={t("StructureLanguageSelector.button_title_language_structure")}
       currentLocale={currentLanguage}
       supportedLocales={["as_site", ...supportedStructuredReportLocales]}
       onLocaleChanged={onLanguageChanged}

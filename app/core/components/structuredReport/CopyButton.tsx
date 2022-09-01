@@ -46,12 +46,12 @@ export const CopyButton = () => {
           }
 
           showNotification({
-            message: t("CopyButton.success"),
+            message: t("CopyButton.success_message_copy_report"),
             color: "green",
           })
         } else {
           showNotification({
-            message: t("CopyButton.error"),
+            message: t("CopyButton.error_message_copy_report"),
             color: "red",
           })
         }

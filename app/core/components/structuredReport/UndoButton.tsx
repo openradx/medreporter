@@ -9,7 +9,7 @@ export const UndoButton = () => {
 
   return (
     <ActionIcon
-      title={t("UndoButton.actionTitle")}
+      title={t("UndoButton.button_title_undo")}
       variant="default"
       disabled={!canUndo}
       onClick={() => undo()}

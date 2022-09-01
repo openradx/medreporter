@@ -40,10 +40,10 @@ export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) =
         />
         <Group position="right">
           <Button variant="default" onClick={onClose}>
-            {t("general.buttons.cancel")}
+            {t("general.button_cancel")}
           </Button>
           <Button form="add-institute-form" type="submit">
-            {t("general.buttons.add")}
+            {t("general.button_add")}
           </Button>
         </Group>
       </Stack>

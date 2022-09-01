@@ -15,7 +15,7 @@ const GFRPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("GFRPage.title")} />
+      <PageHead title={t("GFRPage.tool_title")} />
       <GFR />
     </>
   )

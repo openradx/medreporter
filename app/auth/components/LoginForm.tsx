@@ -19,9 +19,9 @@ export const LoginForm = (props: LoginFormProps) => {
 
   return (
     <Stack spacing="md">
-      <Title order={3}>{t("LoginForm.title")}</Title>
+      <Title order={3}>{t("LoginForm.title_log_in")}</Title>
       <SubmitForm
-        submitText={t("LoginForm.logIn")}
+        submitText={t("LoginForm.button_label_log_in")}
         schema={Login}
         initialValues={{ usernameOrEmail: "", password: "" }}
         onSubmit={async (values) => {
@@ -31,7 +31,7 @@ export const LoginForm = (props: LoginFormProps) => {
             return null
           } catch (error) {
             if (error instanceof AuthenticationError) {
-              return { [SUBMIT_FORM_ERROR]: t("LoginForm.authError") }
+              return { [SUBMIT_FORM_ERROR]: t("LoginForm.auth_error_message") }
             }
             const { message } = error as Error
             return { [SUBMIT_FORM_ERROR]: message }
@@ -43,7 +43,7 @@ export const LoginForm = (props: LoginFormProps) => {
             name="usernameOrEmail"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("LoginForm.usernameOrEmail")}
+                label={t("LoginForm.input_label_username_or_email")}
                 value={value}
                 onChange={onChange}
                 error={error ? error.message : null}
@@ -55,7 +55,7 @@ export const LoginForm = (props: LoginFormProps) => {
             name="password"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("LoginForm.password")}
+                label={t("LoginForm.input_label_password")}
                 value={value}
                 onChange={onChange}
                 error={error ? error.message : null}
@@ -66,8 +66,10 @@ export const LoginForm = (props: LoginFormProps) => {
         </Stack>
       </SubmitForm>
       <Stack spacing="xs">
-        <PageLink route={Routes.ForgotPasswordPage()}>{t("LoginForm.forgotPassword")}</PageLink>
-        <PageLink route={Routes.SignupPage()}>{t("LoginForm.signUp")}</PageLink>
+        <PageLink route={Routes.ForgotPasswordPage()}>
+          {t("LoginForm.link_label_forgot_password")}
+        </PageLink>
+        <PageLink route={Routes.SignupPage()}>{t("LoginForm.link_label_sign_up")}</PageLink>
       </Stack>
     </Stack>
   )

@@ -33,7 +33,7 @@ export const InstituteList = () => {
 
   return (
     <Stack>
-      {institutes.length === 0 && <Text>{t("general.misc.noData")}</Text>}
+      {institutes.length === 0 && <Text>{t("general.misc_no_data")}</Text>}
       {institutes.length > 0 && (
         <ScrollArea>
           <Table sx={{ minWidth: 800 }} verticalSpacing="md">

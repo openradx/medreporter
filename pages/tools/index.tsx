@@ -13,7 +13,7 @@ const ToolsPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("ToolsPage.title")} />
+      <PageHead title={t("ToolsPage.page_title")} />
       <Tools />
     </>
   )

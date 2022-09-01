@@ -41,10 +41,10 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
         />
         <Group position="right">
           <Button variant="default" onClick={onClose}>
-            {t("general.buttons.cancel")}
+            {t("general.button_cancel")}
           </Button>
           <Button form="add-user-form" type="submit">
-            {t("general.buttons.add")}
+            {t("general.button_add")}
           </Button>
         </Group>
       </Stack>

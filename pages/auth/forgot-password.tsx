@@ -14,7 +14,7 @@ const ForgotPasswordPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("ForgotPasswordPage.title")} />
+      <PageHead title={t("ForgotPasswordPage.page_title")} />
       <Container size="sm">
         <ForgotPasswordForm />
       </Container>
