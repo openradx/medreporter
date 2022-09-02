@@ -17,7 +17,7 @@ const LoginPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("LoginPage.page_title")} />
+      <PageHead title={t("LoginPage.pageTitle")} />
       <Container size="sm">
         <LoginForm
           onSuccess={() => {

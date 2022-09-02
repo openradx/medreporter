@@ -1,117 +1,117 @@
 general:
-  button_add: Add
-  button_cancel: Cancel
-  button_clear: Clear
-  button_close: Close
-  button_delete: Delete
-  button_save: Save
-  error_title: An error occurred
-  error_text_unknown: >
+  buttonAdd: Add
+  buttonCancel: Cancel
+  buttonClear: Clear
+  buttonClose: Close
+  buttonDelete: Delete
+  buttonSave: Save
+  errorTitle: An error occurred
+  errorTextUnknown: >
     Sorry, we had an unexpected error. Please try again later. If the error
     persists then please contact our support.
-  misc_no_data: No data available
+  miscNoData: No data available
 AccountControl:
-  menu_title_account: Account
-  option_profile: User profile
-  option_log_in: Log in
-  option_log_out: Log out
-  option_admin: Administration
+  menuTitleAccout: Account
+  optionProfile: User profile
+  optionLogIn: Log in
+  optionLogOut: Log out
+  optionAdmin: Administration
 AdrenalWashoutPage:
-  tool_title: Adrenal washout
+  toolTitle: Adrenal washout
 ClearStructureButton:
-  button_clear_structure: Clear structure form
+  buttonClearStructure: Clear structure form
 ColorSchemeToggle:
-  button_toggle_theme: Toggle theme
+  buttonToggleTheme: Toggle theme
 CopyButton:
-  button_copy: Copy report to clipboard
-  error_message_copy_report: Copy to clipboard failed. Please copy manually.
-  success_message_copy_report: Copied report to clipboard
+  buttonCopy: Copy report to clipboard
+  errorMessageCopyReport: Copy to clipboard failed. Please copy manually.
+  successMessageCopyReport: Copied report to clipboard
 ExternalLink:
-  button_external_link: Open external link
+  buttonExternalLink: Open external link
 FieldGraphics:
-  button_graphic: Open graphic for selection
+  buttonGraphic: Open graphic for selection
 FieldInfo:
-  button_info: Additional infos
+  buttonInfo: Additional infos
 Fleischner2017Page:
-  tool_title: Fleischner 2017
+  toolTitle: Fleischner 2017
 ForgotPasswordForm:
-  button_send: Send reset password instructions
-  form_title: Forgot your password?
-  input_label_email: Email
-  message_email: >
+  buttonSend: Send reset password instructions
+  formTitle: Forgot your password?
+  inputLabelEmail: Email
+  messageEmail: >
     If your email is in our system, you will receive instructions to reset your
     password shortly.
-  message_submitted: Request submitted
+  messageSubmitted: Request submitted
 ForgotPasswordPage:
-  page_title: Forgot password
+  pageTitle: Forgot password
 GFRPage:
-  tool_title: GFR
+  toolTitle: GFR
 GraphicsModal:
-  button_reset: Reset selection
+  buttonReset: Reset selection
 HomePage:
-  page_title: Homepage
+  pageTitle: Homepage
 languages:
-  as_site: As page
+  asSite: As page
   de: German
   en-US: English (US)
 LanguageSelector:
-  menu_title_languages: Language (Region)
+  menuTitleLanguages: Language (Region)
 LoginForm:
-  auth_error_message: Invalid account credentials
-  button_log_in: Log in
-  link_forgot_password: Forgot your password?
-  link_sign_up: Sign up
-  input_label_password: Password
-  input_label_username_or_email: Username or email
-  title_log_in: Login
+  authErrorMessage: Invalid account credentials
+  buttonLogIn: Log in
+  linkForgotPassword: Forgot your password?
+  linkSignUp: Sign up
+  inputLabelPassword: Password
+  inputLabelUsernameOrEmail: Username or email
+  formTitle: Login
 LoginPage:
-  page_title: Login
+  pageTitle: Login
 MeasurementsActions:
-  button: Measurement actions
+  buttonActions: Measurement actions
 MeasurementsTablePage:
-  page_title: Measurements table
+  pageTitle: Measurements table
 ModuleInfo:
-  button_info: Module info
+  buttonInfo: Module info
 PageHeader:
-  link_tools: Tools
+  linkTools: Tools
 RedoButton:
-  button_redo: Redo
+  buttonRedo: Redo
 ReportFormat:
-  button_format: Change report format
-  format_html: HTML
-  format_text: Text
+  buttonFormat: Change report format
+  formatHtml: HTML
+  formatText: Text
 ReportLanguageSelector:
-  button_language_report: Report language
+  buttonLanguageReport: Report language
 ReportPanel:
   title: Report
 ResetPasswordForm:
-  button_reset: Reset Password
-  form_title: Set a new Password
-  input_label_confirm_password: Confirm New Password
-  input_label_new_password: New Password
-  link_homepage: homepage
-  message_success: Password reset successfully
-  text_redirect: Go to the
+  buttonReset: Reset Password
+  formTitle: Set a new Password
+  inputLabelConfirmPassword: Confirm New Password
+  inputLabelNewPassword: New Password
+  linkHomepage: homepage
+  messageSuccess: Password reset successfully
+  textRedirect: Go to the
 ResetPasswordPage:
-  page_title: Reset password
+  pageTitle: Reset password
 SignupForm:
-  button_submit: Create account
-  form_title: Create an Account
-  input_label_about: About yourself
-  input_label_email: Email
-  input_label_full_name: Full name
-  input_label_password: Password
-  input_label_username: Username
-  message_email_used: This email is already being used.
+  buttonSubmit: Create account
+  formTitle: Create an Account
+  inputLabelAbout: About yourself
+  inputLabelEmail: Email
+  inputLabelFullName: Full name
+  inputLabelPassword: Password
+  inputLabelUsername: Username
+  messageEmail_used: This email is already being used.
 SignupPage:
-  page_title: Signup
+  pageTitle: Signup
 SiteLanguageSelector:
-  button_language_general: General language
+  buttonLanguageGeneral: General language
 Structure:
   title: Structure
 StructureLanguageSelector:
-  button_language_structure: Structure language
+  buttonLanguageStructure: Structure language
 ToolsPage:
-  page_title: Tools
+  pageTitle: Tools
 UndoButton:
-  button_undo: Undo
+  buttonUndo: Undo

@@ -15,15 +15,15 @@ export const ResetPasswordForm = () => {
 
   return (
     <Stack spacing="md">
-      <Title order={3}>{t("ResetPasswordForm.form_title")}</Title>
+      <Title order={3}>{t("ResetPasswordForm.formTitle")}</Title>
       {isSuccess ? (
-        <Alert title={t("ResetPasswordForm.message_success")}>
+        <Alert title={t("ResetPasswordForm.messageSuccess")}>
           {t("ResetPasswordForm.text_redirect")}{" "}
-          <PageLink route={Routes.HomePage()}>{t("ResetPasswordForm.link_homepage")}</PageLink>
+          <PageLink route={Routes.HomePage()}>{t("ResetPasswordForm.linkHomepage")}</PageLink>
         </Alert>
       ) : (
         <SubmitForm
-          submitText={t("ResetPasswordForm.button_reset")}
+          submitText={t("ResetPasswordForm.buttonReset")}
           schema={ResetPassword}
           initialValues={{ password: "", passwordConfirmation: "", token: query.token as string }}
           onSubmit={async (values) => {
@@ -35,7 +35,7 @@ export const ResetPasswordForm = () => {
               if (err.name === "ResetPasswordError") {
                 return { [SUBMIT_FORM_ERROR]: err.message }
               }
-              return { [SUBMIT_FORM_ERROR]: t("general.error_text_unknown") }
+              return { [SUBMIT_FORM_ERROR]: t("general.errorTextUnknown") }
             }
           }}
         >
@@ -44,7 +44,7 @@ export const ResetPasswordForm = () => {
               name="password"
               render={({ field: { value, onChange }, fieldState: { error } }) => (
                 <TextInput
-                  label={t("ResetPasswordForm.input_label_new_password")}
+                  label={t("ResetPasswordForm.inputLabelNewPassword")}
                   value={value}
                   onChange={onChange}
                   error={error ? error.message : null}
@@ -57,7 +57,7 @@ export const ResetPasswordForm = () => {
               name="passwordConfirmation"
               render={({ field: { value, onChange }, fieldState: { error } }) => (
                 <TextInput
-                  label={t("ResetPasswordForm.input_label_confirm_password")}
+                  label={t("ResetPasswordForm.inputLabelConfirmPassword")}
                   value={value}
                   onChange={onChange}
                   error={error ? error.message : null}

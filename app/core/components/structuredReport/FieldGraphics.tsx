@@ -26,7 +26,7 @@ export const FieldGraphics = ({ title, svg, labels, mapping }: FieldGraphicsProp
   return (
     <>
       <ActionIcon
-        title={t("FieldGraphics.button_graphic")}
+        title={t("FieldGraphics.buttonGraphic")}
         onClick={handleClickOpen}
         sx={{ pointerEvents: "auto" }}
         size={20}

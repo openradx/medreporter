@@ -42,10 +42,10 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
         />
         <Group position="right">
           <Button variant="default" onClick={onClose}>
-            {t("general.button_cancel")}
+            {t("general.buttonCancel")}
           </Button>
           <Button form="edit-institute-form" type="submit">
-            {t("general.button_save")}
+            {t("general.buttonSave")}
           </Button>
         </Group>
       </Stack>

@@ -52,7 +52,7 @@ export const ManageMembershipsModal = ({
         </Tabs>
         <Group position="right">
           <Button variant="default" onClick={onClose}>
-            {t("general.button_close")}
+            {t("general.buttonClose")}
           </Button>
         </Group>
       </Stack>

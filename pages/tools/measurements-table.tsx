@@ -15,7 +15,7 @@ const MeasurementsTablePage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("MeasurementsTablePage.page_title")} />
+      <PageHead title={t("MeasurementsTablePage.pageTitle")} />
       <MeasurementsTable />
     </>
   )

@@ -26,8 +26,8 @@ export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps)
             <Text>{t("DeleteInstituteButton.confirmDialogMessage", { name: institute.name })}</Text>
           ),
           labels: {
-            confirm: t("general.button_delete"),
-            cancel: t("general.button_cancel"),
+            confirm: t("general.buttonDelete"),
+            cancel: t("general.buttonCancel"),
           },
           confirmProps: { color: "red" },
           onConfirm: async () => {
@@ -37,7 +37,7 @@ export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps)
             } catch (error) {
               const { message } = error as Error
               openModal({
-                title: t("general.error_title"),
+                title: t("general.errorTitle"),
                 children: message,
               })
             }

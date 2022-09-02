@@ -8,7 +8,7 @@ export function ColorSchemeToggle() {
 
   return (
     <ActionIcon
-      title={t("ColorSchemeToggle.button_toggle_theme")}
+      title={t("ColorSchemeToggle.buttonToggleTheme")}
       onClick={() => toggleColorScheme()}
       size="md"
       variant="default"

@@ -15,7 +15,7 @@ const Fleischner2017Page: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("Fleischner2017Page.tool_title")} />
+      <PageHead title={t("Fleischner2017Page.toolTitle")} />
       <Fleischner2017 />
     </>
   )

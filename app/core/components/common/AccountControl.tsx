@@ -34,7 +34,7 @@ export const AccountControl = () => {
       {session.isLoading && <ActionIcon variant="default" loading />}
       {!session.isLoading && !session.userId && (
         <Link href={Routes.LoginPage()} passHref>
-          <ActionIcon title={t("AccountControl.option_log_in")} variant="default">
+          <ActionIcon title={t("AccountControl.optionLogIn")} variant="default">
             <LoginIcon size={18} />
           </ActionIcon>
         </Link>
@@ -42,7 +42,7 @@ export const AccountControl = () => {
       {!session.isLoading && session.userId && (
         <Menu width={250}>
           <Menu.Target>
-            <ActionIcon title={t("AccountControl.menu_title_account")} variant="default">
+            <ActionIcon title={t("AccountControl.menuTitleAccout")} variant="default">
               <AccountIcon size={20} />
             </ActionIcon>
           </Menu.Target>
@@ -50,7 +50,7 @@ export const AccountControl = () => {
           <Menu.Dropdown>
             <Menu.Label>{session.username}</Menu.Label>
             <Menu.Item icon={<ProfileIcon size={18} />}>
-              {t("AccountControl.option_profile")}
+              {t("AccountControl.optionProfile")}
             </Menu.Item>
             {canAdministrate && (
               <Menu.Item
@@ -58,11 +58,11 @@ export const AccountControl = () => {
                 href={Routes.AdminPage()}
                 icon={<AdminIcon size={18} />}
               >
-                {t("AccountControl.option_admin")}
+                {t("AccountControl.optionAdmin")}
               </Menu.Item>
             )}
             <Menu.Item icon={<LogoutIcon size={18} />} onClick={() => logoutMutation()}>
-              {t("AccountControl.option_log_out")}
+              {t("AccountControl.optionLogOut")}
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>

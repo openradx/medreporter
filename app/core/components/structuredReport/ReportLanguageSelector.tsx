@@ -14,7 +14,7 @@ export const ReportLanguageSelector = () => {
   const currentLanguage = useAppSelector(selectReportLanguage)
 
   useSiteLanguageListener((lng) => {
-    if (currentLanguage === "as_site") {
+    if (currentLanguage === "asSite") {
       i18nReport.changeLanguage(lng)
     }
   })
@@ -23,7 +23,7 @@ export const ReportLanguageSelector = () => {
 
   const onLanguageChanged = (language: string) => {
     let lng = language
-    if (lng === "as_site") {
+    if (lng === "asSite") {
       lng = i18nSite.language
     }
     i18nReport.changeLanguage(lng, () => {
@@ -33,9 +33,9 @@ export const ReportLanguageSelector = () => {
 
   return (
     <LanguageSelector
-      actionTitle={t("ReportLanguageSelector.button_language_report")}
+      actionTitle={t("ReportLanguageSelector.buttonLanguageReport")}
       currentLocale={currentLanguage}
-      supportedLocales={["as_site", ...supportedStructuredReportLocales]}
+      supportedLocales={["asSite", ...supportedStructuredReportLocales]}
       onLocaleChanged={onLanguageChanged}
     />
   )

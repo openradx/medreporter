@@ -47,10 +47,10 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
         />
         <Group position="right">
           <Button variant="default" onClick={onClose}>
-            {t("general.button_cancel")}
+            {t("general.buttonCancel")}
           </Button>
           <Button form="edit-user-form" type="submit">
-            {t("general.button_save")}
+            {t("general.buttonSave")}
           </Button>
         </Group>
       </Stack>

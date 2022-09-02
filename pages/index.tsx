@@ -13,7 +13,7 @@ const HomePage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("HomePage.page_title")} />
+      <PageHead title={t("HomePage.pageTitle")} />
       <Welcome />
     </>
   )

@@ -18,7 +18,7 @@ export const FilterInput = ({ label }: FilterInputProps) => {
       autoComplete="off"
       icon={<FilterIcon />}
       rightSection={
-        <ActionIcon title={t("general.button_clear")} onClick={() => setFilter("")}>
+        <ActionIcon title={t("general.buttonClear")} onClick={() => setFilter("")}>
           <ClearIcon />
         </ActionIcon>
       }

@@ -1,118 +1,118 @@
 general:
-  button_add: Hinzufügen
-  button_cancel: Abbrechen
-  button_clear: Löschen
-  button_close: Schließen
-  button_delete: Löschen
-  button_save: Sichern
-  error_title: Ein Fehler ist aufgetreten
-  error_text_unknown: >
+  buttonAdd: Hinzufügen
+  buttonCancel: Abbrechen
+  buttonClear: Löschen
+  buttonClose: Schließen
+  buttonDelete: Löschen
+  buttonSave: Sichern
+  errorTitle: Ein Fehler ist aufgetreten
+  errorTextUnknown: >
     Entschuldige, ein unerwarteter Fehler ist aufgetreten. Bitte versuche es
     später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren
     Support.
-  misc_no_data: Keine Datensätze verfügbar
+  miscNoData: Keine Datensätze verfügbar
 AccountControl:
-  menu_title_account: Benutzerkonto
-  option_profile: Benutzerprofil
-  option_log_in: Anmelden
-  option_log_out: Abmelden
-  option_admin: Verwaltung
+  menuTitleAccout: Benutzerkonto
+  optionProfile: Benutzerprofil
+  optionLogIn: Anmelden
+  optionLogOut: Abmelden
+  optionAdmin: Verwaltung
 AdrenalWashoutPage:
-  tool_title: Nebennieren Washout
+  toolTitle: Nebennieren Washout
 ClearStructureButton:
-  button_clear_structure: Strukturformular zurücksetzen
+  buttonClearStructure: Strukturformular zurücksetzen
 ColorSchemeToggle:
-  button_toggle_theme: Farbschema wechseln
+  buttonToggleTheme: Farbschema wechseln
 CopyButton:
-  button_copy: Befund in Zwischenablage kopieren
-  error_message_copy_report: Kopieren in Zwischenablage fehlgeschlagen. Bitte manuell kopieren.
-  success_message_copy_report: Befund in Zwischenablage kopiert
+  buttonCopy: Befund in Zwischenablage kopieren
+  errorMessageCopyReport: Kopieren in Zwischenablage fehlgeschlagen. Bitte manuell kopieren.
+  successMessageCopyReport: Befund in Zwischenablage kopiert
 ExternalLink:
-  button_external_link: Externen Link öffnen
+  buttonExternalLink: Externen Link öffnen
 FieldGraphics:
-  button_graphic: Auswahlgrafik öffnen
+  buttonGraphic: Auswahlgrafik öffnen
 FieldInfo:
-  button_info: Weitere Informationen
+  buttonInfo: Weitere Informationen
 Fleischner2017Page:
-  tool_title: Fleischner 2017
+  toolTitle: Fleischner 2017
 ForgotPasswordForm:
-  button_send: Anleitung senden
-  form_title: Passwort vergessen?
-  input_label_email: E-Mail
-  message_email: >
+  buttonSend: Anleitung senden
+  formTitle: Passwort vergessen?
+  inputLabelEmail: E-Mail
+  messageEmail: >
     Wenn deine E-Mail in unserem System ist, wirst du in Kürze eine Anleitung
     zum Zurücksetzen deines Passwortes erhalten.
-  message_submitted: Anfrage gesendet
+  messageSubmitted: Anfrage gesendet
 ForgotPasswordPage:
-  page_title: Passwort vergessen
+  pageTitle: Passwort vergessen
 GFRPage:
-  tool_title: GFR
+  toolTitle: GFR
 GraphicsModal:
-  button_reset: Auswahl zurücksetzen
+  buttonReset: Auswahl zurücksetzen
 HomePage:
-  page_title: Startseite
+  pageTitle: Startseite
 languages:
-  as_site: wie Seite
+  asSite: wie Seite
   de: Deutsch
   en-US: Englisch (US)
 LanguageSelector:
-  menu_title_languages: Sprache (Region)
+  menuTitleLanguages: Sprache (Region)
 LoginForm:
-  auth_error_message: Ungültige Anmeldedaten
-  button_log_in: Anmelden
-  link_forgot_password: Passwort vergessen?
-  link_sign_up: Registrieren
-  input_label_password: Passwort
-  input_label_username_or_email: Benutzername oder E-Mail
-  title_log_in: Anmeldung
+  authErrorMessage: Ungültige Anmeldedaten
+  buttonLogIn: Anmelden
+  linkForgotPassword: Passwort vergessen?
+  linkSignUp: Registrieren
+  inputLabelPassword: Passwort
+  inputLabelUsernameOrEmail: Benutzername oder E-Mail
+  formTitle: Anmeldung
 LoginPage:
-  page_title: Anmeldung
+  pageTitle: Anmeldung
 MeasurementsActions:
-  button: Aktionen Messwerkzeug
+  buttonActions: Aktionen Messwerkzeug
 MeasurementsTablePage:
-  page_title: Messtabelle
+  pageTitle: Messtabelle
 ModuleInfo:
-  button_info: Modulinformation
+  buttonInfo: Modulinformation
 PageHeader:
-  link_tools: Werkzeuge
+  linkTools: Werkzeuge
 RedoButton:
-  button_redo: Wiederherstellen
+  buttonRedo: Wiederherstellen
 ReportFormat:
-  button_format: Befundformatierung ändern
-  format_html: HTML
-  format_text: Text
+  buttonFormat: Befundformatierung ändern
+  formatHtml: HTML
+  formatText: Text
 ReportLanguageSelector:
-  button_language_report: Sprache Befund
+  buttonLanguageReport: Sprache Befund
 ReportPanel:
   title: Befund
 ResetPasswordForm:
-  button_reset: Bestätigen
-  form_title: Passwort zurücksetzen
-  input_label_confirm_password: Passwort bestätigen
-  input_label_new_password: Neues Passwort
-  link_homepage: Startseite
-  message_success: Neues Passwort erfolgreich gesetzt
-  text_redirect: Gehe zur
+  buttonReset: Bestätigen
+  formTitle: Passwort zurücksetzen
+  inputLabelConfirmPassword: Passwort bestätigen
+  inputLabelNewPassword: Neues Passwort
+  linkHomepage: Startseite
+  messageSuccess: Neues Passwort erfolgreich gesetzt
+  textRedirect: Gehe zur
 ResetPasswordPage:
-  page_title: Passwort zurücksetzen
+  pageTitle: Passwort zurücksetzen
 SignupForm:
-  button_submit: Registrieren
-  form_title: Erstelle einen Account
-  input_label_about: Über dich selbst
-  input_label_email: E-Mail
-  input_label_full_name: Vollständiger Name
-  input_label_password: Passwort
-  input_label_username: Benutzername
-  message_email_used: Zu dieser E-Mail-Adresse existiert bereits ein Account.
+  buttonSubmit: Registrieren
+  formTitle: Erstelle einen Account
+  inputLabelAbout: Über dich selbst
+  inputLabelEmail: E-Mail
+  inputLabelFullName: Vollständiger Name
+  inputLabelPassword: Passwort
+  inputLabelUsername: Benutzername
+  messageEmail_used: Zu dieser E-Mail-Adresse existiert bereits ein Account.
 SignupPage:
-  page_title: Registrierung
+  pageTitle: Registrierung
 SiteLanguageSelector:
-  button_language_general: Sprache allgemein
+  buttonLanguageGeneral: Sprache allgemein
 Structure:
   title: Struktur
 StructureLanguageSelector:
-  button_language_structure: Sprache Struktur
+  buttonLanguageStructure: Sprache Struktur
 ToolsPage:
-  page_title: Werkzeuge
+  pageTitle: Werkzeuge
 UndoButton:
-  button_undo: Rückgängig machen
+  buttonUndo: Rückgängig machen

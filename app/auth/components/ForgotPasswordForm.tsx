@@ -12,14 +12,14 @@ export const ForgotPasswordForm = () => {
 
   return (
     <Stack spacing="md">
-      <Title order={3}>{t("ForgotPasswordForm.form_title")}</Title>
+      <Title order={3}>{t("ForgotPasswordForm.formTitle")}</Title>
       {isSuccess ? (
-        <Alert title={t("ForgotPasswordForm.message_submitted")} color="green">
-          {t("ForgotPasswordForm.message_email")}
+        <Alert title={t("ForgotPasswordForm.messageSubmitted")} color="green">
+          {t("ForgotPasswordForm.messageEmail")}
         </Alert>
       ) : (
         <SubmitForm
-          submitText={t("ForgotPasswordForm.button_send")}
+          submitText={t("ForgotPasswordForm.buttonSend")}
           schema={ForgotPassword}
           initialValues={{ email: "" }}
           onSubmit={async (values) => {
@@ -28,7 +28,7 @@ export const ForgotPasswordForm = () => {
               return null
             } catch (error) {
               return {
-                [SUBMIT_FORM_ERROR]: t("general.error_text_unknown"),
+                [SUBMIT_FORM_ERROR]: t("general.errorTextUnknown"),
               }
             }
           }}
@@ -37,7 +37,7 @@ export const ForgotPasswordForm = () => {
             name="email"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("ForgotPasswordForm.input_label_email")}
+                label={t("ForgotPasswordForm.inputLabelEmail")}
                 value={value}
                 onChange={onChange}
                 error={error ? error.message : null}
