@@ -11,7 +11,7 @@ export const InstitutesManager = () => {
   return (
     <FilterProvider>
       <Stack>
-        <FilterInput label={t("InstitutesManager.filterInstitutes")} />
+        <FilterInput label={t("InstitutesManager.inputLabelFilterInstitutes")} />
         <SuspenseLoader>
           <InstituteList />
         </SuspenseLoader>

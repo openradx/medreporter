@@ -31,8 +31,8 @@ export const AdminFeatures = () => {
     features.push({
       url: Routes.ManageUsersPage(),
       icon: <UserIcon size={18} />,
-      title: t("AdminFeatures.manageUsersTitle"),
-      description: t("AdminFeatures.manageUsersDescription"),
+      title: t("AdminFeatures.titleManageUsers"),
+      description: t("AdminFeatures.descriptionManageUsers"),
     })
   }
 
@@ -40,14 +40,14 @@ export const AdminFeatures = () => {
     features.push({
       url: Routes.ManageInstitutesPage(),
       icon: <InstituteIcon size={18} />,
-      title: t("AdminFeatures.manageInstitutesTitle"),
-      description: t("AdminFeatures.manageInstitutesDescription"),
+      title: t("AdminFeatures.titleManageInstitutes"),
+      description: t("AdminFeatures.descriptionManageInstitutes"),
     })
   }
 
   return (
     <>
-      {features.length === 0 && <Text>{t("AdminFeatures.noAdminRights")}</Text>}
+      {features.length === 0 && <Text>{t("AdminFeatures.messageNoAdminRights")}</Text>}
       {features.length > 0 && (
         <Grid>
           {features.map((feature) => (

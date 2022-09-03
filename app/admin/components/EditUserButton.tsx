@@ -15,7 +15,7 @@ export const EditUserButton = ({ user }: EditUserButtonProps) => {
 
   return (
     <>
-      <ActionIcon title={t("EditUserButton.actionTitle")} onClick={() => setOpened(true)}>
+      <ActionIcon title={t("EditUserButton.buttonEditUser")} onClick={() => setOpened(true)}>
         <EditIcon size={16} />
       </ActionIcon>
       {opened && <EditUserModal opened={opened} onClose={() => setOpened(false)} user={user} />}

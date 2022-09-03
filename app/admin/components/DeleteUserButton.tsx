@@ -17,13 +17,13 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
 
   return (
     <ActionIcon
-      title={t("DeleteUserButton.actionTitle")}
+      title={t("DeleteUserButton.buttonDeleteUser")}
       color="red"
       onClick={() =>
         openConfirmModal({
-          title: t("DeleteUserButton.confirmDialogTitle"),
+          title: t("DeleteUserButton.titleConfirmDialog"),
           children: (
-            <Text>{t("DeleteUserButton.confirmDialogMessage", { username: user.username })}</Text>
+            <Text>{t("DeleteUserButton.messageConfirmDialog", { username: user.username })}</Text>
           ),
           labels: {
             confirm: t("general.buttonDelete"),

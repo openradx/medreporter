@@ -20,7 +20,7 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
   const [updateInstituteMutation] = useMutation(updateInstitute)
 
   return (
-    <Modal title={t("EditInstituteModal.title")} opened={opened} onClose={onClose}>
+    <Modal title={t("EditInstituteModal.formTitle")} opened={opened} onClose={onClose}>
       <Stack>
         <InstituteForm
           id="edit-institute-form"
@@ -34,7 +34,7 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
               return null
             } catch (error) {
               if (uniqueConstraintFailed(error, "name")) {
-                return { name: t("EditInstituteModal.duplicateName") }
+                return { name: t("EditInstituteModal.messageDuplicateName") }
               }
               return { [SUBMIT_FORM_ERROR]: (error as Error).toString() }
             }

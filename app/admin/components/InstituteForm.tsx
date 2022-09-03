@@ -13,7 +13,7 @@ export const InstituteForm = <S extends z.ZodType<any, any>>(props: SubmitFormPr
         name="name"
         render={({ field: { value, onChange }, fieldState: { error } }) => (
           <TextInput
-            label={t("InstituteForm.name")}
+            label={t("InstituteForm.inputLabelName")}
             value={value}
             onChange={onChange}
             error={error ? error.message : null}

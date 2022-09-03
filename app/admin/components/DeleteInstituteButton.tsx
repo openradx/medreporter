@@ -21,9 +21,9 @@ export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps)
       color="red"
       onClick={() =>
         openConfirmModal({
-          title: t("DeleteInstituteButton.confirmDialogTitle"),
+          title: t("DeleteInstituteButton.titleConfirmDialog"),
           children: (
-            <Text>{t("DeleteInstituteButton.confirmDialogMessage", { name: institute.name })}</Text>
+            <Text>{t("DeleteInstituteButton.messageConfirmDialog", { name: institute.name })}</Text>
           ),
           labels: {
             confirm: t("general.buttonDelete"),

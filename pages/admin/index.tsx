@@ -13,7 +13,7 @@ const AdminPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("AdminPage.title")} />
+      <PageHead title={t("AdminPage.pageTitle")} />
       <Container size="md">
         <AdminFeatures />
       </Container>
