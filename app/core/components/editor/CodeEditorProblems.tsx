@@ -29,7 +29,7 @@ export const CodeEditorProblems = ({ editor }: CodeEditorProblemsProps) => {
         }`,
       })}
     >
-      <Text>{t("CodeProblems.title")}</Text>
+      <Text>{t("CodeProblems.titleCodeProblems")}</Text>
       <List
         sx={{
           maxHeight: "125px",
@@ -59,7 +59,7 @@ export const CodeEditorProblems = ({ editor }: CodeEditorProblemsProps) => {
 
         {markers.length === 0 && (
           <List.Item sx={{ py: 0 }} icon={<NoCodeErrorIcon />}>
-            {t("CodeProblems.noCodeProblems")}
+            {t("CodeProblems.titleNoCodeProblems")}
           </List.Item>
         )}
       </List>
