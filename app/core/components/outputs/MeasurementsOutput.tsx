@@ -14,10 +14,10 @@ export const MeasurementsOutput = ({ format, ...rest }: MeasurementsOutputProps)
   const { t } = useReportTranslation()
 
   const labels = {
-    previous: t("MeasurementsOutput.previous"),
-    current: t("MeasurementsOutput.current"),
-    location: t("MeasurementsOutput.location"),
-    reference: t("MeasurementsOutput.reference"),
+    previous: t("MeasurementsOutput.columnPrevious"),
+    current: t("MeasurementsOutput.columnCurrent"),
+    location: t("MeasurementsOutput.columnLocation"),
+    reference: t("MeasurementsOutput.columnReference"),
   }
 
   if (format === "html") {

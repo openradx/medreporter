@@ -1,18 +1,16 @@
 Conclusions:
   title: Conclusions
-
-MeasurementsOutput:
-  current: Current
-  location: Location
-  previous: Previous
-  reference: Reference
-
 MeasurementsInput:
-  clearAll: Clear all
-  clearReferences: Clear references
-  dimensions: Dimensions
-  followUp: Follow up
-  location: Location
-  reference: Reference
-  rows: Rows
-  shiftCurrent: Shift current
+  columnLocation: Location
+  columnReference: Reference
+  formatDimensions: Dimensions
+  formatFollowUp: Follow up
+  formatRows: Rows
+  toolClearAll: Clear all
+  toolClearReferences: Clear references
+  toolShiftCurrent: Shift current
+MeasurementsOutput:
+  columnCurrent: Current
+  columnLocation: Location
+  columnPrevious: Previous
+  columnReference: Reference
