@@ -1,35 +1,31 @@
 # Structure
-description: >
+toolTitleGfr: Glomeruläre Filtrationsrate
+
+toolDescriptionGfr: >
   Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault) 
   und Kinder (Schwartz (orig./rev.), Counahan-Barret).
 
-age: Alter
+inputLabelAge: Alter
 
-creatinine: Serumkreatinin in mg/dl
+inputLabelCreatinine: Serumkreatinin in mg/dl
 
-weight: Gewicht in kg
+inputLabelWeight: Gewicht in kg
 
-height: Größe in cm
+inputLabelHeight: Größe in cm
 
-gender: Geschlecht
-male: Männlich
-female: Weiblich
+inputLabelGender: Geschlecht
+optionGenderMale: Männlich
+optionGenderFemale: Weiblich
 
-ethnicity: Herkunft
-africanAmerican: Afroamerikanisch
-others: Andere
+inputLabelEthnicity: Herkunft
+optionEthnicityAfricanAmerican: Afroamerikanisch
+optionEthnicityOthers: Andere
 
 #Report
-CKDRequired: Kreatinin, Alter, Geschlecht und Herkunft werden zur Berechnung benötigt.
-
-CockcroftRequired: Kreatinin, Alter, Gewicht und Geschlecht werden zur Berechnung benötigt.
-
-MayoRequired: Kreatinin, Alter und Geschlecht werden zur Berechnung benötigt.
-
-CounahanRequired: Kreatinin und Größe werden zur Berechnung benötigt.
-
-SchwartzRevRequired: Kreatinin und Größe werden zur Berechnung benötigt.
-
-SchwartzOrigRequired: Kreatinin, Größe, Alter und Geschlecht werden zur Berechnung benötigt.
-
-ageMissing: Bitte gib zunächst das Alter des Patienten an um zu definieren, welche Formeln angewandt werden müssen.
+textCkdRequired: Kreatinin, Alter, Geschlecht und Herkunft werden zur Berechnung benötigt.
+textCockcroftRequired: Kreatinin, Alter, Gewicht und Geschlecht werden zur Berechnung benötigt.
+textMayoRequired: Kreatinin, Alter und Geschlecht werden zur Berechnung benötigt.
+textCounahanRequired: Kreatinin und Größe werden zur Berechnung benötigt.
+textSchwartzRevRequired: Kreatinin und Größe werden zur Berechnung benötigt.
+textSchwartzOrigRequired: Kreatinin, Größe, Alter und Geschlecht werden zur Berechnung benötigt.
+textAgeMissing: Bitte gib zunächst das Alter des Patienten an um zu definieren, welche Formeln angewandt werden müssen.

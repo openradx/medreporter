@@ -1,35 +1,31 @@
 # Structure
-description: >
+toolTitleGfr: Glomerular filtration rate
+
+toolDescriptionGfr: >
   A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
   and children (Schwartz (orig./rev.), Counahan-Barret).
 
-age: Age
+inputLabelAge: Age
 
-creatinine: Creatinine in mg/dl
+inputLabelCreatinine: Creatinine in mg/dl
 
-weight: Weight in kg
+inputLabelWeight: Weight in kg
 
-height: Height in cm
+inputLabelHeight: Height in cm
 
-gender: Gender
-male: Male
-female: Female
+inputLabelGender: Gender
+optionGenderMale: Male
+optionGenderFemale: Female
 
-ethnicity: Ethnicity
-africanAmerican: African American
-others: Others
+inputLabelEthnicity: Ethnicity
+optionEthnicityAfricanAmerican: African American
+optionEthnicityOthers: Others
 
 #Report
-CKDRequired: Creatinine, age, gender and ethnicity are required.
-
-CockcroftRequired: Creatinine, age, weight and gender are required.
-
-MayoRequired: Creatinine, age and gender are required.
-
-CounahanRequired: Creatinine and height are required.
-
-SchwartzRevRequired: Creatinine and height are required.
-
-SchwartzOrigRequired: Creatinine, height, age and gender are required.
-
-ageMissing: Please fill in the age of the patient first to define which equations should be used.
+textCkdRequired: Creatinine, age, gender and ethnicity are required.
+textCockcroftRequired: Creatinine, age, weight and gender are required.
+textMayoRequired: Creatinine, age and gender are required.
+textCounahanRequired: Creatinine and height are required.
+textSchwartzRevRequired: Creatinine and height are required.
+textSchwartzOrigRequired: Creatinine, height, age and gender are required.
+textAgeMissing: Please fill in the age of the patient first to define which equations should be used.
