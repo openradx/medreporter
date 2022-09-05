@@ -1,5 +1,5 @@
 # Structure
-toolTitleGfr: Glomerular filtration rate
+toolTitleGfr: GFR calculator
 
 toolDescriptionGfr: >
   A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
