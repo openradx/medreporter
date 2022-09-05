@@ -10,14 +10,14 @@ export const calcRelativeAdrenalWashout = (portalVenous: number, delayed: number
 export enum AdrenalWashoutSuggestion {
   MissingValues = "missingValues",
   NoSuggestionPossible = "noSuggestionPossible",
-  DensityLowerZeroAdenoma = "densityLowerZeroAdenoma",
-  DensityLowerTenAdenoma = "densityLowerTenAdenoma",
-  HighDensityMalignancy = "highDensityMalignancy",
-  HighEnhancementPheochromocytoma = "highEnhancementPheochromocytoma",
-  HighAbsoluteWashoutAdenoma = "highAbsoluteWashoutAdenoma",
-  LowAbsoluteWashoutAlternative = "lowAbsoluteWashoutAdenoma",
-  HighRelativeWashoutAdenoma = "highRelativeWashoutAdenoma",
-  LowRelativeWashoutAlternative = "lowRelativeWashoutAdenoma",
+  DensityLowerZeroAdenoma = "suggestionDensityLowerZeroAdenoma",
+  DensityLowerTenAdenoma = "suggestionDensityLowerTenAdenoma",
+  HighDensityMalignancy = "suggestionHighDensityMalignancy",
+  HighEnhancementPheochromocytoma = "suggestionHighEnhancementPheochromocytoma",
+  HighAbsoluteWashoutAdenoma = "suggestionHighAbsoluteWashoutAdenoma",
+  LowAbsoluteWashoutAlternative = "suggestionLowAbsoluteWashoutAdenoma",
+  HighRelativeWashoutAdenoma = "suggestionHighRelativeWashoutAdenoma",
+  LowRelativeWashoutAlternative = "suggetionLowRelativeWashoutAdenoma",
 }
 
 export const makeAdrenalWashoutSuggestion = (
