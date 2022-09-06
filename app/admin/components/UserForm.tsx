@@ -55,7 +55,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="fullName"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.inputLabelUsername")}
+              label={t("UserForm.inputLabelFullName")}
               value={value}
               onChange={onChange}
               error={error ? error.message : null}
