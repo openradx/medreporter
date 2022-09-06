@@ -44,7 +44,7 @@ ForgotPasswordForm:
   messageSubmitted: Request submitted
 ForgotPasswordPage:
   pageTitle: Forgot password
-GFRPage:
+GfrPage:
   toolTitle: GFR
 GraphicsModal:
   buttonReset: Reset selection
