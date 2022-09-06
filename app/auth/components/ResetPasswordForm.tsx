@@ -18,7 +18,7 @@ export const ResetPasswordForm = () => {
       <Title order={3}>{t("ResetPasswordForm.formTitle")}</Title>
       {isSuccess ? (
         <Alert title={t("ResetPasswordForm.messageSuccess")}>
-          {t("ResetPasswordForm.text_redirect")}{" "}
+          {t("ResetPasswordForm.textRedirect")}{" "}
           <PageLink route={Routes.HomePage()}>{t("ResetPasswordForm.linkHomepage")}</PageLink>
         </Alert>
       ) : (

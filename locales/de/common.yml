@@ -57,6 +57,8 @@ languages:
   en-US: Englisch (US)
 LanguageSelector:
   menuTitleLanguages: Sprache (Region)
+Loading:
+  messageLoading: Wird geladen...
 LoginForm:
   authErrorMessage: Ungültige Anmeldedaten
   buttonLogIn: Anmelden
@@ -103,7 +105,7 @@ SignupForm:
   inputLabelFullName: Vollständiger Name
   inputLabelPassword: Passwort
   inputLabelUsername: Benutzername
-  messageEmail_used: Zu dieser E-Mail-Adresse existiert bereits ein Account.
+  messageEmailUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
 SignupPage:
   pageTitle: Registrierung
 SiteLanguageSelector:

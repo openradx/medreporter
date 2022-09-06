@@ -36,7 +36,13 @@ export const AdrenalWashoutStructure = () => {
           />
         </GridItem>
         <GridItem size="md">
-          <NumberField id="delayed" label={t("delayed")} min={MIN_HU} max={MAX_HU} startValue={0} />
+          <NumberField
+            id="delayed"
+            label={t("inputLabelDelayed")}
+            min={MIN_HU}
+            max={MAX_HU}
+            startValue={0}
+          />
         </GridItem>
       </GridGroup>
       <GridItem size="xl">

@@ -29,7 +29,7 @@ export const SignupForm = (props: SignupFormProps) => {
             return null
           } catch (error) {
             if (uniqueConstraintFailed(error, "email")) {
-              return { email: t("SignupForm.messageEmail_used") }
+              return { email: t("SignupForm.messageEmailUsed") }
             }
             const { message } = error as Error
             return { [SUBMIT_FORM_ERROR]: message }

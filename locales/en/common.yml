@@ -56,6 +56,8 @@ languages:
   en-US: English (US)
 LanguageSelector:
   menuTitleLanguages: Language (Region)
+Loading:
+  messageLoading: Loading...
 LoginForm:
   authErrorMessage: Invalid account credentials
   buttonLogIn: Log in
@@ -102,7 +104,7 @@ SignupForm:
   inputLabelFullName: Full name
   inputLabelPassword: Password
   inputLabelUsername: Username
-  messageEmail_used: This email is already being used.
+  messageEmailUsed: This email is already being used.
 SignupPage:
   pageTitle: Signup
 SiteLanguageSelector:
