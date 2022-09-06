@@ -1,8 +1,8 @@
 import { z } from "zod"
 import { Visibility } from "db"
-import { FormatSchema, MetaInfoSchema } from "../state/reportSlice"
+import { FormatSchema, MetaInfoSchema } from "./state/reportSlice"
 import { StructureDataSchema } from "./state/structureDataSlice"
-import { TemplateSchema } from "./state/templateSlice"
+import { TemplateSchema } from "./state/structureSlice"
 
 export const CreateModule = z.object({
   sourceCode: z.string(),

@@ -55,7 +55,9 @@ const config = {
               entry: undefined,
               worker: {
                 id: "vs/language/medtl/medtlWorker",
-                entry: path.resolve("./node_modules/@medtl/monaco-plugin/dist/medtl.worker.js"),
+                entry: path.resolve(
+                  "./node_modules/@medreporter/monaco-plugin-medtl/dist/medtl.worker.js"
+                ),
               },
             },
           ],
