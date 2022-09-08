@@ -1,7 +1,6 @@
-import { ModuleDocument } from "@medreporter/medtl-schema"
+import { createContext, ModuleWrapper } from "@medreporter/medtl-tools"
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime"
 import { Prisma } from "db"
-import { getLanguages } from "./medtUtils"
 
 type ErrorMeta = { target?: string[] }
 
@@ -22,39 +21,35 @@ export function uniqueConstraintFailed(error: any, field: string) {
 }
 
 export function buildModuleTranslationsArgs(
-  document: ModuleDocument
+  module: ModuleWrapper
 ): Prisma.ModuleUpdateArgs["data"]["translations"] {
-  const languages = getLanguages(document)
-
-  const ctx = getDefaultContext()
-
-  const module = document.getRootElement()
-  const translator = document.getTranslator()
+  const translator = module.getTranslator()
+  const supportedLanguages = translator.getSupportedLanguages()
   const defaultLanguage = translator.getDefaultLanguage()
+  const moduleEl = module.getRootElement()
   const translations: Prisma.ModuleUpdateArgs["data"]["translations"] = {
     deleteMany: {},
-    create: languages.map((lng, index) => {
-      let isDefaultLng = false
-      if (defaultLanguage && defaultLanguage in languages) {
-        if (defaultLanguage === lng) {
-          isDefaultLng = true
-        }
-      } else {
-        if (index === 0) {
-          isDefaultLng = true
-        }
-      }
-
+    create: supportedLanguages.map((lng) => {
+      const title = String(moduleEl?.getAttribute("title")?.getValue())
+      const description = String(moduleEl?.getAttribute("description")?.getValue() ?? "")
       return {
         language: lng,
-        default: isDefaultLng,
-        title: module.getAttributeValue("title", "string", ctx, lng) ?? "",
-        description: module.getAttributeValue("description", "string", ctx, lng) ?? "",
+        default: lng === defaultLanguage,
+        title,
+        description,
         tags: {
-          create: module
-            .getChildElement("Tags")
-            ?.getChildElements("Tag")
-            .map((tag) => ({ language: lng, label: tag.getTextContent(ctx, lng) })),
+          create:
+            moduleEl
+              ?.getFirstChildElement("Tags")
+              ?.getChildElements("Tag")
+              .map((tag) => ({
+                language: lng,
+                label: tag.getTextContent(
+                  createContext({
+                    $trans: (key) => translator.translate(lng, key),
+                  })
+                ),
+              })) ?? [],
         },
       }
     }),
