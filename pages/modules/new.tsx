@@ -17,6 +17,6 @@ export const getServerSideProps = gSSP(async (ctx) => ({
   props: {
     ...(await serverSideInitialPublicData(ctx)),
     ...(await serverSideSiteTranslations(ctx, ["editor"])),
-    ...(await serverSideReduxState({})),
+    ...serverSideReduxState({}),
   },
 }))

@@ -30,6 +30,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => ({
     ...(await serverSideInitialPublicData(ctx)),
     ...(await serverSideSiteTranslations(ctx)),
     ...(await serverSideStructuredReportTranslations(ctx, ["gfr", "graphics"])),
-    ...(await serverSideReduxState({})),
+    ...serverSideReduxState({}),
   },
 })
