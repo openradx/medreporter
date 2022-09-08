@@ -11,39 +11,39 @@ export const GFRStructure = () => {
   return (
     <Grid>
       <GridItem size="xl">
-        <Description>{t("toolDescriptionGfr")} </Description>
+        <Description>{t("Gfr.toolDescription")} </Description>
       </GridItem>
       <GridGroup>
         <GridItem>
-          <NumberField label={t("inputLabelAge")} id="age" min={0} />
+          <NumberField label={t("Gfr.inputLabelAge")} id="age" min={0} />
         </GridItem>
       </GridGroup>
       <GridItem>
-        <NumberField label={t("inputLabelCreatinine")} id="creatinine" precision={2} min={0} />
+        <NumberField label={t("Gfr.inputLabelCreatinine")} id="creatinine" precision={2} min={0} />
       </GridItem>
       <GridItem>
-        <NumberField label={t("inputLabelWeight")} id="weight" min={0} />
+        <NumberField label={t("Gfr.inputLabelWeight")} id="weight" min={0} />
       </GridItem>
       <GridItem>
-        <NumberField label={t("inputLabelHeight")} id="height" min={0} />
+        <NumberField label={t("Gfr.inputLabelHeight")} id="height" min={0} />
       </GridItem>
       <GridItem>
         <SingleChoiceField
-          label={t("inputLabelGender")}
+          label={t("Gfr.inputLabelGender")}
           id="gender"
           options={[
-            { value: "male", label: t("optionGenderMale") },
-            { value: "female", label: t("optionGenderFemale") },
+            { value: "male", label: t("Gfr.optionGenderMale") },
+            { value: "female", label: t("Gfr.optionGenderFemale") },
           ]}
         />
       </GridItem>
       <GridItem>
         <SingleChoiceField
-          label={t("inputLabelEthnicity")}
+          label={t("Gfr.inputLabelEthnicity")}
           id="ethnicity"
           options={[
-            { value: "africanAmerican", label: t("optionEthnicityAfricanAmerican") },
-            { value: "others", label: t("optionEthnicityOthers") },
+            { value: "africanAmerican", label: t("Gfr.optionEthnicityAfricanAmerican") },
+            { value: "others", label: t("Gfr.optionEthnicityOthers") },
           ]}
         />
       </GridItem>

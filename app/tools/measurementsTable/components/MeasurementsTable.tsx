@@ -13,7 +13,7 @@ export const MeasurementsTable = () => {
   return (
     <StructuredReport>
       <Section id="measurementsTable">
-        <Module id="measurementsTable" title={t("toolTitleMeasurementsTable")}>
+        <Module id="measurementsTable" title={t("MeasurementsTable.toolTitle")}>
           <Structure>
             <MeasurementsTableStructure />
           </Structure>

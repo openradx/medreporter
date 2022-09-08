@@ -14,36 +14,46 @@ export const Fleischner2017Structure = () => {
   return (
     <Grid>
       <GridItem size="xl">
-        <Description>{t("toolDescriptionFleischner")}</Description>
+        <Description>{t("Fleischner2017.toolDescription")}</Description>
       </GridItem>
-      <GridGroup label={t("groupDiameter")}>
+      <GridGroup label={t("Fleischner2017.groupDiameter")}>
         <GridItem>
-          <NumberField id="longaxis" label={t("inputLabelLongaxis")} min={0} defaultValue={0} />
+          <NumberField
+            id="longaxis"
+            label={t("Fleischner2017.inputLabelLongaxis")}
+            min={0}
+            defaultValue={0}
+          />
         </GridItem>
         <GridItem>
-          <NumberField id="shortaxis" label={t("inputLabelShortaxis")} min={0} defaultValue={0} />
+          <NumberField
+            id="shortaxis"
+            label={t("Fleischner2017.inputLabelShortaxis")}
+            min={0}
+            defaultValue={0}
+          />
         </GridItem>
       </GridGroup>
       <GridItem>
         <SingleChoiceField
           id="structure"
-          label={t("inputLabelStructure")}
+          label={t("Fleischner2017.inputLabelStructure")}
           variant="radio"
           options={[
-            { value: "solid", label: t("optionStructureSolid") },
-            { value: "partsolid", label: t("optionStructurePartsolid") },
-            { value: "groundglass", label: t("optionStructureGroundglass") },
+            { value: "solid", label: t("Fleischner2017.optionStructureSolid") },
+            { value: "partsolid", label: t("Fleischner2017.optionStructurePartsolid") },
+            { value: "groundglass", label: t("Fleischner2017.optionStructureGroundglass") },
           ]}
         />
       </GridItem>
       <GridItem>
         <SingleChoiceField
           id="count"
-          label={t("inputLabelCount")}
+          label={t("Fleischner2017.inputLabelCount")}
           variant="radio"
           options={[
-            { value: "single", label: t("optionCountSingle") },
-            { value: "multiple", label: t("optionCountMultiple") },
+            { value: "single", label: t("Fleischner2017.optionCountSingle") },
+            { value: "multiple", label: t("Fleischner2017.optionCountMultiple") },
           ]}
         />
       </GridItem>
@@ -51,10 +61,10 @@ export const Fleischner2017Structure = () => {
         <SingleChoiceField
           variant="radio"
           id="riskFactors"
-          label={t("inputLabelRiskFactors")}
+          label={t("Fleischner2017.inputLabelRiskFactors")}
           options={[
-            { value: "yes", label: t("optionsRiskFactorsYes") },
-            { value: "no", label: t("optionsRiskFactorsNo") },
+            { value: "yes", label: t("Fleischner2017.optionsRiskFactorsYes") },
+            { value: "no", label: t("Fleischner2017.optionsRiskFactorsNo") },
           ]}
           extras={<RiskFactorsInfo />}
           defaultValue="no"
@@ -62,7 +72,7 @@ export const Fleischner2017Structure = () => {
       </GridItem>
       <GridItem size="xl">
         <Hints>
-          <Hint type="warning">{t("hintApplicability")}</Hint>
+          <Hint type="warning">{t("Fleischner2017.hintApplicability")}</Hint>
         </Hints>
       </GridItem>
     </Grid>

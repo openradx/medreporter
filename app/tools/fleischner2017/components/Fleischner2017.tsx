@@ -14,7 +14,11 @@ export const Fleischner2017 = () => {
   return (
     <StructuredReport>
       <Section id="fleischner2017">
-        <Module id="fleischner2017" title={t("toolTitleFleischner")} info={<Fleischner2017Info />}>
+        <Module
+          id="fleischner2017"
+          title={t("Fleischner2017.toolTitle")}
+          info={<Fleischner2017Info />}
+        >
           <Structure>
             <Fleischner2017Structure />
           </Structure>

@@ -13,7 +13,7 @@ export const GFR = () => {
   return (
     <StructuredReport>
       <Section id="gfr">
-        <Module id="gfr" title={t("toolTitleGfr")}>
+        <Module id="gfr" title={t("Gfr.toolTitle")}>
           <Structure>
             <GFRStructure />
           </Structure>
