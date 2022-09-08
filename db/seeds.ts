@@ -71,7 +71,7 @@ const createExampleMembership = async (
 const createExampleModule = async (userId: number) =>
   db.module.create({
     data: {
-      moduleId: faker.unique(faker.internet.domainWord),
+      moduleId: faker.helpers.unique(faker.internet.domainWord),
       sourceCode: "",
       releaseStatus: ReleaseStatus.DRAFT,
       authorId: userId,
