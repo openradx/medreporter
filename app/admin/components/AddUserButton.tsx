@@ -9,7 +9,7 @@ export const AddUserButton = () => {
 
   return (
     <>
-      <Button onClick={() => setOpened(true)}>{t("AddUserButton.label")}</Button>
+      <Button onClick={() => setOpened(true)}>{t("AddUserButton.buttonAddUser")}</Button>
       {opened && <AddUserModal opened={opened} onClose={() => setOpened(false)} />}
     </>
   )

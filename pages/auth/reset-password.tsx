@@ -12,7 +12,7 @@ const ResetPasswordPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("ResetPasswordPage.title")} />
+      <PageHead title={t("ResetPasswordPage.pageTitle")} />
       <ResetPasswordForm />
     </>
   )

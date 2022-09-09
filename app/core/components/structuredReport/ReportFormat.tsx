@@ -13,7 +13,7 @@ export const ReportFormat = () => {
   return (
     <Menu width={100}>
       <Menu.Target>
-        <ActionIcon title={t("ReportFormat.actionTitle")} variant="default">
+        <ActionIcon title={t("ReportFormat.buttonFormat")} variant="default">
           <ReportFormatIcon />
         </ActionIcon>
       </Menu.Target>
@@ -22,13 +22,13 @@ export const ReportFormat = () => {
           onClick={() => dispatch(setReportFormat({ reportFormat: "html" }))}
           rightSection={reportFormat === "html" ? <CheckIcon /> : null}
         >
-          {t("ReportFormat.html")}
+          {t("ReportFormat.formatHtml")}
         </Menu.Item>
         <Menu.Item
           onClick={() => dispatch(setReportFormat({ reportFormat: "text" }))}
           rightSection={reportFormat === "text" ? <CheckIcon /> : null}
         >
-          {t("ReportFormat.text")}
+          {t("ReportFormat.formatText")}
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

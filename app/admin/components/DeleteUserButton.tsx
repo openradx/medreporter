@@ -17,17 +17,17 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
 
   return (
     <ActionIcon
-      title={t("DeleteUserButton.actionTitle")}
+      title={t("DeleteUserButton.buttonDeleteUser")}
       color="red"
       onClick={() =>
         openConfirmModal({
-          title: t("DeleteUserButton.confirmDialogTitle"),
+          title: t("DeleteUserButton.titleConfirmDialog"),
           children: (
-            <Text>{t("DeleteUserButton.confirmDialogMessage", { username: user.username })}</Text>
+            <Text>{t("DeleteUserButton.messageConfirmDialog", { username: user.username })}</Text>
           ),
           labels: {
-            confirm: t("general.buttons.delete"),
-            cancel: t("general.buttons.cancel"),
+            confirm: t("general.buttonDelete"),
+            cancel: t("general.buttonCancel"),
           },
           confirmProps: { color: "red" },
           onConfirm: async () => {
@@ -37,7 +37,7 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
             } catch (error) {
               const { message } = error as Error
               openModal({
-                title: t("general.errors.errorTitle"),
+                title: t("general.errorTitle"),
                 children: message,
               })
             }

@@ -101,8 +101,8 @@ export const PageHeader = () => {
   const { t } = useSiteTranslation()
 
   const links: NavLink[] = [
-    { url: Routes.ModulesPage(), label: t("PageHeader.modules") },
-    { url: Routes.ToolsPage(), label: t("PageHeader.tools") },
+    { url: Routes.ModulesPage(), label: t("PageHeader.linkModules") },
+    { url: Routes.ToolsPage(), label: t("PageHeader.linkTools") },
   ]
 
   const isCurrentPath = (link: NavLink) => {

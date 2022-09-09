@@ -9,7 +9,7 @@ interface LoadingProps {
 
 export const Loading = ({ message, show = true, transparent = false }: LoadingProps) => {
   const { t } = useSiteTranslation()
-  message ||= t("Loading.defaultMessage")
+  message ||= t("Loading.messageLoading")
 
   const colorStyle = transparent
     ? {

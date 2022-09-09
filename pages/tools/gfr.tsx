@@ -10,20 +10,20 @@ import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteT
 import { serverSideStructuredReportTranslations } from "../../app/core/utils/serverSideStructuredReportTranslations"
 import { GFR } from "../../app/tools/gfr/components/GFR"
 
-const GFRPage: PageWithLayout = () => {
+const GfrPage: PageWithLayout = () => {
   const { t } = useSiteTranslation()
 
   return (
     <>
-      <PageHead title={t("GFRPage.title")} />
+      <PageHead title={t("GfrPage.toolTitle")} />
       <GFR />
     </>
   )
 }
 
-GFRPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
+GfrPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
 
-export default GFRPage
+export default GfrPage
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => ({
   props: {

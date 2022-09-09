@@ -17,7 +17,7 @@ export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonPro
 
   return (
     <ActionIcon
-      title={t("RemoveMembershipButton.actionTitle")}
+      title={t("RemoveMembershipButton.buttonRemoveMember")}
       color="red"
       onClick={async () => {
         try {
@@ -26,7 +26,7 @@ export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonPro
         } catch (error) {
           const { message } = error as Error
           openModal({
-            title: t("general.errors.errorTitle"),
+            title: t("general.errorTitle"),
             children: message,
           })
         }

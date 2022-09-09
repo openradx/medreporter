@@ -14,13 +14,13 @@ export const AdrenalWashoutStructure = () => {
   return (
     <Grid>
       <GridItem size="lg">
-        <Description>{t("description")}</Description>
+        <Description>{t("AdrenalWashout.toolDescription")}</Description>
       </GridItem>
-      <GridGroup label={t("density")}>
+      <GridGroup label={t("AdrenalWashout.groupDensity")}>
         <GridItem size="md">
           <NumberField
             id="nonEnhanced"
-            label={t("nonEnhanced")}
+            label={t("AdrenalWashout.inputLabelNonEnhanced")}
             min={MIN_HU}
             max={MAX_HU}
             startValue={0}
@@ -29,20 +29,26 @@ export const AdrenalWashoutStructure = () => {
         <GridItem size="md">
           <NumberField
             id="portalVenous"
-            label={t("portalVenous")}
+            label={t("AdrenalWashout.inputLabelPortalVenous")}
             min={MIN_HU}
             max={MAX_HU}
             startValue={0}
           />
         </GridItem>
         <GridItem size="md">
-          <NumberField id="delayed" label={t("delayed")} min={MIN_HU} max={MAX_HU} startValue={0} />
+          <NumberField
+            id="delayed"
+            label={t("AdrenalWashout.inputLabelDelayed")}
+            min={MIN_HU}
+            max={MAX_HU}
+            startValue={0}
+          />
         </GridItem>
       </GridGroup>
       <GridItem size="xl">
         <Hints>
-          <Hint type="info">{t("roiHint")}</Hint>
-          <Hint type="info">{t("absoluteHint")}</Hint>
+          <Hint type="info">{t("AdrenalWashout.hintRoiPlacement")}</Hint>
+          <Hint type="info">{t("AdrenalWashout.hintPreferAbsoluteWashout")}</Hint>
         </Hints>
       </GridItem>
     </Grid>

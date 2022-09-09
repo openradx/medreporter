@@ -20,23 +20,27 @@ export const AdrenalWashoutReport = () => {
   const { nonEnhanced, portalVenous, delayed } = useReportData(true) as AdrenalWashoutData
   const { t } = useReportTranslation()
 
-  let absoluteWashoutText = t("absoluteWashoutRequirements")
+  let absoluteWashoutText = t("AdrenalWashout.textAbsoluteWashoutRequirements")
   if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
     const result = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
     if (Number.isNaN(result) || !Number.isFinite(result) || result < 0 || result > 100) {
-      absoluteWashoutText = t("absoluteWashoutInvalid")
+      absoluteWashoutText = t("AdrenalWashout.resultAbsoluteWashoutInvalid")
     } else {
-      absoluteWashoutText = t("absoluteWashoutWithValue", { value: result.toFixed(0) })
+      absoluteWashoutText = t("AdrenalWashout.resultAbsoluteWashoutWithValue", {
+        value: result.toFixed(0),
+      })
     }
   }
 
-  let relativeWashoutText = t("relativeWashoutRequirements")
+  let relativeWashoutText = t("AdrenalWashout.textRelativeWashoutRequirements")
   if (portalVenous !== null && delayed != null) {
     const result = calcRelativeAdrenalWashout(portalVenous, delayed)
     if (Number.isNaN(result) || !Number.isFinite(result) || result < 0 || result > 100) {
-      relativeWashoutText = t("relativeWashoutInvalid")
+      relativeWashoutText = t("AdrenalWashout.resultRelativeWashoutInvalid")
     } else {
-      relativeWashoutText = t("relativeWashoutWithValue", { value: result.toFixed(0) })
+      relativeWashoutText = t("AdrenalWashout.resultRelativeWashoutWithValue", {
+        value: result.toFixed(0),
+      })
     }
   }
 

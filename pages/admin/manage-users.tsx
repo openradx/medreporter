@@ -12,7 +12,7 @@ const ManageUsersPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("ManageUsersPage.title")} />
+      <PageHead title={t("ManageUsersPage.pageTitle")} />
       <UsersManager />
     </>
   )

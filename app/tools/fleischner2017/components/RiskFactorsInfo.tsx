@@ -4,17 +4,17 @@ import { useStructureTranslation } from "../../../core/hooks/useStructureTransla
 export const RiskFactorsInfo = () => {
   const { t } = useStructureTranslation()
   return (
-    <FieldInfo title={t("riskFactorsInfo.label")}>
+    <FieldInfo title={t("Fleischner2017.fieldInfoRiskFactors.label")}>
       <ul>
-        <li> {t("riskFactorsInfo.1")} </li>
-        <li> {t("riskFactorsInfo.2")} </li>
-        <li> {t("riskFactorsInfo.3")} </li>
-        <li> {t("riskFactorsInfo.4")} </li>
-        <li> {t("riskFactorsInfo.5")} </li>
-        <li> {t("riskFactorsInfo.6")} </li>
-        <li> {t("riskFactorsInfo.7")} </li>
-        <li> {t("riskFactorsInfo.8")} </li>
-        <li> {t("riskFactorsInfo.9")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.1")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.2")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.3")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.4")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.5")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.6")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.7")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.8")} </li>
+        <li> {t("Fleischner2017.fieldInfoRiskFactors.9")} </li>
       </ul>
     </FieldInfo>
   )

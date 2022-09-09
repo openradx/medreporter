@@ -1,35 +1,32 @@
+Gfr:
 # Structure
-description: >
-  Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault) 
-  und Kinder (Schwartz (orig./rev.), Counahan-Barret).
+  toolTitle: GFR Rechner
 
-age: Alter
+  toolDescription: >
+    Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault) 
+    und Kinder (Schwartz (orig./rev.), Counahan-Barret).
 
-creatinine: Serumkreatinin in mg/dl
+  inputLabelAge: Alter
 
-weight: Gewicht in kg
+  inputLabelCreatinine: Serumkreatinin in mg/dl
 
-height: Größe in cm
+  inputLabelWeight: Gewicht in kg
 
-gender: Geschlecht
-male: Männlich
-female: Weiblich
+  inputLabelHeight: Größe in cm
 
-ethnicity: Herkunft
-africanAmerican: Afroamerikanisch
-others: Andere
+  inputLabelGender: Geschlecht
+  optionGenderMale: Männlich
+  optionGenderFemale: Weiblich
 
-#Report
-CKDRequired: Kreatinin, Alter, Geschlecht und Herkunft werden zur Berechnung benötigt.
+  inputLabelEthnicity: Herkunft
+  optionEthnicityAfricanAmerican: Afroamerikanisch
+  optionEthnicityOthers: Andere
 
-CockcroftRequired: Kreatinin, Alter, Gewicht und Geschlecht werden zur Berechnung benötigt.
-
-MayoRequired: Kreatinin, Alter und Geschlecht werden zur Berechnung benötigt.
-
-CounahanRequired: Kreatinin und Größe werden zur Berechnung benötigt.
-
-schwartzRevRequired: Kreatinin und Größe werden zur Berechnung benötigt.
-
-schwartzOrigRequired: Kreatinin, Größe, Alter und Geschlecht werden zur Berechnung benötigt.
-
-ageMissing: Bitte gib zunächst das Alter des Patienten an um zu definieren, welche Formeln angewandt werden müssen.
+  #Report
+  textCkdRequired: Kreatinin, Alter, Geschlecht und Herkunft werden zur Berechnung benötigt.
+  textCockcroftRequired: Kreatinin, Alter, Gewicht und Geschlecht werden zur Berechnung benötigt.
+  textMayoRequired: Kreatinin, Alter und Geschlecht werden zur Berechnung benötigt.
+  textCounahanRequired: Kreatinin und Größe werden zur Berechnung benötigt.
+  textSchwartzRevRequired: Kreatinin und Größe werden zur Berechnung benötigt.
+  textSchwartzOrigRequired: Kreatinin, Größe, Alter und Geschlecht werden zur Berechnung benötigt.
+  textAgeMissing: Bitte gib zunächst das Alter des Patienten an um zu definieren, welche Formeln angewandt werden müssen.

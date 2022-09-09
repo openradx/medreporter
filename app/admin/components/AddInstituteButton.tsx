@@ -9,7 +9,7 @@ export const AddInstituteButton = () => {
 
   return (
     <>
-      <Button onClick={() => setOpened(true)}>{t("AddInstituteButton.label")}</Button>
+      <Button onClick={() => setOpened(true)}>{t("AddInstituteButton.buttonAddInstitute")}</Button>
       {opened && <AddInstituteModal opened={opened} onClose={() => setOpened(false)} />}
     </>
   )

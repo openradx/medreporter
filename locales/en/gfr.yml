@@ -1,35 +1,32 @@
-# Structure
-description: >
-  A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
-  and children (Schwartz (orig./rev.), Counahan-Barret).
+Gfr:
+  # Structure
+  toolTitle: GFR calculator
 
-age: Age
+  toolDescription: >
+    A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
+    and children (Schwartz (orig./rev.), Counahan-Barret).
 
-creatinine: Creatinine in mg/dl
+  inputLabelAge: Age
 
-weight: Weight in kg
+  inputLabelCreatinine: Creatinine in mg/dl
 
-height: Height in cm
+  inputLabelWeight: Weight in kg
 
-gender: Gender
-male: Male
-female: Female
+  inputLabelHeight: Height in cm
 
-ethnicity: Ethnicity
-africanAmerican: African American
-others: Others
+  inputLabelGender: Gender
+  optionGenderMale: Male
+  optionGenderFemale: Female
 
-#Report
-CKDRequired: Creatinine, age, gender and ethnicity are required.
+  inputLabelEthnicity: Ethnicity
+  optionEthnicityAfricanAmerican: African American
+  optionEthnicityOthers: Others
 
-CockcroftRequired: Creatinine, age, weight and gender are required.
-
-MayoRequired: Creatinine, age and gender are required.
-
-CounahanRequired: Creatinine and height are required.
-
-schwartzRevRequired: Creatinine and height are required.
-
-schwartzOrigRequired: Creatinine, height, age and gender are required.
-
-ageMissing: Please fill in the age of the patient first to define which equations should be used.
+  #Report
+  textCkdRequired: Creatinine, age, gender and ethnicity are required.
+  textCockcroftRequired: Creatinine, age, weight and gender are required.
+  textMayoRequired: Creatinine, age and gender are required.
+  textCounahanRequired: Creatinine and height are required.
+  textSchwartzRevRequired: Creatinine and height are required.
+  textSchwartzOrigRequired: Creatinine, height, age and gender are required.
+  textAgeMissing: Please fill in the age of the patient first to define which equations should be used.

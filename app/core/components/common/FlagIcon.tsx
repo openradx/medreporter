@@ -14,7 +14,7 @@ interface FlagIconProps {
 }
 
 export const FlagIcon = ({ code, size = 18 }: FlagIconProps) => {
-  if (code === "as_site") {
+  if (code === "asSite") {
     return <LanguageIcon size={size} />
   }
 

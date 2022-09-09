@@ -14,7 +14,7 @@ export const StructureLanguageSelector = () => {
   const currentLanguage = useAppSelector(selectStructureLanguage)
 
   useSiteLanguageListener((lng) => {
-    if (currentLanguage === "as_site") {
+    if (currentLanguage === "asSite") {
       i18nStructure.changeLanguage(lng)
     }
   })
@@ -23,7 +23,7 @@ export const StructureLanguageSelector = () => {
 
   const onLanguageChanged = (language: string) => {
     let lng = language
-    if (lng === "as_site") {
+    if (lng === "asSite") {
       lng = i18nSite.language
     }
     i18nStructure.changeLanguage(lng, () => {
@@ -33,9 +33,9 @@ export const StructureLanguageSelector = () => {
 
   return (
     <LanguageSelector
-      actionTitle={t("StructureLanguageSelector.actionTitle")}
+      actionTitle={t("StructureLanguageSelector.buttonLanguageStructure")}
       currentLocale={currentLanguage}
-      supportedLocales={["as_site", ...supportedStructuredReportLocales]}
+      supportedLocales={["asSite", ...supportedStructuredReportLocales]}
       onLocaleChanged={onLanguageChanged}
     />
   )

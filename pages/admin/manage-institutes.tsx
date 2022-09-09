@@ -12,7 +12,7 @@ const ManageInstitutesPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("ManageInstitutesPage.title")} />
+      <PageHead title={t("ManageInstitutesPage.formTitle")} />
       <InstitutesManager />
     </>
   )

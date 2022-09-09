@@ -33,7 +33,7 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
 
   return (
     <Select
-      label={t("MembershipAdder.label")}
+      label={t("MembershipAdder.inputLabelAddMember")}
       data={users.map((user) => ({ value: user.id.toString(), label: user.username }))}
       value={selectedUserId}
       onChange={setSelectedUserId}
@@ -41,7 +41,7 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
       onKeyPress={(event) => event.key === "Enter" && handleAddMembership()}
       rightSection={
         <ActionIcon
-          title={t("MembershipAdder.actionTitle")}
+          title={t("MembershipAdder.buttonAddMember")}
           variant="filled"
           color="green"
           onClick={handleAddMembership}

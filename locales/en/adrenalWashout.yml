@@ -1,52 +1,55 @@
-# Structure
-description: >
-  Characterization of unclear adrenal lesions to detect adenomas by using 
-  computed tomography.
-density: Density (HU)
-nonEnhanced: Non-enhanced phase
-portalVenous: Portal venous phase
-delayed: Delayed phase
-roiHint: >
-  The ROI should cover approximately two-third of the lesion without including the
-  periphery.
-absoluteHint: >
-  Whenever possible the absolute washout should be preferred.
+AdrenalWashout:
+  # Structure
+  tooltitle: Adrenal washout
 
-# Report
-absoluteWashoutRequirements: >
-  Absolute washout requires non enhanced, portal venous and delayed phase.
-relativeWashoutRequirements: >
-  Relative washout requires portal and delayed phase.
-relativeWashoutWithValue: "Relative washout: {{value}}%"
-absoluteWashoutWithValue: "Absolute washout: {{value}}%"
-relativeWashoutInvalid: "Relative Washout: Invalide density values"
-absoluteWashoutInvalid: "Absolute Washout: Invalide density values"
+  toolDescription: >
+    Characterization of unclear adrenal lesions to detect adenomas by using 
+    computed tomography.
+  groupDensity: Density (HU)
+  inputLabelNonEnhanced: Non-enhanced phase
+  inputLabelPortalVenous: Portal venous phase
+  inputLabelDelayed: Delayed phase
+  hintRoiPlacement: >
+    The ROI should cover approximately two-third of the lesion without including the
+    periphery.
+  hintPreferAbsoluteWashout: >
+    Whenever possible the absolute washout should be preferred.
 
-# Suggestion categories
-missingValues: Missing specification of density values.
-noSuggestionPossible: >
-  With the values entered, no assessment of the indeterminate adrenal lesion is possible.
-  Complementary imaging such as FDG-PET/CT or MRI with in-phase (IP) and
-  out-of-phase (OOP) sequences should be considered.
-densityLowerZeroAdenoma: >
-  An adrenal lesion with a density < 0 HU on nonenhanced CT is highly specific for
-  lipid-rich adenoma (47% sensitive, 100% specific)
-densityLowerTenAdenoma: >
-  An adrenal lesion with a density < 10 HU on nonenhanced CT is fairly specific for
-  lipid-rich adenoma (71% sensitive, 98% specific)"
-highDensityMalignancy: >
-  An adrenal lesion with a density > 43 HU on nonenhanced CT that is neither calcified
-  not hemorrhagic is suspicious for malignancy regardless of washout characteristics.
-  Further diagnostic like FDG-PET/CT should be considered instead of washout imaging."
-highEnhancementPheochromocytoma: >
-  An adrenal lesion that enhances > 130 HU is concerning for hypervascular pheochromocytoma.
-highAbsoluteWashoutAdenoma: >
-  An adrenal lesion with > 60% washout is highly suggestive of adrenal adenoma.
-lowAbsoluteWashoutAdenoma: >
-  An adrenal lesion with < 60% washout is not confirming an adrenal adenoma. An alternative
-  diagnoses should be considered.
-highRelativeWashoutAdenoma: >
-  An adrenal lesion with > 40% washout is highly suggestive of adrenal adenoma.
-lowRelativeWashoutAdenoma: >
-  An adrenal lesion with < 40% washout is not confirming adrenal adenoma. An alternative
-  diagnoses should be considered.
+  # Report
+  textAbsoluteWashoutRequirements: >
+    Absolute washout requires non enhanced, portal venous and delayed phase.
+  textRelativeWashoutRequirements: >
+    Relative washout requires portal and delayed phase.
+  resultRelativeWashoutInvalid: "Relative Washout: Invalide density values"
+  resultAbsoluteWashoutInvalid: "Absolute Washout: Invalide density values"
+  resultRelativeWashoutWithValue: "Relative washout: {{value}}%"
+  resultAbsoluteWashoutWithValue: "Absolute washout: {{value}}%"
+
+  # Suggestion categories
+  missingValues: Missing specification of density values.
+  noSuggestionPossible: >
+    With the values entered, no assessment of the indeterminate adrenal lesion is possible.
+    Complementary imaging such as FDG-PET/CT or MRI with in-phase (IP) and
+    out-of-phase (OOP) sequences should be considered.
+  suggestionDensityLowerZeroAdenoma: >
+    An adrenal lesion with a density < 0 HU on nonenhanced CT is highly specific for
+    lipid-rich adenoma (47% sensitive, 100% specific)
+  suggestionDensityLowerTenAdenoma: >
+    An adrenal lesion with a density < 10 HU on nonenhanced CT is fairly specific for
+    lipid-rich adenoma (71% sensitive, 98% specific)"
+  suggestionHighDensityMalignancy: >
+    An adrenal lesion with a density > 43 HU on nonenhanced CT that is neither calcified
+    not hemorrhagic is suspicious for malignancy regardless of washout characteristics.
+    Further diagnostic like FDG-PET/CT should be considered instead of washout imaging."
+  suggestionHighEnhancementPheochromocytoma: >
+    An adrenal lesion that enhances > 130 HU is concerning for hypervascular pheochromocytoma.
+  suggestionHighAbsoluteWashoutAdenoma: >
+    An adrenal lesion with > 60% washout is highly suggestive of adrenal adenoma.
+  suggestionLowAbsoluteWashoutAdenoma: >
+    An adrenal lesion with < 60% washout is not confirming an adrenal adenoma. An alternative
+    diagnoses should be considered.
+  suggestionHighRelativeWashoutAdenoma: >
+    An adrenal lesion with > 40% washout is highly suggestive of adrenal adenoma.
+  suggetionLowRelativeWashoutAdenoma: >
+    An adrenal lesion with < 40% washout is not confirming adrenal adenoma. An alternative
+    diagnoses should be considered.

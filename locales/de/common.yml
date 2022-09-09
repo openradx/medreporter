@@ -1,165 +1,127 @@
 general:
-  buttons:
-    add: Hinzufügen
-    cancel: Abbrechen
-    clear: Löschen
-    close: Schließen
-    delete: Löschen
-    save: Sichern
-
-  errors:
-    errorTitle: Ein Fehler ist aufgetreten
-    unknownError: >
-      Entschuldige, ein unerwarteter Fehler ist aufgetreten.
-      Bitte versuche es später erneut. Wenn der Fehler anhält,
-      dann kontaktiere bitte unseren Support.
-
-  misc:
-    noData: Keine Datensätze verfügbar
-
+  buttonAdd: Hinzufügen
+  buttonCancel: Abbrechen
+  buttonClear: Löschen
+  buttonClose: Schließen
+  buttonDelete: Löschen
+  buttonSave: Sichern
+  errorTitle: Ein Fehler ist aufgetreten
+  errorTextUnknown: >
+    Entschuldige, ein unerwarteter Fehler ist aufgetreten. Bitte versuche es
+    später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren
+    Support.
+  miscNoData: Keine Datensätze verfügbar
 AccountControl:
-  accountTitle: Benutzerkonto
-  admin: Verwaltung
-  profile: Benutzerprofil
-  logInTitle: Anmelden
-  logOut: Abmelden
-
+  menuTitleAccout: Benutzerkonto
+  optionProfile: Benutzerprofil
+  optionLogIn: Anmelden
+  optionLogOut: Abmelden
+  optionAdmin: Verwaltung
 AdrenalWashoutPage:
-  title: Nebennieren Washout
-
+  toolTitle: Nebennieren Washout
 ClearStructureButton:
-  actionTitle: Strukturformular zurücksetzen
-
+  buttonClearStructure: Strukturformular zurücksetzen
 ColorSchemeToggle:
-  actionTitle: Farbschema wechseln
-
+  buttonToggleTheme: Farbschema wechseln
 CopyButton:
-  success: Befund in Ablage kopiert
-  error: Kopieren in Ablage fehlgeschlagen. Bitte manuell kopieren.
-
+  buttonCopy: Befund in Zwischenablage kopieren
+  errorMessageCopyReport: Kopieren in Zwischenablage fehlgeschlagen. Bitte manuell kopieren.
+  successMessageCopyReport: Befund in Zwischenablage kopiert
 ExternalLink:
-  actionTitle: Externen Link öffnen
-
+  buttonExternalLink: Externen Link öffnen
 FieldGraphics:
-  actionTitle: Auswahlgrafik öffnen
-
+  buttonGraphic: Auswahlgrafik öffnen
 FieldInfo:
-  actionTitle: Weitere Informationen
-
+  buttonInfo: Weitere Informationen
 Fleischner2017Page:
-  title: Fleischner 2017
-
+  toolTitle: Fleischner 2017
 ForgotPasswordForm:
-  email: E-Mail
-  message: >
-    Wenn deine E-Mail in unserem System ist, wirst du in Kürze eine
-    Anleitung zum Zurücksetzen deines Passwortes erhalten.
-  send: Anleitung senden
-  submitted: Anfrage gesendet
-  title: Passwort vergessen?
-
+  buttonSend: Anleitung senden
+  formTitle: Passwort vergessen?
+  inputLabelEmail: E-Mail
+  messageEmail: >
+    Wenn deine E-Mail in unserem System ist, wirst du in Kürze eine Anleitung
+    zum Zurücksetzen deines Passwortes erhalten.
+  messageSubmitted: Anfrage gesendet
 ForgotPasswordPage:
-  title: Passwort vergessen
-
-GFRPage:
-  title: GFR
-
+  pageTitle: Passwort vergessen
+GfrPage:
+  toolTitle: GFR
 GraphicsModal:
-  resetTitle: Auswahl zurücksetzen
-
+  buttonReset: Auswahl zurücksetzen
 HomePage:
-  title: Startseite
-
-LanguageSelector:
-  as_site: wie Seite
+  pageTitle: Startseite
+languages:
+  asSite: wie Seite
   de: Deutsch
   en-US: Englisch (US)
-  label: Sprache (Region)
-
+LanguageSelector:
+  menuTitleLanguages: Sprache (Region)
+Loading:
+  messageLoading: Wird geladen...
 LoginForm:
-  authError: Ungültige Anmeldedaten
-  forgotPassword: Passwort vergessen?
-  logIn: Anmelden
-  password: Passwort
-  signUp: Registrieren
-  title: Anmeldung
-  usernameOrEmail: Benutzername oder E-Mail
-
+  authErrorMessage: Ungültige Anmeldedaten
+  buttonLogIn: Anmelden
+  linkForgotPassword: Passwort vergessen?
+  linkSignUp: Registrieren
+  inputLabelPassword: Passwort
+  inputLabelUsernameOrEmail: Benutzername oder E-Mail
+  formTitle: Anmeldung
 LoginPage:
-  title: Anmeldung
-
+  pageTitle: Anmeldung
 MeasurementsActions:
-  actionTitle: Aktionen Messwerkzeug
-
+  buttonActions: Aktionen Messwerkzeug
 MeasurementsTablePage:
-  title: Messtabelle
-
+  pageTitle: Messtabelle
 ModuleInfo:
-  actionTitle: Modulinformation
-
+  buttonInfo: Modulinformation
 ModulesPage:
   title: Module
-
 ModuleSelectorWithTags:
   filterInputLabel: Module filtern
-
 PageHeader:
-  modules: Module
-  tools: Werkzeuge
-
+  linkModules: Module
+  linkTools: Werkzeuge
 RedoButton:
-  actionTitle: Wiederherstellen
-
+  buttonRedo: Wiederherstellen
 ReportFormat:
-  actionTitle: Befundformatierung ändern
-  html: HTML
-  text: Text
-
+  buttonFormat: Befundformatierung ändern
+  formatHtml: HTML
+  formatText: Text
 ReportLanguageSelector:
-  actionTitle: Sprache Befund
-
+  buttonLanguageReport: Sprache Befund
 ReportPanel:
   title: Befund
-
 ResetPasswordForm:
-  confirmPasswordLabel: Passwort bestätigen
-  homepage: Startseite
-  newPasswordLabel: Neues Passwort
-  redirect: Gehe zur
-  reset: Bestätigen
-  success: Neues Passwort erfolgreich gesetzt
-  title: Passwort zurücksetzen
-
+  buttonReset: Bestätigen
+  formTitle: Passwort zurücksetzen
+  inputLabelConfirmPassword: Passwort bestätigen
+  inputLabelNewPassword: Neues Passwort
+  linkHomepage: Startseite
+  messageSuccess: Neues Passwort erfolgreich gesetzt
+  textRedirect: Gehe zur
 ResetPasswordPage:
-  title: Passwort zurücksetzen
-
+  pageTitle: Passwort zurücksetzen
 SignupForm:
-  about: Über dich selbst
-  email: E-Mail
-  emailAlreadyUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
-  fullName: Vollständiger Name
-  password: Passwort
-  submit: Registrieren
-  title: Erstelle einen Account
-  username: Benutzername
-
+  buttonSubmit: Registrieren
+  formTitle: Erstelle einen Account
+  inputLabelAbout: Über dich selbst
+  inputLabelEmail: E-Mail
+  inputLabelFullName: Vollständiger Name
+  inputLabelPassword: Passwort
+  inputLabelUsername: Benutzername
+  messageEmailUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
 SignupPage:
-  title: Registrierung
-
+  pageTitle: Registrierung
 SiteLanguageSelector:
-  actionTitle: Sprache allgemein
-
+  buttonLanguageGeneral: Sprache allgemein
 Structure:
   title: Struktur
-
 StructureLanguageSelector:
-  actionTitle: Sprache Struktur
-
+  buttonLanguageStructure: Sprache Struktur
 TagList:
   title: Tags
-
 ToolsPage:
-  title: Werkzeuge
-
+  pageTitle: Werkzeuge
 UndoButton:
-  actionTitle: Rückgängig machen
+  buttonUndo: Rückgängig machen

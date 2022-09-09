@@ -16,7 +16,7 @@ const LoginPage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("LoginPage.title")} />
+      <PageHead title={t("LoginPage.pageTitle")} />
       <LoginForm
         onSuccess={() => {
           const next = router.query.next ? decodeURIComponent(router.query.next as string) : "/"

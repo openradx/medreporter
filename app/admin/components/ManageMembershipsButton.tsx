@@ -15,7 +15,10 @@ export const ManageMembershipsButton = ({ institute }: ManageMembershipsButtonPr
 
   return (
     <>
-      <ActionIcon title={t("ManageMembershipsButton.actionTitle")} onClick={() => setOpened(true)}>
+      <ActionIcon
+        title={t("ManageMembershipsButton.buttonManageMemberships")}
+        onClick={() => setOpened(true)}
+      >
         <ManageMembershipsIcon size={16} />
       </ActionIcon>
       {opened && (

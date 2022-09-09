@@ -20,7 +20,7 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
   const [updateUserMutation] = useMutation(updateUser)
 
   return (
-    <Modal title={t("EditUserModal.title")} opened={opened} onClose={onClose}>
+    <Modal title={t("EditUserModal.formTitle")} opened={opened} onClose={onClose}>
       <Stack>
         <UserForm
           id="edit-user-form"
@@ -39,7 +39,7 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
               return null
             } catch (error) {
               if (uniqueConstraintFailed(error, "email")) {
-                return { email: t("EditUserModal.duplicateEmail") }
+                return { email: t("EditUserModal.messageDuplicateEmail") }
               }
               return { [SUBMIT_FORM_ERROR]: (error as Error).toString() }
             }
@@ -47,10 +47,10 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
         />
         <Group position="right">
           <Button variant="default" onClick={onClose}>
-            {t("general.buttons.cancel")}
+            {t("general.buttonCancel")}
           </Button>
           <Button form="edit-user-form" type="submit">
-            {t("general.buttons.save")}
+            {t("general.buttonSave")}
           </Button>
         </Group>
       </Stack>

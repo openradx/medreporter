@@ -9,6 +9,7 @@ export const CopyButton = () => {
 
   return (
     <ActionIcon
+      title={t("CopyButton.buttonCopy")}
       variant="default"
       onClick={() => {
         // Copy to clipboard is a tricky thing. There is an old API used
@@ -46,12 +47,12 @@ export const CopyButton = () => {
           }
 
           showNotification({
-            message: t("CopyButton.success"),
+            message: t("CopyButton.successMessageCopyReport"),
             color: "green",
           })
         } else {
           showNotification({
-            message: t("CopyButton.error"),
+            message: t("CopyButton.errorMessageCopyReport"),
             color: "red",
           })
         }

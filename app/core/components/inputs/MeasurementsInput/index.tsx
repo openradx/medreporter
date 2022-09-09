@@ -40,14 +40,14 @@ export const MeasurementsInput = ({
 
   const { t } = useStructureTranslation()
   const labels = {
-    clearAll: t("MeasurementsInput.clearAll"),
-    clearReferences: t("MeasurementsInput.clearReferences"),
-    dimensions: t("MeasurementsInput.dimensions"),
-    followUp: t("MeasurementsInput.followUp"),
-    location: t("MeasurementsInput.location"),
-    reference: t("MeasurementsInput.reference"),
-    rows: t("MeasurementsInput.rows"),
-    shiftCurrent: t("MeasurementsInput.shiftCurrent"),
+    clearAll: t("MeasurementsInput.toolClearAll"),
+    clearReferences: t("MeasurementsInput.toolClearReferences"),
+    dimensions: t("MeasurementsInput.formatDimensions"),
+    followUp: t("MeasurementsInput.formatFollowUp"),
+    location: t("MeasurementsInput.columnLocation"),
+    reference: t("MeasurementsInput.columnReference"),
+    rows: t("MeasurementsInput.formatRows"),
+    shiftCurrent: t("MeasurementsInput.toolShiftCurrent"),
   }
 
   return (

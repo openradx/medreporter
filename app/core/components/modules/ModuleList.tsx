@@ -55,7 +55,7 @@ export const ModuleList = ({ username, onModuleSelected }: ModuleListProps) => {
 
   return (
     <Stack spacing={0.5} sx={{ minHeight: 0, height: "100%", overflowY: "auto" }}>
-      {modules.length === 0 && <Text>{t("general.misc.noData")}</Text>}
+      {modules.length === 0 && <Text>{t("general.miscNoData")}</Text>}
       {modules.length > 0 && (
         <Table verticalSpacing="md">
           <tbody>
@@ -72,7 +72,7 @@ export const ModuleList = ({ username, onModuleSelected }: ModuleListProps) => {
           <div />
         ) : (
           <Link href={Routes.NewModulePage()} passHref>
-            <Button component="a">{t("ModuleList.button_create_new_module")}</Button>
+            <Button component="a">{t("ModuleList.buttonCreateNewModule")}</Button>
           </Link>
         )}
         {modules.length > 0 && (
