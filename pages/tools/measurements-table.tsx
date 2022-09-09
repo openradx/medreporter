@@ -21,7 +21,9 @@ const MeasurementsTablePage: PageWithLayout = () => {
   )
 }
 
-MeasurementsTablePage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+MeasurementsTablePage.getLayout = (page: ReactElement) => (
+  <MainLayout size="full">{page}</MainLayout>
+)
 
 export default MeasurementsTablePage
 

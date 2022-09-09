@@ -3,15 +3,15 @@ import { ReactNode } from "react"
 import { PageHeader } from "./PageHeader"
 
 interface MainLayoutProps {
-  fullScreen?: boolean
+  size?: "full" | "lg" | "sm"
   children: ReactNode
 }
 
-export const MainLayout = ({ fullScreen = false, children }: MainLayoutProps) => (
-  <MediaQuery largerThan="sm" styles={{ main: { height: fullScreen ? "100vh" : undefined } }}>
+export const MainLayout = ({ size = "lg", children }: MainLayoutProps) => (
+  <MediaQuery largerThan="sm" styles={{ main: { height: size === "full" ? "100vh" : undefined } }}>
     <AppShell padding="sm" header={<PageHeader />}>
-      {fullScreen && children}
-      {!fullScreen && <Container size="lg">{children}</Container>}
+      {size === "full" && children}
+      {size !== "full" && <Container size={size}>{children}</Container>}
     </AppShell>
   </MediaQuery>
 )

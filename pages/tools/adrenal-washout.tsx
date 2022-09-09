@@ -21,7 +21,7 @@ const AdrenalWashoutPage: PageWithLayout = () => {
   )
 }
 
-AdrenalWashoutPage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+AdrenalWashoutPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
 
 export default AdrenalWashoutPage
 

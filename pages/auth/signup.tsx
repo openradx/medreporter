@@ -1,5 +1,4 @@
 import { Routes } from "@blitzjs/next"
-import { Container } from "@mantine/core"
 import { GetServerSideProps } from "next"
 import { useRouter } from "next/router"
 import { ReactElement } from "react"
@@ -18,9 +17,7 @@ const SignupPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("SignupPage.title")} />
-      <Container size="sm">
-        <SignupForm onSuccess={() => router.push(Routes.HomePage())} />
-      </Container>
+      <SignupForm onSuccess={() => router.push(Routes.HomePage())} />
     </>
   )
 }

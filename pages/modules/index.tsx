@@ -1,4 +1,3 @@
-import { Container } from "@mantine/core"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
 import { PageHead } from "app/core/components/common/PageHead"
@@ -14,9 +13,7 @@ const ModulesPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("ModulesPage.title")} />
-      <Container size="md">
-        <ModuleListWithTags />
-      </Container>
+      <ModuleListWithTags />
     </>
   )
 }

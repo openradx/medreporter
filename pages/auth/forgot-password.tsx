@@ -1,4 +1,3 @@
-import { Container } from "@mantine/core"
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { ForgotPasswordForm } from "app/auth/components/ForgotPasswordForm"
@@ -15,9 +14,7 @@ const ForgotPasswordPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("ForgotPasswordPage.title")} />
-      <Container size="sm">
-        <ForgotPasswordForm />
-      </Container>
+      <ForgotPasswordForm />
     </>
   )
 }

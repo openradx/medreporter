@@ -21,7 +21,7 @@ const GFRPage: PageWithLayout = () => {
   )
 }
 
-GFRPage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+GFRPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
 
 export default GFRPage
 

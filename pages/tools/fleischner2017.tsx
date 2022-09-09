@@ -21,7 +21,7 @@ const Fleischner2017Page: PageWithLayout = () => {
   )
 }
 
-Fleischner2017Page.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+Fleischner2017Page.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
 
 export default Fleischner2017Page
 

@@ -1,15 +1,26 @@
 import { ReactElement } from "react"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
-import { Editor } from "app/core/components/editor/Editor"
+import { PageHead } from "app/core/components/common/PageHead"
+import { NewModule } from "app/core/components/modules/NewModule"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { PageWithLayout } from "app/core/types"
 import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
 import { serverSideReduxState } from "app/core/utils/serverSideReduxState"
 import { serverSideSiteTranslations } from "app/core/utils/serverSideSiteTranslations"
 
-const NewModulePage: PageWithLayout = () => <Editor />
+const NewModulePage: PageWithLayout = () => {
+  const { t } = useSiteTranslation()
 
-NewModulePage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+  return (
+    <>
+      <PageHead title={t("NewModulePage.title")} />
+      <NewModule />
+    </>
+  )
+}
+
+NewModulePage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
 
 export default NewModulePage
 
