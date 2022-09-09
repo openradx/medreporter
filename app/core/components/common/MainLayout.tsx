@@ -1,9 +1,9 @@
-import { AppShell, Container, MediaQuery } from "@mantine/core"
+import { AppShell, Container, MantineNumberSize, MediaQuery } from "@mantine/core"
 import { ReactNode } from "react"
 import { PageHeader } from "./PageHeader"
 
 interface MainLayoutProps {
-  size?: "full" | "lg" | "sm"
+  size?: "full" | MantineNumberSize
   children: ReactNode
 }
 

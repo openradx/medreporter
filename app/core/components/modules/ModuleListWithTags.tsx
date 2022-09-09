@@ -13,7 +13,7 @@ export const ModuleListWithTags = () => {
     <FilterProvider>
       <Grid>
         <Grid.Col span={8}>
-          <Stack spacing={1} sx={{ height: "100%", width: "80%" }}>
+          <Stack>
             <FilterInput label={t("ModuleSelectorWithTags.filterInputLabel")} />
             <SuspenseLoader>
               <ModuleList />

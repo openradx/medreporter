@@ -8,8 +8,7 @@ general:
   errorTitle: Ein Fehler ist aufgetreten
   errorTextUnknown: >
     Entschuldige, ein unerwarteter Fehler ist aufgetreten. Bitte versuche es
-    später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren
-    Support.
+    später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren Support.
   miscNoData: Keine Datensätze verfügbar
 AccountControl:
   menuTitleAccout: Benutzerkonto
@@ -75,10 +74,22 @@ MeasurementsTablePage:
   pageTitle: Messtabelle
 ModuleInfo:
   buttonInfo: Modulinformation
+ModuleList:
+  buttonCreateNewModule: Neues Modul erstellen
 ModulesPage:
   title: Module
 ModuleSelectorWithTags:
   filterInputLabel: Module filtern
+NewModule:
+  buttonCreateModule: Modul erstellen
+  formTitle: Erstelle ein neues Modul
+  inputDescriptionModuleName: Eine eindeutige Benennung des neuen Moduls
+  inputLabelModuleName: Modulname
+  inputLabelMainLanguage: Hauptsprache
+  inputDescriptionMainLanguage: Die Hauptsprache des neuen Moduls
+  inputLabelMultilingual: Mehrsprachiges Modul
+NewModulePage:
+  pageTitle: Neues Modul erstellen
 PageHeader:
   linkModules: Module
   linkTools: Werkzeuge

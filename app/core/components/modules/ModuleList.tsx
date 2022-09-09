@@ -1,6 +1,6 @@
 import { Routes } from "@blitzjs/next"
 import { usePaginatedQuery } from "@blitzjs/rpc"
-import { Button, Group, Pagination, Stack, Table, Text } from "@mantine/core"
+import { Button, Group, Pagination, ScrollArea, Stack, Table, Text } from "@mantine/core"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
@@ -54,18 +54,20 @@ export const ModuleList = ({ username, onModuleSelected }: ModuleListProps) => {
   const { userId } = useAppSession()
 
   return (
-    <Stack spacing={0.5} sx={{ minHeight: 0, height: "100%", overflowY: "auto" }}>
+    <Stack>
       {modules.length === 0 && <Text>{t("general.miscNoData")}</Text>}
       {modules.length > 0 && (
-        <Table verticalSpacing="md">
-          <tbody>
-            {modules.map((module) => (
-              <tr key={module.id}>
-                <td>{module.title}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+        <ScrollArea>
+          <Table verticalSpacing="md">
+            <tbody>
+              {modules.map((module) => (
+                <tr key={module.id}>
+                  <td>{module.title}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </ScrollArea>
       )}
       <Group position="apart">
         {userId === null ? (

@@ -80,6 +80,16 @@ ModulesPage:
   title: Modules
 ModuleSelectorWithTags:
   filterInputLabel: Filter modules
+NewModule:
+  buttonCreateModule: Create module
+  formTitle: Create a new module
+  inputDescriptionModuleName: The unique identifier of the new module
+  inputLabelModuleName: Module name
+  inputLabelMainLanguage: Main language
+  inputDescriptionMainLanguage: The default language of the new module
+  inputLabelMultilingual: Multilingual module
+NewModulePage:
+  pageTitle: Create new module
 PageHeader:
   linkModules: Modules
   linkTools: Tools

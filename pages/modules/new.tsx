@@ -14,13 +14,13 @@ const NewModulePage: PageWithLayout = () => {
 
   return (
     <>
-      <PageHead title={t("NewModulePage.title")} />
+      <PageHead title={t("NewModulePage.pageTitle")} />
       <NewModule />
     </>
   )
 }
 
-NewModulePage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
+NewModulePage.getLayout = (page: ReactElement) => <MainLayout size="md">{page}</MainLayout>
 
 export default NewModulePage
 
