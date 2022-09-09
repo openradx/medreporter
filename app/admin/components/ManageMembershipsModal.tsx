@@ -30,9 +30,9 @@ export const ManageMembershipsModal = ({
       <Stack>
         <Tabs defaultValue="members">
           <Tabs.List aria-label="Memberships">
-            <Tabs.Tab value="members">{t("ManageMembershipsModal.members")}</Tabs.Tab>
-            <Tabs.Tab value="admins">{t("ManageMembershipsModal.admins")}</Tabs.Tab>
-            <Tabs.Tab value="owners">{t("ManageMembershipsModal.owners")}</Tabs.Tab>
+            <Tabs.Tab value="members">{t("ManageMembershipsModal.tabTitleMembers")}</Tabs.Tab>
+            <Tabs.Tab value="admins">{t("ManageMembershipsModal.tabTitleAdmins")}</Tabs.Tab>
+            <Tabs.Tab value="owners">{t("ManageMembershipsModal.tabTitleOwners")}</Tabs.Tab>
           </Tabs.List>
           <MembershipsTabPanel
             tabValue="members"
@@ -52,7 +52,7 @@ export const ManageMembershipsModal = ({
         </Tabs>
         <Group position="right">
           <Button variant="default" onClick={onClose}>
-            {t("general.buttons.close")}
+            {t("general.buttonClose")}
           </Button>
         </Group>
       </Stack>

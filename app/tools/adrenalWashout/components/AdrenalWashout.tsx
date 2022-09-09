@@ -1,3 +1,4 @@
+import { useStructureTranslation } from "app/core/hooks/useStructureTranslation"
 import { Module } from "../../../core/components/structuredReport/Module"
 import { Report } from "../../../core/components/structuredReport/Report"
 import { Section } from "../../../core/components/structuredReport/Section"
@@ -7,27 +8,31 @@ import { AdrenalWashoutInfo } from "./AdrenalWashoutInfo"
 import { AdrenalWashoutReport } from "./AdrenalWashoutReport"
 import { AdrenalWashoutStructure } from "./AdrenalWashoutStructure"
 
-export const AdrenalWashout = () => (
-  <StructuredReport>
-    <Section id="default">
-      <Module
-        id="adrenalWashout"
-        title="Adrenal Washout"
-        links={[
-          {
-            url: "https://radiopaedia.org/articles/adrenal-washout",
-            title: "Radiopaedia | Adrenal Washout",
-          },
-        ]}
-        info={<AdrenalWashoutInfo />}
-      >
-        <Structure>
-          <AdrenalWashoutStructure />
-        </Structure>
-        <Report>
-          <AdrenalWashoutReport />
-        </Report>
-      </Module>
-    </Section>
-  </StructuredReport>
-)
+export const AdrenalWashout = () => {
+  const { t } = useStructureTranslation()
+
+  return (
+    <StructuredReport>
+      <Section id="default">
+        <Module
+          id="adrenalWashout"
+          title={t("AdrenalWashout.tooltitle")}
+          links={[
+            {
+              url: "https://radiopaedia.org/articles/adrenal-washout",
+              title: "Radiopaedia | Adrenal Washout",
+            },
+          ]}
+          info={<AdrenalWashoutInfo />}
+        >
+          <Structure>
+            <AdrenalWashoutStructure />
+          </Structure>
+          <Report>
+            <AdrenalWashoutReport />
+          </Report>
+        </Module>
+      </Section>
+    </StructuredReport>
+  )
+}

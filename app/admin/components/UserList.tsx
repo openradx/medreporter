@@ -31,7 +31,7 @@ export const UserList = () => {
 
   return (
     <Stack>
-      {users.length === 0 && <Text>{t("general.misc.noData")}</Text>}
+      {users.length === 0 && <Text>{t("general.miscNoData")}</Text>}
       {users.length > 0 && (
         <ScrollArea>
           <Table sx={{ minWidth: 800 }} verticalSpacing="md">

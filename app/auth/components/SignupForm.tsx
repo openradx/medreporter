@@ -17,9 +17,9 @@ export const SignupForm = (props: SignupFormProps) => {
 
   return (
     <Stack spacing="md">
-      <Title order={3}>{t("SignupForm.title")}</Title>
+      <Title order={3}>{t("SignupForm.formTitle")}</Title>
       <SubmitForm
-        submitText={t("SignupForm.submit")}
+        submitText={t("SignupForm.buttonSubmit")}
         schema={Signup}
         initialValues={{ username: "", email: "", password: "", fullName: "", about: "" }}
         onSubmit={async (values) => {
@@ -29,7 +29,7 @@ export const SignupForm = (props: SignupFormProps) => {
             return null
           } catch (error) {
             if (uniqueConstraintFailed(error, "email")) {
-              return { email: t("SignupForm.emailAlreadyUsed") }
+              return { email: t("SignupForm.messageEmailUsed") }
             }
             const { message } = error as Error
             return { [SUBMIT_FORM_ERROR]: message }
@@ -41,7 +41,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="username"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.username")}
+                label={t("SignupForm.inputLabelUsername")}
                 value={value}
                 onChange={onChange}
                 error={error ? error.message : null}
@@ -54,7 +54,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="email"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.email")}
+                label={t("SignupForm.inputLabelEmail")}
                 value={value}
                 onChange={onChange}
                 error={error ? error.message : null}
@@ -67,7 +67,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="password"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.password")}
+                label={t("SignupForm.inputLabelPassword")}
                 value={value}
                 onChange={onChange}
                 error={error ? error.message : null}
@@ -81,7 +81,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="fullName"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.fullName")}
+                label={t("SignupForm.inputLabelFullName")}
                 value={value}
                 onChange={onChange}
                 error={error ? error.message : null}
@@ -94,7 +94,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="about"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <Textarea
-                label={t("SignupForm.about")}
+                label={t("SignupForm.inputLabelAbout")}
                 minRows={2}
                 value={value}
                 onChange={onChange}

@@ -1,89 +1,68 @@
 AddInstituteButton:
-  label: Add new institute
-
+  buttonAddInstitute: Add new institute
 AddInstituteModal:
-  duplicateName: Institute name already being used
-  title: Add institute
-
+  formTitle: Add institute
+  messageDuplicateName: Institute name already being used
 AddUserButton:
-  label: Add new user
-
+  buttonAddUser: Add new user
 AddUserModal:
-  duplicateEmail: E-Mail address already exists
-  title: Add new user
-
+  formTitle: Add new user
+  messageDuplicateEmail: E-Mail address already exists
 AdminFeatures:
-  manageUsersTitle: Manage users
-  manageUsersDescription: Add, delete and edit users.
-  manageInstitutesTitle: Manage institutes
-  manageInstitutesDescription: >
+  descriptionManageInstitutes: |
     Add, delete and edit institutes and their memberships.
-  noAdminRights: No admin rights
-
+  descriptionManageUsers: Add, delete and edit users.
+  messageNoAdminRights: No admin rights
+  titleManageInstitutes: Manage institutes
+  titleManageUsers: Manage users
 AdminPage:
-  title: Administration
-
+  pageTitle: Administration
 DeleteInstituteButton:
-  actionTitle: Delete institute
-  confirmDialogTitle: Delete institute
-  confirmDialogMessage: Do you really want to irreversibly delete the insitute "{{name}}"?
-
+  buttonDeleteInstitute: Delete institute
+  messageConfirmDialog: Do you really want to irreversibly delete the insitute "{{name}}"?
+  titleConfirmDialog: Delete institute
 DeleteUserButton:
-  actionTitle: Delete user
-  confirmDialogTitle: Delete user
-  confirmDialogMessage: Do you really want to irreversibly delete the user "{{email}}"?
-
+  buttonDeleteUser: Delete user
+  messageConfirmDialog: Do you really want to irreversibly delete the user "{{email}}"?
+  titleConfirmDialog: Delete user
 EditInstituteButton:
-  actionTitle: Edit institute
-
+  buttonEditInstitute: Edit institute
 EditInstituteModal:
-  duplicateName: Institute name already being used
-  title: Edit institute
-
+  formTitle: Edit institute
+  messageDuplicateName: Institute name already being used
 EditUserButton:
-  actionTitle: Edit user
-
+  buttonEditUser: Edit user
 EditUserModal:
-  duplicateEmail: E-mail address already exists
-  title: Edit user
-
-InstitutesManager:
-  filterInstitutes: Filter institutes
-
+  formTitle: Edit user
+  messageDuplicateEmail: E-mail address already exists
 InstituteForm:
-  name: Name
-
+  inputLabelName: Name
+InstitutesManager:
+  inputLabelFilterInstitutes: Filter institutes
 ManageInstitutesPage:
-  title: Manage institutes
-
+  formTitle: Manage institutes
 ManageMembershipsButton:
-  actionTitle: Manage memberships
-
+  buttonManageMemberships: Manage memberships
 ManageMembershipsModal:
-  admins: Admins
-  members: Members
-  owners: Owners
-
+  tabTitleAdmins: Admins
+  tabTitleMembers: Members
+  tabTitleOwners: Owners
 ManageUsersPage:
-  title: Manage users
-
+  pageTitle: Manage users
 MembershipAdder:
-  actionTitle: Add selected user
-  label: Add user
-
+  buttonAddMember: Add selected user
+  inputLabelAddMember: Add user
 RemoveMembershipButton:
-  actionTitle: Remove membership
-
+  buttonRemoveMember: Remove membership
 UserForm:
-  about: About yourself
-  email: Email
-  fullName: Full name
-  organizerRole: Organizer
-  password: Password
-  role: Role
-  superadminRole: Superadmin
-  username: Username
-  userRole: User
-
+  inputLabelAbout: About yourself
+  inputLabelEmail: Email
+  inputLabelFullName: Full name
+  inputLabelRole: Role
+  inputLabelPassword: Password
+  inputLabelUsername: Username
+  optionOrganizerRole: Organizer
+  optionSuperadminRole: Superadmin
+  optionUserRole: User
 UsersManager:
   filterUsers: Filter users

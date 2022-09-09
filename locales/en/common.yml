@@ -1,155 +1,119 @@
 general:
-  buttons:
-    add: Add
-    cancel: Cancel
-    clear: Clear
-    close: Close
-    delete: Delete
-    save: Save
-
-  errors:
-    errorTitle: An error occurred
-    unknownError: >
-      Sorry, we had an unexpected error. Please try again later.
-      If the error persists then please contact our support.
-
-  misc:
-    noData: No data available
-
+  buttonAdd: Add
+  buttonCancel: Cancel
+  buttonClear: Clear
+  buttonClose: Close
+  buttonDelete: Delete
+  buttonSave: Save
+  errorTitle: An error occurred
+  errorTextUnknown: >
+    Sorry, we had an unexpected error. Please try again later. If the error
+    persists then please contact our support.
+  miscNoData: No data available
 AccountControl:
-  accountTitle: Account
-  admin: Administration
-  profile: User profile
-  logInTitle: Log in
-  logOut: Log out
-
+  menuTitleAccout: Account
+  optionProfile: User profile
+  optionLogIn: Log in
+  optionLogOut: Log out
+  optionAdmin: Administration
 AdrenalWashoutPage:
-  title: Adrenal washout
-
+  toolTitle: Adrenal washout
 ClearStructureButton:
-  actionTitle: Clear structure form
-
+  buttonClearStructure: Clear structure form
 ColorSchemeToggle:
-  actionTitle: Toggle theme
-
+  buttonToggleTheme: Toggle theme
 CopyButton:
-  success: Copied report to clipboard
-  error: Copy to clipboard failed. Please copy manually.
-
+  buttonCopy: Copy report to clipboard
+  errorMessageCopyReport: Copy to clipboard failed. Please copy manually.
+  successMessageCopyReport: Copied report to clipboard
 ExternalLink:
-  actionTitle: Open external link
-
+  buttonExternalLink: Open external link
 FieldGraphics:
-  actionTitle: Open graphics for selection
-
+  buttonGraphic: Open graphic for selection
 FieldInfo:
-  actionTitle: Additional infos
-
+  buttonInfo: Additional infos
 Fleischner2017Page:
-  title: Fleischner 2017
-
+  toolTitle: Fleischner 2017
 ForgotPasswordForm:
-  email: Email
-  message: >
-    If your email is in our system, you will receive instructions to
-    reset your password shortly.
-  send: Send reset password instructions
-  submitted: Request submitted
-  title: Forgot your password?
-
+  buttonSend: Send reset password instructions
+  formTitle: Forgot your password?
+  inputLabelEmail: Email
+  messageEmail: >
+    If your email is in our system, you will receive instructions to reset your
+    password shortly.
+  messageSubmitted: Request submitted
 ForgotPasswordPage:
-  title: Forgot password
-
-GFRPage:
-  title: GFR
-
+  pageTitle: Forgot password
+GfrPage:
+  toolTitle: GFR
 GraphicsModal:
-  resetTitle: Reset selection
-
+  buttonReset: Reset selection
 HomePage:
-  title: Homepage
-
-LanguageSelector:
-  as_site: As page
+  pageTitle: Homepage
+languages:
+  asSite: As page
   de: German
   en-US: English (US)
-  label: Language (Region)
-
+LanguageSelector:
+  menuTitleLanguages: Language (Region)
+Loading:
+  messageLoading: Loading...
 LoginForm:
-  authError: Invalid account credentials
-  forgotPassword: Forgot your password?
-  logIn: Log in
-  password: Password
-  signUp: Sign up
-  title: Login
-  usernameOrEmail: Username or email
-
+  authErrorMessage: Invalid account credentials
+  buttonLogIn: Log in
+  linkForgotPassword: Forgot your password?
+  linkSignUp: Sign up
+  inputLabelPassword: Password
+  inputLabelUsernameOrEmail: Username or email
+  formTitle: Login
 LoginPage:
-  title: Login
-
+  pageTitle: Login
 MeasurementsActions:
-  actionTitle: Measurement actions
-
+  buttonActions: Measurement actions
 MeasurementsTablePage:
-  title: Measurements table
-
+  pageTitle: Measurements table
 ModuleInfo:
-  actionTitle: Modul info
-
+  buttonInfo: Module info
 PageHeader:
-  home: Home
-  tools: Tools
-
+  linkTools: Tools
 RedoButton:
-  actionTitle: Redo
-
+  buttonRedo: Redo
 ReportFormat:
-  actionTitle: Change report format
-  html: HTML
-  text: Text
-
+  buttonFormat: Change report format
+  formatHtml: HTML
+  formatText: Text
 ReportLanguageSelector:
-  actionTitle: Report language
-
+  buttonLanguageReport: Report language
 ReportPanel:
   title: Report
-
 ResetPasswordForm:
-  confirmPasswordLabel: Confirm New Password
-  homepage: homepage
-  newPasswordLabel: New Password
-  redirect: Go to the
-  reset: Reset Password
-  success: Password reset successfully
-  title: Set a new Password
-
+  buttonReset: Reset Password
+  formTitle: Set a new Password
+  inputLabelConfirmPassword: Confirm New Password
+  inputLabelNewPassword: New Password
+  linkHomepage: homepage
+  messageSuccess: Password reset successfully
+  textRedirect: Go to the
 ResetPasswordPage:
-  title: Reset password
-
+  pageTitle: Reset password
 SignupForm:
-  about: About yourself
-  email: Email
-  emailAlreadyUsed: This email is already being used.
-  fullName: Full name
-  password: Password
-  submit: Create account
-  title: Create an Account
-  username: Username
-
+  buttonSubmit: Create account
+  formTitle: Create an Account
+  inputLabelAbout: About yourself
+  inputLabelEmail: Email
+  inputLabelFullName: Full name
+  inputLabelPassword: Password
+  inputLabelUsername: Username
+  messageEmailUsed: This email is already being used.
 SignupPage:
-  title: Signup
-
+  pageTitle: Signup
 SiteLanguageSelector:
-  actionTitle: General language
-
+  buttonLanguageGeneral: General language
 Structure:
   title: Structure
-
 StructureLanguageSelector:
-  actionTitle: Structure language
-
+  buttonLanguageStructure: Structure language
 ToolsPage:
-  title: Tools
-
+  pageTitle: Tools
 UndoButton:
-  actionTitle: Undo
+  buttonUndo: Undo

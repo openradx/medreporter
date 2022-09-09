@@ -1,89 +1,68 @@
 AddInstituteButton:
-  label: Neues Institut hinzufügen
-
+  buttonAddInstitute: Neues Institut hinzufügen
 AddInstituteModal:
-  duplicateName: Institutsname bereits vergeben
-  title: Institut hinzufügen
-
+  formTitle: Institut hinzufügen
+  messageDuplicateName: Institutsname bereits vergeben
 AddUserButton:
-  label: Benutzer hinzufügen
-
+  buttonAddUser: Benutzer hinzufügen
 AddUserModal:
-  duplicateEmail: Email Adresse existiert bereits
-  title: Benutzer hinzufügen
-
+  formTitle: Benutzer hinzufügen
+  messageDuplicateEmail: Email Adresse existiert bereits
 AdminFeatures:
-  manageUsersTitle: Benutzerverwaltung
-  manageUsersDescription: Hinzufügen, Löschen und editieren von Benutzern
-  manageInstitutesTitle: Institutsverwaltung
-  manageInstitutesDescription: >
+  descriptionManageInstitutes: |
     Hinzufügen, löschen und editieren von Instituten und deren Mitgliedern.
-  noAdminRights: Kein Admin Rechts
-
+  descriptionManageUsers: Hinzufügen, Löschen und editieren von Benutzern
+  messageNoAdminRights: Keine Admin-Rechte vorhanden
+  titleManageInstitutes: Institutsverwaltung
+  titleManageUsers: Benutzerverwaltung
 AdminPage:
-  title: Verwaltung
-
+  pageTitle: Verwaltung
 DeleteInstituteButton:
-  actionTitle: Institut löschen
-  confirmDialogTitle: Institut löschen
-  confirmDialogMessage: Wollen Sie das Institut "{{name}}" wirklich unwiderruflich löschen?
-
+  buttonDeleteInstitute: Institut löschen
+  messageConfirmDialog: Wollen Sie das Institut "{{name}}" wirklich unwiderruflich löschen?
+  titleConfirmDialog: Institut löschen
 DeleteUserButton:
-  actionTitle: Benutzer löschen
-  confirmDialogTitle: Benutzer löschen
-  confirmDialogMessage: Möchtest Du den Benutzer "{{username}}" wirklich unwiderruflich löschen?
-
+  buttonDeleteUser: Benutzer löschen
+  messageConfirmDialog: Möchtest Du den Benutzer "{{username}}" wirklich unwiderruflich löschen?
+  titleConfirmDialog: Benutzer löschen
 EditInstituteButton:
-  actionTitle: Institut ändern
-
+  buttonEditInstitute: Institut ändern
 EditInstituteModal:
-  duplicateName: Institutsname bereits vergeben
-  title: Institut editieren
-
+  formTitle: Institut editieren
+  messageDuplicateName: Institutsname bereits vergeben
 EditUserButton:
-  actionTitle: Benutzer ändern
-
+  buttonEditUser: Benutzer ändern
 EditUserModal:
-  duplicateEmail: Email Adresse existiert bereit
-  title: User editieren
-
-InstitutesManager:
-  filterInstitutes: Institute filtern
-
+  formTitle: User editieren
+  messageDuplicateEmail: Email Adresse existiert bereit
 InstituteForm:
-  name: Name
-
+  inputLabelName: Name
+InstitutesManager:
+  inputLabelFilterInstitutes: Institute filtern
 ManageInstitutesPage:
-  title: Institute verwalten
-
+  formTitle: Institute verwalten
 ManageMembershipsButton:
-  actionTitle: Mitglieder verwalten
-
+  buttonManageMemberships: Mitglieder verwalten
 ManageMembershipsModal:
-  admins: Administratoren
-  members: Mitglieder
-  owners: Eigentümer
-
+  tabTitleAdmins: Administratoren
+  tabTitleMembers: Mitglieder
+  tabTitleOwners: Eigentümer
 ManageUsersPage:
-  title: Benutzer verwalten
-
+  pageTitle: Benutzer verwalten
 MembershipAdder:
-  actionTitle: Ausgewählten Benutzer hinzufügen
-  label: Benutzer hinzufügen
-
+  buttonAddMember: Ausgewählten Benutzer hinzufügen
+  inputLabelAddMember: Benutzer hinzufügen
 RemoveMembershipButton:
-  actionTitle: Mitgliedschaft entfernen
-
+  buttonRemoveMember: Mitgliedschaft entfernen
 UserForm:
-  about: Über Sie selbst
-  email: E-Mail
-  fullName: Vollständiger Name
-  organizerRole: Organisator
-  password: Passwort
-  role: Rolle
-  superadminRole: Superadmin
-  username: Benutzername
-  userRole: Normaler Nutzer
-
+  inputLabelAbout: Über Sie selbst
+  inputLabelEmail: E-Mail
+  inputLabelFullName: Vollständiger Name
+  inputLabelRole: Rolle
+  inputLabelPassword: Passwort
+  inputLabelUsername: Benutzername
+  optionOrganizerRole: Organisator
+  optionSuperadminRole: Superadmin
+  optionUserRole: Normaler Nutzer
 UsersManager:
-  filterUsers: Benutzer filtern
+  inputLabelFilterUsers: Benutzer filtern

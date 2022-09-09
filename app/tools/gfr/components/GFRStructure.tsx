@@ -11,39 +11,39 @@ export const GFRStructure = () => {
   return (
     <Grid>
       <GridItem size="xl">
-        <Description>{t("description")} </Description>
+        <Description>{t("Gfr.toolDescription")} </Description>
       </GridItem>
       <GridGroup>
         <GridItem>
-          <NumberField label={t("age")} id="age" min={0} />
+          <NumberField label={t("Gfr.inputLabelAge")} id="age" min={0} />
         </GridItem>
       </GridGroup>
       <GridItem>
-        <NumberField label={t("creatinine")} id="creatinine" precision={2} min={0} />
+        <NumberField label={t("Gfr.inputLabelCreatinine")} id="creatinine" precision={2} min={0} />
       </GridItem>
       <GridItem>
-        <NumberField label={t("weight")} id="weight" min={0} />
+        <NumberField label={t("Gfr.inputLabelWeight")} id="weight" min={0} />
       </GridItem>
       <GridItem>
-        <NumberField label={t("height")} id="height" min={0} />
+        <NumberField label={t("Gfr.inputLabelHeight")} id="height" min={0} />
       </GridItem>
       <GridItem>
         <SingleChoiceField
-          label={t("gender")}
+          label={t("Gfr.inputLabelGender")}
           id="gender"
           options={[
-            { value: "male", label: t("male") },
-            { value: "female", label: t("female") },
+            { value: "male", label: t("Gfr.optionGenderMale") },
+            { value: "female", label: t("Gfr.optionGenderFemale") },
           ]}
         />
       </GridItem>
       <GridItem>
         <SingleChoiceField
-          label={t("ethnicity")}
+          label={t("Gfr.inputLabelEthnicity")}
           id="ethnicity"
           options={[
-            { value: "africanAmerican", label: t("africanAmerican") },
-            { value: "others", label: t("others") },
+            { value: "africanAmerican", label: t("Gfr.optionEthnicityAfricanAmerican") },
+            { value: "others", label: t("Gfr.optionEthnicityOthers") },
           ]}
         />
       </GridItem>

@@ -100,7 +100,7 @@ export const PageHeader = () => {
   const { pathname } = useRouter()
   const { t } = useSiteTranslation()
 
-  const links: NavLink[] = [{ url: Routes.ToolsPage(), label: t("PageHeader.tools") }]
+  const links: NavLink[] = [{ url: Routes.ToolsPage(), label: t("PageHeader.linkTools") }]
 
   const isCurrentPath = (link: NavLink) => {
     if (link.url.pathname === "/") {

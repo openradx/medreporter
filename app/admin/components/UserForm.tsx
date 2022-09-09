@@ -15,7 +15,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="username"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.username")}
+              label={t("UserForm.inputLabelUsername")}
               value={value}
               onChange={onChange}
               error={error ? error.message : null}
@@ -28,7 +28,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="email"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.email")}
+              label={t("UserForm.inputLabelEmail")}
               value={value}
               onChange={onChange}
               error={error ? error.message : null}
@@ -41,7 +41,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="password"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.password")}
+              label={t("UserForm.inputLabelPassword")}
               value={value}
               onChange={onChange}
               error={error ? error.message : null}
@@ -55,7 +55,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="fullName"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.fullName")}
+              label={t("UserForm.inputLabelFullName")}
               value={value}
               onChange={onChange}
               error={error ? error.message : null}
@@ -68,7 +68,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="about"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <Textarea
-              label={t("UserForm.about")}
+              label={t("UserForm.inputLabelAbout")}
               minRows={2}
               value={value}
               onChange={onChange}
@@ -83,13 +83,13 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           render={({ field: { value, onChange } }) => (
             <Select
               id="user-form-role"
-              label={t("UserForm.role")}
+              label={t("UserForm.inputLabelRole")}
               value={value}
               onChange={onChange}
               data={[
-                { value: UserRole.USER, label: t("UserForm.userRole") },
-                { value: UserRole.ORGANIZER, label: t("UserForm.organizerRole") },
-                { value: UserRole.SUPERADMIN, label: t("UserForm.superadminRole") },
+                { value: UserRole.USER, label: t("UserForm.optionUserRole") },
+                { value: UserRole.ORGANIZER, label: t("UserForm.optionOrganizerRole") },
+                { value: UserRole.SUPERADMIN, label: t("UserForm.optionSuperadminRole") },
               ]}
             />
           )}

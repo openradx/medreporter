@@ -16,7 +16,7 @@ export const FieldInfo = ({ title, children }: FieldInfoProps) => {
   return (
     <>
       <Tooltip label="Open Info" position="top" transition="pop" openDelay={1000}>
-        <ActionIcon title={t("FieldInfo.actionTitle")} size={20} onClick={() => setOpen(true)}>
+        <ActionIcon title={t("FieldInfo.buttonInfo")} size={20} onClick={() => setOpen(true)}>
           <InfoIcon />
         </ActionIcon>
       </Tooltip>

@@ -7,8 +7,8 @@ interface LanguagesState {
 }
 
 const initialState: LanguagesState = {
-  structureLanguage: "as_site",
-  reportLanguage: "as_site",
+  structureLanguage: "asSite",
+  reportLanguage: "asSite",
 }
 
 export const languagesSlice = createSlice({

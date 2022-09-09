@@ -15,7 +15,10 @@ export const EditInstituteButton = ({ institute }: EditInstituteButtonProps) => 
 
   return (
     <>
-      <ActionIcon title={t("EditInstituteButton.actionTitle")} onClick={() => setOpened(true)}>
+      <ActionIcon
+        title={t("EditInstituteButton.buttonEditInstitute")}
+        onClick={() => setOpened(true)}
+      >
         <EditIcon />
       </ActionIcon>
       {opened && (

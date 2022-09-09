@@ -3,19 +3,19 @@ export function calcAverageDiameter(longaxis: number, shortaxis: number): number
 }
 
 export enum Suggestion {
-  NoSuggestionPossible = "noSuggestionPossible",
-  OptionalAt12MonthsSuspicious = "optionalAt12MonthsSuspicious",
-  NoFollowUp = "noFollowUp",
-  Ct6To12MonthsAnd18To24 = "ct6To12MonthsAnd18To24",
-  Ct6To12MonthsAndConsider18To24 = "ct6to12MonthsAndConsider18To24",
-  Ct3MonthsPETSampling = "ct3MonthsPETSampling",
-  OptionalAt12Months = "optionalAt12Months",
-  Ct3To6MonthsAnd18To24 = "ct3To6MonthsAnd18To24",
-  Ct3To6MonthsAndConsider18To24 = "ct3To6MonthsAndConsider18To24",
-  Ct6To12Months2Years5Years = "ct6To12Months2Years5Years",
-  Ct3To6MonthsAnnual = "ct3To6MonthsAnnual",
-  Ct3To6Months2And4Years = "ct3To6Months2And4Years",
-  Ct3To6MonthsMostSuspicious = "ct3To6MonthsMostSuspicious",
+  NoSuggestionPossible = "Fleischner2017.noSuggestionPossible",
+  OptionalAt12MonthsSuspicious = "Fleischner2017.suggestionOptionalAt12MonthsSuspicious",
+  NoFollowUp = "Fleischner2017.suggestionNoFollowUp",
+  Ct6To12MonthsAnd18To24 = "Fleischner2017.suggestionCt6To12MonthsAnd18To24",
+  Ct6To12MonthsAndConsider18To24 = "Fleischner2017.suggestionCt6to12MonthsAndConsider18To24",
+  Ct3MonthsPETSampling = "Fleischner2017.suggestionCt3MonthsPETSampling",
+  OptionalAt12Months = "Fleischner2017.suggestionOptionalAt12Months",
+  Ct3To6MonthsAnd18To24 = "Fleischner2017.suggestionCt3To6MonthsAnd18To24",
+  Ct3To6MonthsAndConsider18To24 = "Fleischner2017.suggestionCt3To6MonthsAndConsider18To24",
+  Ct6To12Months2Years5Years = "Fleischner2017.suggestionCt6To12Months2Years5Years",
+  Ct3To6MonthsAnnual = "Fleischner2017.suggestionCt3To6MonthsAnnual",
+  Ct3To6Months2And4Years = "Fleischner2017.suggestionCt3To6Months2And4Years",
+  Ct3To6MonthsMostSuspicious = "Fleischner2017.suggestionCt3To6MonthsMostSuspicious",
 }
 
 export type Fleischner2017Result = {

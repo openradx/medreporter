@@ -20,7 +20,7 @@ export const MembershipList = ({ instituteId, role }: MembershipListProps) => {
 
   return (
     <Stack>
-      {memberships.length === 0 && <Text>{t("general.misc.noData")}</Text>}
+      {memberships.length === 0 && <Text>{t("general.miscNoData")}</Text>}
       {memberships.length > 0 && (
         <ScrollArea>
           <Table verticalSpacing="xs">
