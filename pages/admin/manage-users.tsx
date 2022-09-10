@@ -1,4 +1,3 @@
-import { Container } from "@mantine/core"
 import { UsersManager } from "app/admin/components/UsersManager"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
@@ -14,9 +13,7 @@ const ManageUsersPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("ManageUsersPage.pageTitle")} />
-      <Container size="md">
-        <UsersManager />
-      </Container>
+      <UsersManager />
     </>
   )
 }

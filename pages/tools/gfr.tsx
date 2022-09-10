@@ -21,7 +21,7 @@ const GfrPage: PageWithLayout = () => {
   )
 }
 
-GfrPage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+GfrPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
 
 export default GfrPage
 
@@ -30,6 +30,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => ({
     ...(await serverSideInitialPublicData(ctx)),
     ...(await serverSideSiteTranslations(ctx)),
     ...(await serverSideStructuredReportTranslations(ctx, ["gfr", "graphics"])),
-    ...(await serverSideReduxState({})),
+    ...serverSideReduxState({}),
   },
 })

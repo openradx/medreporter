@@ -1,4 +1,3 @@
-import { Container } from "@mantine/core"
 import { GetServerSideProps } from "next"
 import { ResetPasswordForm } from "app/auth/components/ResetPasswordForm"
 import { MainLayout } from "app/core/components/common/MainLayout"
@@ -14,14 +13,12 @@ const ResetPasswordPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("ResetPasswordPage.pageTitle")} />
-      <Container size="sm">
-        <ResetPasswordForm />
-      </Container>
+      <ResetPasswordForm />
     </>
   )
 }
 
-ResetPasswordPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
+ResetPasswordPage.getLayout = (page) => <MainLayout size="sm">{page}</MainLayout>
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => ({
   props: {

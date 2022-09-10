@@ -1,4 +1,3 @@
-import { Container } from "@mantine/core"
 import { AdminFeatures } from "app/admin/components/AdminFeatures"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
@@ -14,9 +13,7 @@ const AdminPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("AdminPage.pageTitle")} />
-      <Container size="md">
-        <AdminFeatures />
-      </Container>
+      <AdminFeatures />
     </>
   )
 }

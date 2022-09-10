@@ -21,7 +21,9 @@ const MeasurementsTablePage: PageWithLayout = () => {
   )
 }
 
-MeasurementsTablePage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+MeasurementsTablePage.getLayout = (page: ReactElement) => (
+  <MainLayout size="full">{page}</MainLayout>
+)
 
 export default MeasurementsTablePage
 
@@ -30,6 +32,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => ({
     ...(await serverSideInitialPublicData(ctx)),
     ...(await serverSideSiteTranslations(ctx)),
     ...(await serverSideStructuredReportTranslations(ctx, ["measurementsTable"])),
-    ...(await serverSideReduxState({})),
+    ...serverSideReduxState({}),
   },
 })

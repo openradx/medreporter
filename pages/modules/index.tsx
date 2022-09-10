@@ -1,34 +1,30 @@
-import { Routes } from "@blitzjs/next"
-import { GetServerSideProps } from "next"
-import { useRouter } from "next/router"
-import { ReactElement } from "react"
-import { SignupForm } from "app/auth/components/SignupForm"
+import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
 import { PageHead } from "app/core/components/common/PageHead"
+import { ModuleListWithTags } from "app/core/components/modules/ModuleListWithTags"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { PageWithLayout } from "app/core/types"
 import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
 import { serverSideSiteTranslations } from "app/core/utils/serverSideSiteTranslations"
 
-const SignupPage: PageWithLayout = () => {
+const ModulesPage: PageWithLayout = () => {
   const { t } = useSiteTranslation()
-  const router = useRouter()
 
   return (
     <>
-      <PageHead title={t("SignupPage.pageTitle")} />
-      <SignupForm onSuccess={() => router.push(Routes.HomePage())} />
+      <PageHead title={t("ModulesPage.title")} />
+      <ModuleListWithTags />
     </>
   )
 }
 
-SignupPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
+ModulesPage.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
-export default SignupPage
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => ({
+export const getServerSideProps = gSSP(async (ctx) => ({
   props: {
     ...(await serverSideInitialPublicData(ctx)),
     ...(await serverSideSiteTranslations(ctx)),
   },
-})
+}))
+
+export default ModulesPage

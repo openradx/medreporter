@@ -1,4 +1,3 @@
-import { Container } from "@mantine/core"
 import { GetServerSideProps } from "next"
 import { useRouter } from "next/router"
 import { ReactElement } from "react"
@@ -18,19 +17,17 @@ const LoginPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("LoginPage.pageTitle")} />
-      <Container size="sm">
-        <LoginForm
-          onSuccess={() => {
-            const next = router.query.next ? decodeURIComponent(router.query.next as string) : "/"
-            router.push(next)
-          }}
-        />
-      </Container>
+      <LoginForm
+        onSuccess={() => {
+          const next = router.query.next ? decodeURIComponent(router.query.next as string) : "/"
+          router.push(next)
+        }}
+      />
     </>
   )
 }
 
-LoginPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
+LoginPage.getLayout = (page: ReactElement) => <MainLayout size="sm">{page}</MainLayout>
 
 export default LoginPage
 

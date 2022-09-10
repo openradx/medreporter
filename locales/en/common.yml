@@ -74,7 +74,24 @@ MeasurementsTablePage:
   pageTitle: Measurements table
 ModuleInfo:
   buttonInfo: Module info
+ModuleList:
+  buttonCreateNewModule: Create new module
+ModulesPage:
+  title: Modules
+ModuleSelectorWithTags:
+  filterInputLabel: Filter modules
+NewModule:
+  buttonCreateModule: Create module
+  formTitle: Create a new module
+  inputDescriptionModuleName: The unique identifier of the new module
+  inputLabelModuleName: Module name
+  inputLabelMainLanguage: Main language
+  inputDescriptionMainLanguage: The default language of the new module
+  inputLabelMultilingual: Multilingual module
+NewModulePage:
+  pageTitle: Create new module
 PageHeader:
+  linkModules: Modules
   linkTools: Tools
 RedoButton:
   buttonRedo: Redo
@@ -113,6 +130,8 @@ Structure:
   title: Structure
 StructureLanguageSelector:
   buttonLanguageStructure: Structure language
+TagList:
+  title: Tags
 ToolsPage:
   pageTitle: Tools
 UndoButton:

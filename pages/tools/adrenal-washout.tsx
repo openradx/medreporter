@@ -21,7 +21,7 @@ const AdrenalWashoutPage: PageWithLayout = () => {
   )
 }
 
-AdrenalWashoutPage.getLayout = (page: ReactElement) => <MainLayout fullScreen>{page}</MainLayout>
+AdrenalWashoutPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
 
 export default AdrenalWashoutPage
 
@@ -30,6 +30,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => ({
     ...(await serverSideInitialPublicData(ctx)),
     ...(await serverSideSiteTranslations(ctx)),
     ...(await serverSideStructuredReportTranslations(ctx, ["adrenalWashout"])),
-    ...(await serverSideReduxState({})),
+    ...serverSideReduxState({}),
   },
 })
