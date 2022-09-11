@@ -65,4 +65,4 @@ UserForm:
   optionSuperadminRole: Superadmin
   optionUserRole: User
 UsersManager:
-  filterUsers: Filter users
+  inputLabelFilterUsers: Filter users
