@@ -21,6 +21,7 @@
 - [MeasurementTable] Allow to import table
 - Bring in modules and templates (MedTL)
 - Table component
+- Jest tests are currently --runInBand because of the database interactions, maybe switch to mocking the database or Docker base integration tests (see https://www.prisma.io/docs/guides/testing/unit-testing and https://www.prisma.io/docs/guides/testing/integration-testing)
 
 ## Julia
 
