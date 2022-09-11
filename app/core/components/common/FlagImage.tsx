@@ -3,9 +3,24 @@ import US from "flag-icons/flags/4x3/us.svg"
 import { MdOutlineTranslate as LanguageIcon } from "react-icons/md"
 import { TbBug } from "react-icons/tb"
 
-const images: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
+type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>
+
+const images: Record<string, SVGComponent> = {
   de: DE,
   "en-US": US,
+}
+
+const languageCodesToCountry = {
+  en: "gb",
+}
+
+function getCountryCode(languageCode: string): string {
+  const match = Array.from(languageCode.trim().matchAll(/^([a-zA-Z]{2})(?:-([a-zA-Z]{2}))?$/))
+  // let code: string = (match[0]?[2] ?? match[0]?[1]) ?? "other"
+  // if (code in languageCodesToCountry) {
+  // code = languageCodesToCountry[code]
+  // }
+  return ""
 }
 
 interface FlagIconProps {
@@ -13,7 +28,7 @@ interface FlagIconProps {
   size?: number
 }
 
-export const FlagIcon = ({ code, size = 18 }: FlagIconProps) => {
+export const FlagImage = ({ code, size = 18 }: FlagIconProps) => {
   if (code === "asSite") {
     return <LanguageIcon size={size} />
   }

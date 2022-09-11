@@ -1,9 +1,9 @@
 import { useRouter } from "next/router"
 import { useI18nSite } from "../../contexts/I18nSiteContext"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
-import { LanguageSelector } from "./LanguageSelector"
+import { LanguageChooser } from "./LanguageChooser"
 
-export const SiteLanguageSelector = () => {
+export const SiteLanguageChooser = () => {
   const router = useRouter()
   const { supportedSiteLocales } = useI18nSite()
   const { t, i18n } = useSiteTranslation()
@@ -30,8 +30,8 @@ export const SiteLanguageSelector = () => {
   }
 
   return (
-    <LanguageSelector
-      actionTitle={t("SiteLanguageSelector.buttonLanguageGeneral")}
+    <LanguageChooser
+      actionTitle={t("SiteLanguageChooser.buttonLanguageGeneral")}
       currentLocale={router.locale}
       supportedLocales={supportedSiteLocales}
       onLocaleChanged={onLocaleChanged}

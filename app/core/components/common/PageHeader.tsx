@@ -18,7 +18,7 @@ import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
-import { SiteLanguageSelector } from "./SiteLanguageSelector"
+import { SiteLanguageChooser } from "./SiteLanguageChooser"
 
 const HEADER_HEIGHT = 60
 
@@ -145,7 +145,7 @@ export const PageHeader = () => {
         </Group>
         <ActionsGroup>
           <ColorSchemeToggle />
-          <SiteLanguageSelector />
+          <SiteLanguageChooser />
           <AccountControl />
         </ActionsGroup>
         <Transition transition="pop-top-right" duration={200} mounted={opened}>

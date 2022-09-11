@@ -1,63 +1,42 @@
-import { ActionIcon, Divider, Menu } from "@mantine/core"
-import { TbCheck as CheckIcon } from "react-icons/tb"
-import config from "../../../../app.config"
-import { useSiteTranslation } from "../../hooks/useSiteTranslation"
-import { FlagIcon } from "./FlagIcon"
+import { Group, Select, Text } from "@mantine/core"
+import { ComponentPropsWithoutRef, forwardRef } from "react"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { FlagImage } from "./FlagImage"
 
-interface LanguageSelectorProps {
-  actionTitle: string
-  currentLocale: string
-  supportedLocales: string[]
-  onLocaleChanged: (locale: string) => void
+const data = [
+  {
+    image: "https://img.icons8.com/clouds/256/000000/futurama-bender.png",
+    value: "DE",
+    label: "Bender Bending Rodríguez",
+  },
+]
+
+interface ItemProps extends ComponentPropsWithoutRef<"div"> {
+  image: string
+  label: string
+  value: string
 }
 
-export const LanguageSelector = ({
-  actionTitle,
-  currentLocale,
-  supportedLocales,
-  onLocaleChanged,
-}: LanguageSelectorProps) => {
+const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
+  ({ image, label, value, ...others }: ItemProps, ref) => (
+    <div ref={ref} {...others}>
+      <Group noWrap>
+        <FlagImage code={value} />
+        <Text size="sm">{label}</Text>
+      </Group>
+    </div>
+  )
+)
+
+export const LanguageSelector = () => {
   const { t } = useSiteTranslation()
 
-  const allLocales = [...supportedLocales]
-  const items = allLocales
-    .map((locale) => ({ locale, label: t(`languages.${locale}`) }))
-    .sort((item1, item2) => {
-      if (item1.locale === "asSite") return 0
-      if (item2.locale === "asSite") return 1
-      return item1.label.localeCompare(item2.label)
-    })
-    .map((item) => (
-      <Menu.Item
-        key={item.locale}
-        icon={<FlagIcon code={item.locale} />}
-        rightSection={item.locale === currentLocale ? <CheckIcon /> : null}
-        onClick={() => onLocaleChanged(item.locale)}
-      >
-        {item.label}
-      </Menu.Item>
-    ))
-
   return (
-    <Menu width={250}>
-      <Menu.Target>
-        <ActionIcon size="md" title={actionTitle} variant="default">
-          <FlagIcon code={currentLocale} />
-        </ActionIcon>
-      </Menu.Target>
-
-      <Menu.Dropdown>
-        <Menu.Label>{t("LanguageSelector.menuTitleLanguages")}</Menu.Label>
-        {items}
-        {config.debugTranslations && (
-          <>
-            <Divider />
-            <Menu.Item icon={<FlagIcon code="cimode" />} onClick={() => onLocaleChanged("cimode")}>
-              Debug translations
-            </Menu.Item>
-          </>
-        )}
-      </Menu.Dropdown>
-    </Menu>
+    <Select
+      label={t("LanguageSelector.inputLabelMainLanguage")}
+      description={t("LanguageSelector.inputDescriptionMainLanguage")}
+      itemComponent={SelectItem}
+      data={data}
+    />
   )
 }

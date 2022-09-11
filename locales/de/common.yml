@@ -10,6 +10,17 @@ general:
     Entschuldige, ein unerwarteter Fehler ist aufgetreten. Bitte versuche es
     später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren Support.
   miscNoData: Keine Datensätze verfügbar
+languages:
+  asSite: wie Seite
+  other: Andere
+  de: Deutsch
+  es: Spanisch
+  fr: Französisch
+  gb: Englisch
+  it: Italienisch
+  nl: Holländisch
+  pt: Portugiesisch
+  se: Schwedisch
 AccountControl:
   menuTitleAccout: Benutzerkonto
   optionProfile: Benutzerprofil
@@ -50,12 +61,11 @@ GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 HomePage:
   pageTitle: Startseite
-languages:
-  asSite: wie Seite
-  de: Deutsch
-  en-US: Englisch (US)
+LanguageChooser:
+  menuTitleLanguages: Sprache
 LanguageSelector:
-  menuTitleLanguages: Sprache (Region)
+  inputDescriptionMainLanguage: Die Hauptsprache des Moduls
+  inputLabelMainLanguage: Hauptsprache
 Loading:
   messageLoading: Wird geladen...
 LoginForm:
@@ -85,8 +95,6 @@ NewModule:
   formTitle: Erstelle ein neues Modul
   inputDescriptionModuleName: Eine eindeutige Benennung des neuen Moduls
   inputLabelModuleName: Modulname
-  inputLabelMainLanguage: Hauptsprache
-  inputDescriptionMainLanguage: Die Hauptsprache des neuen Moduls
   inputLabelMultilingual: Mehrsprachiges Modul
 NewModulePage:
   pageTitle: Neues Modul erstellen
@@ -99,7 +107,7 @@ ReportFormat:
   buttonFormat: Befundformatierung ändern
   formatHtml: HTML
   formatText: Text
-ReportLanguageSelector:
+ReportLanguageChooser:
   buttonLanguageReport: Sprache Befund
 ReportPanel:
   title: Befund
@@ -124,11 +132,11 @@ SignupForm:
   messageEmailUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
 SignupPage:
   pageTitle: Registrierung
-SiteLanguageSelector:
+SiteLanguageChooser:
   buttonLanguageGeneral: Sprache allgemein
 Structure:
   title: Struktur
-StructureLanguageSelector:
+StructureLanguageChooser:
   buttonLanguageStructure: Sprache Struktur
 TagList:
   title: Tags

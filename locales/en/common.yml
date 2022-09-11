@@ -10,6 +10,17 @@ general:
     Sorry, we had an unexpected error. Please try again later. If the error
     persists then please contact our support.
   miscNoData: No data available
+languages:
+  asSite: As page
+  other: Other
+  de: German
+  es: Spanish
+  fr: French
+  gb: English
+  it: Italian
+  nl: Dutch
+  pt: Portuguese
+  se: Swedish
 AccountControl:
   menuTitleAccout: Account
   optionProfile: User profile
@@ -50,12 +61,11 @@ GraphicsModal:
   buttonReset: Reset selection
 HomePage:
   pageTitle: Homepage
-languages:
-  asSite: As page
-  de: German
-  en-US: English (US)
-LanguageSelector:
+LanguageChooser:
   menuTitleLanguages: Language (Region)
+LanguageSelector:
+  inputDescriptionMainLanguage: The main language of the module
+  inputLabelMainLanguage: Main language
 Loading:
   messageLoading: Loading...
 LoginForm:
@@ -85,8 +95,6 @@ NewModule:
   formTitle: Create a new module
   inputDescriptionModuleName: The unique identifier of the new module
   inputLabelModuleName: Module name
-  inputLabelMainLanguage: Main language
-  inputDescriptionMainLanguage: The default language of the new module
   inputLabelMultilingual: Multilingual module
 NewModulePage:
   pageTitle: Create new module
@@ -99,7 +107,7 @@ ReportFormat:
   buttonFormat: Change report format
   formatHtml: HTML
   formatText: Text
-ReportLanguageSelector:
+ReportLanguageChooser:
   buttonLanguageReport: Report language
 ReportPanel:
   title: Report
@@ -124,11 +132,11 @@ SignupForm:
   messageEmailUsed: This email is already being used.
 SignupPage:
   pageTitle: Signup
-SiteLanguageSelector:
+SiteLanguageChooser:
   buttonLanguageGeneral: General language
 Structure:
   title: Structure
-StructureLanguageSelector:
+StructureLanguageChooser:
   buttonLanguageStructure: Structure language
 TagList:
   title: Tags

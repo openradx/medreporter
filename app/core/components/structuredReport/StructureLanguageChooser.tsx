@@ -1,21 +1,21 @@
 import { useI18nStructuredReport } from "../../contexts/I18nStructuredReportContext"
-import { useReportTranslation } from "../../hooks/useReportTranslation"
 import { useSiteLanguageListener } from "../../hooks/useSiteLanguageListener"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
-import { selectReportLanguage, setReportLanguage } from "../../state/languagesSlice"
+import { useStructureTranslation } from "../../hooks/useStructureTranslation"
+import { selectStructureLanguage, setStructureLanguage } from "../../state/languagesSlice"
 import { useAppDispatch, useAppSelector } from "../../state/store"
-import { LanguageSelector } from "../common/LanguageSelector"
+import { LanguageChooser } from "../common/LanguageChooser"
 
-export const ReportLanguageSelector = () => {
+export const StructureLanguageChooser = () => {
   const { supportedStructuredReportLocales } = useI18nStructuredReport()
   const { t, i18n: i18nSite } = useSiteTranslation()
-  const { i18n: i18nReport } = useReportTranslation()
+  const { i18n: i18nStructure } = useStructureTranslation()
 
-  const currentLanguage = useAppSelector(selectReportLanguage)
+  const currentLanguage = useAppSelector(selectStructureLanguage)
 
   useSiteLanguageListener((lng) => {
     if (currentLanguage === "asSite") {
-      i18nReport.changeLanguage(lng)
+      i18nStructure.changeLanguage(lng)
     }
   })
 
@@ -26,14 +26,14 @@ export const ReportLanguageSelector = () => {
     if (lng === "asSite") {
       lng = i18nSite.language
     }
-    i18nReport.changeLanguage(lng, () => {
-      dispatch(setReportLanguage(language))
+    i18nStructure.changeLanguage(lng, () => {
+      dispatch(setStructureLanguage(language))
     })
   }
 
   return (
-    <LanguageSelector
-      actionTitle={t("ReportLanguageSelector.buttonLanguageReport")}
+    <LanguageChooser
+      actionTitle={t("StructureLanguageChooser.buttonLanguageStructure")}
       currentLocale={currentLanguage}
       supportedLocales={["asSite", ...supportedStructuredReportLocales]}
       onLocaleChanged={onLanguageChanged}
