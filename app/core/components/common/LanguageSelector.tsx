@@ -1,6 +1,7 @@
 import { Group, Select, Text } from "@mantine/core"
 import { ComponentPropsWithoutRef, forwardRef } from "react"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { getCountryCode } from "app/core/utils/localizationUtils"
 import { FlagImage } from "./FlagImage"
 
 const data = [
@@ -21,7 +22,7 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   ({ image, label, value, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
-        <FlagImage code={value} />
+        <FlagImage countryCode={getCountryCode(value)} />
         <Text size="sm">{label}</Text>
       </Group>
     </div>

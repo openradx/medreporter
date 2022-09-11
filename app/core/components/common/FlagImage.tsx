@@ -1,45 +1,48 @@
 import DE from "flag-icons/flags/4x3/de.svg"
-import US from "flag-icons/flags/4x3/us.svg"
+import ES from "flag-icons/flags/4x3/es.svg"
+import FR from "flag-icons/flags/4x3/fr.svg"
+import GB from "flag-icons/flags/4x3/gb.svg"
+import IT from "flag-icons/flags/4x3/it.svg"
+import NL from "flag-icons/flags/4x3/nl.svg"
+import PT from "flag-icons/flags/4x3/pt.svg"
+import SE from "flag-icons/flags/4x3/se.svg"
 import { MdOutlineTranslate as LanguageIcon } from "react-icons/md"
-import { TbBug } from "react-icons/tb"
+import { TbBug as CiModeIcon, TbQuestionMark as OtherIcon } from "react-icons/tb"
 
 type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>
 
-const images: Record<string, SVGComponent> = {
+const flagImages: Record<string, SVGComponent> = {
   de: DE,
-  "en-US": US,
+  es: ES,
+  fr: FR,
+  gb: GB,
+  it: IT,
+  nl: NL,
+  pt: PT,
+  se: SE,
 }
 
-const languageCodesToCountry = {
-  en: "gb",
-}
-
-function getCountryCode(languageCode: string): string {
-  const match = Array.from(languageCode.trim().matchAll(/^([a-zA-Z]{2})(?:-([a-zA-Z]{2}))?$/))
-  // let code: string = (match[0]?[2] ?? match[0]?[1]) ?? "other"
-  // if (code in languageCodesToCountry) {
-  // code = languageCodesToCountry[code]
-  // }
-  return ""
-}
-
-interface FlagIconProps {
-  code: string
+interface FlagImageProps {
+  countryCode: string
   size?: number
 }
 
-export const FlagImage = ({ code, size = 18 }: FlagIconProps) => {
-  if (code === "asSite") {
+export const FlagImage = ({ countryCode, size = 18 }: FlagImageProps) => {
+  if (countryCode === "asSite") {
     return <LanguageIcon size={size} />
   }
 
-  if (code === "cimode") {
-    return <TbBug size={size} />
+  if (countryCode === "cimode") {
+    return <CiModeIcon size={size} />
   }
 
-  const Image = images[code]
+  if (!(countryCode in flagImages)) {
+    return <OtherIcon size={size} />
+  }
+
+  const Image = flagImages[countryCode]
   if (Image === undefined) {
-    throw new Error(`Missing flag for code: ${code}`)
+    throw new Error(`Missing country code '${countryCode}' to import flag.`)
   }
   return <Image width={size} height={size} />
 }

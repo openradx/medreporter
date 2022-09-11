@@ -1,5 +1,6 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
 import { TbCheck as CheckIcon } from "react-icons/tb"
+import { getCountryCode } from "app/core/utils/localizationUtils"
 import config from "../../../../app.config"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { FlagImage } from "./FlagImage"
@@ -30,7 +31,7 @@ export const LanguageChooser = ({
     .map((item) => (
       <Menu.Item
         key={item.locale}
-        icon={<FlagImage code={item.locale} />}
+        icon={<FlagImage countryCode={getCountryCode(item.locale)} />}
         rightSection={item.locale === currentLocale ? <CheckIcon /> : null}
         onClick={() => onLocaleChanged(item.locale)}
       >
@@ -42,17 +43,22 @@ export const LanguageChooser = ({
     <Menu width={250}>
       <Menu.Target>
         <ActionIcon size="md" title={actionTitle} variant="default">
-          <FlagImage code={currentLocale} />
+          <FlagImage countryCode={getCountryCode(currentLocale)} />
         </ActionIcon>
       </Menu.Target>
 
       <Menu.Dropdown>
         <Menu.Label>{t("LanguageChooser.menuTitleLanguages")}</Menu.Label>
+
         {items}
+
         {config.debugTranslations && (
           <>
             <Divider />
-            <Menu.Item icon={<FlagImage code="cimode" />} onClick={() => onLocaleChanged("cimode")}>
+            <Menu.Item
+              icon={<FlagImage countryCode="cimode" />}
+              onClick={() => onLocaleChanged("cimode")}
+            >
               Debug translations
             </Menu.Item>
           </>
