@@ -1,5 +1,6 @@
-import { Button, Checkbox, Group, Select, Stack, Text, TextInput, Title } from "@mantine/core"
+import { Button, Checkbox, Group, Stack, Text, TextInput, Title } from "@mantine/core"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { LanguageSelector } from "../common/LanguageSelector"
 
 export const NewModule = () => {
   const { t } = useSiteTranslation()
@@ -15,11 +16,7 @@ export const NewModule = () => {
           sx={{ flex: 1 }}
         />
       </Group>
-      <Select
-        label={t("NewModule.inputLabelMainLanguage")}
-        description={t("NewModule.inputDescriptionMainLanguage")}
-        data={[]}
-      />
+      <LanguageSelector />
       <Checkbox label={t("NewModule.inputLabelMultilingual")} />
       <Group>
         <Button color="green">{t("NewModule.buttonCreateModule")}</Button>
