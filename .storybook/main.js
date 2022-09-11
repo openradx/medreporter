@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   stories: ["../**/*.story.mdx", "../**/*.story.@(js|jsx|ts|tsx)"],
   addons: [
@@ -9,5 +11,10 @@ module.exports = {
     },
   ],
   framework: "@storybook/react",
-  staticDirs: ["../app/core/locales"],
+  staticDirs: ["../locales"],
+  webpackFinal: async (config) => {
+    config.resolve.modules = [...(config.resolve.modules || []), path.resolve(__dirname, "../")]
+
+    return config
+  },
 }
