@@ -20,7 +20,7 @@ languages:
   it: Italienisch
   nl: Holländisch
   pt: Portugiesisch
-  se: Schwedisch
+  sv: Schwedisch
 AccountControl:
   menuTitleAccout: Benutzerkonto
   optionProfile: Benutzerprofil
