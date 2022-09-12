@@ -30,6 +30,10 @@ export const ModuleList = ({ username, onModuleSelected }: ModuleListProps) => {
     [filterDebounced]
   )
   const whereClause = useMemo(() => createWhereClause(filterObject), [filterObject])
+
+  // It is more of a workaround as we can't query the modules directly as we can't filter and
+  // sort by a related field (the translation then), see
+  // https://github.com/prisma/prisma/issues/5837
   const [{ modules, count }] = usePaginatedQuery(getTranslatedModules, {
     where: {
       module: { author: { username } },
@@ -40,7 +44,7 @@ export const ModuleList = ({ username, onModuleSelected }: ModuleListProps) => {
           ...whereClause,
         },
         {
-          module: { NOT: { languages: { has: i18n.language } } },
+          NOT: { module: { languages: { has: i18n.language } } },
           default: true,
           ...whereClause,
         },

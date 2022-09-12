@@ -11,9 +11,9 @@ const EXAMPLE_MEMBERSHIPS_MEMBER = 500
 const EXAMPLE_MEMBERSHIPS_ADMIN = 100
 const EXAMPLE_MEMBERSHIPS_OWNER = 10
 
-const EXAMPLE_MODULES = 300
+const EXAMPLE_MODULES = 200
 
-const createSuperadmin = async () => {
+async function createSuperadmin() {
   const hashedPassword = await SecurePassword.hash("roentgen")
   await db.user.create({
     data: {
@@ -26,7 +26,7 @@ const createSuperadmin = async () => {
   })
 }
 
-const createExampleUser = async (role: UserRole) => {
+async function createExampleUser(role: UserRole) {
   const hashedPassword = await SecurePassword.hash("roentgen")
   return db.user.create({
     data: {
@@ -40,12 +40,13 @@ const createExampleUser = async (role: UserRole) => {
   })
 }
 
-const createExampleInstitute = async () =>
-  db.institute.create({
+async function createExampleInstitute() {
+  return db.institute.create({
     data: { name: faker.company.name() },
   })
+}
 
-const getInstituteUserCombinations = async () => {
+async function getInstituteUserCombinations() {
   const institutes = await db.institute.findMany()
   const users = await db.user.findMany()
 
@@ -56,38 +57,49 @@ const getInstituteUserCombinations = async () => {
   )
 }
 
-const createExampleMembership = async (
+async function createExampleMembership(
   [instituteId, userId]: [number, number],
   role: MembershipRole
-) =>
-  db.membership.create({
+) {
+  return db.membership.create({
     data: {
       instituteId,
       userId,
       role,
     },
   })
+}
 
-const createExampleModule = async (userId: number) =>
-  db.module.create({
+function createModuleTranslation(language: string) {
+  return {
+    title: faker.lorem.sentence(),
+    description: faker.lorem.paragraph(),
+    default: true,
+    language,
+  }
+}
+
+async function createExampleModule(userId: number) {
+  const languages = faker.helpers.arrayElements(["de", "en", "es", "fr", "it"])
+
+  const translations = languages.map(createModuleTranslation)
+
+  return db.module.create({
     data: {
       moduleId: faker.helpers.unique(faker.internet.domainWord),
       sourceCode: "",
       releaseStatus: ReleaseStatus.DRAFT,
       authorId: userId,
       document: {},
+      languages,
       translations: {
-        create: {
-          title: faker.lorem.sentence(),
-          description: faker.lorem.paragraph(),
-          default: true,
-          language: "en",
-        },
+        create: translations,
       },
     },
   })
+}
 
-const seed = async () => {
+async function seed() {
   const userCount = await db.user.count()
   if (userCount) {
     // eslint-disable-next-line no-console
