@@ -1,7 +1,7 @@
 import { SecurePassword } from "@blitzjs/auth"
 import { faker } from "@faker-js/faker"
 import { Institute, MembershipRole, ReleaseStatus, User, UserRole } from "@prisma/client"
-import db from "./index"
+import db, { Prisma } from "./index"
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -70,19 +70,40 @@ async function createExampleMembership(
   })
 }
 
-function createModuleTranslation(language: string) {
+function createModuleTag(
+  language: string
+): Prisma.ModuleTagTranslationCreateWithoutModuleTranslationInput {
+  return {
+    label: faker.lorem.word(),
+    language,
+  }
+}
+
+function createModuleTranslation(
+  language: string,
+  defaultLanguage: boolean,
+  tagCount: number
+): Prisma.ModuleTranslationCreateWithoutModuleInput {
+  const tags = [...Array(tagCount)].map(() => createModuleTag(language))
+
   return {
     title: faker.lorem.sentence(),
     description: faker.lorem.paragraph(),
-    default: true,
     language,
+    default: defaultLanguage,
+    tags: {
+      create: tags,
+    },
   }
 }
 
 async function createExampleModule(userId: number) {
   const languages = faker.helpers.arrayElements(["de", "en", "es", "fr", "it"])
+  const tagCount = faker.datatype.number({ min: 1, max: 5 })
 
-  const translations = languages.map(createModuleTranslation)
+  const translations = languages.map((language, index) =>
+    createModuleTranslation(language, index === 0, tagCount)
+  )
 
   return db.module.create({
     data: {
