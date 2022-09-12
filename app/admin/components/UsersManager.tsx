@@ -11,7 +11,7 @@ export const UsersManager = () => {
   return (
     <FilterProvider>
       <Stack>
-        <FilterInput label={t("UsersManager.filterUsers")} />
+        <FilterInput label={t("UsersManager.inputLabelFilterUsers")} />
         <SuspenseLoader>
           <UserList />
         </SuspenseLoader>
