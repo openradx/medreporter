@@ -105,7 +105,7 @@ enum TokenType {
 
 model Module {
   id            Int           @id @default(autoincrement())
-  moduleId      String        @unique
+  name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   languages     String[]
@@ -117,6 +117,8 @@ model Module {
   authorId Int
 
   translations ModuleTranslation[]
+
+  @@unique([authorId, name])
 }
 
 model ModuleTranslation {
@@ -144,7 +146,7 @@ model ModuleTagTranslation {
 
 model Template {
   id            Int           @id @default(autoincrement())
-  templateId    String        @unique
+  name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   languages     String[]
@@ -156,6 +158,8 @@ model Template {
   authorId Int
 
   translations TemplateTranslation[]
+
+  @@unique([authorId, name])
 }
 
 model TemplateTranslation {
@@ -190,7 +194,6 @@ enum ReleaseStatus {
 
 model Report {
   id         Int        @id @default(autoincrement())
-  reportId   String     @unique
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
   visibility Visibility
