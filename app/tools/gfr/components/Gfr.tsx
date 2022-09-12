@@ -4,10 +4,10 @@ import { Report } from "../../../core/components/structuredReport/Report"
 import { Section } from "../../../core/components/structuredReport/Section"
 import { Structure } from "../../../core/components/structuredReport/Structure"
 import { StructuredReport } from "../../../core/components/structuredReport/StructuredReport"
-import { GFRReport } from "./GFRReport"
-import { GFRStructure } from "./GFRStructure"
+import { GfrReport } from "./GfrReport"
+import { GfrStructure } from "./GfrStructure"
 
-export const GFR = () => {
+export const Gfr = () => {
   const { t } = useStructureTranslation()
 
   return (
@@ -15,10 +15,10 @@ export const GFR = () => {
       <Section id="gfr">
         <Module id="gfr" title={t("Gfr.toolTitle")}>
           <Structure>
-            <GFRStructure />
+            <GfrStructure />
           </Structure>
           <Report>
-            <GFRReport />
+            <GfrReport />
           </Report>
         </Module>
       </Section>

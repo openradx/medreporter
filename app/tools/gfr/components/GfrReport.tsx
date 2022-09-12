@@ -11,7 +11,7 @@ import {
   calcSchwartzOrig,
 } from "../utils/gfrUtils"
 
-type GFR = {
+type Gfr = {
   creatinine: number | null
   age: number | null
   weight: number | null
@@ -20,8 +20,8 @@ type GFR = {
   ethnicity: "africanAmerican" | "others" | null
 }
 
-export const GFRReport = () => {
-  const { creatinine, age, weight, height, gender, ethnicity } = useReportData(true) as GFR
+export const GfrReport = () => {
+  const { creatinine, age, weight, height, gender, ethnicity } = useReportData(true) as Gfr
   const { t } = useReportTranslation()
   let ckdepi = t("Gfr.textCkdRequired")
   if (creatinine !== null && age !== null && gender !== null && ethnicity !== null) {

@@ -6,7 +6,7 @@ import { GridGroup } from "../../../core/components/structuredReport/GridGroup"
 import { GridItem } from "../../../core/components/structuredReport/GridItem"
 import { useStructureTranslation } from "../../../core/hooks/useStructureTranslation"
 
-export const GFRStructure = () => {
+export const GfrStructure = () => {
   const { t } = useStructureTranslation()
   return (
     <Grid>

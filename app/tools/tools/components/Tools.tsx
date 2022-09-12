@@ -27,8 +27,8 @@ export const Tools = () => {
     },
     {
       url: "/tools/gfr",
-      title: t("GFR.title"),
-      description: t("GFR.description"),
+      title: t("Gfr.title"),
+      description: t("Gfr.description"),
       tags: [t("tags.kidney")],
     },
     {

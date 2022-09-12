@@ -8,7 +8,7 @@ import { serverSideInitialPublicData } from "../../app/core/utils/serverSideInit
 import { serverSideReduxState } from "../../app/core/utils/serverSideReduxState"
 import { serverSideSiteTranslations } from "../../app/core/utils/serverSideSiteTranslations"
 import { serverSideStructuredReportTranslations } from "../../app/core/utils/serverSideStructuredReportTranslations"
-import { GFR } from "../../app/tools/gfr/components/GFR"
+import { Gfr } from "../../app/tools/gfr/components/Gfr"
 
 const GfrPage: PageWithLayout = () => {
   const { t } = useSiteTranslation()
@@ -16,7 +16,7 @@ const GfrPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("GfrPage.toolTitle")} />
-      <GFR />
+      <Gfr />
     </>
   )
 }
