@@ -17,6 +17,8 @@ model Institute {
   name String @unique
 
   memberships  Membership[]
+  modules      Module[]
+  templates    Template[]
   reports      Report[]
   currentUsers User[]
 }
@@ -125,8 +127,10 @@ model Module {
   releaseStatus ReleaseStatus
   visibility    Visibility
 
-  author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId Int
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId    Int
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId Int?
 
   translations ModuleTranslation[]
 
@@ -167,8 +171,10 @@ model Template {
   releaseStatus ReleaseStatus
   visibility    Visibility
 
-  author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId Int
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId    Int
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId Int?
 
   translations TemplateTranslation[]
 
