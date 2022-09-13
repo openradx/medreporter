@@ -45,7 +45,7 @@ export default resolver.pipe(
             module: {
               select: {
                 id: true,
-                moduleId: true,
+                name: true,
                 languages: true,
                 author: { select: { email: true, username: true } },
               },
