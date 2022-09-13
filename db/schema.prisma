@@ -84,6 +84,10 @@ model Session {
   userId Int?
 }
 
+enum TokenType {
+  RESET_PASSWORD
+}
+
 model Token {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
@@ -99,8 +103,16 @@ model Token {
   @@unique([hashedToken, type])
 }
 
-enum TokenType {
-  RESET_PASSWORD
+enum ReleaseStatus {
+  DRAFT
+  PUBLISHED
+  DEPRECIATED
+}
+
+enum Visibility {
+  PRIVATE
+  INSTITUTE
+  PUBLIC
 }
 
 model Module {
@@ -111,6 +123,7 @@ model Module {
   sourceCode    String
   document      Json
   releaseStatus ReleaseStatus
+  visibility    Visibility
 
   author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   authorId Int
@@ -152,6 +165,7 @@ model Template {
   sourceCode    String
   document      Json
   releaseStatus ReleaseStatus
+  visibility    Visibility
 
   author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   authorId Int
@@ -185,13 +199,6 @@ model TemplateTagTranslation {
   templateTranslationId Int
 }
 
-enum ReleaseStatus {
-  DRAFT
-  UNPUBLISHED
-  PUBLISHED
-  DEPRECIATED
-}
-
 model Report {
   id         Int        @id @default(autoincrement())
   createdAt  DateTime   @default(now())
@@ -208,12 +215,6 @@ model Report {
   authorId    Int
   institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
   instituteId Int?
-}
-
-enum Visibility {
-  PRIVATE
-  INSTITUTE
-  PUBLIC
 }
 
 model ReportDetail {
