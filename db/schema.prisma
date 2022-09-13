@@ -108,7 +108,6 @@ model Module {
   name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  languages     String[]
   sourceCode    String
   document      Json
   releaseStatus ReleaseStatus
@@ -133,6 +132,7 @@ model ModuleTranslation {
   moduleId Int
 
   @@unique([language, moduleId])
+  @@index([moduleId, default])
 }
 
 model ModuleTagTranslation {
@@ -149,7 +149,6 @@ model Template {
   name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  languages     String[]
   sourceCode    String
   document      Json
   releaseStatus ReleaseStatus
@@ -174,6 +173,7 @@ model TemplateTranslation {
   templateId Int
 
   @@unique([language, templateId])
+  @@index([templateId, default])
 }
 
 model TemplateTagTranslation {
