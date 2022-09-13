@@ -1,7 +1,14 @@
 import { SecurePassword } from "@blitzjs/auth"
 import { faker } from "@faker-js/faker"
-import { Institute, MembershipRole, ReleaseStatus, User, UserRole } from "@prisma/client"
-import db, { Prisma } from "./index"
+import {
+  Institute,
+  MembershipRole,
+  ReleaseStatus,
+  User,
+  UserRole,
+  Visibility,
+} from "@prisma/client"
+import db, { Prisma } from "."
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -100,22 +107,22 @@ function createModuleTranslation(
 async function createExampleModule(userId: number) {
   const languages = faker.helpers.arrayElements(["de", "en", "es", "fr", "it"])
   const tagCount = faker.datatype.number({ min: 1, max: 5 })
-
   const translations = languages.map((language, index) =>
     createModuleTranslation(language, index === 0, tagCount)
   )
+
+  const releaseStatus = faker.helpers.arrayElement(Object.values(ReleaseStatus))
+  const visibility = faker.helpers.arrayElement(Object.values(Visibility))
 
   return db.module.create({
     data: {
       name: faker.helpers.unique(faker.internet.domainWord),
       sourceCode: "",
-      releaseStatus: ReleaseStatus.DRAFT,
       authorId: userId,
       document: {},
-      languages,
-      translations: {
-        create: translations,
-      },
+      translations: { create: translations },
+      releaseStatus,
+      visibility,
     },
   })
 }

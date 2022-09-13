@@ -3,13 +3,36 @@ import { paginate } from "blitz"
 import db, { Prisma } from "db"
 
 interface GetModuleTags
-  extends Pick<Prisma.ModuleTagTranslationFindManyArgs, "where" | "orderBy" | "skip" | "take"> {
+  extends Pick<Prisma.ModuleTagTranslationFindManyArgs, "orderBy" | "skip" | "take"> {
   language: string
+  filter: string
 }
 
 export default resolver.pipe(
-  async ({ language, where = {}, orderBy, skip = 0, take = 100 }: GetModuleTags) => {
+  async ({ language, filter = "", orderBy, skip = 0, take = 100 }: GetModuleTags) => {
     // TODO: implement institutional and private modules tags
+
+    const where: Prisma.ModuleTagTranslationWhereInput = {
+      OR: [
+        { language },
+        {
+          moduleTranslation: {
+            module: {
+              translations: {
+                none: {
+                  language,
+                },
+              },
+            },
+          },
+        },
+      ],
+      moduleTranslation: {
+        module: {
+          releaseStatus: "PUBLISHED",
+        },
+      },
+    }
 
     const {
       items: tags,
@@ -19,24 +42,17 @@ export default resolver.pipe(
     } = await paginate({
       skip,
       take,
-      count: () => db.moduleTagTranslation.count({ where }),
+      count: () =>
+        db.moduleTagTranslation.count({
+          where,
+          orderBy,
+          // TODO: not really working as we can't use distinct in here, see
+          // https://github.com/prisma/prisma/issues/4228
+        }),
       query: (paginateArgs) =>
         db.moduleTagTranslation.findMany({
           ...paginateArgs,
-          where: {
-            OR: [
-              {
-                moduleTranslation: { module: { languages: { has: language } } },
-                language,
-              },
-              {
-                moduleTranslation: {
-                  module: { NOT: { languages: { has: language } }, languages: { has: "en" } },
-                },
-                language: "en",
-              },
-            ],
-          },
+          where,
           orderBy,
           select: { label: true },
           distinct: ["label"],
