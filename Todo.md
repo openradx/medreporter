@@ -24,6 +24,8 @@
 - Jest tests are currently --runInBand because of the database interactions, maybe switch to mocking the database or Docker base integration tests (see https://www.prisma.io/docs/guides/testing/unit-testing and https://www.prisma.io/docs/guides/testing/integration-testing)
 - Switch from Blitz to tRPC and iron-session
   -- https://dev.to/fcpauldiaz/nextjs-full-example-of-next-iron-session-1019
+- Maybe use Typesense for full text search https://typesense.org/docs/0.23.1/api/api-clients.html#libraries
+  -- Ranking / Weights are easier than with PostgreSQL or Mysql
 
 ## Julia
 
