@@ -26,10 +26,14 @@ export function createFilterObject<T extends string>(
   }
 
   // Unscoped filters
-  filterString
-    .replace(/'(.+?)'/g, replacer(filterObject, ""))
-    .replace(/"(.+?)"/g, replacer(filterObject, ""))
-    .replace(/(.+?)(\s|$)/g, replacer(filterObject, ""))
+  for (const scope of scopes) {
+    filterString
+      .replace(/'(.+?)'/g, replacer(filterObject, scope))
+      .replace(/"(.+?)"/g, replacer(filterObject, scope))
+      .replace(/(.+?)(\s|$)/g, replacer(filterObject, scope))
+  }
+
+  console.log("filter string after: ", filterString)
 
   return filterObject
 }
