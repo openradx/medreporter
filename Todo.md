@@ -2,6 +2,7 @@
 
 ## Kai
 
+- LanguageChooser => LocaleChooser
 - Modules: Show deprecated, Only starred, Add tags, Sort by [Title, Author, Creation date], only language
 - switch to npm
 - rename i18n keys to snake case with function, e.g. button_xxx, link_xxx, text_xxx
@@ -27,6 +28,10 @@
   -- https://dev.to/fcpauldiaz/nextjs-full-example-of-next-iron-session-1019
 - Maybe use Typesense for full text search https://typesense.org/docs/0.23.1/api/api-clients.html#libraries
   -- Ranking / Weights are easier than with PostgreSQL or Mysql
+- Locale vs Language
+  -- https://www.rfc-editor.org/rfc/rfc3066
+  -- https://www.rfc-editor.org/rfc/rfc5646.html
+  -- https://www.w3.org/International/articles/language-tags/
 
 ## Julia
 
