@@ -133,32 +133,23 @@ model Module {
   instituteId Int?
 
   translations ModuleTranslation[]
+  tags         ModuleTag[]
 
   @@unique([authorId, name])
 }
 
 model ModuleTranslation {
-  id          Int                    @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   language    String
   default     Boolean
   title       String
   description String
-  tags        ModuleTagTranslation[]
 
   module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   moduleId Int
 
   @@unique([language, moduleId])
   @@index([moduleId, default])
-}
-
-model ModuleTagTranslation {
-  id       Int    @id @default(autoincrement())
-  language String
-  label    String
-
-  moduleTranslation   ModuleTranslation @relation(fields: [moduleTranslationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  moduleTranslationId Int
 }
 
 model Template {
@@ -177,32 +168,23 @@ model Template {
   instituteId Int?
 
   translations TemplateTranslation[]
+  tags         TemplateTag[]
 
   @@unique([authorId, name])
 }
 
 model TemplateTranslation {
-  id          Int                      @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   language    String
   default     Boolean
   title       String
   description String
-  tags        TemplateTagTranslation[]
 
   template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   templateId Int
 
   @@unique([language, templateId])
   @@index([templateId, default])
-}
-
-model TemplateTagTranslation {
-  id       Int    @id @default(autoincrement())
-  language String
-  label    String
-
-  TemplateTranslation   TemplateTranslation @relation(fields: [templateTranslationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  templateTranslationId Int
 }
 
 model Report {
@@ -235,4 +217,48 @@ model ReportDetail {
   reportId Int?
 
   @@unique([reportId, key])
+}
+
+model ModuleTag {
+  id Int @id @default(autoincrement())
+
+  Module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  moduleId Int
+
+  Tag   Tag @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  tagId Int
+
+  @@unique([moduleId, tagId])
+}
+
+model TemplateTag {
+  id Int @id @default(autoincrement())
+
+  Template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  templateId Int
+
+  Tag   Tag @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  tagId Int
+
+  @@unique([templateId, tagId])
+}
+
+model Tag {
+  id  Int    @id @default(autoincrement())
+  key String @unique
+
+  translations TagTranslation[]
+  modules      ModuleTag[]
+  templates    TemplateTag[]
+}
+
+model TagTranslation {
+  id       Int    @id @default(autoincrement())
+  language String
+  label    String
+
+  tag   Tag @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  tagId Int
+
+  @@unique([tagId, language])
 }
