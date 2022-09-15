@@ -20,6 +20,8 @@ const NewModulePage: PageWithLayout = () => {
   )
 }
 
+NewModulePage.authenticate = true
+
 NewModulePage.getLayout = (page: ReactElement) => <MainLayout size="md">{page}</MainLayout>
 
 export default NewModulePage
