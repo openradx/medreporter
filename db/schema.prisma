@@ -124,8 +124,8 @@ model Module {
   updatedAt     DateTime      @updatedAt
   sourceCode    String
   document      Json
-  releaseStatus ReleaseStatus
   visibility    Visibility
+  releaseStatus ReleaseStatus
 
   author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   authorId    Int
@@ -168,8 +168,8 @@ model Template {
   updatedAt     DateTime      @updatedAt
   sourceCode    String
   document      Json
-  releaseStatus ReleaseStatus
   visibility    Visibility
+  releaseStatus ReleaseStatus
 
   author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   authorId    Int

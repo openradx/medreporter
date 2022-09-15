@@ -1,7 +1,7 @@
 import { resolver } from "@blitzjs/rpc"
 import { paginate } from "blitz"
 import db, { Prisma } from "db"
-import { createFilterObject } from "../utils/filterUtils"
+import { createFilterObject } from "../utils/filterObject"
 
 const moduleWithAuthor = Prisma.validator<Prisma.ModuleArgs>()({
   select: {
