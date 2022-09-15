@@ -46,7 +46,7 @@ export function buildModuleTranslationsArgs(
                 language: lng,
                 label: tag.getTextContent(
                   createContext({
-                    $trans: (key) => translator.translate(lng, key),
+                    $t: (key) => translator.translate(lng, key),
                   })
                 ),
               })) ?? [],

@@ -1,7 +1,6 @@
 import { resolver } from "@blitzjs/rpc"
 import { ModuleWrapper } from "@medreporter/medtl-tools"
-import db, { Prisma } from "db"
-import { createModuleId } from "../utils/idUtils"
+import db, { Prisma, ReleaseStatus } from "db"
 import { buildModuleTranslationsArgs } from "../utils/mutationUtils"
 import { parseModuleCode } from "../utils/parserUtils"
 import { CreateModule } from "../validations"
@@ -9,7 +8,7 @@ import { CreateModule } from "../validations"
 export default resolver.pipe(
   resolver.zod(CreateModule),
   resolver.authorize(),
-  async ({ sourceCode, releaseStatus }, { session }) => {
+  async ({ name, sourceCode, multilingual, defaultLanguage, visibility }, { session }) => {
     const document = parseModuleCode(sourceCode)
     const wrapper = new ModuleWrapper(document)
     const translations = buildModuleTranslationsArgs(wrapper)
@@ -17,15 +16,15 @@ export default resolver.pipe(
 
     return await db.module.create({
       data: {
-        moduleId: createModuleId(),
+        name,
         authorId: session.userId,
-        sourceCode: sourceCode.trim(),
-        document: document as unknown as Prisma.JsonObject,
-        releaseStatus,
-        languages,
+        sourceCode: "",
+        document: {} as unknown as Prisma.JsonObject,
         translations,
+        visibility,
+        releaseStatus: ReleaseStatus.DRAFT,
       },
-      select: { moduleId: true },
+      select: { name: true },
     })
   }
 )

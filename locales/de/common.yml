@@ -144,3 +144,8 @@ ToolsPage:
   pageTitle: Werkzeuge
 UndoButton:
   buttonUndo: Rückgängig machen
+VisibilitySelector:
+  inputLabelVisibility: Visibility
+  optionPublic: Öffentlich
+  optionInstitute: Institut
+  optionPrivate: Privat

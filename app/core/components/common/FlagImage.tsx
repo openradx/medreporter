@@ -6,7 +6,7 @@ import IT from "flag-icons/flags/4x3/it.svg"
 import NL from "flag-icons/flags/4x3/nl.svg"
 import PT from "flag-icons/flags/4x3/pt.svg"
 import SE from "flag-icons/flags/4x3/se.svg"
-import { MdOutlineTranslate as LanguageIcon } from "react-icons/md"
+import { MdOutlineTranslate as TranslationIcon } from "react-icons/md"
 import { TbBug as CiModeIcon, TbQuestionMark as OtherIcon } from "react-icons/tb"
 
 type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>
@@ -29,7 +29,7 @@ interface FlagImageProps {
 
 export const FlagImage = ({ countryCode, size = 18 }: FlagImageProps) => {
   if (countryCode === "asSite") {
-    return <LanguageIcon size={size} />
+    return <TranslationIcon size={size} />
   }
 
   if (countryCode === "cimode") {

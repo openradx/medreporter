@@ -1,17 +1,26 @@
 import { z } from "zod"
-import { Visibility } from "db"
+import { ReleaseStatus, Visibility } from "db"
 import { FormatSchema, MetaInfoSchema } from "./state/reportSlice"
 import { StructureDataSchema } from "./state/structureDataSlice"
 import { TemplateSchema } from "./state/structureSlice"
 
 export const CreateModule = z.object({
+  name: z.string(),
   sourceCode: z.string(),
-  releaseStatus: z.enum(["DRAFT", "UNPUBLISHED", "PUBLISHED", "DEPRECIATED"]),
+  multilingual: z.boolean(),
+  defaultLanguage: z.string(),
+  visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),
 })
 
-export const UpdateModule = CreateModule.partial().extend({
-  moduleId: z.string(),
-})
+export const UpdateModule = CreateModule.omit({ name: true })
+  .extend({
+    releaseStatus: z.enum([
+      ReleaseStatus.DRAFT,
+      ReleaseStatus.PUBLISHED,
+      ReleaseStatus.DEPRECIATED,
+    ]),
+  })
+  .partial()
 
 export const CreateReport = z.object({
   visibility: z.nativeEnum(Visibility),
