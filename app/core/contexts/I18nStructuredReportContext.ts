@@ -4,7 +4,7 @@ import { createRequiredContext } from "../utils/createRequiredContext"
 export interface I18nStructuredReportContext {
   i18nStructure: i18n
   i18nReport: i18n
-  supportedStructuredReportLocales: string[]
+  supportedStructuredReportLanguages: string[]
 }
 
 export const [useI18nStructuredReport, I18nStructuredReportContextProvider] =

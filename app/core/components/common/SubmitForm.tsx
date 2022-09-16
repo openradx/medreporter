@@ -20,14 +20,14 @@ export interface SubmitFormProps<S extends z.ZodType<any, any>>
 
 export const SUBMIT_FORM_ERROR = "SUBMIT_FORM_ERROR"
 
-export function SubmitForm<S extends z.ZodType<any, any>>({
+export const SubmitForm = <S extends z.ZodType<any, any>>({
   children,
   submitText,
   schema,
   initialValues,
   onSubmit,
   ...props
-}: SubmitFormProps<S>) {
+}: SubmitFormProps<S>) => {
   const ctx = useForm<z.infer<S>>({
     mode: "onBlur",
     resolver: schema ? zodResolver(schema) : undefined,
@@ -60,8 +60,8 @@ export function SubmitForm<S extends z.ZodType<any, any>>({
           {children}
 
           {submitText && (
-            <Group sx={{ justifyContent: "flex-end" }}>
-              <Button type="submit" disabled={ctx.formState.isSubmitting}>
+            <Group mt="sm">
+              <Button type="submit" color="green" disabled={ctx.formState.isSubmitting}>
                 {submitText}
               </Button>
             </Group>
@@ -71,5 +71,3 @@ export function SubmitForm<S extends z.ZodType<any, any>>({
     </FormProvider>
   )
 }
-
-export default SubmitForm

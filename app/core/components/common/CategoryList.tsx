@@ -3,7 +3,7 @@ import { useFilter } from "app/core/contexts/FilterContext"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 
 interface CategoryListProps {
-  categories: string[]
+  categories: { key: string; label: string }[]
 }
 
 export const CategoryList = ({ categories }: CategoryListProps) => {
@@ -19,8 +19,8 @@ export const CategoryList = ({ categories }: CategoryListProps) => {
       <Title order={6}>{t("CategoryList.title")}</Title>
       <Stack spacing={0.5}>
         {categories.map((category) => (
-          <Chip key={category} radius="sm" onClick={() => filterByCategory(category)}>
-            {category}
+          <Chip key={category.key} radius="sm" onClick={() => filterByCategory(category.label)}>
+            {category.label}
           </Chip>
         ))}
       </Stack>

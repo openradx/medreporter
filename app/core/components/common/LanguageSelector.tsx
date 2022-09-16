@@ -4,14 +4,6 @@ import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { getCountryCode } from "app/core/utils/localizationUtils"
 import { FlagImage } from "./FlagImage"
 
-const data = [
-  {
-    image: "https://img.icons8.com/clouds/256/000000/futurama-bender.png",
-    value: "DE",
-    label: "Bender Bending Rodríguez",
-  },
-]
-
 interface ItemProps extends ComponentPropsWithoutRef<"div"> {
   image: string
   label: string
@@ -29,7 +21,13 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   )
 )
 
-export const LanguageSelector = () => {
+interface LanguageSelectorProps {
+  languages: string[]
+  value: string
+  onChange: (language: string) => void
+}
+
+export const LanguageSelector = ({ languages, value, onChange }: LanguageSelectorProps) => {
   const { t } = useSiteTranslation()
 
   return (
@@ -37,7 +35,14 @@ export const LanguageSelector = () => {
       label={t("LanguageSelector.inputLabelMainLanguage")}
       description={t("LanguageSelector.inputDescriptionMainLanguage")}
       itemComponent={SelectItem}
-      data={data}
+      value={value}
+      onChange={onChange}
+      data={languages
+        .map((language) => ({
+          value: language,
+          label: t(`languages.${language}`),
+        }))
+        .sort((c1, c2) => c1.label.localeCompare(c2.label))}
     />
   )
 }

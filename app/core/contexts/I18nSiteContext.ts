@@ -3,7 +3,7 @@ import { createRequiredContext } from "../utils/createRequiredContext"
 
 export interface I18nSiteContext {
   i18nSite: i18n
-  supportedSiteLocales: string[]
+  supportedSiteLanguages: string[]
 }
 
 export const [useI18nSite, I18nSiteContextProvider] =

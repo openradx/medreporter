@@ -5,7 +5,7 @@ import { LanguageChooser } from "./LanguageChooser"
 
 export const SiteLanguageChooser = () => {
   const router = useRouter()
-  const { supportedSiteLocales } = useI18nSite()
+  const { supportedSiteLanguages } = useI18nSite()
   const { t, i18n } = useSiteTranslation()
 
   const onLocaleChanged = (locale: string) => {
@@ -33,7 +33,7 @@ export const SiteLanguageChooser = () => {
     <LanguageChooser
       actionTitle={t("SiteLanguageChooser.buttonLanguageGeneral")}
       currentLocale={router.locale}
-      supportedLocales={supportedSiteLocales}
+      supportedLocales={supportedSiteLanguages}
       onLocaleChanged={onLocaleChanged}
     />
   )

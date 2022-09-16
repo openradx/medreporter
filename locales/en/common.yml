@@ -29,6 +29,8 @@ AccountControl:
   optionAdmin: Administration
 AdrenalWashoutPage:
   toolTitle: Adrenal washout
+CategoriesSelector:
+  inputLabelCategories: Categories
 ClearStructureButton:
   buttonClearStructure: Clear structure form
 ColorSchemeToggle:
@@ -93,7 +95,6 @@ ModuleSelectorWithCategories:
 NewModule:
   buttonCreateModule: Create module
   formTitle: Create a new module
-  inputDescriptionModuleName: The unique identifier of the new module
   inputLabelModuleName: Module name
   inputLabelMultilingual: Multilingual module
 NewModulePage:
@@ -145,7 +146,7 @@ ToolsPage:
 UndoButton:
   buttonUndo: Undo
 VisibilitySelector:
-  inputLabelVisibility: Sichtbarkeit
+  inputLabelVisibility: Visibility
   optionPublic: Public
   optionInstitute: Institute
   optionPrivate: Private

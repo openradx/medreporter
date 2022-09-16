@@ -6,10 +6,10 @@ import { TemplateSchema } from "./state/structureSlice"
 
 export const CreateModule = z.object({
   name: z.string(),
-  sourceCode: z.string(),
   multilingual: z.boolean(),
   defaultLanguage: z.string(),
   visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),
+  categories: z.string().array(),
 })
 
 export const UpdateModule = CreateModule.omit({ name: true })

@@ -6,8 +6,8 @@ import { ReactElement, ReactNode } from "react"
 
 export interface I18nSiteProps {
   _i18nSite: {
-    initialSiteLocale: string
-    supportedSiteLocales: string[]
+    initialSiteLanguage: string
+    supportedSiteLanguages: string[]
     siteNamespaces: string[]
     siteStore: Resource
   }
@@ -15,9 +15,9 @@ export interface I18nSiteProps {
 
 export interface I18nStructuredReportProps {
   _i18nStructuredReport: {
-    initialStructureLocale: string
-    initialReportLocale: string
-    supportedStructuredReportLocales: string[]
+    initialStructureLanguage: string
+    initialReportLanguage: string
+    supportedStructuredReportLanguages: string[]
     structuredReportNamespaces: string[]
     structuredReportStore: Resource
   }

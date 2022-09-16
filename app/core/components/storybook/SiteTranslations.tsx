@@ -28,7 +28,7 @@ export const SiteTranslations = ({
 
   return (
     <Suspense fallback="Loading translations ...">
-      <I18nSiteContextProvider value={{ i18nSite: i18n, supportedSiteLocales: [language] }}>
+      <I18nSiteContextProvider value={{ i18nSite: i18n, supportedSiteLanguages: [language] }}>
         {children}
       </I18nSiteContextProvider>
     </Suspense>

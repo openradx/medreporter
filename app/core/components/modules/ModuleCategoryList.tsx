@@ -1,10 +1,10 @@
 import { useQuery } from "@blitzjs/rpc"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
-import getModuleCategories from "app/core/queries/getModuleCategories"
+import getCategories from "app/core/queries/getCategories"
 import { CategoryList } from "../common/CategoryList"
 
 export const ModuleCategoryList = () => {
   const { language } = useSiteTranslation().i18n
-  const [{ categories }] = useQuery(getModuleCategories, { language, filter: "" })
+  const [{ categories }] = useQuery(getCategories, { language, usedByModule: true })
   return <CategoryList categories={categories} />
 }

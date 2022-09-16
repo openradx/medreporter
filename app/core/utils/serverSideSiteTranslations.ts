@@ -7,12 +7,12 @@ export const serverSideSiteTranslations = async (
   ctx: GetServerSidePropsContext,
   additionalSiteNamespaces: string[] = []
 ): Promise<I18nSiteProps> => {
-  const initialSiteLocale = ctx.locale!
-  const supportedSiteLocales = ctx.locales!
+  const initialSiteLanguage = ctx.locale!
+  const supportedSiteLanguages = ctx.locales!
   const siteNamespaces = [...additionalSiteNamespaces, "common"]
 
   const { i18n, initPromise } = createClient({
-    lng: initialSiteLocale,
+    lng: initialSiteLanguage,
     ns: siteNamespaces,
   })
 
@@ -28,8 +28,8 @@ export const serverSideSiteTranslations = async (
 
   return {
     _i18nSite: {
-      initialSiteLocale,
-      supportedSiteLocales,
+      initialSiteLanguage,
+      supportedSiteLanguages,
       siteNamespaces,
       siteStore,
     },

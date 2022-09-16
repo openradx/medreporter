@@ -19,14 +19,14 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       if (!serverData) return null
 
       const {
-        initialStructureLocale,
-        initialReportLocale,
+        initialStructureLanguage,
+        initialReportLanguage,
         structuredReportNamespaces,
         structuredReportStore,
       } = serverData
 
       const client = createClient({
-        lng: initialStructureLocale,
+        lng: initialStructureLanguage,
         ns: structuredReportNamespaces,
         resources: structuredReportStore,
         fallbackNS: structuredReportNamespaces,
@@ -35,7 +35,7 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       const i18nStructure = client.i18n
 
       const i18nReport = client.i18n.cloneInstance({
-        lng: initialReportLocale,
+        lng: initialReportLanguage,
       })
 
       return {
@@ -55,7 +55,7 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       <I18nStructuredReportContextProvider
         value={{
           ...i18nInstances,
-          supportedStructuredReportLocales: serverData.supportedStructuredReportLocales,
+          supportedStructuredReportLanguages: serverData.supportedStructuredReportLanguages,
         }}
       >
         <WrappedComponent {...(props as T)} />

@@ -29,6 +29,8 @@ AccountControl:
   optionAdmin: Verwaltung
 AdrenalWashoutPage:
   toolTitle: Nebennieren Washout
+CategoriesSelector:
+  inputLabelCategories: Kategorien
 ClearStructureButton:
   buttonClearStructure: Strukturformular zurücksetzen
 ColorSchemeToggle:
@@ -93,7 +95,6 @@ ModuleSelectorWithCategories:
 NewModule:
   buttonCreateModule: Modul erstellen
   formTitle: Erstelle ein neues Modul
-  inputDescriptionModuleName: Eine eindeutige Benennung des neuen Moduls
   inputLabelModuleName: Modulname
   inputLabelMultilingual: Mehrsprachiges Modul
 NewModulePage:
@@ -145,7 +146,7 @@ ToolsPage:
 UndoButton:
   buttonUndo: Rückgängig machen
 VisibilitySelector:
-  inputLabelVisibility: Visibility
+  inputLabelVisibility: Sichtbarkeit
   optionPublic: Öffentlich
   optionInstitute: Institut
   optionPrivate: Privat

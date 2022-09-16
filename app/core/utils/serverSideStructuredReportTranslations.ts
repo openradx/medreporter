@@ -7,10 +7,10 @@ export const serverSideStructuredReportTranslations = async (
   ctx: GetStaticPropsContext,
   additionalStructuredReportNamespaces: string[] = []
 ): Promise<I18nStructuredReportProps> => {
-  const initialStructureLocale = ctx.locale!
-  const initialReportLocale = ctx.locale!
-  const locales = Array.from(new Set([initialStructureLocale, initialReportLocale]))
-  const supportedStructuredReportLocales = ctx.locales!
+  const initialStructureLanguage = ctx.locale!
+  const initialReportLanguage = ctx.locale!
+  const locales = Array.from(new Set([initialStructureLanguage, initialReportLanguage]))
+  const supportedStructuredReportLanguages = ctx.locales!
   const structuredReportNamespaces = [...additionalStructuredReportNamespaces, "structuredReport"]
 
   const { i18n, initPromise } = createClient({
@@ -39,9 +39,9 @@ export const serverSideStructuredReportTranslations = async (
 
   return {
     _i18nStructuredReport: {
-      initialStructureLocale,
-      initialReportLocale,
-      supportedStructuredReportLocales,
+      initialStructureLanguage,
+      initialReportLanguage,
+      supportedStructuredReportLanguages: supportedStructuredReportLanguages,
       structuredReportNamespaces,
       structuredReportStore,
     },

@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "../../state/store"
 import { LanguageChooser } from "../common/LanguageChooser"
 
 export const StructureLanguageChooser = () => {
-  const { supportedStructuredReportLocales } = useI18nStructuredReport()
+  const { supportedStructuredReportLanguages } = useI18nStructuredReport()
   const { t, i18n: i18nSite } = useSiteTranslation()
   const { i18n: i18nStructure } = useStructureTranslation()
 
@@ -35,7 +35,7 @@ export const StructureLanguageChooser = () => {
     <LanguageChooser
       actionTitle={t("StructureLanguageChooser.buttonLanguageStructure")}
       currentLocale={currentLanguage}
-      supportedLocales={["asSite", ...supportedStructuredReportLocales]}
+      supportedLocales={["asSite", ...supportedStructuredReportLanguages]}
       onLocaleChanged={onLanguageChanged}
     />
   )

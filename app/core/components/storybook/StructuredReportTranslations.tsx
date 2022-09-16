@@ -36,7 +36,7 @@ export const StructuredReportTranslations = ({
   return (
     <Suspense fallback="Loading translations ...">
       <I18nStructuredReportContextProvider
-        value={{ ...i18nInstances, supportedStructuredReportLocales: [language] }}
+        value={{ ...i18nInstances, supportedStructuredReportLanguages: [language] }}
       >
         {children}
       </I18nStructuredReportContextProvider>

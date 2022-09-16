@@ -17,7 +17,19 @@ declare module "@blitzjs/auth" {
   }
 }
 
+type SupportedResourceLanguageCodes =
+  | "de"
+  | "en"
+  | "en-US"
+  | "es"
+  | "fr"
+  | "it"
+  | "nl"
+  | "pt"
+  | "se"
+
 export interface AppConfig {
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
+  supportedResourceLanguageCodes: SupportedResourceLanguageCodes
 }

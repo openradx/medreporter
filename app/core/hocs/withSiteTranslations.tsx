@@ -18,9 +18,9 @@ export const withSiteTranslations = <T extends AppProps>(
     const i18n = useMemo(() => {
       if (!serverData) return null
 
-      const { initialSiteLocale, siteNamespaces, siteStore } = serverData
+      const { initialSiteLanguage, siteNamespaces, siteStore } = serverData
       const client = createClient({
-        lng: initialSiteLocale,
+        lng: initialSiteLanguage,
         ns: siteNamespaces,
         resources: siteStore,
         fallbackNS: siteNamespaces,
@@ -36,7 +36,7 @@ export const withSiteTranslations = <T extends AppProps>(
 
     return (
       <I18nSiteContextProvider
-        value={{ i18nSite: i18n, supportedSiteLocales: serverData.supportedSiteLocales }}
+        value={{ i18nSite: i18n, supportedSiteLanguages: serverData.supportedSiteLanguages }}
       >
         <WrappedComponent {...(props as T)} />
       </I18nSiteContextProvider>
