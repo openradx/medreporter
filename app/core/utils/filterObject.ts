@@ -33,7 +33,5 @@ export function createFilterObject<T extends string>(
       .replace(/(.+?)(\s|$)/g, replacer(filterObject, scope))
   }
 
-  console.log("filter string after: ", filterString)
-
   return filterObject
 }

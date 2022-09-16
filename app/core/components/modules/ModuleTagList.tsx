@@ -6,5 +6,5 @@ import { TagList } from "../common/TagList"
 export const ModuleTagList = () => {
   const { language } = useSiteTranslation().i18n
   const [{ tags }] = useQuery(getModuleTags, { language, filter: "" })
-  return <TagList tags={tags.map((tag) => tag.label)} />
+  return <TagList tags={tags} />
 }

@@ -66,18 +66,28 @@ export default resolver.pipe(
         },
         {
           OR: [
-            ...(filterObject.title.map((term) => ({
+            ...filterObject.title.map((term) => ({
               title: { contains: term, mode: "insensitive" as const },
-            })) ?? []),
-            ...(filterObject.author.map((term) => ({
+            })),
+            ...filterObject.author.map((term) => ({
               module: { author: { username: { equals: term } } },
-            })) ?? []),
-            ...(filterObject.tag.map((term) => ({
-              tags: { some: { label: { equals: term } } },
-            })) ?? []),
-            ...(filterObject.language.map((term) => ({
+            })),
+            ...filterObject.language.map((term) => ({
               module: { translations: { some: { language: { equals: term } } } },
-            })) ?? []),
+            })),
+            filterObject.tag.length > 0
+              ? {
+                  module: {
+                    tags: {
+                      some: {
+                        Tag: {
+                          translations: { some: { language, label: { in: filterObject.tag } } },
+                        },
+                      },
+                    },
+                  },
+                }
+              : {},
           ],
         },
       ],
@@ -110,19 +120,46 @@ export default resolver.pipe(
                 },
                 releaseStatus: true,
                 visibility: true,
+                tags: {
+                  select: {
+                    Tag: {
+                      select: {
+                        key: true,
+                        translations: {
+                          select: {
+                            language: true,
+                            label: true,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
-            tags: { select: { label: true } },
           },
         }),
     })
 
     return {
       modules: moduleTranslations.map((moduleTranslation) => ({
+        id: moduleTranslation.module.id,
         title: moduleTranslation.title,
         description: moduleTranslation.description,
-        tags: moduleTranslation.tags.map((tag) => tag.label),
-        ...moduleTranslation.module,
+        tags: moduleTranslation.module.tags.map((tag) => {
+          const label = tag.Tag.translations.find(
+            (translation) => translation.language === language
+          )?.label
+
+          if (label === undefined) {
+            const { key } = tag.Tag
+            // eslint-disable-next-line no-console
+            console.warn(`Missing translation for tag with key ${key}.`)
+            return key
+          }
+
+          return label
+        }),
       })),
       nextPage,
       hasMore,
