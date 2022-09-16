@@ -88,7 +88,7 @@ ModuleList:
   buttonCreateNewModule: Create new module
 ModulesPage:
   title: Modules
-ModuleSelectorWithTags:
+ModuleSelectorWithCategories:
   filterInputLabel: Filter modules
 NewModule:
   buttonCreateModule: Create module
@@ -138,8 +138,8 @@ Structure:
   title: Structure
 StructureLanguageChooser:
   buttonLanguageStructure: Structure language
-TagList:
-  title: Tags
+CategoryList:
+  title: Categories
 ToolsPage:
   pageTitle: Tools
 UndoButton:

@@ -14,7 +14,7 @@ const moduleWithAuthor = Prisma.validator<Prisma.ModuleArgs>()({
 export interface TranslatedModule extends Prisma.ModuleGetPayload<typeof moduleWithAuthor> {
   title: string
   description: string
-  tags: string[]
+  categories: string[]
 }
 
 interface GetTranslatedModules
@@ -26,7 +26,7 @@ interface GetTranslatedModules
 export default resolver.pipe(
   async ({ language, filter = "", orderBy, skip = 0, take = 100 }: GetTranslatedModules, ctx) => {
     const { userId: authorId, currentInstituteId: instituteId } = ctx.session
-    const filterObject = createFilterObject(filter, ["title", "author", "tag", "language"])
+    const filterObject = createFilterObject(filter, ["title", "author", "category", "language"])
 
     // TODO: Optionally show depreciated modules
 
@@ -75,13 +75,15 @@ export default resolver.pipe(
             ...filterObject.language.map((term) => ({
               module: { translations: { some: { language: { equals: term } } } },
             })),
-            filterObject.tag.length > 0
+            filterObject.category.length > 0
               ? {
                   module: {
-                    tags: {
+                    categories: {
                       some: {
-                        Tag: {
-                          translations: { some: { language, label: { in: filterObject.tag } } },
+                        Category: {
+                          translations: {
+                            some: { language, label: { in: filterObject.category } },
+                          },
                         },
                       },
                     },
@@ -120,9 +122,9 @@ export default resolver.pipe(
                 },
                 releaseStatus: true,
                 visibility: true,
-                tags: {
+                categories: {
                   select: {
-                    Tag: {
+                    Category: {
                       select: {
                         key: true,
                         translations: {
@@ -146,15 +148,15 @@ export default resolver.pipe(
         id: moduleTranslation.module.id,
         title: moduleTranslation.title,
         description: moduleTranslation.description,
-        tags: moduleTranslation.module.tags.map((tag) => {
-          const label = tag.Tag.translations.find(
+        categories: moduleTranslation.module.categories.map((category) => {
+          const label = category.Category.translations.find(
             (translation) => translation.language === language
           )?.label
 
           if (label === undefined) {
-            const { key } = tag.Tag
+            const { key } = category.Category
             // eslint-disable-next-line no-console
-            console.warn(`Missing translation for tag with key ${key}.`)
+            console.warn(`Missing translation for category with key ${key}.`)
             return key
           }
 

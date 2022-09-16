@@ -3,10 +3,10 @@ import { FilterInput } from "app/core/components/common/FilterInput"
 import { FilterProvider } from "app/core/components/common/FilterProvider"
 import { SuspenseLoader } from "app/core/components/common/SuspenseLoader"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { ModuleCategoryList } from "./ModuleCategoryList"
 import { ModuleList } from "./ModuleList"
-import { ModuleTagList } from "./ModuleTagList"
 
-export const ModuleListWithTags = () => {
+export const ModuleListWithCategories = () => {
   const { t } = useSiteTranslation()
 
   return (
@@ -14,7 +14,7 @@ export const ModuleListWithTags = () => {
       <Grid>
         <Grid.Col span={8}>
           <Stack>
-            <FilterInput label={t("ModuleSelectorWithTags.filterInputLabel")} />
+            <FilterInput label={t("ModuleSelectorWithCategories.filterInputLabel")} />
             <SuspenseLoader>
               <ModuleList />
             </SuspenseLoader>
@@ -22,7 +22,7 @@ export const ModuleListWithTags = () => {
         </Grid.Col>
         <Grid.Col span={4}>
           <SuspenseLoader>
-            <ModuleTagList />
+            <ModuleCategoryList />
           </SuspenseLoader>
         </Grid.Col>
       </Grid>

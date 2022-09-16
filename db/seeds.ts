@@ -8,9 +8,9 @@ import {
   UserRole,
   Visibility,
 } from "@prisma/client"
-import { syncTags } from "app/core/utils/tagUtils"
+import { syncCategories } from "app/core/utils/categoryUtils"
 import db, { Prisma } from "."
-import defaultTags from "./tags.json"
+import defaultCategories from "./categories.json"
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -134,15 +134,15 @@ async function seed() {
     await Promise.all(promises)
   }
 
-  const tagCount = await db.tag.count()
-  if (tagCount > 0) {
+  const categoryCount = await db.category.count()
+  if (categoryCount > 0) {
     // eslint-disable-next-line no-console
-    console.info("Creating default tags.")
+    console.info("Creating default categories.")
   } else {
     // eslint-disable-next-line no-console
-    console.info("Updating default tags.")
+    console.info("Updating default categories.")
   }
-  await syncTags(defaultTags)
+  await syncCategories(defaultCategories)
 
   if (isProduction) {
     // eslint-disable-next-line no-console

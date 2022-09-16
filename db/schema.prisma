@@ -133,7 +133,7 @@ model Module {
   instituteId Int?
 
   translations ModuleTranslation[]
-  tags         ModuleTag[]
+  categories   ModuleCategory[]
 
   @@unique([authorId, name])
 }
@@ -168,7 +168,7 @@ model Template {
   instituteId Int?
 
   translations TemplateTranslation[]
-  tags         TemplateTag[]
+  categories   TemplateCategory[]
 
   @@unique([authorId, name])
 }
@@ -219,46 +219,46 @@ model ReportDetail {
   @@unique([reportId, key])
 }
 
-model ModuleTag {
+model ModuleCategory {
   id Int @id @default(autoincrement())
 
   Module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   moduleId Int
 
-  Tag   Tag @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  tagId Int
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId Int
 
-  @@unique([moduleId, tagId])
+  @@unique([moduleId, categoryId])
 }
 
-model TemplateTag {
+model TemplateCategory {
   id Int @id @default(autoincrement())
 
   Template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   templateId Int
 
-  Tag   Tag @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  tagId Int
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId Int
 
-  @@unique([templateId, tagId])
+  @@unique([templateId, categoryId])
 }
 
-model Tag {
+model Category {
   id  Int    @id @default(autoincrement())
   key String @unique
 
-  translations TagTranslation[]
-  modules      ModuleTag[]
-  templates    TemplateTag[]
+  translations CategoryTranslation[]
+  modules      ModuleCategory[]
+  templates    TemplateCategory[]
 }
 
-model TagTranslation {
+model CategoryTranslation {
   id       Int    @id @default(autoincrement())
   language String
   label    String
 
-  tag   Tag @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  tagId Int
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId Int
 
-  @@unique([tagId, language])
+  @@unique([categoryId, language])
 }

@@ -1,7 +1,7 @@
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
 import { PageHead } from "app/core/components/common/PageHead"
-import { ModuleListWithTags } from "app/core/components/modules/ModuleListWithTags"
+import { ModuleListWithCategories } from "app/core/components/modules/ModuleListWithCategories"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { PageWithLayout } from "app/core/types"
 import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
@@ -13,7 +13,7 @@ const ModulesPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("ModulesPage.title")} />
-      <ModuleListWithTags />
+      <ModuleListWithCategories />
     </>
   )
 }

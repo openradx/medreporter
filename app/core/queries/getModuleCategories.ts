@@ -2,31 +2,31 @@ import { resolver } from "@blitzjs/rpc"
 import { paginate } from "blitz"
 import db, { Prisma } from "db"
 
-interface GetModuleTags
-  extends Pick<Prisma.TagTranslationFindManyArgs, "orderBy" | "skip" | "take"> {
+interface GetModuleCategories
+  extends Pick<Prisma.CategoryTranslationFindManyArgs, "orderBy" | "skip" | "take"> {
   language: string
   filter: string
 }
 
 export default resolver.pipe(
-  async ({ language, filter = "", orderBy, skip = 0, take = 100 }: GetModuleTags) => {
-    const where: Prisma.TagTranslationWhereInput = {
+  async ({ language, filter = "", orderBy, skip = 0, take = 100 }: GetModuleCategories) => {
+    const where: Prisma.CategoryTranslationWhereInput = {
       language,
-      tag: { modules: { some: {} } },
+      category: { modules: { some: {} } },
       label: filter ? { contains: filter, mode: "insensitive" } : {},
     }
 
     const {
-      items: tags,
+      items: categories,
       hasMore,
       nextPage,
       count,
     } = await paginate({
       skip,
       take,
-      count: () => db.tagTranslation.count({ where }),
+      count: () => db.categoryTranslation.count({ where }),
       query: (paginateArgs) =>
-        db.tagTranslation.findMany({
+        db.categoryTranslation.findMany({
           ...paginateArgs,
           where,
           orderBy,
@@ -35,7 +35,7 @@ export default resolver.pipe(
     })
 
     return {
-      tags: tags.map((tag) => tag.label),
+      categories: categories.map((category) => category.label),
       nextPage,
       hasMore,
       count,
