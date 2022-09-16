@@ -1979,7 +1979,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mantine/core@^5.0.0":
+"@mantine/core@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@mantine/core/-/core-5.3.2.tgz#363d6e79b37d4a939a769527f848ca2214129bfb"
   integrity sha512-EpIHQiYllDb+FKcwJuFcsstqW4YU8kOHiXaPkiOI5RclV+SwwFB/bnHsmkViJCRIfdu9vU8Vh8svH0k/hYsbew==
@@ -1990,26 +1990,26 @@
     "@radix-ui/react-scroll-area" "1.0.0"
     react-textarea-autosize "8.3.4"
 
-"@mantine/dates@^5.0.0":
+"@mantine/dates@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@mantine/dates/-/dates-5.3.2.tgz#20a752f1ccab35cd884505656ea33d7525872f3d"
   integrity sha512-g+D/T0nbk/y4J4Ogb4dfySWWp63oa64o8uuRYq6y6jtV5kJ5bJidZd7JW6Py2umYq8J75pMEcfj6QCn/1RXXZg==
   dependencies:
     "@mantine/utils" "5.3.2"
 
-"@mantine/hooks@^5.0.0":
+"@mantine/hooks@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-5.3.2.tgz#e1e3720a25b77bc6c596507f1e07dbfbe9236792"
   integrity sha512-vgAYobmnh52I37q/lm+mIpCbjSYxv5SuwHGzl7Ep0ww/0W+5rurZgoD/IVMhvdFO1/yeJgK+REDAZFFzfU2urw==
 
-"@mantine/modals@^5.0.0":
+"@mantine/modals@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@mantine/modals/-/modals-5.3.2.tgz#59999b66dd9cebebf57b4acd5851bd6115c049b7"
   integrity sha512-sW3A9jXNhu0+kEw2kBInaLduMTL+Fd1Ywg002Wo7DbH/aYfjm8VLDx50cp2KpVYRLe8ZyZ94ks6eanxh/8l+7A==
   dependencies:
     "@mantine/utils" "5.3.2"
 
-"@mantine/next@^5.0.0":
+"@mantine/next@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@mantine/next/-/next-5.3.2.tgz#79c5938e2da4ef5d313d49109cdf56a31cd26806"
   integrity sha512-GXZOfheR5yKu7/MkK9dU3NMIdE3PQXUx4MFAFtd/OBQL1Cg71wRN/Dtgo6iN6MvPGKSfN1UtzP9lZDnlaF62MA==
@@ -2017,7 +2017,7 @@
     "@mantine/ssr" "5.3.2"
     "@mantine/styles" "5.3.2"
 
-"@mantine/notifications@^5.0.0":
+"@mantine/notifications@^5.3.2":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@mantine/notifications/-/notifications-5.3.2.tgz#e75ea48a9ea05a127f9a5cb02bb635dd6772099d"
   integrity sha512-CB+Dqyq0Hp8kiJjl/dujuRfXPKGbETJoD/ZG1nJNDwysbdszXsB9mqU6/nheWXcHGBRG3ZmTRiZO9xrhaUq4LQ==
