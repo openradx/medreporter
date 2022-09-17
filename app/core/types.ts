@@ -3,11 +3,12 @@ import { CombinedState, PreloadedState } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 import { Resource } from "i18next"
 import { ReactElement, ReactNode } from "react"
+import { SiteLanguage, StructuredReportLanguage } from "types"
 
 export interface I18nSiteProps {
   _i18nSite: {
-    initialSiteLanguage: string
-    supportedSiteLanguages: string[]
+    initialSiteLanguage: SiteLanguage
+    supportedSiteLanguages: SiteLanguage[]
     siteNamespaces: string[]
     siteStore: Resource
   }
@@ -15,9 +16,9 @@ export interface I18nSiteProps {
 
 export interface I18nStructuredReportProps {
   _i18nStructuredReport: {
-    initialStructureLanguage: string
-    initialReportLanguage: string
-    supportedStructuredReportLanguages: string[]
+    initialStructureLanguage: StructuredReportLanguage
+    initialReportLanguage: StructuredReportLanguage
+    supportedStructuredReportLanguages: StructuredReportLanguage[]
     structuredReportNamespaces: string[]
     structuredReportStore: Resource
   }

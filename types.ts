@@ -17,7 +17,10 @@ declare module "@blitzjs/auth" {
   }
 }
 
-type SupportedResourceLanguageCodes =
+export type SiteLanguage = "de" | "en"
+
+// TODO: do we need asSite and cimode here too?
+export type StructuredReportLanguage =
   | "de"
   | "en"
   | "en-US"
@@ -31,5 +34,5 @@ type SupportedResourceLanguageCodes =
 export interface AppConfig {
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
-  supportedResourceLanguageCodes: SupportedResourceLanguageCodes
+  structuredReportLanguages: StructuredReportLanguage[]
 }

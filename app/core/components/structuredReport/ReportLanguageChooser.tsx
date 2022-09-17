@@ -34,8 +34,8 @@ export const ReportLanguageChooser = () => {
   return (
     <LanguageChooser
       actionTitle={t("ReportLanguageChooser.buttonLanguageReport")}
-      currentLocale={currentLanguage}
-      supportedLocales={["asSite", ...supportedStructuredReportLanguages]}
+      currentLanguage={currentLanguage}
+      supportedLanguages={["asSite", ...supportedStructuredReportLanguages]}
       onLocaleChanged={onLanguageChanged}
     />
   )

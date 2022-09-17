@@ -1,5 +1,6 @@
 import { Resource } from "i18next"
 import { GetServerSidePropsContext } from "next"
+import { SiteLanguage } from "types"
 import { I18nSiteProps } from "../types"
 import { createClient } from "./i18nServerClient"
 
@@ -7,8 +8,8 @@ export const serverSideSiteTranslations = async (
   ctx: GetServerSidePropsContext,
   additionalSiteNamespaces: string[] = []
 ): Promise<I18nSiteProps> => {
-  const initialSiteLanguage = ctx.locale!
-  const supportedSiteLanguages = ctx.locales!
+  const initialSiteLanguage = ctx.locale! as SiteLanguage
+  const supportedSiteLanguages = ctx.locales! as SiteLanguage[]
   const siteNamespaces = [...additionalSiteNamespaces, "common"]
 
   const { i18n, initPromise } = createClient({

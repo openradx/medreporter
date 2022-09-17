@@ -1,11 +1,12 @@
 import { ReactNode, Suspense, useMemo } from "react"
+import { StructuredReportLanguage } from "types"
 import { I18nStructuredReportContextProvider } from "../../contexts/I18nStructuredReportContext"
 import { createClient } from "../../utils/i18nStorybookClient"
 
 const DEFAULT_ADDITIONAL_NAMESPACES: string[] = []
 
 interface StructuredReportTranslationsProps {
-  language?: string
+  language?: StructuredReportLanguage
   additionalNamespaces?: string[]
   children: ReactNode
 }
@@ -36,7 +37,12 @@ export const StructuredReportTranslations = ({
   return (
     <Suspense fallback="Loading translations ...">
       <I18nStructuredReportContextProvider
-        value={{ ...i18nInstances, supportedStructuredReportLanguages: [language] }}
+        value={{
+          ...i18nInstances,
+          supportedStructuredReportLanguages: [language],
+          currentStructureLanguage: language,
+          currentReportLanguage: language,
+        }}
       >
         {children}
       </I18nStructuredReportContextProvider>

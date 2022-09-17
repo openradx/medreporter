@@ -7,20 +7,20 @@ import { FlagImage } from "./FlagImage"
 
 interface LanguageChooserProps {
   actionTitle: string
-  currentLocale: string
-  supportedLocales: string[]
+  currentLanguage: string
+  supportedLanguages: string[]
   onLocaleChanged: (locale: string) => void
 }
 
 export const LanguageChooser = ({
   actionTitle,
-  currentLocale,
-  supportedLocales,
+  currentLanguage,
+  supportedLanguages,
   onLocaleChanged,
 }: LanguageChooserProps) => {
   const { t } = useSiteTranslation()
 
-  const allLocales = [...supportedLocales]
+  const allLocales = [...supportedLanguages]
   const items = allLocales
     .map((locale) => ({ locale, label: t(`languages.${locale}`) }))
     .sort((item1, item2) => {
@@ -32,7 +32,7 @@ export const LanguageChooser = ({
       <Menu.Item
         key={item.locale}
         icon={<FlagImage countryCode={getCountryCode(item.locale)} />}
-        rightSection={item.locale === currentLocale ? <CheckIcon /> : null}
+        rightSection={item.locale === currentLanguage ? <CheckIcon /> : null}
         onClick={() => onLocaleChanged(item.locale)}
       >
         {item.label}
@@ -43,7 +43,7 @@ export const LanguageChooser = ({
     <Menu width={250}>
       <Menu.Target>
         <ActionIcon size="md" title={actionTitle} variant="default">
-          <FlagImage countryCode={getCountryCode(currentLocale)} />
+          <FlagImage countryCode={getCountryCode(currentLanguage)} />
         </ActionIcon>
       </Menu.Target>
 

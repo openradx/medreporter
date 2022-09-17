@@ -34,8 +34,8 @@ export const StructureLanguageChooser = () => {
   return (
     <LanguageChooser
       actionTitle={t("StructureLanguageChooser.buttonLanguageStructure")}
-      currentLocale={currentLanguage}
-      supportedLocales={["asSite", ...supportedStructuredReportLanguages]}
+      currentLanguage={currentLanguage}
+      supportedLanguages={["asSite", ...supportedStructuredReportLanguages]}
       onLocaleChanged={onLanguageChanged}
     />
   )

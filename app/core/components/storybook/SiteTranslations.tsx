@@ -1,11 +1,12 @@
 import { ReactNode, Suspense, useMemo } from "react"
+import { SiteLanguage } from "types"
 import { I18nSiteContextProvider } from "../../contexts/I18nSiteContext"
 import { createClient } from "../../utils/i18nStorybookClient"
 
 const DEFAULT_ADDITIONAL_NAMESPACES: string[] = []
 
 interface SiteTranslationsProps {
-  language?: string
+  language?: SiteLanguage
   additionalNamespaces?: string[]
   children: ReactNode
 }
@@ -28,7 +29,13 @@ export const SiteTranslations = ({
 
   return (
     <Suspense fallback="Loading translations ...">
-      <I18nSiteContextProvider value={{ i18nSite: i18n, supportedSiteLanguages: [language] }}>
+      <I18nSiteContextProvider
+        value={{
+          i18nSite: i18n,
+          supportedSiteLanguages: [language],
+          currentSiteLanguage: language,
+        }}
+      >
         {children}
       </I18nSiteContextProvider>
     </Suspense>

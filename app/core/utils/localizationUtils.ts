@@ -47,6 +47,8 @@ const languagesToCountriesMap: Record<string, string> = {
   se: "sv",
 }
 
+// TODO: maybe we don't need this anymore as we have typed languages and must
+// map those now
 export function getCountryCode(localeCode: string): string {
   const [languageCode, regionCode] = getLanguageAndRegionCode(localeCode)
   let code = regionCode ?? languageCode

@@ -36,7 +36,11 @@ export const withSiteTranslations = <T extends AppProps>(
 
     return (
       <I18nSiteContextProvider
-        value={{ i18nSite: i18n, supportedSiteLanguages: serverData.supportedSiteLanguages }}
+        value={{
+          i18nSite: i18n,
+          supportedSiteLanguages: serverData.supportedSiteLanguages,
+          currentSiteLanguage: serverData.initialSiteLanguage,
+        }}
       >
         <WrappedComponent {...(props as T)} />
       </I18nSiteContextProvider>

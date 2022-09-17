@@ -56,6 +56,8 @@ export const withStructuredReportTranslations = <T extends AppProps>(
         value={{
           ...i18nInstances,
           supportedStructuredReportLanguages: serverData.supportedStructuredReportLanguages,
+          currentStructureLanguage: serverData.initialStructureLanguage,
+          currentReportLanguage: serverData.initialReportLanguage,
         }}
       >
         <WrappedComponent {...(props as T)} />
