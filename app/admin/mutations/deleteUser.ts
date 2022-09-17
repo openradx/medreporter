@@ -1,10 +1,6 @@
 import { resolver } from "@blitzjs/rpc"
-import { z } from "zod"
 import db, { UserRole } from "db"
-
-const DeleteUser = z.object({
-  id: z.number(),
-})
+import { DeleteUser } from "../validations"
 
 export default resolver.pipe(
   resolver.zod(DeleteUser),

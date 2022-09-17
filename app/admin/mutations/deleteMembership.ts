@@ -1,11 +1,7 @@
 import { resolver } from "@blitzjs/rpc"
 import { AuthorizationError, NotFoundError } from "blitz"
-import { z } from "zod"
 import db, { MembershipRole, UserRole } from "db"
-
-const DeleteMembership = z.object({
-  id: z.number(),
-})
+import { DeleteMembership } from "../validations"
 
 export default resolver.pipe(
   resolver.zod(DeleteMembership),

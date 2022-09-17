@@ -1,25 +1,11 @@
 import { resolver } from "@blitzjs/rpc"
 import { paginate } from "blitz"
 import db, { Prisma } from "db"
-
-interface GetModuleCategories
-  extends Pick<Prisma.CategoryTranslationFindManyArgs, "orderBy" | "skip" | "take"> {
-  language: string
-  filter?: string
-  usedByModule?: boolean
-  usedByTemplate?: boolean
-}
+import { GetCategories } from "app/admin/validations"
 
 export default resolver.pipe(
-  async ({
-    language,
-    filter = "",
-    usedByModule = false,
-    usedByTemplate = false,
-    orderBy,
-    skip = 0,
-    take = 100,
-  }: GetModuleCategories) => {
+  resolver.zod(GetCategories),
+  async ({ language, filter, usedByModule, usedByTemplate, skip, take }) => {
     const where: Prisma.CategoryTranslationWhereInput = {
       language,
       category: {
@@ -42,7 +28,7 @@ export default resolver.pipe(
         db.categoryTranslation.findMany({
           ...paginateArgs,
           where,
-          orderBy,
+          orderBy: { label: "asc" },
           select: { label: true, category: { select: { key: true } } },
         }),
     })

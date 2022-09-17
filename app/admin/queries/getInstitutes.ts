@@ -1,18 +1,16 @@
 import { resolver } from "@blitzjs/rpc"
 import { paginate } from "blitz"
-import { z } from "zod"
 import db, { MembershipRole, Prisma, UserRole } from "db"
-
-interface GetInstitutes
-  extends Pick<Prisma.InstituteFindManyArgs, "where" | "orderBy" | "skip" | "take"> {}
+import { GetInstitutes } from "../validations"
 
 export default resolver.pipe(
+  resolver.zod(GetInstitutes), // TODO:
   resolver.authorize(),
-  resolver.zod(z.any()),
-  async (
-    { where = {}, orderBy, skip = 0, take = 100 }: GetInstitutes,
-    { session: { userId, roles } }
-  ) => {
+  async ({ filter, skip, take }, { session: { userId, roles } }) => {
+    const where: Prisma.InstituteWhereInput = {
+      name: filter ? { contains: filter, mode: "insensitive" } : {},
+    }
+
     if (!roles.includes(UserRole.SUPERADMIN)) {
       where.memberships = {
         some: { userId, role: { in: [MembershipRole.OWNER, MembershipRole.ADMIN] } },
@@ -27,7 +25,8 @@ export default resolver.pipe(
       skip,
       take,
       count: () => db.institute.count({ where }),
-      query: (paginateArgs) => db.institute.findMany({ ...paginateArgs, where, orderBy }),
+      query: (paginateArgs) =>
+        db.institute.findMany({ ...paginateArgs, where, orderBy: { name: "asc" } }),
     })
 
     return {

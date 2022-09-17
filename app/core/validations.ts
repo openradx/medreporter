@@ -4,6 +4,11 @@ import { FormatSchema, MetaInfoSchema } from "./state/reportSlice"
 import { StructureDataSchema } from "./state/structureDataSlice"
 import { TemplateSchema } from "./state/structureSlice"
 
+export const Pagination = z.object({
+  skip: z.number().min(0).default(0),
+  take: z.number().min(0).max(1000).default(100),
+})
+
 export const CreateModule = z.object({
   name: z.string(),
   multilingual: z.boolean(),

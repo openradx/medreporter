@@ -2,7 +2,7 @@
 
 ## Kai
 
-- LanguageChooser => LocaleChooser
+- Make MembershipAdder not load every user, but async (maybe only during search)
 - Modules: Show deprecated, Only starred, Add tags, Sort by [Title, Author, Creation date], only language
 - switch to npm
 - rename i18n keys to snake case with function, e.g. button_xxx, link_xxx, text_xxx

@@ -1,6 +1,7 @@
 import { resolver } from "@blitzjs/rpc"
 import { paginate } from "blitz"
 import db, { Prisma } from "db"
+import { GetTranslatedModules } from "app/admin/validations"
 import { createFilterObject } from "../utils/filterObject"
 
 const moduleWithAuthor = Prisma.validator<Prisma.ModuleArgs>()({
@@ -17,16 +18,17 @@ export interface TranslatedModule extends Prisma.ModuleGetPayload<typeof moduleW
   categories: string[]
 }
 
-interface GetTranslatedModules
-  extends Pick<Prisma.ModuleTranslationFindManyArgs, "orderBy" | "skip" | "take"> {
-  language: string
-  filter: string
-}
-
 export default resolver.pipe(
-  async ({ language, filter = "", orderBy, skip = 0, take = 100 }: GetTranslatedModules, ctx) => {
-    const { userId: authorId, currentInstituteId: instituteId } = ctx.session
-    const filterObject = createFilterObject(filter, ["title", "author", "category", "language"])
+  resolver.zod(GetTranslatedModules),
+  async ({ language, filter, skip, take }, { session }) => {
+    const { userId: authorId, currentInstituteId: instituteId } = session
+
+    const filterObject = createFilterObject(filter ?? "", [
+      "title",
+      "author",
+      "category",
+      "language",
+    ])
 
     // TODO: Optionally show depreciated modules
 
@@ -108,7 +110,7 @@ export default resolver.pipe(
         db.moduleTranslation.findMany({
           ...paginateArgs,
           where,
-          orderBy,
+          orderBy: { title: "asc" },
           include: {
             module: {
               select: {

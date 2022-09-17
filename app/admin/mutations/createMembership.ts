@@ -1,13 +1,7 @@
 import { resolver } from "@blitzjs/rpc"
 import { AuthorizationError } from "blitz"
-import { z } from "zod"
 import db, { MembershipRole, UserRole } from "db"
-
-const CreateMembership = z.object({
-  instituteId: z.number(),
-  userId: z.number(),
-  role: z.enum([MembershipRole.MEMBER, MembershipRole.ADMIN, MembershipRole.OWNER]),
-})
+import { CreateMembership } from "../validations"
 
 export default resolver.pipe(
   resolver.zod(CreateMembership),
