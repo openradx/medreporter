@@ -20,7 +20,6 @@ export const VisibilitySelector = ({ value, onChange }: VisibilitySelectorProps)
         { value: Visibility.INSTITUTE, label: t("VisibilitySelector.optionInstitute") },
         { value: Visibility.PRIVATE, label: t("VisibilitySelector.optionPrivate") },
       ]}
-      withAsterisk
     />
   )
 }

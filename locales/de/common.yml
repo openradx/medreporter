@@ -14,7 +14,8 @@ languages:
   asSite: wie Seite
   other: Andere
   de: Deutsch
-  en: Englisch
+  en: Englisch (GB)
+  en-US: Englisch (US)
   es: Spanisch
   fr: Französisch
   it: Italienisch

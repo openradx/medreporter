@@ -10,7 +10,7 @@ export const Pagination = z.object({
 })
 
 export const CreateModule = z.object({
-  name: z.string(),
+  name: z.string().min(3, { message: "formErrors.tooShort" }),
   multilingual: z.boolean(),
   defaultLanguage: z.string(),
   visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),

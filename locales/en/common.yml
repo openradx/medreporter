@@ -14,7 +14,8 @@ languages:
   asSite: As page
   other: Other
   de: German
-  en: English
+  en: English (GB)
+  en-US: English (US)
   es: Spanish
   fr: French
   it: Italian

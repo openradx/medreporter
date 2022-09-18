@@ -35,6 +35,9 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
   })
   const [formError, setFormError] = useState<string | null>(null)
 
+  const canSubmit =
+    ctx.formState.isValid && !ctx.formState.isValidating && !ctx.formState.isSubmitting
+
   return (
     <FormProvider {...ctx}>
       <form
@@ -61,7 +64,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
 
           {submitText && (
             <Group mt="sm">
-              <Button type="submit" color="green" disabled={ctx.formState.isSubmitting}>
+              <Button type="submit" color="green" disabled={!canSubmit}>
                 {submitText}
               </Button>
             </Group>
