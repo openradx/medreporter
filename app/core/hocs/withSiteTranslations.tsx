@@ -1,6 +1,7 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
+import { i18n } from "i18next"
 import { useRouter } from "next/router"
-import { ComponentType, useCallback, useMemo, useState } from "react"
+import { ComponentType, useCallback, useRef, useState } from "react"
 import { SiteLanguage } from "types"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
 import { I18nSiteProps } from "../types"
@@ -21,24 +22,26 @@ export const withSiteTranslations = <T extends AppProps>(
       serverData?.initialSiteLanguage!
     )
 
-    const i18n = useMemo(() => {
-      if (!serverData) return null
+    const i18nInstance = useRef<{ i18nSite: i18n }>()
 
+    if (serverData && !i18nInstance.current) {
       const { initialSiteLanguage, siteNamespaces, siteStore } = serverData
+
       const client = createClient({
         lng: initialSiteLanguage,
         ns: siteNamespaces,
         resources: siteStore,
         fallbackNS: siteNamespaces,
       })
-      return client.i18n
-    }, [serverData])
+
+      i18nInstance.current = { i18nSite: client.i18n }
+    }
 
     const router = useRouter()
 
     const setCurrentSiteLanguage = useCallback(
       (language: SiteLanguage) => {
-        i18n!.changeLanguage(language, () => {
+        i18nInstance.current!.i18nSite.changeLanguage(language, () => {
           if (language !== "cimode") {
             router.push(
               {
@@ -54,19 +57,19 @@ export const withSiteTranslations = <T extends AppProps>(
           _setCurrentSiteLanguage(language)
         })
       },
-      [i18n, router]
+      [i18nInstance, router]
     )
 
-    if (!serverData || !i18n) {
+    if (!serverData || !i18nInstance.current) {
       return <WrappedComponent {...(props as T)} />
     }
 
-    registerInstance("site", i18n)
+    registerInstance("site", i18nInstance.current.i18nSite)
 
     return (
       <I18nSiteContextProvider
         value={{
-          i18nSite: i18n,
+          ...i18nInstance.current,
           supportedSiteLanguages: serverData.supportedSiteLanguages,
           currentSiteLanguage,
           setCurrentSiteLanguage,

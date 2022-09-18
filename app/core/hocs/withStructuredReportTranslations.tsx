@@ -1,5 +1,6 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
-import { useCallback, useMemo, useState } from "react"
+import { i18n } from "i18next"
+import { useCallback, useRef, useState } from "react"
 import { StructuredReportLanguage } from "types"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
 import { useSiteLanguageListener } from "../hooks/useSiteLanguageListener"
@@ -25,9 +26,11 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       serverData?.initialReportLanguage!
     )
 
-    const i18nInstances = useMemo(() => {
-      if (!serverData) return null
+    const { currentSiteLanguage } = useSiteTranslation()
 
+    const i18nInstances = useRef<{ i18nStructure: i18n; i18nReport: i18n }>()
+
+    if (serverData && !i18nInstances.current) {
       const {
         initialStructureLanguage,
         initialReportLanguage,
@@ -35,8 +38,11 @@ export const withStructuredReportTranslations = <T extends AppProps>(
         structuredReportStore,
       } = serverData
 
+      const structureLanguage =
+        initialStructureLanguage === "asSite" ? currentSiteLanguage : initialStructureLanguage
+
       const client = createClient({
-        lng: initialStructureLanguage,
+        lng: structureLanguage,
         ns: structuredReportNamespaces,
         resources: structuredReportStore,
         fallbackNS: structuredReportNamespaces,
@@ -44,21 +50,19 @@ export const withStructuredReportTranslations = <T extends AppProps>(
 
       const i18nStructure = client.i18n
 
+      const reportLanguage =
+        initialReportLanguage === "asSite" ? currentSiteLanguage : initialReportLanguage
+
       const i18nReport = client.i18n.cloneInstance({
-        lng: initialReportLanguage,
+        lng: reportLanguage,
       })
 
-      return {
-        i18nStructure,
-        i18nReport,
-      }
-    }, [serverData])
-
-    const { currentSiteLanguage } = useSiteTranslation()
+      i18nInstances.current = { i18nStructure, i18nReport }
+    }
 
     const setCurrentStructureLanguage = useCallback(
       (language: StructuredReportLanguage) => {
-        i18nInstances!.i18nStructure.changeLanguage(
+        i18nInstances.current!.i18nStructure.changeLanguage(
           language === "asSite" ? currentSiteLanguage : language,
           () => {
             _setCurrentStructureLanguage(language)
@@ -70,7 +74,7 @@ export const withStructuredReportTranslations = <T extends AppProps>(
 
     const setCurrentReportLanguage = useCallback(
       (language: StructuredReportLanguage) => {
-        i18nInstances!.i18nReport.changeLanguage(
+        i18nInstances.current!.i18nReport.changeLanguage(
           language === "asSite" ? currentSiteLanguage : language,
           () => {
             _setCurrentReportLanguage(language)
@@ -82,27 +86,24 @@ export const withStructuredReportTranslations = <T extends AppProps>(
 
     useSiteLanguageListener((language) => {
       if (currentStructureLanguage === "asSite") {
-        i18nInstances?.i18nStructure.changeLanguage(language)
+        i18nInstances.current?.i18nStructure.changeLanguage(language)
       }
-    })
-
-    useSiteLanguageListener((language) => {
       if (currentReportLanguage === "asSite") {
-        i18nInstances?.i18nReport.changeLanguage(language)
+        i18nInstances.current?.i18nReport.changeLanguage(language)
       }
     })
 
-    if (!serverData || !i18nInstances) {
+    if (!serverData || !i18nInstances.current) {
       return <WrappedComponent {...(props as T)} />
     }
 
-    registerInstance("structure", i18nInstances.i18nStructure)
-    registerInstance("report", i18nInstances.i18nReport)
+    registerInstance("structure", i18nInstances.current.i18nStructure)
+    registerInstance("report", i18nInstances.current.i18nReport)
 
     return (
       <I18nStructuredReportContextProvider
         value={{
-          ...i18nInstances,
+          ...i18nInstances.current,
           supportedStructuredReportLanguages: serverData.supportedStructuredReportLanguages,
           currentStructureLanguage,
           currentReportLanguage,
