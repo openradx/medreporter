@@ -6,7 +6,7 @@ import { GetUsersForMembership } from "../validations"
 export default resolver.pipe(
   resolver.zod(GetUsersForMembership),
   resolver.authorize(),
-  async ({ instituteId, skip = 0, take = 100 }, { session }) => {
+  async ({ instituteId, skip, take }, { session }) => {
     // Check that current user is a SUPERADMIN or OWNER / ADMIN of that institute
     if (!session.roles.includes(UserRole.SUPERADMIN)) {
       const membership = await db.membership.findFirst({
