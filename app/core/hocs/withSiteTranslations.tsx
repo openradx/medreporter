@@ -1,9 +1,10 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
 import { i18n } from "i18next"
 import { useRouter } from "next/router"
-import { ComponentType, useCallback, useEffect, useRef, useState } from "react"
+import { ComponentType, useCallback, useRef, useState } from "react"
 import { SiteLanguage } from "types"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
+import { useOnRouteChange } from "../hooks/useOnRouteChange"
 import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
 import { registerInstance } from "../utils/i18nextReloader"
@@ -39,26 +40,11 @@ export const withSiteTranslations = <T extends AppProps>(
 
     const router = useRouter()
 
-    // Quite ugly workaround as on a non shallow route change this component will be just
-    // rerendered with the existing i18n store and without the new language resources
-    // sent by the server. So we have to destroy the store explicitly then.
-    // But we don't want to destroy it on shallow render as we use this during
-    // just a language change, where we load the resources using the API by
-    // calling `changeLanguage` on the store before the shallow route change (see below).
-    useEffect(() => {
-      const handleStart = (_url: string, { shallow }: { shallow: boolean }) => {
-        if (!shallow) {
-          // reset i18n store that it can be rebuilt on new page
-          i18nInstance.current = undefined
-        }
-      }
-
-      router.events.on("routeChangeStart", handleStart)
-
-      return () => {
-        router.events.off("routeChangeStart", handleStart)
-      }
-    }, [router])
+    useOnRouteChange(() => {
+      // Reset i18n store on route change so that it can be re-initialized with
+      // the language resources for the new page (sent from the server with SSR).
+      i18nInstance.current = undefined
+    })
 
     const setCurrentSiteLanguage = useCallback(
       (language: SiteLanguage) => {

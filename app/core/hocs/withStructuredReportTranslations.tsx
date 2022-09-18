@@ -1,9 +1,9 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
 import { i18n } from "i18next"
-import { useRouter } from "next/router"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 import { StructuredReportLanguage } from "types"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
+import { useOnRouteChange } from "../hooks/useOnRouteChange"
 import { useSiteLanguageListener } from "../hooks/useSiteLanguageListener"
 import { useSiteTranslation } from "../hooks/useSiteTranslation"
 import { I18nStructuredReportProps } from "../types"
@@ -65,27 +65,15 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       i18nInstances.current = { i18nStructure, i18nReport }
     }
 
-    const router = useRouter()
+    useOnRouteChange(() => {
+      // Reset i18n stores on route change so that they can be re-initialized with
+      // the language resources for the new page (sent from the server with SSR).
+      i18nInstances.current = undefined
 
-    // See `withSiteTranslation`
-    useEffect(() => {
-      const handleStart = (_url: string, { shallow }: { shallow: boolean }) => {
-        if (!shallow) {
-          // reset i18n stores that they can be rebuilt on new page
-          i18nInstances.current = undefined
-
-          // also reset currently chosen structure and report language
-          _setCurrentReportLanguage(undefined)
-          _setCurrentStructureLanguage(undefined)
-        }
-      }
-
-      router.events.on("routeChangeStart", handleStart)
-
-      return () => {
-        router.events.off("routeChangeStart", handleStart)
-      }
-    }, [router])
+      // Also reset currently chosen structure and report language
+      _setCurrentReportLanguage(undefined)
+      _setCurrentStructureLanguage(undefined)
+    })
 
     const setCurrentStructureLanguage = useCallback(
       (language: StructuredReportLanguage) => {
