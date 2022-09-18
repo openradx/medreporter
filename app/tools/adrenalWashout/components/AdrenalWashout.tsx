@@ -16,7 +16,7 @@ export const AdrenalWashout = () => {
       <Section id="default">
         <Module
           id="adrenalWashout"
-          title={t("AdrenalWashout.tooltitle")}
+          title={t("AdrenalWashout.toolTitle")}
           links={[
             {
               url: "https://radiopaedia.org/articles/adrenal-washout",
