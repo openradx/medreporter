@@ -16,6 +16,8 @@ AccountControl:
   optionLogIn: Log in
   optionLogOut: Log out
   optionAdmin: Administration
+AdrenalMriPage:
+  toolTitle: Adrenal gland MRI
 AdrenalWashoutPage:
   toolTitle: Adrenal washout
 ClearStructureButton:

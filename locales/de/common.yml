@@ -16,6 +16,8 @@ AccountControl:
   optionLogIn: Anmelden
   optionLogOut: Abmelden
   optionAdmin: Verwaltung
+AdrenalMriPage:
+  toolTitle: Nebennieren MRT
 AdrenalWashoutPage:
   toolTitle: Nebennieren Washout
 ClearStructureButton:

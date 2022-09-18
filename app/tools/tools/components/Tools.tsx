@@ -20,6 +20,13 @@ export const Tools = () => {
       tags: [t("tags.radiology"), t("tags.ct"), t("tags.adrenal")],
     },
     {
+      url: "/tools/adrenal-mri",
+      title: t("AdrenalMri.title"),
+      description: t("AdrenalMri.description"),
+      tags: [t("tags.radiology"), t("tags.mri"), t("tags.adrenal")],
+    },
+
+    {
       url: "/tools/fleischner2017",
       title: t("Fleischner2017.title"),
       description: t("Fleischner2017.description"),
