@@ -1,5 +1,7 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
-import { ComponentType, useMemo, useState } from "react"
+import { useRouter } from "next/router"
+import { ComponentType, useCallback, useMemo, useState } from "react"
+import { SiteLanguage } from "types"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
 import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
@@ -15,7 +17,9 @@ export const withSiteTranslations = <T extends AppProps>(
   const WithSiteTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nSite
 
-    const [currentSiteLanguage, setCurrentSiteLanguage] = useState(serverData?.initialSiteLanguage)
+    const [currentSiteLanguage, _setCurrentSiteLanguage] = useState<SiteLanguage>(
+      serverData?.initialSiteLanguage!
+    )
 
     const i18n = useMemo(() => {
       if (!serverData) return null
@@ -30,7 +34,30 @@ export const withSiteTranslations = <T extends AppProps>(
       return client.i18n
     }, [serverData])
 
-    if (!serverData || !currentSiteLanguage || !i18n) {
+    const router = useRouter()
+
+    const setCurrentSiteLanguage = useCallback(
+      (language: SiteLanguage) => {
+        i18n!.changeLanguage(language, () => {
+          if (language !== "cimode") {
+            router.push(
+              {
+                pathname: router.pathname,
+                query: {
+                  ...router.query,
+                },
+              },
+              undefined,
+              { shallow: true, locale: language }
+            )
+          }
+          _setCurrentSiteLanguage(language)
+        })
+      },
+      [i18n, router]
+    )
+
+    if (!serverData || !i18n) {
       return <WrappedComponent {...(props as T)} />
     }
 

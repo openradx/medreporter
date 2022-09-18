@@ -1,6 +1,9 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
-import { useMemo, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
+import { StructuredReportLanguage } from "types"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
+import { useSiteLanguageListener } from "../hooks/useSiteLanguageListener"
+import { useSiteTranslation } from "../hooks/useSiteTranslation"
 import { I18nStructuredReportProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
 import { registerInstance } from "../utils/i18nextReloader"
@@ -15,11 +18,11 @@ export const withStructuredReportTranslations = <T extends AppProps>(
   const WithStructuredReportTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nStructuredReport
 
-    const [currentStructureLanguage, setCurrentStructureLanguage] = useState(
-      serverData?.initialStructureLanguage
-    )
-    const [currentReportLanguage, setCurrentReportLanguage] = useState(
-      serverData?.initialReportLanguage
+    const [currentStructureLanguage, _setCurrentStructureLanguage] =
+      useState<StructuredReportLanguage>(serverData?.initialStructureLanguage!)
+
+    const [currentReportLanguage, _setCurrentReportLanguage] = useState<StructuredReportLanguage>(
+      serverData?.initialReportLanguage!
     )
 
     const i18nInstances = useMemo(() => {
@@ -51,7 +54,45 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       }
     }, [serverData])
 
-    if (!serverData || !currentStructureLanguage || !currentReportLanguage || !i18nInstances) {
+    const { currentSiteLanguage } = useSiteTranslation()
+
+    const setCurrentStructureLanguage = useCallback(
+      (language: StructuredReportLanguage) => {
+        i18nInstances!.i18nStructure.changeLanguage(
+          language === "asSite" ? currentSiteLanguage : language,
+          () => {
+            _setCurrentStructureLanguage(language)
+          }
+        )
+      },
+      [i18nInstances, currentSiteLanguage]
+    )
+
+    const setCurrentReportLanguage = useCallback(
+      (language: StructuredReportLanguage) => {
+        i18nInstances!.i18nReport.changeLanguage(
+          language === "asSite" ? currentSiteLanguage : language,
+          () => {
+            _setCurrentReportLanguage(language)
+          }
+        )
+      },
+      [i18nInstances, currentSiteLanguage]
+    )
+
+    useSiteLanguageListener((language) => {
+      if (currentStructureLanguage === "asSite") {
+        i18nInstances?.i18nStructure.changeLanguage(language)
+      }
+    })
+
+    useSiteLanguageListener((language) => {
+      if (currentReportLanguage === "asSite") {
+        i18nInstances?.i18nReport.changeLanguage(language)
+      }
+    })
+
+    if (!serverData || !i18nInstances) {
       return <WrappedComponent {...(props as T)} />
     }
 

@@ -1,6 +1,5 @@
 import { useQuery } from "@blitzjs/rpc"
 import { Loader, MultiSelect } from "@mantine/core"
-import { useI18nSite } from "app/core/contexts/I18nSiteContext"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import getCategories from "app/core/queries/getCategories"
 
@@ -10,8 +9,7 @@ interface CategoriesSelectorProps {
 }
 
 export const CategoriesSelector = ({ value, onChange }: CategoriesSelectorProps) => {
-  const { t } = useSiteTranslation()
-  const { currentSiteLanguage } = useI18nSite()
+  const { t, currentSiteLanguage } = useSiteTranslation()
   const [result, { isLoading }] = useQuery(
     getCategories,
     { language: currentSiteLanguage },

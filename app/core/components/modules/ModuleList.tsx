@@ -5,7 +5,6 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useDebounce } from "use-debounce"
 import { useFilter } from "app/core/contexts/FilterContext"
-import { useI18nSite } from "app/core/contexts/I18nSiteContext"
 import { useAppSession } from "app/core/hooks/useAppSession"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import getTranslatedModules from "app/core/queries/getTranslatedModules"
@@ -13,8 +12,7 @@ import getTranslatedModules from "app/core/queries/getTranslatedModules"
 const ITEMS_PER_PAGE = 50
 
 export const ModuleList = () => {
-  const { currentSiteLanguage } = useI18nSite()
-  const { t } = useSiteTranslation()
+  const { t, currentSiteLanguage } = useSiteTranslation()
   const router = useRouter()
   const activePage = Number(router.query.page) || 1
   const { filter } = useFilter()
