@@ -34,6 +34,7 @@ export const SiteTranslations = ({
           i18nSite: i18n,
           supportedSiteLanguages: [language],
           currentSiteLanguage: language,
+          setCurrentSiteLanguage: () => {},
         }}
       >
         {children}

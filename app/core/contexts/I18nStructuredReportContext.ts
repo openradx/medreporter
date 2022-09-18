@@ -8,6 +8,8 @@ export interface I18nStructuredReportContext {
   supportedStructuredReportLanguages: StructuredReportLanguage[]
   currentStructureLanguage: StructuredReportLanguage
   currentReportLanguage: StructuredReportLanguage
+  setCurrentStructureLanguage: (language: StructuredReportLanguage) => void
+  setCurrentReportLanguage: (language: StructuredReportLanguage) => void
 }
 
 export const [useI18nStructuredReport, I18nStructuredReportContextProvider] =

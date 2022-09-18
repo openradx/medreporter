@@ -6,6 +6,7 @@ export interface I18nSiteContext {
   i18nSite: i18n
   supportedSiteLanguages: SiteLanguage[]
   currentSiteLanguage: SiteLanguage
+  setCurrentSiteLanguage: (language: SiteLanguage) => void
 }
 
 export const [useI18nSite, I18nSiteContextProvider] =

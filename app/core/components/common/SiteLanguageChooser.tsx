@@ -1,16 +1,17 @@
 import { useRouter } from "next/router"
+import { SiteLanguage } from "types"
 import { useI18nSite } from "../../contexts/I18nSiteContext"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { LanguageChooser } from "./LanguageChooser"
 
 export const SiteLanguageChooser = () => {
   const router = useRouter()
-  const { supportedSiteLanguages } = useI18nSite()
+  const { supportedSiteLanguages, currentSiteLanguage, setCurrentSiteLanguage } = useI18nSite()
   const { t, i18n } = useSiteTranslation()
 
-  const onLocaleChanged = (locale: string) => {
-    i18n.changeLanguage(locale, () => {
-      if (locale !== "cimode") {
+  const onLanguageChanged = (language: SiteLanguage) => {
+    i18n.changeLanguage(language, () => {
+      if (language !== "cimode") {
         router.push(
           {
             pathname: router.pathname,
@@ -19,9 +20,10 @@ export const SiteLanguageChooser = () => {
             },
           },
           undefined,
-          { shallow: true, locale }
+          { shallow: true, locale: language }
         )
       }
+      setCurrentSiteLanguage(language)
     })
   }
 
@@ -32,9 +34,9 @@ export const SiteLanguageChooser = () => {
   return (
     <LanguageChooser
       actionTitle={t("SiteLanguageChooser.buttonLanguageGeneral")}
-      currentLanguage={router.locale}
+      currentLanguage={currentSiteLanguage}
       supportedLanguages={supportedSiteLanguages}
-      onLocaleChanged={onLocaleChanged}
+      onLanguageChanged={onLanguageChanged}
     />
   )
 }

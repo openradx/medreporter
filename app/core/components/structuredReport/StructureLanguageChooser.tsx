@@ -1,42 +1,39 @@
+import { StructuredReportLanguage } from "types"
+import { useI18nSite } from "app/core/contexts/I18nSiteContext"
 import { useI18nStructuredReport } from "../../contexts/I18nStructuredReportContext"
 import { useSiteLanguageListener } from "../../hooks/useSiteLanguageListener"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { useStructureTranslation } from "../../hooks/useStructureTranslation"
-import { selectStructureLanguage, setStructureLanguage } from "../../state/languagesSlice"
-import { useAppDispatch, useAppSelector } from "../../state/store"
 import { LanguageChooser } from "../common/LanguageChooser"
 
 export const StructureLanguageChooser = () => {
-  const { supportedStructuredReportLanguages } = useI18nStructuredReport()
-  const { t, i18n: i18nSite } = useSiteTranslation()
+  const {
+    supportedStructuredReportLanguages,
+    currentStructureLanguage,
+    setCurrentStructureLanguage,
+  } = useI18nStructuredReport()
+  const { currentSiteLanguage } = useI18nSite()
   const { i18n: i18nStructure } = useStructureTranslation()
+  const { t } = useSiteTranslation()
 
-  const currentLanguage = useAppSelector(selectStructureLanguage)
-
-  useSiteLanguageListener((lng) => {
-    if (currentLanguage === "asSite") {
-      i18nStructure.changeLanguage(lng)
+  useSiteLanguageListener((language) => {
+    if (currentStructureLanguage === "asSite") {
+      i18nStructure.changeLanguage(language)
     }
   })
 
-  const dispatch = useAppDispatch()
-
-  const onLanguageChanged = (language: string) => {
-    let lng = language
-    if (lng === "asSite") {
-      lng = i18nSite.language
-    }
-    i18nStructure.changeLanguage(lng, () => {
-      dispatch(setStructureLanguage(language))
+  const onLanguageChanged = (language: StructuredReportLanguage) => {
+    i18nStructure.changeLanguage(language === "asSite" ? currentSiteLanguage : language, () => {
+      setCurrentStructureLanguage(language)
     })
   }
 
   return (
     <LanguageChooser
       actionTitle={t("StructureLanguageChooser.buttonLanguageStructure")}
-      currentLanguage={currentLanguage}
+      currentLanguage={currentStructureLanguage}
       supportedLanguages={["asSite", ...supportedStructuredReportLanguages]}
-      onLocaleChanged={onLanguageChanged}
+      onLanguageChanged={onLanguageChanged}
     />
   )
 }

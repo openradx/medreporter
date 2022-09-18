@@ -42,6 +42,8 @@ export const StructuredReportTranslations = ({
           supportedStructuredReportLanguages: [language],
           currentStructureLanguage: language,
           currentReportLanguage: language,
+          setCurrentStructureLanguage: () => {},
+          setCurrentReportLanguage: () => {},
         }}
       >
         {children}

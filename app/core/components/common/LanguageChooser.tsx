@@ -5,19 +5,19 @@ import config from "../../../../app.config"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { FlagImage } from "./FlagImage"
 
-interface LanguageChooserProps {
+interface LanguageChooserProps<T extends string> {
   actionTitle: string
-  currentLanguage: string
-  supportedLanguages: string[]
-  onLocaleChanged: (locale: string) => void
+  currentLanguage: T
+  supportedLanguages: T[]
+  onLanguageChanged: (language: T) => void
 }
 
-export const LanguageChooser = ({
+export const LanguageChooser = <T extends string>({
   actionTitle,
   currentLanguage,
   supportedLanguages,
-  onLocaleChanged,
-}: LanguageChooserProps) => {
+  onLanguageChanged,
+}: LanguageChooserProps<T>) => {
   const { t } = useSiteTranslation()
 
   const allLocales = [...supportedLanguages]
@@ -33,7 +33,7 @@ export const LanguageChooser = ({
         key={item.locale}
         icon={<FlagImage countryCode={getCountryCode(item.locale)} />}
         rightSection={item.locale === currentLanguage ? <CheckIcon /> : null}
-        onClick={() => onLocaleChanged(item.locale)}
+        onClick={() => onLanguageChanged(item.locale)}
       >
         {item.label}
       </Menu.Item>
@@ -57,7 +57,7 @@ export const LanguageChooser = ({
             <Divider />
             <Menu.Item
               icon={<FlagImage countryCode="cimode" />}
-              onClick={() => onLocaleChanged("cimode")}
+              onClick={() => onLanguageChanged("cimode" as T)}
             >
               Debug translations
             </Menu.Item>

@@ -1,5 +1,5 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
 import { I18nStructuredReportProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
@@ -14,6 +14,13 @@ export const withStructuredReportTranslations = <T extends AppProps>(
 ): React.ComponentType<T> => {
   const WithStructuredReportTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nStructuredReport
+
+    const [currentStructureLanguage, setCurrentStructureLanguage] = useState(
+      serverData?.initialStructureLanguage
+    )
+    const [currentReportLanguage, setCurrentReportLanguage] = useState(
+      serverData?.initialReportLanguage
+    )
 
     const i18nInstances = useMemo(() => {
       if (!serverData) return null
@@ -44,7 +51,7 @@ export const withStructuredReportTranslations = <T extends AppProps>(
       }
     }, [serverData])
 
-    if (!serverData || !i18nInstances) {
+    if (!serverData || !currentStructureLanguage || !currentReportLanguage || !i18nInstances) {
       return <WrappedComponent {...(props as T)} />
     }
 
@@ -56,8 +63,10 @@ export const withStructuredReportTranslations = <T extends AppProps>(
         value={{
           ...i18nInstances,
           supportedStructuredReportLanguages: serverData.supportedStructuredReportLanguages,
-          currentStructureLanguage: serverData.initialStructureLanguage,
-          currentReportLanguage: serverData.initialReportLanguage,
+          currentStructureLanguage,
+          currentReportLanguage,
+          setCurrentStructureLanguage,
+          setCurrentReportLanguage,
         }}
       >
         <WrappedComponent {...(props as T)} />

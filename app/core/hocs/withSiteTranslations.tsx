@@ -1,5 +1,5 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
-import { ComponentType, useMemo } from "react"
+import { ComponentType, useMemo, useState } from "react"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
 import { I18nSiteProps } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
@@ -15,6 +15,8 @@ export const withSiteTranslations = <T extends AppProps>(
   const WithSiteTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nSite
 
+    const [currentSiteLanguage, setCurrentSiteLanguage] = useState(serverData?.initialSiteLanguage)
+
     const i18n = useMemo(() => {
       if (!serverData) return null
 
@@ -28,7 +30,7 @@ export const withSiteTranslations = <T extends AppProps>(
       return client.i18n
     }, [serverData])
 
-    if (!serverData || !i18n) {
+    if (!serverData || !currentSiteLanguage || !i18n) {
       return <WrappedComponent {...(props as T)} />
     }
 
@@ -39,7 +41,8 @@ export const withSiteTranslations = <T extends AppProps>(
         value={{
           i18nSite: i18n,
           supportedSiteLanguages: serverData.supportedSiteLanguages,
-          currentSiteLanguage: serverData.initialSiteLanguage,
+          currentSiteLanguage,
+          setCurrentSiteLanguage,
         }}
       >
         <WrappedComponent {...(props as T)} />
