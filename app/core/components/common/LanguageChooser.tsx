@@ -1,18 +1,18 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
 import { TbCheck as CheckIcon } from "react-icons/tb"
-import { getCountryCode } from "app/core/utils/localizationUtils"
+import { SupportedLanguage } from "types"
 import config from "../../../../app.config"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { FlagImage } from "./FlagImage"
 
-interface LanguageChooserProps<T extends string> {
+interface LanguageChooserProps<T extends SupportedLanguage> {
   actionTitle: string
   currentLanguage: T
   supportedLanguages: T[]
   onLanguageChanged: (language: T) => void
 }
 
-export const LanguageChooser = <T extends string>({
+export const LanguageChooser = <T extends SupportedLanguage>({
   actionTitle,
   currentLanguage,
   supportedLanguages,
@@ -20,20 +20,20 @@ export const LanguageChooser = <T extends string>({
 }: LanguageChooserProps<T>) => {
   const { t } = useSiteTranslation()
 
-  const allLocales = [...supportedLanguages]
-  const items = allLocales
-    .map((locale) => ({ locale, label: t(`languages.${locale}`) }))
+  const allLanguages = [...supportedLanguages]
+  const items = allLanguages
+    .map((language) => ({ language, label: t(`languages.${language}`) }))
     .sort((item1, item2) => {
-      if (item1.locale === "asSite") return 0
-      if (item2.locale === "asSite") return 1
+      if (item1.language === "asSite") return 0
+      if (item2.language === "asSite") return 1
       return item1.label.localeCompare(item2.label)
     })
     .map((item) => (
       <Menu.Item
-        key={item.locale}
-        icon={<FlagImage countryCode={getCountryCode(item.locale)} />}
-        rightSection={item.locale === currentLanguage ? <CheckIcon /> : null}
-        onClick={() => onLanguageChanged(item.locale)}
+        key={item.language}
+        icon={<FlagImage language={item.language} />}
+        rightSection={item.language === currentLanguage ? <CheckIcon /> : null}
+        onClick={() => onLanguageChanged(item.language)}
       >
         {item.label}
       </Menu.Item>
@@ -43,7 +43,7 @@ export const LanguageChooser = <T extends string>({
     <Menu width={250}>
       <Menu.Target>
         <ActionIcon size="md" title={actionTitle} variant="default">
-          <FlagImage countryCode={getCountryCode(currentLanguage)} />
+          <FlagImage language={currentLanguage} />
         </ActionIcon>
       </Menu.Target>
 
@@ -56,7 +56,7 @@ export const LanguageChooser = <T extends string>({
           <>
             <Divider />
             <Menu.Item
-              icon={<FlagImage countryCode="cimode" />}
+              icon={<FlagImage language="cimode" />}
               onClick={() => onLanguageChanged("cimode" as T)}
             >
               Debug translations

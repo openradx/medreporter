@@ -21,7 +21,7 @@ export const defaultConfig: InitOptions = {
     escapeValue: false,
     format: (value, format, lng) => {
       if (value instanceof Date) {
-        const locale = getDateLocale(lng!)
+        const locale = getDateLocale(lng! as any)
         const formatter = dayjs(value).locale(locale)
         if (format === "long") return formatter.format("LLLL")
         if (format === "ago") return formatter.fromNow()

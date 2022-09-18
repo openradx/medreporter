@@ -1,33 +1,37 @@
 import { Group, Select, Text } from "@mantine/core"
 import { ComponentPropsWithoutRef, forwardRef } from "react"
+import { SupportedLanguage } from "types"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
-import { getCountryCode } from "app/core/utils/localizationUtils"
 import { FlagImage } from "./FlagImage"
 
-interface ItemProps extends ComponentPropsWithoutRef<"div"> {
+interface ItemProps<T extends SupportedLanguage> extends ComponentPropsWithoutRef<"div"> {
   image: string
   label: string
-  value: string
+  value: T
 }
 
-const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
-  ({ image, label, value, ...others }: ItemProps, ref) => (
+const SelectItem = forwardRef<HTMLDivElement, ItemProps<SupportedLanguage>>(
+  ({ image, label, value, ...others }: ItemProps<SupportedLanguage>, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
-        <FlagImage countryCode={getCountryCode(value)} />
+        <FlagImage language={value} />
         <Text size="sm">{label}</Text>
       </Group>
     </div>
   )
 )
 
-interface LanguageSelectorProps {
-  languages: string[]
-  value: string
-  onChange: (language: string) => void
+interface LanguageSelectorProps<T extends SupportedLanguage> {
+  languages: T[]
+  value: T
+  onChange: (T: string) => void
 }
 
-export const LanguageSelector = ({ languages, value, onChange }: LanguageSelectorProps) => {
+export const LanguageSelector = <T extends SupportedLanguage>({
+  languages,
+  value,
+  onChange,
+}: LanguageSelectorProps<T>) => {
   const { t } = useSiteTranslation()
 
   return (

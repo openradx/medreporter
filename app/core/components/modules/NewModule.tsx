@@ -1,5 +1,6 @@
 import { Checkbox, Group, Stack, Text, TextInput, Title } from "@mantine/core"
 import { Controller } from "react-hook-form"
+import { useI18nStructuredReport } from "app/core/contexts/I18nStructuredReportContext"
 import { useAppSession } from "app/core/hooks/useAppSession"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { CreateModule } from "app/core/validations"
@@ -9,7 +10,8 @@ import { SubmitForm } from "../common/SubmitForm"
 import { VisibilitySelector } from "../common/VisibilitySelector"
 
 export const NewModule = () => {
-  const { t, i18n } = useSiteTranslation()
+  const { supportedStructuredReportLanguages } = useI18nStructuredReport()
+  const { t } = useSiteTranslation()
   const { username } = useAppSession()
 
   return (
@@ -63,7 +65,7 @@ export const NewModule = () => {
               <LanguageSelector
                 value={value}
                 onChange={onChange}
-                languages={i18n.languages as string[]}
+                languages={supportedStructuredReportLanguages}
               />
             )}
           />

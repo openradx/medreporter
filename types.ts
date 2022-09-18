@@ -19,10 +19,10 @@ declare module "@blitzjs/auth" {
 
 export type SiteLanguage = "cimode" | "de" | "en"
 
-// TODO: do we need asSite and cimode here too?
 export type StructuredReportLanguage =
   | "cimode"
   | "asSite"
+  | "other"
   | "de"
   | "en"
   | "en-US"
@@ -31,7 +31,9 @@ export type StructuredReportLanguage =
   | "it"
   | "nl"
   | "pt"
-  | "se"
+  | "sv"
+
+export type SupportedLanguage = SiteLanguage | StructuredReportLanguage
 
 export interface AppConfig {
   debugTranslations: boolean

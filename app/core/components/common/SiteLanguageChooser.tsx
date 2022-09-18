@@ -6,11 +6,12 @@ import { LanguageChooser } from "./LanguageChooser"
 
 export const SiteLanguageChooser = () => {
   const router = useRouter()
-  const { supportedSiteLanguages, currentSiteLanguage, setCurrentSiteLanguage } = useI18nSite()
-  const { t, i18n } = useSiteTranslation()
+  const { i18nSite, supportedSiteLanguages, currentSiteLanguage, setCurrentSiteLanguage } =
+    useI18nSite()
+  const { t } = useSiteTranslation()
 
   const onLanguageChanged = (language: SiteLanguage) => {
-    i18n.changeLanguage(language, () => {
+    i18nSite.changeLanguage(language, () => {
       if (language !== "cimode") {
         router.push(
           {
