@@ -1,6 +1,7 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
 import { i18n } from "i18next"
-import { useCallback, useRef, useState } from "react"
+import { useRouter } from "next/router"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { StructuredReportLanguage } from "types"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
 import { useSiteLanguageListener } from "../hooks/useSiteLanguageListener"
@@ -19,12 +20,16 @@ export const withStructuredReportTranslations = <T extends AppProps>(
   const WithStructuredReportTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nStructuredReport
 
-    const [currentStructureLanguage, _setCurrentStructureLanguage] =
-      useState<StructuredReportLanguage>(serverData?.initialStructureLanguage!)
+    const [_currentStructureLanguage, _setCurrentStructureLanguage] =
+      useState<StructuredReportLanguage>()
 
-    const [currentReportLanguage, _setCurrentReportLanguage] = useState<StructuredReportLanguage>(
-      serverData?.initialReportLanguage!
-    )
+    const currentStructureLanguage =
+      _currentStructureLanguage ?? serverData?.initialStructureLanguage ?? "asSite"
+
+    const [_currentReportLanguage, _setCurrentReportLanguage] = useState<StructuredReportLanguage>()
+
+    const currentReportLanguage =
+      _currentReportLanguage ?? serverData?.initialReportLanguage ?? "asSite"
 
     const { currentSiteLanguage } = useSiteTranslation()
 
@@ -59,6 +64,28 @@ export const withStructuredReportTranslations = <T extends AppProps>(
 
       i18nInstances.current = { i18nStructure, i18nReport }
     }
+
+    const router = useRouter()
+
+    // See `withSiteTranslation`
+    useEffect(() => {
+      const handleStart = (_url: string, { shallow }: { shallow: boolean }) => {
+        if (!shallow) {
+          // reset i18n stores that they can be rebuilt on new page
+          i18nInstances.current = undefined
+
+          // also reset currently chosen structure and report language
+          _setCurrentReportLanguage(undefined)
+          _setCurrentStructureLanguage(undefined)
+        }
+      }
+
+      router.events.on("routeChangeStart", handleStart)
+
+      return () => {
+        router.events.off("routeChangeStart", handleStart)
+      }
+    }, [router])
 
     const setCurrentStructureLanguage = useCallback(
       (language: StructuredReportLanguage) => {

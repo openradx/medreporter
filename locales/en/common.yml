@@ -64,7 +64,7 @@ GraphicsModal:
 HomePage:
   pageTitle: Homepage
 LanguageChooser:
-  menuTitleLanguages: Language (Region)
+  menuTitleLanguages: Language
 LanguageSelector:
   inputDescriptionMainLanguage: The main language of the module
   inputLabelMainLanguage: Main language
