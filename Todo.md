@@ -2,10 +2,10 @@
 
 ## Kai
 
+- Switch from Jest to vitest
 - Make MembershipAdder not load every user, but async (maybe only during search)
 - Modules: Show deprecated, Only starred, Add tags, Sort by [Title, Author, Creation date], only language
 - switch to npm
-- rename i18n keys to snake case with function, e.g. button_xxx, link_xxx, text_xxx
 - check where useMemo is really needed
 - Add https://github.com/edvardchen/eslint-plugin-i18next
 - MeasurementsTable -> MeasurementsTool

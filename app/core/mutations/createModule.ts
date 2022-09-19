@@ -1,6 +1,7 @@
 import { resolver } from "@blitzjs/rpc"
 import { ModuleWrapper } from "@medreporter/medtl-tools"
 import db, { Prisma, ReleaseStatus } from "db"
+import { createModuleDraft } from "../utils/moduleUtils"
 import { buildModuleTranslationsArgs } from "../utils/mutationUtils"
 import { parseModuleCode } from "../utils/parserUtils"
 import { buildCreateModule } from "../validations"
@@ -9,7 +10,7 @@ export default resolver.pipe(
   resolver.zod(buildCreateModule()),
   resolver.authorize(),
   async ({ name, multilingual, defaultLanguage, visibility }, { session }) => {
-    const sourceCode = "" // TODO: create default draft with langauge and multilingual params
+    const sourceCode = createModuleDraft(name, multilingual, defaultLanguage)
     const document = parseModuleCode(sourceCode)
     const wrapper = new ModuleWrapper(document)
     const translations = buildModuleTranslationsArgs(wrapper)

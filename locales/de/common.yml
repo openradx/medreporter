@@ -99,7 +99,7 @@ ModuleSelectorWithCategories:
   filterInputLabel: Module filtern
 NewModule:
   buttonCreateModule: Modul erstellen
-  formTitle: Erstelle ein neues Modul
+  formTitle: Neues Modul erstellen
   inputLabelModuleName: Modulname
   inputLabelMultilingual: Mehrsprachiges Modul
 NewModulePage:
