@@ -1,34 +1,38 @@
 import { useQuery } from "@blitzjs/rpc"
 import { Loader, MultiSelect } from "@mantine/core"
+import { ComponentProps, forwardRef, Ref } from "react"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import getCategories from "app/core/queries/getCategories"
 
-interface CategoriesSelectorProps {
-  value: string[]
-  onChange: (categories: string[]) => void
+interface CategoriesSelectorProps<T extends string>
+  extends Omit<ComponentProps<typeof MultiSelect>, "data"> {
+  value: T[]
+  onChange: (categories: T[]) => void
 }
 
-export const CategoriesSelector = ({ value, onChange }: CategoriesSelectorProps) => {
-  const { t, currentSiteLanguage } = useSiteTranslation()
-  const [result, { isLoading }] = useQuery(
-    getCategories,
-    { language: currentSiteLanguage },
-    { suspense: false }
-  )
+export const CategoriesSelector = forwardRef(
+  <T extends string>(props: CategoriesSelectorProps<T>, ref: Ref<HTMLInputElement>) => {
+    const { t, currentSiteLanguage } = useSiteTranslation()
+    const [result, { isLoading }] = useQuery(
+      getCategories,
+      { language: currentSiteLanguage },
+      { suspense: false }
+    )
 
-  return (
-    <MultiSelect
-      label={t("CategoriesSelector.inputLabelCategories")}
-      value={value}
-      onChange={onChange}
-      data={
-        result?.categories.map((category) => ({
-          value: category.key,
-          label: category.label,
-        })) ?? []
-      }
-      rightSection={isLoading && <Loader size="xs" />}
-      searchable
-    />
-  )
-}
+    return (
+      <MultiSelect
+        {...props}
+        ref={ref}
+        label={t("CategoriesSelector.inputLabelCategories")}
+        data={
+          result?.categories.map((category) => ({
+            value: category.key,
+            label: category.label,
+          })) ?? []
+        }
+        rightSection={isLoading && <Loader size="xs" />}
+        searchable
+      />
+    )
+  }
+)

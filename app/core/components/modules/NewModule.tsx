@@ -27,7 +27,7 @@ export const NewModule = () => {
           categories: [],
         }}
         onSubmit={async (values) => {
-          const i = 0
+          console.log("in new module form", values)
           return null
         }}
       >
@@ -36,12 +36,11 @@ export const NewModule = () => {
             <Text sx={{ marginTop: 40 }}>{username} /</Text>
             <Controller
               name="name"
-              render={({ field: { value, onChange }, fieldState: { error } }) => (
+              render={({ field, fieldState: { error } }) => (
                 <TextInput
+                  {...field}
                   label={t("NewModule.inputLabelModuleName")}
                   sx={{ flex: 1 }}
-                  value={value}
-                  onChange={onChange}
                   error={error ? error.message : null}
                   required
                 />
@@ -50,36 +49,18 @@ export const NewModule = () => {
           </Group>
           <Controller
             name="multilingual"
-            render={({ field: { value, onChange } }) => (
-              <Checkbox
-                label={t("NewModule.inputLabelMultilingual")}
-                value={value}
-                onChange={onChange}
-              />
+            render={({ field }) => (
+              <Checkbox {...field} label={t("NewModule.inputLabelMultilingual")} />
             )}
           />
           <Controller
             name="defaultLanguage"
-            render={({ field: { value, onChange } }) => (
-              <LanguageSelector
-                value={value}
-                onChange={onChange}
-                languages={appConfig.structuredReportLanguages}
-              />
+            render={({ field }) => (
+              <LanguageSelector {...field} languages={appConfig.structuredReportLanguages} />
             )}
           />
-          <Controller
-            name="visibility"
-            render={({ field: { value, onChange } }) => (
-              <VisibilitySelector value={value} onChange={onChange} />
-            )}
-          />
-          <Controller
-            name="categories"
-            render={({ field: { value, onChange } }) => (
-              <CategoriesSelector value={value} onChange={onChange} />
-            )}
-          />
+          <Controller name="visibility" render={({ field }) => <VisibilitySelector {...field} />} />
+          <Controller name="categories" render={({ field }) => <CategoriesSelector {...field} />} />
         </Stack>
       </SubmitForm>
     </Stack>

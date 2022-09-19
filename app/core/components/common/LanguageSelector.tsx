@@ -1,5 +1,5 @@
 import { Group, Select, Text } from "@mantine/core"
-import { ComponentPropsWithoutRef, forwardRef } from "react"
+import { ComponentProps, ComponentPropsWithoutRef, forwardRef, Ref } from "react"
 import { SupportedLanguage } from "types"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { FlagImage } from "./FlagImage"
@@ -21,32 +21,34 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps<SupportedLanguage>>(
   )
 )
 
-interface LanguageSelectorProps<T extends SupportedLanguage> {
+interface LanguageSelectorProps<T extends SupportedLanguage>
+  extends Omit<ComponentProps<typeof Select>, "data"> {
   languages: T[]
   value: T
   onChange: (T: string) => void
 }
 
-export const LanguageSelector = <T extends SupportedLanguage>({
-  languages,
-  value,
-  onChange,
-}: LanguageSelectorProps<T>) => {
-  const { t } = useSiteTranslation()
+export const LanguageSelector = forwardRef(
+  <T extends SupportedLanguage>(
+    { languages, ...other }: LanguageSelectorProps<T>,
+    ref: Ref<HTMLInputElement>
+  ) => {
+    const { t } = useSiteTranslation()
 
-  return (
-    <Select
-      label={t("LanguageSelector.inputLabelMainLanguage")}
-      description={t("LanguageSelector.inputDescriptionMainLanguage")}
-      itemComponent={SelectItem}
-      value={value}
-      onChange={onChange}
-      data={languages
-        .map((language) => ({
-          value: language,
-          label: t(`languages.${language}`),
-        }))
-        .sort((c1, c2) => c1.label.localeCompare(c2.label))}
-    />
-  )
-}
+    return (
+      <Select
+        {...other}
+        ref={ref}
+        label={t("LanguageSelector.inputLabelMainLanguage")}
+        description={t("LanguageSelector.inputDescriptionMainLanguage")}
+        itemComponent={SelectItem}
+        data={languages
+          .map((language) => ({
+            value: language,
+            label: t(`languages.${language}`),
+          }))
+          .sort((c1, c2) => c1.label.localeCompare(c2.label))}
+      />
+    )
+  }
+)
