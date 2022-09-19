@@ -3,10 +3,10 @@ import { ModuleWrapper } from "@medreporter/medtl-tools"
 import db, { Prisma, ReleaseStatus } from "db"
 import { buildModuleTranslationsArgs } from "../utils/mutationUtils"
 import { parseModuleCode } from "../utils/parserUtils"
-import { CreateModule } from "../validations"
+import { buildCreateModule } from "../validations"
 
 export default resolver.pipe(
-  resolver.zod(CreateModule),
+  resolver.zod(buildCreateModule()),
   resolver.authorize(),
   async ({ name, multilingual, defaultLanguage, visibility }, { session }) => {
     const sourceCode = "" // TODO: create default draft with langauge and multilingual params

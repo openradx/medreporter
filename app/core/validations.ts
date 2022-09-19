@@ -1,3 +1,4 @@
+import { TFunction } from "i18next"
 import { z } from "zod"
 import { ReleaseStatus, Visibility } from "db"
 import { FormatSchema, MetaInfoSchema } from "./state/reportSlice"
@@ -9,13 +10,18 @@ export const Pagination = z.object({
   take: z.number().min(0).max(1000).default(100),
 })
 
-export const CreateModule = z.object({
-  name: z.string().min(3, { message: "formErrors.tooShort" }),
-  multilingual: z.boolean(),
-  defaultLanguage: z.string(),
-  visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),
-  categories: z.string().array(),
-})
+export const buildCreateModule = (t?: TFunction) =>
+  z.object({
+    name: z
+      .string()
+      .trim()
+      .min(3, t && { message: t("formErrors.tooShort") })
+      .regex(/^[a-zA-Z][a-zA-Z0-9]+$/, t && { message: t("formErrors.invalidCharacters") }),
+    multilingual: z.boolean(),
+    defaultLanguage: z.string(),
+    visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),
+    categories: z.string().array(),
+  })
 
 export const CreateReport = z.object({
   visibility: z.nativeEnum(Visibility),
@@ -36,15 +42,17 @@ export const GetCategories = Pagination.extend({
   usedByTemplate: z.boolean().default(false),
 })
 
-export const UpdateModule = CreateModule.omit({ name: true })
-  .extend({
-    releaseStatus: z.enum([
-      ReleaseStatus.DRAFT,
-      ReleaseStatus.PUBLISHED,
-      ReleaseStatus.DEPRECIATED,
-    ]),
-  })
-  .partial()
+export const buildUpdateModule = (t: TFunction) =>
+  buildCreateModule(t)
+    .omit({ name: true })
+    .extend({
+      releaseStatus: z.enum([
+        ReleaseStatus.DRAFT,
+        ReleaseStatus.PUBLISHED,
+        ReleaseStatus.DEPRECIATED,
+      ]),
+    })
+    .partial()
 
 export const UpdateReport = CreateReport.partial().extend({
   reportId: z.string(),

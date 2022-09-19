@@ -5,7 +5,7 @@ import { Controller } from "react-hook-form"
 import { useAppSession } from "app/core/hooks/useAppSession"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import fetchOwnModule from "app/core/mutations/fetchOwnModule"
-import { CreateModule } from "app/core/validations"
+import { buildCreateModule } from "app/core/validations"
 import { CategoriesSelector } from "../common/CategoriesSelector"
 import { LanguageSelector } from "../common/LanguageSelector"
 import { SubmitForm } from "../common/SubmitForm"
@@ -17,8 +17,9 @@ export const NewModule = () => {
 
   const [fetchOwnModuleMutation] = useMutation(fetchOwnModule)
 
-  const CreateModuleExtended = CreateModule.extend({
-    name: CreateModule.shape.name.refine(
+  const CreateModuleSchema = buildCreateModule(t)
+  const CreateModuleSchemaExtended = CreateModuleSchema.extend({
+    name: CreateModuleSchema.shape.name.refine(
       async (name) => {
         if (await fetchOwnModuleMutation({ name })) {
           return false
@@ -34,7 +35,7 @@ export const NewModule = () => {
       <Title order={3}>{t("NewModule.formTitle")}</Title>
       <SubmitForm
         submitText={t("NewModule.buttonCreateModule")}
-        schema={CreateModuleExtended}
+        schema={CreateModuleSchemaExtended}
         initialValues={{
           name: "",
           multilingual: false,
