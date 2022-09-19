@@ -15,8 +15,11 @@ export const buildCreateModule = (t?: TFunction) =>
     name: z
       .string()
       .trim()
-      .min(3, t && { message: t("formErrors.tooShort") })
-      .regex(/^[a-zA-Z][a-zA-Z0-9]+$/, t && { message: t("formErrors.invalidCharacters") }),
+      .min(3, t && { message: t("formError.tooShort", { min: "3" }) })
+      .regex(
+        /^[a-zA-Z][a-zA-Z0-9]+$/,
+        t && { message: t("formError.invalidChars", { chars: "a-z A-Z 0-9" }) }
+      ),
     multilingual: z.boolean(),
     defaultLanguage: z.string(),
     visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),

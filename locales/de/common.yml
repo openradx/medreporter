@@ -1,4 +1,6 @@
 formError:
+  invalidChars: "Enthält ungültige Zeichen. Erlaubt: {{chars}}"
+  tooShort: Zu kurz. Mindestens {{min}} Zeichen.
   unexpected: "Ein unerwarteter Fehler ist aufgetreten: "
   unknown: >
     Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.

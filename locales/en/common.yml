@@ -1,4 +1,6 @@
 formError:
+  invalidChars: "Contains invalid characters. Allowed: {{chars}}"
+  tooShort: Too short. Minimum {{min}} characters.
   unexpected: "An unexpected error occurred: "
   unknown: >
     An unexpected error did occur. Please try again later. If the error
