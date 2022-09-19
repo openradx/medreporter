@@ -14,7 +14,7 @@ export default resolver.pipe(
     const wrapper = new ModuleWrapper(document)
     const translations = buildModuleTranslationsArgs(wrapper)
 
-    return await db.module.create({
+    const createdModule = await db.module.create({
       data: {
         name,
         authorId: session.userId,
@@ -24,7 +24,13 @@ export default resolver.pipe(
         visibility,
         releaseStatus: ReleaseStatus.DRAFT,
       },
-      select: { name: true },
+      select: { id: true, name: true, author: { select: { username: true } } },
     })
+
+    return {
+      id: createdModule.id,
+      name: createdModule.name,
+      author: createdModule.author.username,
+    }
   }
 )

@@ -1,6 +1,8 @@
 import { Select } from "@mantine/core"
 import { Visibility } from "@prisma/client"
 import { ComponentProps, forwardRef } from "react"
+import { MdBusiness as InstituteIcon, MdOutlinePublic as PublicIcon } from "react-icons/md"
+import { RiGitRepositoryPrivateLine as PrivateIcon } from "react-icons/ri"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 
 interface VisibilitySelectorProps extends Omit<ComponentProps<typeof Select>, "data"> {
@@ -17,6 +19,15 @@ export const VisibilitySelector = forwardRef<HTMLInputElement, VisibilitySelecto
         {...props}
         ref={ref}
         label={t("VisibilitySelector.inputLabelVisibility")}
+        icon={
+          props.value === "PUBLIC" ? (
+            <PublicIcon />
+          ) : props.value === "INSTITUTE" ? (
+            <InstituteIcon />
+          ) : (
+            <PrivateIcon />
+          )
+        }
         data={[
           { value: Visibility.PUBLIC, label: t("VisibilitySelector.optionPublic") },
           { value: Visibility.INSTITUTE, label: t("VisibilitySelector.optionInstitute") },

@@ -51,7 +51,9 @@ export const ModuleList = () => {
           <div />
         ) : (
           <Link href={Routes.NewModulePage()} passHref>
-            <Button component="a">{t("ModuleList.buttonCreateNewModule")}</Button>
+            <Button component="a" color="green">
+              {t("ModuleList.buttonNewModule")}
+            </Button>
           </Link>
         )}
         {modules.length > 0 && (

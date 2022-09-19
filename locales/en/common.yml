@@ -1,5 +1,6 @@
 formError:
   invalidChars: "Contains invalid characters. Allowed: {{chars}}"
+  tooLong: Too long. Maximum {{max}} characters.
   tooShort: Too short. Minimum {{min}} characters.
   unexpected: "An unexpected error occurred: "
   unknown: >
@@ -71,7 +72,6 @@ HomePage:
 LanguageChooser:
   menuTitleLanguages: Language
 LanguageSelector:
-  inputDescriptionMainLanguage: The main language of the module
   inputLabelMainLanguage: Main language
 Loading:
   messageLoading: Loading...
@@ -92,7 +92,7 @@ MeasurementsTablePage:
 ModuleInfo:
   buttonInfo: Module info
 ModuleList:
-  buttonCreateNewModule: Create new module
+  buttonNewModule: New module
 ModulesPage:
   title: Modules
 ModuleSelectorWithCategories:

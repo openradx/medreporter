@@ -16,9 +16,10 @@ export const buildCreateModule = (t?: TFunction) =>
       .string()
       .trim()
       .min(3, t && { message: t("formError.tooShort", { min: "3" }) })
+      .max(50, t && { message: t("formError.tooLong", { max: "50" }) })
       .regex(
-        /^[a-zA-Z][a-zA-Z0-9]+$/,
-        t && { message: t("formError.invalidChars", { chars: "a-z A-Z 0-9" }) }
+        /^[a-zA-Z][-_a-zA-Z0-9]+$/,
+        t && { message: t("formError.invalidChars", { chars: "- _ a-z A-Z 0-9" }) }
       ),
     multilingual: z.boolean(),
     defaultLanguage: z.string(),

@@ -1,5 +1,6 @@
 formError:
   invalidChars: "Enthält ungültige Zeichen. Erlaubt: {{chars}}"
+  tooLong: Zu lang. Maximal {{max}} Zeichen.
   tooShort: Zu kurz. Mindestens {{min}} Zeichen.
   unexpected: "Ein unerwarteter Fehler ist aufgetreten: "
   unknown: >
@@ -71,7 +72,6 @@ HomePage:
 LanguageChooser:
   menuTitleLanguages: Sprache
 LanguageSelector:
-  inputDescriptionMainLanguage: Die Hauptsprache des Moduls
   inputLabelMainLanguage: Hauptsprache
 Loading:
   messageLoading: Wird geladen...
@@ -92,7 +92,7 @@ MeasurementsTablePage:
 ModuleInfo:
   buttonInfo: Modulinformation
 ModuleList:
-  buttonCreateNewModule: Neues Modul erstellen
+  buttonNewModule: Neues Modul
 ModulesPage:
   title: Module
 ModuleSelectorWithCategories:
