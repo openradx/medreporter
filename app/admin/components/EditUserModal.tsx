@@ -1,8 +1,8 @@
 import { invalidateQuery, useMutation } from "@blitzjs/rpc"
 import { Button, Group, Modal, Stack } from "@mantine/core"
 import { User } from "db"
-import { SUBMIT_FORM_ERROR } from "app/core/components/common/SubmitForm"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { FormSubmitError } from "app/core/utils/formErrors"
 import { uniqueConstraintFailed } from "app/core/utils/mutationUtils"
 import updateUser from "../mutations/updateUser"
 import getUsers from "../queries/getUsers"
@@ -36,12 +36,14 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
               await updateUserMutation({ id: user.id, ...values })
               invalidateQuery(getUsers, {})
               onClose()
-              return null
-            } catch (error) {
-              if (uniqueConstraintFailed(error, "email")) {
-                return { email: t("EditUserModal.messageDuplicateEmail") }
+            } catch (e) {
+              if (uniqueConstraintFailed(e, "email")) {
+                throw new FormSubmitError({ email: t("EditUserModal.messageDuplicateEmail") })
               }
-              return { [SUBMIT_FORM_ERROR]: (error as Error).toString() }
+              if (e instanceof Error) {
+                throw new FormSubmitError(t("formError.unexpected") + e.message)
+              }
+              throw e
             }
           }}
         />

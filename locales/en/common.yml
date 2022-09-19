@@ -1,3 +1,8 @@
+formError:
+  unexpected: "An unexpected error occurred: "
+  unknown: >
+    An unexpected error did occur. Please try again later. If the error
+    persists then please contact our support.
 general:
   buttonAdd: Add
   buttonCancel: Cancel
@@ -6,9 +11,6 @@ general:
   buttonDelete: Delete
   buttonSave: Save
   errorTitle: An error occurred
-  errorTextUnknown: >
-    Sorry, we had an unexpected error. Please try again later. If the error
-    persists then please contact our support.
   miscNoData: No data available
 languages:
   asSite: As page
@@ -119,6 +121,7 @@ ResetPasswordForm:
   inputLabelConfirmPassword: Confirm New Password
   inputLabelNewPassword: New Password
   linkHomepage: homepage
+  messageError: Invalid or expired token
   messageSuccess: Password reset successfully
   textRedirect: Go to the
 ResetPasswordPage:

@@ -3,22 +3,16 @@ import { Alert, Button, Group, Stack } from "@mantine/core"
 import { useState, ReactNode, PropsWithoutRef } from "react"
 import { FormProvider, useForm, UseFormProps } from "react-hook-form"
 import { z } from "zod"
-
-interface OnSubmitResult {
-  SUBMIT_FORM_ERROR?: string
-  [prop: string]: any
-}
+import { FormSubmitError, SUBMIT_FORM_ERROR } from "app/core/utils/formErrors"
 
 export interface SubmitFormProps<S extends z.ZodType<any, any>>
   extends Omit<PropsWithoutRef<JSX.IntrinsicElements["form"]>, "onSubmit"> {
   submitText?: string
   schema?: S
-  onSubmit: (values: z.infer<S>) => Promise<null | OnSubmitResult>
+  onSubmit: (values: z.infer<S>) => Promise<void>
   initialValues?: UseFormProps<z.infer<S>>["defaultValues"]
   children?: ReactNode
 }
-
-export const SUBMIT_FORM_ERROR = "SUBMIT_FORM_ERROR"
 
 export const SubmitForm = <S extends z.ZodType<any, any>>({
   children,
@@ -39,17 +33,26 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
     <FormProvider {...ctx}>
       <form
         onSubmit={ctx.handleSubmit(async (values) => {
-          console.log("in submit form", values)
-          const result = (await onSubmit(values)) || {}
-          console.log("result", result)
-          for (const [key, value] of Object.entries(result)) {
-            if (key === SUBMIT_FORM_ERROR) {
-              setFormError(value)
+          try {
+            await onSubmit(values)
+          } catch (e) {
+            if (e instanceof FormSubmitError) {
+              if (typeof e.error === "string") {
+                setFormError(e.error)
+              } else {
+                for (const [key, value] of Object.entries(e.error)) {
+                  if (key === SUBMIT_FORM_ERROR) {
+                    setFormError(value)
+                  } else {
+                    ctx.setError(key as any, {
+                      type: "submit",
+                      message: value,
+                    })
+                  }
+                }
+              }
             } else {
-              ctx.setError(key as any, {
-                type: "submit",
-                message: value,
-              })
+              throw e
             }
           }
         })}

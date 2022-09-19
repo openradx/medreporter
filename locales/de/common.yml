@@ -1,3 +1,8 @@
+formError:
+  unexpected: "Ein unerwarteter Fehler ist aufgetreten: "
+  unknown: >
+    Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.
+    Wenn der Fehler anhält, dann kontaktieren Sie bitte unseren Support.
 general:
   buttonAdd: Hinzufügen
   buttonCancel: Abbrechen
@@ -6,9 +11,6 @@ general:
   buttonDelete: Löschen
   buttonSave: Sichern
   errorTitle: Ein Fehler ist aufgetreten
-  errorTextUnknown: >
-    Entschuldige, ein unerwarteter Fehler ist aufgetreten. Bitte versuche es
-    später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren Support.
   miscNoData: Keine Datensätze verfügbar
 languages:
   asSite: wie Seite
@@ -119,6 +121,7 @@ ResetPasswordForm:
   inputLabelConfirmPassword: Passwort bestätigen
   inputLabelNewPassword: Neues Passwort
   linkHomepage: Startseite
+  messageError: Ungültiger oder abgelaufener Token
   messageSuccess: Neues Passwort erfolgreich gesetzt
   textRedirect: Gehe zur
 ResetPasswordPage:

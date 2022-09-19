@@ -44,7 +44,6 @@ export const NewModule = () => {
         }}
         onSubmit={async (values) => {
           console.log("in new module form", values)
-          return null
         }}
       >
         <Stack sx={{ maxWidth: 500 }}>
