@@ -1,7 +1,7 @@
 import { resolver } from "@blitzjs/rpc"
 import { paginate } from "blitz"
 import db, { Prisma } from "db"
-import { GetCategories } from "app/admin/validations"
+import { GetCategories } from "app/core/validations"
 
 export default resolver.pipe(
   resolver.zod(GetCategories),

@@ -25,13 +25,6 @@ export const DeleteUser = z.object({
   id: z.number(),
 })
 
-export const GetCategories = Pagination.extend({
-  language: z.string(),
-  filter: z.string().optional(),
-  usedByModule: z.boolean().default(false),
-  usedByTemplate: z.boolean().default(false),
-})
-
 export const GetInstitutes = Pagination.extend({
   filter: z.string().optional(),
 })

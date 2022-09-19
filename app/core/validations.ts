@@ -17,6 +17,25 @@ export const CreateModule = z.object({
   categories: z.string().array(),
 })
 
+export const CreateReport = z.object({
+  visibility: z.nativeEnum(Visibility),
+  template: TemplateSchema,
+  structureData: StructureDataSchema,
+  reportFormat: FormatSchema,
+  metaInfos: z.array(MetaInfoSchema),
+})
+
+export const FetchOwnModule = z.object({
+  name: z.string(),
+})
+
+export const GetCategories = Pagination.extend({
+  language: z.string(),
+  filter: z.string().optional(),
+  usedByModule: z.boolean().default(false),
+  usedByTemplate: z.boolean().default(false),
+})
+
 export const UpdateModule = CreateModule.omit({ name: true })
   .extend({
     releaseStatus: z.enum([
@@ -26,14 +45,6 @@ export const UpdateModule = CreateModule.omit({ name: true })
     ]),
   })
   .partial()
-
-export const CreateReport = z.object({
-  visibility: z.nativeEnum(Visibility),
-  template: TemplateSchema,
-  structureData: StructureDataSchema,
-  reportFormat: FormatSchema,
-  metaInfos: z.array(MetaInfoSchema),
-})
 
 export const UpdateReport = CreateReport.partial().extend({
   reportId: z.string(),

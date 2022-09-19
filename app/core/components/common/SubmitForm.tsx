@@ -32,6 +32,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
     resolver: schema ? zodResolver(schema) : undefined,
     defaultValues: initialValues,
   })
+
   const [formError, setFormError] = useState<string | null>(null)
 
   return (
@@ -40,6 +41,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
         onSubmit={ctx.handleSubmit(async (values) => {
           console.log("in submit form", values)
           const result = (await onSubmit(values)) || {}
+          console.log("result", result)
           for (const [key, value] of Object.entries(result)) {
             if (key === SUBMIT_FORM_ERROR) {
               setFormError(value)
