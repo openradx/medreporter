@@ -2,7 +2,7 @@ import hoistNonReactStatics from "hoist-non-react-statics"
 import { i18n } from "i18next"
 import { useRouter } from "next/router"
 import { ComponentType, useCallback, useRef, useState } from "react"
-import { SiteLanguage } from "types"
+import { SiteLanguageOption } from "types"
 import { I18nSiteContextProvider } from "../contexts/I18nSiteContext"
 import { useOnRouteChange } from "../hooks/useOnRouteChange"
 import { I18nSiteProps } from "../types"
@@ -19,7 +19,7 @@ export const withSiteTranslations = <T extends AppProps>(
   const WithSiteTranslations = (props: AppProps) => {
     const serverData = props.pageProps?._i18nSite
 
-    const [currentSiteLanguage, _setCurrentSiteLanguage] = useState<SiteLanguage>(
+    const [currentSiteLanguage, _setCurrentSiteLanguage] = useState<SiteLanguageOption>(
       serverData?.initialSiteLanguage!
     )
 
@@ -47,7 +47,7 @@ export const withSiteTranslations = <T extends AppProps>(
     })
 
     const setCurrentSiteLanguage = useCallback(
-      (language: SiteLanguage) => {
+      (language: SiteLanguageOption) => {
         i18nInstance.current!.i18nSite.changeLanguage(language, () => {
           if (language !== "cimode") {
             router.push(

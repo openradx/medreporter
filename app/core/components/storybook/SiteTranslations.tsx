@@ -1,12 +1,12 @@
 import { ReactNode, Suspense, useMemo } from "react"
-import { SiteLanguage } from "types"
+import { SiteLanguageOption } from "types"
 import { I18nSiteContextProvider } from "../../contexts/I18nSiteContext"
 import { createClient } from "../../utils/i18nStorybookClient"
 
 const DEFAULT_ADDITIONAL_NAMESPACES: string[] = []
 
 interface SiteTranslationsProps {
-  language?: SiteLanguage
+  language?: SiteLanguageOption
   additionalNamespaces?: string[]
   children: ReactNode
 }

@@ -1,17 +1,17 @@
 import { Group, Select, Text } from "@mantine/core"
 import { ComponentProps, ComponentPropsWithoutRef, forwardRef, Ref } from "react"
-import { SupportedLanguage } from "types"
+import { SupportedLanguageOption } from "types"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { FlagImage } from "./FlagImage"
 
-interface ItemProps<T extends SupportedLanguage> extends ComponentPropsWithoutRef<"div"> {
+interface ItemProps<T extends SupportedLanguageOption> extends ComponentPropsWithoutRef<"div"> {
   image: string
   label: string
   value: T
 }
 
-const SelectItem = forwardRef<HTMLDivElement, ItemProps<SupportedLanguage>>(
-  ({ image, label, value, ...others }: ItemProps<SupportedLanguage>, ref) => (
+const SelectItem = forwardRef<HTMLDivElement, ItemProps<SupportedLanguageOption>>(
+  ({ image, label, value, ...others }: ItemProps<SupportedLanguageOption>, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
         <FlagImage language={value} />
@@ -21,7 +21,7 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps<SupportedLanguage>>(
   )
 )
 
-interface LanguageSelectorProps<T extends SupportedLanguage>
+interface LanguageSelectorProps<T extends SupportedLanguageOption>
   extends Omit<ComponentProps<typeof Select>, "data"> {
   languages: T[]
   value: T
@@ -29,7 +29,7 @@ interface LanguageSelectorProps<T extends SupportedLanguage>
 }
 
 export const LanguageSelector = forwardRef(
-  <T extends SupportedLanguage>(
+  <T extends SupportedLanguageOption>(
     { languages, value, ...other }: LanguageSelectorProps<T>,
     ref: Ref<HTMLInputElement>
   ) => {

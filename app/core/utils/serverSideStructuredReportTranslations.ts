@@ -1,25 +1,25 @@
 import { Resource } from "i18next"
 import { GetStaticPropsContext } from "next"
-import { SiteLanguage, StructuredReportLanguage } from "types"
+import { SiteLanguageOption, StructuredReportLanguageOption } from "types"
 import { I18nStructuredReportProps } from "../types"
 import { createClient } from "./i18nServerClient"
 
 export const serverSideStructuredReportTranslations = async (
   ctx: GetStaticPropsContext,
   additionalStructuredReportNamespaces: string[] = [],
-  supportedLanguages?: StructuredReportLanguage[],
-  initialStructureLanguage: StructuredReportLanguage = "asSite",
-  initialReportLanguage: StructuredReportLanguage = "asSite"
+  supportedLanguages?: StructuredReportLanguageOption[],
+  initialStructureLanguage: StructuredReportLanguageOption = "asSite",
+  initialReportLanguage: StructuredReportLanguageOption = "asSite"
 ): Promise<I18nStructuredReportProps> => {
-  const currentSiteLanguage = ctx.locale! as SiteLanguage
+  const currentSiteLanguage = ctx.locale! as SiteLanguageOption
   const structureLanguage =
     initialStructureLanguage === "asSite" ? currentSiteLanguage : initialStructureLanguage
   const reportLanguage =
     initialReportLanguage === "asSite" ? currentSiteLanguage : initialReportLanguage
   const initialLanguages = Array.from(new Set([structureLanguage, reportLanguage]))
 
-  const supportedSiteLanguages = ctx.locales! as SiteLanguage[]
-  const supportedStructuredReportLanguages: StructuredReportLanguage[] =
+  const supportedSiteLanguages = ctx.locales! as SiteLanguageOption[]
+  const supportedStructuredReportLanguages: StructuredReportLanguageOption[] =
     supportedLanguages === undefined ? supportedSiteLanguages : supportedLanguages
 
   const structuredReportNamespaces = [...additionalStructuredReportNamespaces, "structuredReport"]

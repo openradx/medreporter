@@ -1,12 +1,12 @@
 import { i18n } from "i18next"
-import { SiteLanguage } from "types"
+import { SiteLanguageOption } from "types"
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 export interface I18nSiteContext {
   i18nSite: i18n
-  supportedSiteLanguages: SiteLanguage[]
-  currentSiteLanguage: SiteLanguage
-  setCurrentSiteLanguage: (language: SiteLanguage) => void
+  supportedSiteLanguages: SiteLanguageOption[]
+  currentSiteLanguage: SiteLanguageOption
+  setCurrentSiteLanguage: (language: SiteLanguageOption) => void
 }
 
 export const [useI18nSite, I18nSiteContextProvider] =

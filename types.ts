@@ -17,12 +17,11 @@ declare module "@blitzjs/auth" {
   }
 }
 
-export type SiteLanguage = "cimode" | "de" | "en"
+export type SiteLanguage = "de" | "en"
+
+export type SiteLanguageOption = SiteLanguage | "cimode"
 
 export type StructuredReportLanguage =
-  | "cimode"
-  | "asSite"
-  | "other"
   | "de"
   | "en"
   | "en-US"
@@ -32,13 +31,16 @@ export type StructuredReportLanguage =
   | "nl"
   | "pt"
   | "sv"
+  | "other"
+
+export type StructuredReportLanguageOption = StructuredReportLanguage | "cimode" | "asSite"
 
 export type SupportedLanguage = SiteLanguage | StructuredReportLanguage
 
-type StructuredReportLanguageUser = Exclude<StructuredReportLanguage, "cimode" | "asSite">
+export type SupportedLanguageOption = SiteLanguageOption | StructuredReportLanguageOption
 
 export interface AppConfig {
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
-  structuredReportLanguages: [StructuredReportLanguageUser, ...StructuredReportLanguageUser[]]
+  structuredReportLanguages: [StructuredReportLanguage, ...StructuredReportLanguage[]]
 }

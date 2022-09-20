@@ -9,9 +9,7 @@ import PT from "dayjs/locale/pt"
 import SV from "dayjs/locale/sv"
 import { SupportedLanguage } from "types"
 
-type SupportedDateLanguage = Exclude<SupportedLanguage, "cimode" | "asSite">
-
-const dateLocales: { [language in SupportedDateLanguage]: ILocale } = {
+const dateLocales: { [language in SupportedLanguage]: ILocale } = {
   other: EN_GB,
   de: DE,
   "en-US": EN_US,
@@ -24,7 +22,7 @@ const dateLocales: { [language in SupportedDateLanguage]: ILocale } = {
   sv: SV,
 }
 
-export function getDateLocale(language: SupportedDateLanguage): ILocale {
+export function getDateLocale(language: SupportedLanguage): ILocale {
   const dateLocale = dateLocales[language]
   return dateLocale
 }

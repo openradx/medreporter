@@ -32,9 +32,7 @@ const monolingualModuleDraft = `
 </Module>
 `
 
-type Language = Exclude<StructuredReportLanguage, "cimode" | "asSite">
-
-const examples: { [language in Language]: string } = {
+const examples: { [language in StructuredReportLanguage]: string } = {
   other: "Example",
   de: "Beispiel",
   en: "Example",
@@ -50,7 +48,7 @@ const examples: { [language in Language]: string } = {
 export const createModuleDraft = (
   name: string,
   multilingual: boolean,
-  language: Language
+  language: StructuredReportLanguage
 ): string => {
   if (multilingual === true) {
     return multilingualModuleDraft

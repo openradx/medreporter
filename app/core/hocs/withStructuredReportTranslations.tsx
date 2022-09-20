@@ -1,7 +1,7 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
 import { i18n } from "i18next"
 import { useCallback, useRef, useState } from "react"
-import { StructuredReportLanguage } from "types"
+import { StructuredReportLanguageOption } from "types"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
 import { useOnRouteChange } from "../hooks/useOnRouteChange"
 import { useSiteLanguageListener } from "../hooks/useSiteLanguageListener"
@@ -21,12 +21,13 @@ export const withStructuredReportTranslations = <T extends AppProps>(
     const serverData = props.pageProps?._i18nStructuredReport
 
     const [_currentStructureLanguage, _setCurrentStructureLanguage] =
-      useState<StructuredReportLanguage>()
+      useState<StructuredReportLanguageOption>()
 
     const currentStructureLanguage =
       _currentStructureLanguage ?? serverData?.initialStructureLanguage ?? "asSite"
 
-    const [_currentReportLanguage, _setCurrentReportLanguage] = useState<StructuredReportLanguage>()
+    const [_currentReportLanguage, _setCurrentReportLanguage] =
+      useState<StructuredReportLanguageOption>()
 
     const currentReportLanguage =
       _currentReportLanguage ?? serverData?.initialReportLanguage ?? "asSite"
@@ -76,7 +77,7 @@ export const withStructuredReportTranslations = <T extends AppProps>(
     })
 
     const setCurrentStructureLanguage = useCallback(
-      (language: StructuredReportLanguage) => {
+      (language: StructuredReportLanguageOption) => {
         i18nInstances.current!.i18nStructure.changeLanguage(
           language === "asSite" ? currentSiteLanguage : language,
           () => {
@@ -88,7 +89,7 @@ export const withStructuredReportTranslations = <T extends AppProps>(
     )
 
     const setCurrentReportLanguage = useCallback(
-      (language: StructuredReportLanguage) => {
+      (language: StructuredReportLanguageOption) => {
         i18nInstances.current!.i18nReport.changeLanguage(
           language === "asSite" ? currentSiteLanguage : language,
           () => {
