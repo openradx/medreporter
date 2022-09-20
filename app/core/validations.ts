@@ -1,3 +1,4 @@
+import appConfig from "app.config"
 import { TFunction } from "i18next"
 import { z } from "zod"
 import { ReleaseStatus, Visibility } from "db"
@@ -22,7 +23,7 @@ export const buildCreateModule = (t?: TFunction) =>
         t && { message: t("formError.invalidChars", { chars: "- _ a-z A-Z 0-9" }) }
       ),
     multilingual: z.boolean(),
-    defaultLanguage: z.string(),
+    defaultLanguage: z.enum(appConfig.structuredReportLanguages),
     visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),
     categories: z.string().array(),
   })

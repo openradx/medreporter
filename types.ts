@@ -35,8 +35,10 @@ export type StructuredReportLanguage =
 
 export type SupportedLanguage = SiteLanguage | StructuredReportLanguage
 
+type StructuredReportLanguageUser = Exclude<StructuredReportLanguage, "cimode" | "asSite">
+
 export interface AppConfig {
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
-  structuredReportLanguages: StructuredReportLanguage[]
+  structuredReportLanguages: [StructuredReportLanguageUser, ...StructuredReportLanguageUser[]]
 }
