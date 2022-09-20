@@ -22,17 +22,19 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
   onSubmit,
   ...props
 }: SubmitFormProps<S>) => {
-  const ctx = useForm<z.infer<S>>({
+  const methods = useForm<z.infer<S>>({
     resolver: schema ? zodResolver(schema) : undefined,
     defaultValues: initialValues,
   })
 
+  const submitting = methods.formState.isSubmitting
+
   const [formError, setFormError] = useState<string | null>(null)
 
   return (
-    <FormProvider {...ctx}>
+    <FormProvider {...methods}>
       <form
-        onSubmit={ctx.handleSubmit(async (values) => {
+        onSubmit={methods.handleSubmit(async (values) => {
           try {
             await onSubmit(values)
           } catch (e) {
@@ -44,7 +46,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
                   if (key === SUBMIT_FORM_ERROR) {
                     setFormError(value)
                   } else {
-                    ctx.setError(key as any, {
+                    methods.setError(key as any, {
                       type: "submit",
                       message: value,
                     })
@@ -66,7 +68,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
 
           {submitText && (
             <Group mt="sm">
-              <Button type="submit" color="green" disabled={ctx.formState.isSubmitting}>
+              <Button type="submit" color="green" disabled={submitting}>
                 {submitText}
               </Button>
             </Group>

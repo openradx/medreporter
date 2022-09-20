@@ -10,11 +10,11 @@ import fetchOwnModule from "app/core/mutations/fetchOwnModule"
 import { FormSubmitError } from "app/core/utils/formErrors"
 import { buildCreateModule } from "app/core/validations"
 import { CategoriesSelector } from "../common/CategoriesSelector"
-import { LanguageSelector } from "../common/LanguageSelector"
+import { DraftLanguageSelector } from "../common/DraftLanguageSelector"
 import { SubmitForm } from "../common/SubmitForm"
 import { VisibilitySelector } from "../common/VisibilitySelector"
 
-export const NewModule = () => {
+export const NewModuleForm = () => {
   const { t } = useSiteTranslation()
   const { username } = useAppSession()
 
@@ -38,9 +38,9 @@ export const NewModule = () => {
 
   return (
     <Stack>
-      <Title order={3}>{t("NewModule.formTitle")}</Title>
+      <Title order={3}>{t("NewModuleForm.formTitle")}</Title>
       <SubmitForm
-        submitText={t("NewModule.buttonCreateModule")}
+        submitText={t("NewModuleForm.buttonCreateModule")}
         schema={CreateModuleSchemaExtended}
         initialValues={{
           name: "",
@@ -69,7 +69,7 @@ export const NewModule = () => {
               render={({ field, fieldState: { error } }) => (
                 <TextInput
                   {...field}
-                  label={t("NewModule.inputLabelModuleName")}
+                  label={t("NewModuleForm.inputLabelModuleName")}
                   sx={{ flex: 1 }}
                   error={error ? error.message : null}
                   required
@@ -80,13 +80,13 @@ export const NewModule = () => {
           <Controller
             name="multilingual"
             render={({ field }) => (
-              <Checkbox {...field} label={t("NewModule.inputLabelMultilingual")} />
+              <Checkbox {...field} label={t("NewModuleForm.inputLabelMultilingual")} />
             )}
           />
           <Controller
             name="defaultLanguage"
             render={({ field }) => (
-              <LanguageSelector {...field} languages={appConfig.structuredReportLanguages} />
+              <DraftLanguageSelector {...field} languages={appConfig.structuredReportLanguages} />
             )}
           />
           <Controller name="visibility" render={({ field }) => <VisibilitySelector {...field} />} />

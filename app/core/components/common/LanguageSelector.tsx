@@ -30,7 +30,7 @@ interface LanguageSelectorProps<T extends SupportedLanguageOption>
 
 export const LanguageSelector = forwardRef(
   <T extends SupportedLanguageOption>(
-    { languages, value, ...other }: LanguageSelectorProps<T>,
+    { label, languages, value, ...other }: LanguageSelectorProps<T>,
     ref: Ref<HTMLInputElement>
   ) => {
     const { t } = useSiteTranslation()
@@ -39,7 +39,7 @@ export const LanguageSelector = forwardRef(
       <Select
         {...other}
         ref={ref}
-        label={t("LanguageSelector.inputLabelMainLanguage")}
+        label={label ?? t("LanguageSelector.inputLabelLanguage")}
         icon={<FlagImage language={value} />}
         itemComponent={SelectItem}
         value={value}

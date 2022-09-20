@@ -45,6 +45,8 @@ CopyButton:
   buttonCopy: Befund in Zwischenablage kopieren
   errorMessageCopyReport: Kopieren in Zwischenablage fehlgeschlagen. Bitte manuell kopieren.
   successMessageCopyReport: Befund in Zwischenablage kopiert
+DraftLanguageSelector:
+  inputLabelLanguage: Hauptsprache
 ExternalLink:
   buttonExternalLink: Externen Link öffnen
 FieldGraphics:
@@ -72,7 +74,7 @@ HomePage:
 LanguageChooser:
   menuTitleLanguages: Sprache
 LanguageSelector:
-  inputLabelMainLanguage: Hauptsprache
+  inputLabelLanguage: Sprache
 Loading:
   messageLoading: Wird geladen...
 LoginForm:
@@ -97,7 +99,7 @@ ModulesPage:
   title: Module
 ModuleSelectorWithCategories:
   filterInputLabel: Module filtern
-NewModule:
+NewModuleForm:
   buttonCreateModule: Modul erstellen
   formTitle: Neues Modul erstellen
   inputLabelModuleName: Modulname

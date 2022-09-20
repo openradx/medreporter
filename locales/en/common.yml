@@ -45,6 +45,8 @@ CopyButton:
   buttonCopy: Copy report to clipboard
   errorMessageCopyReport: Copy to clipboard failed. Please copy manually.
   successMessageCopyReport: Copied report to clipboard
+DraftLanguageSelector:
+  inputLabelLanguage: Main language
 ExternalLink:
   buttonExternalLink: Open external link
 FieldGraphics:
@@ -72,7 +74,7 @@ HomePage:
 LanguageChooser:
   menuTitleLanguages: Language
 LanguageSelector:
-  inputLabelMainLanguage: Main language
+  inputLabelLanguage: Language
 Loading:
   messageLoading: Loading...
 LoginForm:
@@ -97,7 +99,7 @@ ModulesPage:
   title: Modules
 ModuleSelectorWithCategories:
   filterInputLabel: Filter modules
-NewModule:
+NewModuleForm:
   buttonCreateModule: Create module
   formTitle: Create a new module
   inputLabelModuleName: Module name
