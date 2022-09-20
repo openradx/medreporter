@@ -1,7 +1,6 @@
 import { Resource } from "i18next"
 import { GetServerSidePropsContext } from "next"
-import { SiteLanguageOption } from "types"
-import { I18nSiteProps } from "../types"
+import { I18nSiteProps, SiteLanguageOption } from "../types"
 import { createClient } from "./i18nServerClient"
 
 export const serverSideSiteTranslations = async (

@@ -1,5 +1,5 @@
 import { i18n } from "i18next"
-import { StructuredReportLanguageOption } from "types"
+import { StructuredReportLanguageOption } from "../types"
 import { createRequiredContext } from "../utils/createRequiredContext"
 
 export interface I18nStructuredReportContext {

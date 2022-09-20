@@ -1,6 +1,6 @@
 import { ReactNode, Suspense, useMemo } from "react"
-import { SiteLanguageOption } from "types"
 import { I18nSiteContextProvider } from "../../contexts/I18nSiteContext"
+import { SiteLanguageOption } from "../../types"
 import { createClient } from "../../utils/i18nStorybookClient"
 
 const DEFAULT_ADDITIONAL_NAMESPACES: string[] = []

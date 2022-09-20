@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { SiteLanguageOption } from "types"
+import { SiteLanguageOption } from "../types"
 import { useSiteTranslation } from "./useSiteTranslation"
 
 type Callback = (language: SiteLanguageOption) => void

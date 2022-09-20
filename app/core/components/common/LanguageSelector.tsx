@@ -1,7 +1,7 @@
 import { Group, Select, Text } from "@mantine/core"
 import { ComponentProps, ComponentPropsWithoutRef, forwardRef, Ref } from "react"
-import { SupportedLanguageOption } from "types"
-import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { useSiteTranslation } from "../../hooks/useSiteTranslation"
+import { SupportedLanguageOption } from "../../types"
 import { FlagImage } from "./FlagImage"
 
 interface ItemProps<T extends SupportedLanguageOption> extends ComponentPropsWithoutRef<"div"> {

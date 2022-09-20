@@ -19,8 +19,6 @@ declare module "@blitzjs/auth" {
 
 export type SiteLanguage = "de" | "en"
 
-export type SiteLanguageOption = SiteLanguage | "cimode"
-
 export type StructuredReportLanguage =
   | "de"
   | "en"
@@ -33,11 +31,7 @@ export type StructuredReportLanguage =
   | "sv"
   | "other"
 
-export type StructuredReportLanguageOption = StructuredReportLanguage | "cimode" | "asSite"
-
 export type SupportedLanguage = SiteLanguage | StructuredReportLanguage
-
-export type SupportedLanguageOption = SiteLanguageOption | StructuredReportLanguageOption
 
 export interface AppConfig {
   debugTranslations: boolean

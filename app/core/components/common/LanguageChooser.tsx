@@ -1,8 +1,8 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
+import config from "app.config"
 import { TbCheck as CheckIcon } from "react-icons/tb"
-import { SupportedLanguageOption } from "types"
-import config from "../../../../app.config"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
+import { SupportedLanguageOption } from "../../types"
 import { FlagImage } from "./FlagImage"
 
 interface LanguageChooserProps<T extends SupportedLanguageOption> {

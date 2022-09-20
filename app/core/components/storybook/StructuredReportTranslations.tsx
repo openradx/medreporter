@@ -1,6 +1,6 @@
 import { ReactNode, Suspense, useMemo } from "react"
-import { StructuredReportLanguageOption } from "types"
 import { I18nStructuredReportContextProvider } from "../../contexts/I18nStructuredReportContext"
+import { StructuredReportLanguageOption } from "../../types"
 import { createClient } from "../../utils/i18nStorybookClient"
 
 const DEFAULT_ADDITIONAL_NAMESPACES: string[] = []

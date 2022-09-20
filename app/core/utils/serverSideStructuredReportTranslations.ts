@@ -1,7 +1,10 @@
 import { Resource } from "i18next"
 import { GetStaticPropsContext } from "next"
-import { SiteLanguageOption, StructuredReportLanguageOption } from "types"
-import { I18nStructuredReportProps } from "../types"
+import {
+  I18nStructuredReportProps,
+  SiteLanguageOption,
+  StructuredReportLanguageOption,
+} from "../types"
 import { createClient } from "./i18nServerClient"
 
 export const serverSideStructuredReportTranslations = async (

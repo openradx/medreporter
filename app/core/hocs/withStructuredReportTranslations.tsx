@@ -1,12 +1,11 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
 import { i18n } from "i18next"
 import { useCallback, useRef, useState } from "react"
-import { StructuredReportLanguageOption } from "types"
 import { I18nStructuredReportContextProvider } from "../contexts/I18nStructuredReportContext"
 import { useOnRouteChange } from "../hooks/useOnRouteChange"
 import { useSiteLanguageListener } from "../hooks/useSiteLanguageListener"
 import { useSiteTranslation } from "../hooks/useSiteTranslation"
-import { I18nStructuredReportProps } from "../types"
+import { I18nStructuredReportProps, StructuredReportLanguageOption } from "../types"
 import { createClient } from "../utils/i18nBrowserClient"
 import { registerInstance } from "../utils/i18nextReloader"
 

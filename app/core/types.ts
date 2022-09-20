@@ -3,7 +3,13 @@ import { CombinedState, PreloadedState } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 import { Resource } from "i18next"
 import { ReactElement, ReactNode } from "react"
-import { SiteLanguageOption, StructuredReportLanguageOption } from "types"
+import { SiteLanguage, StructuredReportLanguage } from "types"
+
+export type SiteLanguageOption = SiteLanguage | "cimode"
+
+export type StructuredReportLanguageOption = StructuredReportLanguage | "cimode" | "asSite"
+
+export type SupportedLanguageOption = SiteLanguageOption | StructuredReportLanguageOption
 
 export interface I18nSiteProps {
   _i18nSite: {
