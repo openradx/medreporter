@@ -18,15 +18,15 @@ type AdrenalMriData = {
 }
 
 export const AdrenalMriReport = () => {
-  const reportData = useReportData(true)
-  console.log(reportData)
   const { inPhaseAdrenal, oppPhaseAdrenal, inPhaseSpleen, oppPhaseSpleen } = useReportData(
     true
   ) as AdrenalMriData
   const { t } = useReportTranslation()
   let signalDropoutText = t("AdrenalMri.textSignalDropoutRequirements")
   if (inPhaseAdrenal !== null && oppPhaseAdrenal !== null) {
-    signalDropoutText = calcSignalDropout(inPhaseAdrenal, oppPhaseAdrenal).toString()
+    signalDropoutText = t("AdrenalMri.textSignalDropoutWithValue", {
+      value: calcSignalDropout(inPhaseAdrenal, oppPhaseAdrenal).toFixed(2),
+    })
   }
 
   let adrenalToSpleenRatioText = t("AdrenalMri.textAdrenalToSpleenRatioRequirements")
@@ -36,12 +36,14 @@ export const AdrenalMriReport = () => {
     inPhaseSpleen !== null &&
     oppPhaseSpleen !== null
   ) {
-    adrenalToSpleenRatioText = calcAdrenalToSpleenRatio(
-      inPhaseAdrenal,
-      oppPhaseAdrenal,
-      inPhaseSpleen,
-      oppPhaseSpleen
-    ).toString()
+    adrenalToSpleenRatioText = t("AdrenalMri.textAdrenalToSpleenRatioWithValue", {
+      value: calcAdrenalToSpleenRatio(
+        inPhaseAdrenal,
+        oppPhaseAdrenal,
+        inPhaseSpleen,
+        oppPhaseSpleen
+      ).toFixed(2),
+    })
   }
 
   const suggestions = makeAdrenalMriSuggestion(

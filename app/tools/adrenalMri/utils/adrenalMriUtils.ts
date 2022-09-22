@@ -10,7 +10,6 @@ export const calcAdrenalToSpleenRatio = (
 
 export enum AdrenalMriSuggestion {
   MissingValues = "AdrenalMri.missingValues",
-  NoSuggestionPossible = "AdrenalMri.noSuggestionPossible",
   CsiAdenoma = "AdrenalMri.csiAdenoma",
   CsiUnclear = "AdrenalMri.csiUnclear",
   ToSpleenAdenoma = "AdrenalMri.toSpleenAdenoma",

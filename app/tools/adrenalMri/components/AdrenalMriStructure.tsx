@@ -3,6 +3,8 @@ import { NumberField } from "../../../core/components/fields/NumberField"
 import { Description } from "../../../core/components/structuredReport/Description"
 import { Grid } from "../../../core/components/structuredReport/Grid"
 import { GridItem } from "../../../core/components/structuredReport/GridItem"
+import { Hint } from "../../../core/components/structuredReport/Hint"
+import { Hints } from "../../../core/components/structuredReport/Hints"
 import { useStructureTranslation } from "../../../core/hooks/useStructureTranslation"
 
 export const AdrenalMriStructure = () => {
@@ -45,6 +47,10 @@ export const AdrenalMriStructure = () => {
           />
         </GridItem>
       </GridGroup>
+      <Hints>
+        <Hint type="info">{t("AdrenalMri.hintLimitations")}</Hint>
+        <Hint type="info">{t("AdrenalMri.hintTesla")}</Hint>
+      </Hints>
     </Grid>
   )
 }
