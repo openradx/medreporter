@@ -11,21 +11,21 @@ AdrenalMri:
   inputLabelSpleenInPhase: Signal In-Phase
   inputLabelSpleenOppPhase: Signal Opposed-Phase
   hintLimitations: > 
-    "Cave: The informative value of the MRI signal intensity measurements is less than the 
+    Cave: The informative value of the MRI signal intensity measurements is less than the 
     washout measurements in the CT for lesions with native ≥20 HU and clearly limited for lesions 
-    with native ≥30 HU."
+    with native ≥30 HU.
   hintTesla: >
-    "Cave: The limit value of the signal drop of 16.5% was determined at 1.5 Tesla. At 3 Tesla, 
-    the limit may be lower."
+    Cave: The limit value of the signal drop of 16.5% was determined at 1.5 Tesla. At 3 Tesla, 
+    the limit may be lower.
 
   # Report
   textSignalDropoutRequirements: >
-    "The calculation of the signal drop requires the signal values ​​of the adrenal lesion in 
-    in- and opposed-phase."
+    The calculation of the signal drop requires the signal values ​​of the adrenal lesion in 
+    in- and opposed-phase.
   textSignalDropoutWithValue: "Signal drop of the lesion between in-phase and opposed-phase: {{value}} %"
   textAdrenalToSpleenRatioRequirements: >
-    "The calculation of the lesion to spleen ratio requires the signal values ​​of the adrenal lesion 
-    and the spleen in in- and opposed-phase."
+    The calculation of the lesion to spleen ratio requires the signal values ​​of the adrenal lesion 
+    and the spleen in in- and opposed-phase.
   textAdrenalToSpleenRatioWithValue: "Ratio of signal drop of the lesion to spleen: {{value}}"
 
   # Suggestion categories

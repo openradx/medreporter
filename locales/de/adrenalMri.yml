@@ -11,21 +11,21 @@ AdrenalMri:
   inputLabelSpleenInPhase: Signal In-Phase
   inputLabelSpleenOppPhase: Signal Opposed-Phase
   hintLimitations: >
-    "Cave: Die Aussagekraft der MRT-Messungen ist geringer als die Washout-Messungen im CT für Läsionen 
-    mit nativ ≥20 HE und deutlich eingeschränkt für Läsion mit nativ ≥30 HU."
+    Cave: Die Aussagekraft der MRT-Messungen ist geringer als die Washout-Messungen im CT für Läsionen 
+    mit nativ ≥20 HE und deutlich eingeschränkt für Läsion mit nativ ≥30 HU.
   hintTesla: >
-    "Cave: Der Grenzwert des Signalabfalls von 16,5% wurde bei 1,5 Tesla bestimmt. Bei 3 Tesla liegt 
-    der Grenzwert möglicherweise niedriger."
+    Cave: Der Grenzwert des Signalabfalls von 16,5% wurde bei 1,5 Tesla bestimmt. Bei 3 Tesla liegt 
+    der Grenzwert möglicherweise niedriger.
 
   # Report
   textSignalDropoutRequirements: > 
-    "Die Berechnung des Signalabfalls benötigt die Signalwerte der Nebennierenläsion in 
-    In- und Opposed-Phase."
+    Die Berechnung des Signalabfalls benötigt die Signalwerte der Nebennierenläsion in 
+    In- und Opposed-Phase.
   textSignalDropoutWithValue: >
-    "Signalabfall der Läsion zwischen In-Phase und Opposed-Phase: {{value}} %"
+    Signalabfall der Läsion zwischen In-Phase und Opposed-Phase: {{value}} %
   textAdrenalToSpleenRatioRequirements: >
-    "Die Berechnung des Verhältnisses zwischen Läsion und Milz benötigt die Signalwerte der 
-    Nebennierenläsion und der Milz in In- und Opposed-Phase."
+    Die Berechnung des Verhältnisses zwischen Läsion und Milz benötigt die Signalwerte der 
+    Nebennierenläsion und der Milz in In- und Opposed-Phase.
   textAdrenalToSpleenRatioWithValue: "Verhältnis Signalabfall Läsion zu Milz: {{value}}"
 
   # Suggestion categories
