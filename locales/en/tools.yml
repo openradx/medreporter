@@ -12,7 +12,7 @@ AdrenalMri:
     Characterization of adrenal lesions in the MRI to detect adenomas.
 
 AdrenalWashout:
-  title: Adrenal Washout CT
+  title: Adrenal gland CT (washout)
   description: >
     Characterization of adrenal lesions in the CT to detect adenomas.
 

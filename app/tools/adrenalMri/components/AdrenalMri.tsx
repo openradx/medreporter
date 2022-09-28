@@ -6,6 +6,7 @@ import { Structure } from "../../../core/components/structuredReport/Structure"
 import { StructuredReport } from "../../../core/components/structuredReport/StructuredReport"
 import { AdrenalMriReport } from "./AdrenalMriReport"
 import { AdrenalMriStructure } from "./AdrenalMriStructure"
+import { AdrenalMriInfo } from "./AdrenallMriInfo"
 
 export const AdrenalMri = () => {
   const { t } = useStructureTranslation()
@@ -22,6 +23,7 @@ export const AdrenalMri = () => {
               title: "Radiopaedia | Adrenal adenoma",
             },
           ]}
+          info={<AdrenalMriInfo />}
         >
           <Structure>
             <AdrenalMriStructure />
