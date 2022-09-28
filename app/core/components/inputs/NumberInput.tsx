@@ -1,5 +1,5 @@
-import { NumberInput as MantineNumberInput } from "@mantine/core"
-import { ReactNode, useState } from "react"
+import { NumberInput as MantineNumberInput, NumberInputHandlers } from "@mantine/core"
+import { ReactNode, useRef, useState } from "react"
 import { ScrollBlocker } from "../common/ScrollBlocker"
 import { InputLabel } from "./InputLabel"
 
@@ -36,24 +36,24 @@ export const NumberInput = ({
 }: NumberInputProps) => {
   const [focus, setFocus] = useState(false)
   const [hovered, setHovered] = useState(false)
+  const handlers = useRef<NumberInputHandlers>()
 
   return (
     <ScrollBlocker focus={focus}>
       <MantineNumberInput
+        handlersRef={handlers}
         label={(label || extras) && <InputLabel label={label} extras={extras} />}
         autoComplete="off"
         wrapperProps={{
           onMouseEnter: () => setHovered(true),
           onMouseLeave: () => setHovered(false),
           onWheel: (event: WheelEvent) => {
-            let key: "ArrowUp" | "ArrowDown" | null = null
-            if (focus && event.deltaY < -SCROLL_SENSITIVITY) key = "ArrowUp"
-            else if (focus && event.deltaY > SCROLL_SENSITIVITY) key = "ArrowDown"
-
-            if (key && event.currentTarget instanceof Element) {
-              const input = event.currentTarget.querySelector("input")
-              input!.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true }))
-              input!.dispatchEvent(new KeyboardEvent("keyup", { key, bubbles: true }))
+            if (focus && event.currentTarget instanceof Element) {
+              if (event.deltaY < -SCROLL_SENSITIVITY) {
+                handlers.current?.increment()
+              } else if (event.deltaY > SCROLL_SENSITIVITY) {
+                handlers.current?.decrement()
+              }
             }
           },
         }}

@@ -1,11 +1,11 @@
 AdrenalWashout:
   # Structure
-  tooltitle: Adrenal washout
+  toolTitle: Adrenal gland CT (washout)
 
   toolDescription: >
     Characterization of unclear adrenal lesions to detect adenomas by using 
     computed tomography.
-  groupDensity: Density (HU)
+  groupLabelDensity: Density (HU)
   inputLabelNonEnhanced: Non-enhanced phase
   inputLabelPortalVenous: Portal venous phase
   inputLabelDelayed: Delayed phase
@@ -14,6 +14,9 @@ AdrenalWashout:
     periphery.
   hintPreferAbsoluteWashout: >
     Whenever possible the absolute washout should be preferred.
+
+  # Info
+  references: References
 
   # Report
   textAbsoluteWashoutRequirements: >

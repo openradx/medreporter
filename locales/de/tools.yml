@@ -1,14 +1,20 @@
 tags:
   adrenal: Nebenniere
   ct: CT
+  mri: MRT
   kidney: Niere
   lung: Lunge
   radiology: Radiologie
 
-AdrenalWashout:
-  title: Nebennieren Washout
+AdrenalMri:
+  title: Nebennieren MRT
   description: >
-    Charakterisierung von Nebennierenläsion zur Erkennung von Adenomen.
+    Charakterisierung von Nebennierenläsion in der MRT zur Erkennung von Adenomen.
+
+AdrenalWashout:
+  title: Nebennieren CT (Washout)
+  description: >
+    Charakterisierung von Nebennierenläsion in der CT zur Erkennung von Adenomen.
 
 Fleischner2017:
   title: Fleischner 2017 Richtlinien

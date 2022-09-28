@@ -1,10 +1,10 @@
 AdrenalWashout:
   # Structure
-  tooltitle: Nebennieren Washout
+  toolTitle: Nebennieren CT (Washout)
   toolDescription: >
     Charakterisierung von unklaren Nebennierenläsionen zur Erkennung von
-    Nebennierenadenomen im CT.
-  groupDensity: Dichte (HE)
+    Nebennierenadenomen in der CT.
+  groupLabelDensity: Dichte (HE)
   inputLabelNonEnhanced: Native Phase
   inputLabelPortalVenous: Venöse Phase
   inputLabelDelayed: Spätphase
@@ -14,6 +14,9 @@ AdrenalWashout:
   hintPreferAbsoluteWashout: >
     Wenn möglich sollte das absolute Washout gegenüber dem relativen Washout
     bevorzugt werden.
+
+  # Info
+  references: Quellen
 
   # Report
   textAbsoluteWashoutRequirements: >

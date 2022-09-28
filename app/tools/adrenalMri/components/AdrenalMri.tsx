@@ -4,32 +4,32 @@ import { Report } from "../../../core/components/structuredReport/Report"
 import { Section } from "../../../core/components/structuredReport/Section"
 import { Structure } from "../../../core/components/structuredReport/Structure"
 import { StructuredReport } from "../../../core/components/structuredReport/StructuredReport"
-import { AdrenalWashoutInfo } from "./AdrenalWashoutInfo"
-import { AdrenalWashoutReport } from "./AdrenalWashoutReport"
-import { AdrenalWashoutStructure } from "./AdrenalWashoutStructure"
+import { AdrenalMriReport } from "./AdrenalMriReport"
+import { AdrenalMriStructure } from "./AdrenalMriStructure"
+import { AdrenalMriInfo } from "./AdrenallMriInfo"
 
-export const AdrenalWashout = () => {
+export const AdrenalMri = () => {
   const { t } = useStructureTranslation()
 
   return (
     <StructuredReport>
       <Section id="default">
         <Module
-          id="adrenalWashout"
-          title={t("AdrenalWashout.toolTitle")}
+          id="adrenalMri"
+          title={t("AdrenalMri.toolTitle")}
           links={[
             {
-              url: "https://radiopaedia.org/articles/adrenal-washout",
-              title: "Radiopaedia | Adrenal Washout",
+              url: "https://radiopaedia.org/articles/adrenal-adenoma",
+              title: "Radiopaedia | Adrenal adenoma",
             },
           ]}
-          info={<AdrenalWashoutInfo />}
+          info={<AdrenalMriInfo />}
         >
           <Structure>
-            <AdrenalWashoutStructure />
+            <AdrenalMriStructure />
           </Structure>
           <Report>
-            <AdrenalWashoutReport />
+            <AdrenalMriReport />
           </Report>
         </Module>
       </Section>

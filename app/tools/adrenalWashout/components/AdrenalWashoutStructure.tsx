@@ -13,10 +13,10 @@ export const AdrenalWashoutStructure = () => {
 
   return (
     <Grid>
-      <GridItem size="lg">
+      <GridItem size="xl">
         <Description>{t("AdrenalWashout.toolDescription")}</Description>
       </GridItem>
-      <GridGroup label={t("AdrenalWashout.groupDensity")}>
+      <GridGroup label={t("AdrenalWashout.groupLabelDensity")}>
         <GridItem size="md">
           <NumberField
             id="nonEnhanced"
