@@ -15,6 +15,9 @@ AdrenalWashout:
     Wenn möglich sollte das absolute Washout gegenüber dem relativen Washout
     bevorzugt werden.
 
+  # Info
+  references: Quellen
+
   # Report
   textAbsoluteWashoutRequirements: >
     Absolutes Washout benötigt eine native, portal-venöse und späte Phase.

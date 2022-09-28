@@ -18,6 +18,9 @@ AdrenalMri:
     Cave: The limit value of the signal drop of 16.5% was determined at 1.5 Tesla. At 3 Tesla, 
     the limit may be lower.
 
+  # Info
+  references: References
+
   # Report
   textSignalDropoutRequirements: >
     The calculation of the signal drop requires the signal values ​​of the adrenal lesion in 

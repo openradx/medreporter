@@ -16,6 +16,9 @@ AdrenalMri:
   hintTesla: >
     Cave: Der Grenzwert des Signalabfalls von 16,5% wurde bei 1,5 Tesla bestimmt. Bei 3 Tesla liegt 
     der Grenzwert möglicherweise niedriger.
+ 
+  # Info
+  references: Quellen
 
   # Report
   textSignalDropoutRequirements: > 

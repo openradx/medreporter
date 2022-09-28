@@ -15,6 +15,9 @@ AdrenalWashout:
   hintPreferAbsoluteWashout: >
     Whenever possible the absolute washout should be preferred.
 
+  # Info
+  references: References
+
   # Report
   textAbsoluteWashoutRequirements: >
     Absolute washout requires non enhanced, portal venous and delayed phase.
