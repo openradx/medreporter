@@ -52,6 +52,8 @@ GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 HomePage:
   pageTitle: Startseite
+KidneyVolumePage: 
+  toolTitle: Nierenvolumen
 languages:
   asSite: wie Seite
   de: Deutsch

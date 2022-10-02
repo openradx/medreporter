@@ -52,6 +52,8 @@ GraphicsModal:
   buttonReset: Reset selection
 HomePage:
   pageTitle: Homepage
+KidneyVolumePage: 
+  toolTitle: Kidney volume
 languages:
   asSite: As page
   de: German

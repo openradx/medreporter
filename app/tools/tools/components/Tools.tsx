@@ -39,6 +39,12 @@ export const Tools = () => {
       tags: [t("tags.kidney")],
     },
     {
+      url: "/tools/kidney-volume",
+      title: t("KidneyVolume.title"),
+      description: t("KidneyVolume.description"),
+      tags: [t("tags.kidney")],
+    },
+    {
       url: "/tools/measurements-table",
       title: t("MeasurementsTable.title"),
       description: t("MeasurementsTable.description"),

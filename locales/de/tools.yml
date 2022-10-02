@@ -9,12 +9,12 @@ tags:
 AdrenalMri:
   title: Nebennieren MRT
   description: >
-    Charakterisierung von Nebennierenläsion in der MRT zur Erkennung von Adenomen.
+    Charakterisierung von Nebennierenläsionen in der MRT zur Erkennung von Adenomen.
 
 AdrenalWashout:
   title: Nebennieren CT (Washout)
   description: >
-    Charakterisierung von Nebennierenläsion in der CT zur Erkennung von Adenomen.
+    Charakterisierung von Nebennierenläsionen in der CT zur Erkennung von Adenomen.
 
 Fleischner2017:
   title: Fleischner 2017 Richtlinien
@@ -27,6 +27,10 @@ Gfr:
   description: >
     Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault) 
     und Kinder (Schwartz (orig./rev.), Counahan-Barret).
+
+KidneyVolume: 
+  title: Nierenvolumen
+  description: Berechnung des Nierenvolumens bei ADPKD (mit/ohne Größenkorrektur).
 
 MeasurementsTable:
   title: Messtabelle

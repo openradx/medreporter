@@ -28,6 +28,11 @@ Gfr:
     A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
     and children (Schwartz (orig./rev.), Counahan-Barret).
 
+KidneyVolume: 
+  title: Kidney volume
+  description: >
+    Calculation of the kidney volume for patients with ADPKD (with or without correction against height).
+
 MeasurementsTable:
   title: Measurements table
   description: Tabular acquisition of measurements with calculation of dynamics.
