@@ -1,11 +1,11 @@
 KidneyVolume: 
-  toolTitle: Nierenvolumen
+  toolTitle: Nierenvolumen (Mayo-Modell)
   toolDescription: >
     Berechnung des Nierenvolumens bei ADPKD (mit/ohne Korrektur gegenüber der Körpergröße).
 
 #Structure
   right: Rechte Niere
-  left: Left kidney
+  left: Linke Niere
 
   coronal: Länge coronar (cm)
   sagittal: Länge sagittal (cm)

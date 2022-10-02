@@ -1,5 +1,5 @@
 KidneyVolume: 
-  toolTitle: Kidney Volume
+  toolTitle: Kidney Volume (Mayo-Model)
   toolDescription: >
     Calculation of the kidney volume for patients with ADPKD (with or without correction against height).
 
