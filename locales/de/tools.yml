@@ -30,7 +30,7 @@ Gfr:
 
 KidneyVolume: 
   title: Nierenvolumen
-  description: Berechnung des Nierenvolumens bei ADPKD (mit/ohne Größenkorrektur).
+  description: Berechnung des Nierenvolumens bei ADPKD (mit/ohne Korrektur gegenüber der Körpergröße).
 
 MeasurementsTable:
   title: Messtabelle
