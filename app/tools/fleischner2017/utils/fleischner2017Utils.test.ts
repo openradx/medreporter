@@ -1,5 +1,16 @@
 import { Count, RiskFactors, Structure } from "../components/Fleischner2017Report"
-import { defineFleischner2017, Suggestion } from "./fleischner2017Utils"
+import { defineFleischner2017, Suggestion, calcAverageDiameter } from "./fleischner2017Utils"
+
+describe("Calculate average diameter", () => {
+  it.each([
+    [2, 1, 1.5],
+    [6, 5, 5.5],
+    [11, 1, 6],
+    [12, 10, 11],
+  ])("should be calculated correctly", (longaxis, shortaxis, result) => {
+    expect(calcAverageDiameter(longaxis, shortaxis)).toBe(result)
+  })
+})
 
 describe("defineFleischner2017", () => {
   it.each<[number, number, Structure, Count, RiskFactors, Suggestion]>([
