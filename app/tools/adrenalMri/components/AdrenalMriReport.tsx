@@ -24,9 +24,14 @@ export const AdrenalMriReport = () => {
   const { t } = useReportTranslation()
   let signalDropoutText = t("AdrenalMri.textSignalDropoutRequirements")
   if (inPhaseAdrenal !== null && oppPhaseAdrenal !== null) {
-    signalDropoutText = t("AdrenalMri.textSignalDropoutWithValue", {
-      value: calcSignalDropout(inPhaseAdrenal, oppPhaseAdrenal).toFixed(2),
-    })
+    const result = calcSignalDropout(inPhaseAdrenal, oppPhaseAdrenal)
+    if (Number.isNaN(result) || !Number.isFinite(result)) {
+      signalDropoutText = "invalid"
+    } else {
+      signalDropoutText = t("AdrenalMri.textSignalDropoutWithValue", {
+        value: result.toFixed(2),
+      })
+    }
   }
 
   let adrenalToSpleenRatioText = t("AdrenalMri.textAdrenalToSpleenRatioRequirements")
@@ -36,14 +41,19 @@ export const AdrenalMriReport = () => {
     inPhaseSpleen !== null &&
     oppPhaseSpleen !== null
   ) {
-    adrenalToSpleenRatioText = t("AdrenalMri.textAdrenalToSpleenRatioWithValue", {
-      value: calcAdrenalToSpleenRatio(
-        inPhaseAdrenal,
-        oppPhaseAdrenal,
-        inPhaseSpleen,
-        oppPhaseSpleen
-      ).toFixed(2),
-    })
+    const result = calcAdrenalToSpleenRatio(
+      inPhaseAdrenal,
+      oppPhaseAdrenal,
+      inPhaseSpleen,
+      oppPhaseSpleen
+    )
+    if (Number.isNaN(result) || !Number.isFinite(result)) {
+      adrenalToSpleenRatioText = "invalid"
+    } else {
+      adrenalToSpleenRatioText = t("AdrenalMri.textAdrenalToSpleenRatioWithValue", {
+        value: result.toFixed(2),
+      })
+    }
   }
 
   const suggestions = makeAdrenalMriSuggestion(
