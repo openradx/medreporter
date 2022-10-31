@@ -6,7 +6,7 @@ import { ClearStructureButton } from "./ClearStructureButton"
 import { PanelHeader } from "./PanelHeader"
 import { RedoButton } from "./RedoButton"
 import { StructureForm } from "./StructureForm"
-import { StructureLanguageSelector } from "./StructureLanguageSelector"
+import { StructureLanguageChooser } from "./StructureLanguageChooser"
 import { UndoButton } from "./UndoButton"
 
 interface StructurePanelProps {
@@ -36,7 +36,7 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
                 <ClearStructureButton />
                 <UndoButton />
                 <RedoButton />
-                <StructureLanguageSelector />
+                <StructureLanguageChooser />
               </ActionsGroup>
             }
           />

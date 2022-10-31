@@ -3,8 +3,9 @@ import { useMutation } from "@blitzjs/rpc"
 import { Stack, TextInput, Title } from "@mantine/core"
 import { AuthenticationError, PromiseReturnType } from "blitz"
 import { Controller } from "react-hook-form"
+import { FormSubmitError } from "app/core/utils/formErrors"
 import { PageLink } from "../../core/components/common/PageLink"
-import { SubmitForm, SUBMIT_FORM_ERROR } from "../../core/components/common/SubmitForm"
+import { SubmitForm } from "../../core/components/common/SubmitForm"
 import { useSiteTranslation } from "../../core/hooks/useSiteTranslation"
 import login from "../mutations/login"
 import { Login } from "../validations"
@@ -28,13 +29,14 @@ export const LoginForm = (props: LoginFormProps) => {
           try {
             const user = await loginMutation(values)
             props.onSuccess?.(user)
-            return null
-          } catch (error) {
-            if (error instanceof AuthenticationError) {
-              return { [SUBMIT_FORM_ERROR]: t("LoginForm.authErrorMessage") }
+          } catch (e) {
+            if (e instanceof AuthenticationError) {
+              throw new FormSubmitError(t("LoginForm.authErrorMessage"))
             }
-            const { message } = error as Error
-            return { [SUBMIT_FORM_ERROR]: message }
+            if (e instanceof Error) {
+              throw new FormSubmitError(t("formError.unexpected") + e.message)
+            }
+            throw e
           }
         }}
       >

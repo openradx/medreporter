@@ -33,9 +33,6 @@ export default resolver.pipe(resolver.zod(ForgotPassword), async ({ email }) => 
     // 6. Send the email
     await forgotPasswordMailer({ to: user.email, token }).send()
   } else {
-    // eslint-disable-next-line no-console
-    console.log("\x1b[31m", `Non existing email to reset password: ${email}`, "\x1b[0m")
-
     // 7. If no user found wait the same time so attackers can't tell the difference
     // eslint-disable-next-line no-promise-executor-return
     await new Promise((resolve) => setTimeout(resolve, 750))

@@ -5,7 +5,6 @@ import displayReducer from "./displaySlice"
 import editorReducer from "./editorSlice"
 import { historyMiddleware } from "./historyMiddleware"
 import historyTrackerReducer from "./historyTrackerSlice"
-import languagesReducer from "./languagesSlice"
 import reportReducer from "./reportSlice"
 import structureDataReducer from "./structureDataSlice"
 import structureReducer from "./structureSlice"
@@ -14,7 +13,6 @@ export const reducer = {
   display: displayReducer,
   editor: editorReducer,
   historyTracker: historyTrackerReducer,
-  languages: languagesReducer,
   report: reportReducer,
   structureData: structureDataReducer,
   structure: structureReducer,

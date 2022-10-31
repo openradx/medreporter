@@ -13,8 +13,8 @@ const config = {
   reactStrictMode: true,
   i18n: {
     localeDetection: true,
-    locales: ["de", "en-US"],
-    defaultLocale: "en-US",
+    locales: ["de", "en"],
+    defaultLocale: "en",
   },
   eslint: {
     ignoreDuringBuilds: true,

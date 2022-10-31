@@ -12,11 +12,7 @@ interface MembershipListProps {
 
 export const MembershipList = ({ instituteId, role }: MembershipListProps) => {
   const { t } = useSiteTranslation()
-  const [{ memberships }] = usePaginatedQuery(getMemberships, {
-    instituteId,
-    role,
-    orderBy: { user: { email: "asc" } },
-  })
+  const [{ memberships }] = usePaginatedQuery(getMemberships, { instituteId, role })
 
   return (
     <Stack>

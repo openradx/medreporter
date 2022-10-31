@@ -13,9 +13,6 @@ tasks:
       blitz db seed
       gp sync-done install
     command: yarn dev
-  - name: Storybook
-    init: gp sync-await install
-    command: yarn storybook
   - name: Test
     init: gp sync-await install
     command: yarn test

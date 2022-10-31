@@ -1,12 +1,21 @@
 import { resolver } from "@blitzjs/rpc"
 import { paginate } from "blitz"
 import db, { Prisma, UserRole } from "db"
-
-interface GetUsers extends Pick<Prisma.UserFindManyArgs, "where" | "orderBy" | "skip" | "take"> {}
+import { GetUsers } from "../validations"
 
 export default resolver.pipe(
+  resolver.zod(GetUsers),
   resolver.authorize(UserRole.SUPERADMIN),
-  async ({ where = {}, orderBy, skip = 0, take = 100 }: GetUsers) => {
+  async ({ filter, skip, take }) => {
+    const where: Prisma.UserWhereInput = filter
+      ? {
+          OR: [
+            { email: { contains: filter, mode: "insensitive" } },
+            { username: { contains: filter, mode: "insensitive" } },
+          ],
+        }
+      : {}
+
     const {
       items: users,
       hasMore,
@@ -16,7 +25,8 @@ export default resolver.pipe(
       skip,
       take,
       count: () => db.user.count({ where }),
-      query: (paginateArgs) => db.user.findMany({ ...paginateArgs, where, orderBy }),
+      query: (paginateArgs) =>
+        db.user.findMany({ ...paginateArgs, where, orderBy: { username: "asc" } }),
     })
 
     return {

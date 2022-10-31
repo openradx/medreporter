@@ -1,31 +1,37 @@
 import { resolver } from "@blitzjs/rpc"
 import { ModuleWrapper } from "@medreporter/medtl-tools"
-import db, { Prisma } from "db"
-import { createModuleId } from "../utils/idUtils"
+import db, { Prisma, ReleaseStatus } from "db"
+import { createModuleDraft } from "../utils/moduleUtils"
 import { buildModuleTranslationsArgs } from "../utils/mutationUtils"
 import { parseModuleCode } from "../utils/parserUtils"
-import { CreateModule } from "../validations"
+import { buildCreateModule } from "../validations"
 
 export default resolver.pipe(
-  resolver.zod(CreateModule),
+  resolver.zod(buildCreateModule()),
   resolver.authorize(),
-  async ({ sourceCode, releaseStatus }, { session }) => {
+  async ({ name, multilingual, defaultLanguage, visibility }, { session }) => {
+    const sourceCode = createModuleDraft(name, multilingual, defaultLanguage)
     const document = parseModuleCode(sourceCode)
     const wrapper = new ModuleWrapper(document)
     const translations = buildModuleTranslationsArgs(wrapper)
-    const languages = wrapper.getTranslator().getSupportedLanguages()
 
-    return await db.module.create({
+    const createdModule = await db.module.create({
       data: {
-        moduleId: createModuleId(),
+        name,
         authorId: session.userId,
-        sourceCode: sourceCode.trim(),
+        sourceCode,
         document: document as unknown as Prisma.JsonObject,
-        releaseStatus,
-        languages,
         translations,
+        visibility,
+        releaseStatus: ReleaseStatus.DRAFT,
       },
-      select: { moduleId: true },
+      select: { id: true, name: true, author: { select: { username: true } } },
     })
+
+    return {
+      id: createdModule.id,
+      name: createdModule.name,
+      author: createdModule.author.username,
+    }
   }
 )

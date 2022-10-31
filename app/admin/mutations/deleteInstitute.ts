@@ -1,11 +1,7 @@
 import { resolver } from "@blitzjs/rpc"
 import { AuthorizationError } from "blitz"
-import { z } from "zod"
 import db, { MembershipRole, UserRole } from "db"
-
-const DeleteInstitute = z.object({
-  id: z.number(),
-})
+import { DeleteInstitute } from "../validations"
 
 export default resolver.pipe(
   resolver.zod(DeleteInstitute),

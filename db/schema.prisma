@@ -17,6 +17,8 @@ model Institute {
   name String @unique
 
   memberships  Membership[]
+  modules      Module[]
+  templates    Template[]
   reports      Report[]
   currentUsers User[]
 }
@@ -84,6 +86,10 @@ model Session {
   userId Int?
 }
 
+enum TokenType {
+  RESET_PASSWORD
+}
+
 model Token {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
@@ -99,98 +105,90 @@ model Token {
   @@unique([hashedToken, type])
 }
 
-enum TokenType {
-  RESET_PASSWORD
+enum ReleaseStatus {
+  DRAFT
+  PUBLISHED
+  DEPRECIATED
+}
+
+enum Visibility {
+  PRIVATE
+  INSTITUTE
+  PUBLIC
 }
 
 model Module {
   id            Int           @id @default(autoincrement())
-  moduleId      String        @unique
+  name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  languages     String[]
   sourceCode    String
   document      Json
+  visibility    Visibility
   releaseStatus ReleaseStatus
 
-  author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId Int
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId    Int
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId Int?
 
   translations ModuleTranslation[]
+  categories   ModuleCategory[]
+
+  @@unique([authorId, name])
 }
 
 model ModuleTranslation {
-  id          Int                    @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   language    String
   default     Boolean
   title       String
   description String
-  tags        ModuleTagTranslation[]
 
   module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   moduleId Int
 
   @@unique([language, moduleId])
-}
-
-model ModuleTagTranslation {
-  id       Int    @id @default(autoincrement())
-  language String
-  label    String
-
-  moduleTranslation   ModuleTranslation @relation(fields: [moduleTranslationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  moduleTranslationId Int
+  @@index([moduleId, default])
 }
 
 model Template {
   id            Int           @id @default(autoincrement())
-  templateId    String        @unique
+  name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  languages     String[]
   sourceCode    String
   document      Json
+  visibility    Visibility
   releaseStatus ReleaseStatus
 
-  author   User @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId Int
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId    Int
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId Int?
 
   translations TemplateTranslation[]
+  categories   TemplateCategory[]
+
+  @@unique([authorId, name])
 }
 
 model TemplateTranslation {
-  id          Int                      @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   language    String
   default     Boolean
   title       String
   description String
-  tags        TemplateTagTranslation[]
 
   template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   templateId Int
 
   @@unique([language, templateId])
-}
-
-model TemplateTagTranslation {
-  id       Int    @id @default(autoincrement())
-  language String
-  label    String
-
-  TemplateTranslation   TemplateTranslation @relation(fields: [templateTranslationId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  templateTranslationId Int
-}
-
-enum ReleaseStatus {
-  DRAFT
-  UNPUBLISHED
-  PUBLISHED
-  DEPRECIATED
+  @@index([templateId, default])
 }
 
 model Report {
   id         Int        @id @default(autoincrement())
-  reportId   String     @unique
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
   visibility Visibility
@@ -207,12 +205,6 @@ model Report {
   instituteId Int?
 }
 
-enum Visibility {
-  PRIVATE
-  INSTITUTE
-  PUBLIC
-}
-
 model ReportDetail {
   id       Int       @id @default(autoincrement())
   key      String
@@ -225,4 +217,48 @@ model ReportDetail {
   reportId Int?
 
   @@unique([reportId, key])
+}
+
+model ModuleCategory {
+  id Int @id @default(autoincrement())
+
+  Module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  moduleId Int
+
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId Int
+
+  @@unique([moduleId, categoryId])
+}
+
+model TemplateCategory {
+  id Int @id @default(autoincrement())
+
+  Template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  templateId Int
+
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId Int
+
+  @@unique([templateId, categoryId])
+}
+
+model Category {
+  id  Int    @id @default(autoincrement())
+  key String @unique
+
+  translations CategoryTranslation[]
+  modules      ModuleCategory[]
+  templates    TemplateCategory[]
+}
+
+model CategoryTranslation {
+  id       Int    @id @default(autoincrement())
+  language String
+  label    String
+
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId Int
+
+  @@unique([categoryId, language])
 }

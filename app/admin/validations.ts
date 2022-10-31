@@ -1,9 +1,50 @@
 import { z } from "zod"
-import { UserRole } from "../../db"
+import { MembershipRole, UserRole } from "db"
+import { Pagination } from "app/core/validations"
 import { password, Signup } from "../auth/validations"
 
 export const CreateInstitute = z.object({
   name: z.string().min(3).max(100),
+})
+
+export const CreateMembership = z.object({
+  instituteId: z.number(),
+  userId: z.number(),
+  role: z.enum([MembershipRole.MEMBER, MembershipRole.ADMIN, MembershipRole.OWNER]),
+})
+
+export const DeleteInstitute = z.object({
+  id: z.number(),
+})
+
+export const DeleteMembership = z.object({
+  id: z.number(),
+})
+
+export const DeleteUser = z.object({
+  id: z.number(),
+})
+
+export const GetInstitutes = Pagination.extend({
+  filter: z.string().optional(),
+})
+
+export const GetMemberships = Pagination.extend({
+  instituteId: z.number(),
+  role: z.enum([MembershipRole.OWNER, MembershipRole.ADMIN, MembershipRole.MEMBER]),
+})
+
+export const GetTranslatedModules = Pagination.extend({
+  language: z.string(),
+  filter: z.string().optional(),
+})
+
+export const GetUsers = Pagination.extend({
+  filter: z.string().optional(),
+})
+
+export const GetUsersForMembership = Pagination.extend({
+  instituteId: z.number(),
 })
 
 export const UpdateInstitute = CreateInstitute.extend({

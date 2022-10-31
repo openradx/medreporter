@@ -1,63 +1,55 @@
-import { ActionIcon, Divider, Menu } from "@mantine/core"
-import { TbCheck as CheckIcon } from "react-icons/tb"
-import config from "../../../../app.config"
+import { Group, Select, Text } from "@mantine/core"
+import { ComponentProps, ComponentPropsWithoutRef, forwardRef, Ref } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
-import { FlagIcon } from "./FlagIcon"
+import { SupportedLanguageOption } from "../../types"
+import { FlagImage } from "./FlagImage"
 
-interface LanguageSelectorProps {
-  actionTitle: string
-  currentLocale: string
-  supportedLocales: string[]
-  onLocaleChanged: (locale: string) => void
+interface ItemProps<T extends SupportedLanguageOption> extends ComponentPropsWithoutRef<"div"> {
+  image: string
+  label: string
+  value: T
 }
 
-export const LanguageSelector = ({
-  actionTitle,
-  currentLocale,
-  supportedLocales,
-  onLocaleChanged,
-}: LanguageSelectorProps) => {
-  const { t } = useSiteTranslation()
-
-  const allLocales = [...supportedLocales]
-  const items = allLocales
-    .map((locale) => ({ locale, label: t(`languages.${locale}`) }))
-    .sort((item1, item2) => {
-      if (item1.locale === "asSite") return 0
-      if (item2.locale === "asSite") return 1
-      return item1.label.localeCompare(item2.label)
-    })
-    .map((item) => (
-      <Menu.Item
-        key={item.locale}
-        icon={<FlagIcon code={item.locale} />}
-        rightSection={item.locale === currentLocale ? <CheckIcon /> : null}
-        onClick={() => onLocaleChanged(item.locale)}
-      >
-        {item.label}
-      </Menu.Item>
-    ))
-
-  return (
-    <Menu width={250}>
-      <Menu.Target>
-        <ActionIcon size="md" title={actionTitle} variant="default">
-          <FlagIcon code={currentLocale} />
-        </ActionIcon>
-      </Menu.Target>
-
-      <Menu.Dropdown>
-        <Menu.Label>{t("LanguageSelector.menuTitleLanguages")}</Menu.Label>
-        {items}
-        {config.debugTranslations && (
-          <>
-            <Divider />
-            <Menu.Item icon={<FlagIcon code="cimode" />} onClick={() => onLocaleChanged("cimode")}>
-              Debug translations
-            </Menu.Item>
-          </>
-        )}
-      </Menu.Dropdown>
-    </Menu>
+const SelectItem = forwardRef<HTMLDivElement, ItemProps<SupportedLanguageOption>>(
+  ({ image, label, value, ...others }: ItemProps<SupportedLanguageOption>, ref) => (
+    <div ref={ref} {...others}>
+      <Group noWrap>
+        <FlagImage language={value} />
+        <Text size="sm">{label}</Text>
+      </Group>
+    </div>
   )
+)
+
+interface LanguageSelectorProps<T extends SupportedLanguageOption>
+  extends Omit<ComponentProps<typeof Select>, "data"> {
+  languages: T[]
+  value: T
+  onChange: (T: string) => void
 }
+
+export const LanguageSelector = forwardRef(
+  <T extends SupportedLanguageOption>(
+    { label, languages, value, ...other }: LanguageSelectorProps<T>,
+    ref: Ref<HTMLInputElement>
+  ) => {
+    const { t } = useSiteTranslation()
+
+    return (
+      <Select
+        {...other}
+        ref={ref}
+        label={label ?? t("LanguageSelector.inputLabelLanguage")}
+        icon={<FlagImage language={value} />}
+        itemComponent={SelectItem}
+        value={value}
+        data={languages
+          .map((language) => ({
+            value: language,
+            label: t(`languages.${language}`),
+          }))
+          .sort((c1, c2) => c1.label.localeCompare(c2.label))}
+      />
+    )
+  }
+)

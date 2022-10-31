@@ -1,7 +1,7 @@
 import { hash256 } from "@blitzjs/auth"
 import { Ctx } from "@blitzjs/next"
 import previewEmail from "preview-email"
-import db from "../../../db"
+import db from "db"
 import forgotPassword from "./forgotPassword"
 
 beforeEach(async () => {

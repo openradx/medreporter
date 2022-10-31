@@ -2,7 +2,7 @@ import { ReactElement } from "react"
 import { gSSP } from "app/blitz-server"
 import { MainLayout } from "app/core/components/common/MainLayout"
 import { PageHead } from "app/core/components/common/PageHead"
-import { NewModule } from "app/core/components/modules/NewModule"
+import { NewModuleForm } from "app/core/components/modules/NewModuleForm"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { PageWithLayout } from "app/core/types"
 import { serverSideInitialPublicData } from "app/core/utils/serverSideInitialPublicData"
@@ -15,10 +15,12 @@ const NewModulePage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("NewModulePage.pageTitle")} />
-      <NewModule />
+      <NewModuleForm />
     </>
   )
 }
+
+NewModulePage.authenticate = true
 
 NewModulePage.getLayout = (page: ReactElement) => <MainLayout size="md">{page}</MainLayout>
 

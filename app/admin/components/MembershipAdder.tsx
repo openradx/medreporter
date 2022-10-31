@@ -15,10 +15,7 @@ interface MembershipAdderProps {
 
 export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => {
   const { t } = useSiteTranslation()
-  const [{ users }] = useQuery(getUsersForMembership, {
-    instituteId,
-    orderBy: { username: "asc" },
-  })
+  const [{ users }] = useQuery(getUsersForMembership, { instituteId })
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null)
   const [createMembershipMutation] = useMutation(createMembership)
 
@@ -27,8 +24,11 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
     const userId = parseInt(selectedUserId, 10)
     await createMembershipMutation({ instituteId, userId, role })
     setSelectedUserId(null)
-    invalidateQuery(getMemberships, {})
-    invalidateQuery(getUsersForMembership, {})
+
+    // TODO: https://github.com/blitz-js/blitz/issues/3725
+    // If this is fixed then all invalidateQuery can be changed!
+    invalidateQuery(getMemberships, {} as any)
+    invalidateQuery(getUsersForMembership, {} as any)
   }
 
   return (

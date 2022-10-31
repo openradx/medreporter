@@ -1,3 +1,11 @@
+formError:
+  invalidChars: "Enthält ungültige Zeichen. Erlaubt: {{chars}}"
+  tooLong: Zu lang. Maximal {{max}} Zeichen.
+  tooShort: Zu kurz. Mindestens {{min}} Zeichen.
+  unexpected: "Ein unerwarteter Fehler ist aufgetreten: "
+  unknown: >
+    Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.
+    Wenn der Fehler anhält, dann kontaktieren Sie bitte unseren Support.
 general:
   buttonAdd: Hinzufügen
   buttonCancel: Abbrechen
@@ -6,10 +14,19 @@ general:
   buttonDelete: Löschen
   buttonSave: Sichern
   errorTitle: Ein Fehler ist aufgetreten
-  errorTextUnknown: >
-    Entschuldige, ein unerwarteter Fehler ist aufgetreten. Bitte versuche es
-    später erneut. Wenn der Fehler anhält, dann kontaktiere bitte unseren Support.
   miscNoData: Keine Datensätze verfügbar
+languages:
+  asSite: wie Seite
+  other: Andere
+  de: Deutsch
+  en: Englisch (GB)
+  en-US: Englisch (US)
+  es: Spanisch
+  fr: Französisch
+  it: Italienisch
+  nl: Holländisch
+  pt: Portugiesisch
+  sv: Schwedisch
 AccountControl:
   menuTitleAccout: Benutzerkonto
   optionProfile: Benutzerprofil
@@ -20,6 +37,8 @@ AdrenalMriPage:
   toolTitle: Nebennieren MRT
 AdrenalWashoutPage:
   toolTitle: Nebennieren Washout
+CategoriesSelector:
+  inputLabelCategories: Kategorien
 ClearStructureButton:
   buttonClearStructure: Strukturformular zurücksetzen
 ColorSchemeToggle:
@@ -28,6 +47,8 @@ CopyButton:
   buttonCopy: Befund in Zwischenablage kopieren
   errorMessageCopyReport: Kopieren in Zwischenablage fehlgeschlagen. Bitte manuell kopieren.
   successMessageCopyReport: Befund in Zwischenablage kopiert
+DraftLanguageSelector:
+  inputLabelLanguage: Hauptsprache
 ExternalLink:
   buttonExternalLink: Externen Link öffnen
 FieldGraphics:
@@ -52,14 +73,10 @@ GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 HomePage:
   pageTitle: Startseite
-KidneyVolumePage: 
+KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
-languages:
-  asSite: wie Seite
-  de: Deutsch
-  en-US: Englisch (US)
 LanguageSelector:
-  menuTitleLanguages: Sprache (Region)
+  inputLabelLanguage: Sprache
 Loading:
   messageLoading: Wird geladen...
 LoginForm:
@@ -79,18 +96,15 @@ MeasurementsTablePage:
 ModuleInfo:
   buttonInfo: Modulinformation
 ModuleList:
-  buttonCreateNewModule: Neues Modul erstellen
+  buttonNewModule: Neues Modul
 ModulesPage:
   title: Module
-ModuleSelectorWithTags:
+ModuleSelectorWithCategories:
   filterInputLabel: Module filtern
-NewModule:
+NewModuleForm:
   buttonCreateModule: Modul erstellen
-  formTitle: Erstelle ein neues Modul
-  inputDescriptionModuleName: Eine eindeutige Benennung des neuen Moduls
+  formTitle: Neues Modul erstellen
   inputLabelModuleName: Modulname
-  inputLabelMainLanguage: Hauptsprache
-  inputDescriptionMainLanguage: Die Hauptsprache des neuen Moduls
   inputLabelMultilingual: Mehrsprachiges Modul
 NewModulePage:
   pageTitle: Neues Modul erstellen
@@ -103,7 +117,7 @@ ReportFormat:
   buttonFormat: Befundformatierung ändern
   formatHtml: HTML
   formatText: Text
-ReportLanguageSelector:
+ReportLanguageChooser:
   buttonLanguageReport: Sprache Befund
 ReportPanel:
   title: Befund
@@ -113,6 +127,7 @@ ResetPasswordForm:
   inputLabelConfirmPassword: Passwort bestätigen
   inputLabelNewPassword: Neues Passwort
   linkHomepage: Startseite
+  messageError: Ungültiger oder abgelaufener Token
   messageSuccess: Neues Passwort erfolgreich gesetzt
   textRedirect: Gehe zur
 ResetPasswordPage:
@@ -128,15 +143,20 @@ SignupForm:
   messageEmailUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
 SignupPage:
   pageTitle: Registrierung
-SiteLanguageSelector:
+SiteLanguageChooser:
   buttonLanguageGeneral: Sprache allgemein
 Structure:
   title: Struktur
-StructureLanguageSelector:
+StructureLanguageChooser:
   buttonLanguageStructure: Sprache Struktur
-TagList:
-  title: Tags
+CategoryList:
+  title: Kategorien
 ToolsPage:
   pageTitle: Werkzeuge
 UndoButton:
   buttonUndo: Rückgängig machen
+VisibilitySelector:
+  inputLabelVisibility: Sichtbarkeit
+  optionPublic: Öffentlich
+  optionInstitute: Institut
+  optionPrivate: Privat

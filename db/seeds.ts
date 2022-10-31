@@ -1,7 +1,16 @@
 import { SecurePassword } from "@blitzjs/auth"
 import { faker } from "@faker-js/faker"
-import { Institute, MembershipRole, ReleaseStatus, User, UserRole } from "@prisma/client"
-import db from "./index"
+import {
+  Institute,
+  MembershipRole,
+  ReleaseStatus,
+  User,
+  UserRole,
+  Visibility,
+} from "@prisma/client"
+import { syncCategories } from "app/core/utils/categoryUtils"
+import db, { Prisma } from "."
+import defaultCategories from "./categories.json"
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -11,9 +20,11 @@ const EXAMPLE_MEMBERSHIPS_MEMBER = 500
 const EXAMPLE_MEMBERSHIPS_ADMIN = 100
 const EXAMPLE_MEMBERSHIPS_OWNER = 10
 
-const EXAMPLE_MODULES = 300
+const EXAMPLE_MODULES = 200
 
-const createSuperadmin = async () => {
+const isProduction = process.env.NODE_ENV === "production"
+
+async function createSuperadmin() {
   const hashedPassword = await SecurePassword.hash("roentgen")
   await db.user.create({
     data: {
@@ -26,7 +37,7 @@ const createSuperadmin = async () => {
   })
 }
 
-const createExampleUser = async (role: UserRole) => {
+async function createExampleUser(role: UserRole) {
   const hashedPassword = await SecurePassword.hash("roentgen")
   return db.user.create({
     data: {
@@ -40,12 +51,13 @@ const createExampleUser = async (role: UserRole) => {
   })
 }
 
-const createExampleInstitute = async () =>
-  db.institute.create({
+async function createExampleInstitute() {
+  return db.institute.create({
     data: { name: faker.company.name() },
   })
+}
 
-const getInstituteUserCombinations = async () => {
+async function getInstituteUserCombinations() {
   const institutes = await db.institute.findMany()
   const users = await db.user.findMany()
 
@@ -56,49 +68,65 @@ const getInstituteUserCombinations = async () => {
   )
 }
 
-const createExampleMembership = async (
+async function createExampleMembership(
   [instituteId, userId]: [number, number],
   role: MembershipRole
-) =>
-  db.membership.create({
+) {
+  return db.membership.create({
     data: {
       instituteId,
       userId,
       role,
     },
   })
+}
 
-const createExampleModule = async (userId: number) =>
-  db.module.create({
+function createModuleTranslation(
+  language: string,
+  defaultLanguage: boolean
+): Prisma.ModuleTranslationCreateWithoutModuleInput {
+  return {
+    title: faker.lorem.sentence(),
+    description: faker.lorem.paragraph(),
+    language,
+    default: defaultLanguage,
+  }
+}
+
+async function createExampleModule(userId: number) {
+  const languages = faker.helpers.arrayElements(["de", "en", "es", "fr", "it"])
+  const translations = languages.map((language, index) =>
+    createModuleTranslation(language, index === 0)
+  )
+
+  const releaseStatus = faker.helpers.arrayElement(Object.values(ReleaseStatus))
+  const visibility = faker.helpers.arrayElement(Object.values(Visibility))
+
+  return db.module.create({
     data: {
-      moduleId: faker.helpers.unique(faker.internet.domainWord),
+      name: faker.helpers.unique(faker.internet.domainWord),
       sourceCode: "",
-      releaseStatus: ReleaseStatus.DRAFT,
       authorId: userId,
       document: {},
-      translations: {
-        create: {
-          title: faker.lorem.sentence(),
-          description: faker.lorem.paragraph(),
-          default: true,
-          language: "en",
-        },
-      },
+      translations: { create: translations },
+      releaseStatus,
+      visibility,
     },
   })
+}
 
-const seed = async () => {
+async function seed() {
   const userCount = await db.user.count()
   if (userCount) {
     // eslint-disable-next-line no-console
-    console.info("Users present. Skipping user generation.")
+    console.info("Users present. Skipping user creation.")
   } else {
     // eslint-disable-next-line no-console
-    console.info("Generating superadmin.")
+    console.info("Creating superadmin.")
     await createSuperadmin()
 
     // eslint-disable-next-line no-console
-    console.info("Generating example users.")
+    console.info("Creating example users.")
     const promises: Promise<User>[] = []
     for (let i = 0; i < EXAMPLE_USERS; i++) {
       promises.push(createExampleUser(UserRole.USER))
@@ -106,13 +134,28 @@ const seed = async () => {
     await Promise.all(promises)
   }
 
-  const instituteCount = await db.institute.count()
-  if (instituteCount) {
+  const categoryCount = await db.category.count()
+  if (categoryCount > 0) {
     // eslint-disable-next-line no-console
-    console.info("Insitutes present. Skipping institute generation.")
+    console.info("Creating default categories.")
   } else {
     // eslint-disable-next-line no-console
-    console.info("Generating example institutes.")
+    console.info("Updating default categories.")
+  }
+  await syncCategories(defaultCategories)
+
+  if (isProduction) {
+    // eslint-disable-next-line no-console
+    console.info("Finished seeding in production.")
+  }
+
+  const instituteCount = await db.institute.count()
+  if (instituteCount > 0) {
+    // eslint-disable-next-line no-console
+    console.info("Institutes present. Skipping institute creation.")
+  } else {
+    // eslint-disable-next-line no-console
+    console.info("Creating example institutes.")
     const promises: Promise<Institute>[] = []
     for (let i = 0; i < EXAMPLE_INSTITUTES; i++) {
       promises.push(createExampleInstitute())
@@ -123,10 +166,10 @@ const seed = async () => {
   const membershipCount = await db.membership.count()
   if (membershipCount) {
     // eslint-disable-next-line no-console
-    console.info("Memberships present. Skipping membership generation.")
+    console.info("Memberships present. Skipping membership creation.")
   } else {
     // eslint-disable-next-line no-console
-    console.info("Generating example memberships.")
+    console.info("Creating example memberships.")
     const combinations = await getInstituteUserCombinations()
     for (let i = 0; i < EXAMPLE_MEMBERSHIPS_MEMBER; i++) {
       createExampleMembership(combinations.pop()!, MembershipRole.MEMBER)
@@ -142,10 +185,10 @@ const seed = async () => {
   const modulesCount = await db.module.count()
   if (modulesCount) {
     // eslint-disable-next-line no-console
-    console.info("Modules present. Skipping modules generation.")
+    console.info("Modules present. Skipping modules creation.")
   } else {
     // eslint-disable-next-line no-console
-    console.info("Generating example modules.")
+    console.info("Creating example modules.")
     for (let i = 0; i < EXAMPLE_MODULES; i++) {
       const skip = Math.floor(Math.random() * userCount)
       // eslint-disable-next-line no-await-in-loop

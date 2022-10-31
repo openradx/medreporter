@@ -2,10 +2,11 @@ import { Routes, useRouterQuery } from "@blitzjs/next"
 import { useMutation } from "@blitzjs/rpc"
 import { Alert, Stack, TextInput, Title } from "@mantine/core"
 import { Controller } from "react-hook-form"
+import { FormSubmitError } from "app/core/utils/formErrors"
 import { PageLink } from "../../core/components/common/PageLink"
-import { SubmitForm, SUBMIT_FORM_ERROR } from "../../core/components/common/SubmitForm"
+import { SubmitForm } from "../../core/components/common/SubmitForm"
 import { useSiteTranslation } from "../../core/hooks/useSiteTranslation"
-import resetPassword from "../mutations/resetPassword"
+import resetPassword, { ResetPasswordError } from "../mutations/resetPassword"
 import { ResetPassword } from "../validations"
 
 export const ResetPasswordForm = () => {
@@ -29,13 +30,14 @@ export const ResetPasswordForm = () => {
           onSubmit={async (values) => {
             try {
               await resetPasswordMutation(values)
-              return null
-            } catch (error) {
-              const err = error as Error
-              if (err.name === "ResetPasswordError") {
-                return { [SUBMIT_FORM_ERROR]: err.message }
+            } catch (e) {
+              if (e instanceof ResetPasswordError) {
+                throw new FormSubmitError(t("ResetPasswordForm.messageError"))
               }
-              return { [SUBMIT_FORM_ERROR]: t("general.errorTextUnknown") }
+              if (e instanceof Error) {
+                throw new FormSubmitError(t("formError.unexpected") + e.message)
+              }
+              throw e
             }
           }}
         >

@@ -17,7 +17,24 @@ declare module "@blitzjs/auth" {
   }
 }
 
+export type SiteLanguage = "de" | "en"
+
+export type StructuredReportLanguage =
+  | "de"
+  | "en"
+  | "en-US"
+  | "es"
+  | "fr"
+  | "it"
+  | "nl"
+  | "pt"
+  | "sv"
+  | "other"
+
+export type SupportedLanguage = SiteLanguage | StructuredReportLanguage
+
 export interface AppConfig {
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
+  structuredReportLanguages: [StructuredReportLanguage, ...StructuredReportLanguage[]]
 }

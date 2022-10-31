@@ -1,4 +1,4 @@
-import { createContext, ModuleWrapper } from "@medreporter/medtl-tools"
+import { ModuleWrapper } from "@medreporter/medtl-tools"
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime"
 import { Prisma } from "db"
 
@@ -37,20 +37,6 @@ export function buildModuleTranslationsArgs(
         default: lng === defaultLanguage,
         title,
         description,
-        tags: {
-          create:
-            moduleEl
-              ?.getFirstChildElement("Tags")
-              ?.getChildElements("Tag")
-              .map((tag) => ({
-                language: lng,
-                label: tag.getTextContent(
-                  createContext({
-                    $trans: (key) => translator.translate(lng, key),
-                  })
-                ),
-              })) ?? [],
-        },
       }
     }),
   }

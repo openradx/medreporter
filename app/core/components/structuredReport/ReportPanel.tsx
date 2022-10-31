@@ -7,7 +7,7 @@ import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
 import { PanelHeader } from "./PanelHeader"
 import { ReportFormat } from "./ReportFormat"
-import { ReportLanguageSelector } from "./ReportLanguageSelector"
+import { ReportLanguageChooser } from "./ReportLanguageChooser"
 
 interface ReportPanelProps {
   children?: ReactNode
@@ -34,7 +34,7 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
           <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
             <CopyButton />
             <ReportFormat />
-            <ReportLanguageSelector />
+            <ReportLanguageChooser />
           </ActionsGroup>
         }
       />

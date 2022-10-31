@@ -18,13 +18,7 @@ export const UserList = () => {
   const { filter } = useFilter()
   const [filterDebounced] = useDebounce(filter.trim(), 500)
   const [{ users, count }] = usePaginatedQuery(getUsers, {
-    where: {
-      OR: [
-        { email: { contains: filterDebounced, mode: "insensitive" } },
-        { username: { contains: filterDebounced, mode: "insensitive" } },
-      ],
-    },
-    orderBy: { email: "asc" },
+    filter: filterDebounced,
     skip: ITEMS_PER_PAGE * (activePage - 1),
     take: ITEMS_PER_PAGE,
   })

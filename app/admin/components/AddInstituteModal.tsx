@@ -1,7 +1,7 @@
 import { invalidateQuery, useMutation } from "@blitzjs/rpc"
 import { Button, Group, Modal, Stack } from "@mantine/core"
-import { SUBMIT_FORM_ERROR } from "app/core/components/common/SubmitForm"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { FormSubmitError } from "app/core/utils/formErrors"
 import { uniqueConstraintFailed } from "app/core/utils/mutationUtils"
 import createInstitute from "../mutations/createInstitute"
 import getInstitutes from "../queries/getInstitutes"
@@ -29,12 +29,15 @@ export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) =
               await createInstituteMutation(values)
               invalidateQuery(getInstitutes, {})
               onClose()
-              return null
-            } catch (error) {
-              if (uniqueConstraintFailed(error, "name")) {
-                return { name: t("AddInstituteModal.messageDuplicateName") }
+              return undefined
+            } catch (e) {
+              if (uniqueConstraintFailed(e, "name")) {
+                throw new FormSubmitError({ name: t("AddInstituteModal.messageDuplicateName") })
               }
-              return { [SUBMIT_FORM_ERROR]: (error as Error).toString() }
+              if (e instanceof Error) {
+                throw new FormSubmitError((e as Error).toString())
+              }
+              throw e
             }
           }}
         />

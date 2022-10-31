@@ -1,8 +1,8 @@
 import { invalidateQuery, useMutation } from "@blitzjs/rpc"
 import { Button, Group, Modal, Stack } from "@mantine/core"
 import { Institute } from "db"
-import { SUBMIT_FORM_ERROR } from "app/core/components/common/SubmitForm"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
+import { FormSubmitError } from "app/core/utils/formErrors"
 import { uniqueConstraintFailed } from "app/core/utils/mutationUtils"
 import updateInstitute from "../mutations/updateInstitute"
 import getInstitutes from "../queries/getInstitutes"
@@ -31,12 +31,14 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
               await updateInstituteMutation({ id: institute.id, ...values })
               invalidateQuery(getInstitutes, {})
               onClose()
-              return null
-            } catch (error) {
-              if (uniqueConstraintFailed(error, "name")) {
-                return { name: t("EditInstituteModal.messageDuplicateName") }
+            } catch (e) {
+              if (uniqueConstraintFailed(e, "name")) {
+                throw new FormSubmitError({ name: t("EditInstituteModal.messageDuplicateName") })
               }
-              return { [SUBMIT_FORM_ERROR]: (error as Error).toString() }
+              if (e instanceof Error) {
+                throw new FormSubmitError(t("formError.unexpected") + e.message)
+              }
+              throw e
             }
           }}
         />

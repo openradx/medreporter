@@ -21,8 +21,7 @@ export const InstituteList = () => {
   const { filter } = useFilter()
   const [filterDebounced] = useDebounce(filter.trim(), 500)
   const [{ institutes, count }] = usePaginatedQuery(getInstitutes, {
-    where: { name: { contains: filterDebounced, mode: "insensitive" } },
-    orderBy: { name: "asc" },
+    filter: filterDebounced,
     skip: ITEMS_PER_PAGE * (activePage - 1),
     take: ITEMS_PER_PAGE,
   })

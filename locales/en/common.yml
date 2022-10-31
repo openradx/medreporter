@@ -1,3 +1,11 @@
+formError:
+  invalidChars: "Contains invalid characters. Allowed: {{chars}}"
+  tooLong: Too long. Maximum {{max}} characters.
+  tooShort: Too short. Minimum {{min}} characters.
+  unexpected: "An unexpected error occurred: "
+  unknown: >
+    An unexpected error did occur. Please try again later. If the error
+    persists then please contact our support.
 general:
   buttonAdd: Add
   buttonCancel: Cancel
@@ -6,10 +14,19 @@ general:
   buttonDelete: Delete
   buttonSave: Save
   errorTitle: An error occurred
-  errorTextUnknown: >
-    Sorry, we had an unexpected error. Please try again later. If the error
-    persists then please contact our support.
   miscNoData: No data available
+languages:
+  asSite: As page
+  other: Other
+  de: German
+  en: English (GB)
+  en-US: English (US)
+  es: Spanish
+  fr: French
+  it: Italian
+  nl: Dutch
+  pt: Portuguese
+  sv: Swedish
 AccountControl:
   menuTitleAccout: Account
   optionProfile: User profile
@@ -20,6 +37,8 @@ AdrenalMriPage:
   toolTitle: Adrenal gland MRI
 AdrenalWashoutPage:
   toolTitle: Adrenal washout
+CategoriesSelector:
+  inputLabelCategories: Categories
 ClearStructureButton:
   buttonClearStructure: Clear structure form
 ColorSchemeToggle:
@@ -28,6 +47,8 @@ CopyButton:
   buttonCopy: Copy report to clipboard
   errorMessageCopyReport: Copy to clipboard failed. Please copy manually.
   successMessageCopyReport: Copied report to clipboard
+DraftLanguageSelector:
+  inputLabelLanguage: Main language
 ExternalLink:
   buttonExternalLink: Open external link
 FieldGraphics:
@@ -52,14 +73,10 @@ GraphicsModal:
   buttonReset: Reset selection
 HomePage:
   pageTitle: Homepage
-KidneyVolumePage: 
+KidneyVolumePage:
   toolTitle: Kidney volume (Mayo-Model)
-languages:
-  asSite: As page
-  de: German
-  en-US: English (US)
 LanguageSelector:
-  menuTitleLanguages: Language (Region)
+  inputLabelLanguage: Language
 Loading:
   messageLoading: Loading...
 LoginForm:
@@ -79,18 +96,15 @@ MeasurementsTablePage:
 ModuleInfo:
   buttonInfo: Module info
 ModuleList:
-  buttonCreateNewModule: Create new module
+  buttonNewModule: New module
 ModulesPage:
   title: Modules
-ModuleSelectorWithTags:
+ModuleSelectorWithCategories:
   filterInputLabel: Filter modules
-NewModule:
+NewModuleForm:
   buttonCreateModule: Create module
   formTitle: Create a new module
-  inputDescriptionModuleName: The unique identifier of the new module
   inputLabelModuleName: Module name
-  inputLabelMainLanguage: Main language
-  inputDescriptionMainLanguage: The default language of the new module
   inputLabelMultilingual: Multilingual module
 NewModulePage:
   pageTitle: Create new module
@@ -103,7 +117,7 @@ ReportFormat:
   buttonFormat: Change report format
   formatHtml: HTML
   formatText: Text
-ReportLanguageSelector:
+ReportLanguageChooser:
   buttonLanguageReport: Report language
 ReportPanel:
   title: Report
@@ -113,6 +127,7 @@ ResetPasswordForm:
   inputLabelConfirmPassword: Confirm New Password
   inputLabelNewPassword: New Password
   linkHomepage: homepage
+  messageError: Invalid or expired token
   messageSuccess: Password reset successfully
   textRedirect: Go to the
 ResetPasswordPage:
@@ -128,15 +143,20 @@ SignupForm:
   messageEmailUsed: This email is already being used.
 SignupPage:
   pageTitle: Signup
-SiteLanguageSelector:
+SiteLanguageChooser:
   buttonLanguageGeneral: General language
 Structure:
   title: Structure
-StructureLanguageSelector:
+StructureLanguageChooser:
   buttonLanguageStructure: Structure language
-TagList:
-  title: Tags
+CategoryList:
+  title: Categories
 ToolsPage:
   pageTitle: Tools
 UndoButton:
   buttonUndo: Undo
+VisibilitySelector:
+  inputLabelVisibility: Visibility
+  optionPublic: Public
+  optionInstitute: Institute
+  optionPrivate: Private

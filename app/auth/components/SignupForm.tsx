@@ -1,7 +1,8 @@
 import { useMutation } from "@blitzjs/rpc"
 import { Stack, Textarea, TextInput, Title } from "@mantine/core"
 import { Controller } from "react-hook-form"
-import { SubmitForm, SUBMIT_FORM_ERROR } from "../../core/components/common/SubmitForm"
+import { FormSubmitError } from "app/core/utils/formErrors"
+import { SubmitForm } from "../../core/components/common/SubmitForm"
 import { useSiteTranslation } from "../../core/hooks/useSiteTranslation"
 import { uniqueConstraintFailed } from "../../core/utils/mutationUtils"
 import signup from "../mutations/signup"
@@ -26,13 +27,14 @@ export const SignupForm = (props: SignupFormProps) => {
           try {
             await signupMutation(values)
             props.onSuccess?.()
-            return null
-          } catch (error) {
-            if (uniqueConstraintFailed(error, "email")) {
-              return { email: t("SignupForm.messageEmailUsed") }
+          } catch (e) {
+            if (uniqueConstraintFailed(e, "email")) {
+              throw new FormSubmitError({ email: t("SignupForm.messageEmailUsed") })
             }
-            const { message } = error as Error
-            return { [SUBMIT_FORM_ERROR]: message }
+            if (e instanceof Error) {
+              throw new FormSubmitError(t("formError.unexpected") + e.message)
+            }
+            throw e
           }
         }}
       >
