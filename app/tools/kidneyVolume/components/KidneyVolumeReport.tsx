@@ -1,8 +1,8 @@
 import { List } from "app/core/components/structuredReport/List"
 import { ListItem } from "app/core/components/structuredReport/ListItem"
+import { Paragraph } from "app/core/components/structuredReport/Paragraph"
+import { useReportData } from "app/core/contexts/ReportDataContext"
 import { useReportTranslation } from "app/core/hooks/useReportTranslation"
-import { Paragraph } from "../../../core/components/structuredReport/Paragraph"
-import { useReportData } from "../../../core/contexts/ReportDataContext"
 import {
   calcSideVolume,
   calcTotalVolume,

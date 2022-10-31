@@ -1,7 +1,7 @@
-import { Citation } from "../../../core/components/common/Citation"
-import { Paragraph } from "../../../core/components/structuredReport/Paragraph"
-import { Statement } from "../../../core/components/structuredReport/Statement"
-import { useReportData } from "../../../core/contexts/ReportDataContext"
+import { Citation } from "app/core/components/common/Citation"
+import { Paragraph } from "app/core/components/structuredReport/Paragraph"
+import { Statement } from "app/core/components/structuredReport/Statement"
+import { useReportData } from "app/core/contexts/ReportDataContext"
 
 type SandboxData = {
   date: Date | null

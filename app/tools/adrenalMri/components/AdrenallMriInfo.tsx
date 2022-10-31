@@ -1,8 +1,8 @@
 import { Stack } from "@mantine/core"
+import { Citation } from "app/core/components/common/Citation"
+import { InfoTab } from "app/core/components/structuredReport/InfoTab"
+import { ModuleInfo } from "app/core/components/structuredReport/ModuleInfo"
 import { useStructureTranslation } from "app/core/hooks/useStructureTranslation"
-import { Citation } from "../../../core/components/common/Citation"
-import { InfoTab } from "../../../core/components/structuredReport/InfoTab"
-import { ModuleInfo } from "../../../core/components/structuredReport/ModuleInfo"
 
 export const AdrenalMriInfo = () => {
   const { t } = useStructureTranslation()

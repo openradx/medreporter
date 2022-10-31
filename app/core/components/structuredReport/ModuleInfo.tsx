@@ -1,8 +1,8 @@
 import { ActionIcon, Tooltip } from "@mantine/core"
 import { ReactNode, useState } from "react"
 import { TbInfoCircle as InfoIcon } from "react-icons/tb"
+import { useModule } from "app/core/contexts/ModuleContext"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
-import { useModule } from "../../contexts/ModuleContext"
 import { InfoModal } from "./InfoModal"
 
 interface ModuleInfoProps {

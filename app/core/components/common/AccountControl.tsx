@@ -11,7 +11,7 @@ import {
   MdOutlineLogin as LoginIcon,
   MdPerson as ProfileIcon,
 } from "react-icons/md"
-import logout from "../../../auth/mutations/logout"
+import logout from "app/auth/mutations/logout"
 import { useAppSession } from "../../hooks/useAppSession"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 

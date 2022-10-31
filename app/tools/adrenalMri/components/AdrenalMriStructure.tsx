@@ -1,11 +1,11 @@
+import { NumberField } from "app/core/components/fields/NumberField"
+import { Description } from "app/core/components/structuredReport/Description"
+import { Grid } from "app/core/components/structuredReport/Grid"
 import { GridGroup } from "app/core/components/structuredReport/GridGroup"
-import { NumberField } from "../../../core/components/fields/NumberField"
-import { Description } from "../../../core/components/structuredReport/Description"
-import { Grid } from "../../../core/components/structuredReport/Grid"
-import { GridItem } from "../../../core/components/structuredReport/GridItem"
-import { Hint } from "../../../core/components/structuredReport/Hint"
-import { Hints } from "../../../core/components/structuredReport/Hints"
-import { useStructureTranslation } from "../../../core/hooks/useStructureTranslation"
+import { GridItem } from "app/core/components/structuredReport/GridItem"
+import { Hint } from "app/core/components/structuredReport/Hint"
+import { Hints } from "app/core/components/structuredReport/Hints"
+import { useStructureTranslation } from "app/core/hooks/useStructureTranslation"
 
 export const AdrenalMriStructure = () => {
   const { t } = useStructureTranslation()

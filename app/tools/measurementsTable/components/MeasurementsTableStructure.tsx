@@ -1,6 +1,6 @@
-import { MeasurementsField } from "../../../core/components/fields/MeasurementsField"
-import { Grid } from "../../../core/components/structuredReport/Grid"
-import { GridItem } from "../../../core/components/structuredReport/GridItem"
+import { MeasurementsField } from "app/core/components/fields/MeasurementsField"
+import { Grid } from "app/core/components/structuredReport/Grid"
+import { GridItem } from "app/core/components/structuredReport/GridItem"
 
 export const MeasurementsTableStructure = () => (
   <Grid>

@@ -1,14 +1,14 @@
+import { BooleanField } from "app/core/components/fields/BooleanField"
+import { DateField } from "app/core/components/fields/DateField"
+import { FreeTextField } from "app/core/components/fields/FreeTextField"
+import { MultipleChoiceField } from "app/core/components/fields/MultipleChoiceField"
+import { NumberField } from "app/core/components/fields/NumberField"
+import { SingleChoiceField } from "app/core/components/fields/SingleChoiceField"
+import { BrainArteries, options } from "app/core/components/graphics/BrainArteries"
+import { Grid } from "app/core/components/structuredReport/Grid"
+import { GridItem } from "app/core/components/structuredReport/GridItem"
 import { Hint } from "app/core/components/structuredReport/Hint"
 import { Hints } from "app/core/components/structuredReport/Hints"
-import { BooleanField } from "../../../core/components/fields/BooleanField"
-import { DateField } from "../../../core/components/fields/DateField"
-import { FreeTextField } from "../../../core/components/fields/FreeTextField"
-import { MultipleChoiceField } from "../../../core/components/fields/MultipleChoiceField"
-import { NumberField } from "../../../core/components/fields/NumberField"
-import { SingleChoiceField } from "../../../core/components/fields/SingleChoiceField"
-import { BrainArteries, options } from "../../../core/components/graphics/BrainArteries"
-import { Grid } from "../../../core/components/structuredReport/Grid"
-import { GridItem } from "../../../core/components/structuredReport/GridItem"
 
 export const SandboxStructure = () => (
   <Grid>

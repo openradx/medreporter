@@ -1,5 +1,5 @@
-import { FieldInfo } from "../../../core/components/structuredReport/FieldInfo"
-import { useStructureTranslation } from "../../../core/hooks/useStructureTranslation"
+import { FieldInfo } from "app/core/components/structuredReport/FieldInfo"
+import { useStructureTranslation } from "app/core/hooks/useStructureTranslation"
 
 export const RiskFactorsInfo = () => {
   const { t } = useStructureTranslation()

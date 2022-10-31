@@ -1,6 +1,6 @@
-import { Paragraph } from "../../../core/components/structuredReport/Paragraph"
-import { useReportData } from "../../../core/contexts/ReportDataContext"
-import { useReportTranslation } from "../../../core/hooks/useReportTranslation"
+import { Paragraph } from "app/core/components/structuredReport/Paragraph"
+import { useReportData } from "app/core/contexts/ReportDataContext"
+import { useReportTranslation } from "app/core/hooks/useReportTranslation"
 import { defineFleischner2017 } from "../utils/fleischner2017Utils"
 
 export type Structure = "solid" | "groundglass" | "partsolid"

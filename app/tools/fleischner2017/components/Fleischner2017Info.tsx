@@ -1,9 +1,9 @@
 import { Stack } from "@mantine/core"
-import { Citation } from "../../../core/components/common/Citation"
-import { InfoTab } from "../../../core/components/structuredReport/InfoTab"
-import { List } from "../../../core/components/structuredReport/List"
-import { ListItem } from "../../../core/components/structuredReport/ListItem"
-import { ModuleInfo } from "../../../core/components/structuredReport/ModuleInfo"
+import { Citation } from "app/core/components/common/Citation"
+import { InfoTab } from "app/core/components/structuredReport/InfoTab"
+import { List } from "app/core/components/structuredReport/List"
+import { ListItem } from "app/core/components/structuredReport/ListItem"
+import { ModuleInfo } from "app/core/components/structuredReport/ModuleInfo"
 
 export const Fleischner2017Info = () => (
   <ModuleInfo>
