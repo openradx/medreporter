@@ -34,7 +34,7 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
           onSubmit={async (values) => {
             try {
               await updateUserMutation({ id: user.id, ...values })
-              invalidateQuery(getUsers, {})
+              invalidateQuery(getUsers)
               onClose()
             } catch (e) {
               if (uniqueConstraintFailed(e, "email")) {

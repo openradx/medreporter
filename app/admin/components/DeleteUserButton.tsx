@@ -33,7 +33,7 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
           onConfirm: async () => {
             try {
               await deleteUserMutation({ id: user.id })
-              invalidateQuery(getUsers, {})
+              invalidateQuery(getUsers)
             } catch (error) {
               const { message } = error as Error
               openModal({

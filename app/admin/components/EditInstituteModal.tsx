@@ -29,7 +29,7 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
           onSubmit={async (values) => {
             try {
               await updateInstituteMutation({ id: institute.id, ...values })
-              invalidateQuery(getInstitutes, {})
+              invalidateQuery(getInstitutes)
               onClose()
             } catch (e) {
               if (uniqueConstraintFailed(e, "name")) {

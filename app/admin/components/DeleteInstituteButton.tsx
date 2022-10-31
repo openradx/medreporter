@@ -33,7 +33,7 @@ export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps)
           onConfirm: async () => {
             try {
               await deleteInstituteMutation({ id: institute.id })
-              invalidateQuery(getInstitutes, {})
+              invalidateQuery(getInstitutes)
             } catch (error) {
               const { message } = error as Error
               openModal({

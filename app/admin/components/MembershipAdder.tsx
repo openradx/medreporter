@@ -25,10 +25,8 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
     await createMembershipMutation({ instituteId, userId, role })
     setSelectedUserId(null)
 
-    // TODO: https://github.com/blitz-js/blitz/issues/3725
-    // If this is fixed then all invalidateQuery can be changed!
-    invalidateQuery(getMemberships, {} as any)
-    invalidateQuery(getUsersForMembership, {} as any)
+    invalidateQuery(getMemberships)
+    invalidateQuery(getUsersForMembership)
   }
 
   return (
