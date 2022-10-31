@@ -2,6 +2,9 @@
 
 ## Kai
 
+- Use tsconfig-paths-webpack-plugin for storybook
+- Blitz queries don't need {} anymore
+
 - LanguageChooser vs LanguageSelector
 - Switch from Jest to vitest
 - Make MembershipAdder not load every user, but async (maybe only during search)

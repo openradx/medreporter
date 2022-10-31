@@ -32,10 +32,12 @@ export const ResetPasswordForm = () => {
               await resetPasswordMutation(values)
             } catch (e) {
               if (e instanceof ResetPasswordError) {
-                throw new FormSubmitError(t("ResetPasswordForm.messageError"))
+                const message = t("ResetPasswordForm.messageError")
+                throw new FormSubmitError(message)
               }
               if (e instanceof Error) {
-                throw new FormSubmitError(t("formError.unexpected") + e.message)
+                const message = t("formError.unexpected") + e.message
+                throw new FormSubmitError(message)
               }
               throw e
             }

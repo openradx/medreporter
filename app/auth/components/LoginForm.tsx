@@ -31,10 +31,12 @@ export const LoginForm = (props: LoginFormProps) => {
             props.onSuccess?.(user)
           } catch (e) {
             if (e instanceof AuthenticationError) {
-              throw new FormSubmitError(t("LoginForm.authErrorMessage"))
+              const message = t("LoginForm.authErrorMessage")
+              throw new FormSubmitError(message)
             }
             if (e instanceof Error) {
-              throw new FormSubmitError(t("formError.unexpected") + e.message)
+              const message = t("formError.unexpected") + e.message
+              throw new FormSubmitError(message)
             }
             throw e
           }
