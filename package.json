@@ -99,7 +99,7 @@
     "@types/underscore": "^1.11.4",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
-    "babel-loader": "^8.2.4",
+    "babel-loader": "^9.0.1",
     "commander": "^9.3.0",
     "eslint": "^8.11.0",
     "eslint-config-airbnb": "19.0.4",
