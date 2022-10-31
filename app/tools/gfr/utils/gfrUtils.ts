@@ -1,5 +1,5 @@
-type Gender = "male" | "female"
-type Ethnicity = "africanAmerican" | "others"
+export type Gender = "male" | "female"
+export type Ethnicity = "africanAmerican" | "others"
 
 export function calcCKDEPI(
   creatinine: number,
