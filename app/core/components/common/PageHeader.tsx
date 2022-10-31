@@ -113,7 +113,7 @@ export const PageHeader = () => {
   }
 
   const items = links.map((link) => (
-    <Link key={link.url.pathname} href={link.url} passHref>
+    <Link key={link.url.pathname} href={link.url} legacyBehavior passHref>
       <Box
         component="a"
         className={cx(classes.link, {
@@ -137,7 +137,7 @@ export const PageHeader = () => {
           className={classes.burger}
           size="sm"
         />
-        <Link href={Routes.HomePage()} passHref>
+        <Link href={Routes.HomePage()} legacyBehavior passHref>
           <Anchor sx={{ "&:hover": { textDecoration: "none" } }}>MedReporter</Anchor>
         </Link>
         <Group spacing="sm" className={classes.links}>

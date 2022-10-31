@@ -9,7 +9,7 @@ interface PageLinkProps extends ComponentProps<typeof Anchor> {
 }
 
 export const PageLink = ({ route, children, ...rest }: PageLinkProps) => (
-  <Link href={route} passHref>
+  <Link href={route} legacyBehavior passHref>
     <Anchor {...rest} component="a">
       {children}
     </Anchor>

@@ -33,7 +33,7 @@ export const AccountControl = () => {
     <>
       {session.isLoading && <ActionIcon variant="default" loading />}
       {!session.isLoading && !session.userId && (
-        <Link href={Routes.LoginPage()} passHref>
+        <Link href={Routes.LoginPage()} legacyBehavior passHref>
           <ActionIcon title={t("AccountControl.optionLogIn")} variant="default">
             <LoginIcon size={18} />
           </ActionIcon>
@@ -57,6 +57,7 @@ export const AccountControl = () => {
                 component={NextLink}
                 href={Routes.AdminPage()}
                 icon={<AdminIcon size={18} />}
+                legacyBehavior
               >
                 {t("AccountControl.optionAdmin")}
               </Menu.Item>

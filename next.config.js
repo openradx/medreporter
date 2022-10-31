@@ -16,6 +16,9 @@ const config = {
     locales: ["de", "en"],
     defaultLocale: "en",
   },
+  experimental: {
+    appDir: false,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

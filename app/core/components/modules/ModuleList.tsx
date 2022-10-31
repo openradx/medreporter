@@ -50,7 +50,7 @@ export const ModuleList = () => {
         {userId === null ? (
           <div />
         ) : (
-          <Link href={Routes.NewModulePage()} passHref>
+          <Link href={Routes.NewModulePage()} legacyBehavior passHref>
             <Button component="a" color="green">
               {t("ModuleList.buttonNewModule")}
             </Button>
