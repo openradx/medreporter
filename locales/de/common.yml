@@ -75,6 +75,8 @@ HomePage:
   pageTitle: Startseite
 KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
+LanguageChooser:
+  menuTitleLanguages: Sprache
 LanguageSelector:
   inputLabelLanguage: Sprache
 Loading:

@@ -75,6 +75,8 @@ HomePage:
   pageTitle: Homepage
 KidneyVolumePage:
   toolTitle: Kidney volume (Mayo-Model)
+LanguageChooser:
+  menuTitleLanguages: Language
 LanguageSelector:
   inputLabelLanguage: Language
 Loading:

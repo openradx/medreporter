@@ -2,6 +2,7 @@
 
 ## Kai
 
+- LanguageChooser vs LanguageSelector
 - Switch from Jest to vitest
 - Make MembershipAdder not load every user, but async (maybe only during search)
 - Modules: Show deprecated, Only starred, Add tags, Sort by [Title, Author, Creation date], only language
