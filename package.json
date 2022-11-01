@@ -77,12 +77,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.19.4",
     "@faker-js/faker": "^7.4.0",
     "@next/eslint-plugin-next": "^12.3.2",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/react": "^6.5.9",
     "@svgr/webpack": "^6.2.1",
     "@swc-node/register": "^1.5.1",
+    "@swc/core": "^1.3.11",
     "@testing-library/dom": "^8.12.0",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^13.0.0",
@@ -119,11 +121,13 @@
     "prettier": "^2.6.2",
     "preview-email": "^3.0.7",
     "prisma": "^4.1.1",
+    "require-from-string": "^2.0.2",
     "storybook-addon-turbo-build": "^1.1.0",
     "storybook-dark-mode": "^1.0.9",
     "svg-parser": "^2.0.4",
     "ts-jest": "^27.1.4",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
-    "typescript": "4.6.3"
+    "typescript": "4.6.3",
+    "webpack": "^5.74.0"
   }
 }
