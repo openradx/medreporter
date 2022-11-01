@@ -9,7 +9,7 @@ export const createClient = (config: InitOptions) => {
   const initPromise = instance.use(HttpApi).init({
     ...defaultConfig,
     backend: {
-      loadPath: "/{{ns}}/{{lng}}.yml",
+      loadPath: "/{{lng}}/{{ns}}.yml",
       parse: (data) => yaml.load(data) as any,
     },
     ...config,
