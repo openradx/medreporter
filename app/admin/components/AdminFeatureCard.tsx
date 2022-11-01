@@ -11,7 +11,7 @@ interface AdminFeatureCardProps {
 }
 
 export const AdminFeatureCard = ({ url, icon, title, description }: AdminFeatureCardProps) => (
-  <Link href={url} legacyBehavior passHref>
+  <Link href={url} passHref>
     <Card component="a" withBorder>
       <Stack spacing={4} sx={{ height: 100 }}>
         <Group spacing="sm">

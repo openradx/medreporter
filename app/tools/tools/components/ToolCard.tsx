@@ -9,7 +9,7 @@ interface ToolCardProps {
 }
 
 export const ToolCard = ({ title, description, url, tags }: ToolCardProps) => (
-  <Link href={url} legacyBehavior passHref>
+  <Link href={url} passHref>
     <Card component="a" withBorder>
       <Stack spacing={4} sx={{ height: 130 }}>
         <Text weight={500}>{title}</Text>
