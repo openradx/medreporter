@@ -57,6 +57,7 @@
     "i18next": "^22.0.4",
     "i18next-fs-backend": "^2.0.0",
     "i18next-http-backend": "^2.0.0",
+    "i18next-multiload-backend-adapter": "^2.0.0",
     "monaco-editor": "^0.34.0",
     "monaco-editor-webpack-plugin": "^7.0.1",
     "nanoid": "^4.0.0",

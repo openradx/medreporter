@@ -1,16 +1,23 @@
 import i18next, { InitOptions } from "i18next"
-import HttpApi from "i18next-http-backend"
+import HttpApi, { BackendOptions } from "i18next-http-backend"
+import BackendAdapter from "i18next-multiload-backend-adapter"
 import { defaultConfig } from "./i18nDefaultConfig"
 
-export const createClient = (config: InitOptions) => {
+const backendOption: BackendOptions = {
+  allowMultiLoading: true,
+  loadPath: "/api/locales?lng={{lng}}&ns={{ns}}",
+}
+
+export const createClient = (config: Exclude<InitOptions, "backend">) => {
   const instance = i18next.createInstance()
 
-  const initPromise = instance.use(HttpApi).init({
+  const backend = new BackendAdapter(null, {
+    backend: HttpApi,
+    backendOption,
+  })
+
+  const initPromise = instance.use(backend).init({
     ...defaultConfig,
-    backend: {
-      allowMultiLoading: true,
-      loadPath: "/api/locales?lng={{lng}}&ns={{ns}}",
-    },
     ...config,
   })
 

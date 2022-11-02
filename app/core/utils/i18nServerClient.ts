@@ -3,12 +3,15 @@ import Backend from "i18next-fs-backend"
 import path from "path"
 import { defaultConfig } from "./i18nDefaultConfig"
 
-export const createClient = (config: InitOptions) => {
+export const createClient = (config: Exclude<InitOptions, "backend">) => {
   const instance = i18next.createInstance()
 
-  const initPromise = instance.use(Backend).init({
+  const backend = new Backend(null, {
+    loadPath: path.join(process.cwd(), "locales/{{lng}}/{{ns}}.yml"),
+  })
+
+  const initPromise = instance.use(backend).init({
     ...defaultConfig,
-    backend: { loadPath: path.join(process.cwd(), "locales/{{lng}}/{{ns}}.yml") },
     ...config,
   })
 
