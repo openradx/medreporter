@@ -28,7 +28,6 @@ export function buildModuleTranslationsArgs(
   const defaultLanguage = translator.getDefaultLanguage()
   const moduleEl = module.getRootElement()
   const translations: Prisma.ModuleUpdateArgs["data"]["translations"] = {
-    deleteMany: {},
     create: supportedLanguages.map((lng) => {
       const title = String(moduleEl?.getAttribute("title")?.getValue())
       const description = String(moduleEl?.getAttribute("description")?.getValue() ?? "")
