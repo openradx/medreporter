@@ -3,7 +3,7 @@ import hoistNonReactStatics from "hoist-non-react-statics"
 import { InitialPublicDataContextProvider } from "../contexts/InitialPublicDataContext"
 
 interface AppProps {
-  pageProps: {
+  pageProps?: {
     initialPublicData?: Session["PublicData"]
   }
 }
@@ -12,7 +12,7 @@ export const withInitialPublicData = <T extends AppProps>(
   WrappedComponent: React.ComponentType<T>
 ) => {
   const WithInitialPublicData = (props: AppProps) => (
-    <InitialPublicDataContextProvider value={props.pageProps.initialPublicData}>
+    <InitialPublicDataContextProvider value={props.pageProps?.initialPublicData}>
       <WrappedComponent {...(props as T)} />
     </InitialPublicDataContextProvider>
   )

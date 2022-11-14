@@ -5,10 +5,10 @@ export const useAppSession: typeof useSession = (options = {}) => {
   const initialPublicData = useInitialPublicData()
 
   if (!initialPublicData) {
-    throw new Error(
-      "Missing initial public session data from server. " +
-        "Add them to your getServerSideProps function."
-    )
+    // A warning that occurs when initial session data was not provided
+    // in getServerSideProps function.
+    // eslint-disable-next-line no-console
+    console.warn("No initial public session data from server.")
   }
 
   return useSession({ initialPublicData, ...options })

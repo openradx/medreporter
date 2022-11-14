@@ -2,6 +2,7 @@
 
 ## Kai
 
+- create useAppAuthenticatedSession and use it
 - Use tsconfig-paths-webpack-plugin for storybook
 - Blitz queries don't need {} anymore
 
