@@ -6,7 +6,7 @@ import { selectScrollInto } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { ExternalLink } from "./ExternalLink"
-import { ModuleHeader } from "./ModuleHeader"
+import { ModuleToolbar } from "./ModuleToolbar"
 
 interface StructureProps {
   children?: ReactNode
@@ -34,7 +34,7 @@ export const Structure = ({ children }: StructureProps) => {
   return (
     <Paper ref={cardEl} shadow="md" withBorder>
       {needsHeader && (
-        <ModuleHeader
+        <ModuleToolbar
           title={title}
           actions={
             <ActionsGroup>

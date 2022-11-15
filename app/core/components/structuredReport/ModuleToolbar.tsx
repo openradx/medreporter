@@ -1,12 +1,12 @@
 import { Box, Text } from "@mantine/core"
 import { ReactNode } from "react"
 
-interface ModuleHeaderProps {
+interface ModuleToolbarProps {
   title?: string
   actions?: ReactNode
 }
 
-export const ModuleHeader = ({ title, actions }: ModuleHeaderProps) => (
+export const ModuleToolbar = ({ title, actions }: ModuleToolbarProps) => (
   <Box
     sx={(theme) => ({
       borderBottom: `1px solid ${
