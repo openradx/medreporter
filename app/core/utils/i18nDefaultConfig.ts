@@ -10,6 +10,7 @@ export const defaultConfig: InitOptions = {
   fallbackLng: "en",
   partialBundledLanguages: true,
   saveMissing: true,
+  returnNull: false,
   missingKeyHandler: (lngs, ns, key) => {
     // eslint-disable-next-line no-console
     console.error(

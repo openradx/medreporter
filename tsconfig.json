@@ -17,6 +17,6 @@
     "incremental": true,
     "noErrorTruncation": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "overwrites.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
