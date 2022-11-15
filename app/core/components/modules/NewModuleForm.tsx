@@ -1,7 +1,6 @@
 import { useMutation } from "@blitzjs/rpc"
 import { Checkbox, Group, Stack, Text, TextInput, Title } from "@mantine/core"
 import appConfig from "app.config"
-import { useRouter } from "next/router"
 import { Controller } from "react-hook-form"
 import { useAppSession } from "app/core/hooks/useAppSession"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
@@ -20,8 +19,6 @@ export const NewModuleForm = () => {
 
   const [fetchOwnModuleMutation] = useMutation(fetchOwnModule)
   const [createModuleMutation] = useMutation(createModule)
-
-  const router = useRouter()
 
   const CreateModuleSchema = buildCreateModule(t)
   const CreateModuleSchemaExtended = CreateModuleSchema.extend({
