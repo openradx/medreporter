@@ -9,7 +9,7 @@ import { AddUserButton } from "./AddUserButton"
 import { DeleteUserButton } from "./DeleteUserButton"
 import { EditUserButton } from "./EditUserButton"
 
-const ITEMS_PER_PAGE = 50
+const ITEMS_PER_PAGE = 15
 
 export const UserList = () => {
   const { t } = useSiteTranslation()
