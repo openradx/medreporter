@@ -14,7 +14,6 @@
 - check where useMemo is really needed
 - Add https://github.com/edvardchen/eslint-plugin-i18next
 - MeasurementsTable -> MeasurementsTool
-- PanelHeader -> PanelToolbar
 - AccountControl -> AccountOptions
 - ...Button -> ...Action (e.g. UndoButton -> UndoAction)
 - Make Measurements field smaller

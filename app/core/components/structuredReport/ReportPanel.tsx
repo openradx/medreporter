@@ -5,7 +5,7 @@ import { selectDataInitialized } from "../../state/displaySlice"
 import { useAppSelector } from "../../state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
-import { PanelHeader } from "./PanelHeader"
+import { PanelToolbar } from "./PanelToolbar"
 import { ReportFormat } from "./ReportFormat"
 import { ReportLanguageChooser } from "./ReportLanguageChooser"
 
@@ -28,7 +28,7 @@ export const ReportPanel = ({ children }: ReportPanelProps) => {
       shadow="sm"
       withBorder
     >
-      <PanelHeader
+      <PanelToolbar
         title={t("ReportPanel.title")}
         actions={
           <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>

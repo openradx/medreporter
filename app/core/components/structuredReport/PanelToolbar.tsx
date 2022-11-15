@@ -1,12 +1,12 @@
 import { Box, Text } from "@mantine/core"
 import { ReactNode } from "react"
 
-interface PanelHeaderProps {
+interface PanelToolbarProps {
   title: string
   actions?: ReactNode
 }
 
-export const PanelHeader = ({ title, actions }: PanelHeaderProps) => (
+export const PanelToolbar = ({ title, actions }: PanelToolbarProps) => (
   <Box
     component="header"
     sx={(theme) => ({

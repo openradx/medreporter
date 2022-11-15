@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { ClearStructureButton } from "./ClearStructureButton"
-import { PanelHeader } from "./PanelHeader"
+import { PanelToolbar } from "./PanelToolbar"
 import { RedoButton } from "./RedoButton"
 import { StructureForm } from "./StructureForm"
 import { StructureLanguageChooser } from "./StructureLanguageChooser"
@@ -29,7 +29,7 @@ export const StructurePanel = ({ children }: StructurePanelProps) => {
         withBorder
       >
         <StructureForm>
-          <PanelHeader
+          <PanelToolbar
             title={t("Structure.title")}
             actions={
               <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
