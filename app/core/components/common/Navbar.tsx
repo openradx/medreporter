@@ -20,12 +20,12 @@ import { ActionsGroup } from "./ActionsGroup"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
 import { SiteLanguageChooser } from "./SiteLanguageChooser"
 
-const HEADER_HEIGHT = 60
+const NAVBAR_HEIGHT = 60
 
 const useStyles = createStyles((theme) => ({
   dropdown: {
     position: "absolute",
-    top: HEADER_HEIGHT,
+    top: NAVBAR_HEIGHT,
     left: 0,
     right: 0,
     zIndex: 0,
@@ -94,15 +94,15 @@ interface NavLink {
   label: string
 }
 
-export const PageHeader = () => {
+export const Navbar = () => {
   const [opened, setOpened] = useState(false)
   const { classes, cx } = useStyles()
   const { pathname } = useRouter()
   const { t } = useSiteTranslation()
 
   const links: NavLink[] = [
-    { url: Routes.ModulesPage(), label: t("PageHeader.linkModules") },
-    { url: Routes.ToolsPage(), label: t("PageHeader.linkTools") },
+    { url: Routes.ModulesPage(), label: t("Navbar.linkModules") },
+    { url: Routes.ToolsPage(), label: t("Navbar.linkTools") },
   ]
 
   const isCurrentPath = (link: NavLink) => {
@@ -129,7 +129,7 @@ export const PageHeader = () => {
   ))
 
   return (
-    <Header height={HEADER_HEIGHT}>
+    <Header height={NAVBAR_HEIGHT}>
       <Container className={classes.header}>
         <Burger
           opened={opened}

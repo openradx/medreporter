@@ -103,6 +103,9 @@ ModulesPage:
   title: Module
 ModuleSelectorWithCategories:
   filterInputLabel: Module filtern
+Navbar:
+  linkModules: Module
+  linkTools: Werkzeuge
 NewModuleForm:
   buttonCreateModule: Modul erstellen
   formTitle: Neues Modul erstellen
@@ -110,9 +113,6 @@ NewModuleForm:
   inputLabelMultilingual: Mehrsprachiges Modul
 NewModulePage:
   pageTitle: Neues Modul erstellen
-PageHeader:
-  linkModules: Module
-  linkTools: Werkzeuge
 RedoButton:
   buttonRedo: Wiederherstellen
 ReportFormat:
