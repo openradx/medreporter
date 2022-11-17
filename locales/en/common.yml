@@ -1,5 +1,7 @@
 formError:
+  alreadyUsed: Already in use.
   invalidChars: "Contains invalid characters. Allowed: {{chars}}"
+  reservedKeyword: "Reserved keyword."
   tooLong: Too long. Maximum {{max}} characters.
   tooShort: Too short. Minimum {{min}} characters.
   unexpected: "An unexpected error occurred: "
@@ -49,6 +51,8 @@ CopyButton:
   successMessageCopyReport: Copied report to clipboard
 DraftLanguageSelector:
   inputLabelLanguage: Main language
+EditModulePage:
+  pageTitle: Edit module
 ExternalLink:
   buttonExternalLink: Open external link
 FieldGraphics:
@@ -134,6 +138,8 @@ ResetPasswordForm:
   textRedirect: Go to the
 ResetPasswordPage:
   pageTitle: Reset password
+ShowModulePage:
+  pageTitle: Show module
 SignupForm:
   buttonSubmit: Create account
   formTitle: Create an Account

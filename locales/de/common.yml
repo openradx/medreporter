@@ -1,5 +1,7 @@
 formError:
+  alreadyUsed: Bereits vergeben.
   invalidChars: "Enthält ungültige Zeichen. Erlaubt: {{chars}}"
+  reservedKeyword: "Reserviertes Schlüsselwort."
   tooLong: Zu lang. Maximal {{max}} Zeichen.
   tooShort: Zu kurz. Mindestens {{min}} Zeichen.
   unexpected: "Ein unerwarteter Fehler ist aufgetreten: "
@@ -49,6 +51,8 @@ CopyButton:
   successMessageCopyReport: Befund in Zwischenablage kopiert
 DraftLanguageSelector:
   inputLabelLanguage: Hauptsprache
+EditModulePage:
+  pageTitle: Modul editieren
 ExternalLink:
   buttonExternalLink: Externen Link öffnen
 FieldGraphics:
@@ -134,6 +138,8 @@ ResetPasswordForm:
   textRedirect: Gehe zur
 ResetPasswordPage:
   pageTitle: Passwort zurücksetzen
+ShowModulePage:
+  pageTitle: Modul anzeigen
 SignupForm:
   buttonSubmit: Registrieren
   formTitle: Erstelle einen Account
