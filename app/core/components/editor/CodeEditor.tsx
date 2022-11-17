@@ -1,4 +1,4 @@
-import { Box, Paper, Stack, useMantineColorScheme } from "@mantine/core"
+import { Box, Global, Paper, Stack, useMantineColorScheme } from "@mantine/core"
 import { SchemaConfiguration } from "@medreporter/medtl-language-service"
 import { ModuleSchema } from "@medreporter/medtl-schema"
 import { setDiagnosticsOptions } from "@medreporter/monaco-plugin-medtl"
@@ -42,33 +42,45 @@ const CodeEditor = () => {
   const schema = resourceType === "module" ? moduleSchema : moduleSchema
 
   return (
-    <Paper shadow="sm" sx={{ height: "100%" }} withBorder>
-      <Stack spacing="xs" ref={stackRef} sx={{ height: "100%" }}>
-        <CodeEditorToolbar editor={editorRef.current} />
-        <Box sx={{ flexGrow: 1 }}>
-          <MonacoEditor
-            language="medtl"
-            height="100%"
-            theme={colorScheme === "dark" ? "vs-dark" : "vs"}
-            defaultValue={initialCode}
-            options={{
-              tabSize: 2,
-              suggest: { snippetsPreventQuickSuggestions: false },
+    <>
+      <Global styles={{ ".monaco-hover": { zIndex: 1000 } }} />
+      <Paper shadow="sm" sx={{ height: "100%" }} withBorder>
+        <Stack spacing="xs" ref={stackRef} sx={{ height: "100%" }}>
+          <CodeEditorToolbar editor={editorRef.current} />
+          <Box
+            sx={{
+              flexGrow: 1,
+
+              // Important to make Monaco editor resizable together with
+              // automaticLayout option
+              minHeight: 0,
             }}
-            editorDidMount={(editor) => {
-              editorRef.current = editor
-              setDiagnosticsOptions({
-                schemas: [schema],
-              })
-            }}
-            onChange={(value) => {
-              updateSourceCodeDebounced(value)
-            }}
-          />
-        </Box>
-        <CodeEditorProblems editor={editorRef.current} />
-      </Stack>
-    </Paper>
+          >
+            <MonacoEditor
+              language="medtl"
+              height="100%"
+              theme={colorScheme === "dark" ? "vs-dark" : "vs"}
+              defaultValue={initialCode}
+              options={{
+                tabSize: 2,
+                suggest: { snippetsPreventQuickSuggestions: false },
+                automaticLayout: true,
+              }}
+              editorDidMount={(editor) => {
+                editorRef.current = editor
+                setDiagnosticsOptions({
+                  schemas: [schema],
+                })
+              }}
+              onChange={(value) => {
+                updateSourceCodeDebounced(value)
+              }}
+            />
+          </Box>
+          <CodeEditorProblems editor={editorRef.current} />
+        </Stack>
+      </Paper>
+    </>
   )
 }
 

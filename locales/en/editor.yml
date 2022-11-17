@@ -1,3 +1,8 @@
 CodeProblems:
-  titleNoCodeProblems: No problems found
-  titleCodeProblems: Source code problems
+  codeProblemsFound_one: "{{count}} code problem found"
+  codeProblemsFound_other: "{{count}} code problems found"
+  noCodeProblemsFound: No problems found
+Editor:
+  code: Code
+  preview: Preview
+  settings: Settings

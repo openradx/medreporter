@@ -1,5 +1,12 @@
-import { Alert, Tabs } from "@mantine/core"
+import { Alert, Box, Center, Portal, SegmentedControl } from "@mantine/core"
 import dynamic from "next/dynamic"
+import { useState } from "react"
+import {
+  MdCode as CodeIcon,
+  MdRemoveRedEye as PreviewIcon,
+  MdSettings as SettingsIcon,
+} from "react-icons/md"
+import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { Loading } from "../common/Loading"
 
 const CodeEditor = dynamic(() => import("./CodeEditor"), {
@@ -17,20 +24,55 @@ const CodeEditor = dynamic(() => import("./CodeEditor"), {
   ssr: false,
 })
 
-export const Editor = () => (
-  <Tabs orientation="vertical" defaultValue="code-editor" sx={{ height: "100%" }}>
-    <Tabs.List>
-      <Tabs.Tab value="general">General</Tabs.Tab>
-      <Tabs.Tab value="code-editor">Code Editor</Tabs.Tab>
-      <Tabs.Tab value="preview">Preview</Tabs.Tab>
-    </Tabs.List>
+export const Editor = () => {
+  const [value, setValue] = useState("code")
+  const { t } = useSiteTranslation()
 
-    <Tabs.Panel value="preview">General</Tabs.Panel>
+  return (
+    <>
+      <Portal target="#navbar-group">
+        <SegmentedControl
+          value={value}
+          onChange={setValue}
+          data={[
+            {
+              value: "code",
+              label: (
+                <Center>
+                  <CodeIcon size={16} />
+                  <Box ml={10}>{t("Editor.code")}</Box>
+                </Center>
+              ),
+            },
+            {
+              value: "preview",
+              label: (
+                <Center>
+                  <PreviewIcon size={16} />
+                  <Box ml={10}>{t("Editor.preview")}</Box>
+                </Center>
+              ),
+            },
+            {
+              value: "settings",
+              label: (
+                <Center>
+                  <SettingsIcon size={16} />
+                  <Box ml={10}>{t("Editor.settings")}</Box>
+                </Center>
+              ),
+            },
+          ]}
+        />
+      </Portal>
 
-    <Tabs.Panel value="code-editor" pl="sm">
-      <CodeEditor />
-    </Tabs.Panel>
+      <Box display={value !== "code" ? "none" : undefined} h="100%">
+        <CodeEditor />
+      </Box>
 
-    <Tabs.Panel value="preview">Preview</Tabs.Panel>
-  </Tabs>
-)
+      <Box display={value !== "preview" ? "none" : undefined}>Preview</Box>
+
+      <Box display={value !== "settings" ? "none" : undefined}>Settings</Box>
+    </>
+  )
+}

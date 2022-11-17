@@ -1,3 +1,8 @@
 CodeProblems:
-  titleNoCodeProblems: Keine Probleme gefunden
-  titleCodeProblems: Quellcode Probleme
+  codeProblemsFound_one: "{{count}} Quellcode Problem gefunden"
+  codeProblemsFound_other: "{{count}} Quellcode Probleme gefunden"
+  noCodeProblemsFound: Keine Quellcode Probleme gefunden
+Editor:
+  code: Quellcode
+  preview: Vorschau
+  settings: Einstellungen
