@@ -23,13 +23,8 @@ export const NewModuleForm = () => {
   const CreateModuleSchema = buildCreateModule(t)
   const CreateModuleSchemaExtended = CreateModuleSchema.extend({
     name: CreateModuleSchema.shape.name.refine(
-      async (name) => {
-        if (await fetchOwnModuleMutation({ name })) {
-          return false
-        }
-        return true
-      },
-      { message: "formError.alreadyUsed" }
+      async (name) => !(await fetchOwnModuleMutation({ name })),
+      { message: t("formError.alreadyUsed") }
     ),
   })
 
