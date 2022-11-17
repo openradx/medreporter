@@ -16,12 +16,13 @@ export const buildCreateModule = (t?: TFunction) =>
     name: z
       .string()
       .trim()
-      .min(3, t && { message: t("formError.tooShort", { min: "3" }) })
-      .max(50, t && { message: t("formError.tooLong", { max: "50" }) })
+      .min(3, { message: t?.("formError.tooShort", { min: "3" }) })
+      .max(50, { message: t?.("formError.tooLong", { max: "50" }) })
       .regex(
         /^[a-zA-Z][-_a-zA-Z0-9]+$/,
         t && { message: t("formError.invalidChars", { chars: "- _ a-z A-Z 0-9" }) }
-      ),
+      )
+      .refine((val) => val !== "new", { message: t?.("formError.reservedKeyword") }),
     multilingual: z.boolean(),
     defaultLanguage: z.enum(appConfig.structuredReportLanguages),
     visibility: z.enum([Visibility.PRIVATE, Visibility.INSTITUTE, Visibility.PUBLIC]),
