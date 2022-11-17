@@ -3,7 +3,7 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Dev Server
+  - name: Dev
     before: |
       echo "@medreporter:registry=https://$NPM_REGISTRY_HOST/" > ~/.npmrc
       echo "//$NPM_REGISTRY_HOST/:_authToken=\"$NPM_REGISTRY_TOKEN\"" >> ~/.npmrc
@@ -15,7 +15,7 @@ tasks:
     command: yarn dev
   - name: Test
     init: gp sync-await install
-    command: yarn test
+    command: yarn test:watch
 
 vscode:
   extensions:
