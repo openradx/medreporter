@@ -1,7 +1,6 @@
 FROM gitpod/workspace-postgres
 
-# Install Blitz globally.
-# See also https://classic.yarnpkg.com/en/docs/cli/global/
-# We can't use `export PATH="$(yarn global bin):$PATH"` here directly
-RUN yarn global add blitz
-ENV PATH=/home/gitpod/.yarn/bin:$PATH
+ENV PNPM_HOME="/home/gitpod/.pnpm"
+ENV PATH="${PNPM_HOME}:${PATH}"
+RUN npm install -g pnpm@7
+RUN pnpm add -g blitz

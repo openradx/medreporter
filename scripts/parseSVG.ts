@@ -9,7 +9,7 @@
 import { Option, program } from "commander"
 import { readFileSync } from "fs"
 import { parse, Node, ElementNode } from "svg-parser"
-import { stringify } from "yaml"
+import { dump } from "js-yaml"
 
 program
   .description("Parses a SVG file and extracts information.")
@@ -65,7 +65,7 @@ if (output === "options") {
 }
 
 if (output === "translations") {
-  const result = stringify({
+  const result = dump({
     [imageName]: Object.fromEntries(ids.map((id) => [id, "_____"])),
   })
   // eslint-disable-next-line no-console

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "preinstall": "npx -y only-allow pnpm",
     "dev": "blitz dev",
     "build": "blitz build",
     "analyze": "ANALYZE=true blitz build",
@@ -58,6 +59,7 @@
     "i18next-fs-backend": "^2.0.0",
     "i18next-http-backend": "^2.0.0",
     "i18next-multiload-backend-adapter": "^2.0.0",
+    "immer": "9.0.16",
     "monaco-editor": "^0.34.0",
     "monaco-editor-webpack-plugin": "^7.0.1",
     "nanoid": "^4.0.0",
@@ -72,6 +74,7 @@
     "react-monaco-editor": "^0.50.1",
     "react-redux": "^8.0.2",
     "react-resize-detector": "^7.1.2",
+    "redux": "4.2.0",
     "underscore": "^1.13.4",
     "use-debounce": "^8.0.1",
     "zod": "3.17.3"

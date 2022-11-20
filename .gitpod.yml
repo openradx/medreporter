@@ -8,14 +8,14 @@ tasks:
       echo "@medreporter:registry=https://$NPM_REGISTRY_HOST/" > ~/.npmrc
       echo "//$NPM_REGISTRY_HOST/:_authToken=\"$NPM_REGISTRY_TOKEN\"" >> ~/.npmrc
     init: |
-      yarn install
+      pnpm install
       blitz prisma migrate dev
       blitz db seed
       gp sync-done install
-    command: yarn dev
+    command: pnpm dev
   - name: Test
     init: gp sync-await install
-    command: yarn test:watch
+    command: pnpm test:watch
 
 vscode:
   extensions:
