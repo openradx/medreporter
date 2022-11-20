@@ -2,40 +2,33 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 
 type EditorState = {
-  resourceType: "module" | "template"
-  resourceId: string | null
-  sourceCode: string
-  readyForPreview: boolean
+  type: "module" | "template"
+  id: number | null
+  code: string
 }
 
 const initialState: EditorState = {
-  resourceType: "module",
-  resourceId: null,
-  sourceCode: "",
-  readyForPreview: false,
+  type: "module",
+  id: null,
+  code: "",
 }
 
 const editorSlice = createSlice({
   name: "editor",
   initialState,
   reducers: {
-    setSourceCode(state, action: PayloadAction<string>) {
-      state.sourceCode = action.payload
-    },
-    setReadyForPreview(state, action: PayloadAction<boolean>) {
-      state.readyForPreview = action.payload
+    setCode(state, action: PayloadAction<string>) {
+      state.code = action.payload
     },
   },
 })
 
-export const { setSourceCode, setReadyForPreview } = editorSlice.actions
+export const { setCode } = editorSlice.actions
 
 export default editorSlice.reducer
 
-export const selectResourceType = (state: RootState) => state.editor.resourceType
+export const selectType = (state: RootState) => state.editor.type
 
-export const selectResourceId = (state: RootState) => state.editor.resourceId
+export const selectId = (state: RootState) => state.editor.id
 
-export const selectSourceCode = (state: RootState) => state.editor.sourceCode
-
-export const selectReadyForPreview = (state: RootState) => state.editor.readyForPreview
+export const selectCode = (state: RootState) => state.editor.code

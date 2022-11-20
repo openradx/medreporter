@@ -12,6 +12,7 @@ const moduleWithAuthor = Prisma.validator<Prisma.ModuleArgs>()({
   },
 })
 
+// TODO: really needed anymore?
 export interface TranslatedModule extends Prisma.ModuleGetPayload<typeof moduleWithAuthor> {
   title: string
   description: string

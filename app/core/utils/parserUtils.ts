@@ -14,8 +14,8 @@ export class ParsingError extends Error {
   }
 }
 
-const parseMedtlCode = (sourceCode: string, schema: DocumentOutputSchema) => {
-  const { document, errors } = parse(sourceCode)
+const parseMedtlCode = (code: string, schema: DocumentOutputSchema) => {
+  const { document, errors } = parse(code)
 
   if (!document || errors.length > 0) {
     throw new ParsingError(errors, [])

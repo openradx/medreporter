@@ -48,6 +48,11 @@ export const GetCategories = Pagination.extend({
   usedByTemplate: z.boolean().default(false),
 })
 
+export const GetModule = z.object({
+  username: z.string(),
+  moduleName: z.string(),
+})
+
 export const buildUpdateModule = (t: TFunction) =>
   buildCreateModule(t)
     .omit({ name: true })

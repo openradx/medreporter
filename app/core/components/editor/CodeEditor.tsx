@@ -1,12 +1,12 @@
 import { Box, Global, Paper, Stack, useMantineColorScheme } from "@mantine/core"
 import { SchemaConfiguration } from "@medreporter/medtl-language-service"
-import { ModuleSchema } from "@medreporter/medtl-schema"
+import { ModuleSchema, TemplateSchema } from "@medreporter/medtl-schema"
 import { setDiagnosticsOptions } from "@medreporter/monaco-plugin-medtl"
 import { useCallback, useRef } from "react"
 import MonacoEditor, { monaco } from "react-monaco-editor"
 import { useResizeDetector } from "react-resize-detector"
 import { useDebouncedCallback } from "use-debounce"
-import { selectResourceType, selectSourceCode, setSourceCode } from "../../state/editorSlice"
+import { selectCode, selectType, setCode } from "../../state/editorSlice"
 import { useAppDispatch, useAppSelector } from "../../state/store"
 import { CodeEditorProblems } from "./CodeEditorProblems"
 import { CodeEditorToolbar } from "./CodeEditorToolbar"
@@ -17,9 +17,15 @@ const moduleSchema: SchemaConfiguration = {
   schema: ModuleSchema,
 }
 
+const templateSchema: SchemaConfiguration = {
+  id: "template-schema",
+  patterns: [/.*/],
+  schema: TemplateSchema,
+}
+
 const CodeEditor = () => {
-  const resourceType = useAppSelector(selectResourceType)
-  const initialCode = useAppSelector(selectSourceCode)
+  const type = useAppSelector(selectType)
+  const initialCode = useAppSelector(selectCode)
   const stackRef = useRef<HTMLDivElement>(null)
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor>()
   const { colorScheme } = useMantineColorScheme()
@@ -34,12 +40,18 @@ const CodeEditor = () => {
     onResize,
   })
 
-  const updateSourceCodeDebounced = useDebouncedCallback((value: string) => {
-    dispatch(setSourceCode(value))
+  const updateCodeDebounced = useDebouncedCallback((code: string) => {
+    dispatch(setCode(code))
   }, 1000)
 
-  // TODO:
-  const schema = resourceType === "module" ? moduleSchema : moduleSchema
+  let schema: SchemaConfiguration
+  if (type === "module") {
+    schema = moduleSchema
+  } else if (type === "template") {
+    schema = templateSchema
+  } else {
+    throw new Error(`Missing schema for type "${type}".`)
+  }
 
   return (
     <>
@@ -73,7 +85,7 @@ const CodeEditor = () => {
                 })
               }}
               onChange={(value) => {
-                updateSourceCodeDebounced(value)
+                updateCodeDebounced(value)
               }}
             />
           </Box>

@@ -10,8 +10,8 @@ export default resolver.pipe(
   resolver.zod(buildCreateModule()),
   resolver.authorize(),
   async ({ name, multilingual, defaultLanguage, visibility }, { session }) => {
-    const sourceCode = createModuleDraft(name, multilingual, defaultLanguage)
-    const document = parseModuleCode(sourceCode)
+    const code = createModuleDraft(name, multilingual, defaultLanguage)
+    const document = parseModuleCode(code)
     const wrapper = new ModuleWrapper(document)
     const translations = buildModuleTranslationsArgs(wrapper)
 
@@ -19,7 +19,7 @@ export default resolver.pipe(
       data: {
         name,
         authorId: session.userId,
-        sourceCode,
+        code,
         document: document as unknown as Prisma.JsonObject,
         translations,
         visibility,
