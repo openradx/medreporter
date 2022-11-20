@@ -1,8 +1,10 @@
+import { Routes } from "@blitzjs/next"
 import { useMutation } from "@blitzjs/rpc"
 import { Checkbox, Group, Stack, Text, TextInput, Title } from "@mantine/core"
 import appConfig from "app.config"
+import { useRouter } from "next/router"
 import { Controller } from "react-hook-form"
-import { useAppSession } from "app/core/hooks/useAppSession"
+import { useAuthenticatedAppSession } from "app/core/hooks/useAuthenticatedAppSession"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import createModule from "app/core/mutations/createModule"
 import fetchOwnModule from "app/core/mutations/fetchOwnModule"
@@ -15,7 +17,8 @@ import { VisibilitySelector } from "../common/VisibilitySelector"
 
 export const NewModuleForm = () => {
   const { t } = useSiteTranslation()
-  const { username } = useAppSession()
+  const { username } = useAuthenticatedAppSession()
+  const router = useRouter()
 
   const [fetchOwnModuleMutation] = useMutation(fetchOwnModule)
   const [createModuleMutation] = useMutation(createModule)
@@ -44,7 +47,7 @@ export const NewModuleForm = () => {
         onSubmit={async (values) => {
           try {
             const createdModule = await createModuleMutation(values)
-            console.log(createdModule)
+            router.push(Routes.EditModulePage({ username, moduleName: createdModule.name }))
           } catch (e) {
             if (e instanceof Error) {
               throw new FormSubmitError(t("formError.unexpected") + e.message)
