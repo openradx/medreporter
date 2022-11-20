@@ -8,6 +8,7 @@ import {
 } from "react-icons/md"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { Loading } from "../common/Loading"
+import { ModulePreview } from "./ModulePreview"
 
 const CodeEditor = dynamic(() => import("./CodeEditor"), {
   loading: ({ isLoading, error }) => {
@@ -25,15 +26,15 @@ const CodeEditor = dynamic(() => import("./CodeEditor"), {
 })
 
 export const Editor = () => {
-  const [value, setValue] = useState("code")
+  const [currentView, setCurrentView] = useState("code")
   const { t } = useSiteTranslation()
 
   return (
     <>
       <Portal target="#navbar-group">
         <SegmentedControl
-          value={value}
-          onChange={setValue}
+          value={currentView}
+          onChange={setCurrentView}
           data={[
             {
               value: "code",
@@ -66,13 +67,15 @@ export const Editor = () => {
         />
       </Portal>
 
-      <Box display={value !== "code" ? "none" : undefined} h="100%">
+      <Box display={currentView !== "code" ? "none" : undefined} h="100%">
         <CodeEditor />
       </Box>
 
-      <Box display={value !== "preview" ? "none" : undefined}>Preview</Box>
+      <Box display={currentView !== "preview" ? "none" : undefined}>
+        <ModulePreview />
+      </Box>
 
-      <Box display={value !== "settings" ? "none" : undefined}>Settings</Box>
+      <Box display={currentView !== "settings" ? "none" : undefined}>Settings</Box>
     </>
   )
 }
