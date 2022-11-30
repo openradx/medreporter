@@ -8,8 +8,8 @@
  */
 import { Option, program } from "commander"
 import { readFileSync } from "fs"
-import { parse, Node, ElementNode } from "svg-parser"
 import { dump } from "js-yaml"
+import { parse, Node, ElementNode } from "svg-parser"
 
 program
   .description("Parses a SVG file and extracts information.")
