@@ -2,6 +2,9 @@
 image:
   file: .gitpod.Dockerfile
 
+additionalRepositories:
+  - url: https://github.com/medreporter/medtl
+
 tasks:
   - name: Dev
     before: |
@@ -16,6 +19,11 @@ tasks:
   - name: Test
     init: gp sync-await install
     command: pnpm test:watch
+  - name: MedTL
+    before: cd ../medtl
+    init: |
+      pnpm install
+      pnpm build
 
 vscode:
   extensions:
