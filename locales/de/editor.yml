@@ -1,8 +1,8 @@
-CodeProblems:
-  codeProblemsFound_one: "{{count}} Quellcode Problem gefunden"
-  codeProblemsFound_other: "{{count}} Quellcode Probleme gefunden"
-  noCodeProblemsFound: Keine Quellcode Probleme gefunden
 Editor:
-  code: Quellcode
+  source: Quellcode
   preview: Vorschau
   settings: Einstellungen
+SourceProblemsPanel:
+  problemsFound_one: "{{count}} Problem gefunden"
+  problemsFound_other: "{{count}} Probleme gefunden"
+  noProblemsFound: Keine Probleme gefunden

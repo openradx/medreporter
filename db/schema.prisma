@@ -122,7 +122,7 @@ model Module {
   name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  code          String
+  source        String
   document      Json
   visibility    Visibility
   releaseStatus ReleaseStatus
@@ -157,7 +157,7 @@ model Template {
   name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  code          String
+  source        String
   document      Json
   visibility    Visibility
   releaseStatus ReleaseStatus

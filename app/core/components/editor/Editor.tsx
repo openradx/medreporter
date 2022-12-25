@@ -2,7 +2,7 @@ import { Alert, Box, Center, Portal, SegmentedControl } from "@mantine/core"
 import dynamic from "next/dynamic"
 import { useState } from "react"
 import {
-  MdCode as CodeIcon,
+  MdCode as SourceIcon,
   MdRemoveRedEye as PreviewIcon,
   MdSettings as SettingsIcon,
 } from "react-icons/md"
@@ -10,7 +10,7 @@ import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
 import { Loading } from "../common/Loading"
 import { ModulePreview } from "./ModulePreview"
 
-const CodeEditor = dynamic(() => import("./CodeEditor"), {
+const SourceEditor = dynamic(() => import("./SourceEditor"), {
   loading: ({ isLoading, error }) => {
     if (isLoading) {
       return <Loading />
@@ -26,7 +26,7 @@ const CodeEditor = dynamic(() => import("./CodeEditor"), {
 })
 
 export const Editor = () => {
-  const [currentView, setCurrentView] = useState("code")
+  const [currentView, setCurrentView] = useState("source")
   const { t } = useSiteTranslation()
 
   return (
@@ -37,11 +37,11 @@ export const Editor = () => {
           onChange={setCurrentView}
           data={[
             {
-              value: "code",
+              value: "source",
               label: (
                 <Center>
-                  <CodeIcon size={16} />
-                  <Box ml={10}>{t("Editor.code")}</Box>
+                  <SourceIcon size={16} />
+                  <Box ml={10}>{t("Editor.source")}</Box>
                 </Center>
               ),
             },
@@ -67,8 +67,8 @@ export const Editor = () => {
         />
       </Portal>
 
-      <Box display={currentView !== "code" ? "none" : undefined} h="100%">
-        <CodeEditor />
+      <Box display={currentView !== "source" ? "none" : undefined} h="100%">
+        <SourceEditor />
       </Box>
 
       <Box display={currentView !== "preview" ? "none" : undefined}>

@@ -4,26 +4,26 @@ import { RootState } from "RootTypes"
 type EditorState = {
   type: "module" | "template"
   id: number | null
-  code: string
+  source: string
 }
 
 const initialState: EditorState = {
   type: "module",
   id: null,
-  code: "",
+  source: "",
 }
 
 const editorSlice = createSlice({
   name: "editor",
   initialState,
   reducers: {
-    setCode(state, action: PayloadAction<string>) {
-      state.code = action.payload
+    setSource(state, action: PayloadAction<string>) {
+      state.source = action.payload
     },
   },
 })
 
-export const { setCode } = editorSlice.actions
+export const { setSource } = editorSlice.actions
 
 export default editorSlice.reducer
 
@@ -31,4 +31,4 @@ export const selectType = (state: RootState) => state.editor.type
 
 export const selectId = (state: RootState) => state.editor.id
 
-export const selectCode = (state: RootState) => state.editor.code
+export const selectSource = (state: RootState) => state.editor.source

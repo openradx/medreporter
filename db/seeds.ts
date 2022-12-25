@@ -105,7 +105,7 @@ async function createExampleModule(userId: number) {
   return db.module.create({
     data: {
       name: faker.helpers.unique(faker.internet.domainWord),
-      code: "",
+      source: "",
       authorId: userId,
       document: {},
       translations: { create: translations },

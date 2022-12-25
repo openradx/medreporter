@@ -6,10 +6,10 @@ import { useCallback, useRef } from "react"
 import MonacoEditor, { monaco } from "react-monaco-editor"
 import { useResizeDetector } from "react-resize-detector"
 import { useDebouncedCallback } from "use-debounce"
-import { selectCode, selectType, setCode } from "../../state/editorSlice"
+import { selectSource, selectType, setSource } from "../../state/editorSlice"
 import { useAppDispatch, useAppSelector } from "../../state/store"
-import { CodeEditorProblems } from "./CodeEditorProblems"
-import { CodeEditorToolbar } from "./CodeEditorToolbar"
+import { SourceProblemsPanel } from "./SourceEditorProblems"
+import { SourceEditorToolbar } from "./SourceEditorToolbar"
 
 const moduleSchema: SchemaConfiguration = {
   id: "module-schema",
@@ -23,9 +23,9 @@ const templateSchema: SchemaConfiguration = {
   schema: TemplateSchema,
 }
 
-const CodeEditor = () => {
+const SourceEditor = () => {
   const type = useAppSelector(selectType)
-  const initialCode = useAppSelector(selectCode)
+  const initialSource = useAppSelector(selectSource)
   const stackRef = useRef<HTMLDivElement>(null)
   const editorRef = useRef<monaco.editor.IStandaloneCodeEditor>()
   const { colorScheme } = useMantineColorScheme()
@@ -40,8 +40,8 @@ const CodeEditor = () => {
     onResize,
   })
 
-  const updateCodeDebounced = useDebouncedCallback((code: string) => {
-    dispatch(setCode(code))
+  const updateSourceDebounced = useDebouncedCallback((source: string) => {
+    dispatch(setSource(source))
   }, 1000)
 
   let schema: SchemaConfiguration
@@ -58,7 +58,7 @@ const CodeEditor = () => {
       <Global styles={{ ".monaco-hover": { zIndex: 1000 } }} />
       <Paper shadow="sm" sx={{ height: "100%" }} withBorder>
         <Stack spacing="xs" ref={stackRef} sx={{ height: "100%" }}>
-          <CodeEditorToolbar editor={editorRef.current} />
+          <SourceEditorToolbar editor={editorRef.current} />
           <Box
             sx={{
               flexGrow: 1,
@@ -72,7 +72,8 @@ const CodeEditor = () => {
               language="medtl"
               height="100%"
               theme={colorScheme === "dark" ? "vs-dark" : "vs"}
-              defaultValue={initialCode}
+              value={initialSource}
+              defaultValue={initialSource}
               options={{
                 tabSize: 2,
                 suggest: { snippetsPreventQuickSuggestions: false },
@@ -85,15 +86,15 @@ const CodeEditor = () => {
                 })
               }}
               onChange={(value) => {
-                updateCodeDebounced(value)
+                updateSourceDebounced(value)
               }}
             />
           </Box>
-          <CodeEditorProblems editor={editorRef.current} />
+          <SourceProblemsPanel editor={editorRef.current} />
         </Stack>
       </Paper>
     </>
   )
 }
 
-export default CodeEditor
+export default SourceEditor

@@ -1,15 +1,15 @@
 import { Box, Divider, Group } from "@mantine/core"
 import { monaco } from "react-monaco-editor"
-import { CodeZoomButtons } from "./CodeZoomButtons"
 import { FormatButton } from "./FormatButton"
 import { PaletteButton } from "./PaletteButton"
+import { SourceZoomButtons } from "./SourceZoomButtons"
 import { UndoRedoButtons } from "./UndoRedoButtons"
 
-interface CodeEditorToolbarProps {
+interface SourceEditorToolbarProps {
   editor?: monaco.editor.IStandaloneCodeEditor
 }
 
-export const CodeEditorToolbar = ({ editor }: CodeEditorToolbarProps) => (
+export const SourceEditorToolbar = ({ editor }: SourceEditorToolbarProps) => (
   <Box
     sx={(theme) => ({
       borderBottom: `1px solid ${
@@ -23,7 +23,7 @@ export const CodeEditorToolbar = ({ editor }: CodeEditorToolbarProps) => (
       <Divider orientation="vertical" sx={{ height: 24 }} />
       <FormatButton editor={editor} />
       <Divider orientation="vertical" sx={{ height: 24 }} />
-      <CodeZoomButtons editor={editor} />
+      <SourceZoomButtons editor={editor} />
       <Divider orientation="vertical" sx={{ height: 24 }} />
       <PaletteButton editor={editor} />
     </Group>

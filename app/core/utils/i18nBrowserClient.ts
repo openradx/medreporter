@@ -1,9 +1,9 @@
 import i18next, { InitOptions } from "i18next"
-import HttpApi, { BackendOptions } from "i18next-http-backend"
+import HttpApi, { HttpBackendOptions } from "i18next-http-backend"
 import BackendAdapter from "i18next-multiload-backend-adapter"
 import { defaultConfig } from "./i18nDefaultConfig"
 
-const backendOption: BackendOptions = {
+const backendOption: HttpBackendOptions = {
   allowMultiLoading: true,
   loadPath: "/api/locales?lng={{lng}}&ns={{ns}}",
 }

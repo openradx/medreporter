@@ -29,7 +29,7 @@ export const getServerSideProps = gSSP(async (ctx) => {
   const username = ctx.params?.username as string
   const moduleName = ctx.params?.moduleName as string
 
-  const module_ = await getModule({ username, moduleName }, ctx.ctx)
+  const mod = await getModule({ username, moduleName }, ctx.ctx)
 
   return {
     props: {
@@ -38,8 +38,8 @@ export const getServerSideProps = gSSP(async (ctx) => {
       ...serverSideReduxState({
         editor: {
           type: "module",
-          id: module_.id,
-          code: module_.code,
+          id: mod.id,
+          source: mod.source,
         },
       }),
     },

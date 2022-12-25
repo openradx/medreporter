@@ -8,11 +8,11 @@ import {
 import { monaco } from "react-monaco-editor"
 import { useSiteTranslation } from "../../hooks/useSiteTranslation"
 
-interface CodeEditorProblemsProps {
+interface SourceProblemsPanelProps {
   editor?: monaco.editor.IStandaloneCodeEditor
 }
 
-export const CodeEditorProblems = ({ editor }: CodeEditorProblemsProps) => {
+export const SourceProblemsPanel = ({ editor }: SourceProblemsPanelProps) => {
   const [expanded, setExpanded] = useState(false)
   const [markers, setMarkers] = useState<monaco.editor.IMarker[]>([])
   const { t } = useSiteTranslation()
@@ -39,13 +39,13 @@ export const CodeEditorProblems = ({ editor }: CodeEditorProblemsProps) => {
         {markers.length === 0 && (
           <Center>
             <OkIcon />
-            <Box ml={10}>{t("CodeProblems.noCodeProblemsFound")}</Box>
+            <Box ml={10}>{t("SourceProblemsPanel.noProblemsFound")}</Box>
           </Center>
         )}
         {markers.length > 0 && (
           <Center>
             <ErrorIcon />
-            <Box ml={10}>{t("CodeProblems.codeProblemsFound", { count: markers.length })}</Box>
+            <Box ml={10}>{t("SourceProblemsPanel.problemsFound", { count: markers.length })}</Box>
           </Center>
         )}
         <ActionIcon onClick={() => setExpanded((v) => !v)}>

@@ -1,8 +1,8 @@
-CodeProblems:
-  codeProblemsFound_one: "{{count}} code problem found"
-  codeProblemsFound_other: "{{count}} code problems found"
-  noCodeProblemsFound: No problems found
 Editor:
-  code: Code
+  source: Source code
   preview: Preview
   settings: Settings
+SourceProblemsPanel:
+  problemsFound_one: "{{count}} problem found"
+  problemsFound_other: "{{count}} problems found"
+  noProblemsFound: No problems found

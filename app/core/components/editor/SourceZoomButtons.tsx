@@ -6,11 +6,11 @@ import {
 } from "react-icons/tb"
 import { monaco } from "react-monaco-editor"
 
-interface CodeZoomButtonsProps {
+interface SourceZoomButtonsProps {
   editor?: monaco.editor.IStandaloneCodeEditor
 }
 
-export const CodeZoomButtons = ({ editor }: CodeZoomButtonsProps) => (
+export const SourceZoomButtons = ({ editor }: SourceZoomButtonsProps) => (
   <Group spacing={8}>
     <ActionIcon
       variant="default"

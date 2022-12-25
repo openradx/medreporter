@@ -1,4 +1,4 @@
-import { ModuleWrapper } from "@medreporter/medtl-tools"
+import { createContext, ModuleWrapper } from "@medreporter/medtl-tools"
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime"
 import { Prisma } from "db"
 
@@ -21,19 +21,33 @@ export function uniqueConstraintFailed(error: any, field: string) {
 }
 
 export function buildModuleTranslationsArgs(
-  module: ModuleWrapper
+  doc: ModuleWrapper
 ): Prisma.ModuleUpdateArgs["data"]["translations"] {
-  const translator = module.getTranslator()
-  const supportedLanguages = translator.getSupportedLanguages()
-  const defaultLanguage = translator.getDefaultLanguage()
-  const moduleEl = module.getRootElement()
+  const supportedLngs =
+    doc
+      .getRootElement()
+      ?.getFirstChildElement("Locales")
+      ?.getChildElements("Locale")
+      ?.map((localeEl) => localeEl.getAttribute("lng")?.getValue() ?? "en")
+      ?.filter((lng, idx, self) => self.indexOf(lng) === idx) ?? []
+
+  const defaultLng = supportedLngs[0] ?? "en"
+
   const translations: Prisma.ModuleUpdateArgs["data"]["translations"] = {
-    create: supportedLanguages.map((lng) => {
-      const title = String(moduleEl?.getAttribute("title")?.getValue())
-      const description = String(moduleEl?.getAttribute("description")?.getValue() ?? "")
+    create: supportedLngs.map((lng) => {
+      const title =
+        doc
+          .getRootElement()
+          ?.getFirstChildElement("Title")
+          ?.getTextContent(createContext({}, lng)) ?? ""
+      const description =
+        doc
+          .getRootElement()
+          ?.getFirstChildElement("Description")
+          ?.getTextContent(createContext({}, lng)) ?? ""
       return {
         language: lng,
-        default: lng === defaultLanguage,
+        default: lng === defaultLng,
         title,
         description,
       }

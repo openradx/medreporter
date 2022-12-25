@@ -10,7 +10,7 @@ export const createClient = (config: InitOptions) => {
     ...defaultConfig,
     backend: {
       loadPath: "/{{lng}}/{{ns}}.yml",
-      parse: (data) => yaml.load(data) as any,
+      parse: (data: any) => yaml.load(data) as any,
     },
     ...config,
   })
