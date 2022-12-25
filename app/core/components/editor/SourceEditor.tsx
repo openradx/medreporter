@@ -2,8 +2,8 @@ import { Box, Global, Paper, Stack, useMantineColorScheme } from "@mantine/core"
 import { SchemaConfiguration } from "@medreporter/medtl-language-service"
 import { ModuleSchema, TemplateSchema } from "@medreporter/medtl-schema"
 import { setDiagnosticsOptions } from "@medreporter/monaco-plugin-medtl"
-import { useCallback, useRef } from "react"
-import MonacoEditor, { monaco } from "react-monaco-editor"
+import { editor, IDisposable } from "monaco-editor"
+import { useCallback, useEffect, useRef } from "react"
 import { useResizeDetector } from "react-resize-detector"
 import { useDebouncedCallback } from "use-debounce"
 import { selectSource, selectType, setSource } from "../../state/editorSlice"
@@ -26,10 +26,13 @@ const templateSchema: SchemaConfiguration = {
 const SourceEditor = () => {
   const type = useAppSelector(selectType)
   const initialSource = useAppSelector(selectSource)
-  const stackRef = useRef<HTMLDivElement>(null)
-  const editorRef = useRef<monaco.editor.IStandaloneCodeEditor>()
   const { colorScheme } = useMantineColorScheme()
   const dispatch = useAppDispatch()
+
+  const stackRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const editorRef = useRef<editor.IStandaloneCodeEditor>()
+  const subscriptionRef = useRef<IDisposable>()
 
   const onResize = useCallback(() => {
     editorRef.current?.layout()
@@ -40,9 +43,7 @@ const SourceEditor = () => {
     onResize,
   })
 
-  const updateSourceDebounced = useDebouncedCallback((source: string) => {
-    dispatch(setSource(source))
-  }, 1000)
+  const theme = colorScheme === "dark" ? "vs-dark" : "vs"
 
   let schema: SchemaConfiguration
   if (type === "module") {
@@ -52,6 +53,41 @@ const SourceEditor = () => {
   } else {
     throw new Error(`Missing schema for type "${type}".`)
   }
+
+  const updateSourceDebounced = useDebouncedCallback((source: string) => {
+    dispatch(setSource(source))
+  }, 1000)
+
+  useEffect(
+    () => {
+      if (containerRef.current) {
+        editorRef.current = editor.create(containerRef.current, {
+          language: "medtl",
+          value: initialSource,
+          theme,
+        })
+
+        subscriptionRef.current = editorRef.current!.onDidChangeModelContent(() => {
+          updateSourceDebounced(editorRef.current!.getValue())
+        })
+
+        setDiagnosticsOptions({
+          schemas: [schema],
+        })
+      }
+      return () => {
+        editorRef.current?.dispose()
+        editorRef.current?.getModel()?.dispose()
+        subscriptionRef.current?.dispose()
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
+
+  useEffect(() => {
+    editor.setTheme(theme)
+  }, [theme])
 
   return (
     <>
@@ -68,27 +104,7 @@ const SourceEditor = () => {
               minHeight: 0,
             }}
           >
-            <MonacoEditor
-              language="medtl"
-              height="100%"
-              theme={colorScheme === "dark" ? "vs-dark" : "vs"}
-              value={initialSource}
-              defaultValue={initialSource}
-              options={{
-                tabSize: 2,
-                suggest: { snippetsPreventQuickSuggestions: false },
-                automaticLayout: true,
-              }}
-              editorDidMount={(editor) => {
-                editorRef.current = editor
-                setDiagnosticsOptions({
-                  schemas: [schema],
-                })
-              }}
-              onChange={(value) => {
-                updateSourceDebounced(value)
-              }}
-            />
+            <Box className="monaco-editor-container" ref={containerRef} h="100%" />
           </Box>
           <SourceProblemsPanel editor={editorRef.current} />
         </Stack>

@@ -1,4 +1,4 @@
-import { Alert, Box, Center, Portal, SegmentedControl } from "@mantine/core"
+import { Alert, Box, Center, Loader, Portal, SegmentedControl } from "@mantine/core"
 import dynamic from "next/dynamic"
 import { useState } from "react"
 import {
@@ -7,13 +7,16 @@ import {
   MdSettings as SettingsIcon,
 } from "react-icons/md"
 import { useSiteTranslation } from "app/core/hooks/useSiteTranslation"
-import { Loading } from "../common/Loading"
 import { ModulePreview } from "./ModulePreview"
 
 const SourceEditor = dynamic(() => import("./SourceEditor"), {
   loading: ({ isLoading, error }) => {
     if (isLoading) {
-      return <Loading />
+      return (
+        <Center h="100%">
+          <Loader variant="bars" size="lg" />
+        </Center>
+      )
     }
 
     if (error) {
