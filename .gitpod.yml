@@ -1,4 +1,3 @@
-# Use custom Dockerfile
 image:
   file: .gitpod.Dockerfile
 
@@ -7,18 +6,17 @@ additionalRepositories:
 
 tasks:
   - name: Dev
-    before: |
-      echo "@medreporter:registry=https://$NPM_REGISTRY_HOST/" > ~/.npmrc
-      echo "//$NPM_REGISTRY_HOST/:_authToken=\"$NPM_REGISTRY_TOKEN\"" >> ~/.npmrc
     init: |
       pnpm install
-      blitz prisma migrate dev
-      blitz db seed
+      echo "NEXTAUTH_URL=$(gp url 3000)" > .env.local
+      echo "NEXTAUTH_URL_INTERNAL=http://localhost:3000" >> .env.local
+      pnpm db:migrate
+      pnpm db:seed
       gp sync-done install
-    command: pnpm dev
+    command: pnpm run dev
   - name: Test
     init: gp sync-await install
-    command: pnpm test:watch
+    command: pnpm test
   - name: MedTL
     before: cd ../medtl
     init: |
@@ -27,6 +25,7 @@ tasks:
 
 vscode:
   extensions:
+    - anwar.papyrus-pdf
     - davidanson.vscode-markdownlint
     - dbaeumer.vscode-eslint
     - dsznajder.es7-react-js-snippets
@@ -39,9 +38,8 @@ vscode:
     - mgmcdermott.vscode-language-babel
     - mhutchie.git-graph
     - mikestead.dotenv
-    - orta.vscode-jest
+    - ms-playwright.playwright
     - prisma.prisma
     - streetsidesoftware.code-spell-checker
     - streetsidesoftware.code-spell-checker-german
-    - tomoki1207.pdf
     - wayou.vscode-todo-highlight

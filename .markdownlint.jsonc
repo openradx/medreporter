@@ -1,0 +1,5 @@
+// Disable specific rules for extension markdownlint
+{
+  "MD013": false, // line-length
+  "MD034": false // no-bare-urls
+}

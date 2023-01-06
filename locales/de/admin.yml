@@ -8,6 +8,7 @@ AddUserButton:
 AddUserModal:
   formTitle: Benutzer hinzufügen
   messageDuplicateEmail: Email Adresse existiert bereits
+  messageDuplicateUsername: Benutzername bereits vergeben
 AdminFeatures:
   descriptionManageInstitutes: |
     Hinzufügen, löschen und editieren von Instituten und deren Mitgliedern.
@@ -35,6 +36,7 @@ EditUserButton:
 EditUserModal:
   formTitle: User editieren
   messageDuplicateEmail: Email Adresse existiert bereit
+  messageDuplicateUsername: Benutzername bereits vergeben
 InstituteForm:
   inputLabelName: Name
 InstitutesManager:

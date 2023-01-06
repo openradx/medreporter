@@ -2,14 +2,13 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "javascript.validate.enable": true,
-  "jest.autoRun": "off",
+  "typescript.locale": "en",
   "i18n-ally.displayLanguage": "en",
   "i18n-ally.keystyle": "nested",
   "i18n-ally.localesPaths": ["locales"],
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.language": "en, de-de",
   "cSpell.words": ["autosize", "signup", "Signup"],
-  "typescript.locale": "en",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

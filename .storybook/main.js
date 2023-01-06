@@ -1,21 +1,17 @@
 const path = require("path")
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
-
 module.exports = {
-  stories: ["../**/*.story.mdx", "../**/*.story.@(js|jsx|ts|tsx)"],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "storybook-dark-mode",
+    "@storybook/addon-links",
     "@storybook/addon-essentials",
-    {
-      name: "storybook-addon-turbo-build",
-      options: { optimizationLevel: 2 },
-    },
+    "@storybook/addon-interactions",
   ],
-  framework: "@storybook/react",
+  framework: {
+    name: "@storybook/nextjs",
+    options: {},
+  },
   staticDirs: ["../locales"],
-  webpackFinal: async (config) => {
-    const plugins = config.resolve.plugins ?? []
-    config.resolve.plugins = [...plugins, new TsconfigPathsPlugin()]
-    return config
+  docs: {
+    autodocs: "tag",
   },
 }

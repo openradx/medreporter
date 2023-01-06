@@ -1,10 +1,7 @@
 /*
  * Usage:
- * node -r @swc-node/register scripts/parseSVG.ts --output options public/images/arteriesBrain.svg
- * node -r @swc-node/register scripts/parseSVG.ts --output translations public/images/arteriesBrain.svg
- * or (by using scripts entry in package.json)
- * yarn svg:options ./public/images/arteriesBrain.svg
- * yarn svg:translations ./public/images/arteriesBrain.svg
+ * pnpm svg:options ./public/images/arteriesBrain.svg
+ * pnpm svg:translations ./public/images/arteriesBrain.svg
  */
 import { Option, program } from "commander"
 import { readFileSync } from "fs"

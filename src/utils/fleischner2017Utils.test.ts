@@ -1,0 +1,84 @@
+import { describe, expect, it } from "vitest"
+import {
+  Count,
+  RiskFactors,
+  Structure,
+} from "~/components/tools/fleischner2017/Fleischner2017Report"
+import { defineFleischner2017, Suggestion, calcAverageDiameter } from "./fleischner2017Utils"
+
+describe("Calculate average diameter", () => {
+  it.each([
+    [2, 1, 1.5],
+    [6, 5, 5.5],
+    [11, 1, 6],
+    [12, 10, 11],
+  ])("should be calculated correctly", (longaxis, shortaxis, result) => {
+    expect(calcAverageDiameter(longaxis, shortaxis)).toBe(result)
+  })
+})
+
+describe("defineFleischner2017", () => {
+  it.each<[number, number, Structure, Count, RiskFactors, Suggestion]>([
+    [3, 2, "solid", "single", "no", Suggestion.NoFollowUp],
+    [7, 6, "solid", "single", "no", Suggestion.Ct3To6MonthsAndConsider18To24],
+    [9, 8, "solid", "single", "no", Suggestion.Ct3MonthsPETSampling],
+    [3, 2, "solid", "single", "yes", Suggestion.OptionalAt12MonthsSuspicious],
+    [7, 6, "solid", "single", "yes", Suggestion.Ct3To6MonthsAnd18To24],
+    [10, 9, "solid", "single", "yes", Suggestion.Ct3MonthsPETSampling],
+    [3, 2, "solid", "multiple", "no", Suggestion.NoFollowUp],
+    [7, 6, "solid", "multiple", "no", Suggestion.Ct3To6MonthsAndConsider18To24],
+    [10, 9, "solid", "multiple", "no", Suggestion.Ct3To6MonthsAndConsider18To24],
+    [3, 2, "solid", "multiple", "yes", Suggestion.OptionalAt12Months],
+    [7, 6, "solid", "multiple", "yes", Suggestion.Ct3To6MonthsAnd18To24],
+    [10, 9, "solid", "multiple", "yes", Suggestion.Ct3To6MonthsAnd18To24],
+    [6, 5, "groundglass", "single", "yes", Suggestion.NoFollowUp],
+    [7, 6, "groundglass", "single", "yes", Suggestion.Ct6To12Months2Years5Years],
+    [6, 5, "groundglass", "single", "no", Suggestion.NoFollowUp],
+    [7, 6, "groundglass", "single", "no", Suggestion.Ct6To12Months2Years5Years],
+    [6, 5, "partsolid", "single", "yes", Suggestion.NoFollowUp],
+    [7, 6, "partsolid", "single", "yes", Suggestion.Ct3To6MonthsAnnual],
+    [6, 5, "partsolid", "single", "no", Suggestion.NoFollowUp],
+    [7, 6, "partsolid", "single", "no", Suggestion.Ct3To6MonthsAnnual],
+    [6, 5, "groundglass", "multiple", "yes", Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "groundglass", "multiple", "yes", Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "partsolid", "multiple", "yes", Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "partsolid", "multiple", "yes", Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "groundglass", "multiple", "no", Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "groundglass", "multiple", "no", Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "partsolid", "multiple", "no", Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "partsolid", "multiple", "no", Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "groundglass", "single", null, Suggestion.NoFollowUp],
+    [7, 6, "groundglass", "single", null, Suggestion.Ct6To12Months2Years5Years],
+    [6, 5, "groundglass", "single", null, Suggestion.NoFollowUp],
+    [7, 6, "groundglass", "single", null, Suggestion.Ct6To12Months2Years5Years],
+    [6, 5, "partsolid", "single", null, Suggestion.NoFollowUp],
+    [7, 6, "partsolid", "single", null, Suggestion.Ct3To6MonthsAnnual],
+    [6, 5, "partsolid", "single", null, Suggestion.NoFollowUp],
+    [7, 6, "partsolid", "single", null, Suggestion.Ct3To6MonthsAnnual],
+    [6, 5, "groundglass", "multiple", null, Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "groundglass", "multiple", null, Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "partsolid", "multiple", null, Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "partsolid", "multiple", null, Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "groundglass", "multiple", null, Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "groundglass", "multiple", null, Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "partsolid", "multiple", null, Suggestion.Ct3To6Months2And4Years],
+    [7, 6, "partsolid", "multiple", null, Suggestion.Ct3To6MonthsMostSuspicious],
+    [6, 5, "groundglass", null, "yes", Suggestion.NoFollowUp],
+    [6, 5, "groundglass", null, "no", Suggestion.NoFollowUp],
+    [6, 5, "partsolid", null, "yes", Suggestion.NoFollowUp],
+    [6, 5, "partsolid", null, "no", Suggestion.NoFollowUp],
+    [6, 5, "groundglass", null, null, Suggestion.NoFollowUp],
+    [6, 5, "groundglass", null, null, Suggestion.NoFollowUp],
+    [6, 5, "partsolid", null, null, Suggestion.NoFollowUp],
+    [6, 5, "partsolid", null, null, Suggestion.NoFollowUp],
+  ])(
+    "should give correct suggestion",
+    (longaxis, shortaxis, structure, count, riskFactors, suggestion) => {
+      expect(
+        defineFleischner2017(longaxis, shortaxis, structure, count, riskFactors)
+      ).toMatchObject({
+        suggestion,
+      })
+    }
+  )
+})

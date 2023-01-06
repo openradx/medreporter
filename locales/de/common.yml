@@ -49,6 +49,8 @@ CopyButton:
   buttonCopy: Befund in Zwischenablage kopieren
   errorMessageCopyReport: Kopieren in Zwischenablage fehlgeschlagen. Bitte manuell kopieren.
   successMessageCopyReport: Befund in Zwischenablage kopiert
+DataLoader:
+  subtitle: Lade Daten ...
 DraftLanguageSelector:
   inputLabelLanguage: Hauptsprache
 EditModulePage:
@@ -93,8 +95,18 @@ LoginForm:
   inputLabelPassword: Passwort
   inputLabelUsernameOrEmail: Benutzername oder E-Mail
   formTitle: Anmeldung
+LoginLink:
+  text: Einloggen
 LoginPage:
   pageTitle: Anmeldung
+MainLayoutFallback:
+  titleAuthenticationError: Authentifizierungsfehler
+  messageAuthenticationError: >
+    Nur angemeldete Nutzer können auf diese Seite zugreifen. Weiterleitung in
+    10 Sekunden zur Anmeldung.
+  titleAuthorizationError: Fehlende Rechte
+  messageAuthorizationError: Nicht ausreichende Rechte für den Zugriff auf diese Seite.
+  messageDirectLogin: Direkt zum
 MeasurementsActions:
   buttonActions: Aktionen Messwerkzeug
 MeasurementsTablePage:
@@ -117,6 +129,9 @@ NewModuleForm:
   inputLabelMultilingual: Mehrsprachiges Modul
 NewModulePage:
   pageTitle: Neues Modul erstellen
+QueryError:
+  title: Fehler bei Datenabfrage
+  message: Ein unerwarteter Fehler ist während der Datenabfrage aufgetreten
 RedoButton:
   buttonRedo: Wiederherstellen
 ReportFormat:
@@ -132,10 +147,9 @@ ResetPasswordForm:
   formTitle: Passwort zurücksetzen
   inputLabelConfirmPassword: Passwort bestätigen
   inputLabelNewPassword: Neues Passwort
-  linkHomepage: Startseite
   messageError: Ungültiger oder abgelaufener Token
   messageSuccess: Neues Passwort erfolgreich gesetzt
-  textRedirect: Gehe zur
+  textRedirect: Gehe zum
 ResetPasswordPage:
   pageTitle: Passwort zurücksetzen
 ShowModulePage:
@@ -148,7 +162,8 @@ SignupForm:
   inputLabelFullName: Vollständiger Name
   inputLabelPassword: Passwort
   inputLabelUsername: Benutzername
-  messageEmailUsed: Zu dieser E-Mail-Adresse existiert bereits ein Account.
+  messageUsernameAlreadyUsed: Dieser Benutzername ist bereits vergeben.
+  messageEmailAlreadyUsed: Ein Account mit dieser Email ist bereits vorhanden.
 SignupPage:
   pageTitle: Registrierung
 SiteLanguageChooser:

@@ -2,7 +2,7 @@ Editor:
   source: Source code
   preview: Preview
   settings: Settings
-SourceProblemsPanel:
+SourceEditorProblems:
   problemsFound_one: "{{count}} problem found"
   problemsFound_other: "{{count}} problems found"
   noProblemsFound: No problems found

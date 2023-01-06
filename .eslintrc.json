@@ -1,0 +1,28 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["next/core-web-vitals", "mantine", "prettier", "plugin:storybook/recommended"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "max-classes-per-file": "off",
+        "no-param-reassign": "off",
+        "no-restricted-syntax": "off",
+        "no-unreachable": "error",
+        "no-plusplus": "off",
+        "no-continue": "off",
+        "react/react-in-jsx-scope": "off",
+        "semi": ["error", "never"],
+        "@typescript-eslint/semi": "off",
+        "quotes": "off",
+        "@typescript-eslint/quotes": ["error", "double", { "avoidEscape": true }],
+        "no-return-await": "off",
+        "@typescript-eslint/return-await": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+      }
+    }
+  ]
+}

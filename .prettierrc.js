@@ -4,5 +4,5 @@ module.exports = {
   semi: false,
   printWidth: 100,
   plugins: [require.resolve("@trivago/prettier-plugin-sort-imports")],
-  importOrder: ["^db", "^app/", "^[./]"],
+  importOrder: ["^~", "^[./]"],
 }

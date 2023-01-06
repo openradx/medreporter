@@ -1,30 +1,26 @@
 const path = require("path")
-const { withBlitz } = require("@blitzjs/next")
+const { env } = require("./src/server/env")
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
-
+const withRoutes = require("nextjs-routes/config")({ outDir: "types" })
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 })
 
-/**
- * @type {import('@blitzjs/next').BlitzConfig}
- **/
-const config = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   i18n: {
     localeDetection: true,
     locales: ["de", "en"],
     defaultLocale: "en",
   },
-  experimental: {
-    appDir: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
+  env: {
+    // make url available on the client
+    NEXTAUTH_URL: env.NEXTAUTH_URL,
   },
   webpack(config, options) {
+    // Watch changes of locales to reload i18next resources on the client
     if (config.mode === "development") {
-      // Watch changes of locales to reload i18next resources on the client
       const { FileWatchHMRPlugin } = require("file-watch-hmr/plugin")
       config.plugins.push(
         new FileWatchHMRPlugin({
@@ -92,8 +88,9 @@ const config = {
         },
       ],
     })
+
     return config
   },
 }
 
-module.exports = withBundleAnalyzer(withBlitz(config))
+module.exports = withBundleAnalyzer(withRoutes(nextConfig))

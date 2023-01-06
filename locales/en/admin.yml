@@ -8,6 +8,7 @@ AddUserButton:
 AddUserModal:
   formTitle: Add new user
   messageDuplicateEmail: E-Mail address already exists
+  messageDuplicateUsername: Username already taken
 AdminFeatures:
   descriptionManageInstitutes: |
     Add, delete and edit institutes and their memberships.
@@ -35,6 +36,7 @@ EditUserButton:
 EditUserModal:
   formTitle: Edit user
   messageDuplicateEmail: E-mail address already exists
+  messageDuplicateUsername: Username already taken
 InstituteForm:
   inputLabelName: Name
 InstitutesManager:
