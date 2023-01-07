@@ -6,8 +6,6 @@ import { ReportPanel } from "./ReportPanel"
 import { StructurePanel } from "./StructurePanel"
 import { TransformerRegistryProvider } from "./TransformerRegistryProvider"
 
-// import { TransformerRegistryProvider } from "./TransformerRegistryProvider"
-
 interface StructuredReportProps {
   children: ReactNode
 }
