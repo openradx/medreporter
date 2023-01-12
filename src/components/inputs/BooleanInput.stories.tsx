@@ -1,23 +1,23 @@
 import { Meta, StoryObj } from "@storybook/react"
 import { ComponentProps, useState } from "react"
-import { BooleanInput } from "./BooleanInput"
+import { BinaryInput } from "./BinaryInput"
 
-const meta: Meta<typeof BooleanInput> = {
-  title: "Inputs / BooleanInput",
-  component: BooleanInput,
+const meta: Meta<typeof BinaryInput> = {
+  title: "Inputs / BinaryInput",
+  component: BinaryInput,
 }
 
 export default meta
-type Story = StoryObj<typeof BooleanInput>
+type Story = StoryObj<typeof BinaryInput>
 
-const BooleanInputWithState = ({ label }: ComponentProps<typeof BooleanInput>) => {
+const BinaryInputWithState = ({ label }: ComponentProps<typeof BinaryInput>) => {
   const [value, setValue] = useState(false)
 
-  return <BooleanInput value={value} onChange={setValue} {...{ label }} />
+  return <BinaryInput value={value} onChange={setValue} {...{ label }} />
 }
 
 const Template: Story = {
-  render: (props) => <BooleanInputWithState {...props} />,
+  render: (props) => <BinaryInputWithState {...props} />,
 }
 
 export const Basic: Story = {

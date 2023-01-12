@@ -2,15 +2,15 @@ import { Switch, Box } from "@mantine/core"
 import { ReactNode } from "react"
 import { InputLabel } from "./InputLabel"
 
-interface BooleanInputProps {
+interface BinaryInputProps {
   label?: string
+  extras?: ReactNode
   value: boolean
   onChange: (value: boolean) => void
-  extras?: ReactNode
   disabled?: boolean
 }
 
-export const BooleanInput = ({ label, value, onChange, extras, disabled }: BooleanInputProps) => (
+export const BinaryInput = ({ label, extras, value, onChange, disabled }: BinaryInputProps) => (
   <Box
     sx={(theme) => ({
       border: `1px solid ${
@@ -28,7 +28,7 @@ export const BooleanInput = ({ label, value, onChange, extras, disabled }: Boole
       onChange={(ev) => {
         onChange(ev.currentTarget.checked)
       }}
-      disabled={disabled}
+      disabled={disabled === false}
       sx={{
         display: "flex",
         alignItems: "center",
