@@ -78,7 +78,20 @@ GfrPage:
 GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 HomePage:
+  about: Mehr über MedReporter
+  editor: 
+    title: MedTL Editor
+    description: Nutze den MedTL Editor um neue Module zu erstellen.
+    button: Gehe zum MedTL Editor
+  modules:
+    title: Module
+    description: Nutze einzelne Module oder erstelle einen Report aus Modulen.
+    button: Module anzeigen
   pageTitle: Startseite
+  tools: 
+    title: Tools
+    description: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren. 
+    button: Tools anzeigen 
 KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
 LanguageChooser:
