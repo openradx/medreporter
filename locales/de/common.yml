@@ -79,7 +79,7 @@ GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 HomePage:
   about: Mehr über MedReporter
-  editor: 
+  editor:
     title: MedTL Editor
     description: Nutze den MedTL Editor um neue Module zu erstellen.
     button: Gehe zum MedTL Editor
@@ -88,10 +88,12 @@ HomePage:
     description: Nutze einzelne Module oder erstelle einen Report aus Modulen.
     button: Module anzeigen
   pageTitle: Startseite
-  tools: 
+  tools:
     title: Tools
-    description: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren. 
-    button: Tools anzeigen 
+    description: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren.
+    button: Tools anzeigen
+InstituteSwitcher:
+  label: Institut auswählen
 KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
 LanguageChooser:

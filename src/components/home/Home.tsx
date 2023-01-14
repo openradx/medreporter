@@ -4,6 +4,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
 import { trpc } from "~/utils/trpc"
 import { LoginForm } from "../auth/LoginForm"
+import { InstituteSwitcher } from "./InstituteSwitcher"
 
 export const Home = () => {
   const healthcheck = trpc.healthcheck.useQuery()
@@ -33,6 +34,11 @@ export const Home = () => {
       {!loggedIn && (
         <Grid.Col span={12}>
           <LoginForm />
+        </Grid.Col>
+      )}
+      {loggedIn && (
+        <Grid.Col span={12}>
+          <InstituteSwitcher />
         </Grid.Col>
       )}
       <Grid.Col sm={12} md={4}>

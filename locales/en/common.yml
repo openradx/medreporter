@@ -79,7 +79,7 @@ GraphicsModal:
   buttonReset: Reset selection
 HomePage:
   about: Learn more about MedReporter
-  editor: 
+  editor:
     title: MedTL Editor
     description: Go to the MedTL Editor to create new modules.
     button: Go to editor
@@ -88,10 +88,12 @@ HomePage:
     description: Use just one module or build a report on the base of one module.
     button: Show modules
   pageTitle: Home
-  tools: 
+  tools:
     title: Tools
-    description: Use our tools to calculate or to classify results. 
+    description: Use our tools to calculate or to classify results.
     button: Show tools
+InstituteSwitcher:
+  label: Choose institute
 KidneyVolumePage:
   toolTitle: Kidney volume (Mayo-Model)
 LanguageChooser:
