@@ -1,5 +1,8 @@
-import { Loader, Select, SelectItem } from "@mantine/core"
+import { Group, Loader, Select, Text } from "@mantine/core"
 import { openModal } from "@mantine/modals"
+import { forwardRef, ReactElement } from "react"
+import { MdBusiness as InstituteIcon } from "react-icons/md"
+import { TbHomeOff as NoInstituteIcon } from "react-icons/tb"
 import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { reloadSession } from "~/utils/session"
@@ -11,24 +14,44 @@ export const InstituteSwitcher = () => {
   const { currentInstituteId } = user
   const ownMemberships = trpc.common.getOwnMemberships.useQuery()
   const updateCurrentInstitute = trpc.common.updateCurrentInstitute.useMutation()
+  interface ItemProps extends React.ComponentPropsWithoutRef<"div"> {
+    image: ReactElement
+    label: string
+    value: string
+  }
 
-  const options: SelectItem[] =
+  const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
+    ({ image, label, ...others }: ItemProps, ref) => (
+      <div ref={ref} {...others}>
+        <Group noWrap>
+          {image} <Text size="sm">{label}</Text>
+        </Group>
+      </div>
+    )
+  )
+
+  const options: ItemProps[] =
     ownMemberships.data?.map((membership) => {
       const instituteId = membership.institute.id
       const instituteName = membership.institute.name
 
-      return { value: instituteId, label: instituteName }
+      return { value: instituteId, label: instituteName, image: <InstituteIcon /> }
     }) ?? []
 
   if (options.length) {
-    options.unshift({ value: "", label: t("InstituteSwitcher.noInstituteOption") })
+    options.unshift({
+      value: "",
+      label: t("InstituteSwitcher.noInstituteOption"),
+      image: <NoInstituteIcon />,
+    })
   }
-
   return (
     <Select
       label={t("InstituteSwitcher.label")}
+      searchable
       placeholder={!options.length ? t("InstituteSwitcher.noInstituteAvailable") : undefined}
       data={options}
+      itemComponent={SelectItem}
       value={currentInstituteId === null ? "" : currentInstituteId}
       disabled={!ownMemberships.isSuccess}
       icon={
