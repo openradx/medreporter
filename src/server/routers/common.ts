@@ -309,7 +309,10 @@ export const commonRouter = router({
           where: { instituteId_userId: { instituteId, userId: user.id } },
         })
         if (!membership) {
-          throw new TRPCError({ code: "BAD_REQUEST" })
+          throw new TRPCError({
+            code: "BAD_REQUEST",
+            message: "Not a valid member of this institute.",
+          })
         }
       }
 
