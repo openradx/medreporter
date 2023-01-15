@@ -1,4 +1,4 @@
-import { Title, Text, Card, Grid, Button } from "@mantine/core"
+import { Title, Text, Card, Grid, Button, Image } from "@mantine/core"
 import Link from "next/link"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
@@ -43,6 +43,9 @@ export const Home = () => {
       )}
       <Grid.Col sm={12} md={4}>
         <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 80 }}>
+          <Card.Section>
+            <Image src="/tools.png" height={100} fit="contain" alt="Tools Image" />
+          </Card.Section>
           <Text weight={500}>{t("HomePage.tools.title")}</Text>{" "}
           <Text size="sm" color="dimmed">
             {t("HomePage.tools.description")}
@@ -56,6 +59,9 @@ export const Home = () => {
       </Grid.Col>
       <Grid.Col sm={12} md={4}>
         <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 80 }}>
+          <Card.Section>
+            <Image src="/exampleImage.png" height={100} alt="Example image" />
+          </Card.Section>
           <Text weight={500}>{t("HomePage.modules.title")}</Text>{" "}
           <Text size="sm" color="dimmed">
             {t("HomePage.modules.description")}
@@ -69,6 +75,9 @@ export const Home = () => {
       </Grid.Col>
       <Grid.Col sm={12} md={4}>
         <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 80 }}>
+          <Card.Section>
+            <Image src="/demoEditor.gif" height={100} alt="Editor demo" />
+          </Card.Section>
           <Text weight={500}>{t("HomePage.editor.title")}</Text>{" "}
           <Text size="sm" color="dimmed">
             {t("HomePage.editor.description")}
