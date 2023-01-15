@@ -1,8 +1,8 @@
 import { Group, Loader, Select, Text } from "@mantine/core"
 import { openModal } from "@mantine/modals"
 import { forwardRef, ReactElement } from "react"
+import { BsPersonSquare as NoInstituteIcon } from "react-icons/bs"
 import { MdBusiness as InstituteIcon } from "react-icons/md"
-import { TbHomeOff as NoInstituteIcon } from "react-icons/tb"
 import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { reloadSession } from "~/utils/session"
@@ -45,6 +45,7 @@ export const InstituteSwitcher = () => {
       image: <NoInstituteIcon />,
     })
   }
+
   return (
     <Select
       label={t("InstituteSwitcher.label")}
