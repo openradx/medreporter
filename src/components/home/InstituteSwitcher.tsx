@@ -34,7 +34,11 @@ export const InstituteSwitcher = () => {
       icon={
         ownMemberships.isLoading || updateCurrentInstitute.isLoading ? (
           <Loader size="sm" />
-        ) : undefined
+        ) : currentInstituteId ? (
+          <InstituteIcon size={20} />
+        ) : (
+          <NoInstituteIcon size={20} />
+        )
       }
       onChange={async (value) => {
         const newInstituteId = value === "" ? null : value
