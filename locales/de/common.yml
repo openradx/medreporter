@@ -94,6 +94,8 @@ HomePage:
     button: Tools anzeigen
 InstituteSwitcher:
   label: Institut auswählen
+  noInstituteAvailable: Kein Institut verfügbar
+  noInstituteOption: Kein Institut
 KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
 LanguageChooser:
