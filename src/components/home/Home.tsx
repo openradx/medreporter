@@ -21,7 +21,7 @@ export const Home = () => {
   const loggedIn = !!user
 
   return (
-    <Grid>
+    <Grid align="stretch">
       <Grid.Col span={12}>
         <Title align="center" mt={100}>
           Welcome to{" "}
@@ -32,61 +32,93 @@ export const Home = () => {
         </Title>
       </Grid.Col>
       {!loggedIn && (
-        <Grid.Col span={12}>
+        <Grid.Col span={8} offset={2}>
           <LoginForm />
         </Grid.Col>
       )}
       {loggedIn && (
-        <Grid.Col span={12}>
+        <Grid.Col span={8} offset={2}>
           <InstituteSwitcher />
         </Grid.Col>
       )}
-      <Grid.Col sm={12} md={4}>
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 80 }}>
+      <Grid.Col xs={12} sm={loggedIn ? 8 : 4} offsetSm={loggedIn ? 2 : 0}>
+        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
           <Card.Section>
-            <Image src="/tools.png" height={100} fit="contain" alt="Tools Image" />
+            <Image src="/tools.png" height={120} fit="contain" alt="Tools Image" />
           </Card.Section>
-          <Text weight={500}>{t("HomePage.tools.title")}</Text>{" "}
+          <Text weight={500}>{t("HomePage.toolsTitle")}</Text>{" "}
           <Text size="sm" color="dimmed">
-            {t("HomePage.tools.description")}
+            {t("HomePage.toolsDescription")}
           </Text>
           <Link href="/tools">
             <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-              {t("HomePage.tools.button")}
+              {t("HomePage.toolsButton")}
             </Button>
           </Link>
         </Card>
       </Grid.Col>
-      <Grid.Col sm={12} md={4}>
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 80 }}>
+      <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={loggedIn ? 3 : 4}>
+        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
           <Card.Section>
-            <Image src="/exampleImage.png" height={100} alt="Example image" />
+            <Image src="/exampleImage.png" height={120} fit="contain" alt="Example image" />
           </Card.Section>
-          <Text weight={500}>{t("HomePage.modules.title")}</Text>{" "}
+          <Text weight={500}>{t("HomePage.modulesTitle")}</Text>{" "}
           <Text size="sm" color="dimmed">
-            {t("HomePage.modules.description")}
+            {t("HomePage.modulesDescription")}
           </Text>
           <Link href="/modules">
             <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-              {t("HomePage.modules.button")}
+              {t("HomePage.modulesButton")}
             </Button>
           </Link>
         </Card>
       </Grid.Col>
-      <Grid.Col sm={12} md={4}>
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 80 }}>
+      {loggedIn && (
+        <Grid.Col xs={12} sm={6} xl={3}>
+          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
+            <Card.Section>
+              <Image src="/demoEditor.gif" height={120} fit="contain" alt="Editor demo" />
+            </Card.Section>
+            <Text weight={500}>{t("HomePage.newModuleTitle")}</Text>{" "}
+            <Text size="sm" color="dimmed">
+              {t("HomePage.newModuleDescription")}
+            </Text>
+            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+              {t("HomePage.newModuleButton")}
+            </Button>
+          </Card>
+        </Grid.Col>
+      )}
+      <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={loggedIn ? 3 : 4}>
+        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
           <Card.Section>
-            <Image src="/demoEditor.gif" height={100} alt="Editor demo" />
+            <Image src="/exampleImage2.png" height={120} fit="contain" alt="Example image" />
           </Card.Section>
-          <Text weight={500}>{t("HomePage.editor.title")}</Text>{" "}
+          <Text weight={500}>{t("HomePage.templatesTitle")}</Text>{" "}
           <Text size="sm" color="dimmed">
-            {t("HomePage.editor.description")}
+            {t("HomePage.templatesDescription")}
           </Text>
           <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-            {t("HomePage.editor.button")}
+            {t("HomePage.templatesButton")}
           </Button>
         </Card>
       </Grid.Col>
+      {loggedIn && (
+        <Grid.Col xs={12} sm={6} xl={3}>
+          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
+            <Card.Section>
+              <Image src="/demoEditor.gif" height={120} fit="contain" alt="Editor demo" />
+            </Card.Section>
+            <Text weight={500}>{t("HomePage.newTemplateTitle")}</Text>{" "}
+            <Text size="sm" color="dimmed">
+              {t("HomePage.newTemplateDescription")}
+            </Text>
+            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+              {t("HomePage.newTemplateButton")}
+            </Button>
+          </Card>
+        </Grid.Col>
+      )}
     </Grid>
   )
 }

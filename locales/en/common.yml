@@ -79,19 +79,23 @@ GraphicsModal:
   buttonReset: Reset selection
 HomePage:
   about: Learn more about MedReporter
-  editor:
-    title: MedTL Editor
-    description: Go to the MedTL Editor to create new modules.
-    button: Go to editor
-  modules:
-    title: Modules
-    description: Use just one module or build a report on the base of one module.
-    button: Show modules
+  newModuleTitle: New module
+  newModuleDescription: Go to the MedTL Editor to create new modules.
+  newModuleButton: Go to editor
+  modulesTitle: Modules
+  modulesDescription: Use just one module or build a report on the base of one module.
+  modulesButton: Show modules
   pageTitle: Home
-  tools:
-    title: Tools
-    description: Use our tools to calculate or to classify results.
-    button: Show tools
+  toolsTitle: Tools
+  toolsDescription: Use our tools to calculate or to classify results.
+  toolsButton: Show tools
+  newTemplateTitle: New template
+  newTemplateDescription: Go to the MedTL Editor to create new templates.
+  newTemplateButton: Go to editor
+  templatesTitle: Templates
+  templatesDescription: Use a template to build a report.
+  templatesButton: Show templates
+
 InstituteSwitcher:
   label: Choose institute
   noInstituteAvailable: No institute available
