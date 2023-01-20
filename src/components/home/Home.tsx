@@ -41,7 +41,7 @@ export const Home = () => {
           <InstituteSwitcher />
         </Grid.Col>
       )}
-      <Grid.Col xs={12} sm={loggedIn ? 8 : 4} offsetSm={loggedIn ? 2 : 0}>
+      <Grid.Col xs={12} sm={loggedIn ? 6 : 4}>
         <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
           <Card.Section>
             <Image src="/tools.png" height={120} fit="contain" alt="Tools Image" />
@@ -57,7 +57,23 @@ export const Home = () => {
           </Link>
         </Card>
       </Grid.Col>
-      <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={loggedIn ? 3 : 4}>
+      {loggedIn && (
+        <Grid.Col xs={12} sm={loggedIn ? 6 : 4}>
+          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
+            <Card.Section>
+              <Image src="/exampleImage2.png" height={120} fit="contain" alt="Example image" />
+            </Card.Section>
+            <Text weight={500}>{t("HomePage.reportsTitle")}</Text>{" "}
+            <Text size="sm" color="dimmed">
+              {t("HomePage.reportsDescription")}
+            </Text>
+            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+              {t("HomePage.reportsButton")}
+            </Button>
+          </Card>
+        </Grid.Col>
+      )}
+      <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={4}>
         <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
           <Card.Section>
             <Image src="/exampleImage.png" height={120} fit="contain" alt="Example image" />
@@ -73,23 +89,7 @@ export const Home = () => {
           </Link>
         </Card>
       </Grid.Col>
-      {loggedIn && (
-        <Grid.Col xs={12} sm={6} xl={3}>
-          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
-            <Card.Section>
-              <Image src="/demoEditor.gif" height={120} fit="contain" alt="Editor demo" />
-            </Card.Section>
-            <Text weight={500}>{t("HomePage.newModuleTitle")}</Text>{" "}
-            <Text size="sm" color="dimmed">
-              {t("HomePage.newModuleDescription")}
-            </Text>
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-              {t("HomePage.newModuleButton")}
-            </Button>
-          </Card>
-        </Grid.Col>
-      )}
-      <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={loggedIn ? 3 : 4}>
+      <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={4}>
         <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
           <Card.Section>
             <Image src="/exampleImage2.png" height={120} fit="contain" alt="Example image" />
@@ -104,16 +104,19 @@ export const Home = () => {
         </Card>
       </Grid.Col>
       {loggedIn && (
-        <Grid.Col xs={12} sm={6} xl={3}>
+        <Grid.Col xs={12} sm={6} xl={4}>
           <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
             <Card.Section>
               <Image src="/demoEditor.gif" height={120} fit="contain" alt="Editor demo" />
             </Card.Section>
-            <Text weight={500}>{t("HomePage.newTemplateTitle")}</Text>{" "}
+            <Text weight={500}>{t("HomePage.newTitle")}</Text>{" "}
             <Text size="sm" color="dimmed">
-              {t("HomePage.newTemplateDescription")}
+              {t("HomePage.newDescription")}
             </Text>
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+            <Button variant="light" color="blue" mt="md" radius="md">
+              {t("HomePage.newModuleButton")}
+            </Button>{" "}
+            <Button variant="light" color="blue" mt="md" radius="md">
               {t("HomePage.newTemplateButton")}
             </Button>
           </Card>
