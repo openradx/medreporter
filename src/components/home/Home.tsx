@@ -1,4 +1,4 @@
-import { Title, Text, Card, Grid, Button, Image } from "@mantine/core"
+import { Title, Text, Card, Grid, Button, Image, Box } from "@mantine/core"
 import Link from "next/link"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
@@ -113,12 +113,14 @@ export const Home = () => {
             <Text size="sm" color="dimmed">
               {t("HomePage.newDescription")}
             </Text>
-            <Button variant="light" color="blue" mt="md" radius="md">
-              {t("HomePage.newModuleButton")}
-            </Button>{" "}
-            <Button variant="light" color="blue" mt="md" radius="md">
-              {t("HomePage.newTemplateButton")}
-            </Button>
+            <Box style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+              <Button variant="light" color="blue" mt="md" radius="md" style={{ flexGrow: 1 }}>
+                {t("HomePage.newModuleButton")}
+              </Button>{" "}
+              <Button variant="light" color="blue" mt="md" radius="md" style={{ flexGrow: 1 }}>
+                {t("HomePage.newTemplateButton")}
+              </Button>
+            </Box>
           </Card>
         </Grid.Col>
       )}
