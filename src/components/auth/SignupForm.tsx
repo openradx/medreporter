@@ -29,7 +29,7 @@ export const SignupForm = (props: SignupFormProps) => {
           } catch (error) {
             if (error instanceof TRPCClientError) {
               if (error.message.match(/Unique constrained failed.*"username"/)) {
-                throw new FormSubmitError({ email: t("SignupForm.messageUsernameAlreadyUsed") })
+                throw new FormSubmitError({ username: t("SignupForm.messageUsernameAlreadyUsed") })
               }
               if (error.message.match(/Unique constrained failed.*"email"/)) {
                 throw new FormSubmitError({ email: t("SignupForm.messageEmailAlreadyUsed") })

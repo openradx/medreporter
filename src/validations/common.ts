@@ -65,6 +65,10 @@ export const buildUpdateModuleSchema = (t: TFunction) =>
     })
     .partial()
 
+export const UpdateCurrentInstituteSchema = z.object({
+  instituteId: z.string().nullable(),
+})
+
 export const UpdateReportSchema = CreateReportSchema.partial().extend({
   reportId: z.string(),
 })

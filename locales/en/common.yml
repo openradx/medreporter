@@ -78,7 +78,28 @@ GfrPage:
 GraphicsModal:
   buttonReset: Reset selection
 HomePage:
-  pageTitle: Homepage
+  about: Learn more about MedReporter
+  newTitle: New module/template
+  newDescription: Go to the MedTL Editor to create new modules or templates.
+  newModuleButton: New module
+  newTemplateButton: New template
+  modulesTitle: Modules
+  modulesDescription: Use just one module or build a report on the base of one module.
+  modulesButton: Show modules
+  pageTitle: Home
+  reportsTitle: Reports
+  reportsDescription: Go to your reports or the reports of your institute.
+  reportsButton: Show reports
+  toolsTitle: Tools
+  toolsDescription: Use our tools to calculate or to classify results.
+  toolsButton: Show tools
+  templatesTitle: Templates
+  templatesDescription: Use a template to build a report.
+  templatesButton: Show templates
+InstituteSwitcher:
+  label: Choose institute
+  noInstituteAvailable: No institute available
+  noInstituteOption: No institute
 KidneyVolumePage:
   toolTitle: Kidney volume (Mayo-Model)
 LanguageChooser:
