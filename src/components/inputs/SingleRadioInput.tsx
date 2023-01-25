@@ -8,18 +8,18 @@ const DEFAULT_OPTIONS: FieldOption[] = []
 interface SingleRadioInputProps {
   label?: string
   options?: FieldOption[]
+  extras?: ReactNode
   value: string | null
   onChange: (value: string | null) => void
-  extras?: ReactNode
   disabled?: boolean
 }
 
 export const SingleRadioInput = ({
   label,
+  extras,
   options = DEFAULT_OPTIONS,
   value,
   onChange,
-  extras,
   disabled,
 }: SingleRadioInputProps) => {
   value = value === null ? "" : value

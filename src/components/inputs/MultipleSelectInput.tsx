@@ -7,19 +7,19 @@ const DEFAULT_OPTIONS: FieldOption[] = []
 
 interface MultipleSelectInputProps {
   label?: string
+  extras?: ReactNode
   options?: FieldOption[]
   value: string[]
   onChange: (value: string[]) => void
-  extras?: ReactNode
   disabled?: boolean
 }
 
 export const MultipleSelectInput = ({
   label,
+  extras,
   options = DEFAULT_OPTIONS,
   value,
   onChange,
-  extras,
   disabled,
 }: MultipleSelectInputProps) => (
   <MultiSelect

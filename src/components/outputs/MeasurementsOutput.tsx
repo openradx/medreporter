@@ -1,16 +1,22 @@
 import { useReportTranslation } from "~/hooks/useReportTranslation"
-import { MeasurementsData } from "../inputs/MeasurementsInput/measurementsTypes"
+import { OutputFormat } from "~/types/general"
+import { MeasurementsData } from "../../types/measurements"
 import { MeasurementsOutputHtml } from "./MeasurementsOutputHtml"
-import { MeasurementsOutputText } from "./MeasurmentsOutputText"
+import { MeasurementsOutputPlain } from "./MeasurmentsOutputPlain"
 
 interface MeasurementsOutputProps {
-  format: "html" | "text"
+  format: OutputFormat
   data: MeasurementsData
-  stats: string
-  label: string
+  label?: string
+  stats?: string
 }
 
-export const MeasurementsOutput = ({ format, ...rest }: MeasurementsOutputProps) => {
+export const MeasurementsOutput = ({
+  format,
+  data,
+  label = "",
+  stats = "",
+}: MeasurementsOutputProps) => {
   const { t } = useReportTranslation()
 
   const labels = {
@@ -21,11 +27,11 @@ export const MeasurementsOutput = ({ format, ...rest }: MeasurementsOutputProps)
   }
 
   if (format === "html") {
-    return <MeasurementsOutputHtml labels={labels} {...rest} />
+    return <MeasurementsOutputHtml title={label} {...{ data, labels, stats }} />
   }
 
-  if (format === "text") {
-    return <MeasurementsOutputText labels={labels} {...rest} />
+  if (format === "plain") {
+    return <MeasurementsOutputPlain title={label} {...{ data, labels, stats }} />
   }
 
   throw new Error(`Invalid report format: ${format}`)

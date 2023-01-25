@@ -4,17 +4,17 @@ import { InputLabel } from "./InputLabel"
 
 interface DateInputProps {
   label?: string
+  extras?: ReactNode
   locale?: string
   value: Date | null
   onChange: (value: Date | null) => void
-  extras?: ReactNode
   disabled?: boolean
 }
 
-export const DateInput = ({ label, locale, value, onChange, extras, disabled }: DateInputProps) => (
+export const DateInput = ({ label, extras, locale, value, onChange, disabled }: DateInputProps) => (
   <DatePicker
-    locale={locale}
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
+    locale={locale}
     value={value}
     onChange={onChange}
     disabled={disabled}

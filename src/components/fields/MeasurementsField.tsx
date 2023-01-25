@@ -1,4 +1,4 @@
-import { ReactNode, useCallback } from "react"
+import { useCallback } from "react"
 import { useModule } from "~/contexts/ModuleContext"
 import { Transformer } from "~/contexts/TransformerRegistryContext"
 import { useStructureController } from "~/hooks/useStructureController"
@@ -11,25 +11,23 @@ import {
   createEmptyMeasurements,
   createStatsText,
 } from "~/utils/measurementsUtils"
+import { MeasurementsData } from "../../types/measurements"
 import { MeasurementsInput } from "../inputs/MeasurementsInput"
-import { MeasurementsData } from "../inputs/MeasurementsInput/measurementsTypes"
 import { MeasurementsOutput } from "../outputs/MeasurementsOutput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
 const DEFAULT_MEASUREMENTS_DATA = createEmptyMeasurements(false, 3, 2)
 
-interface MeasurementsFieldProps extends CommonFieldProps {
-  defaultValue?: MeasurementsData
-  extras?: ReactNode
-}
+interface MeasurementsFieldProps extends CommonFieldProps<MeasurementsData> {}
 
 export const MeasurementsField = ({
   id: fieldId,
-  label = "",
-  visible = true,
-  defaultValue = DEFAULT_MEASUREMENTS_DATA,
+  label,
   extras,
+  defaultValue = DEFAULT_MEASUREMENTS_DATA,
+  visible,
+  enabled,
 }: MeasurementsFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -49,7 +47,7 @@ export const MeasurementsField = ({
         } else {
           const stats = createStatsText(calcStats(data))
           reportData[moduleId][fieldId] = (
-            <MeasurementsOutput format={reportFormat} data={data} stats={stats} label={label} />
+            <MeasurementsOutput format={reportFormat} {...{ data, label, stats }} />
           )
         }
       }
@@ -60,8 +58,12 @@ export const MeasurementsField = ({
   useTransformer(transformer)
 
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      <MeasurementsInput {...{ label, value, onChange, extras }} />
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
+      <MeasurementsInput
+        {...{ label, extras, value, onChange }}
+        footer={null} // TODO:
+        disabled={!enabled}
+      />
     </BaseField>
   )
 }

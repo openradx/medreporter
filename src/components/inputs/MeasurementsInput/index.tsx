@@ -1,29 +1,29 @@
 import { Box, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
 import { useStructureTranslation } from "~/hooks/useStructureTranslation"
+import { MeasurementsAction, MeasurementsData } from "~/types/measurements"
 import { getMeasurementsDataParams, measurementsReducer } from "~/utils/measurementsUtils"
 import { InputLabel } from "../InputLabel"
 import { ControlPanel } from "./ControlPanel"
 import { DataRow } from "./DataRow"
 import { HeaderRow } from "./HeaderRow"
-import { MeasurementsAction, MeasurementsData } from "./measurementsTypes"
 
 interface MeasurementsInputProps {
   label?: string
+  extras?: ReactNode
   value: MeasurementsData
   onChange: (data: MeasurementsData) => void
   footer?: ReactNode
-  extras?: ReactNode
   disabled?: boolean
 }
 
 export const MeasurementsInput = ({
   label,
+  extras,
   value,
   onChange,
   footer,
-  extras,
-  disabled = false,
+  disabled,
 }: MeasurementsInputProps) => {
   const data = value
   const params = getMeasurementsDataParams(data)
@@ -61,7 +61,7 @@ export const MeasurementsInput = ({
         rows={params.rows}
         dimensions={params.dimensions}
         dispatch={dispatch}
-        disabled={disabled}
+        disabled={disabled === true}
       />
       <Box sx={{ overflow: "auto" }}>
         <table>
@@ -75,7 +75,7 @@ export const MeasurementsInput = ({
                 followUp={params.followUp}
                 dimensions={params.dimensions}
                 dispatch={dispatch}
-                disabled={disabled}
+                disabled={disabled === true}
               />
             ))}
           </tbody>

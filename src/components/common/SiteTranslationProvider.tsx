@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { ReactNode, useCallback, useRef, useState } from "react"
 import { I18nSiteContextProvider } from "~/contexts/I18nSiteContext"
 import { useOnRouteChange } from "~/hooks/useOnRouteChange"
-import { I18nSite, SiteLanguageOption } from "~/types"
+import { I18nSite, SiteLanguageOption } from "~/types/general"
 import { createClient } from "~/utils/i18nBrowserClient"
 import { registerInstance } from "~/utils/i18nextReloader"
 

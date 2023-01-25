@@ -6,7 +6,7 @@ interface GridGroupProps {
   children?: ReactNode
 }
 
-export const GridGroup = ({ label, children }: GridGroupProps) => {
+export const Group = ({ label, children }: GridGroupProps) => {
   if (!label) {
     return (
       <>

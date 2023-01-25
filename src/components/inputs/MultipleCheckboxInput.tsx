@@ -7,10 +7,10 @@ const DEFAULT_OPTIONS: FieldOption[] = []
 
 interface MultipleCheckboxInputProps {
   label?: string
+  extras?: ReactNode
   options?: FieldOption[]
   value: string[]
   onChange: (value: string[]) => void
-  extras?: ReactNode
   disabled?: boolean
 }
 

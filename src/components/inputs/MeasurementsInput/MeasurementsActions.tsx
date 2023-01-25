@@ -1,7 +1,7 @@
 import { ActionIcon, Menu } from "@mantine/core"
 import { BsTools as ToolIcon } from "react-icons/bs"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { MeasurementsAction } from "./measurementsTypes"
+import { MeasurementsAction } from "~/types/measurements"
 
 interface MeasurementsActionsProps {
   labels: {
@@ -10,7 +10,7 @@ interface MeasurementsActionsProps {
     shiftCurrent: string
   }
   dispatch: (action: MeasurementsAction) => void
-  disabled: boolean
+  disabled?: boolean
 }
 
 export const MeasurementsActions = ({ labels, dispatch, disabled }: MeasurementsActionsProps) => {

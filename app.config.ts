@@ -1,4 +1,4 @@
-import { AppConfig } from "~/types"
+import { AppConfig } from "~/types/general"
 
 const appConfig: AppConfig = {
   debugTranslations: true,

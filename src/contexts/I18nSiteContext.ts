@@ -1,5 +1,5 @@
 import { i18n } from "i18next"
-import { SiteLanguageOption } from "~/types"
+import { SiteLanguageOption } from "~/types/general"
 import { createRequiredContext } from "~/utils/createRequiredContext"
 
 export interface I18nSiteContext {

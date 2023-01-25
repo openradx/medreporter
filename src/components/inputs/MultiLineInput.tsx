@@ -4,17 +4,17 @@ import { InputLabel } from "./InputLabel"
 
 interface MultiLineInputProps {
   label?: string
+  extras?: ReactNode
   value: string
   onChange: (value: string) => void
-  extras?: ReactNode
   disabled?: boolean
 }
 
 export const MultiLineInput = ({
   label,
+  extras,
   value,
   onChange,
-  extras,
   disabled,
 }: MultiLineInputProps) => (
   <Textarea

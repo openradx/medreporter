@@ -3,6 +3,7 @@ import { createRequiredContext } from "~/utils/createRequiredContext"
 
 interface FieldContext<T> {
   id: string
+  label?: string
   defaultValue?: T
   value: T
   onChange: (newValue: T) => void

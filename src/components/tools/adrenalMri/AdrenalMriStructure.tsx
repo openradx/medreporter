@@ -1,7 +1,7 @@
+import { Group } from "~/components/fields/Group"
 import { NumberField } from "~/components/fields/NumberField"
 import { Description } from "~/components/sr/Description"
 import { Grid } from "~/components/sr/Grid"
-import { GridGroup } from "~/components/sr/GridGroup"
 import { GridItem } from "~/components/sr/GridItem"
 import { Hint } from "~/components/sr/Hint"
 import { Hints } from "~/components/sr/Hints"
@@ -15,7 +15,7 @@ export const AdrenalMriStructure = () => {
       <GridItem size="lg">
         <Description>{t("AdrenalMri.toolDescription")}</Description>
       </GridItem>
-      <GridGroup label={t("AdrenalMri.groupLabelAdrenal")}>
+      <Group label={t("AdrenalMri.groupLabelAdrenal")}>
         <GridItem size="md">
           <NumberField
             id="inPhaseAdrenal"
@@ -30,8 +30,8 @@ export const AdrenalMriStructure = () => {
             startValue={0}
           />
         </GridItem>
-      </GridGroup>
-      <GridGroup label={t("AdrenalMri.groupLabelSpleen")}>
+      </Group>
+      <Group label={t("AdrenalMri.groupLabelSpleen")}>
         <GridItem size="md">
           <NumberField
             id="inPhaseSpleen"
@@ -46,7 +46,7 @@ export const AdrenalMriStructure = () => {
             startValue={0}
           />
         </GridItem>
-      </GridGroup>
+      </Group>
       <Hints>
         <Hint type="info">{t("AdrenalMri.hintLimitations")}</Hint>
         <Hint type="info">{t("AdrenalMri.hintTesla")}</Hint>

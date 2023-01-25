@@ -11,7 +11,7 @@ interface ListItemProps {
 export const ListItem = ({ children }: ListItemProps) => {
   const { context } = useStructuredReport()
   const reportFormat = useAppSelector(selectReportFormat)
-  const isTextFormat = context === "report" && reportFormat === "text"
+  const isTextFormat = context === "report" && reportFormat === "plain"
 
   return (
     <Box component="li">

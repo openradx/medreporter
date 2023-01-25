@@ -1,7 +1,7 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
 import { TbCheck as CheckIcon } from "react-icons/tb"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { SupportedLanguageOption } from "~/types"
+import { SupportedLanguageOption } from "~/types/general"
 import { getAppConfig } from "~/utils/appConfig"
 import { FlagIcon } from "./FlagIcon"
 

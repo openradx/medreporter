@@ -1,25 +1,13 @@
 import { Box } from "@mantine/core"
+import { Dimension, Dimensions, MeasurementsAction, MeasurementsRow } from "~/types/measurements"
 import { NumberCell } from "./NumberCell"
 import { TextCell } from "./TextCell"
-import { MeasurementsAction } from "./measurementsTypes"
-
-export type MeasureValues =
-  | [number | null]
-  | [number | null, number | null]
-  | [number | null, number | null, number | null]
-
-export type MeasurementsRow = {
-  previous?: MeasureValues
-  current: MeasureValues
-  location: string
-  reference: string
-}
 
 interface DataRowProps {
   rowData: MeasurementsRow
   rowNumber: number
   followUp: boolean
-  dimensions: 1 | 2 | 3
+  dimensions: Dimensions
   dispatch: (action: MeasurementsAction) => void
   disabled: boolean
 }
@@ -37,24 +25,24 @@ export const DataRow = ({
       {rowNumber + 1}
     </Box>
     {followUp &&
-      [...Array(dimensions)].map((_, dimension) => (
+      [...Array(dimensions)].map((_, index) => (
         <NumberCell
-          key={dimension}
+          key={index}
           rowNumber={rowNumber}
           type="previous"
-          dimension={dimension as 0 | 1 | 2}
-          value={rowData.previous![dimension] ?? null}
+          dimension={(index + 1) as Dimension}
+          value={rowData.previous![index] ?? null}
           dispatch={dispatch}
           disabled={disabled}
         />
       ))}
-    {[...Array(dimensions)].map((_, dimension) => (
+    {[...Array(dimensions)].map((_, index) => (
       <NumberCell
-        key={dimension}
+        key={index}
         rowNumber={rowNumber}
         type="current"
-        dimension={dimension as 0 | 1 | 2}
-        value={rowData.current[dimension]}
+        dimension={(index + 1) as Dimension}
+        value={rowData.current[index]}
         dispatch={dispatch}
         disabled={disabled}
       />

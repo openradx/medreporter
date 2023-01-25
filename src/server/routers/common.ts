@@ -48,15 +48,15 @@ export const commonRouter = router({
         source = createMonolingualModuleDraft(context)
       }
 
-      const doc = parseModule(source)
-      const translations = buildModuleTranslationsArgs(doc)
+      const moduleEl = parseModule(source)! // TODO: null?!
+      const translations = buildModuleTranslationsArgs(moduleEl)
 
       const createdModule = await prisma.module.create({
         data: {
           name,
           authorId: user.id,
           source,
-          document: doc.document as Record<string, any> as Prisma.JsonObject,
+          document: moduleEl as Record<string, any> as Prisma.JsonObject,
           translations,
           visibility,
           releaseStatus: ReleaseStatus.DRAFT,

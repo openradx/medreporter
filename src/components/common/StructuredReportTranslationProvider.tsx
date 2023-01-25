@@ -4,7 +4,7 @@ import { I18nStructuredReportContextProvider } from "~/contexts/I18nStructuredRe
 import { useOnRouteChange } from "~/hooks/useOnRouteChange"
 import { useSiteLanguageListener } from "~/hooks/useSiteLanguageListener"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { I18nStructuredReport, StructuredReportLanguageOption } from "~/types"
+import { I18nStructuredReport, StructuredReportLanguageOption } from "~/types/general"
 import { createClient } from "~/utils/i18nBrowserClient"
 import { registerInstance } from "~/utils/i18nextReloader"
 

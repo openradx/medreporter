@@ -2,7 +2,7 @@ import hoistNonReactStatics from "hoist-non-react-statics"
 import { ComponentType } from "react"
 import { SiteTranslationProvider } from "~/components/common/SiteTranslationProvider"
 import { StructuredReportTranslationProvider } from "~/components/common/StructuredReportTranslationProvider"
-import { ServerSideProps } from "~/types"
+import { ServerSideProps } from "~/types/general"
 
 interface AppProps {
   pageProps: Partial<ServerSideProps>

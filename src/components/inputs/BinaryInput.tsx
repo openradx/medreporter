@@ -28,7 +28,7 @@ export const BinaryInput = ({ label, extras, value, onChange, disabled }: Binary
       onChange={(ev) => {
         onChange(ev.currentTarget.checked)
       }}
-      disabled={disabled === false}
+      disabled={disabled === true}
       sx={{
         display: "flex",
         alignItems: "center",

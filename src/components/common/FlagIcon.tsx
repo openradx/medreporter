@@ -9,7 +9,7 @@ import SE from "flag-icons/flags/4x3/se.svg"
 import US from "flag-icons/flags/4x3/us.svg"
 import { MdOutlineTranslate as TranslationIcon } from "react-icons/md"
 import { TbBug as CiModeIcon, TbQuestionMark as OtherIcon } from "react-icons/tb"
-import { SupportedLanguageOption } from "~/types"
+import { SupportedLanguageOption } from "~/types/general"
 
 type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>
 

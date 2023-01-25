@@ -16,7 +16,7 @@ export const useStructureLink = ({
   const section = useSection()
   const module_ = useModule()
 
-  const structureLink = () => {
+  const activateLink = () => {
     dispatch(
       activateSection({
         sectionId: sectionId ?? section.id,
@@ -25,5 +25,5 @@ export const useStructureLink = ({
     )
   }
 
-  return structureLink
+  return { activateLink }
 }

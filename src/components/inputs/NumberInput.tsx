@@ -7,6 +7,7 @@ const SCROLL_SENSITIVITY = 4
 
 interface NumberInputProps {
   label?: string
+  extras?: ReactNode
   value: number | null
   onChange: (value: number | null) => void
   min?: number
@@ -14,14 +15,14 @@ interface NumberInputProps {
   step?: number
   startValue?: number
   precision?: number
-  extras?: ReactNode
+  disabled?: boolean
   width?: number
   autoHideControls?: boolean
-  disabled?: boolean
 }
 
 export const NumberInput = ({
   label,
+  extras,
   value,
   onChange,
   min,
@@ -29,7 +30,6 @@ export const NumberInput = ({
   step,
   startValue,
   precision = 0,
-  extras,
   disabled,
   width,
   autoHideControls = false,

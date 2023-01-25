@@ -4,7 +4,7 @@ import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { Home } from "~/components/home/Home"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { PageWithLayout, ServerSideProps } from "~/types"
+import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { getServerSideSession } from "~/utils/serverSideSession"
 import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
 

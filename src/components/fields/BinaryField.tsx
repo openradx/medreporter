@@ -22,7 +22,7 @@ export const BinaryField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, defaultValue, value, onChange, visible }}>
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
       <BinaryInput {...{ label, extras, value, onChange }} disabled={!enabled} />
     </BaseField>
   )

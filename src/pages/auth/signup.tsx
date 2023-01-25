@@ -5,7 +5,7 @@ import { SignupForm } from "~/components/auth/SignupForm"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { PageWithLayout, ServerSideProps } from "~/types"
+import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, locales }) => {

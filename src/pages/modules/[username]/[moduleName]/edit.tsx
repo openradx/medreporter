@@ -6,7 +6,7 @@ import { PageHead } from "~/components/common/PageHead"
 import { Editor } from "~/components/editor/Editor"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { commonRouter } from "~/server/routers/common"
-import { PageWithLayout, ServerSideProps } from "~/types"
+import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { getServerSideSession } from "~/utils/serverSideSession"
 import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
 

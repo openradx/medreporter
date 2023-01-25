@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
+import { OutputFormat } from "~/types/general"
 
 interface ScrollIntoState {
   moduleId: string
@@ -10,7 +11,7 @@ interface DisplayState {
   dataInitialized: boolean
   activeSectionId: null | string
   scrollInto: null | ScrollIntoState
-  reportFormat: "html" | "text"
+  reportFormat: OutputFormat
 }
 
 const initialState: DisplayState = {
@@ -35,7 +36,7 @@ export const displaySlice = createSlice({
     setDataInitialized(state) {
       state.dataInitialized = true
     },
-    setReportFormat(state, action: PayloadAction<{ reportFormat: "html" | "text" }>) {
+    setReportFormat(state, action: PayloadAction<{ reportFormat: OutputFormat }>) {
       const { reportFormat } = action.payload
       state.reportFormat = reportFormat
     },

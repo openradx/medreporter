@@ -1,4 +1,4 @@
-import { BooleanField } from "~/components/fields/BooleanField"
+import { BinaryField } from "~/components/fields/BinaryField"
 import { DateField } from "~/components/fields/DateField"
 import { FreeTextField } from "~/components/fields/FreeTextField"
 import { MultipleChoiceField } from "~/components/fields/MultipleChoiceField"
@@ -39,7 +39,7 @@ export const SandboxStructure = () => (
       <FreeTextField id="text" label="Some text" multiline />
     </GridItem>
     <GridItem size="md">
-      <BooleanField id="pneumothorax" label="Pneumothorax" />
+      <BinaryField id="pneumothorax" label="Pneumothorax" />
     </GridItem>
     <GridItem size="lg">
       <Hints>

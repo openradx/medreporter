@@ -7,7 +7,7 @@ import IT from "dayjs/locale/it"
 import NL from "dayjs/locale/nl"
 import PT from "dayjs/locale/pt"
 import SV from "dayjs/locale/sv"
-import { SupportedLanguage } from "~/types"
+import { SupportedLanguage } from "~/types/general"
 
 const dateLocales: { [language in SupportedLanguage]: ILocale } = {
   other: EN_GB,

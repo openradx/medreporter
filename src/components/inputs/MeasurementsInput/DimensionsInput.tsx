@@ -1,15 +1,15 @@
 import { memo } from "react"
+import { Dimensions, MeasurementsAction } from "~/types/measurements"
 import { NumberInput } from "../NumberInput"
-import { MeasurementsAction } from "./measurementsTypes"
 
 const DIMENSIONS_MIN = 1
 const DIMENSIONS_MAX = 3
 
 interface DimensionsInputProps {
   label: string
-  dimensions: 1 | 2 | 3
+  dimensions: Dimensions
   dispatch: (action: MeasurementsAction) => void
-  disabled: boolean
+  disabled?: boolean
 }
 
 export const DimensionsInput = memo(
@@ -26,7 +26,7 @@ export const DimensionsInput = memo(
 
         dispatch({
           type: "changeDimensions",
-          dimensions: newDimensions as 1 | 2 | 3,
+          dimensions: newDimensions as Dimensions,
         })
       }}
       disabled={disabled}

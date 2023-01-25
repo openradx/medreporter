@@ -1,3 +1,7 @@
+export type Dimensions = 1 | 2 | 3
+
+export type Dimension = Dimensions
+
 export type MeasureValues =
   | [number | null]
   | [number | null, number | null]
@@ -14,7 +18,7 @@ export type MeasurementsData = MeasurementsRow[]
 
 export type MeasurementsDataParams = {
   rows: number
-  dimensions: 1 | 2 | 3
+  dimensions: Dimensions
   followUp: boolean
 }
 
@@ -29,7 +33,7 @@ export type MeasurementsAction =
       type: "changeNumberValue"
       row: number
       measureType: "previous" | "current"
-      dimension: 0 | 1 | 2
+      dimension: Dimension
       value: number | null
     }
   | {
@@ -43,7 +47,7 @@ export type MeasurementsAction =
       type: "changeRows"
       rows: number
     }
-  | { type: "changeDimensions"; dimensions: 1 | 2 | 3 }
+  | { type: "changeDimensions"; dimensions: Dimensions }
   | { type: "clearAll" }
   | { type: "clearReferences" }
   | { type: "shiftCurrent" }

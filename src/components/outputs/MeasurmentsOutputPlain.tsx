@@ -1,5 +1,5 @@
 import { checkDataRowEmpty, getMeasurementsDataParams } from "~/utils/measurementsUtils"
-import { MeasurementsData, MeasurementsRow } from "../inputs/MeasurementsInput/measurementsTypes"
+import { MeasurementsData, MeasurementsRow } from "../../types/measurements"
 
 const NEWLINE_CHAR = "\n"
 const DELIMITER = " "
@@ -130,21 +130,21 @@ const createTableFooter = (stats: string) => stats
 
 interface MeasurementsTableTextProps {
   data: MeasurementsData
-  stats: string
-  label: string
+  title: string
   labels: {
     previous: string
     current: string
     location: string
     reference: string
   }
+  stats: string
 }
 
-export const MeasurementsOutputText = ({
+export const MeasurementsOutputPlain = ({
   data,
-  stats,
-  label,
+  title,
   labels,
+  stats,
 }: MeasurementsTableTextProps) => {
   const colSizes = calcColSizes(
     data,
@@ -158,7 +158,7 @@ export const MeasurementsOutputText = ({
 
   return (
     <>
-      {label}
+      {title}
       {NEWLINE_CHAR}
       {createTableHeader(
         colSizes,
@@ -171,7 +171,7 @@ export const MeasurementsOutputText = ({
       {NEWLINE_CHAR}
       {createTableBody(data, colSizes, followUp)}
       {NEWLINE_CHAR}
-      {createTableFooter(stats)}
+      {stats && createTableFooter(stats)}
       {NEWLINE_CHAR}
     </>
   )

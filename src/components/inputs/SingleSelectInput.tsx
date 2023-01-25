@@ -7,19 +7,19 @@ const DEFAULT_OPTIONS: FieldOption[] = []
 
 interface SingleSelectInputProps {
   label?: string
+  extras?: ReactNode
   options?: FieldOption[]
   value: string | null
   onChange: (value: string | null) => void
-  extras?: ReactNode
   disabled?: boolean
 }
 
 export const SingleSelectInput = ({
   label,
+  extras,
   options = DEFAULT_OPTIONS,
   value,
   onChange,
-  extras,
   disabled,
 }: SingleSelectInputProps) => (
   <Select

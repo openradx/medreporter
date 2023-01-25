@@ -1,7 +1,7 @@
 import { Box, Table } from "@mantine/core"
 import { ReactElement } from "react"
 import { checkDataRowEmpty, getMeasurementsDataParams } from "~/utils/measurementsUtils"
-import { MeasurementsData, MeasurementsRow } from "../inputs/MeasurementsInput/measurementsTypes"
+import { MeasurementsData, MeasurementsRow } from "../../types/measurements"
 
 const MULTIPLICATOR = " x "
 
@@ -70,28 +70,28 @@ const createTableFooter = (stats: string) => (
 
 interface MeasurementsTableHtmlProps {
   data: MeasurementsData
-  stats: string
-  label: string
+  title: string
   labels: {
     previous: string
     current: string
     location: string
     reference: string
   }
+  stats: string
 }
 
 export const MeasurementsOutputHtml = ({
   data,
-  stats,
-  label,
+  title,
   labels,
+  stats,
 }: MeasurementsTableHtmlProps) => {
   const { followUp } = getMeasurementsDataParams(data)
 
   return (
     <Table>
       <Box component="caption" sx={{ textAlign: "left" }}>
-        {label}
+        {title}
       </Box>
       {createTableHeader(
         followUp,

@@ -1,13 +1,13 @@
 import { memo } from "react"
+import { Dimension, MeasurementsAction } from "~/types/measurements"
 import { NumberInput } from "../NumberInput"
-import { MeasurementsAction } from "./measurementsTypes"
 
 type MeasureType = "previous" | "current"
 
 interface NumberCellProps {
   rowNumber: number
   type: MeasureType
-  dimension: 0 | 1 | 2
+  dimension: Dimension
   value: number | null
   dispatch: (action: MeasurementsAction) => void
   disabled: boolean

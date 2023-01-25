@@ -1,6 +1,6 @@
 import { memo } from "react"
+import { MeasurementsAction } from "~/types/measurements"
 import { SingleLineInput } from "../SingleLineInput"
-import { MeasurementsAction } from "./measurementsTypes"
 
 type textType = "location" | "reference"
 

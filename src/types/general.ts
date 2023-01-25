@@ -59,3 +59,5 @@ export interface ServerSideProps {
 export type PageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
 }
+
+export type OutputFormat = "html" | "plain"

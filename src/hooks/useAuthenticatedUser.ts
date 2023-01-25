@@ -11,6 +11,7 @@ export const useAuthenticatedUser = () => {
     setMounted(true)
   }, [])
 
+  // TODO: maybe better redirect with router
   if (isClient && mounted && !user) {
     throw new AuthenticationError()
   }

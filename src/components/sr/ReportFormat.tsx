@@ -25,8 +25,8 @@ export const ReportFormat = () => {
           {t("ReportFormat.formatHtml")}
         </Menu.Item>
         <Menu.Item
-          onClick={() => dispatch(setReportFormat({ reportFormat: "text" }))}
-          rightSection={reportFormat === "text" ? <CheckIcon /> : null}
+          onClick={() => dispatch(setReportFormat({ reportFormat: "plain" }))}
+          rightSection={reportFormat === "plain" ? <CheckIcon /> : null}
         >
           {t("ReportFormat.formatText")}
         </Menu.Item>

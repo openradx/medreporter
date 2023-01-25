@@ -1,17 +1,26 @@
 import produce from "immer"
 import {
+  Dimensions,
   MeasurementsAction,
   MeasurementsData,
   MeasurementsDataParams,
   MeasurementsRow,
   MeasurementsStats,
   MeasureValues,
-} from "../components/inputs/MeasurementsInput/measurementsTypes"
+} from "../types/measurements"
 
 export const getMeasurementsDataParams = (data: MeasurementsData): MeasurementsDataParams => {
   const rows = data.length
-  const dimensions = data[0].current.length
-  const followUp = data[0].previous !== undefined
+
+  let dimensions: Dimensions = 1
+  let followUp = false
+  for (const row of data) {
+    if (row.current.length > dimensions) dimensions = row.current.length
+    if (row.previous) {
+      followUp = true
+      if (row.previous.length > dimensions) dimensions = row.previous.length
+    }
+  }
 
   return {
     rows,
@@ -20,7 +29,7 @@ export const getMeasurementsDataParams = (data: MeasurementsData): MeasurementsD
   }
 }
 
-const createEmptyMeasureValues = (dimensions: 1 | 2 | 3): MeasureValues => {
+const createEmptyMeasureValues = (dimensions: Dimensions): MeasureValues => {
   switch (dimensions) {
     case 1:
       return [null]
@@ -34,7 +43,7 @@ const createEmptyMeasureValues = (dimensions: 1 | 2 | 3): MeasureValues => {
   }
 }
 
-const createEmptyMeasurementsRow = (followUp: boolean, dimensions: 1 | 2 | 3): MeasurementsRow => {
+const createEmptyMeasurementsRow = (followUp: boolean, dimensions: Dimensions): MeasurementsRow => {
   const rowData: MeasurementsRow = {
     current: createEmptyMeasureValues(dimensions),
     location: "",
@@ -49,7 +58,7 @@ const createEmptyMeasurementsRow = (followUp: boolean, dimensions: 1 | 2 | 3): M
 export const createEmptyMeasurements = (
   followUp: boolean,
   rows: number,
-  dimensions: 1 | 2 | 3
+  dimensions: Dimensions
 ): MeasurementsData => {
   const data: MeasurementsData = []
   for (let row = 0; row < rows; row++) {
@@ -190,7 +199,7 @@ export const measurementsReducer = (
       return produce(data, (draft) => {
         const values = draft[row][measureType]
         if (values !== undefined) {
-          values[dimension] = value
+          values[dimension - 1] = value
         }
       })
     }

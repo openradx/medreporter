@@ -1,12 +1,12 @@
 import { Checkbox } from "@mantine/core"
 import { memo } from "react"
-import { MeasurementsAction } from "./measurementsTypes"
+import { MeasurementsAction } from "~/types/measurements"
 
 interface FollowUpToggleProps {
   label: string
   followUp: boolean
   dispatch: (action: MeasurementsAction) => void
-  disabled: boolean
+  disabled?: boolean
 }
 
 export const FollowUpToggle = memo(

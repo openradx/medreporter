@@ -1,27 +1,30 @@
 import { Box } from "@mantine/core"
-import { PropsWithChildren, useEffect, useRef } from "react"
+import { ReactNode, useEffect, useRef } from "react"
 import { getFieldContext } from "~/contexts/FieldContext"
 import { selectScrollInto } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 
-interface FieldProps<T> {
+interface FieldProps<TValue> {
   moduleId: string
   fieldId: string
-  visible: boolean
-  defaultValue: T
-  value: T
-  onChange: (newValue: T) => void
+  label?: string
+  defaultValue: TValue
+  value: TValue
+  onChange: (newValue: TValue) => void
+  visible?: boolean
+  children: ReactNode
 }
 
-export const BaseField = <T,>({
+export const BaseField = <TValue,>({
   moduleId,
   fieldId,
-  visible,
   defaultValue,
+  label,
   value,
   onChange,
+  visible,
   children,
-}: PropsWithChildren<FieldProps<T>>) => {
+}: FieldProps<TValue>) => {
   const scrollInto = useAppSelector(selectScrollInto)
   const fieldEl = useRef<HTMLDivElement>(null)
 
@@ -31,13 +34,13 @@ export const BaseField = <T,>({
     }
   }, [scrollInto, moduleId, fieldId])
 
-  const { FieldContextProvider } = getFieldContext<T>()
+  const { FieldContextProvider } = getFieldContext<TValue>()
 
   // TODO: for finding and group we maybe also have to return an unstyled box.
   // But some element we need for the ref for the scroll into
   return (
-    <FieldContextProvider value={{ id: fieldId, defaultValue, value, onChange }}>
-      <Box ref={fieldEl} sx={{ display: !visible ? "none" : undefined }}>
+    <FieldContextProvider value={{ id: fieldId, label, defaultValue, value, onChange }}>
+      <Box ref={fieldEl} sx={{ display: visible === false ? "none" : undefined }}>
         {children}
       </Box>
     </FieldContextProvider>

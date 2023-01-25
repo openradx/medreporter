@@ -1,8 +1,8 @@
+import { Group } from "~/components/fields/Group"
 import { NumberField } from "~/components/fields/NumberField"
 import { SingleChoiceField } from "~/components/fields/SingleChoiceField"
 import { Description } from "~/components/sr/Description"
 import { Grid } from "~/components/sr/Grid"
-import { GridGroup } from "~/components/sr/GridGroup"
 import { GridItem } from "~/components/sr/GridItem"
 import { Hint } from "~/components/sr/Hint"
 import { Hints } from "~/components/sr/Hints"
@@ -16,7 +16,7 @@ export const Fleischner2017Structure = () => {
       <GridItem size="xl">
         <Description>{t("Fleischner2017.toolDescription")}</Description>
       </GridItem>
-      <GridGroup label={t("Fleischner2017.groupDiameter")}>
+      <Group label={t("Fleischner2017.groupDiameter")}>
         <GridItem>
           <NumberField
             id="longaxis"
@@ -33,7 +33,7 @@ export const Fleischner2017Structure = () => {
             defaultValue={0}
           />
         </GridItem>
-      </GridGroup>
+      </Group>
       <GridItem>
         <SingleChoiceField
           id="structure"

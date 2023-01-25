@@ -11,7 +11,7 @@ import { useState } from "react"
 import { compose } from "redux"
 import { withReduxState } from "~/hocs/withReduxState"
 import { withTranslations } from "~/hocs/withTranslations"
-import { PageWithLayout } from "~/types"
+import { PageWithLayout } from "~/types/general"
 import { trpc } from "~/utils/trpc"
 
 // Enable additional Immer.js features

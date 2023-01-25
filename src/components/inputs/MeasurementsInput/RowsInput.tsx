@@ -1,6 +1,6 @@
 import { memo } from "react"
+import { MeasurementsAction } from "~/types/measurements"
 import { NumberInput } from "../NumberInput"
-import { MeasurementsAction } from "./measurementsTypes"
 
 const ROWS_MIN = 1
 const ROWS_MAX = 20
@@ -9,7 +9,7 @@ interface RowsInputProps {
   label: string
   rows: number
   dispatch: (action: MeasurementsAction) => void
-  disabled: boolean
+  disabled?: boolean
 }
 
 export const RowsInput = memo(({ label, rows, dispatch, disabled }: RowsInputProps) => (

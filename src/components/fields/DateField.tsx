@@ -1,23 +1,19 @@
 import dayjs from "dayjs"
-import { ReactNode } from "react"
 import { useModule } from "~/contexts/ModuleContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { DateInput } from "../inputs/DateInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
-interface DateFieldProps extends CommonFieldProps {
-  defaultValue?: string | null
-  extras?: ReactNode
-}
+interface DateFieldProps extends CommonFieldProps<string | null> {}
 
 export const DateField = ({
   id: fieldId,
-  label = "",
-  visible = true,
-  defaultValue = null,
+  label,
   extras,
-  disabled,
+  defaultValue = null,
+  visible,
+  enabled,
 }: DateFieldProps) => {
   let serializableDefaultValue: string | null = null
   if (defaultValue) {
@@ -32,13 +28,12 @@ export const DateField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
       <DateInput
-        label={label}
+        {...{ label, extras }}
         value={value ? new Date(value) : null}
         onChange={(date) => onChange(date ? date.toISOString() : null)}
-        extras={extras}
-        disabled={disabled}
+        disabled={!enabled}
       />
     </BaseField>
   )

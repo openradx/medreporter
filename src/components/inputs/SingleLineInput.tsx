@@ -4,18 +4,18 @@ import { InputLabel } from "./InputLabel"
 
 interface SingleLineInputProps {
   label?: string
+  extras?: ReactNode
   value: string
   onChange: (value: string) => void
-  extras?: ReactNode
   disabled?: boolean
   width?: number
 }
 
 export const SingleLineInput = ({
   label,
+  extras,
   value,
   onChange,
-  extras,
   disabled,
   width,
 }: SingleLineInputProps) => (

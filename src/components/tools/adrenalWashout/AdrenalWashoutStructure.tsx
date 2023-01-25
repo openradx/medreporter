@@ -1,7 +1,7 @@
+import { Group } from "~/components/fields/Group"
 import { NumberField } from "~/components/fields/NumberField"
 import { Description } from "~/components/sr/Description"
 import { Grid } from "~/components/sr/Grid"
-import { GridGroup } from "~/components/sr/GridGroup"
 import { GridItem } from "~/components/sr/GridItem"
 import { Hint } from "~/components/sr/Hint"
 import { Hints } from "~/components/sr/Hints"
@@ -16,7 +16,7 @@ export const AdrenalWashoutStructure = () => {
       <GridItem size="xl">
         <Description>{t("AdrenalWashout.toolDescription")}</Description>
       </GridItem>
-      <GridGroup label={t("AdrenalWashout.groupLabelDensity")}>
+      <Group label={t("AdrenalWashout.groupLabelDensity")}>
         <GridItem size="md">
           <NumberField
             id="nonEnhanced"
@@ -44,7 +44,7 @@ export const AdrenalWashoutStructure = () => {
             startValue={0}
           />
         </GridItem>
-      </GridGroup>
+      </Group>
       <GridItem size="xl">
         <Hints>
           <Hint type="info">{t("AdrenalWashout.hintRoiPlacement")}</Hint>

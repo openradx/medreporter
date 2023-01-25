@@ -1,4 +1,3 @@
-import { ReactNode } from "react"
 import { useModule } from "~/contexts/ModuleContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { SingleRadioInput } from "../inputs/SingleRadioInput"
@@ -8,22 +7,20 @@ import { CommonFieldProps, FieldOption } from "./fieldTypes"
 
 const DEFAULT_OPTIONS: FieldOption[] = []
 
-interface SingleChoiceFieldProps extends CommonFieldProps {
+interface SingleChoiceFieldProps extends CommonFieldProps<string | null> {
   variant?: "radio" | "select"
   options?: FieldOption[]
-  defaultValue?: string | null
-  extras?: ReactNode
 }
 
 export const SingleChoiceField = ({
   id: fieldId,
-  label = "",
-  visible = true,
+  label,
+  extras,
   variant = "radio",
   options = DEFAULT_OPTIONS,
   defaultValue = null,
-  extras,
-  disabled,
+  visible,
+  enabled,
 }: SingleChoiceFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -33,11 +30,13 @@ export const SingleChoiceField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
       {variant === "select" && (
-        <SingleSelectInput {...{ label, value, onChange, options, extras, disabled }} />
+        <SingleSelectInput {...{ label, extras, options, value, onChange }} disabled={!enabled} />
       )}
-      {variant === "radio" && <SingleRadioInput {...{ label, value, onChange, options, extras }} />}
+      {variant === "radio" && (
+        <SingleRadioInput {...{ label, extras, options, value, onChange }} disabled={!enabled} />
+      )}
     </BaseField>
   )
 }

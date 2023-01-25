@@ -1,8 +1,12 @@
-export interface CommonFieldProps {
+import { ReactNode } from "react"
+
+export interface CommonFieldProps<TDefaultValue> {
   id: string
   label?: string
+  extras?: ReactNode
+  defaultValue?: TDefaultValue
   visible?: boolean
-  disabled?: boolean
+  enabled?: boolean
 }
 export interface ExternalLink {
   url: string

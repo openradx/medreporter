@@ -1,4 +1,5 @@
 import { Box } from "@mantine/core"
+import { Dimensions } from "~/types/measurements"
 
 const PREVIOUS_SIGN = "^"
 const CURRENT_SIGN = "*"
@@ -9,7 +10,7 @@ interface HeaderRowProps {
     reference: string
   }
   followUp: boolean
-  dimensions: 1 | 2 | 3
+  dimensions: Dimensions
 }
 
 export const HeaderRow = ({ labels, followUp, dimensions }: HeaderRowProps) => (

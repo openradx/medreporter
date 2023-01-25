@@ -2,6 +2,9 @@
 
 ## Kai
 
+- ref vs fieldId
+- graphics vs drawing vs illustration
+- rename outputs, e.g. TextOutput => Text
 - name all validations.\* as ...Schema
 - create useAppAuthenticatedSession and use it
 - Use tsconfig-paths-webpack-plugin for storybook

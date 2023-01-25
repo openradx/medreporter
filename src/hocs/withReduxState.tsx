@@ -2,7 +2,7 @@ import hoistNonReactStatics from "hoist-non-react-statics"
 import { ComponentType, useMemo } from "react"
 import { Provider as ReduxProvider } from "react-redux"
 import { initStore } from "~/state/store"
-import { ServerSideProps } from "~/types"
+import { ServerSideProps } from "~/types/general"
 
 interface AppProps {
   pageProps: Partial<ServerSideProps>

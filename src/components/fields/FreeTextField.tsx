@@ -1,4 +1,3 @@
-import { ReactNode } from "react"
 import { useModule } from "~/contexts/ModuleContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { MultiLineInput } from "../inputs/MultiLineInput"
@@ -6,20 +5,18 @@ import { SingleLineInput } from "../inputs/SingleLineInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
-interface FreeTextFieldProps extends CommonFieldProps {
-  defaultValue?: string
+interface FreeTextFieldProps extends CommonFieldProps<string> {
   multiline?: boolean
-  extras?: ReactNode
 }
 
 export const FreeTextField = ({
   id: fieldId,
-  label = "",
-  visible = true,
-  defaultValue = "",
-  multiline = false,
+  label,
   extras,
-  disabled,
+  defaultValue = "",
+  visible,
+  enabled,
+  multiline,
 }: FreeTextFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -29,9 +26,11 @@ export const FreeTextField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, visible, defaultValue, value, onChange }}>
-      {!multiline && <SingleLineInput {...{ label, value, onChange, extras, disabled }} />}
-      {multiline && <MultiLineInput {...{ label, value, onChange, extras, disabled }} />}
+    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
+      {!multiline && (
+        <SingleLineInput {...{ label, value, onChange, extras }} disabled={!enabled} />
+      )}
+      {multiline && <MultiLineInput {...{ label, value, onChange, extras }} disabled={!enabled} />}
     </BaseField>
   )
 }
