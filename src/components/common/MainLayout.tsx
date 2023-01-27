@@ -7,11 +7,12 @@ import { Navbar } from "./Navbar"
 interface MainLayoutProps {
   size?: "full" | MantineNumberSize
   children: ReactNode
+  withAccountControl?: boolean
 }
 
-export const MainLayout = ({ size = "lg", children }: MainLayoutProps) => (
+export const MainLayout = ({ size = "lg", children, withAccountControl }: MainLayoutProps) => (
   <MediaQuery largerThan="sm" styles={{ main: { height: size === "full" ? "100vh" : undefined } }}>
-    <AppShell padding="sm" header={<Navbar />}>
+    <AppShell padding="sm" header={<Navbar withAccountControl={withAccountControl} />}>
       <ErrorBoundary FallbackComponent={MainLayoutFallback}>
         {size === "full" && children}
         {size !== "full" && <Container size={size}>{children}</Container>}
