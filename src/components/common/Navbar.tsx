@@ -9,7 +9,11 @@ import { SiteLanguageChooser } from "./SiteLanguageChooser"
 
 const NAVBAR_HEIGHT = 60
 
-export const Navbar = () => {
+interface NavBarProps {
+  withAccountControl?: boolean
+}
+
+export const Navbar = ({ withAccountControl }: NavBarProps) => {
   const [opened, setOpened] = useState(false)
 
   return (
@@ -37,7 +41,7 @@ export const Navbar = () => {
           <ActionsGroup>
             <ColorSchemeToggle />
             <SiteLanguageChooser />
-            <AccountControl />
+            {withAccountControl && <AccountControl />}
           </ActionsGroup>
         </Container>
       </Header>
