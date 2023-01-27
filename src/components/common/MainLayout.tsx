@@ -10,7 +10,11 @@ interface MainLayoutProps {
   withAccountControl?: boolean
 }
 
-export const MainLayout = ({ size = "lg", children, withAccountControl }: MainLayoutProps) => (
+export const MainLayout = ({
+  size = "lg",
+  children,
+  withAccountControl = true,
+}: MainLayoutProps) => (
   <MediaQuery largerThan="sm" styles={{ main: { height: size === "full" ? "100vh" : undefined } }}>
     <AppShell padding="sm" header={<Navbar withAccountControl={withAccountControl} />}>
       <ErrorBoundary FallbackComponent={MainLayoutFallback}>
