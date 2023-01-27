@@ -21,8 +21,10 @@ const Custom404: PageWithLayout = () => (
         404{" "}
       </Text>
       - Page Not Found
-      <Link href="/">
-        <Text fz="md">Go back to homepage</Text>
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <Text fz="md" color="blue">
+          Go back to homepage
+        </Text>
       </Link>
     </Title>
   </>
