@@ -1,0 +1,67 @@
+de:
+  title: Pulmonalarterien
+  LLLBasalAnterior: A. segmentalis basalis anterior links (VIII)
+  LLLBasalLateral: A. segmentalis basalis lateralis links (IX)
+  LLLBasalAnteriorLateral: (VIII/IX)
+  LLLBasalPosterior: A. segmentalis basalis posterior links (X)
+  LLLBasalMedial: A. segmentalis basalis medialis links (VII)
+  LLLBasalPosteriorMedial: (VII/X)
+  LLLSuperior: A. segmentalis superior links (VI)
+  LLL: Unterlappenarterie links
+  Lingula: A. lingularis (IV/V)
+  LULAnterior: A. segmentalis anterior links (III)
+  LULPosterior: A. segmentalis posterior links (I/II)
+  LULApicoposteriorTrunk: Apicoposteriorer Truncus (I/II)
+  LULApical: A. segmentalis apicalis (I/II)
+  LeftUpperLobe: Oberlappenarterie
+  LeftMain: Hauptstamm links
+  RLLSuperior: A. segmentalis superior rechts (VI)
+  RLLBasalLateral: A. segmentalis basalis lateralis rechts (IX)
+  RLLBasalPosterior: A. segmentalis basalis posterior rechts (X)
+  RLLBasalLateralPosterior: (IX/X)
+  RLLBasalMedial: A. segmentalis basalis medialis (VII)
+  RLLBasalAnterior: A. segmentalis basalis anterior (VIII)
+  RLL: Unterlappenarterie rechts
+  RMLMedial: A. segmentalis medialis (V)
+  RMLLateral: A. segmentalis lateralis (IV)
+  RML: Mittellappenarterie
+  RULPosterior: A. segmentalis posterior rechts (II)
+  RULApical: A. segmentalis apicalis rechts (I)
+  RULAnterior: A. segmentalis anterior rechts (III)
+  RUL: Oberlappenarterie rechts
+  RightMain: Hauptstamm rechts
+  PulmonaryTrunk: Truncus pulmonalis
+
+en:
+  title: Pulmonalarteries
+  LLLBasalAnterior: Left anterior basal segmental artery (8)
+  LLLBasalLateral: Left lateral basal segmental artery (9)
+  LLLBasalAnteriorLateral: (8/9)
+  LLLBasalPosterior: Left posterior basal segmental artery (10)
+  LLLBasalMedial: Left medial basal segmental artery (7)
+  LLLBasalPosteriorMedial: (7/10)
+  LLLSuperior: Left superior segmental artery (6)
+  LLL: Left lower lobe artery
+  Lingula: Lingular artery (4/5)
+  LULAnterior: Left anterior segmental artery (3)
+  LULPosterior: Left posterior segmental artery (1/2)
+  LULApicoposteriorTrunk: Apicoposterior trunk (1/2)
+  LULApical: Left apical segmental artery (1/2)
+  LeftUpperLobe: Left upper lobe artery
+  LeftMain: Left pulmonary artery
+  RLLSuperior: Right superior segmental artery (6)
+  RLLBasalLateral: Right basal lateral segmental artery (9)
+  RLLBasalPosterior: Right basal posterior segmental artery (10)
+  RLLBasalLateralPosterior: (9/10)
+  RLLBasalMedial: Right basal medial segmental artery (7)
+  RLLBasalAnterior: Right basal anterior segmental artery (8)
+  RLL: Right lower lobe artery
+  RMLMedial: Right medial segmental artery (5)
+  RMLLateral: Right lateral segmental artery (4)
+  RML: Middle lobe artery
+  RULPosterior: Right posterior segmental artery (2)
+  RULApical: Right apical segmental artery (1)
+  RULAnterior: Right anterior segmental artery (3)
+  RUL: Right upper lobe artery
+  RightMain: Right pulmonary artery
+  PulmonaryTrunk: Pulmonary trunk

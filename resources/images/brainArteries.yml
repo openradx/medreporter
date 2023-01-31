@@ -1,0 +1,75 @@
+de:
+  title: Circulus arteriosus cerebri
+  leftM2Superior: superiores M2-Segment links
+  leftM2Inferior: inferiores M2-Segment links
+  leftM1Bifurcation: Mediabifurkation links
+  leftM1Distal: distales M1-Segment links
+  leftM1Proximal: proximales M1-Segment links
+  leftACMT: Carotis-T links
+  leftA1: A1-Segment links
+  leftA2: A2-Segment links
+  leftACI: A. carotis interna links
+  leftACP: A. communicans posterior links
+  leftP2: P2-Segment links
+  leftP1: P1-Segment links
+  leftSCA: A. superior cerebelli links
+  leftAICA: A. inferior anterior cerebelli links
+  leftPICA: A. inferior posterior cerebelli links
+  leftV4: V4-Segment links
+  rightM2Superior: superiores M2-Segment rechts
+  rightM2Inferior: inferiores M2-Segment rechts
+  rightM1Bifurcation: Mediabifurkation rechts
+  rightM1Distal: distales M1-Segment rechts
+  rightM1Proximal: proximales M1-Segment rechts
+  rightACMT: Carotis-T rechts
+  rightA1: A1-Segment rechts
+  rightA2: A2-Segment rechts
+  rightACI: A. carotis interna rechts
+  rightACP: A. communicans posterior rechts
+  rightP2: P2-Segment rechts
+  rightP1: P1-Segment rechts
+  rightSCA: A. superior cerebelli rechts
+  rightAICA: A. inferior anterior cerebelli rechts
+  rightPICA: A. inferior posterior cerebelli rechts
+  rightV4: V4-Segment rechts
+  ACA: A. communicans anterior
+  basilarisHead: Basilariskopf
+  basilaris: A. basilaris
+
+en:
+  title: Circulus arteriosus cerebri
+  leftM2Superior: Left superior M2-segment
+  leftM2Inferior: Left inferior M2-segment
+  leftM1Bifurcation: Bifurcation of left MCA
+  leftM1Distal: Left distal M1-segment
+  leftM1Proximal: Left proximal M1-segment
+  leftACMT: Terminal segment of left ACI
+  leftA1: Left A1-segment
+  leftA2: Left A2-segment
+  leftACI: Left internal carotid artery
+  leftACP: Left posterior communicating artery
+  leftP2: Left P2-segment
+  leftP1: Left P1-segment
+  leftSCA: Left superior cerebellar artery
+  leftAICA: Left anterior inferior cerebellar artery
+  leftPICA: Left posterior inferior cerebellar artery
+  leftV4: Left V4-segment
+  rightM2Superior: Right superior M2-segment
+  rightM2Inferior: Right inferior M2-segment
+  rightM1Bifurcation: Bifucation of right MCA
+  rightM1Distal: Right distal M1-segment
+  rightM1Proximal: Right proximal M1-segment
+  rightACMT: Terminal segment of right ACI
+  rightA1: Right A1-segment
+  rightA2: Right A2-segment
+  rightACI: Right internal carotid artery
+  rightACP: Right posterior communicating artery
+  rightP2: Right P2-segment
+  rightP1: Right P1-segment
+  rightSCA: Right superior cerebellar artery
+  rightAICA: Right anterior inferior cerebellar artery
+  rightPICA: Right posterior inferior cerebellar artery
+  rightV4: Right V4-segment
+  ACA: Anterior communicating artery
+  basilarisHead: Head of basilar artery
+  basilaris: Basilar artery

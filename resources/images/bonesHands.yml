@@ -1,0 +1,121 @@
+de:
+  title: Knochen der Hand
+  leftCapitate: Os capitatum links
+  leftDistalPhalanx1: Phalanx distalis I links
+  leftDistalPhalanx2: Phalanx distalis II links
+  leftDistalPhalanx3: Phalanx distalis III links
+  leftDistalPhalanx4: Phalanx distalis IV links
+  leftDistalPhalanx5: Phalanx distalis V links
+  leftHamate: Os hamatum links
+  leftLunate: Os lunatum links
+  leftMetacarpal1: Os metacarpale I links
+  leftMetacarpal2: Os metacarpale II links
+  leftMetacarpal3: Os metacarpale III links
+  leftMetacarpal4: Os metacarpale IV links
+  leftMetacarpal5: Os metacarpale V links
+  leftMiddlePhalanx2: Phalanx media II links
+  leftMiddlePhalanx3: Phalanx media III links
+  leftMiddlePhalanx4: Phalanx media IV links
+  leftMiddlePhalanx5: Phalanx media V links
+  leftPisiforme: Os pisiforme links
+  leftProximalPhalanx1: Phalanx proximalis I links
+  leftProximalPhalanx2: Phalanx proximalis II links
+  leftProximalPhalanx3: Phalanx proximalis III links
+  leftProximalPhalanx4: Phalanx proximalis IV links
+  leftProximalPhalanx5: Phalanx proximalis V links
+  leftRadius: Radius links
+  leftScaphoid: Os scaphoideum links
+  leftTrapezium: Os trapezium links
+  leftTrapezoideum: Os trapezoideum links
+  leftTriquetrum: Os triquetrum links
+  leftUlna: Ulna links
+  rightCapitate: Os capitatum rechts
+  rightDistalPhalanx1: Phalanx distalis I links
+  rightDistalPhalanx2: Phalanx distalis II links
+  rightDistalPhalanx3: Phalanx distalis III links
+  rightDistalPhalanx4: Phalanx distalis IV links
+  rightDistalPhalanx5: Phalanx distalis V links
+  rightHamate: Os hamatum rechts
+  rightLunate: Os lunatum rechts
+  rightMetacarpal1: Os metacarpale I rechts
+  rightMetacarpal2: Os metacarpale II rechts
+  rightMetacarpal3: Os metacarpale III rechts
+  rightMetacarpal4: Os metacarpale IV rechts
+  rightMetacarpal5: Os metacarpale V rechts
+  rightMiddlePhalanx2: Phalanx media II rechts
+  rightMiddlePhalanx3: Phalanx media III rechts
+  rightMiddlePhalanx4: Phalanx media IV rechts
+  rightMiddlePhalanx5: Phalanx media V rechts
+  rightPisiforme: Os pisiforme rechts
+  rightProximalPhalanx1: Phalanx proximalis I rechts
+  rightProximalPhalanx2: Phalanx proximalis II rechts
+  rightProximalPhalanx3: Phalanx proximalis III rechts
+  rightProximalPhalanx4: Phalanx proximalis IV rechts
+  rightProximalPhalanx5: Phalanx proximalis V rechts
+  rightRadius: Radius rechts
+  rightScaphoid: Os scaphoideum rechts
+  rightTrapezium: Os trapezium rechts
+  rightTrapezoideum: Os trapezoideum rechts
+  rightTriquetrum: Os triquetrum rechts
+  rightUlna: Ulna rechts
+
+en:
+  title: Bones hand
+  leftCapitate: Left capitate
+  leftDistalPhalanx1: Left distal phalanx 1
+  leftDistalPhalanx2: Left distal phalanx 2
+  leftDistalPhalanx3: Left distal phalanx 3
+  leftDistalPhalanx4: Left distal phalanx 4
+  leftDistalPhalanx5: Left distal phalanx 5
+  leftHamate: Left hamate
+  leftLunate: Left lunate
+  leftMetacarpal1: Left metacarpal 1
+  leftMetacarpal2: Left metacarpal 2
+  leftMetacarpal3: Left metacarpal 3
+  leftMetacarpal4: Left metacarpal 4
+  leftMetacarpal5: Left metacarpal 5
+  leftMiddlePhalanx2: Left middle phalanx 2
+  leftMiddlePhalanx3: Left middle phalanx 3
+  leftMiddlePhalanx4: Left middle phalanx 4
+  leftMiddlePhalanx5: Left middle phalanx 5
+  leftPisiforme: Left pisiforme
+  leftProximalPhalanx1: Left proximal phalanx 1
+  leftProximalPhalanx2: Left proximal phalanx 2
+  leftProximalPhalanx3: Left proximal phalanx 3
+  leftProximalPhalanx4: Left proximal phalanx 4
+  leftProximalPhalanx5: Left proximal phalanx 5
+  leftRadius: Left radius
+  leftScaphoid: Left scaphoid
+  leftTrapezium: Left trapezium
+  leftTrapezoideum: Left trapezoideum
+  leftTriquetrum: Left triquetrum
+  leftUlna: Left ulna
+  rightCapitate: Right capitate
+  rightDistalPhalanx1: Right distal phalanx 1
+  rightDistalPhalanx2: Right distal phalanx 2
+  rightDistalPhalanx3: Right distal phalanx 3
+  rightDistalPhalanx4: Right distal phalanx 4
+  rightDistalPhalanx5: Right distal phalanx 5
+  rightHamate: Right hamate
+  rightLunate: Right lunate
+  rightMetacarpal1: Right metacarpal 1
+  rightMetacarpal2: Right metacarpal 2
+  rightMetacarpal3: Right metacarpal 3
+  rightMetacarpal4: Right metacarpal 4
+  rightMetacarpal5: Right metacarpal 5
+  rightMiddlePhalanx2: Right middle phalanx 2
+  rightMiddlePhalanx3: Right middle phalanx 3
+  rightMiddlePhalanx4: Right middle phalanx 4
+  rightMiddlePhalanx5: Right middle phalanx 5
+  rightPisiforme: Right pisiforme
+  rightProximalPhalanx1: Right proximal phalanx 1
+  rightProximalPhalanx2: Right proximal phalanx 2
+  rightProximalPhalanx3: Right proximal phalanx 3
+  rightProximalPhalanx4: Right proximal phalanx 4
+  rightProximalPhalanx5: Right proximal phalanx5
+  rightRadius: Right radius
+  rightScaphoid: Right scaphoid
+  rightTrapezium: Right trapezium
+  rightTrapezoideum: Right trapezoideum
+  rightTriquetrum: Right triquetrum
+  rightUlna: Right ulna

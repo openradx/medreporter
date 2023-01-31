@@ -10,14 +10,17 @@ import {
   UserRole,
   Visibility,
 } from "@prisma/client"
+import fs from "fs"
+import glob from "glob"
+import path from "path"
 import { CategoryManager } from "~/utils/categoryUtils"
 import { hashPassword } from "~/utils/cryptography"
+import { optimizeSvg } from "~/utils/svg"
 import defaultCategories from "./seeds/categories.json"
 
-const projectDir = process.cwd()
-loadEnvConfig(projectDir)
-
-const prisma = new PrismaClient()
+const SUPERADMIN_USERNAME = "roentgen"
+const SUPERADMIN_EMAIL = "roentgen@medreporter.org"
+const SUPERADMIN_PASSWORD = "roentgen"
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -29,7 +32,12 @@ const EXAMPLE_MEMBERSHIPS_OWNER = 10
 
 const EXAMPLE_MODULES = 200
 
+const projectDir = process.cwd()
+loadEnvConfig(projectDir)
+
 const isProduction = process.env.NODE_ENV === "production"
+
+const prisma = new PrismaClient()
 
 interface UserData extends Pick<User, "username" | "email" | "role" | "fullName" | "about"> {
   password: string
@@ -57,13 +65,17 @@ async function createUser(data: UserData) {
 
 async function createSuperadmin() {
   return createUser({
-    username: "roentgen",
-    email: "roentgen@medreporter.org",
-    password: "roentgen",
+    username: SUPERADMIN_USERNAME,
+    email: SUPERADMIN_EMAIL,
+    password: SUPERADMIN_PASSWORD,
     role: UserRole.SUPERADMIN,
-    fullName: "Master of disaster",
-    about: "The admin of MedReporter",
+    fullName: "Admin",
+    about: "The main admin of MedReporter",
   })
+}
+
+async function fetchSuperadmin() {
+  return await prisma.user.findUniqueOrThrow({ where: { username: SUPERADMIN_USERNAME } })
 }
 
 async function createExampleUser(role: UserRole) {
@@ -141,15 +153,28 @@ async function createExampleModule(userId: string) {
   })
 }
 
+async function createImage(filename) {
+  const source = fs.readFileSync(filename).toString()
+  const optimized = optimizeSvg(source)
+  return prisma.image.create({
+    data: {
+      name,
+    },
+  })
+}
+
 async function seed() {
+  let superadmin: User
   const userCount = await prisma.user.count()
   if (userCount) {
     // eslint-disable-next-line no-console
     console.info("Users present. Skipping user creation.")
+
+    superadmin = fetchSuperadmin()
   } else {
     // eslint-disable-next-line no-console
     console.info("Creating superadmin.")
-    await createSuperadmin()
+    superadmin = await createSuperadmin()
 
     // eslint-disable-next-line no-console
     console.info("Creating example users.")
@@ -160,8 +185,18 @@ async function seed() {
     await Promise.all(promises)
   }
 
+  glob
+    .sync("**/*.svg", {
+      cwd: path.join(projectDir, "prisma", "seeds", "images"),
+      absolute: true,
+    })
+    .forEach((filename) => {
+      const source = fs.readFileSync(filename).toString()
+      const optimized = optimizeSvg(source)
+    })
+
   const categoryCount = await prisma.category.count()
-  if (categoryCount > 0) {
+  if (categoryCount === 0) {
     // eslint-disable-next-line no-console
     console.info("Creating default categories.")
   } else {

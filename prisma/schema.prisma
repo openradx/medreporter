@@ -64,8 +64,9 @@ model User {
   sessions    Session[]
   memberships Membership[]
   modules     Module[]
-  reports     Report[]
   templates   Template[]
+  images      Image[]
+  reports     Report[]
 }
 
 model VerificationToken {
@@ -81,10 +82,11 @@ model Institute {
   name String @unique
 
   memberships  Membership[]
+  currentUsers User[]
   modules      Module[]
   templates    Template[]
+  images       Image[]
   reports      Report[]
-  currentUsers User[]
 }
 
 enum MembershipRole {
@@ -188,6 +190,95 @@ model TemplateTranslation {
   @@index([templateId, default])
 }
 
+model Image {
+  id            String        @id @default(cuid())
+  name          String
+  filename      String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  source        String
+  visibility    Visibility
+  releaseStatus ReleaseStatus
+
+  author           User               @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId         String
+  institute        Institute?         @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId      String?
+  ImageTranslation ImageTranslation[]
+  ImageCategory    ImageCategory[]
+}
+
+model ImageTranslation {
+  id          String  @id @default(cuid())
+  language    String
+  default     Boolean
+  title       String
+  description String
+
+  image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  imageId String
+
+  @@unique([language, imageId])
+  @@index([imageId, default])
+}
+
+model ModuleCategory {
+  id String @id @default(cuid())
+
+  Module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  moduleId String
+
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId String
+
+  @@unique([moduleId, categoryId])
+}
+
+model TemplateCategory {
+  id String @id @default(cuid())
+
+  Template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  templateId String
+
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId String
+
+  @@unique([templateId, categoryId])
+}
+
+model ImageCategory {
+  id String @id @default(cuid())
+
+  Image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  imageId String
+
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId String
+
+  @@unique([imageId, categoryId])
+}
+
+model Category {
+  id  String @id @default(cuid())
+  key String @unique
+
+  translations  CategoryTranslation[]
+  modules       ModuleCategory[]
+  templates     TemplateCategory[]
+  ImageCategory ImageCategory[]
+}
+
+model CategoryTranslation {
+  id       String @id @default(cuid())
+  language String
+  label    String
+
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId String
+
+  @@unique([categoryId, language])
+}
+
 model Report {
   id         String     @id @default(cuid())
   createdAt  DateTime   @default(now())
@@ -218,48 +309,4 @@ model ReportDetail {
   reportId String?
 
   @@unique([reportId, key])
-}
-
-model ModuleCategory {
-  id String @id @default(cuid())
-
-  Module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  moduleId String
-
-  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([moduleId, categoryId])
-}
-
-model TemplateCategory {
-  id String @id @default(cuid())
-
-  Template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  templateId String
-
-  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([templateId, categoryId])
-}
-
-model Category {
-  id  String @id @default(cuid())
-  key String @unique
-
-  translations CategoryTranslation[]
-  modules      ModuleCategory[]
-  templates    TemplateCategory[]
-}
-
-model CategoryTranslation {
-  id       String @id @default(cuid())
-  language String
-  label    String
-
-  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([categoryId, language])
 }

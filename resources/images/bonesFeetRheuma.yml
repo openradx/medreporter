@@ -1,0 +1,417 @@
+de:
+  title: Knochen des Fußes Rheuma
+  leftTalus: Talus links
+  leftCalcaneus: Calcaneus links
+  leftNavicular: Os naviculare links
+  leftCuboid: Os cuboideum links
+  leftLateralCuneiform: Os cuneiforme laterale links
+  leftIntermediateCuneiform: Os cuneiforme intermedium links
+  leftMedialCuneiform: Os cuneiforme mediale links
+  leftMetatarsal1HeadFibular: Fibulaseitiger Kopf des Os metatarsale I links
+  leftMetatarsal1Shaft: Schaft des Os metatarsale I links
+  leftMetatarsal1BaseFibular: Fibulaseitige Basis des Os metatarsale I links
+  leftMetatarsal1BaseTibial: Tibiaseitige Basis des Os metatarsale I links
+  leftMetatarsal1HeadTibial: Tibiaseitige Basis des Os metatarsale I links
+  leftSesamoid: Os sesamoideum links
+  leftMetatarsal2Shaft: Schaft des Os metatarsale II links
+  leftMetatarsal2BaseFibular: Fibulaseitige Basis des Os metatarsale II links
+  leftMetatarsal2BaseTibial: Tibiaseitige Basis des Os metatarsale II links
+  leftMetatarsal2HeadTibial: Tibiaseitige Basis des Os metatarsale II links
+  leftMetatarsal2HeadFibular: Fibulaseitiger Kopf des Os metatarsale II links
+  leftMetatarsal3HeadFibular: Fibulaseitiger Kopf des Os metatarsale III links
+  leftMetatarsal3Shaft: Schaft des Os metatarsale III links
+  leftMetatarsal3BaseFibular: Fibulaseitige Basis des Os metatarsale III links
+  leftMetatarsal3BaseTibial: Tibiaseitige Basis des Os metatarsale III links
+  leftMetatarsal3HeadTibial: Tibiaseitiger Kopf des Os metatarsale III links
+  leftMetatarsal4HeadFibular: Fibulaseitiger Kopf des Os metatarsale IV links
+  leftMetatarsal4Shaft: Schaft des Os metatarsale IV links
+  leftMetatarsal4BaseFibular: Fibulaseitige Basis des Os metatarsale IV links
+  leftMetatarsal4BaseTibial: Tibiaseitige Basis des Os metatarsale IV links
+  leftMetatarsal4HeadTibial: Tibiaseitiger Kopf des Os metatarsale IV links
+  leftMetatarsal5HeadFibular: Fibulaseitiger Kopf des Os metatarsale V links
+  leftMetatarsal5BaseFibular: Fibulaseitige Basis des Os metatarsale V links
+  leftMetatarsal5BaseTibial: Tibiaseitige Basis des Os metatarsale V links
+  leftMetatarsal5Shaft: Schaft des Os metatarsale V links
+  leftMetatarsal5HeadTibial: Tibiaseitiger Kopf des Os metatarsale V links
+  leftProximalPhalanx1Shaft: Schaft der Phalanx proximalis I links
+  leftProximalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx proximalis I links
+  leftProximalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx proximalis I links
+  leftProximalPhalanx1HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis I links
+  leftProximalPhalanx1HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I links
+  leftProximalPhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I links
+  leftProximalPhalanx2Shaft: Schaft der Phalanx proximalis II links
+  leftProximalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx proximalis II links
+  leftProximalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx proximalis II links
+  leftProximalPhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis II links
+  leftProximalPhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis II links
+  leftProximalPhalanx3Shaft: Schaft der Phalanx proximalis III links
+  leftProximalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx proximalis III links
+  leftProximalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx proximalis III links
+  leftProximalPhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis III links
+  leftProximalPhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis IV links
+  leftProximalPhalanx4Shaft: Schaft der Phalanx proximalis IV links
+  leftProximalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx proximalis IV links
+  leftProximalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx proximalis IV links
+  leftProximalPhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis IV links
+  leftProximalPhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis V links
+  leftProximalPhalanx5Shaft: Schaft der Phalanx proximalis V links
+  leftProximalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx proximalis V links
+  leftProximalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx proximalis V links
+  leftProximalPhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis V links
+  leftDistalPhalanx1TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis I links
+  leftDistalPhalanx1Shaft: Schaft der Phalanx distalis I links
+  leftDistalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx distalis I links
+  leftDistalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx distalis I links
+  leftDistalPhalanx1TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis I links
+  leftMiddlePhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx media II links
+  leftMiddlePhalanx2Shaft: Schaft der Phalanx media II links
+  leftMiddlePhalanx2BaseTibial: Tibiaseitige Basis der Phalanx media II links
+  leftMiddlePhalanx2BaseFibular: Fibulaseitige Basis der Phalanx media II links
+  leftMiddlePhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx media II links
+  leftMiddlePhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx media III links
+  leftMiddlePhalanx3Shaft: Schaft der Phalanx media III links
+  leftMiddlePhalanx3BaseFibular: Fibulaseitige Basis der Phalanx media III links
+  leftMiddlePhalanx3BaseTibial: Tibiaseitige Basis der Phalanx media III links
+  leftMiddlePhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx media III links
+  leftMiddlePhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx media IV links
+  leftMiddlePhalanx4BaseFibular: Fibulaseitige Basis der Phalanx media IV links
+  leftMiddlePhalanx4BaseTibial: Tibiaseitige Basis der Phalanx media IV links
+  leftMiddlePhalanx4Shaft: Schaft der Phalanx media IV links
+  leftMiddlePhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx media IV links
+  leftDistalPhalanx2TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis II links
+  leftDistalPhalanx2Shaft: Schaft der Phalanx distali II links
+  leftDistalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx distalis II links
+  leftDistalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx distalis II links
+  leftDistalPhalanx2TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis II links
+  leftDistalPhalanx3TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis III links
+  leftDistalPhalanx3Shaft: Schaft der Phalanx distalis III links
+  leftDistalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx distalis III links
+  leftDistalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx distalis III links
+  leftDistalPhalanx3TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis III links
+  leftDistalPhalanx4TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis IV links
+  leftDistalPhalanx4Shaft: Schaft der Phalanx distalis IV links
+  leftDistalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx distalis IV links
+  leftDistalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx distalis IV links
+  leftDistalPhalanx4TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis IV links
+  leftMiddlePhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx media V links
+  leftMiddlePhalanx5Shaft: Schaft der Phalanx media V links
+  leftMiddlePhalanx5BaseTibial: Tibiaseitige Basis der Phalanx media V links
+  leftMiddlePhalanx5BaseFibular: Fibulaseitige Basis der Phalanx media V links
+  leftMiddlePhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx media V links
+  leftDistalPhalanx5TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis V links
+  leftDistalPhalanx5Shaft: Schaft der Phalanx distalis V links
+  leftDistalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx distalis V links
+  leftDistalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx distalis V links
+  leftDistalPhalanx5TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis V links
+  rightTalus: Talus rechts
+  rightCalcaneus: Calcaneus rechts
+  rightNavicular: Os naviculare rechts
+  rightCuboid: Os cuboideum rechts
+  rightLateralCuneiform: Os cuneiforme laterale rechts
+  rightIntermediateCuneiform: Os cuneiforme intermedium rechts
+  rightMedialCuneiform: Os cuneiforme mediale rechts
+  rightMetatarsal1HeadFibular: Fibulaseitiger Kopf des Os metatarsale I rechts
+  rightMetatarsal1Shaft: Schaft des Os metatarsale I rechts
+  rightMetatarsal1BaseFibular: Fibulaseitige Basis des Os metatarsale I rechts
+  rightMetatarsal1BaseTibial: Tibiaseitige Basis des Os metatarsale I rechts
+  rightMetatarsal1HeadTibial: Tibiaseitige Basis des Os metatarsale I rechts
+  rightSesamoid: Os sesamoideum rechts
+  rightMetatarsal2Shaft: Schaft des Os metatarsale II rechts
+  rightMetatarsal2BaseFibular: Fibulaseitige Basis des Os metatarsale II rechts
+  rightMetatarsal2BaseTibial: Tibiaseitige Basis des Os metatarsale II rechts
+  rightMetatarsal2HeadTibial: Tibiaseitige Basis des Os metatarsale II rechts
+  rightMetatarsal2HeadFibular: Fibulaseitiger Kopf des Os metatarsale II rechts
+  rightMetatarsal3HeadFibular: Fibulaseitiger Kopf des Os metatarsale III rechts
+  rightMetatarsal3Shaft: Schaft des Os metatarsale III rechts
+  rightMetatarsal3BaseFibular: Fibulaseitige Basis des Os metatarsale III rechts
+  rightMetatarsal3BaseTibial: Tibiaseitige Basis des Os metatarsale III rechts
+  rightMetatarsal3HeadTibial: Tibiaseitiger Kopf des Os metatarsale III rechts
+  rightMetatarsal4HeadFibular: Fibulaseitiger Kopf des Os metatarsale IV rechts
+  rightMetatarsal4Shaft: Schaft des Os metatarsale IV rechts
+  rightMetatarsal4BaseFibular: Fibulaseitige Basis des Os metatarsale IV rechts
+  rightMetatarsal4BaseTibial: Tibiaseitige Basis des Os metatarsale IV rechts
+  rightMetatarsal4HeadTibial: Tibiaseitiger Kopf des Os metatarsale IV rechts
+  rightMetatarsal5HeadFibular: Fibulaseitiger Kopf des Os metatarsale V rechts
+  rightMetatarsal5BaseFibular: Fibulaseitige Basis des Os metatarsale V rechts
+  rightMetatarsal5BaseTibial: Tibiaseitige Basis des Os metatarsale V rechts
+  rightMetatarsal5Shaft: Schaft des Os metatarsale V rechts
+  rightMetatarsal5HeadTibial: Tibiaseitiger Kopf des Os metatarsale V rechts
+  rightProximalPhalanx1Shaft: Schaft der Phalanx proximalis I rechts
+  rightProximalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx proximalis I rechts
+  rightProximalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx proximalis I rechts
+  rightProximalPhalanx1HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis I rechts
+  rightProximalPhalanx1HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I rechts
+  rightProximalPhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis I rechts
+  rightProximalPhalanx2Shaft: Schaft der Phalanx proximalis II rechts
+  rightProximalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx proximalis II rechts
+  rightProximalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx proximalis II rechts
+  rightProximalPhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis II rechts
+  rightProximalPhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis II rechts
+  rightProximalPhalanx3Shaft: Schaft der Phalanx proximalis III rechts
+  rightProximalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx proximalis III rechts
+  rightProximalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx proximalis III rechts
+  rightProximalPhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis III rechts
+  rightProximalPhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis IV rechts
+  rightProximalPhalanx4Shaft: Schaft der Phalanx proximalis IV rechts
+  rightProximalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx proximalis IV rechts
+  rightProximalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx proximalis IV rechts
+  rightProximalPhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis IV rechts
+  rightProximalPhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx proximalis V rechts
+  rightProximalPhalanx5Shaft: Schaft der Phalanx proximalis V rechts
+  rightProximalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx proximalis V rechts
+  rightProximalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx proximalis V rechts
+  rightProximalPhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx proximalis V rechts
+  rightDistalPhalanx1TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis I rechts
+  rightDistalPhalanx1Shaft: Schaft der Phalanx distalis I rechts
+  rightDistalPhalanx1BaseTibial: Tibiaseitige Basis der Phalanx distalis I rechts
+  rightDistalPhalanx1BaseFibular: Fibulaseitige Basis der Phalanx distalis I rechts
+  rightDistalPhalanx1TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis I rechts
+  rightMiddlePhalanx2HeadTibial: Tibiaseitiger Kopf der Phalanx media II rechts
+  rightMiddlePhalanx2Shaft: Schaft der Phalanx media II rechts
+  rightMiddlePhalanx2BaseTibial: Tibiaseitige Basis der Phalanx media II rechts
+  rightMiddlePhalanx2BaseFibular: Fibulaseitige Basis der Phalanx media II rechts
+  rightMiddlePhalanx2HeadFibular: Fibulaseitiger Kopf der Phalanx media II rechts
+  rightMiddlePhalanx3HeadFibular: Fibulaseitiger Kopf der Phalanx media III rechts
+  rightMiddlePhalanx3Shaft: Schaft der Phalanx media III rechts
+  rightMiddlePhalanx3BaseFibular: Fibulaseitige Basis der Phalanx media III rechts
+  rightMiddlePhalanx3BaseTibial: Tibiaseitige Basis der Phalanx media III rechts
+  rightMiddlePhalanx3HeadTibial: Tibiaseitiger Kopf der Phalanx media III rechts
+  rightMiddlePhalanx4HeadFibular: Fibulaseitiger Kopf der Phalanx media IV rechts
+  rightMiddlePhalanx4BaseFibular: Fibulaseitige Basis der Phalanx media IV rechts
+  rightMiddlePhalanx4BaseTibial: Tibiaseitige Basis der Phalanx media IV rechts
+  rightMiddlePhalanx4Shaft: Schaft der Phalanx media IV rechts
+  rightMiddlePhalanx4HeadTibial: Tibiaseitiger Kopf der Phalanx media IV rechts
+  rightDistalPhalanx2TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis II rechts
+  rightDistalPhalanx2Shaft: Schaft der Phalanx distali II rechts
+  rightDistalPhalanx2BaseTibial: Tibiaseitige Basis der Phalanx distalis II rechts
+  rightDistalPhalanx2BaseFibular: Fibulaseitige Basis der Phalanx distalis II rechts
+  rightDistalPhalanx2TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis II rechts
+  rightDistalPhalanx3TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis III rechts
+  rightDistalPhalanx3Shaft: Schaft der Phalanx distalis III rechts
+  rightDistalPhalanx3BaseTibial: Tibiaseitige Basis der Phalanx distalis III rechts
+  rightDistalPhalanx3BaseFibular: Fibulaseitige Basis der Phalanx distalis III rechts
+  rightDistalPhalanx3TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis III rechts
+  rightDistalPhalanx4TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis IV rechts
+  rightDistalPhalanx4Shaft: Schaft der Phalanx distalis IV rechts
+  rightDistalPhalanx4BaseTibial: Tibiaseitige Basis der Phalanx distalis IV rechts
+  rightDistalPhalanx4BaseFibular: Fibulaseitige Basis der Phalanx distalis IV rechts
+  rightDistalPhalanx4TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis IV rechts
+  rightMiddlePhalanx5HeadTibial: Tibiaseitiger Kopf der Phalanx media V rechts
+  rightMiddlePhalanx5Shaft: Schaft der Phalanx media V rechts
+  rightMiddlePhalanx5BaseTibial: Tibiaseitige Basis der Phalanx media V rechts
+  rightMiddlePhalanx5BaseFibular: Fibulaseitige Basis der Phalanx media V rechts
+  rightMiddlePhalanx5HeadFibular: Fibulaseitiger Kopf der Phalanx media V rechts
+  rightDistalPhalanx5TuftTibial: Tibiaseitiger Nagelkranz der Phalanx distalis V rechts
+  rightDistalPhalanx5Shaft: Schaft der Phalanx distalis V rechts
+  rightDistalPhalanx5BaseTibial: Tibiaseitige Basis der Phalanx distalis V rechts
+  rightDistalPhalanx5BaseFibular: Fibulaseitige Basis der Phalanx distalis V rechts
+  rightDistalPhalanx5TuftFibular: Fibulaseitiger Nagelkranz der Phalanx distalis V rechts
+
+en:
+  title: Bones feet rheuma
+  leftTalus: Left talus
+  leftCalcaneus: Left calcaneus
+  leftNavicular: Left navicular
+  leftCuboid: Left cuboid
+  leftLateralCuneiform: Left lateral cuneiform
+  leftIntermediateCuneiform: Left intermediate cuneiform
+  leftMedialCuneiform: Left medial cuneiform
+  leftMetatarsal1HeadFibular: Fibular side of head of left metatarsal 1
+  leftMetatarsal1Shaft: Shaft of left metatarsal 1
+  leftMetatarsal1BaseFibular: Fibular side of base of left metatarsal 1
+  leftMetatarsal1BaseTibial: Tibial side of base of left metatarsal 1
+  leftMetatarsal1HeadTibial: Tibial side of head of left metatarsal 1
+  leftSesamoid: Left sesamoid
+  leftMetatarsal2Shaft: Shaft of left metatarsal 2
+  leftMetatarsal2BaseFibular: Fibular side of base of left metatarsal 2
+  leftMetatarsal2BaseTibial: Tibial side of base of left metatarsal 2
+  leftMetatarsal2HeadTibial: Tibial side of head of left metatarsal 2
+  leftMetatarsal2HeadFibular: Fibular side of head of left metatarsal 2
+  leftMetatarsal3HeadFibular: Fibular side of head of left metatarsal 3
+  leftMetatarsal3Shaft: Shaft of left metatarsal 3
+  leftMetatarsal3BaseFibular: Fibular side of base of left metatarsal 3
+  leftMetatarsal3BaseTibial: Tibial side of base of left metatarsal 3
+  leftMetatarsal3HeadTibial: Tibial side of head of left metatarsal 3
+  leftMetatarsal4HeadFibular: Fibular side of head of left metatarsal 4
+  leftMetatarsal4Shaft: Shaft of left metatarsal 4
+  leftMetatarsal4BaseFibular: Fibular side of base of left metatarsal 4
+  leftMetatarsal4BaseTibial: Tibial side of base of left metatarsal 4
+  leftMetatarsal4HeadTibial: Tibial side of head of left metatarsal 4
+  leftMetatarsal5HeadFibular: Fibular side of head of left metatarsal 5
+  leftMetatarsal5BaseFibular: Fibular side of base of left metatarsal 5
+  leftMetatarsal5BaseTibial: Tibial side of base of left metatarsal 5
+  leftMetatarsal5Shaft: Shaft of left metatarsal 5
+  leftMetatarsal5HeadTibial: Tibial side of head of left metatarsal 5
+  leftProximalPhalanx1Shaft: Shaft of left proximal phalanx 1
+  leftProximalPhalanx1BaseTibial: Tibial side of base of left proximal phalanx 1
+  leftProximalPhalanx1BaseFibular: Fibular side of base of left proximal phalanx 1
+  leftProximalPhalanx1HeadFibular: Fibular side of head of left proximal phalanx 1
+  leftProximalPhalanx1HeadTibial: Tibial side of head of left proximal phalanx 1
+  leftProximalPhalanx2HeadTibial: Tibial side of head of left proximal phalanx 2
+  leftProximalPhalanx2Shaft: Shaft oft left proximal phalanx 2
+  leftProximalPhalanx2BaseTibial: Tibial side of base of left proximal phalanx 2
+  leftProximalPhalanx2BaseFibular: Fibular side of base of left proximal phalanx 2
+  leftProximalPhalanx2HeadFibular: Fibular side of head of left proximal phalanx 2
+  leftProximalPhalanx3HeadTibial: Tibial side of head of left proximal phalanx 3
+  leftProximalPhalanx3Shaft: Shaft of left proximal proximal 3
+  leftProximalPhalanx3BaseTibial: Tibial side of base of left proximal phalanx 3
+  leftProximalPhalanx3BaseFibular: Fibular side of base of left proximal phalanx 3
+  leftProximalPhalanx3HeadFibular: Fibular side of head of left proximal phalanx 3
+  leftProximalPhalanx4HeadTibial: Tibial side of head of left proximal phalanx 4
+  leftProximalPhalanx4Shaft: Shaft of left proximal phalanx 4
+  leftProximalPhalanx4BaseTibial: Tibial side of base of left proximal phalanx 4
+  leftProximalPhalanx4BaseFibular: Fibular side of base of left proximal phalanx 4
+  leftProximalPhalanx4HeadFibular: Fibular side of head of left proximal phalanx 4
+  leftProximalPhalanx5HeadTibial: Tibial side of head of left proximal phalanx 5
+  leftProximalPhalanx5Shaft: Shaft of left proximal phalanx 5
+  leftProximalPhalanx5BaseTibial: Tibial side of base of left proximal phalanx 5
+  leftProximalPhalanx5BaseFibular: Fibular side of base of left proximal phalanx 5
+  leftProximalPhalanx5HeadFibular: Fibular side of head of left proximal phalanx 5
+  leftDistalPhalanx1TuftTibial: Tibial side of tuft of left distal phalanx 1
+  leftDistalPhalanx1Shaft: Shaft of left distal phalanx 1
+  leftDistalPhalanx1BaseTibial: Tibial side of base of left distal phalanx 1
+  leftDistalPhalanx1BaseFibular: Fibular side of base of left distal phalanx 1
+  leftDistalPhalanx1TuftFibular: Fibular side of tuft of left distal phalanx
+  leftMiddlePhalanx2HeadTibial: Tibial side of head of left middle phalanx 2
+  leftMiddlePhalanx2Shaft: Shaft of left middle phalanx 2
+  leftMiddlePhalanx2BaseTibial: Tibial side of base of left middle phalanx 2
+  leftMiddlePhalanx2BaseFibular: Fibular side of base of left middle phalanx 2
+  leftMiddlePhalanx2HeadFibular: Fibular side of head of left middle phalanx 2
+  leftMiddlePhalanx3HeadFibular: Fibular side of head of left middle phalanx 3
+  leftMiddlePhalanx3Shaft: Shaft of left middle phalanx 3
+  leftMiddlePhalanx3BaseFibular: Fibular side of base of left middle phalanx 3
+  leftMiddlePhalanx3BaseTibial: Tibial side of base of left middle phalanx 3
+  leftMiddlePhalanx3HeadTibial: Tibial side of head of left middle phalanx 3
+  leftMiddlePhalanx4HeadFibular: Fibular side of head of left middle phalanx 4
+  leftMiddlePhalanx4BaseFibular: Fibular side of base of left middle phalanx 4
+  leftMiddlePhalanx4BaseTibial: Tibial side of base of left middle phalanx 4
+  leftMiddlePhalanx4Shaft: Shaft of left middle phalanx 4
+  leftMiddlePhalanx4HeadTibial: Tibial side of head of left middle phalanx 4
+  leftDistalPhalanx2TuftTibial: Tibial side of tuft of left distal phalanx 2
+  leftDistalPhalanx2Shaft: Shaft of left distal phalanx 2
+  leftDistalPhalanx2BaseTibial: Tibial side of base of left distal phalanx 2
+  leftDistalPhalanx2BaseFibular: Fibular side of base of left distal phalanx 2
+  leftDistalPhalanx2TuftFibular: Fibular side of tuft of left distal phalanx 2
+  leftDistalPhalanx3TuftTibial: Tibial side of tuft of left distal phalanx
+  leftDistalPhalanx3Shaft: Shaft of left distal phalanx 3
+  leftDistalPhalanx3BaseTibial: Tibial side of base of left distal phalanx 3
+  leftDistalPhalanx3BaseFibular: Fibular side of base of left distal phalanx 3
+  leftDistalPhalanx3TuftFibular: Fibular side of tuft of left distal phalanx 3
+  leftDistalPhalanx4TuftTibial: Tibial side of tuft of left distal phalanx 3
+  leftDistalPhalanx4Shaft: Shaft of left distal phalanx 4
+  leftDistalPhalanx4BaseTibial: Tibial side of base of left distal phalanx 4
+  leftDistalPhalanx4BaseFibular: Fibular side of base of left distal phalanx 4
+  leftDistalPhalanx4TuftFibular: Fibular side of tuft of left distal phalanx 4
+  leftMiddlePhalanx5HeadTibial: Tibial side of head of left middle phalanx 5
+  leftMiddlePhalanx5Shaft: Shaft of left middle phalanx 5
+  leftMiddlePhalanx5BaseTibial: Tibial side of base of left middle phalanx 5
+  leftMiddlePhalanx5BaseFibular: Fibular side of base of left middle phalanx 5
+  leftMiddlePhalanx5HeadFibular: Fibular side of head of left middle phalanx 5
+  leftDistalPhalanx5TuftTibial: Tibial side of tuft of left distal phalanx 5
+  leftDistalPhalanx5Shaft: Shaft of left distal phalanx 5
+  leftDistalPhalanx5BaseTibial: Tibial side of base of left distal phalanx 5
+  leftDistalPhalanx5BaseFibular: Fibular side of base of left distal phalanx 5
+  leftDistalPhalanx5TuftFibular: Fibular side of tuft of left distal phalanx 5
+  rightTalus: Right talus
+  rightCalcaneus: Right calcaneus
+  rightNavicular: Right navicular
+  rightCuboid: Right cuboid
+  rightLateralCuneiform: Right lateral cuneiform
+  rightIntermediateCuneiform: Right intermediate cuneiform
+  rightMedialCuneiform: Right medial cuneiform
+  rightMetatarsal1HeadFibular: Fibular side of head of right metatarsal 1
+  rightMetatarsal1Shaft: Shaft of right metatarsal 1
+  rightMetatarsal1BaseFibular: Fibular side of base of right metatarsal 1
+  rightMetatarsal1BaseTibial: Tibial side of base of right metatarsal 1
+  rightMetatarsal1HeadTibial: Tibial side of head of right metatarsal 1
+  rightSesamoid: Right sesamoid
+  rightMetatarsal2Shaft: Shaft of right metatarsal 2
+  rightMetatarsal2BaseFibular: Fibular side of base of right metatarsal 2
+  rightMetatarsal2BaseTibial: Tibial side of base of right metatarsal 2
+  rightMetatarsal2HeadTibial: Tibial side of head of right metatarsal 2
+  rightMetatarsal2HeadFibular: Fibular side of head of right metatarsal 2
+  rightMetatarsal3HeadFibular: Fibular side of head of right metatarsal 3
+  rightMetatarsal3Shaft: Shaft of right metatarsal 3
+  rightMetatarsal3BaseFibular: Fibular side of base of right metatarsal 3
+  rightMetatarsal3BaseTibial: Tibial side of base of right metatarsal 3
+  rightMetatarsal3HeadTibial: Tibial side of head of right metatarsal 3
+  rightMetatarsal4HeadFibular: Fibular side of head of right metatarsal 4
+  rightMetatarsal4Shaft: Shaft of right metatarsal 4
+  rightMetatarsal4BaseFibular: Fibular side of base of right metatarsal 4
+  rightMetatarsal4BaseTibial: Tibial side of base of right metatarsal 4
+  rightMetatarsal4HeadTibial: Tibial side of head of right metatarsal 4
+  rightMetatarsal5HeadFibular: Fibular side of head of right metatarsal 5
+  rightMetatarsal5BaseFibular: Fibular side of base of right metatarsal 5
+  rightMetatarsal5BaseTibial: Tibial side of base of right metatarsal 5
+  rightMetatarsal5Shaft: Shaft of right metatarsal 5
+  rightMetatarsal5HeadTibial: Tibial side of head of right metatarsal 5
+  rightProximalPhalanx1Shaft: Shaft of right proximal phalanx 1
+  rightProximalPhalanx1BaseTibial: Tibial side of base of right proximal phalanx 1
+  rightProximalPhalanx1BaseFibular: Fibular side of base of right proximal phalanx 1
+  rightProximalPhalanx1HeadFibular: Fibular side of head of right proximal phalanx 1
+  rightProximalPhalanx1HeadTibial: Tibial side of head of right proximal phalanx 1
+  rightProximalPhalanx2HeadTibial: Tibial side of head of right proximal phalanx 2
+  rightProximalPhalanx2Shaft: Shaft oft right proximal phalanx 2
+  rightProximalPhalanx2BaseTibial: Tibial side of base of right proximal phalanx 2
+  rightProximalPhalanx2BaseFibular: Fibular side of base of right proximal phalanx 2
+  rightProximalPhalanx2HeadFibular: Fibular side of head of right proximal phalanx 2
+  rightProximalPhalanx3HeadTibial: Tibial side of head of right proximal phalanx 3
+  rightProximalPhalanx3Shaft: Shaft of right proximal proximal 3
+  rightProximalPhalanx3BaseTibial: Tibial side of base of right proximal phalanx 3
+  rightProximalPhalanx3BaseFibular: Fibular side of base of right proximal phalanx 3
+  rightProximalPhalanx3HeadFibular: Fibular side of head of right proximal phalanx 3
+  rightProximalPhalanx4HeadTibial: Tibial side of head of right proximal phalanx 4
+  rightProximalPhalanx4Shaft: Shaft of right proximal phalanx 4
+  rightProximalPhalanx4BaseTibial: Tibial side of base of right proximal phalanx 4
+  rightProximalPhalanx4BaseFibular: Fibular side of base of right proximal phalanx 4
+  rightProximalPhalanx4HeadFibular: Fibular side of head of right proximal phalanx 4
+  rightProximalPhalanx5HeadTibial: Tibial side of head of right proximal phalanx 5
+  rightProximalPhalanx5Shaft: Shaft of right proximal phalanx 5
+  rightProximalPhalanx5BaseTibial: Tibial side of base of right proximal phalanx 5
+  rightProximalPhalanx5BaseFibular: Fibular side of base of right proximal phalanx 5
+  rightProximalPhalanx5HeadFibular: Fibular side of head of right proximal phalanx 5
+  rightDistalPhalanx1TuftTibial: Tibial side of tuft of right distal phalanx 1
+  rightDistalPhalanx1Shaft: Shaft of right distal phalanx 1
+  rightDistalPhalanx1BaseTibial: Tibial side of base of right distal phalanx 1
+  rightDistalPhalanx1BaseFibular: Fibular side of base of right distal phalanx 1
+  rightDistalPhalanx1TuftFibular: Fibular side of tuft of right distal phalanx
+  rightMiddlePhalanx2HeadTibial: Tibial side of head of right middle phalanx 2
+  rightMiddlePhalanx2Shaft: Shaft of right middle phalanx 2
+  rightMiddlePhalanx2BaseTibial: Tibial side of base of right middle phalanx 2
+  rightMiddlePhalanx2BaseFibular: Fibular side of base of right middle phalanx 2
+  rightMiddlePhalanx2HeadFibular: Fibular side of head of right middle phalanx 2
+  rightMiddlePhalanx3HeadFibular: Fibular side of head of right middle phalanx 3
+  rightMiddlePhalanx3Shaft: Shaft of right middle phalanx 3
+  rightMiddlePhalanx3BaseFibular: Fibular side of base of right middle phalanx 3
+  rightMiddlePhalanx3BaseTibial: Tibial side of base of right middle phalanx 3
+  rightMiddlePhalanx3HeadTibial: Tibial side of head of right middle phalanx 3
+  rightMiddlePhalanx4HeadFibular: Fibular side of head of right middle phalanx 4
+  rightMiddlePhalanx4BaseFibular: Fibular side of base of right middle phalanx 4
+  rightMiddlePhalanx4BaseTibial: Tibial side of base of right middle phalanx 4
+  rightMiddlePhalanx4Shaft: Shaft of right middle phalanx 4
+  rightMiddlePhalanx4HeadTibial: Tibial side of head of right middle phalanx 4
+  rightDistalPhalanx2TuftTibial: Tibial side of tuft of right distal phalanx 2
+  rightDistalPhalanx2Shaft: Shaft of right distal phalanx 2
+  rightDistalPhalanx2BaseTibial: Tibial side of base of right distal phalanx 2
+  rightDistalPhalanx2BaseFibular: Fibular side of base of right distal phalanx 2
+  rightDistalPhalanx2TuftFibular: Fibular side of tuft of right distal phalanx 2
+  rightDistalPhalanx3TuftTibial: Tibial side of tuft of right distal phalanx
+  rightDistalPhalanx3Shaft: Shaft of right distal phalanx 3
+  rightDistalPhalanx3BaseTibial: Tibial side of base of right distal phalanx 3
+  rightDistalPhalanx3BaseFibular: Fibular side of base of right distal phalanx 3
+  rightDistalPhalanx3TuftFibular: Fibular side of tuft of right distal phalanx 3
+  rightDistalPhalanx4TuftTibial: Tibial side of tuft of right distal phalanx 3
+  rightDistalPhalanx4Shaft: Shaft of right distal phalanx 4
+  rightDistalPhalanx4BaseTibial: Tibial side of base of right distal phalanx 4
+  rightDistalPhalanx4BaseFibular: Fibular side of base of right distal phalanx 4
+  rightDistalPhalanx4TuftFibular: Fibular side of tuft of right distal phalanx 4
+  rightMiddlePhalanx5HeadTibial: Tibial side of head of right middle phalanx 5
+  rightMiddlePhalanx5Shaft: Shaft of right middle phalanx 5
+  rightMiddlePhalanx5BaseTibial: Tibial side of base of right middle phalanx 5
+  rightMiddlePhalanx5BaseFibular: Fibular side of base of right middle phalanx 5
+  rightMiddlePhalanx5HeadFibular: Fibular side of head of right middle phalanx 5
+  rightDistalPhalanx5TuftTibial: Tibial side of tuft of right distal phalanx 5
+  rightDistalPhalanx5Shaft: Shaft of right distal phalanx 5
+  rightDistalPhalanx5BaseTibial: Tibial side of base of right distal phalanx 5
+  rightDistalPhalanx5BaseFibular: Fibular side of base of right distal phalanx 5
+  rightDistalPhalanx5TuftFibular: Fibular side of tuft of right distal phalanx 5
