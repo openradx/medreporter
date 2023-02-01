@@ -196,14 +196,16 @@ model Image {
   filename      String?
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  source        String
+  original      String
+  processed     String
   visibility    Visibility
   releaseStatus ReleaseStatus
 
-  author           User               @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId         String
-  institute        Institute?         @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  instituteId      String?
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId    String
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId String?
+
   ImageTranslation ImageTranslation[]
   ImageCategory    ImageCategory[]
 }
