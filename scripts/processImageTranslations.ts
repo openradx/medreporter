@@ -9,14 +9,19 @@ import prettier from "prettier"
 
 const NS = "http://www.medreporter.org/reference/image"
 
-const POSTFIX = "_f"
+const projectDir = process.cwd()
+
+const INPUT_FOLDER = path.join(projectDir, "resources", "images")
+const OUTPUT_FOLDER = path.join(projectDir, "prisma", "seeds", "images")
+
+if (!fs.lstatSync(OUTPUT_FOLDER).isDirectory()) {
+  throw new Error(`Invalid output directory "${OUTPUT_FOLDER}".`)
+}
 
 type Translations = { [lng in "de" | "en"]: { [key: string]: string } }
 
-const projectDir = process.cwd()
-
-const imageFiles = glob.sync(`**/*[!${POSTFIX}].svg`, {
-  cwd: path.join(projectDir, "resources", "images"),
+const imageFiles = glob.sync("**/*.svg", {
+  cwd: INPUT_FOLDER,
   absolute: true,
 })
 
@@ -89,6 +94,7 @@ for (const imageFile of imageFiles) {
   const titleEl = createTitleEl()
   metadataEl.append(titleEl)
 
+  // only respect the first found in a subtree
   const ids: string[] = []
   const findIds = (el: Element) => {
     const id = el.getAttribute("id")
@@ -107,16 +113,14 @@ for (const imageFile of imageFiles) {
     metadataEl!.append(partEl)
   }
 
-  const processedFile = imageFile.replace(".svg", `${POSTFIX}.svg`)
-  const processedFilename = path.basename(imageFile)
+  const processedFile = path.join(OUTPUT_FOLDER, imageFilename)
   const output = document.documentElement.outerHTML
   fs.writeFileSync(
     processedFile,
     prettier.format(output, {
       parser: "babel",
       printWidth: 120,
-      singleAttributePerLine: false,
     })
   )
-  console.log(chalk.green(`Successfully written "${processedFilename}".`))
+  console.log(chalk.green(`Successfully written "${imageFilename}".`))
 }
