@@ -5,12 +5,17 @@ import glob from "glob"
 import yaml from "js-yaml"
 import jsdom from "jsdom"
 import path from "path"
+import prettier from "prettier"
+
+const NS = "http://www.medreporter.org/reference/image"
+
+const POSTFIX = "_f"
 
 type Translations = { [lng in "de" | "en"]: { [key: string]: string } }
 
 const projectDir = process.cwd()
 
-const imageFiles = glob.sync("**/*.svg", {
+const imageFiles = glob.sync(`**/*[!${POSTFIX}].svg`, {
   cwd: path.join(projectDir, "resources", "images"),
   absolute: true,
 })
@@ -36,6 +41,7 @@ for (const imageFile of imageFiles) {
   let metadataEl = document.querySelector("metadata")
   if (!metadataEl) {
     metadataEl = document.createElementNS("http://www.w3.org/2000/svg", "metadata")
+    metadataEl.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:med", NS)
     const svgEl = document.querySelector("svg")
     if (!svgEl) throw new Error(`Invalid SVG file "${imageFilename}".`)
     svgEl?.prepend(metadataEl)
@@ -53,16 +59,16 @@ for (const imageFile of imageFiles) {
   const createTransEl = (lng: "de" | "en", key: string) => {
     const trans = getTranslation(lng, key)
     if (trans) {
-      const transEl = document.createElement("Trans")
+      const transEl = document.createElementNS(NS, "med:Trans")
       transEl.setAttribute("lng", lng)
-      transEl.innerText = trans
+      transEl.textContent = trans
       return transEl
     }
     return null
   }
 
-  const createPartEl = (id: string) => {
-    const partEl = document.createElementNS(null, "Part")
+  const createOptionEl = (id: string) => {
+    const partEl = document.createElementNS(NS, "med:Option")
     partEl.setAttribute("id", id)
     ;(["de", "en"] as const).forEach((lng) => {
       const transEl = createTransEl(lng, id)
@@ -72,7 +78,7 @@ for (const imageFile of imageFiles) {
   }
 
   const createTitleEl = () => {
-    const titleEl = document.createElementNS(null, "Title")
+    const titleEl = document.createElementNS(NS, "med:Title")
     ;(["de", "en"] as const).forEach((lng) => {
       const transEl = createTransEl(lng, "title")
       if (transEl) titleEl.append(transEl)
@@ -84,21 +90,33 @@ for (const imageFile of imageFiles) {
   metadataEl.append(titleEl)
 
   const ids: string[] = []
-  const findId = (el: Element) => {
+  const findIds = (el: Element) => {
     const id = el.getAttribute("id")
     if (id) {
       ids.push(id)
     } else {
       Array.from(el.children).forEach((child) => {
-        findId(child)
+        findIds(child)
       })
     }
   }
-
-  findId(document.children[0])
+  findIds(document.documentElement)
 
   for (const id of ids) {
-    const partEl = createPartEl(id)
+    const partEl = createOptionEl(id)
     metadataEl!.append(partEl)
   }
+
+  const processedFile = imageFile.replace(".svg", `${POSTFIX}.svg`)
+  const processedFilename = path.basename(imageFile)
+  const output = document.documentElement.outerHTML
+  fs.writeFileSync(
+    processedFile,
+    prettier.format(output, {
+      parser: "babel",
+      printWidth: 120,
+      singleAttributePerLine: false,
+    })
+  )
+  console.log(chalk.green(`Successfully written "${processedFilename}".`))
 }
