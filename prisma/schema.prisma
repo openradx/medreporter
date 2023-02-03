@@ -63,9 +63,9 @@ model User {
   accounts    Account[]
   sessions    Session[]
   memberships Membership[]
+  images      Image[]
   modules     Module[]
   templates   Template[]
-  images      Image[]
   reports     Report[]
 }
 
@@ -83,9 +83,9 @@ model Institute {
 
   memberships  Membership[]
   currentUsers User[]
+  images       Image[]
   modules      Module[]
   templates    Template[]
-  images       Image[]
   reports      Report[]
 }
 
@@ -118,6 +118,40 @@ enum ReleaseStatus {
   DRAFT
   PUBLISHED
   DEPRECIATED
+}
+
+model Image {
+  id            String        @id @default(cuid())
+  name          String
+  filename      String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  original      String
+  processed     String
+  visibility    Visibility
+  releaseStatus ReleaseStatus
+
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId    String
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  instituteId String?
+
+  translations ImageTranslation[]
+  categories   ImageCategory[]
+}
+
+model ImageTranslation {
+  id          String  @id @default(cuid())
+  language    String
+  default     Boolean
+  title       String
+  description String
+
+  image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  imageId String
+
+  @@unique([language, imageId])
+  @@index([imageId, default])
 }
 
 model Module {
@@ -190,38 +224,16 @@ model TemplateTranslation {
   @@index([templateId, default])
 }
 
-model Image {
-  id            String        @id @default(cuid())
-  name          String
-  filename      String?
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  original      String
-  processed     String
-  visibility    Visibility
-  releaseStatus ReleaseStatus
+model ImageCategory {
+  id String @id @default(cuid())
 
-  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId    String
-  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  instituteId String?
-
-  ImageTranslation ImageTranslation[]
-  ImageCategory    ImageCategory[]
-}
-
-model ImageTranslation {
-  id          String  @id @default(cuid())
-  language    String
-  default     Boolean
-  title       String
-  description String
-
-  image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  Image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   imageId String
 
-  @@unique([language, imageId])
-  @@index([imageId, default])
+  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  categoryId String
+
+  @@unique([imageId, categoryId])
 }
 
 model ModuleCategory {
@@ -248,26 +260,14 @@ model TemplateCategory {
   @@unique([templateId, categoryId])
 }
 
-model ImageCategory {
-  id String @id @default(cuid())
-
-  Image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  imageId String
-
-  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([imageId, categoryId])
-}
-
 model Category {
   id  String @id @default(cuid())
   key String @unique
 
-  translations  CategoryTranslation[]
-  modules       ModuleCategory[]
-  templates     TemplateCategory[]
-  ImageCategory ImageCategory[]
+  translations CategoryTranslation[]
+  images       ImageCategory[]
+  modules      ModuleCategory[]
+  templates    TemplateCategory[]
 }
 
 model CategoryTranslation {
