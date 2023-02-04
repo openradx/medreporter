@@ -1,61 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285.18 362.89">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:Title>
-            <med:Trans lng="de">Ventrikelsystem des Gehirns</med:Trans>
-            <med:Trans lng="en">Ventricles brain</med:Trans>
-        </med:Title>
-        <med:Option id="rightLateralAperture">
-            <med:Trans lng="de">Recessus lateralis rechts</med:Trans>
-            <med:Trans lng="en">Right lateral aperture</med:Trans>
-        </med:Option>
-        <med:Option id="leftLateralAperture">
-            <med:Trans lng="de">Recessus lateralis rechts</med:Trans>
-            <med:Trans lng="en">Left lateral aperture</med:Trans>
-        </med:Option>
-        <med:Option id="fourth">
-            <med:Trans lng="de">Ventriculus quartus</med:Trans>
-            <med:Trans lng="en">Fourth ventricle</med:Trans>
-        </med:Option>
-        <med:Option id="cerebralAqueduct">
-            <med:Trans lng="de">Aqueductus mesencephali</med:Trans>
-            <med:Trans lng="en">Cerebral aqueduct</med:Trans>
-        </med:Option>
-        <med:Option id="third">
-            <med:Trans lng="de">Ventriculus tertius</med:Trans>
-            <med:Trans lng="en">Third ventricle</med:Trans>
-        </med:Option>
-        <med:Option id="rightInterventricularForamen">
-            <med:Trans lng="de">Foramen interventriculare rechts</med:Trans>
-            <med:Trans lng="en">Right interventricular foramen</med:Trans>
-        </med:Option>
-        <med:Option id="rightTemporalHorn">
-            <med:Trans lng="de">Cornu temporale, Ventriculus lateralis rechts</med:Trans>
-            <med:Trans lng="en">Right temporal horn of lateral ventricle</med:Trans>
-        </med:Option>
-        <med:Option id="rightOccipitalHorn">
-            <med:Trans lng="de">Cornu occipitale, Ventriculus lateralis rechts</med:Trans>
-            <med:Trans lng="en">Right occipital horn of lateral ventricle</med:Trans>
-        </med:Option>
-        <med:Option id="rightFrontalHorn">
-            <med:Trans lng="de">Cornu frontale, Ventriculus lateralis rechts</med:Trans>
-            <med:Trans lng="en">Right frontal horn of lateral ventricle</med:Trans>
-        </med:Option>
-        <med:Option id="leftInterventricularForamen">
-            <med:Trans lng="de">Foramen interventriculare links</med:Trans>
-            <med:Trans lng="en">Left interventricular foramen</med:Trans>
-        </med:Option>
-        <med:Option id="leftTemporalHorn">
-            <med:Trans lng="de">Cornu temporale, Ventriculus lateralis links</med:Trans>
-            <med:Trans lng="en">Left temporal horn of lateral ventricle</med:Trans>
-        </med:Option>
-        <med:Option id="leftOccipitalHorn">
-            <med:Trans lng="de">Cornu occipitale, Ventriculus lateralis links</med:Trans>
-            <med:Trans lng="en">Left occipital horn of lateral ventricle</med:Trans>
-        </med:Option>
-        <med:Option id="leftFrontalHorn">
-            <med:Trans lng="de">Cornu frontale, Ventriculus lateralis links</med:Trans>
-            <med:Trans lng="en">Left frontal horn of lateral ventricle</med:Trans>
-        </med:Option>
+        <med:MedReporter lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Ventrikelsystem des Gehirns</med:Trans>
+                <med:Trans lng="en">Ventricles brain</med:Trans>
+            </med:Title>
+            <med:Option id="rightLateralAperture">
+                <med:Trans lng="de">Recessus lateralis rechts</med:Trans>
+                <med:Trans lng="en">Right lateral aperture</med:Trans>
+            </med:Option>
+            <med:Option id="leftLateralAperture">
+                <med:Trans lng="de">Recessus lateralis rechts</med:Trans>
+                <med:Trans lng="en">Left lateral aperture</med:Trans>
+            </med:Option>
+            <med:Option id="fourth">
+                <med:Trans lng="de">Ventriculus quartus</med:Trans>
+                <med:Trans lng="en">Fourth ventricle</med:Trans>
+            </med:Option>
+            <med:Option id="cerebralAqueduct">
+                <med:Trans lng="de">Aqueductus mesencephali</med:Trans>
+                <med:Trans lng="en">Cerebral aqueduct</med:Trans>
+            </med:Option>
+            <med:Option id="third">
+                <med:Trans lng="de">Ventriculus tertius</med:Trans>
+                <med:Trans lng="en">Third ventricle</med:Trans>
+            </med:Option>
+            <med:Option id="rightInterventricularForamen">
+                <med:Trans lng="de">Foramen interventriculare rechts</med:Trans>
+                <med:Trans lng="en">Right interventricular foramen</med:Trans>
+            </med:Option>
+            <med:Option id="rightTemporalHorn">
+                <med:Trans lng="de">Cornu temporale, Ventriculus lateralis rechts</med:Trans>
+                <med:Trans lng="en">Right temporal horn of lateral ventricle</med:Trans>
+            </med:Option>
+            <med:Option id="rightOccipitalHorn">
+                <med:Trans lng="de">Cornu occipitale, Ventriculus lateralis rechts</med:Trans>
+                <med:Trans lng="en">Right occipital horn of lateral ventricle</med:Trans>
+            </med:Option>
+            <med:Option id="rightFrontalHorn">
+                <med:Trans lng="de">Cornu frontale, Ventriculus lateralis rechts</med:Trans>
+                <med:Trans lng="en">Right frontal horn of lateral ventricle</med:Trans>
+            </med:Option>
+            <med:Option id="leftInterventricularForamen">
+                <med:Trans lng="de">Foramen interventriculare links</med:Trans>
+                <med:Trans lng="en">Left interventricular foramen</med:Trans>
+            </med:Option>
+            <med:Option id="leftTemporalHorn">
+                <med:Trans lng="de">Cornu temporale, Ventriculus lateralis links</med:Trans>
+                <med:Trans lng="en">Left temporal horn of lateral ventricle</med:Trans>
+            </med:Option>
+            <med:Option id="leftOccipitalHorn">
+                <med:Trans lng="de">Cornu occipitale, Ventriculus lateralis links</med:Trans>
+                <med:Trans lng="en">Left occipital horn of lateral ventricle</med:Trans>
+            </med:Option>
+            <med:Option id="leftFrontalHorn">
+                <med:Trans lng="de">Cornu frontale, Ventriculus lateralis links</med:Trans>
+                <med:Trans lng="en">Left frontal horn of lateral ventricle</med:Trans>
+            </med:Option>
+        </med:MedReporter>
     </metadata>
     <g>
         <path id="rightLateralAperture" d="M112.1,285.09c-.91,0-2.21-.04-3.75-.16-3.71-.28-7.04-.54-10.48-1.88-.93-.36-6.44-2.59-10.16-8.13-.68-1.02-2.13-3.36-2.5-6.57-.15-1.28-.42-3.64,.78-4.38,1.11-.68,2.86,.37,3.28,.63,2.23,1.34,2.34,3.14,3.75,5,2.49,3.28,6.88,3.92,10.01,4.38,3.42,.5,6.36,.06,8.44-.47l.63,11.57Z" fill="#f6f6f6" />

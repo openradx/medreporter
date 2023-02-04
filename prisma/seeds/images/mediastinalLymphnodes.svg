@@ -1,73 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880.86 1000">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:Title>
-            <med:Trans lng="de">Mediastinale Lymphknoten</med:Trans>
-            <med:Trans lng="en">Mediastinal lymphnodes</med:Trans>
-        </med:Title>
-        <med:Option id="level3P">
-            <med:Trans lng="de">Level 3P</med:Trans>
-            <med:Trans lng="en">Level 3P</med:Trans>
-        </med:Option>
-        <med:Option id="level11L">
-            <med:Trans lng="de">Level 11L</med:Trans>
-            <med:Trans lng="en">Level 11L</med:Trans>
-        </med:Option>
-        <med:Option id="level11R">
-            <med:Trans lng="de">Level 11R</med:Trans>
-            <med:Trans lng="en">Level 11R</med:Trans>
-        </med:Option>
-        <med:Option id="level10L">
-            <med:Trans lng="de">Level 10L</med:Trans>
-            <med:Trans lng="en">Level 10L</med:Trans>
-        </med:Option>
-        <med:Option id="level10R">
-            <med:Trans lng="de">Level 10R</med:Trans>
-            <med:Trans lng="en">Level 10R</med:Trans>
-        </med:Option>
-        <med:Option id="level9">
-            <med:Trans lng="de">Level 9</med:Trans>
-            <med:Trans lng="en">Level 9</med:Trans>
-        </med:Option>
-        <med:Option id="level8">
-            <med:Trans lng="de">Level 8</med:Trans>
-            <med:Trans lng="en">Level 8</med:Trans>
-        </med:Option>
-        <med:Option id="level7">
-            <med:Trans lng="de">Level 7</med:Trans>
-            <med:Trans lng="en">Level 7</med:Trans>
-        </med:Option>
-        <med:Option id="level6">
-            <med:Trans lng="de">Level 6</med:Trans>
-            <med:Trans lng="en">Level 6</med:Trans>
-        </med:Option>
-        <med:Option id="level5">
-            <med:Trans lng="de">Level 5</med:Trans>
-            <med:Trans lng="en">Level 5</med:Trans>
-        </med:Option>
-        <med:Option id="level4L">
-            <med:Trans lng="de">Level 4L</med:Trans>
-            <med:Trans lng="en">Level 4L</med:Trans>
-        </med:Option>
-        <med:Option id="level4R">
-            <med:Trans lng="de">Level 4R</med:Trans>
-            <med:Trans lng="en">Level 4R</med:Trans>
-        </med:Option>
-        <med:Option id="level3A">
-            <med:Trans lng="de">Level 3A</med:Trans>
-            <med:Trans lng="en">Level 3A</med:Trans>
-        </med:Option>
-        <med:Option id="level2L">
-            <med:Trans lng="de">Level 2L</med:Trans>
-            <med:Trans lng="en">Level 2L</med:Trans>
-        </med:Option>
-        <med:Option id="level2R">
-            <med:Trans lng="de">Level 2R</med:Trans>
-            <med:Trans lng="en">Level 2R</med:Trans>
-        </med:Option>
-        <med:Option id="level1">
-            <med:Trans lng="de">Level 1</med:Trans>
-            <med:Trans lng="en">Level 1</med:Trans>
-        </med:Option>
+        <med:MedReporter lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Mediastinale Lymphknoten</med:Trans>
+                <med:Trans lng="en">Mediastinal lymphnodes</med:Trans>
+            </med:Title>
+            <med:Option id="level3P">
+                <med:Trans lng="de">Level 3P</med:Trans>
+                <med:Trans lng="en">Level 3P</med:Trans>
+            </med:Option>
+            <med:Option id="level11L">
+                <med:Trans lng="de">Level 11L</med:Trans>
+                <med:Trans lng="en">Level 11L</med:Trans>
+            </med:Option>
+            <med:Option id="level11R">
+                <med:Trans lng="de">Level 11R</med:Trans>
+                <med:Trans lng="en">Level 11R</med:Trans>
+            </med:Option>
+            <med:Option id="level10L">
+                <med:Trans lng="de">Level 10L</med:Trans>
+                <med:Trans lng="en">Level 10L</med:Trans>
+            </med:Option>
+            <med:Option id="level10R">
+                <med:Trans lng="de">Level 10R</med:Trans>
+                <med:Trans lng="en">Level 10R</med:Trans>
+            </med:Option>
+            <med:Option id="level9">
+                <med:Trans lng="de">Level 9</med:Trans>
+                <med:Trans lng="en">Level 9</med:Trans>
+            </med:Option>
+            <med:Option id="level8">
+                <med:Trans lng="de">Level 8</med:Trans>
+                <med:Trans lng="en">Level 8</med:Trans>
+            </med:Option>
+            <med:Option id="level7">
+                <med:Trans lng="de">Level 7</med:Trans>
+                <med:Trans lng="en">Level 7</med:Trans>
+            </med:Option>
+            <med:Option id="level6">
+                <med:Trans lng="de">Level 6</med:Trans>
+                <med:Trans lng="en">Level 6</med:Trans>
+            </med:Option>
+            <med:Option id="level5">
+                <med:Trans lng="de">Level 5</med:Trans>
+                <med:Trans lng="en">Level 5</med:Trans>
+            </med:Option>
+            <med:Option id="level4L">
+                <med:Trans lng="de">Level 4L</med:Trans>
+                <med:Trans lng="en">Level 4L</med:Trans>
+            </med:Option>
+            <med:Option id="level4R">
+                <med:Trans lng="de">Level 4R</med:Trans>
+                <med:Trans lng="en">Level 4R</med:Trans>
+            </med:Option>
+            <med:Option id="level3A">
+                <med:Trans lng="de">Level 3A</med:Trans>
+                <med:Trans lng="en">Level 3A</med:Trans>
+            </med:Option>
+            <med:Option id="level2L">
+                <med:Trans lng="de">Level 2L</med:Trans>
+                <med:Trans lng="en">Level 2L</med:Trans>
+            </med:Option>
+            <med:Option id="level2R">
+                <med:Trans lng="de">Level 2R</med:Trans>
+                <med:Trans lng="en">Level 2R</med:Trans>
+            </med:Option>
+            <med:Option id="level1">
+                <med:Trans lng="de">Level 1</med:Trans>
+                <med:Trans lng="en">Level 1</med:Trans>
+            </med:Option>
+        </med:MedReporter>
     </metadata>
     <g>
         <path d="M379.54,465.46c-1.01-24.11-1.77-44.49-2.31-59.54-.81-22.89-1.73-51.52-2.59-84.57-.73-28.19-1.32-56.39-1.79-84.59-.46-28.2-.79-56.4-.98-84.6-.03-4.9-.19-11.46-.12-20.49,.19-21.9,1.33-39.62,2.27-51.12,5.55-3.13,17.33-8.76,33.17-8.85,16.28-.09,28.37,5.72,33.94,8.85-.22,7.87-.54,19.51-.89,33.58-5.09,203.93-7.63,305.9-2.41,411.39" fill="#f2f2f2" />

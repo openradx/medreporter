@@ -1,865 +1,867 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1015.42 755.03" enable-background="new 0 0 1015.42 755.03" xml:space="preserve">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:Title>
-            <med:Trans lng="de">Knochen der Hand Rheuma</med:Trans>
-            <med:Trans lng="en">Bones hand rheuma</med:Trans>
-        </med:Title>
-        <med:Option id="leftMetacarpal5HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Radial side of head of left metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal5Shaft">
-            <med:Trans lng="de">Schaft des linken Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Shaft of left metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Radial side of base of left metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal5HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal4HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Radial side of head of left metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of left metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal4Shaft">
-            <med:Trans lng="de">Schaft des linken Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Shaft of left metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal4HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Radial side of head of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Radial side of base of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media V</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx media V</med:Trans>
-            <med:Trans lng="en">Radial side of head of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx media V</med:Trans>
-            <med:Trans lng="en">Radial side of base of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx media V</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Radial side of base of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of head of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Radial side of head of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal3HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Radial side of head of left metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal3Shaft">
-            <med:Trans lng="de">Schaft des linken Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Shaft of left metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Radial side of base of left metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal3HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Radial side of head of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Shaft of proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Radial side of base of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3HeadlUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx media III</med:Trans>
-            <med:Trans lng="en">Radial side of head of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx media III</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der Phalanx media III</med:Trans>
-            <med:Trans lng="en">Radial side of base of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media III</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Radial side of base of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal2HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Radial side of head of left metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpale2Shaft">
-            <med:Trans lng="de">Schaft des linken Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Shaft of left metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Radial side of base of left metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal2HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Radial side of head of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Radial side of base of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left proximal phalans 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kpf der linken Phalanx media II</med:Trans>
-            <med:Trans lng="en">Radial side of head of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx media II</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx media II</med:Trans>
-            <med:Trans lng="en">Radial side of base of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media II</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Radial side of base of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal1HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Radial side of head of left metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal1BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Radial side of base of left metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal1BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal1Shaft">
-            <med:Trans lng="de">Schaft des linken Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Shaft of left metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetacarpal1HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Radial side of base of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Radial side of head of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der linken Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Radial side of base of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftTrapezium">
-            <med:Trans lng="de">Os trapezium links</med:Trans>
-            <med:Trans lng="en">Left trapezium</med:Trans>
-        </med:Option>
-        <med:Option id="leftTrapezoid">
-            <med:Trans lng="de">Os trapezoideum links</med:Trans>
-            <med:Trans lng="en">Left trapezoid</med:Trans>
-        </med:Option>
-        <med:Option id="leftScaphoid">
-            <med:Trans lng="de">Os scaphoideum links</med:Trans>
-            <med:Trans lng="en">Left scaphoid</med:Trans>
-        </med:Option>
-        <med:Option id="leftCapitate">
-            <med:Trans lng="de">Os capitatum links</med:Trans>
-            <med:Trans lng="en">Left capitate</med:Trans>
-        </med:Option>
-        <med:Option id="leftHamate">
-            <med:Trans lng="de">Os hamatum links</med:Trans>
-            <med:Trans lng="en">Left hamate</med:Trans>
-        </med:Option>
-        <med:Option id="leftPisiform">
-            <med:Trans lng="de">Os pisiforme links</med:Trans>
-            <med:Trans lng="en">Left pisiform</med:Trans>
-        </med:Option>
-        <med:Option id="leftTriquetral">
-            <med:Trans lng="de">Os triquetrum links</med:Trans>
-            <med:Trans lng="en">Left triquetral</med:Trans>
-        </med:Option>
-        <med:Option id="leftLunate">
-            <med:Trans lng="de">Os lunatum links</med:Trans>
-            <med:Trans lng="en">Left lunate</med:Trans>
-        </med:Option>
-        <med:Option id="leftRadius">
-            <med:Trans lng="de">Radius links</med:Trans>
-            <med:Trans lng="en">Left radius</med:Trans>
-        </med:Option>
-        <med:Option id="leftRadialStyloidProcess">
-            <med:Trans lng="de">Processus styloideus radii links</med:Trans>
-            <med:Trans lng="en">Left radial styloid process</med:Trans>
-        </med:Option>
-        <med:Option id="leftUlna">
-            <med:Trans lng="de">Ulna links</med:Trans>
-            <med:Trans lng="en">Left ulna</med:Trans>
-        </med:Option>
-        <med:Option id="leftUlnarStyloidProcess">
-            <med:Trans lng="de">Processus styloideus ulnae links</med:Trans>
-            <med:Trans lng="en">Left ulnar styloid process</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal5HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Radial side of head of right metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal5Shaft">
-            <med:Trans lng="de">Schaft des rechten Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Shaft of right metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Radial side of base of right metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal5HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right metacarpal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal4HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Radial side of head of right metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of right metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal4Shaft">
-            <med:Trans lng="de">Schaft des rechten Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Shaft of right metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal4HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right metacarpal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale V</med:Trans>
-            <med:Trans lng="en">Radial side of head of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Radial side of base of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media V</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx media V</med:Trans>
-            <med:Trans lng="en">Radial side of head of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx media V</med:Trans>
-            <med:Trans lng="en">Radial side of base of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx media V</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Radial side of base of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis V</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of head of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Radial side of head of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Radial side of base of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis IV</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal3HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Radial side of head of right metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal3Shaft">
-            <med:Trans lng="de">Schaft des rechten Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Shaft of right metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Radial side of base of right metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal3HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale III</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right metacarpal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Radial side of head of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Shaft of proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Radial side of base of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3HeadlUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx media III</med:Trans>
-            <med:Trans lng="en">Radial side of head of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx media III</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der Phalanx media III</med:Trans>
-            <med:Trans lng="en">Radial side of base of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media III</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Radial side of base of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis III</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal2HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Radial side of head of right metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpale2Shaft">
-            <med:Trans lng="de">Schaft des rechten Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Shaft of right metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Radial side of base of right metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal2HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale II</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right metacarpal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Radial side of head of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Radial side of base of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right proximal phalans 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kpf der rechten Phalanx media II</med:Trans>
-            <med:Trans lng="en">Radial side of head of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx media II</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx media II</med:Trans>
-            <med:Trans lng="en">Radial side of base of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media II</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Radial side of base of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis II</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal1HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Radial side of head of right metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal1BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Radial side of base of right metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal1BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal1Shaft">
-            <med:Trans lng="de">Schaft des rechten Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Shaft of right metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetacarpal1HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale I</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right metacarpal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Radial side of base of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1HeadRadial">
-            <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Radial side of head of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1HeadUlnar">
-            <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of head of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1TuftRadial">
-            <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Radial side of tuft of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der rechten Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1BaseRadial">
-            <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Radial side of base of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1BaseUlnar">
-            <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of base of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1TuftUlnar">
-            <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis I</med:Trans>
-            <med:Trans lng="en">Ulnar side of tuft of distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightTrapezium">
-            <med:Trans lng="de">Os trapezium rechts</med:Trans>
-            <med:Trans lng="en">Right trapezium</med:Trans>
-        </med:Option>
-        <med:Option id="rightTrapezoid">
-            <med:Trans lng="de">Os trapezoideum rechts</med:Trans>
-            <med:Trans lng="en">Right trapezoid</med:Trans>
-        </med:Option>
-        <med:Option id="rightScaphoid">
-            <med:Trans lng="de">Os scaphoideum rechts</med:Trans>
-            <med:Trans lng="en">Right scaphoid</med:Trans>
-        </med:Option>
-        <med:Option id="rightCapitate">
-            <med:Trans lng="de">Os capitatum rechts</med:Trans>
-            <med:Trans lng="en">Right capitate</med:Trans>
-        </med:Option>
-        <med:Option id="rightHamate">
-            <med:Trans lng="de">Os hamatum rechts</med:Trans>
-            <med:Trans lng="en">Right hamate</med:Trans>
-        </med:Option>
-        <med:Option id="rightPisiform">
-            <med:Trans lng="de">Os pisiforme rechts</med:Trans>
-            <med:Trans lng="en">Right pisiform</med:Trans>
-        </med:Option>
-        <med:Option id="rightTriquetral">
-            <med:Trans lng="de">Os triquetrum rechts</med:Trans>
-            <med:Trans lng="en">Right triquetral</med:Trans>
-        </med:Option>
-        <med:Option id="rightLunate">
-            <med:Trans lng="de">Os lunatum rechts</med:Trans>
-            <med:Trans lng="en">Right lunate</med:Trans>
-        </med:Option>
-        <med:Option id="rightRadius">
-            <med:Trans lng="de">Radius rechts</med:Trans>
-            <med:Trans lng="en">Right radius</med:Trans>
-        </med:Option>
-        <med:Option id="rightRadialStyloidProcess">
-            <med:Trans lng="de">Processus styloideus radii rechts</med:Trans>
-            <med:Trans lng="en">Right radial styloid process</med:Trans>
-        </med:Option>
-        <med:Option id="rightUlna">
-            <med:Trans lng="de">Ulna rechts</med:Trans>
-            <med:Trans lng="en">Right ulna</med:Trans>
-        </med:Option>
-        <med:Option id="rightUlnarStyloidProcess">
-            <med:Trans lng="de">Processus styloideus ulnae rechts</med:Trans>
-            <med:Trans lng="en">Right ulnar styloid process</med:Trans>
-        </med:Option>
+        <med:MedReporter lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Knochen der Hand Rheuma</med:Trans>
+                <med:Trans lng="en">Bones hand rheuma</med:Trans>
+            </med:Title>
+            <med:Option id="leftMetacarpal5HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Radial side of head of left metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal5Shaft">
+                <med:Trans lng="de">Schaft des linken Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Shaft of left metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Radial side of base of left metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal5HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal4HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Radial side of head of left metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of left metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal4Shaft">
+                <med:Trans lng="de">Schaft des linken Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Shaft of left metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal4HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Radial side of head of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Radial side of base of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media V</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx media V</med:Trans>
+                <med:Trans lng="en">Radial side of head of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx media V</med:Trans>
+                <med:Trans lng="en">Radial side of base of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx media V</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Radial side of base of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of head of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Radial side of head of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal3HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Radial side of head of left metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal3Shaft">
+                <med:Trans lng="de">Schaft des linken Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Shaft of left metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Radial side of base of left metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal3HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Radial side of head of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Shaft of proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Radial side of base of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3HeadlUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx media III</med:Trans>
+                <med:Trans lng="en">Radial side of head of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx media III</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der Phalanx media III</med:Trans>
+                <med:Trans lng="en">Radial side of base of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media III</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Radial side of base of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal2HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Radial side of head of left metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpale2Shaft">
+                <med:Trans lng="de">Schaft des linken Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Shaft of left metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Radial side of base of left metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal2HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Radial side of head of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Radial side of base of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left proximal phalans 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kpf der linken Phalanx media II</med:Trans>
+                <med:Trans lng="en">Radial side of head of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx media II</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx media II</med:Trans>
+                <med:Trans lng="en">Radial side of base of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx media II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx media II</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Radial side of base of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal1HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des linken Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Radial side of head of left metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal1BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des linken Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Radial side of base of left metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal1BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des linken Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal1Shaft">
+                <med:Trans lng="de">Schaft des linken Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Shaft of left metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetacarpal1HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des linken Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Radial side of base of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der linken Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Radial side of head of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der linken Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der linken Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der linken Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der linken Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Radial side of base of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der linken Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der linken Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftTrapezium">
+                <med:Trans lng="de">Os trapezium links</med:Trans>
+                <med:Trans lng="en">Left trapezium</med:Trans>
+            </med:Option>
+            <med:Option id="leftTrapezoid">
+                <med:Trans lng="de">Os trapezoideum links</med:Trans>
+                <med:Trans lng="en">Left trapezoid</med:Trans>
+            </med:Option>
+            <med:Option id="leftScaphoid">
+                <med:Trans lng="de">Os scaphoideum links</med:Trans>
+                <med:Trans lng="en">Left scaphoid</med:Trans>
+            </med:Option>
+            <med:Option id="leftCapitate">
+                <med:Trans lng="de">Os capitatum links</med:Trans>
+                <med:Trans lng="en">Left capitate</med:Trans>
+            </med:Option>
+            <med:Option id="leftHamate">
+                <med:Trans lng="de">Os hamatum links</med:Trans>
+                <med:Trans lng="en">Left hamate</med:Trans>
+            </med:Option>
+            <med:Option id="leftPisiform">
+                <med:Trans lng="de">Os pisiforme links</med:Trans>
+                <med:Trans lng="en">Left pisiform</med:Trans>
+            </med:Option>
+            <med:Option id="leftTriquetral">
+                <med:Trans lng="de">Os triquetrum links</med:Trans>
+                <med:Trans lng="en">Left triquetral</med:Trans>
+            </med:Option>
+            <med:Option id="leftLunate">
+                <med:Trans lng="de">Os lunatum links</med:Trans>
+                <med:Trans lng="en">Left lunate</med:Trans>
+            </med:Option>
+            <med:Option id="leftRadius">
+                <med:Trans lng="de">Radius links</med:Trans>
+                <med:Trans lng="en">Left radius</med:Trans>
+            </med:Option>
+            <med:Option id="leftRadialStyloidProcess">
+                <med:Trans lng="de">Processus styloideus radii links</med:Trans>
+                <med:Trans lng="en">Left radial styloid process</med:Trans>
+            </med:Option>
+            <med:Option id="leftUlna">
+                <med:Trans lng="de">Ulna links</med:Trans>
+                <med:Trans lng="en">Left ulna</med:Trans>
+            </med:Option>
+            <med:Option id="leftUlnarStyloidProcess">
+                <med:Trans lng="de">Processus styloideus ulnae links</med:Trans>
+                <med:Trans lng="en">Left ulnar styloid process</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal5HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Radial side of head of right metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal5Shaft">
+                <med:Trans lng="de">Schaft des rechten Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Shaft of right metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Radial side of base of right metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal5HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right metacarpal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal4HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Radial side of head of right metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of right metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal4Shaft">
+                <med:Trans lng="de">Schaft des rechten Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Shaft of right metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal4HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right metacarpal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale V</med:Trans>
+                <med:Trans lng="en">Radial side of head of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Radial side of base of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media V</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx media V</med:Trans>
+                <med:Trans lng="en">Radial side of head of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx media V</med:Trans>
+                <med:Trans lng="en">Radial side of base of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx media V</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Radial side of base of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis V</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of head of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Radial side of head of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Radial side of base of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis IV</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal3HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Radial side of head of right metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal3Shaft">
+                <med:Trans lng="de">Schaft des rechten Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Shaft of right metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Radial side of base of right metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal3HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale III</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right metacarpal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Radial side of head of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Shaft of proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Radial side of base of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3HeadlUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx media III</med:Trans>
+                <med:Trans lng="en">Radial side of head of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx media III</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der Phalanx media III</med:Trans>
+                <med:Trans lng="en">Radial side of base of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media III</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Radial side of base of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis III</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal2HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Radial side of head of right metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpale2Shaft">
+                <med:Trans lng="de">Schaft des rechten Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Shaft of right metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Radial side of base of right metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal2HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale II</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right metacarpal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Radial side of head of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Radial side of base of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right proximal phalans 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kpf der rechten Phalanx media II</med:Trans>
+                <med:Trans lng="en">Radial side of head of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx media II</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx media II</med:Trans>
+                <med:Trans lng="en">Radial side of base of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx media II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx media II</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Radial side of base of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis II</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal1HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf des rechten Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Radial side of head of right metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal1BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis des rechten Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Radial side of base of right metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal1BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis des rechten Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal1Shaft">
+                <med:Trans lng="de">Schaft des rechten Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Shaft of right metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetacarpal1HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf des rechten Os metacarpale I</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right metacarpal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Radial side of base of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1HeadRadial">
+                <med:Trans lng="de">Radialseitiger Kopf der rechten Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Radial side of head of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1HeadUlnar">
+                <med:Trans lng="de">Ulnarseitiger Kopf der rechten Phalanx proximalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of head of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1TuftRadial">
+                <med:Trans lng="de">Radialseitiger Nagelkranz der rechten Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Radial side of tuft of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der rechten Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1BaseRadial">
+                <med:Trans lng="de">Radialseitige Basis der rechten Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Radial side of base of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1BaseUlnar">
+                <med:Trans lng="de">Ulnarseitige Basis der rechten Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of base of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1TuftUlnar">
+                <med:Trans lng="de">Ulnarseitiger Nagelkranz der rechten Phalanx distalis I</med:Trans>
+                <med:Trans lng="en">Ulnar side of tuft of distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightTrapezium">
+                <med:Trans lng="de">Os trapezium rechts</med:Trans>
+                <med:Trans lng="en">Right trapezium</med:Trans>
+            </med:Option>
+            <med:Option id="rightTrapezoid">
+                <med:Trans lng="de">Os trapezoideum rechts</med:Trans>
+                <med:Trans lng="en">Right trapezoid</med:Trans>
+            </med:Option>
+            <med:Option id="rightScaphoid">
+                <med:Trans lng="de">Os scaphoideum rechts</med:Trans>
+                <med:Trans lng="en">Right scaphoid</med:Trans>
+            </med:Option>
+            <med:Option id="rightCapitate">
+                <med:Trans lng="de">Os capitatum rechts</med:Trans>
+                <med:Trans lng="en">Right capitate</med:Trans>
+            </med:Option>
+            <med:Option id="rightHamate">
+                <med:Trans lng="de">Os hamatum rechts</med:Trans>
+                <med:Trans lng="en">Right hamate</med:Trans>
+            </med:Option>
+            <med:Option id="rightPisiform">
+                <med:Trans lng="de">Os pisiforme rechts</med:Trans>
+                <med:Trans lng="en">Right pisiform</med:Trans>
+            </med:Option>
+            <med:Option id="rightTriquetral">
+                <med:Trans lng="de">Os triquetrum rechts</med:Trans>
+                <med:Trans lng="en">Right triquetral</med:Trans>
+            </med:Option>
+            <med:Option id="rightLunate">
+                <med:Trans lng="de">Os lunatum rechts</med:Trans>
+                <med:Trans lng="en">Right lunate</med:Trans>
+            </med:Option>
+            <med:Option id="rightRadius">
+                <med:Trans lng="de">Radius rechts</med:Trans>
+                <med:Trans lng="en">Right radius</med:Trans>
+            </med:Option>
+            <med:Option id="rightRadialStyloidProcess">
+                <med:Trans lng="de">Processus styloideus radii rechts</med:Trans>
+                <med:Trans lng="en">Right radial styloid process</med:Trans>
+            </med:Option>
+            <med:Option id="rightUlna">
+                <med:Trans lng="de">Ulna rechts</med:Trans>
+                <med:Trans lng="en">Right ulna</med:Trans>
+            </med:Option>
+            <med:Option id="rightUlnarStyloidProcess">
+                <med:Trans lng="de">Processus styloideus ulnae rechts</med:Trans>
+                <med:Trans lng="en">Right ulnar styloid process</med:Trans>
+            </med:Option>
+        </med:MedReporter>
     </metadata>
     <g>
         <path id="leftMetacarpal5HeadRadial" fill="#9D9D9C" d="M150.25,392.76c-0.03-0.5-0.07-1.21-0.16-2.06c0,0-0.32-3-1.11-5.88   c-1.43-5.21-3.65-13.29-10.07-16.18c-6.01-2.71-12.63,0.52-14.38,1.44c1.39,5.03,2.78,10.07,4.17,15.1   C135.88,387.71,143.06,390.23,150.25,392.76z" />

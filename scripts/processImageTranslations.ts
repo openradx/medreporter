@@ -18,7 +18,7 @@ if (!fs.lstatSync(OUTPUT_FOLDER).isDirectory()) {
   throw new Error(`Invalid output directory "${OUTPUT_FOLDER}".`)
 }
 
-type Translations = { [lng in "de" | "en"]: { [key: string]: string } }
+type Translations = { [lng: string]: { [key: string]: string } }
 
 const imageFiles = glob.sync("**/*.svg", {
   cwd: INPUT_FOLDER,
@@ -38,6 +38,8 @@ for (const imageFile of imageFiles) {
   }
   const translations = yaml.load(fs.readFileSync(translationsFile).toString()) as Translations
 
+  const lngs = Object.keys(translations)
+
   const dom = new JSDOM(fs.readFileSync(imageFile).toString(), { contentType: "image/svg+xml" })
   const { document } = dom.window
 
@@ -50,7 +52,11 @@ for (const imageFile of imageFiles) {
     svgEl?.prepend(metadataEl)
   }
 
-  const getTranslation = (lng: "de" | "en", key: string) => {
+  const medReporterEl = document.createElementNS(NS, "med:MedReporter")
+  medReporterEl.setAttribute("lngs", lngs.join(","))
+  metadataEl.prepend(medReporterEl)
+
+  const getTranslation = (lng: string, key: string) => {
     const trans: string | undefined = translations[lng][key]
     if (!trans)
       console.error(
@@ -59,7 +65,7 @@ for (const imageFile of imageFiles) {
     return trans
   }
 
-  const createTransEl = (lng: "de" | "en", key: string) => {
+  const createTransEl = (lng: string, key: string) => {
     const trans = getTranslation(lng, key)
     if (trans) {
       const transEl = document.createElementNS(NS, "med:Trans")
@@ -90,7 +96,7 @@ for (const imageFile of imageFiles) {
   }
 
   const titleEl = createTitleEl()
-  metadataEl.append(titleEl)
+  medReporterEl.append(titleEl)
 
   // only respect the first found in a subtree
   const ids: string[] = []
@@ -108,7 +114,7 @@ for (const imageFile of imageFiles) {
 
   for (const id of ids) {
     const partEl = createOptionEl(id)
-    metadataEl!.append(partEl)
+    medReporterEl.append(partEl)
   }
 
   const processedFile = path.join(OUTPUT_FOLDER, imageFilename)

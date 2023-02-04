@@ -1,89 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 918.27 586.19">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:Title>
-            <med:Trans lng="de">Cervical lymphnodes</med:Trans>
-            <med:Trans lng="en">Cervicale Lymphknoten</med:Trans>
-        </med:Title>
-        <med:Option id="leftLevelVII">
-            <med:Trans lng="de">Left Level VII</med:Trans>
-            <med:Trans lng="en">Level VII links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelVI">
-            <med:Trans lng="de">Left Level VI</med:Trans>
-            <med:Trans lng="en">Level VI links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelVB">
-            <med:Trans lng="de">Left Level VB</med:Trans>
-            <med:Trans lng="en">Level VB links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelVA">
-            <med:Trans lng="de">Left Level VA</med:Trans>
-            <med:Trans lng="en">Level VA links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelIV">
-            <med:Trans lng="de">Left Level IV</med:Trans>
-            <med:Trans lng="en">Level IV links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelIII">
-            <med:Trans lng="de">Left Level III</med:Trans>
-            <med:Trans lng="en">Level III links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelIIB">
-            <med:Trans lng="de">Left Level IIB</med:Trans>
-            <med:Trans lng="en">Level IIB links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelIA">
-            <med:Trans lng="de">Left Level IA</med:Trans>
-            <med:Trans lng="en">Level IA links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelIB">
-            <med:Trans lng="de">Left Level IB</med:Trans>
-            <med:Trans lng="en">Level IB links</med:Trans>
-        </med:Option>
-        <med:Option id="leftLevelIIA">
-            <med:Trans lng="de">Left Level IIA</med:Trans>
-            <med:Trans lng="en">Level IIA links</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelVII">
-            <med:Trans lng="de">Right Level VII</med:Trans>
-            <med:Trans lng="en">Level VII rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelVI">
-            <med:Trans lng="de">Right Level VI</med:Trans>
-            <med:Trans lng="en">Level VI rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelVB">
-            <med:Trans lng="de">Right Level VB</med:Trans>
-            <med:Trans lng="en">Level VB rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelVA">
-            <med:Trans lng="de">Right Level VA</med:Trans>
-            <med:Trans lng="en">Level VA rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelIV">
-            <med:Trans lng="de">Right Level IV</med:Trans>
-            <med:Trans lng="en">Level IV rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelIII">
-            <med:Trans lng="de">Right Level III</med:Trans>
-            <med:Trans lng="en">Level III rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelIIB">
-            <med:Trans lng="de">Right Level IIB</med:Trans>
-            <med:Trans lng="en">Level IIB rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelIA">
-            <med:Trans lng="de">Right Level IA</med:Trans>
-            <med:Trans lng="en">Level IA rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelIB">
-            <med:Trans lng="de">Right Level IB</med:Trans>
-            <med:Trans lng="en">Level IB rechts</med:Trans>
-        </med:Option>
-        <med:Option id="rightLevelIIA">
-            <med:Trans lng="de">Right Level IIA</med:Trans>
-            <med:Trans lng="en">Level IIA rechts</med:Trans>
-        </med:Option>
+        <med:MedReporter lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Cervical lymphnodes</med:Trans>
+                <med:Trans lng="en">Cervicale Lymphknoten</med:Trans>
+            </med:Title>
+            <med:Option id="leftLevelVII">
+                <med:Trans lng="de">Left Level VII</med:Trans>
+                <med:Trans lng="en">Level VII links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelVI">
+                <med:Trans lng="de">Left Level VI</med:Trans>
+                <med:Trans lng="en">Level VI links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelVB">
+                <med:Trans lng="de">Left Level VB</med:Trans>
+                <med:Trans lng="en">Level VB links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelVA">
+                <med:Trans lng="de">Left Level VA</med:Trans>
+                <med:Trans lng="en">Level VA links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelIV">
+                <med:Trans lng="de">Left Level IV</med:Trans>
+                <med:Trans lng="en">Level IV links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelIII">
+                <med:Trans lng="de">Left Level III</med:Trans>
+                <med:Trans lng="en">Level III links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelIIB">
+                <med:Trans lng="de">Left Level IIB</med:Trans>
+                <med:Trans lng="en">Level IIB links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelIA">
+                <med:Trans lng="de">Left Level IA</med:Trans>
+                <med:Trans lng="en">Level IA links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelIB">
+                <med:Trans lng="de">Left Level IB</med:Trans>
+                <med:Trans lng="en">Level IB links</med:Trans>
+            </med:Option>
+            <med:Option id="leftLevelIIA">
+                <med:Trans lng="de">Left Level IIA</med:Trans>
+                <med:Trans lng="en">Level IIA links</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelVII">
+                <med:Trans lng="de">Right Level VII</med:Trans>
+                <med:Trans lng="en">Level VII rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelVI">
+                <med:Trans lng="de">Right Level VI</med:Trans>
+                <med:Trans lng="en">Level VI rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelVB">
+                <med:Trans lng="de">Right Level VB</med:Trans>
+                <med:Trans lng="en">Level VB rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelVA">
+                <med:Trans lng="de">Right Level VA</med:Trans>
+                <med:Trans lng="en">Level VA rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelIV">
+                <med:Trans lng="de">Right Level IV</med:Trans>
+                <med:Trans lng="en">Level IV rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelIII">
+                <med:Trans lng="de">Right Level III</med:Trans>
+                <med:Trans lng="en">Level III rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelIIB">
+                <med:Trans lng="de">Right Level IIB</med:Trans>
+                <med:Trans lng="en">Level IIB rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelIA">
+                <med:Trans lng="de">Right Level IA</med:Trans>
+                <med:Trans lng="en">Level IA rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelIB">
+                <med:Trans lng="de">Right Level IB</med:Trans>
+                <med:Trans lng="en">Level IB rechts</med:Trans>
+            </med:Option>
+            <med:Option id="rightLevelIIA">
+                <med:Trans lng="de">Right Level IIA</med:Trans>
+                <med:Trans lng="en">Level IIA rechts</med:Trans>
+            </med:Option>
+        </med:MedReporter>
     </metadata>
     <g>
         <path d="M562.33,5.28c-6.73,19.06-13.47,38.12-20.2,57.17-6.77,19.16-13.65,39.24-10.86,59.36,4.61,33.26,34.35,58.61,39.99,91.71,2.79,16.35-8.76,44.17-12.14,60.41-5.47,26.24,.22,28.72-5.25,54.96-2.32,11.13-12.77,23.53-18.86,30.51-5.18,5.94-19.67,14.14-28.81,13.83-10.69-.37-19.42,1.55-25.31,1.77,1.9,5.23,2.68,15.56,1.06,28.73-1.73,14.12-5.64,24.14-8.91,28.71,13.48,15.03,31,37.84,45.38,68.86,14.78,31.87,20.84,60.72,23.5,81.03,53.4,.81,107.45,1.53,160.85,2.34,18.84-24.23,47.36-56.07,89.47-85.17,33.07-22.85,64.52-37.33,89.49-46.63-2.07-10.28-3.52-23.83-1.88-39.48,.61-5.77,1.62-11.55,3.08-17.39l-1.92,.46c-16.13-5.66-33.72-10.06-48-19.46s-32.38-18.75-36.68-35.3c-3.1-11.93-3.4-38-1.36-50.16,8.01-47.53,36.41-83.55,67.63-120.27,10.92-12.85,23.05-24.67,33.32-38.04,12.76-16.63,17.51-34.1,20.91-45.41" fill="none" stroke="#878787" stroke-miterlimit="10" stroke-width="3" />

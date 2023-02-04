@@ -1,133 +1,135 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 474.18 439.24">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:Title>
-            <med:Trans lng="de">Pulmonalarterien</med:Trans>
-            <med:Trans lng="en">Pulmonalarteries</med:Trans>
-        </med:Title>
-        <med:Option id="LLLBasalAnterior">
-            <med:Trans lng="de">A. segmentalis basalis anterior links (VIII)</med:Trans>
-            <med:Trans lng="en">Left anterior basal segmental artery (8)</med:Trans>
-        </med:Option>
-        <med:Option id="LLLBasalLateral">
-            <med:Trans lng="de">A. segmentalis basalis lateralis links (IX)</med:Trans>
-            <med:Trans lng="en">Left lateral basal segmental artery (9)</med:Trans>
-        </med:Option>
-        <med:Option id="LLLBasalAnteriorLateral">
-            <med:Trans lng="de">(VIII/IX)</med:Trans>
-            <med:Trans lng="en">(8/9)</med:Trans>
-        </med:Option>
-        <med:Option id="LLLBasalPosterior">
-            <med:Trans lng="de">A. segmentalis basalis posterior links (X)</med:Trans>
-            <med:Trans lng="en">Left posterior basal segmental artery (10)</med:Trans>
-        </med:Option>
-        <med:Option id="LLLBasalMedial">
-            <med:Trans lng="de">A. segmentalis basalis medialis links (VII)</med:Trans>
-            <med:Trans lng="en">Left medial basal segmental artery (7)</med:Trans>
-        </med:Option>
-        <med:Option id="LLLBasalPosteriorMedial">
-            <med:Trans lng="de">(VII/X)</med:Trans>
-            <med:Trans lng="en">(7/10)</med:Trans>
-        </med:Option>
-        <med:Option id="LLLSuperior">
-            <med:Trans lng="de">A. segmentalis superior links (VI)</med:Trans>
-            <med:Trans lng="en">Left superior segmental artery (6)</med:Trans>
-        </med:Option>
-        <med:Option id="LLL">
-            <med:Trans lng="de">Unterlappenarterie links</med:Trans>
-            <med:Trans lng="en">Left lower lobe artery</med:Trans>
-        </med:Option>
-        <med:Option id="Lingula">
-            <med:Trans lng="de">A. lingularis (IV/V)</med:Trans>
-            <med:Trans lng="en">Lingular artery (4/5)</med:Trans>
-        </med:Option>
-        <med:Option id="LULAnterior">
-            <med:Trans lng="de">A. segmentalis anterior links (III)</med:Trans>
-            <med:Trans lng="en">Left anterior segmental artery (3)</med:Trans>
-        </med:Option>
-        <med:Option id="LULPosterior">
-            <med:Trans lng="de">A. segmentalis posterior links (I/II)</med:Trans>
-            <med:Trans lng="en">Left posterior segmental artery (1/2)</med:Trans>
-        </med:Option>
-        <med:Option id="LULApicoposteriorTrunk">
-            <med:Trans lng="de">Apicoposteriorer Truncus (I/II)</med:Trans>
-            <med:Trans lng="en">Apicoposterior trunk (1/2)</med:Trans>
-        </med:Option>
-        <med:Option id="LULApical">
-            <med:Trans lng="de">A. segmentalis apicalis (I/II)</med:Trans>
-            <med:Trans lng="en">Left apical segmental artery (1/2)</med:Trans>
-        </med:Option>
-        <med:Option id="LeftUpperLobe">
-            <med:Trans lng="de">Oberlappenarterie</med:Trans>
-            <med:Trans lng="en">Left upper lobe artery</med:Trans>
-        </med:Option>
-        <med:Option id="LeftMain">
-            <med:Trans lng="de">Hauptstamm links</med:Trans>
-            <med:Trans lng="en">Left pulmonary artery</med:Trans>
-        </med:Option>
-        <med:Option id="RLLSuperior">
-            <med:Trans lng="de">A. segmentalis superior rechts (VI)</med:Trans>
-            <med:Trans lng="en">Right superior segmental artery (6)</med:Trans>
-        </med:Option>
-        <med:Option id="RLLBasalLateral">
-            <med:Trans lng="de">A. segmentalis basalis lateralis rechts (IX)</med:Trans>
-            <med:Trans lng="en">Right basal lateral segmental artery (9)</med:Trans>
-        </med:Option>
-        <med:Option id="RLLBasalPosterior">
-            <med:Trans lng="de">A. segmentalis basalis posterior rechts (X)</med:Trans>
-            <med:Trans lng="en">Right basal posterior segmental artery (10)</med:Trans>
-        </med:Option>
-        <med:Option id="RLLBasalLateralPosterior">
-            <med:Trans lng="de">(IX/X)</med:Trans>
-            <med:Trans lng="en">(9/10)</med:Trans>
-        </med:Option>
-        <med:Option id="RLLBasalMedial">
-            <med:Trans lng="de">A. segmentalis basalis medialis (VII)</med:Trans>
-            <med:Trans lng="en">Right basal medial segmental artery (7)</med:Trans>
-        </med:Option>
-        <med:Option id="RLLBasalAnterior">
-            <med:Trans lng="de">A. segmentalis basalis anterior (VIII)</med:Trans>
-            <med:Trans lng="en">Right basal anterior segmental artery (8)</med:Trans>
-        </med:Option>
-        <med:Option id="RLL">
-            <med:Trans lng="de">Unterlappenarterie rechts</med:Trans>
-            <med:Trans lng="en">Right lower lobe artery</med:Trans>
-        </med:Option>
-        <med:Option id="RMLMedial">
-            <med:Trans lng="de">A. segmentalis medialis (V)</med:Trans>
-            <med:Trans lng="en">Right medial segmental artery (5)</med:Trans>
-        </med:Option>
-        <med:Option id="RMLLateral">
-            <med:Trans lng="de">A. segmentalis lateralis (IV)</med:Trans>
-            <med:Trans lng="en">Right lateral segmental artery (4)</med:Trans>
-        </med:Option>
-        <med:Option id="RML">
-            <med:Trans lng="de">Mittellappenarterie</med:Trans>
-            <med:Trans lng="en">Middle lobe artery</med:Trans>
-        </med:Option>
-        <med:Option id="RULPosterior">
-            <med:Trans lng="de">A. segmentalis posterior rechts (II)</med:Trans>
-            <med:Trans lng="en">Right posterior segmental artery (2)</med:Trans>
-        </med:Option>
-        <med:Option id="RULApical">
-            <med:Trans lng="de">A. segmentalis apicalis rechts (I)</med:Trans>
-            <med:Trans lng="en">Right apical segmental artery (1)</med:Trans>
-        </med:Option>
-        <med:Option id="RULAnterior">
-            <med:Trans lng="de">A. segmentalis anterior rechts (III)</med:Trans>
-            <med:Trans lng="en">Right anterior segmental artery (3)</med:Trans>
-        </med:Option>
-        <med:Option id="RUL">
-            <med:Trans lng="de">Oberlappenarterie rechts</med:Trans>
-            <med:Trans lng="en">Right upper lobe artery</med:Trans>
-        </med:Option>
-        <med:Option id="RightMain">
-            <med:Trans lng="de">Hauptstamm rechts</med:Trans>
-            <med:Trans lng="en">Right pulmonary artery</med:Trans>
-        </med:Option>
-        <med:Option id="PulmonaryTrunk">
-            <med:Trans lng="de">Truncus pulmonalis</med:Trans>
-            <med:Trans lng="en">Pulmonary trunk</med:Trans>
-        </med:Option>
+        <med:MedReporter lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Pulmonalarterien</med:Trans>
+                <med:Trans lng="en">Pulmonalarteries</med:Trans>
+            </med:Title>
+            <med:Option id="LLLBasalAnterior">
+                <med:Trans lng="de">A. segmentalis basalis anterior links (VIII)</med:Trans>
+                <med:Trans lng="en">Left anterior basal segmental artery (8)</med:Trans>
+            </med:Option>
+            <med:Option id="LLLBasalLateral">
+                <med:Trans lng="de">A. segmentalis basalis lateralis links (IX)</med:Trans>
+                <med:Trans lng="en">Left lateral basal segmental artery (9)</med:Trans>
+            </med:Option>
+            <med:Option id="LLLBasalAnteriorLateral">
+                <med:Trans lng="de">(VIII/IX)</med:Trans>
+                <med:Trans lng="en">(8/9)</med:Trans>
+            </med:Option>
+            <med:Option id="LLLBasalPosterior">
+                <med:Trans lng="de">A. segmentalis basalis posterior links (X)</med:Trans>
+                <med:Trans lng="en">Left posterior basal segmental artery (10)</med:Trans>
+            </med:Option>
+            <med:Option id="LLLBasalMedial">
+                <med:Trans lng="de">A. segmentalis basalis medialis links (VII)</med:Trans>
+                <med:Trans lng="en">Left medial basal segmental artery (7)</med:Trans>
+            </med:Option>
+            <med:Option id="LLLBasalPosteriorMedial">
+                <med:Trans lng="de">(VII/X)</med:Trans>
+                <med:Trans lng="en">(7/10)</med:Trans>
+            </med:Option>
+            <med:Option id="LLLSuperior">
+                <med:Trans lng="de">A. segmentalis superior links (VI)</med:Trans>
+                <med:Trans lng="en">Left superior segmental artery (6)</med:Trans>
+            </med:Option>
+            <med:Option id="LLL">
+                <med:Trans lng="de">Unterlappenarterie links</med:Trans>
+                <med:Trans lng="en">Left lower lobe artery</med:Trans>
+            </med:Option>
+            <med:Option id="Lingula">
+                <med:Trans lng="de">A. lingularis (IV/V)</med:Trans>
+                <med:Trans lng="en">Lingular artery (4/5)</med:Trans>
+            </med:Option>
+            <med:Option id="LULAnterior">
+                <med:Trans lng="de">A. segmentalis anterior links (III)</med:Trans>
+                <med:Trans lng="en">Left anterior segmental artery (3)</med:Trans>
+            </med:Option>
+            <med:Option id="LULPosterior">
+                <med:Trans lng="de">A. segmentalis posterior links (I/II)</med:Trans>
+                <med:Trans lng="en">Left posterior segmental artery (1/2)</med:Trans>
+            </med:Option>
+            <med:Option id="LULApicoposteriorTrunk">
+                <med:Trans lng="de">Apicoposteriorer Truncus (I/II)</med:Trans>
+                <med:Trans lng="en">Apicoposterior trunk (1/2)</med:Trans>
+            </med:Option>
+            <med:Option id="LULApical">
+                <med:Trans lng="de">A. segmentalis apicalis (I/II)</med:Trans>
+                <med:Trans lng="en">Left apical segmental artery (1/2)</med:Trans>
+            </med:Option>
+            <med:Option id="LeftUpperLobe">
+                <med:Trans lng="de">Oberlappenarterie</med:Trans>
+                <med:Trans lng="en">Left upper lobe artery</med:Trans>
+            </med:Option>
+            <med:Option id="LeftMain">
+                <med:Trans lng="de">Hauptstamm links</med:Trans>
+                <med:Trans lng="en">Left pulmonary artery</med:Trans>
+            </med:Option>
+            <med:Option id="RLLSuperior">
+                <med:Trans lng="de">A. segmentalis superior rechts (VI)</med:Trans>
+                <med:Trans lng="en">Right superior segmental artery (6)</med:Trans>
+            </med:Option>
+            <med:Option id="RLLBasalLateral">
+                <med:Trans lng="de">A. segmentalis basalis lateralis rechts (IX)</med:Trans>
+                <med:Trans lng="en">Right basal lateral segmental artery (9)</med:Trans>
+            </med:Option>
+            <med:Option id="RLLBasalPosterior">
+                <med:Trans lng="de">A. segmentalis basalis posterior rechts (X)</med:Trans>
+                <med:Trans lng="en">Right basal posterior segmental artery (10)</med:Trans>
+            </med:Option>
+            <med:Option id="RLLBasalLateralPosterior">
+                <med:Trans lng="de">(IX/X)</med:Trans>
+                <med:Trans lng="en">(9/10)</med:Trans>
+            </med:Option>
+            <med:Option id="RLLBasalMedial">
+                <med:Trans lng="de">A. segmentalis basalis medialis (VII)</med:Trans>
+                <med:Trans lng="en">Right basal medial segmental artery (7)</med:Trans>
+            </med:Option>
+            <med:Option id="RLLBasalAnterior">
+                <med:Trans lng="de">A. segmentalis basalis anterior (VIII)</med:Trans>
+                <med:Trans lng="en">Right basal anterior segmental artery (8)</med:Trans>
+            </med:Option>
+            <med:Option id="RLL">
+                <med:Trans lng="de">Unterlappenarterie rechts</med:Trans>
+                <med:Trans lng="en">Right lower lobe artery</med:Trans>
+            </med:Option>
+            <med:Option id="RMLMedial">
+                <med:Trans lng="de">A. segmentalis medialis (V)</med:Trans>
+                <med:Trans lng="en">Right medial segmental artery (5)</med:Trans>
+            </med:Option>
+            <med:Option id="RMLLateral">
+                <med:Trans lng="de">A. segmentalis lateralis (IV)</med:Trans>
+                <med:Trans lng="en">Right lateral segmental artery (4)</med:Trans>
+            </med:Option>
+            <med:Option id="RML">
+                <med:Trans lng="de">Mittellappenarterie</med:Trans>
+                <med:Trans lng="en">Middle lobe artery</med:Trans>
+            </med:Option>
+            <med:Option id="RULPosterior">
+                <med:Trans lng="de">A. segmentalis posterior rechts (II)</med:Trans>
+                <med:Trans lng="en">Right posterior segmental artery (2)</med:Trans>
+            </med:Option>
+            <med:Option id="RULApical">
+                <med:Trans lng="de">A. segmentalis apicalis rechts (I)</med:Trans>
+                <med:Trans lng="en">Right apical segmental artery (1)</med:Trans>
+            </med:Option>
+            <med:Option id="RULAnterior">
+                <med:Trans lng="de">A. segmentalis anterior rechts (III)</med:Trans>
+                <med:Trans lng="en">Right anterior segmental artery (3)</med:Trans>
+            </med:Option>
+            <med:Option id="RUL">
+                <med:Trans lng="de">Oberlappenarterie rechts</med:Trans>
+                <med:Trans lng="en">Right upper lobe artery</med:Trans>
+            </med:Option>
+            <med:Option id="RightMain">
+                <med:Trans lng="de">Hauptstamm rechts</med:Trans>
+                <med:Trans lng="en">Right pulmonary artery</med:Trans>
+            </med:Option>
+            <med:Option id="PulmonaryTrunk">
+                <med:Trans lng="de">Truncus pulmonalis</med:Trans>
+                <med:Trans lng="en">Pulmonary trunk</med:Trans>
+            </med:Option>
+        </med:MedReporter>
     </metadata>
     <g>
         <path id="LLLBasalAnterior" d="M376.7,353.06c4.9,4.8,9.87,9.62,14.93,14.46,8.22,7.85,16.39,15.5,24.51,22.94,1.19-.6,4.38-2.39,6.52-6.26,2.14-3.88,1.96-7.54,1.83-8.87-12.31-9.67-25.58-21.91-38.33-37.29-3.84-4.63-7.36-9.22-10.59-13.72-3.89,5.33-7.77,10.66-11.66,16,4.27,4.24,8.53,8.49,12.8,12.73Z" fill="#d6d6d6" />

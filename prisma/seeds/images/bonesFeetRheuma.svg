@@ -1,833 +1,835 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 649.19 798.69" enable-background="new 0 0 649.19 798.69" xml:space="preserve">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:Title>
-            <med:Trans lng="de">Knochen des Fußes Rheuma</med:Trans>
-            <med:Trans lng="en">Bones feet rheuma</med:Trans>
-        </med:Title>
-        <med:Option id="leftTalus">
-            <med:Trans lng="de">Talus links</med:Trans>
-            <med:Trans lng="en">Left talus</med:Trans>
-        </med:Option>
-        <med:Option id="leftCalcaneus">
-            <med:Trans lng="de">Calcaneus links</med:Trans>
-            <med:Trans lng="en">Left calcaneus</med:Trans>
-        </med:Option>
-        <med:Option id="leftNavicular">
-            <med:Trans lng="de">Os naviculare links</med:Trans>
-            <med:Trans lng="en">Left navicular</med:Trans>
-        </med:Option>
-        <med:Option id="leftCuboid">
-            <med:Trans lng="de">Os cuboideum links</med:Trans>
-            <med:Trans lng="en">Left cuboid</med:Trans>
-        </med:Option>
-        <med:Option id="leftLateralCuneiform">
-            <med:Trans lng="de">Os cuneiforme laterale links</med:Trans>
-            <med:Trans lng="en">Left lateral cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="leftIntermediateCuneiform">
-            <med:Trans lng="de">Os cuneiforme intermedium links</med:Trans>
-            <med:Trans lng="en">Left intermediate cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="leftMedialCuneiform">
-            <med:Trans lng="de">Os cuneiforme mediale links</med:Trans>
-            <med:Trans lng="en">Left medial cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal1HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale I links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal1Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale I links</med:Trans>
-            <med:Trans lng="en">Shaft of left metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal1BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale I links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal1BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal1HeadTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftSesamoid">
-            <med:Trans lng="de">Os sesamoideum links</med:Trans>
-            <med:Trans lng="en">Left sesamoid</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal2Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale II links</med:Trans>
-            <med:Trans lng="en">Shaft of left metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale II links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal2HeadTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal2HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale II links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal3HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale III links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal3Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale III links</med:Trans>
-            <med:Trans lng="en">Shaft of left metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale III links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale III links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal3HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale III links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal4HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal4Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale IV links</med:Trans>
-            <med:Trans lng="en">Shaft of left metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal4HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal5HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale V links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale V links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale V links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal5Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale V links</med:Trans>
-            <med:Trans lng="en">Shaft of left metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal5HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale V links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis I links</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis I links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis I links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis I links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis II links</med:Trans>
-            <med:Trans lng="en">Shaft oft left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis II links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis II links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis II links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis II links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis III links</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal proximal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis III links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis III links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis III links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis IV links</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis V links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis V links</med:Trans>
-            <med:Trans lng="en">Shaft of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis V links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis V links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis V links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis I links</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis I links</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis I links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis I links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis I links</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of left distal phalanx</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media II links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media II links</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media II links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media II links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media II links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media III links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media III links</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media III links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media III links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media III links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media IV links</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis II links</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distali II links</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis II links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis II links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis II links</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis III links</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of left distal phalanx</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis III links</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis III links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis III links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis III links</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis IV links</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis IV links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis IV links</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media V links</med:Trans>
-            <med:Trans lng="en">Tibial side of head of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media V links</med:Trans>
-            <med:Trans lng="en">Shaft of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media V links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media V links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media V links</med:Trans>
-            <med:Trans lng="en">Fibular side of head of left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis V links</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis V links</med:Trans>
-            <med:Trans lng="en">Shaft of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis V links</med:Trans>
-            <med:Trans lng="en">Tibial side of base of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis V links</med:Trans>
-            <med:Trans lng="en">Fibular side of base of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis V links</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of left distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightTalus">
-            <med:Trans lng="de">Talus rechts</med:Trans>
-            <med:Trans lng="en">Right talus</med:Trans>
-        </med:Option>
-        <med:Option id="rightCalcaneus">
-            <med:Trans lng="de">Calcaneus rechts</med:Trans>
-            <med:Trans lng="en">Right calcaneus</med:Trans>
-        </med:Option>
-        <med:Option id="rightNavicular">
-            <med:Trans lng="de">Os naviculare rechts</med:Trans>
-            <med:Trans lng="en">Right navicular</med:Trans>
-        </med:Option>
-        <med:Option id="rightCuboid">
-            <med:Trans lng="de">Os cuboideum rechts</med:Trans>
-            <med:Trans lng="en">Right cuboid</med:Trans>
-        </med:Option>
-        <med:Option id="rightLateralCuneiform">
-            <med:Trans lng="de">Os cuneiforme laterale rechts</med:Trans>
-            <med:Trans lng="en">Right lateral cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="rightIntermediateCuneiform">
-            <med:Trans lng="de">Os cuneiforme intermedium rechts</med:Trans>
-            <med:Trans lng="en">Right intermediate cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="rightMedialCuneiform">
-            <med:Trans lng="de">Os cuneiforme mediale rechts</med:Trans>
-            <med:Trans lng="en">Right medial cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal1HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale I rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal1Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale I rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal1BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale I rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal1BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal1HeadTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightSesamoid">
-            <med:Trans lng="de">Os sesamoideum rechts</med:Trans>
-            <med:Trans lng="en">Right sesamoid</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal2Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale II rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal2HeadTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal2HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal3HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal3Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale III rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale III rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal3HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale III rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal4HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal4Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale IV rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal4HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal5HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal5Shaft">
-            <med:Trans lng="de">Schaft des Os metatarsale V rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal5HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis I rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis I rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis I rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis I rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis II rechts</med:Trans>
-            <med:Trans lng="en">Shaft oft right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis III rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal proximal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis III rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis IV rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der Phalanx proximalis V rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis I rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis I rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis I rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis I rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis I rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of right distal phalanx</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media II rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media III rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media III rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media III rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media IV rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distali II rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis II rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis II rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis III rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of right distal phalanx</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis III rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis III rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis III rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis IV rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis IV rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis IV rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5HeadTibial">
-            <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of head of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5Shaft">
-            <med:Trans lng="de">Schaft der Phalanx media V rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx media V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx media V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5HeadFibular">
-            <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of head of right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5TuftTibial">
-            <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of tuft of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5Shaft">
-            <med:Trans lng="de">Schaft der Phalanx distalis V rechts</med:Trans>
-            <med:Trans lng="en">Shaft of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5BaseTibial">
-            <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis V rechts</med:Trans>
-            <med:Trans lng="en">Tibial side of base of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5BaseFibular">
-            <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of base of right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5TuftFibular">
-            <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis V rechts</med:Trans>
-            <med:Trans lng="en">Fibular side of tuft of right distal phalanx 5</med:Trans>
-        </med:Option>
+        <med:MedReporter lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Knochen des Fußes Rheuma</med:Trans>
+                <med:Trans lng="en">Bones feet rheuma</med:Trans>
+            </med:Title>
+            <med:Option id="leftTalus">
+                <med:Trans lng="de">Talus links</med:Trans>
+                <med:Trans lng="en">Left talus</med:Trans>
+            </med:Option>
+            <med:Option id="leftCalcaneus">
+                <med:Trans lng="de">Calcaneus links</med:Trans>
+                <med:Trans lng="en">Left calcaneus</med:Trans>
+            </med:Option>
+            <med:Option id="leftNavicular">
+                <med:Trans lng="de">Os naviculare links</med:Trans>
+                <med:Trans lng="en">Left navicular</med:Trans>
+            </med:Option>
+            <med:Option id="leftCuboid">
+                <med:Trans lng="de">Os cuboideum links</med:Trans>
+                <med:Trans lng="en">Left cuboid</med:Trans>
+            </med:Option>
+            <med:Option id="leftLateralCuneiform">
+                <med:Trans lng="de">Os cuneiforme laterale links</med:Trans>
+                <med:Trans lng="en">Left lateral cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="leftIntermediateCuneiform">
+                <med:Trans lng="de">Os cuneiforme intermedium links</med:Trans>
+                <med:Trans lng="en">Left intermediate cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="leftMedialCuneiform">
+                <med:Trans lng="de">Os cuneiforme mediale links</med:Trans>
+                <med:Trans lng="en">Left medial cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal1HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale I links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal1Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale I links</med:Trans>
+                <med:Trans lng="en">Shaft of left metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal1BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale I links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal1BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal1HeadTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftSesamoid">
+                <med:Trans lng="de">Os sesamoideum links</med:Trans>
+                <med:Trans lng="en">Left sesamoid</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal2Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale II links</med:Trans>
+                <med:Trans lng="en">Shaft of left metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale II links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal2HeadTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal2HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale II links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal3HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale III links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal3Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale III links</med:Trans>
+                <med:Trans lng="en">Shaft of left metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale III links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale III links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal3HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale III links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal4HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal4Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale IV links</med:Trans>
+                <med:Trans lng="en">Shaft of left metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal4HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal5HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale V links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale V links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale V links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal5Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale V links</med:Trans>
+                <med:Trans lng="en">Shaft of left metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal5HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale V links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis I links</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis I links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis I links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis I links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis II links</med:Trans>
+                <med:Trans lng="en">Shaft oft left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis II links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis II links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis II links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis II links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis III links</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal proximal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis III links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis III links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis III links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis IV links</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis V links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis V links</med:Trans>
+                <med:Trans lng="en">Shaft of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis V links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis V links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis V links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis I links</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis I links</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis I links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis I links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis I links</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of left distal phalanx</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media II links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media II links</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media II links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media II links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media II links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media III links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media III links</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media III links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media III links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media III links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media IV links</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis II links</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distali II links</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis II links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis II links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis II links</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis III links</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of left distal phalanx</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis III links</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis III links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis III links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis III links</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis IV links</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis IV links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis IV links</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media V links</med:Trans>
+                <med:Trans lng="en">Tibial side of head of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media V links</med:Trans>
+                <med:Trans lng="en">Shaft of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media V links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media V links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media V links</med:Trans>
+                <med:Trans lng="en">Fibular side of head of left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis V links</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis V links</med:Trans>
+                <med:Trans lng="en">Shaft of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis V links</med:Trans>
+                <med:Trans lng="en">Tibial side of base of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis V links</med:Trans>
+                <med:Trans lng="en">Fibular side of base of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis V links</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of left distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightTalus">
+                <med:Trans lng="de">Talus rechts</med:Trans>
+                <med:Trans lng="en">Right talus</med:Trans>
+            </med:Option>
+            <med:Option id="rightCalcaneus">
+                <med:Trans lng="de">Calcaneus rechts</med:Trans>
+                <med:Trans lng="en">Right calcaneus</med:Trans>
+            </med:Option>
+            <med:Option id="rightNavicular">
+                <med:Trans lng="de">Os naviculare rechts</med:Trans>
+                <med:Trans lng="en">Right navicular</med:Trans>
+            </med:Option>
+            <med:Option id="rightCuboid">
+                <med:Trans lng="de">Os cuboideum rechts</med:Trans>
+                <med:Trans lng="en">Right cuboid</med:Trans>
+            </med:Option>
+            <med:Option id="rightLateralCuneiform">
+                <med:Trans lng="de">Os cuneiforme laterale rechts</med:Trans>
+                <med:Trans lng="en">Right lateral cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="rightIntermediateCuneiform">
+                <med:Trans lng="de">Os cuneiforme intermedium rechts</med:Trans>
+                <med:Trans lng="en">Right intermediate cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="rightMedialCuneiform">
+                <med:Trans lng="de">Os cuneiforme mediale rechts</med:Trans>
+                <med:Trans lng="en">Right medial cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal1HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale I rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal1Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale I rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal1BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale I rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal1BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal1HeadTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale I rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightSesamoid">
+                <med:Trans lng="de">Os sesamoideum rechts</med:Trans>
+                <med:Trans lng="en">Right sesamoid</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal2Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale II rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal2HeadTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal2HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal3HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal3Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale III rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale III rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal3HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale III rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal4HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal4Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale IV rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal4HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal5HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf des Os metatarsale V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis des Os metatarsale V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis des Os metatarsale V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal5Shaft">
+                <med:Trans lng="de">Schaft des Os metatarsale V rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal5HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf des Os metatarsale V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis I rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis I rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis I rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis I rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis I rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis II rechts</med:Trans>
+                <med:Trans lng="en">Shaft oft right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis III rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal proximal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis III rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis IV rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx proximalis V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der Phalanx proximalis V rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx proximalis V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx proximalis V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx proximalis V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis I rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis I rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis I rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis I rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis I rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of right distal phalanx</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media II rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media III rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media III rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media III rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media IV rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distali II rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis II rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis II rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis III rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of right distal phalanx</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis III rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis III rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis III rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis IV rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis IV rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis IV rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5HeadTibial">
+                <med:Trans lng="de">Tibiaseitiger Kopf der Phalanx media V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of head of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5Shaft">
+                <med:Trans lng="de">Schaft der Phalanx media V rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx media V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx media V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5HeadFibular">
+                <med:Trans lng="de">Fibulaseitiger Kopf der Phalanx media V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of head of right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5TuftTibial">
+                <med:Trans lng="de">Tibiaseitiger Nagelkranz der Phalanx distalis V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of tuft of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5Shaft">
+                <med:Trans lng="de">Schaft der Phalanx distalis V rechts</med:Trans>
+                <med:Trans lng="en">Shaft of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5BaseTibial">
+                <med:Trans lng="de">Tibiaseitige Basis der Phalanx distalis V rechts</med:Trans>
+                <med:Trans lng="en">Tibial side of base of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5BaseFibular">
+                <med:Trans lng="de">Fibulaseitige Basis der Phalanx distalis V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of base of right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5TuftFibular">
+                <med:Trans lng="de">Fibulaseitiger Nagelkranz der Phalanx distalis V rechts</med:Trans>
+                <med:Trans lng="en">Fibular side of tuft of right distal phalanx 5</med:Trans>
+            </med:Option>
+        </med:MedReporter>
     </metadata>
     <g>
         <path id="leftTalus" fill="#878787" d="M263.39,519.36c-3.43-4.6-7.64-8.9-13.43-13.26c-6.53-4.92-12.92-9.79-22.35-12.12   c-8.92-2.2-15.85-1.11-25.59,0.43c-8.28,1.31-19.01,3.12-30.11,10.57c-4.44,2.98-9.01,4.56-10.41,8.85   c-0.82,2.49-0.07,3.73,0.52,10.06c0.39,4.21,0.87,9.38,0.18,14.42c-0.26,1.9-1.25,8.51-5.58,14.56   c-4.02,5.61-6.48,4.55-14.52,11.38c-5.99,5.09-11.61,9.86-13.63,17.43c-1.4,5.26,0.41,6.31-1.44,12.4   c-1.89,6.18-4.18,6.46-6.81,12.87c-1.27,3.1-4.33,10.52-2.11,17.15c1.73,5.15,5.7,7.01,11.45,11.27   c3.58,2.65,10.07,9.76,23.03,23.97c16.73,18.34,19.98,22.07,19.98,22.07c8.5,9.77,11.12,13.28,16.39,14.09   c6.39,0.97,12.27-2.73,18.54-6.68c6.96-4.38,6.72-6.36,14.52-11.38c4.19-2.69,5.36-2.83,14.51-7.41   c11.06-5.53,16.58-8.29,18.26-9.9c10.75-10.31,9.79-27.36,9.64-30.08c-0.23-4.11-1.34-8.05-3.56-15.93   c-4.16-14.79-6.4-15.41-7.86-23.85c-1.61-9.31-0.31-16.69,1.09-24.64c1.95-11.05,2.93-16.57,7.46-21.95   c4.01-4.75,7.29-5.23,8.2-9.38C270.82,529.46,267.49,524.87,263.39,519.36z" />

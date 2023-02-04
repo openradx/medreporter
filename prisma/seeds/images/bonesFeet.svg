@@ -1,225 +1,227 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 649.19 798.69" enable-background="new 0 0 649.19 798.69" xml:space="preserve">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:Title>
-            <med:Trans lng="de">Knochen des Fußes</med:Trans>
-            <med:Trans lng="en">Bones feet</med:Trans>
-        </med:Title>
-        <med:Option id="rightTalus">
-            <med:Trans lng="de">Talus rechts</med:Trans>
-            <med:Trans lng="en">Right talus</med:Trans>
-        </med:Option>
-        <med:Option id="rightCalcaneus">
-            <med:Trans lng="de">Calcaneus rechts</med:Trans>
-            <med:Trans lng="en">Right calcaneus</med:Trans>
-        </med:Option>
-        <med:Option id="rightNavicular">
-            <med:Trans lng="de">Os naviculare rechts</med:Trans>
-            <med:Trans lng="en">Right navicular</med:Trans>
-        </med:Option>
-        <med:Option id="rightCuboid">
-            <med:Trans lng="de">Os cuboideum rechts</med:Trans>
-            <med:Trans lng="en">Right cuboid</med:Trans>
-        </med:Option>
-        <med:Option id="rightLateralCuneiform">
-            <med:Trans lng="de">Os cuneiforme laterale rechts</med:Trans>
-            <med:Trans lng="en">Right lateral cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="rightIntermediateCuneiform">
-            <med:Trans lng="de">Os cuneiforme intermedium rechts</med:Trans>
-            <med:Trans lng="en">Right intermediate cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="rightMedialCuneiform">
-            <med:Trans lng="de">Os cuneiforme mediale rechts</med:Trans>
-            <med:Trans lng="en">Right medial cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal1">
-            <med:Trans lng="de">Os metatarsale I rechts</med:Trans>
-            <med:Trans lng="en">Right metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightSesamoid">
-            <med:Trans lng="de">Os sesamoideum rechts</med:Trans>
-            <med:Trans lng="en">Right sesamoid</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal2">
-            <med:Trans lng="de">Os metatarsale II rechts</med:Trans>
-            <med:Trans lng="en">Right metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal3">
-            <med:Trans lng="de">Os metatarsale III rechts</med:Trans>
-            <med:Trans lng="en">Right metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal4">
-            <med:Trans lng="de">Os metatarsale IV rechts</med:Trans>
-            <med:Trans lng="en">Right metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMetatarsal5">
-            <med:Trans lng="de">Os metatarsale V rechts</med:Trans>
-            <med:Trans lng="en">Right metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx1">
-            <med:Trans lng="de">Phalanx proximalis I rechts</med:Trans>
-            <med:Trans lng="en">Right proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx2">
-            <med:Trans lng="de">Phalanx proximalis II rechts</med:Trans>
-            <med:Trans lng="en">Right proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx3">
-            <med:Trans lng="de">Phalanx proximalis III rechts</med:Trans>
-            <med:Trans lng="en">Right proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx4">
-            <med:Trans lng="de">Phalanx proximalis IV rechts</med:Trans>
-            <med:Trans lng="en">Right proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightProximalPhalanx5">
-            <med:Trans lng="de">Phalanx proximalis V rechts</med:Trans>
-            <med:Trans lng="en">Right proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx2">
-            <med:Trans lng="de">Phalanx media II rechts</med:Trans>
-            <med:Trans lng="en">Right middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx3">
-            <med:Trans lng="de">Phalanx media III rechts</med:Trans>
-            <med:Trans lng="en">Right middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx4">
-            <med:Trans lng="de">Phalanx media IV rechts</med:Trans>
-            <med:Trans lng="en">Right middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightMiddlePhalanx5">
-            <med:Trans lng="de">Phalanx media V rechts</med:Trans>
-            <med:Trans lng="en">Right middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx1">
-            <med:Trans lng="de">Phalanx distalis I rechts</med:Trans>
-            <med:Trans lng="en">Right distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx2">
-            <med:Trans lng="de">Phalanx distalis II rechts</med:Trans>
-            <med:Trans lng="en">Right distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx3">
-            <med:Trans lng="de">Phalanx distalis III rechts</med:Trans>
-            <med:Trans lng="en">Right distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx4">
-            <med:Trans lng="de">Phalanx distalis IV rechts</med:Trans>
-            <med:Trans lng="en">Right distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="rightDistalPhalanx5">
-            <med:Trans lng="de">Phalanx distalis V rechts</med:Trans>
-            <med:Trans lng="en">Right distal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftTalus">
-            <med:Trans lng="de">Talus links</med:Trans>
-            <med:Trans lng="en">Left talus</med:Trans>
-        </med:Option>
-        <med:Option id="leftCalcaneus">
-            <med:Trans lng="de">Calcaneus links</med:Trans>
-            <med:Trans lng="en">Left calcaneus</med:Trans>
-        </med:Option>
-        <med:Option id="leftNavicular">
-            <med:Trans lng="de">Os naviculare links</med:Trans>
-            <med:Trans lng="en">Left navicular</med:Trans>
-        </med:Option>
-        <med:Option id="leftCuboid">
-            <med:Trans lng="de">Os cuboideum links</med:Trans>
-            <med:Trans lng="en">Left cuboid</med:Trans>
-        </med:Option>
-        <med:Option id="leftLateralCuneiform">
-            <med:Trans lng="de">Os cuneiforme laterale links</med:Trans>
-            <med:Trans lng="en">Left lateral cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="leftIntermediateCuneiform">
-            <med:Trans lng="de">Os cuneiforme intermedium links</med:Trans>
-            <med:Trans lng="en">Left intermediate cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="leftMedialCuneiform">
-            <med:Trans lng="de">Os cuneiforme mediale links</med:Trans>
-            <med:Trans lng="en">Left medial cuneiform</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal1">
-            <med:Trans lng="de">Os metatarsale I links</med:Trans>
-            <med:Trans lng="en">Left metatarsal 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftSesamoid">
-            <med:Trans lng="de">Os sesamoideum links</med:Trans>
-            <med:Trans lng="en">Left sesamoid</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal2">
-            <med:Trans lng="de">Os metatarsale II links</med:Trans>
-            <med:Trans lng="en">Left metatarsal 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal3">
-            <med:Trans lng="de">Os metatarsale III links</med:Trans>
-            <med:Trans lng="en">Left metatarsal 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal4">
-            <med:Trans lng="de">Os metatarsale IV links</med:Trans>
-            <med:Trans lng="en">Left metatarsal 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMetatarsal5">
-            <med:Trans lng="de">Os metatarsale V links</med:Trans>
-            <med:Trans lng="en">Left metatarsal 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx1">
-            <med:Trans lng="de">Phalanx proximalis I links</med:Trans>
-            <med:Trans lng="en">Left proximal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx2">
-            <med:Trans lng="de">Phalanx proximalis II links</med:Trans>
-            <med:Trans lng="en">Left proximal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx3">
-            <med:Trans lng="de">Phalanx proximalis III links</med:Trans>
-            <med:Trans lng="en">Left proximal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx4">
-            <med:Trans lng="de">Phalanx proximalis IV links</med:Trans>
-            <med:Trans lng="en">Left proximal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftProximalPhalanx5">
-            <med:Trans lng="de">Phalanx proximalis V links</med:Trans>
-            <med:Trans lng="en">Left proximal phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx2">
-            <med:Trans lng="de">Phalanx media II links</med:Trans>
-            <med:Trans lng="en">Left middle phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx3">
-            <med:Trans lng="de">Phalanx media III links</med:Trans>
-            <med:Trans lng="en">Left middle phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx4">
-            <med:Trans lng="de">Phalanx media IV links</med:Trans>
-            <med:Trans lng="en">Left middle phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftMiddlePhalanx5">
-            <med:Trans lng="de">Phalanx media V links</med:Trans>
-            <med:Trans lng="en">Left middle phalanx 5</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx1">
-            <med:Trans lng="de">Phalanx distalis I links</med:Trans>
-            <med:Trans lng="en">Left distal phalanx 1</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx2">
-            <med:Trans lng="de">Phalanx distalis II links</med:Trans>
-            <med:Trans lng="en">Left distal phalanx 2</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx3">
-            <med:Trans lng="de">Phalanx distalis III links</med:Trans>
-            <med:Trans lng="en">Left distal phalanx 3</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx4">
-            <med:Trans lng="de">Phalanx distalis IV links</med:Trans>
-            <med:Trans lng="en">Left distal phalanx 4</med:Trans>
-        </med:Option>
-        <med:Option id="leftDistalPhalanx5">
-            <med:Trans lng="de">Phalanx distalis V links</med:Trans>
-            <med:Trans lng="en">Left distal phalanx 5</med:Trans>
-        </med:Option>
+        <med:MedReporter lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Knochen des Fußes</med:Trans>
+                <med:Trans lng="en">Bones feet</med:Trans>
+            </med:Title>
+            <med:Option id="rightTalus">
+                <med:Trans lng="de">Talus rechts</med:Trans>
+                <med:Trans lng="en">Right talus</med:Trans>
+            </med:Option>
+            <med:Option id="rightCalcaneus">
+                <med:Trans lng="de">Calcaneus rechts</med:Trans>
+                <med:Trans lng="en">Right calcaneus</med:Trans>
+            </med:Option>
+            <med:Option id="rightNavicular">
+                <med:Trans lng="de">Os naviculare rechts</med:Trans>
+                <med:Trans lng="en">Right navicular</med:Trans>
+            </med:Option>
+            <med:Option id="rightCuboid">
+                <med:Trans lng="de">Os cuboideum rechts</med:Trans>
+                <med:Trans lng="en">Right cuboid</med:Trans>
+            </med:Option>
+            <med:Option id="rightLateralCuneiform">
+                <med:Trans lng="de">Os cuneiforme laterale rechts</med:Trans>
+                <med:Trans lng="en">Right lateral cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="rightIntermediateCuneiform">
+                <med:Trans lng="de">Os cuneiforme intermedium rechts</med:Trans>
+                <med:Trans lng="en">Right intermediate cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="rightMedialCuneiform">
+                <med:Trans lng="de">Os cuneiforme mediale rechts</med:Trans>
+                <med:Trans lng="en">Right medial cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal1">
+                <med:Trans lng="de">Os metatarsale I rechts</med:Trans>
+                <med:Trans lng="en">Right metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightSesamoid">
+                <med:Trans lng="de">Os sesamoideum rechts</med:Trans>
+                <med:Trans lng="en">Right sesamoid</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal2">
+                <med:Trans lng="de">Os metatarsale II rechts</med:Trans>
+                <med:Trans lng="en">Right metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal3">
+                <med:Trans lng="de">Os metatarsale III rechts</med:Trans>
+                <med:Trans lng="en">Right metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal4">
+                <med:Trans lng="de">Os metatarsale IV rechts</med:Trans>
+                <med:Trans lng="en">Right metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMetatarsal5">
+                <med:Trans lng="de">Os metatarsale V rechts</med:Trans>
+                <med:Trans lng="en">Right metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx1">
+                <med:Trans lng="de">Phalanx proximalis I rechts</med:Trans>
+                <med:Trans lng="en">Right proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx2">
+                <med:Trans lng="de">Phalanx proximalis II rechts</med:Trans>
+                <med:Trans lng="en">Right proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx3">
+                <med:Trans lng="de">Phalanx proximalis III rechts</med:Trans>
+                <med:Trans lng="en">Right proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx4">
+                <med:Trans lng="de">Phalanx proximalis IV rechts</med:Trans>
+                <med:Trans lng="en">Right proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightProximalPhalanx5">
+                <med:Trans lng="de">Phalanx proximalis V rechts</med:Trans>
+                <med:Trans lng="en">Right proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx2">
+                <med:Trans lng="de">Phalanx media II rechts</med:Trans>
+                <med:Trans lng="en">Right middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx3">
+                <med:Trans lng="de">Phalanx media III rechts</med:Trans>
+                <med:Trans lng="en">Right middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx4">
+                <med:Trans lng="de">Phalanx media IV rechts</med:Trans>
+                <med:Trans lng="en">Right middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightMiddlePhalanx5">
+                <med:Trans lng="de">Phalanx media V rechts</med:Trans>
+                <med:Trans lng="en">Right middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx1">
+                <med:Trans lng="de">Phalanx distalis I rechts</med:Trans>
+                <med:Trans lng="en">Right distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx2">
+                <med:Trans lng="de">Phalanx distalis II rechts</med:Trans>
+                <med:Trans lng="en">Right distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx3">
+                <med:Trans lng="de">Phalanx distalis III rechts</med:Trans>
+                <med:Trans lng="en">Right distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx4">
+                <med:Trans lng="de">Phalanx distalis IV rechts</med:Trans>
+                <med:Trans lng="en">Right distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="rightDistalPhalanx5">
+                <med:Trans lng="de">Phalanx distalis V rechts</med:Trans>
+                <med:Trans lng="en">Right distal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftTalus">
+                <med:Trans lng="de">Talus links</med:Trans>
+                <med:Trans lng="en">Left talus</med:Trans>
+            </med:Option>
+            <med:Option id="leftCalcaneus">
+                <med:Trans lng="de">Calcaneus links</med:Trans>
+                <med:Trans lng="en">Left calcaneus</med:Trans>
+            </med:Option>
+            <med:Option id="leftNavicular">
+                <med:Trans lng="de">Os naviculare links</med:Trans>
+                <med:Trans lng="en">Left navicular</med:Trans>
+            </med:Option>
+            <med:Option id="leftCuboid">
+                <med:Trans lng="de">Os cuboideum links</med:Trans>
+                <med:Trans lng="en">Left cuboid</med:Trans>
+            </med:Option>
+            <med:Option id="leftLateralCuneiform">
+                <med:Trans lng="de">Os cuneiforme laterale links</med:Trans>
+                <med:Trans lng="en">Left lateral cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="leftIntermediateCuneiform">
+                <med:Trans lng="de">Os cuneiforme intermedium links</med:Trans>
+                <med:Trans lng="en">Left intermediate cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="leftMedialCuneiform">
+                <med:Trans lng="de">Os cuneiforme mediale links</med:Trans>
+                <med:Trans lng="en">Left medial cuneiform</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal1">
+                <med:Trans lng="de">Os metatarsale I links</med:Trans>
+                <med:Trans lng="en">Left metatarsal 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftSesamoid">
+                <med:Trans lng="de">Os sesamoideum links</med:Trans>
+                <med:Trans lng="en">Left sesamoid</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal2">
+                <med:Trans lng="de">Os metatarsale II links</med:Trans>
+                <med:Trans lng="en">Left metatarsal 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal3">
+                <med:Trans lng="de">Os metatarsale III links</med:Trans>
+                <med:Trans lng="en">Left metatarsal 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal4">
+                <med:Trans lng="de">Os metatarsale IV links</med:Trans>
+                <med:Trans lng="en">Left metatarsal 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMetatarsal5">
+                <med:Trans lng="de">Os metatarsale V links</med:Trans>
+                <med:Trans lng="en">Left metatarsal 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx1">
+                <med:Trans lng="de">Phalanx proximalis I links</med:Trans>
+                <med:Trans lng="en">Left proximal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx2">
+                <med:Trans lng="de">Phalanx proximalis II links</med:Trans>
+                <med:Trans lng="en">Left proximal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx3">
+                <med:Trans lng="de">Phalanx proximalis III links</med:Trans>
+                <med:Trans lng="en">Left proximal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx4">
+                <med:Trans lng="de">Phalanx proximalis IV links</med:Trans>
+                <med:Trans lng="en">Left proximal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftProximalPhalanx5">
+                <med:Trans lng="de">Phalanx proximalis V links</med:Trans>
+                <med:Trans lng="en">Left proximal phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx2">
+                <med:Trans lng="de">Phalanx media II links</med:Trans>
+                <med:Trans lng="en">Left middle phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx3">
+                <med:Trans lng="de">Phalanx media III links</med:Trans>
+                <med:Trans lng="en">Left middle phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx4">
+                <med:Trans lng="de">Phalanx media IV links</med:Trans>
+                <med:Trans lng="en">Left middle phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftMiddlePhalanx5">
+                <med:Trans lng="de">Phalanx media V links</med:Trans>
+                <med:Trans lng="en">Left middle phalanx 5</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx1">
+                <med:Trans lng="de">Phalanx distalis I links</med:Trans>
+                <med:Trans lng="en">Left distal phalanx 1</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx2">
+                <med:Trans lng="de">Phalanx distalis II links</med:Trans>
+                <med:Trans lng="en">Left distal phalanx 2</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx3">
+                <med:Trans lng="de">Phalanx distalis III links</med:Trans>
+                <med:Trans lng="en">Left distal phalanx 3</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx4">
+                <med:Trans lng="de">Phalanx distalis IV links</med:Trans>
+                <med:Trans lng="en">Left distal phalanx 4</med:Trans>
+            </med:Option>
+            <med:Option id="leftDistalPhalanx5">
+                <med:Trans lng="de">Phalanx distalis V links</med:Trans>
+                <med:Trans lng="en">Left distal phalanx 5</med:Trans>
+            </med:Option>
+        </med:MedReporter>
     </metadata>
     <g>
         <path id="rightTalus" fill="#878787" d="M392.53,519.36c3.43-4.6,7.64-8.9,13.43-13.26c6.53-4.92,12.92-9.79,22.35-12.12   c8.92-2.2,15.85-1.11,25.59,0.43c8.28,1.31,19.01,3.12,30.11,10.57c4.44,2.98,9.01,4.56,10.41,8.85c0.82,2.49,0.07,3.73-0.52,10.06   c-0.39,4.21-0.87,9.38-0.18,14.42c0.26,1.9,1.25,8.51,5.58,14.56c4.02,5.61,6.48,4.55,14.52,11.38   c5.99,5.09,11.61,9.86,13.63,17.43c1.4,5.26-0.41,6.31,1.44,12.4c1.89,6.18,4.18,6.46,6.81,12.87c1.27,3.1,4.33,10.52,2.11,17.15   c-1.73,5.15-5.7,7.01-11.45,11.27c-3.58,2.65-10.07,9.76-23.03,23.97c-16.73,18.34-19.98,22.07-19.98,22.07   c-8.5,9.77-11.12,13.28-16.39,14.09c-6.39,0.97-12.27-2.73-18.54-6.68c-6.96-4.38-6.72-6.36-14.52-11.38   c-4.19-2.69-5.36-2.83-14.51-7.41c-11.06-5.53-16.58-8.29-18.26-9.9c-10.75-10.31-9.79-27.36-9.64-30.08   c0.23-4.11,1.34-8.05,3.56-15.93c4.16-14.79,6.4-15.41,7.86-23.85c1.61-9.31,0.31-16.69-1.09-24.64   c-1.95-11.05-2.93-16.57-7.46-21.95c-4.01-4.75-7.29-5.23-8.2-9.38C385.1,529.46,388.43,524.87,392.53,519.36z" />
