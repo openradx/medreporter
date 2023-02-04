@@ -3,7 +3,7 @@ import chalk from "chalk"
 import fs from "fs"
 import glob from "glob"
 import yaml from "js-yaml"
-import jsdom from "jsdom"
+import { JSDOM } from "jsdom"
 import path from "path"
 import prettier from "prettier"
 
@@ -38,10 +38,8 @@ for (const imageFile of imageFiles) {
   }
   const translations = yaml.load(fs.readFileSync(translationsFile).toString()) as Translations
 
-  const dom = new jsdom.JSDOM("")
-  const { DOMParser } = dom.window
-  const parser = new DOMParser()
-  const document = parser.parseFromString(fs.readFileSync(imageFile).toString(), "text/xml")
+  const dom = new JSDOM(fs.readFileSync(imageFile).toString(), { contentType: "image/svg+xml" })
+  const { document } = dom.window
 
   let metadataEl = document.querySelector("metadata")
   if (!metadataEl) {

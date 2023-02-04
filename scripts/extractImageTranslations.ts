@@ -3,7 +3,7 @@ import chalk from "chalk"
 import { program } from "commander"
 import fs from "fs"
 import { dump } from "js-yaml"
-import jsdom from "jsdom"
+import { JSDOM } from "jsdom"
 
 program
   .description("Parses a SVG file and extracts information.")
@@ -16,10 +16,8 @@ if (!imageFile || !imageFile.endsWith(".svg")) {
   process.exit()
 }
 
-const dom = new jsdom.JSDOM("")
-const { DOMParser } = dom.window
-const parser = new DOMParser()
-const document = parser.parseFromString(fs.readFileSync(imageFile).toString(), "text/xml")
+const dom = new JSDOM(fs.readFileSync(imageFile).toString(), { contentType: "image/svg+xml" })
+const { document } = dom.window
 
 // only respect the first found in a subtree
 const ids: string[] = []
