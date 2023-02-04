@@ -2,10 +2,10 @@
 import chalk from "chalk"
 import fs from "fs"
 import glob from "glob"
+import { html as format } from "js-beautify"
 import yaml from "js-yaml"
 import { JSDOM } from "jsdom"
 import path from "path"
-import prettier from "prettier"
 
 const NS = "http://www.medreporter.org/reference/image"
 
@@ -113,12 +113,6 @@ for (const imageFile of imageFiles) {
 
   const processedFile = path.join(OUTPUT_FOLDER, imageFilename)
   const output = document.documentElement.outerHTML
-  fs.writeFileSync(
-    processedFile,
-    prettier.format(output, {
-      parser: "babel",
-      printWidth: 120,
-    })
-  )
+  fs.writeFileSync(processedFile, format(output))
   console.log(chalk.green(`Successfully written "${imageFilename}".`))
 }
