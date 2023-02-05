@@ -5,6 +5,8 @@ import fs from "fs"
 import { dump } from "js-yaml"
 import { JSDOM } from "jsdom"
 
+const PLACEHOLDER = "_"
+
 program
   .description("Parses a SVG file and extracts information.")
   .argument("<svg_file>")
@@ -36,5 +38,5 @@ const findIds = (el: Element) => {
 }
 findIds(document.documentElement)
 
-const result = dump(Object.fromEntries(ids.map((id) => [id, "_____"])))
+const result = dump(Object.fromEntries(ids.map((id) => [id, PLACEHOLDER])))
 console.log(result)
