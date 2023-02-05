@@ -123,7 +123,6 @@ enum ReleaseStatus {
 model Image {
   id            String        @id @default(cuid())
   name          String
-  filename      String?
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   original      String
@@ -138,6 +137,8 @@ model Image {
 
   translations ImageTranslation[]
   categories   ImageCategory[]
+
+  @@unique([authorId, name])
 }
 
 model ImageTranslation {
