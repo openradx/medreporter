@@ -13,7 +13,7 @@ de:
   LULPosterior: A. segmentalis posterior links (I/II)
   LULApicoposteriorTrunk: Apicoposteriorer Truncus (I/II)
   LULApical: A. segmentalis apicalis (I/II)
-  LeftUpperLobe: Oberlappenarterie
+  LUL: Oberlappenarterie links
   LeftMain: Hauptstamm links
   RLLSuperior: A. segmentalis superior rechts (VI)
   RLLBasalLateral: A. segmentalis basalis lateralis rechts (IX)
@@ -47,7 +47,7 @@ en:
   LULPosterior: Left posterior segmental artery (1/2)
   LULApicoposteriorTrunk: Apicoposterior trunk (1/2)
   LULApical: Left apical segmental artery (1/2)
-  LeftUpperLobe: Left upper lobe artery
+  LUL: Left upper lobe artery
   LeftMain: Left pulmonary artery
   RLLSuperior: Right superior segmental artery (6)
   RLLBasalLateral: Right basal lateral segmental artery (9)
