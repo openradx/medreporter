@@ -1,0 +1,41 @@
+de:
+  title: Regionen des Gehirns
+  leftCerebellum: Cerebellum links
+  rightCerebellum: Cerebellumg rechts
+  leftBrainstem: Hirnstamm links
+  rightBrainstem: Hirnstamm rechts
+  leftThalamus: Thalamus links
+  rightThalamus: Thalamus rechts
+  leftBasalganglia: Basalganglien links
+  rightBasalganglia: Basalganglien rechts
+  leftInsula: Insula links
+  rightInsula: Insula rechts
+  leftOccipital: Occipital links
+  rightOccipital: Occipital rechts
+  leftTemporal: Temporal links
+  rightTemporal: Temporal rechts
+  leftParietal: Parietal links
+  rightParietal: Parietal rechts
+  leftFrontal: Frontal links
+  rightFrontal: Frontal rechts
+
+en:
+  title: Regions of the Brain
+  leftCerebellum: Left cerebellum
+  rightCerebellum: Right cerebellumg
+  leftBrainstem: Left brainstem
+  rightBrainstem: Right brainstem
+  leftThalamus: Left thalamus
+  rightThalamus: Right thalamus
+  leftBasalganglia: Left basalganglia
+  rightBasalganglia: Right basalganglia
+  leftInsula: Left insula
+  rightInsula: Right insula
+  leftOccipital: Occipital left
+  rightOccipital: Occipital right
+  leftTemporal: Temporal left
+  rightTemporal: Temporal right
+  leftParietal: Parietal left
+  rightParietal: Parietal right
+  leftFrontal: Frontal left
+  rightFrontal: Frontal right
