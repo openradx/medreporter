@@ -63,7 +63,7 @@ model User {
   accounts    Account[]
   sessions    Session[]
   memberships Membership[]
-  images      Image[]
+  figures     Figure[]
   modules     Module[]
   templates   Template[]
   reports     Report[]
@@ -83,7 +83,7 @@ model Institute {
 
   memberships  Membership[]
   currentUsers User[]
-  images       Image[]
+  figures      Figure[]
   modules      Module[]
   templates    Template[]
   reports      Report[]
@@ -120,7 +120,7 @@ enum ReleaseStatus {
   DEPRECIATED
 }
 
-model Image {
+model Figure {
   id            String        @id @default(cuid())
   name          String
   createdAt     DateTime      @default(now())
@@ -135,24 +135,24 @@ model Image {
   institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
   instituteId String?
 
-  translations ImageTranslation[]
-  categories   ImageCategory[]
+  translations FigureTranslation[]
+  categories   FigureCategory[]
 
   @@unique([authorId, name])
 }
 
-model ImageTranslation {
+model FigureTranslation {
   id          String  @id @default(cuid())
   language    String
   default     Boolean
   title       String
   description String
 
-  image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  imageId String
+  figure   Figure @relation(fields: [figureId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  figureId String
 
-  @@unique([language, imageId])
-  @@index([imageId, default])
+  @@unique([language, figureId])
+  @@index([figureId, default])
 }
 
 model Module {
@@ -225,16 +225,16 @@ model TemplateTranslation {
   @@index([templateId, default])
 }
 
-model ImageCategory {
+model FigureCategory {
   id String @id @default(cuid())
 
-  Image   Image  @relation(fields: [imageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  imageId String
+  figure   Figure @relation(fields: [figureId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  figureId String
 
   Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   categoryId String
 
-  @@unique([imageId, categoryId])
+  @@unique([figureId, categoryId])
 }
 
 model ModuleCategory {
@@ -266,7 +266,7 @@ model Category {
   key String @unique
 
   translations CategoryTranslation[]
-  images       ImageCategory[]
+  figures      FigureCategory[]
   modules      ModuleCategory[]
   templates    TemplateCategory[]
 }
