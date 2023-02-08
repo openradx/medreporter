@@ -8,12 +8,14 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, locales }) => {
-  const props: ServerSideProps = {
+export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
+  locale,
+  locales,
+}) => ({
+  props: {
     i18nSite: await getServerSideSiteTranslations(locale, locales),
-  }
-  return { props }
-}
+  },
+})
 
 const SignupPage: PageWithLayout = () => {
   const { t } = useSiteTranslation()

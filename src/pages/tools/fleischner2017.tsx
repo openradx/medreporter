@@ -9,8 +9,13 @@ import { getServerSideSession } from "~/utils/serverSideSession"
 import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
 import { getServerSideStructuredReportTranslations } from "~/utils/serverSideStructuredReportTranslations"
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res, locale, locales }) => {
-  const props: ServerSideProps = {
+export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
+  req,
+  res,
+  locale,
+  locales,
+}) => ({
+  props: {
     session: await getServerSideSession(req, res),
     i18nSite: await getServerSideSiteTranslations(locale, locales),
     i18nStructuredReport: await getServerSideStructuredReportTranslations(locale, locales, [
@@ -18,9 +23,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
       "graphics",
     ]),
     preloadedReduxState: {},
-  }
-  return { props }
-}
+  },
+})
 
 const Fleischner2017Page: PageWithLayout = () => {
   const { t } = useSiteTranslation()

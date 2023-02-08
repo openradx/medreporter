@@ -10,7 +10,12 @@ import { hasRole } from "~/utils/authorization"
 import { getServerSideSession } from "~/utils/serverSideSession"
 import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res, locale, locales }) => {
+export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
+  req,
+  res,
+  locale,
+  locales,
+}) => {
   const session = await getServerSideSession(req, res)
   const user = session?.user
 
@@ -23,11 +28,12 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
     }
   }
 
-  const props: ServerSideProps = {
-    session,
-    i18nSite: await getServerSideSiteTranslations(locale, locales, ["admin"]),
+  return {
+    props: {
+      session,
+      i18nSite: await getServerSideSiteTranslations(locale, locales, ["admin"]),
+    },
   }
-  return { props }
 }
 
 const ManageInstitutesPage: PageWithLayout = () => {
