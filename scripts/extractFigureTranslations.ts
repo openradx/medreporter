@@ -12,13 +12,13 @@ program
   .argument("<svg_file>")
   .parse(process.argv)
 
-const imageFile = program.args[0]
-if (!imageFile || !imageFile.endsWith(".svg")) {
+const figureFile = program.args[0]
+if (!figureFile || !figureFile.endsWith(".svg")) {
   console.error(chalk.red("You must provide a SVG filename!"))
   process.exit()
 }
 
-const dom = new JSDOM(fs.readFileSync(imageFile).toString(), { contentType: "image/svg+xml" })
+const dom = new JSDOM(fs.readFileSync(figureFile).toString(), { contentType: "image/svg+xml" })
 const { document } = dom.window
 
 // only respect the first found in a subtree
@@ -27,7 +27,7 @@ const findIds = (el: Element) => {
   const id = el.getAttribute("id")
   if (id) {
     if (ids.includes(id)) {
-      throw new Error(`Image contains duplicate IDs: ${id}`)
+      throw new Error(`Figure contains duplicate ID: ${id}`)
     }
     ids.push(id)
   } else {
