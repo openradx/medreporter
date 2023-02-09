@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { faker } from "@faker-js/faker"
 import { loadEnvConfig } from "@next/env"
 import {
@@ -13,9 +14,9 @@ import {
 import fs from "fs"
 import glob from "glob"
 import path from "path"
-import { CategoryManager } from "~/utils/categoryUtils"
+import { syncCategories } from "~/utils/categoryUtils"
 import { hashPassword } from "~/utils/cryptography"
-import { optimizeSvg } from "~/utils/svg"
+import { syncDefaultFigure } from "~/utils/figureUtils"
 import defaultCategories from "./seeds/categories.json"
 
 const SUPERADMIN_USERNAME = "roentgen"
@@ -75,7 +76,7 @@ async function createSuperadmin() {
 }
 
 async function fetchSuperadmin() {
-  return await prisma.user.findUniqueOrThrow({ where: { username: SUPERADMIN_USERNAME } })
+  return prisma.user.findUniqueOrThrow({ where: { username: SUPERADMIN_USERNAME } })
 }
 
 async function createExampleUser(role: UserRole) {
@@ -153,30 +154,19 @@ async function createExampleModule(userId: string) {
   })
 }
 
-async function createImage(filename) {
-  const source = fs.readFileSync(filename).toString()
-  const optimized = optimizeSvg(source)
-  return prisma.image.create({
-    data: {
-      name,
-    },
-  })
-}
-
 async function seed() {
+  /*
+   * Users
+   */
   let superadmin: User
   const userCount = await prisma.user.count()
   if (userCount) {
-    // eslint-disable-next-line no-console
     console.info("Users present. Skipping user creation.")
-
-    superadmin = fetchSuperadmin()
+    superadmin = await fetchSuperadmin()
   } else {
-    // eslint-disable-next-line no-console
     console.info("Creating superadmin.")
     superadmin = await createSuperadmin()
 
-    // eslint-disable-next-line no-console
     console.info("Creating example users.")
     const promises: Promise<User>[] = []
     for (let i = 0; i < EXAMPLE_USERS; i++) {
@@ -185,38 +175,28 @@ async function seed() {
     await Promise.all(promises)
   }
 
-  glob
-    .sync("**/*.svg", {
-      cwd: path.join(projectDir, "prisma", "seeds", "images"),
-      absolute: true,
-    })
-    .forEach((filename) => {
-      const source = fs.readFileSync(filename).toString()
-      const optimized = optimizeSvg(source)
-    })
-
+  /*
+   * Categories
+   */
   const categoryCount = await prisma.category.count()
   if (categoryCount === 0) {
-    // eslint-disable-next-line no-console
     console.info("Creating default categories.")
   } else {
-    // eslint-disable-next-line no-console
     console.info("Updating default categories.")
   }
-  const categoryManager = new CategoryManager(prisma)
-  await categoryManager.syncCategories(defaultCategories)
+  await syncCategories(prisma, defaultCategories)
 
   if (isProduction) {
-    // eslint-disable-next-line no-console
     console.info("Finished seeding in production.")
   }
 
+  /*
+   * Institutes
+   */
   const instituteCount = await prisma.institute.count()
   if (instituteCount > 0) {
-    // eslint-disable-next-line no-console
     console.info("Institutes present. Skipping institute creation.")
   } else {
-    // eslint-disable-next-line no-console
     console.info("Creating example institutes.")
     const promises: Promise<Institute>[] = []
     for (let i = 0; i < EXAMPLE_INSTITUTES; i++) {
@@ -225,12 +205,13 @@ async function seed() {
     await Promise.all(promises)
   }
 
+  /*
+   * Memberships
+   */
   const membershipCount = await prisma.membership.count()
   if (membershipCount) {
-    // eslint-disable-next-line no-console
     console.info("Memberships present. Skipping membership creation.")
   } else {
-    // eslint-disable-next-line no-console
     console.info("Creating example memberships.")
     const combinations = await getInstituteUserCombinations()
     for (let i = 0; i < EXAMPLE_MEMBERSHIPS_MEMBER; i++) {
@@ -244,12 +225,34 @@ async function seed() {
     }
   }
 
+  /*
+   * Figures
+   */
+  const figuresCount = await prisma.figure.count()
+  if (figuresCount === 0) {
+    console.log("Creating default figures.")
+  } else {
+    console.log("Updating default figures.")
+  }
+
+  glob
+    .sync("**/*.svg", {
+      cwd: path.join(projectDir, "prisma", "seeds", "figures"),
+      absolute: true,
+    })
+    .forEach((filename) => {
+      const { name } = path.parse(filename)
+      const source = fs.readFileSync(filename).toString()
+      syncDefaultFigure(prisma, superadmin.id, name, source)
+    })
+
+  /*
+   * Modules
+   */
   const modulesCount = await prisma.module.count()
   if (modulesCount) {
-    // eslint-disable-next-line no-console
     console.info("Modules present. Skipping modules creation.")
   } else {
-    // eslint-disable-next-line no-console
     console.info("Creating example modules.")
     for (let i = 0; i < EXAMPLE_MODULES; i++) {
       const skip = Math.floor(Math.random() * userCount)
@@ -265,7 +268,6 @@ seed()
     await prisma.$disconnect()
   })
   .catch(async (e) => {
-    // eslint-disable-next-line no-console
     console.error(e)
     await prisma.$disconnect()
     process.exit(1)

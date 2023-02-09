@@ -1,4 +1,4 @@
-import { createSelector, PayloadAction } from "@reduxjs/toolkit"
+import { PayloadAction } from "@reduxjs/toolkit"
 import { AppThunk, RootState } from "RootTypes"
 import { z } from "zod"
 import { createModuleId, createSectionId } from "~/utils/identifiers"
@@ -6,8 +6,8 @@ import { activateSection } from "./displaySlice"
 import { createHistorySlice, withHistory } from "./historySlice"
 
 const ModuleSchema = z.object({
-  name: z.string(),
   id: z.string(),
+  name: z.string(),
 })
 
 export type ModuleState = z.infer<typeof ModuleSchema>
@@ -21,14 +21,14 @@ const SectionSchema = z.object({
 export type SectionState = z.infer<typeof SectionSchema>
 
 export const TemplateSchema = z.object({
-  id: z.string().nullable(),
+  name: z.string(),
   sections: z.array(SectionSchema),
 })
 
 type TemplateState = z.infer<typeof TemplateSchema>
 
 const initialState: TemplateState = {
-  id: null,
+  name: "",
   sections: [],
 }
 
@@ -141,12 +141,4 @@ export const moveModuleToNewSection =
 
 export default structureSlice.reducer
 
-export const selectTemplate = (state: RootState) => state.structure.present
-
-export const selectTemplateId = (state: RootState) => state.structure.present.id
-
-export const selectSections = (state: RootState) => state.structure.present.sections
-
-export const selectModules = createSelector(selectSections, (sections) =>
-  sections.flatMap((section) => section.modules)
-)
+export const selectStructure = (state: RootState) => state.structure.present

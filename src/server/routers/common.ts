@@ -15,6 +15,7 @@ import {
   buildCreateModuleSchema,
   FetchOwnModuleSchema,
   GetCategoriesSchema,
+  GetFigureSchema,
   GetModuleSchema,
 } from "~/validations/common"
 import { prisma } from "../prisma"
@@ -48,15 +49,15 @@ export const commonRouter = router({
         source = createMonolingualModuleDraft(context)
       }
 
-      const moduleEl = parseModule(source)! // TODO: null?!
-      const translations = buildModuleTranslationsArgs(moduleEl)
+      const document = parseModule(source)
+      const translations = buildModuleTranslationsArgs(document)
 
       const createdModule = await prisma.module.create({
         data: {
           name,
           authorId: user.id,
           source,
-          document: moduleEl as Record<string, any> as Prisma.JsonObject,
+          document: document as Record<string, any> as Prisma.JsonObject,
           translations,
           visibility,
           releaseStatus: ReleaseStatus.DRAFT,
@@ -117,6 +118,20 @@ export const commonRouter = router({
       hasMore,
       count,
     }
+  }),
+  getFigure: publicProcedure.input(GetFigureSchema).query(async ({ input }) => {
+    const { username, figureName } = input
+
+    const figure = await prisma.figure.findFirst({
+      where: { author: { username }, name: figureName },
+      include: { author: { select: { email: true, username: true } } },
+    })
+
+    if (!figure) {
+      throw new TRPCError({ code: "NOT_FOUND" })
+    }
+
+    return figure
   }),
   getModule: publicProcedure.input(GetModuleSchema).query(async ({ input }) => {
     const { username, moduleName } = input

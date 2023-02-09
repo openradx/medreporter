@@ -3,6 +3,6 @@ import { StructuredReport } from "../sr/StructuredReport"
 
 export const ModulePreview = () => (
   <StructuredReport>
-    <Section id="none"></Section>
+    <Section id="none" />
   </StructuredReport>
 )

@@ -2,6 +2,8 @@
 
 ## Kai
 
+- Go back from moduleId to instanceId
+- Use Zustand instead of RTK
 - ref vs fieldId
 - graphics vs drawing vs illustration
 - rename outputs, e.g. TextOutput => Text

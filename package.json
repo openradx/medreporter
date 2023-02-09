@@ -21,6 +21,7 @@
     "ci": "pnpm prettier && pnpm lint && pnpm typecheck && pnpm test",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
+    "db:migrate:create-only": "prisma migrate dev --create-only",
     "db:reset": "NODE_ENV=development prisma migrate reset dev",
     "db:seed": "NODE_ENV=development prisma db seed",
     "db:studio": "prisma studio",

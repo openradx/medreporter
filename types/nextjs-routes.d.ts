@@ -16,6 +16,8 @@ declare module "nextjs-routes" {
     | StaticRoute<"/auth/login">
     | StaticRoute<"/auth/reset-password">
     | StaticRoute<"/auth/signup">
+    | DynamicRoute<"/figures/[username]/[imageName]/edit", { "username": string; "imageName": string }>
+    | DynamicRoute<"/figures/[username]/[imageName]", { "username": string; "imageName": string }>
     | StaticRoute<"/">
     | DynamicRoute<"/modules/[username]/[moduleName]/edit", { "username": string; "moduleName": string }>
     | DynamicRoute<"/modules/[username]/[moduleName]", { "username": string; "moduleName": string }>

@@ -6,11 +6,11 @@ import {
   TbZoomOut as ZoomOutIcon,
 } from "react-icons/tb"
 
-interface SourceZoomButtonsProps {
+interface CodeEditorZoomButtonsProps {
   editor?: editorApi.IStandaloneCodeEditor
 }
 
-export const SourceZoomButtons = ({ editor }: SourceZoomButtonsProps) => (
+export const CodeEditorZoomButtons = ({ editor }: CodeEditorZoomButtonsProps) => (
   <Group spacing={8}>
     <ActionIcon
       variant="default"

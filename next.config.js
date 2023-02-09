@@ -45,7 +45,7 @@ const nextConfig = {
     if (!options.isServer) {
       config.plugins?.push(
         new MonacoWebpackPlugin({
-          languages: [],
+          languages: ["html", "xml"],
           filename: "static/[name].js",
           customLanguages: [
             {

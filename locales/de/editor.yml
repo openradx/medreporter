@@ -1,7 +1,7 @@
 Editor:
-  source: Quellcode
   preview: Vorschau
-  settings: Einstellungen
+  properties: Eigenschaften
+  sourceCode: Quellcode
 SourceEditorProblems:
   problemsFound_one: "{{count}} Problem gefunden"
   problemsFound_other: "{{count}} Probleme gefunden"

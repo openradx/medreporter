@@ -48,6 +48,11 @@ export const GetCategoriesSchema = PaginationSchema.extend({
   usedByTemplate: z.boolean().default(false),
 })
 
+export const GetFigureSchema = z.object({
+  username: z.string(),
+  figureName: z.string(),
+})
+
 export const GetModuleSchema = z.object({
   username: z.string(),
   moduleName: z.string(),

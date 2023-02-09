@@ -1,35 +1,20 @@
-import { Alert, Box, Center, Loader, Portal, SegmentedControl } from "@mantine/core"
-import dynamic from "next/dynamic"
-import { useState } from "react"
+import { Box, Center, Portal, SegmentedControl } from "@mantine/core"
+import { ReactNode, useState } from "react"
 import {
   MdCode as SourceIcon,
+  MdList as PropertiesIcon,
   MdRemoveRedEye as PreviewIcon,
-  MdSettings as SettingsIcon,
 } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { ModulePreview } from "./ModulePreview"
 
-const SourceEditor = dynamic(() => import("./SourceEditor"), {
-  loading: ({ isLoading, error }) => {
-    if (isLoading) {
-      return (
-        <Center h="100%">
-          <Loader variant="bars" size="lg" />
-        </Center>
-      )
-    }
+interface EditorProps {
+  properties: ReactNode
+  codeEditor: ReactNode
+  preview: ReactNode
+}
 
-    if (error) {
-      return <Alert>{error.message}</Alert>
-    }
-
-    return null
-  },
-  ssr: false,
-})
-
-export const Editor = () => {
-  const [currentView, setCurrentView] = useState("source")
+export const Editor = ({ properties, codeEditor, preview }: EditorProps) => {
+  const [currentView, setCurrentView] = useState("properties")
   const { t } = useSiteTranslation()
 
   return (
@@ -40,11 +25,20 @@ export const Editor = () => {
           onChange={setCurrentView}
           data={[
             {
-              value: "source",
+              value: "properties",
+              label: (
+                <Center>
+                  <PropertiesIcon size={16} />
+                  <Box ml={10}>{t("Editor.properties")}</Box>
+                </Center>
+              ),
+            },
+            {
+              value: "sourceCode",
               label: (
                 <Center>
                   <SourceIcon size={16} />
-                  <Box ml={10}>{t("Editor.source")}</Box>
+                  <Box ml={10}>{t("Editor.sourceCode")}</Box>
                 </Center>
               ),
             },
@@ -57,28 +51,21 @@ export const Editor = () => {
                 </Center>
               ),
             },
-            {
-              value: "settings",
-              label: (
-                <Center>
-                  <SettingsIcon size={16} />
-                  <Box ml={10}>{t("Editor.settings")}</Box>
-                </Center>
-              ),
-            },
           ]}
         />
       </Portal>
 
-      <Box display={currentView !== "source" ? "none" : undefined} h="100%">
-        <SourceEditor />
+      <Box display={currentView !== "properties" ? "none" : undefined} h="100%">
+        {properties}
       </Box>
 
-      <Box display={currentView !== "preview" ? "none" : undefined}>
-        <ModulePreview />
+      <Box display={currentView !== "sourceCode" ? "none" : undefined} h="100%">
+        {codeEditor}
       </Box>
 
-      <Box display={currentView !== "settings" ? "none" : undefined}>Settings</Box>
+      <Box display={currentView !== "preview" ? "none" : undefined} h="100%">
+        {preview}
+      </Box>
     </>
   )
 }

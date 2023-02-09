@@ -53,6 +53,8 @@ DataLoader:
   subtitle: Loading data ...
 DraftLanguageSelector:
   inputLabelLanguage: Main language
+EditFigurePage:
+  pageTitle: Edit figure
 EditModulePage:
   pageTitle: Edit module
 ExternalLink:
@@ -152,6 +154,8 @@ ResetPasswordForm:
   textRedirect: Go to the
 ResetPasswordPage:
   pageTitle: Reset password
+ShowFigurePage:
+  pageTitle: Show figure
 ShowModulePage:
   pageTitle: Show module
 SignupForm:
