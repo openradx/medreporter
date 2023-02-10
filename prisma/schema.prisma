@@ -63,9 +63,7 @@ model User {
   accounts    Account[]
   sessions    Session[]
   memberships Membership[]
-  figures     Figure[]
-  modules     Module[]
-  templates   Template[]
+  resources   Resource[]
   reports     Report[]
 }
 
@@ -83,9 +81,7 @@ model Institute {
 
   memberships  Membership[]
   currentUsers User[]
-  figures      Figure[]
-  modules      Module[]
-  templates    Template[]
+  resources    Resource[]
   reports      Report[]
 }
 
@@ -108,6 +104,12 @@ model Membership {
   @@unique([instituteId, userId])
 }
 
+enum ResourceType {
+  FIGURE
+  MODULE
+  TEMPLATE
+}
+
 enum Visibility {
   PRIVATE
   INSTITUTE
@@ -120,43 +122,9 @@ enum ReleaseStatus {
   DEPRECIATED
 }
 
-model Figure {
+model Resource {
   id            String        @id @default(cuid())
-  name          String
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  source        String
-  optimized     String
-  visibility    Visibility
-  releaseStatus ReleaseStatus
-
-  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId    String
-  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  instituteId String?
-
-  translations FigureTranslation[]
-  categories   FigureCategory[]
-
-  @@unique([authorId, name])
-}
-
-model FigureTranslation {
-  id          String  @id @default(cuid())
-  language    String
-  default     Boolean
-  title       String
-  description String
-
-  figure   Figure @relation(fields: [figureId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  figureId String
-
-  @@unique([language, figureId])
-  @@index([figureId, default])
-}
-
-model Module {
-  id            String        @id @default(cuid())
+  type          ResourceType
   name          String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
@@ -170,95 +138,36 @@ model Module {
   institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
   instituteId String?
 
-  translations ModuleTranslation[]
-  categories   ModuleCategory[]
+  translations ResourceTranslation[]
+  categories   ResourceCategory[]
 
   @@unique([authorId, name])
 }
 
-model ModuleTranslation {
+model ResourceTranslation {
   id          String  @id @default(cuid())
   language    String
   default     Boolean
   title       String
   description String
 
-  module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  moduleId String
+  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  resourceId String
 
-  @@unique([language, moduleId])
-  @@index([moduleId, default])
+  @@unique([language, resourceId])
+  @@index([resourceId, default])
 }
 
-model Template {
-  id            String        @id @default(cuid())
-  name          String
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  source        String
-  document      Json
-  visibility    Visibility
-  releaseStatus ReleaseStatus
-
-  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  authorId    String
-  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  instituteId String?
-
-  translations TemplateTranslation[]
-  categories   TemplateCategory[]
-
-  @@unique([authorId, name])
-}
-
-model TemplateTranslation {
-  id          String  @id @default(cuid())
-  language    String
-  default     Boolean
-  title       String
-  description String
-
-  template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  templateId String
-
-  @@unique([language, templateId])
-  @@index([templateId, default])
-}
-
-model FigureCategory {
+model ResourceCategory {
   id String @id @default(cuid())
 
-  figure   Figure @relation(fields: [figureId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  figureId String
+  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  resourceId String
 
   Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   categoryId String
 
-  @@unique([figureId, categoryId])
-}
-
-model ModuleCategory {
-  id String @id @default(cuid())
-
-  Module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  moduleId String
-
-  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([moduleId, categoryId])
-}
-
-model TemplateCategory {
-  id String @id @default(cuid())
-
-  Template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  templateId String
-
-  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([templateId, categoryId])
+  @@unique([resourceId, categoryId])
 }
 
 model Category {
@@ -266,9 +175,7 @@ model Category {
   key String @unique
 
   translations CategoryTranslation[]
-  figures      FigureCategory[]
-  modules      ModuleCategory[]
-  templates    TemplateCategory[]
+  resources    ResourceCategory[]
 }
 
 model CategoryTranslation {

@@ -14,9 +14,9 @@ import {
 import fs from "fs"
 import glob from "glob"
 import path from "path"
-import { syncCategories } from "~/utils/categoryUtils"
 import { hashPassword } from "~/utils/cryptography"
-import { syncDefaultFigure } from "~/utils/figureUtils"
+import { syncCategories } from "~/utils/serverSideCategoryUtils"
+import { syncDefaultFigure } from "~/utils/serverSideFigureUtils"
 import defaultCategories from "./seeds/categories.json"
 
 const SUPERADMIN_USERNAME = "roentgen"
@@ -123,7 +123,7 @@ async function createExampleMembership(
 function createModuleTranslation(
   language: string,
   defaultLanguage: boolean
-): Prisma.ModuleTranslationCreateWithoutModuleInput {
+): Prisma.ResourceTranslationCreateWithoutResourceInput {
   return {
     title: faker.lorem.sentence(),
     description: faker.lorem.paragraph(),
@@ -141,8 +141,9 @@ async function createExampleModule(userId: string) {
   const releaseStatus = faker.helpers.arrayElement(Object.values(ReleaseStatus))
   const visibility = faker.helpers.arrayElement(Object.values(Visibility))
 
-  return prisma.module.create({
+  return prisma.resource.create({
     data: {
+      type: "MODULE",
       name: faker.helpers.unique(faker.internet.domainWord),
       source: "",
       authorId: userId,
@@ -228,7 +229,7 @@ async function seed() {
   /*
    * Figures
    */
-  const figuresCount = await prisma.figure.count()
+  const figuresCount = await prisma.resource.count({ where: { type: "FIGURE" } })
   if (figuresCount === 0) {
     console.log("Creating default figures.")
   } else {
@@ -249,7 +250,7 @@ async function seed() {
   /*
    * Modules
    */
-  const modulesCount = await prisma.module.count()
+  const modulesCount = await prisma.resource.count({ where: { type: "MODULE" } })
   if (modulesCount) {
     console.info("Modules present. Skipping modules creation.")
   } else {
