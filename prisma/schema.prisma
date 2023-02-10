@@ -141,7 +141,7 @@ model Resource {
   translations ResourceTranslation[]
   categories   ResourceCategory[]
 
-  @@unique([authorId, name])
+  @@unique([type, authorId, name])
 }
 
 model ResourceTranslation {
