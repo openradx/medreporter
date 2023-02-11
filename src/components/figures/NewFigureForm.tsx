@@ -16,13 +16,13 @@ export const NewModuleForm = () => {
     <NewResourceForm
       formTitle={t("NewModuleForm.formTitle")}
       onCheckDuplicate={async (name) =>
-        Boolean(await fetchOwnResource.mutateAsync({ type: "MODULE", name }))
+        Boolean(await fetchOwnResource.mutateAsync({ type: "FIGURE", name }))
       }
       onSubmit={async (values) => {
-        const createdModule = await createResource.mutateAsync(values)
+        const createdFigure = await createResource.mutateAsync(values)
         router.push({
-          pathname: "/modules/[username]/[moduleName]/edit",
-          query: { username: user.username, moduleName: createdModule.name },
+          pathname: "/figures/[username]/[figureName]/edit",
+          query: { username: user.username, figureName: createdFigure.name },
         })
       }}
     />

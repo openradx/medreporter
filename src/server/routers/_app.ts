@@ -1,13 +1,15 @@
 import { publicProcedure, router } from "../trpc"
 import { adminRouter } from "./admin"
 import { authRouter } from "./auth"
-import { commonRouter } from "./common"
+import { categoriesRouter } from "./categories"
+import { resourcesRouter } from "./resources"
 
 export const appRouter = router({
   healthcheck: publicProcedure.query(() => "yay!"),
   admin: adminRouter,
   auth: authRouter,
-  common: commonRouter,
+  categories: categoriesRouter,
+  resources: resourcesRouter,
 })
 
 export type AppRouter = typeof appRouter

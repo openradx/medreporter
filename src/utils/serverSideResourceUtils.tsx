@@ -1,14 +1,36 @@
 import { ModuleDocument } from "@medreporter/medtl-schema"
-import { DocumentWrapper } from "@medreporter/medtl-tools"
+import {
+  createMonolingualModuleDraft,
+  createMultilingualModuleDraft,
+  DocumentWrapper,
+  MultilingualModuleDraftContext,
+} from "@medreporter/medtl-tools"
 import { Prisma } from "@prisma/client"
+import { TFunction } from "i18next"
 import { renderToStaticMarkup } from "react-dom/server"
 import { TextContentAdapter } from "~/components/adapters/TextContentAdapter"
 import { unique } from "./misc"
 
-export function buildFigureTranslationArgs(
+export type ResourceTranslationsUpdateArgs = Prisma.ResourceUpdateArgs["data"]["translations"]
+
+export function createModuleSource(t: TFunction, multilingual: boolean) {
+  const context: MultilingualModuleDraftContext = {
+    lng: t("Module.lng"),
+    title: t("Module.title"),
+    description: t("Module.description"),
+    fieldLabel: t("Module.fieldLabel"),
+  }
+
+  if (multilingual) {
+    return createMultilingualModuleDraft(context)
+  }
+  return createMonolingualModuleDraft(context)
+}
+
+export function createFigureTranslations(
   document: Document,
   namespace: string = "med"
-): Prisma.FigureUpdateArgs["data"]["translations"] {
+): ResourceTranslationsUpdateArgs {
   let metadataEl = document.querySelector("metadata")
   if (!metadataEl) {
     metadataEl = document.createElementNS("http://www.w3.org/2000/svg", "metadata")
@@ -45,9 +67,9 @@ export function buildFigureTranslationArgs(
   }
 }
 
-export function buildModuleTranslationsArgs(
+export function createModuleTranslations(
   document: ModuleDocument
-): Prisma.ModuleUpdateArgs["data"]["translations"] {
+): Prisma.ResourceUpdateArgs["data"]["translations"] {
   const wrapper = new DocumentWrapper(document).getRootElement()
   const supportedLngs = unique(
     wrapper
@@ -59,7 +81,7 @@ export function buildModuleTranslationsArgs(
 
   const defaultLng = supportedLngs[0] ?? "en"
 
-  const translations: Prisma.ModuleUpdateArgs["data"]["translations"] = {
+  const translations: Prisma.ResourceUpdateArgs["data"]["translations"] = {
     create: supportedLngs.map((lng) => {
       const titleEl = wrapper?.getFirstChildElement("Title").element
       const title = titleEl

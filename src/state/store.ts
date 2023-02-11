@@ -3,25 +3,21 @@ import { RootState } from "RootTypes"
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
 import displayReducer from "./displaySlice"
 import editorReducer from "./editorSlice"
-import figuresReducer from "./figuresSlice"
 import { historyMiddleware } from "./historyMiddleware"
 import historyTrackerReducer from "./historyTrackerSlice"
-import modulesReducer from "./modulesSlice"
 import reportReducer from "./reportSlice"
+import resourcesReducer from "./resourcesSlice"
 import structureDataReducer from "./structureDataSlice"
 import structureReducer from "./structureSlice"
-import templatesReducer from "./templatesSlice"
 
 export const reducer = {
   display: displayReducer,
   editor: editorReducer,
-  figures: figuresReducer,
   historyTracker: historyTrackerReducer,
-  modules: modulesReducer,
   report: reportReducer,
+  resources: resourcesReducer,
   structureData: structureDataReducer,
   structure: structureReducer,
-  templates: templatesReducer,
 }
 
 export function initStore(preloadedState?: PreloadedState<CombinedState<RootState>>) {

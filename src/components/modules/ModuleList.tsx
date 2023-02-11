@@ -22,7 +22,8 @@ export const ModuleList = () => {
   // It is more of a workaround as we can't query the modules directly as we can't filter and
   // sort by a related field (the translation then), see
   // https://github.com/prisma/prisma/issues/5837
-  const { data, error, status } = trpc.common.getTranslatedModules.useQuery({
+  const { data, error, status } = trpc.resources.getTranslatedResources.useQuery({
+    type: "MODULE",
     language: currentSiteLanguage,
     filter: filterDebounced,
     skip: ITEMS_PER_PAGE * (activePage - 1),
@@ -39,14 +40,14 @@ export const ModuleList = () => {
 
   return (
     <Stack>
-      {!data?.modules.length && <Text>{t("general.miscNoData")}</Text>}
-      {data?.modules.length && (
+      {!data?.resources.length && <Text>{t("general.miscNoData")}</Text>}
+      {data?.resources.length && (
         <ScrollArea>
           <Table verticalSpacing="md">
             <tbody>
-              {data.modules.map((module) => (
-                <tr key={module.id}>
-                  <td>{module.title}</td>
+              {data.resources.map((module_) => (
+                <tr key={module_.id}>
+                  <td>{module_.title}</td>
                 </tr>
               ))}
             </tbody>
@@ -63,7 +64,7 @@ export const ModuleList = () => {
             </Button>
           </Link>
         )}
-        {data?.modules.length && (
+        {data?.resources.length && (
           <Pagination
             page={activePage}
             total={Math.ceil(data.count / ITEMS_PER_PAGE)}

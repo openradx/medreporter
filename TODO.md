@@ -3,6 +3,7 @@
 ## Kai
 
 - Go back from moduleId to instanceId
+- Maybe replace JSDOM with cheerio (also work in the browser)
 - Use Zustand instead of RTK
 - ref vs fieldId
 - graphics vs drawing vs illustration

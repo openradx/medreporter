@@ -1,12 +1,12 @@
 import { useDebouncedCallback } from "use-debounce"
 import { selectEditorState } from "~/state/editorSlice"
-import { selectFigure, updateFigureCode } from "~/state/figuresSlice"
+import { selectResource, updateFigureCode } from "~/state/resourcesSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { CodeEditor } from "./CodeEditor"
 
 const FigureCodeEditor = () => {
   const editorState = useAppSelector(selectEditorState)
-  const figure = useAppSelector(selectFigure(editorState.resourceName))
+  const figure = useAppSelector(selectResource("FIGURE", editorState.resourceName))
 
   const dispatch = useAppDispatch()
   const updateSourceDebounced = useDebouncedCallback((source: string) => {

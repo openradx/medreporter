@@ -10,7 +10,7 @@ export const CreateInstituteSchema = z.object({
 export const CreateMembershipSchema = z.object({
   instituteId: z.string(),
   userId: z.string(),
-  role: z.enum([MembershipRole.MEMBER, MembershipRole.ADMIN, MembershipRole.OWNER]),
+  role: z.nativeEnum(MembershipRole),
 })
 
 export const DeleteInstituteSchema = z.object({
@@ -31,12 +31,7 @@ export const GetInstitutesSchema = PaginationSchema.extend({
 
 export const GetMembershipsSchema = PaginationSchema.extend({
   instituteId: z.string(),
-  role: z.enum([MembershipRole.OWNER, MembershipRole.ADMIN, MembershipRole.MEMBER]),
-})
-
-export const GetTranslatedModulesSchema = PaginationSchema.extend({
-  language: z.string(),
-  filter: z.string().optional(),
+  role: z.nativeEnum(MembershipRole),
 })
 
 export const GetUsersSchema = PaginationSchema.extend({
@@ -52,11 +47,11 @@ export const UpdateInstituteSchema = CreateInstituteSchema.extend({
 })
 
 export const CreateUserSchema = SignupSchema.extend({
-  role: z.enum([UserRole.SUPERADMIN, UserRole.ORGANIZER, UserRole.USER]),
+  role: z.nativeEnum(UserRole),
 })
 
 export const UpdateUserSchema = SignupSchema.extend({
   id: z.string(),
   password: PasswordSchema.or(z.literal("")).optional(),
-  role: z.enum([UserRole.SUPERADMIN, UserRole.ORGANIZER, UserRole.USER]),
+  role: z.nativeEnum(UserRole),
 })

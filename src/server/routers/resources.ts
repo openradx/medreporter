@@ -1,63 +1,65 @@
-import {
-  createMonolingualModuleDraft,
-  createMultilingualModuleDraft,
-  MultilingualModuleDraftContext,
-  parseModule,
-} from "@medreporter/medtl-tools"
+import { parseModule } from "@medreporter/medtl-tools"
 import { Prisma, ReleaseStatus } from "@prisma/client"
 import { TRPCError } from "@trpc/server"
 import { createFilterObject } from "~/utils/filterObject"
 import { createClient } from "~/utils/i18nServerClient"
 import { paginate } from "~/utils/pagination"
-import { buildModuleTranslationsArgs } from "~/utils/translations"
-import { GetTranslatedModulesSchema } from "~/validations/admin"
 import {
-  buildCreateModuleSchema,
-  FetchOwnModuleSchema,
-  GetCategoriesSchema,
-  GetFigureSchema,
-  GetModuleSchema,
-} from "~/validations/common"
+  createModuleSource,
+  createModuleTranslations,
+  ResourceTranslationsUpdateArgs,
+} from "~/utils/serverSideResourceUtils"
+import {
+  buildCreateResourceSchema,
+  FetchOwnResourceSchema,
+  GetResourceSchema,
+  GetTranslatedResourcesSchema,
+} from "~/validations/resources"
 import { prisma } from "../prisma"
 import { authedProcedure, publicProcedure, router } from "../trpc"
 
-export const commonRouter = router({
-  createModule: authedProcedure
-    .input(buildCreateModuleSchema())
+export const resourcesRouter = router({
+  createNewResource: authedProcedure
+    .input(buildCreateResourceSchema())
     .mutation(async ({ input, ctx }) => {
-      const { name, multilingual, defaultLanguage, visibility } = input
+      const { type, name, multilingual, defaultLanguage, visibility } = input
       const { user } = ctx
 
       const { i18n, initPromise } = createClient({
         preload: [defaultLanguage],
         ns: "drafts",
       })
-
       await initPromise
 
-      const context: MultilingualModuleDraftContext = {
-        lng: i18n.t("Module.lng"),
-        title: i18n.t("Module.title"),
-        description: i18n.t("Module.description"),
-        fieldLabel: i18n.t("Module.fieldLabel"),
-      }
-
       let source: string
-      if (multilingual) {
-        source = createMultilingualModuleDraft(context)
+      let document: Prisma.JsonValue
+      let translations: ResourceTranslationsUpdateArgs
+      if (type === "FIGURE") {
+        // TODO:
+        source = ""
+        document = ""
+        translations = {}
+      } else if (type === "MODULE") {
+        source = createModuleSource(i18n.t, multilingual)
+        const doc = parseModule(source)
+        document = doc as Record<string, any>
+        translations = createModuleTranslations(doc)
+      } else if (type === "TEMPLATE") {
+        // TODO:
+        source = ""
+        document = ""
+        translations = {}
       } else {
-        source = createMonolingualModuleDraft(context)
+        throw new Error(`Invalid resource type "${type}".`)
       }
 
-      const document = parseModule(source)
-      const translations = buildModuleTranslationsArgs(document)
-
-      const createdModule = await prisma.module.create({
+      const createdResource = await prisma.resource.create({
         data: {
+          type,
           name,
           authorId: user.id,
           source,
-          document: document as Record<string, any> as Prisma.JsonObject,
+          document,
           translations,
           visibility,
           releaseStatus: ReleaseStatus.DRAFT,
@@ -66,91 +68,42 @@ export const commonRouter = router({
       })
 
       return {
-        id: createdModule.id,
-        name: createdModule.name,
-        author: createdModule.author.username,
+        id: createdResource.id,
+        name: createdResource.name,
+        author: createdResource.author.username,
       }
     }),
-  fetchOwnModule: authedProcedure.input(FetchOwnModuleSchema).mutation(async ({ input, ctx }) => {
-    const { name } = input
-    const { user } = ctx
 
-    return await prisma.module.findUnique({
-      where: { authorId_name: { authorId: user.id, name } },
-    })
-  }),
-  getCategories: publicProcedure.input(GetCategoriesSchema).query(async ({ input }) => {
-    const { language, filter, usedByModule, usedByTemplate, skip, take } = input
+  fetchOwnResource: authedProcedure
+    .input(FetchOwnResourceSchema)
+    .mutation(async ({ input, ctx }) => {
+      const { type, name } = input
+      const { user } = ctx
 
-    const where: Prisma.CategoryTranslationWhereInput = {
-      language,
-      category: {
-        modules: usedByModule ? { some: {} } : {},
-        templates: usedByTemplate ? { some: {} } : {},
-      },
-      label: filter ? { contains: filter, mode: "insensitive" } : {},
-    }
+      return await prisma.resource.findUnique({
+        where: { type_authorId_name: { type, authorId: user.id, name } },
+      })
+    }),
 
-    const {
-      items: categories,
-      hasMore,
-      nextPage,
-      count,
-    } = await paginate({
-      skip,
-      take,
-      count: () => prisma.categoryTranslation.count({ where }),
-      query: (paginateArgs) =>
-        prisma.categoryTranslation.findMany({
-          ...paginateArgs,
-          where,
-          orderBy: { label: "asc" },
-          select: { label: true, category: { select: { key: true } } },
-        }),
-    })
+  getResource: publicProcedure.input(GetResourceSchema).query(async ({ input }) => {
+    const { type, author, name } = input
 
-    return {
-      categories: categories.map((category) => ({
-        key: category.category.key,
-        label: category.label,
-      })),
-      nextPage,
-      hasMore,
-      count,
-    }
-  }),
-  getFigure: publicProcedure.input(GetFigureSchema).query(async ({ input }) => {
-    const { username, figureName } = input
-
-    const figure = await prisma.figure.findFirst({
-      where: { author: { username }, name: figureName },
+    const resource = await prisma.resource.findFirst({
+      where: { type, author: { username: author }, name },
       include: { author: { select: { email: true, username: true } } },
     })
 
-    if (!figure) {
+    if (!resource) {
       throw new TRPCError({ code: "NOT_FOUND" })
     }
 
-    return figure
+    return resource
   }),
-  getModule: publicProcedure.input(GetModuleSchema).query(async ({ input }) => {
-    const { username, moduleName } = input
 
-    const module_ = await prisma.module.findFirst({
-      where: { author: { username }, name: moduleName },
-      include: { author: { select: { email: true, username: true } } },
-    })
-
-    if (!module_) {
-      throw new TRPCError({ code: "NOT_FOUND" })
-    }
-
-    return module_
-  }),
-  getTranslatedModules: publicProcedure
-    .input(GetTranslatedModulesSchema)
+  getTranslatedResources: publicProcedure
+    .input(GetTranslatedResourcesSchema)
     .query(async ({ input, ctx }) => {
-      const { language, filter, skip, take } = input
+      const { type, language, filter, skip, take } = input
       const { user } = ctx
 
       const filterObject = createFilterObject(filter ?? "", [
@@ -160,16 +113,17 @@ export const commonRouter = router({
         "language",
       ])
 
-      // TODO: Optionally show depreciated modules
+      // TODO: Optionally show depreciated resources
 
-      // We can't query the modules directly as Prisma can't order by a n-1 relation
-      // yet, see https://github.com/prisma/prisma/issues/5837
-      const where: Prisma.ModuleTranslationWhereInput = {
+      // We can't query the resources directly as Prisma can't order by a n-1 relation yet,
+      // see https://github.com/prisma/prisma/issues/5837
+      const where: Prisma.ResourceTranslationWhereInput = {
         AND: [
           {
             AND: [
+              { resource: { type } },
               {
-                module: {
+                resource: {
                   OR: [
                     { releaseStatus: "PUBLISHED" },
                     user?.id ? { releaseStatus: "DRAFT", authorId: user.id } : {},
@@ -177,7 +131,7 @@ export const commonRouter = router({
                 },
               },
               {
-                module: {
+                resource: {
                   OR: [
                     { visibility: "PUBLIC" },
                     user?.currentInstituteId
@@ -193,7 +147,7 @@ export const commonRouter = router({
             OR: [
               { language },
               {
-                module: { translations: { none: { language } } },
+                resource: { translations: { none: { language } } },
                 default: true,
               },
             ],
@@ -204,14 +158,14 @@ export const commonRouter = router({
                 title: { contains: term, mode: "insensitive" as const },
               })),
               ...filterObject.author.map((term) => ({
-                module: { author: { username: { equals: term } } },
+                resource: { author: { username: { equals: term } } },
               })),
               ...filterObject.language.map((term) => ({
-                module: { translations: { some: { language: { equals: term } } } },
+                resource: { translations: { some: { language: { equals: term } } } },
               })),
               filterObject.category.length > 0
                 ? {
-                    module: {
+                    resource: {
                       categories: {
                         some: {
                           Category: {
@@ -230,21 +184,21 @@ export const commonRouter = router({
       }
 
       const {
-        items: moduleTranslations,
+        items: resourceTranslations,
         hasMore,
         nextPage,
         count,
       } = await paginate({
         skip,
         take,
-        count: () => prisma.moduleTranslation.count({ where }),
+        count: () => prisma.resourceTranslation.count({ where }),
         query: (paginateArgs) =>
-          prisma.moduleTranslation.findMany({
+          prisma.resourceTranslation.findMany({
             ...paginateArgs,
             where,
             orderBy: { title: "asc" },
             include: {
-              module: {
+              resource: {
                 select: {
                   id: true,
                   name: true,
@@ -278,11 +232,11 @@ export const commonRouter = router({
       })
 
       return {
-        modules: moduleTranslations.map((moduleTranslation) => ({
-          id: moduleTranslation.module.id,
-          title: moduleTranslation.title,
-          description: moduleTranslation.description,
-          categories: moduleTranslation.module.categories.map((category) => {
+        resources: resourceTranslations.map((resourceTranslation) => ({
+          id: resourceTranslation.resource.id,
+          title: resourceTranslation.title,
+          description: resourceTranslation.description,
+          categories: resourceTranslation.resource.categories.map((category) => {
             const label = category.Category.translations.find(
               (translation) => translation.language === language
             )?.label

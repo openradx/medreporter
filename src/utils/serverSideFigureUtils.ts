@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client"
 import { JSDOM } from "jsdom"
 import { optimize } from "svgo"
-import { buildFigureTranslationArgs } from "./translations"
+import { createFigureTranslations } from "./serverSideResourceUtils"
 
 export function optimizeSvg(source: string) {
   return optimize(source, {
@@ -26,20 +26,21 @@ export function syncDefaultFigure(
   source: string
 ) {
   const dom = new JSDOM(source, { contentType: "image/svg+xml" })
-  const translations = buildFigureTranslationArgs(dom.window.document)
+  const translations = createFigureTranslations(dom.window.document)
 
-  prisma.figure.upsert({
-    where: { authorId_name: { authorId, name } },
+  prisma.resource.upsert({
+    where: { type_authorId_name: { type: "FIGURE", authorId, name } },
     update: {
       name,
       source,
-      optimized: optimizeSvg(source),
+      document: optimizeSvg(source),
       translations,
     },
     create: {
+      type: "FIGURE",
       name,
       source,
-      optimized: optimizeSvg(source),
+      document: optimizeSvg(source),
       visibility: "PUBLIC",
       releaseStatus: "PUBLISHED",
       authorId,

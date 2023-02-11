@@ -6,9 +6,9 @@ import { QueryError } from "../common/QueryError"
 
 export const ModuleCategoryList = () => {
   const { currentSiteLanguage } = useSiteTranslation()
-  const { data, error, status } = trpc.common.getCategories.useQuery({
+  const { data, error, status } = trpc.categories.getCategories.useQuery({
     language: currentSiteLanguage,
-    usedByModule: true,
+    type: "MODULE",
   })
 
   if (status === "loading") {

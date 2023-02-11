@@ -12,7 +12,7 @@ interface CategoriesSelectorProps<T extends string>
 export const CategoriesSelector = forwardRef(
   <T extends string>(props: CategoriesSelectorProps<T>, ref: Ref<HTMLInputElement>) => {
     const { t, currentSiteLanguage } = useSiteTranslation()
-    const { data, isLoading } = trpc.common.getCategories.useQuery({
+    const { data, isLoading } = trpc.categories.getCategories.useQuery({
       language: currentSiteLanguage,
     })
 

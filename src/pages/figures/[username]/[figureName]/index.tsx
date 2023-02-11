@@ -3,8 +3,8 @@ import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { commonRouter } from "~/server/routers/common"
-import { addFigure } from "~/state/figuresSlice"
+import { resourcesRouter } from "~/server/routers/resources"
+import { addResource } from "~/state/resourcesSlice"
 import { initStore } from "~/state/store"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { getServerSideSession } from "~/utils/serverSideSession"
@@ -23,12 +23,12 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   const username = params?.username as string
   const figureName = params?.figureName as string
 
-  const caller = commonRouter.createCaller({ user })
-  const figure = await caller.getFigure({ username, figureName })
+  const caller = resourcesRouter.createCaller({ user })
+  const figure = await caller.getResource({ type: "FIGURE", author: username, name: figureName })
 
   const store = initStore()
   const { author, ...rest } = figure
-  store.dispatch(addFigure({ ...rest, author: author.username! }))
+  store.dispatch(addResource({ ...rest, author: author.username! }))
 
   return {
     props: {

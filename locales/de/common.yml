@@ -63,6 +63,8 @@ FieldGraphics:
   buttonGraphic: Auswahlgrafik öffnen
 FieldInfo:
   buttonInfo: Weitere Informationen
+FiguresPage:
+  pageTitle: Abbildungen
 Fleischner2017Page:
   toolTitle: Fleischner 2017
 ForgotPasswordForm:
@@ -121,14 +123,18 @@ ModulesPage:
   title: Module
 ModuleSelectorWithCategories:
   filterInputLabel: Module filtern
-Navbar:
-  linkModules: Module
-  linkTools: Werkzeuge
+NavDrawer:
+  figures: Abbildungen
+  modules: Module
+  tools: Werkzeuge
+NewFigurePage:
+  pageTitle: Neue Abbildung erstellen
 NewModuleForm:
-  buttonCreateModule: Modul erstellen
   formTitle: Neues Modul erstellen
-  inputLabelModuleName: Modulname
-  inputLabelMultilingual: Mehrsprachiges Modul
+NewResourceForm:
+  createButtonLabel: Erzeugen
+  nameInputLabel: Name
+  multilingualCheckboxLabel: Mehrsprachig
 NewModulePage:
   pageTitle: Neues Modul erstellen
 QueryError:

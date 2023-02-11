@@ -2,7 +2,7 @@ import { ModuleSchema } from "@medreporter/medtl-schema"
 import { SchemaConfiguration, setDiagnosticsOptions } from "@medreporter/monaco-plugin-medtl"
 import { useDebouncedCallback } from "use-debounce"
 import { selectEditorState } from "~/state/editorSlice"
-import { selectModule, updateModuleCode } from "~/state/modulesSlice"
+import { selectResource, updateModuleCode } from "~/state/resourcesSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { CodeEditor } from "./CodeEditor"
 
@@ -18,7 +18,7 @@ const setup = () => {
 
 const ModuleCodeEditor = () => {
   const editorState = useAppSelector(selectEditorState)
-  const module_ = useAppSelector(selectModule(editorState.resourceName))
+  const module_ = useAppSelector(selectResource("MODULE", editorState.resourceName))
 
   const dispatch = useAppDispatch()
   const updateSourceDebounced = useDebouncedCallback((source: string) => {
