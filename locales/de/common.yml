@@ -134,7 +134,6 @@ NewModuleForm:
 NewResourceForm:
   createButtonLabel: Erzeugen
   nameInputLabel: Name
-  multilingualCheckboxLabel: Mehrsprachig
 NewModulePage:
   pageTitle: Neues Modul erstellen
 QueryError:

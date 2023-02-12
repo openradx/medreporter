@@ -40,8 +40,7 @@ export const NewResourceForm = ({
         schema={CreateResourceSchemaExtended}
         initialValues={{
           name: "",
-          multilingual: false,
-          defaultLanguage: "en",
+          language: "en",
           visibility: "PUBLIC",
           categories: [],
         }}
@@ -73,13 +72,7 @@ export const NewResourceForm = ({
             />
           </Group>
           <Controller
-            name="multilingual"
-            render={({ field }) => (
-              <Checkbox {...field} label={t("NewResourceForm.multilingualCheckboxLabel")} />
-            )}
-          />
-          <Controller
-            name="defaultLanguage"
+            name="language"
             render={({ field }) => (
               <DraftLanguageSelector {...field} languages={appConfig.structuredReportLanguages} />
             )}

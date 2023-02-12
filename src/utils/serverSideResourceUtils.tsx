@@ -1,10 +1,5 @@
 import { ModuleDocument } from "@medreporter/medtl-schema"
-import {
-  createMonolingualModuleDraft,
-  createMultilingualModuleDraft,
-  DocumentWrapper,
-  MultilingualModuleDraftContext,
-} from "@medreporter/medtl-tools"
+import { createModuleDraft, DocumentWrapper } from "@medreporter/medtl-tools"
 import { Prisma } from "@prisma/client"
 import { TFunction } from "i18next"
 import { renderToStaticMarkup } from "react-dom/server"
@@ -13,18 +8,13 @@ import { unique } from "./misc"
 
 export type ResourceTranslationsUpdateArgs = Prisma.ResourceUpdateArgs["data"]["translations"]
 
-export function createModuleSource(t: TFunction, multilingual: boolean) {
-  const context: MultilingualModuleDraftContext = {
+export function createModuleSource(t: TFunction) {
+  return createModuleDraft({
     lng: t("Module.lng"),
     title: t("Module.title"),
     description: t("Module.description"),
     fieldLabel: t("Module.fieldLabel"),
-  }
-
-  if (multilingual) {
-    return createMultilingualModuleDraft(context)
-  }
-  return createMonolingualModuleDraft(context)
+  })
 }
 
 export function createFigureTranslations(

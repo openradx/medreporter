@@ -134,7 +134,6 @@ NewModuleForm:
 NewResourceForm:
   createButtonLabel: Create
   nameInputLabel: Name
-  multilingualCheckboxLabel: Multilingual
 NewModulePage:
   pageTitle: Create new module
 QueryError:

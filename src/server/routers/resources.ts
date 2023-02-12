@@ -22,11 +22,11 @@ export const resourcesRouter = router({
   createNewResource: authedProcedure
     .input(buildCreateResourceSchema())
     .mutation(async ({ input, ctx }) => {
-      const { type, name, multilingual, defaultLanguage, visibility } = input
+      const { type, name, language, visibility } = input
       const { user } = ctx
 
       const { i18n, initPromise } = createClient({
-        preload: [defaultLanguage],
+        preload: [language],
         ns: "drafts",
       })
       await initPromise
@@ -40,7 +40,7 @@ export const resourcesRouter = router({
         document = ""
         translations = {}
       } else if (type === "MODULE") {
-        source = createModuleSource(i18n.t, multilingual)
+        source = createModuleSource(i18n.t)
         const doc = parseModule(source)
         document = doc as Record<string, any>
         translations = createModuleTranslations(doc)
