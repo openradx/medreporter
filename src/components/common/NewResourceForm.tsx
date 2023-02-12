@@ -1,4 +1,4 @@
-import { Checkbox, Group, Stack, Text, TextInput, Title } from "@mantine/core"
+import { Group, Stack, Text, TextInput, Title } from "@mantine/core"
 import appConfig from "app.config"
 import { Controller } from "react-hook-form"
 import { z } from "zod"
