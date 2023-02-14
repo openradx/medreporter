@@ -1,11 +1,10 @@
 import { FindingElement } from "@medreporter/medtl-schema"
 import { ContextData, ElementWrapper } from "@medreporter/medtl-tools"
-import { renderToStaticMarkup } from "react-dom/server"
 import { SupportedLanguage } from "~/types/general"
+import { extractText } from "~/utils/adapter"
 import { Finding } from "../fields/Finding"
 import { FieldAdapter } from "./FieldAdapter"
 import { GroupAdapter } from "./GroupAdapter"
-import { TextContentAdapter } from "./TextContentAdapter"
 
 interface FindingAdapterProps {
   element: FindingElement
@@ -16,7 +15,7 @@ interface FindingAdapterProps {
 export const FindingAdapter = ({ element, data, lng }: FindingAdapterProps) => {
   const wrapper = new ElementWrapper(element)
   const labelEl = wrapper.getFirstChildElement("Label").element
-  const label = renderToStaticMarkup(<TextContentAdapter element={labelEl} {...{ data, lng }} />)
+  const label = extractText(labelEl, data, lng)
 
   // TODO: Link element
 

@@ -1,11 +1,10 @@
 import { ModuleElement } from "@medreporter/medtl-schema"
 import { ContextData, ElementWrapper } from "@medreporter/medtl-tools"
-import { renderToStaticMarkup } from "react-dom/server"
 import { Module } from "~/components/sr/Module"
 import { SupportedLanguage } from "~/types/general"
+import { extractText } from "~/utils/adapter"
 import { createModuleId } from "~/utils/identifiers"
 import { StructureAdapter } from "./StructureAdapter"
-import { TextContentAdapter } from "./TextContentAdapter"
 
 interface ModuleAdapterProps {
   element: ModuleElement
@@ -18,7 +17,7 @@ export const ModuleAdapter = ({ element, data, lng }: ModuleAdapterProps) => {
 
   const wrapper = new ElementWrapper(element)
   const titleEl = wrapper.getFirstChildElement("Title").element
-  const title = renderToStaticMarkup(<TextContentAdapter element={titleEl} data={{}} lng={lng} />)
+  const title = extractText(titleEl, data, lng)
   const structure = wrapper.getFirstChildElement("Structure")?.element
 
   return (

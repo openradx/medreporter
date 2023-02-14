@@ -1,6 +1,33 @@
-import { ExpressionValue, MedtlRecord } from "@medreporter/medtl-tools"
+import { ElementNode } from "@medreporter/medtl-parser"
+import {
+  ContextData,
+  createContext,
+  ElementWrapper,
+  evaluateExpression,
+  ExpressionValue,
+  MedtlRecord,
+} from "@medreporter/medtl-tools"
 import { MeasurementsData, MeasureValues } from "~/types/measurements"
 
+export function extractText(element: ElementNode, data: ContextData, lng: string): string {
+  const wrapper = new ElementWrapper(element)
+  const attrLng = wrapper.getAttribute("lng" as string)?.getStringValue(createContext(data, lng))
+  if (attrLng !== undefined && attrLng !== lng) {
+    return ""
+  }
+
+  let text = ""
+  for (const child of element.children) {
+    if (child.type === "Chardata") {
+      text += child.value
+    } else if (child.type === "ExpressionContainer" && child.expression) {
+      text += String(evaluateExpression(child.expression, createContext(data, lng)))
+    } else if (child.type === "Element") {
+      text += extractText(child, data, lng)
+    }
+  }
+  return text
+}
 export function convertDateToRecord(date: Date): MedtlRecord {
   const record = new MedtlRecord()
   const year = date.getFullYear()

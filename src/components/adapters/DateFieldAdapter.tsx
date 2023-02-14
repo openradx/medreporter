@@ -5,12 +5,11 @@ import {
   createContext,
   ElementWrapper,
 } from "@medreporter/medtl-tools"
-import { renderToStaticMarkup } from "react-dom/server"
 import { DateField } from "~/components/fields/DateField"
 import { SupportedLanguage } from "~/types/general"
+import { extractText } from "~/utils/adapter"
 import { FieldGraphicsAdapter } from "./FieldGraphicsAdapter"
 import { FieldInfoAdapter } from "./FieldInfoAdapter"
-import { TextContentAdapter } from "./TextContentAdapter"
 
 interface DateFieldAdapterProps {
   element: DateFieldElement
@@ -24,7 +23,7 @@ export const DateFieldAdapter = ({ element, data, lng }: DateFieldAdapterProps) 
   const wrapper = new ElementWrapper(element)
   const id = wrapper.getAttribute("id").getStringValue(context)
   const labelEl = wrapper.getFirstChildElement("Label").element
-  const label = renderToStaticMarkup(<TextContentAdapter element={labelEl} {...{ data, lng }} />)
+  const label = extractText(labelEl, data, lng)
   const graphicsEl = wrapper.getFirstChildElement("Graphics")?.element
   const infoEl = wrapper.getFirstChildElement("Info")?.element
   const extras = (
