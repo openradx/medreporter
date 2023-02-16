@@ -4,10 +4,10 @@ import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { KidneyVolume } from "~/components/tools/kidneyVolume/KidneyVolume"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { getServerSideSession } from "~/server/utils/sessionUtils"
+import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
+import { getServerSideStructuredReportTranslations } from "~/server/utils/structuredReportTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
-import { getServerSideSession } from "~/utils/serverSideSession"
-import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
-import { getServerSideStructuredReportTranslations } from "~/utils/serverSideStructuredReportTranslations"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,

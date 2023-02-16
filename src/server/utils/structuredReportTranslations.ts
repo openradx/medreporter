@@ -4,7 +4,7 @@ import {
   I18nStructuredReport,
   SiteLanguageOption,
   StructuredReportLanguageOption,
-} from "../types/general"
+} from "../../types/general"
 import { createClient } from "./i18nServerClient"
 
 export const getServerSideStructuredReportTranslations = async (

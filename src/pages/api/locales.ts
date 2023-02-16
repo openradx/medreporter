@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { createClient } from "~/utils/i18nServerClient"
+import { createClient } from "~/server/utils/i18nServerClient"
 
 const localesApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const {

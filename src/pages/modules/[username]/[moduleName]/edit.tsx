@@ -5,13 +5,13 @@ import { PageHead } from "~/components/common/PageHead"
 import { ModuleEditor } from "~/components/editor/ModuleEditor"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { resourcesRouter } from "~/server/routers/resources"
+import { getServerSideSession } from "~/server/utils/sessionUtils"
+import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { setEditorState } from "~/state/editorSlice"
 import { addResource } from "~/state/resourcesSlice"
 import { initStore } from "~/state/store"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
-import { redirectToLogin } from "~/utils/serverSideRedirects"
-import { getServerSideSession } from "~/utils/serverSideSession"
-import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
+import { redirectToLogin } from "~/utils/redirects"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,

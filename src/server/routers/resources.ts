@@ -1,14 +1,14 @@
 import { parseModule } from "@medreporter/medtl-tools"
 import { Prisma, ReleaseStatus } from "@prisma/client"
 import { TRPCError } from "@trpc/server"
-import { createFilterObject } from "~/utils/filterObject"
-import { createClient } from "~/utils/i18nServerClient"
-import { paginate } from "~/utils/pagination"
+import { createClient } from "~/server/utils/i18nServerClient"
 import {
   createModuleSource,
   createModuleTranslations,
   ResourceTranslationsUpdateArgs,
-} from "~/utils/serverSideResourceUtils"
+} from "~/server/utils/resourceUtils"
+import { createFilterObject } from "~/utils/filterObject"
+import { paginate } from "~/utils/pagination"
 import {
   buildCreateResourceSchema,
   FetchOwnResourceSchema,
@@ -40,7 +40,7 @@ export const resourcesRouter = router({
         document = ""
         translations = {}
       } else if (type === "MODULE") {
-        source = createModuleSource(i18n.t)
+        source = createModuleSource(i18n)
         const doc = parseModule(source)
         document = doc as Record<string, any>
         translations = createModuleTranslations(doc)

@@ -1,7 +1,7 @@
 import i18next, { InitOptions } from "i18next"
 import Backend from "i18next-fs-backend"
 import path from "path"
-import { defaultConfig } from "./i18nDefaultConfig"
+import { defaultConfig } from "../../utils/i18nDefaultConfig"
 
 export const createClient = (config: Exclude<InitOptions, "backend">) => {
   const instance = i18next.createInstance()

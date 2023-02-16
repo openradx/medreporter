@@ -1,16 +1,24 @@
 import { ModuleDocument } from "@medreporter/medtl-schema"
-import { createModuleDraft, DocumentWrapper } from "@medreporter/medtl-tools"
+import { createModuleDraft, DocumentWrapper, renderDraft } from "@medreporter/medtl-tools"
 import { Prisma } from "@prisma/client"
-import { TFunction } from "i18next"
-import { renderToStaticMarkup } from "react-dom/server"
-import { TextContentAdapter } from "~/components/adapters/TextContentAdapter"
-import { unique } from "./misc"
+import { i18n as I18n } from "i18next"
+import { extractText } from "../../utils/adapter"
+import { unique } from "../../utils/misc"
 
 export type ResourceTranslationsUpdateArgs = Prisma.ResourceUpdateArgs["data"]["translations"]
 
-export function createModuleSource(t: TFunction) {
+export function createFigureSource(i18n: I18n) {
+  const { language: lng, t } = i18n
+
+  // TODO:
+  return renderDraft("", {})
+}
+
+export function createModuleSource(i18n: I18n) {
+  const { language: lng, t } = i18n
+
   return createModuleDraft({
-    lng: t("Module.lng"),
+    lng,
     title: t("Module.title"),
     description: t("Module.description"),
     fieldLabel: t("Module.fieldLabel"),
@@ -74,13 +82,9 @@ export function createModuleTranslations(
   const translations: Prisma.ResourceUpdateArgs["data"]["translations"] = {
     create: supportedLngs.map((lng) => {
       const titleEl = wrapper?.getFirstChildElement("Title").element
-      const title = titleEl
-        ? renderToStaticMarkup(<TextContentAdapter element={titleEl} data={{}} lng={lng} />)
-        : "Untitled"
+      const title = titleEl ? extractText(titleEl, {}, lng) : "Untitled"
       const descriptionEl = wrapper?.getFirstChildElement("Description")?.element
-      const description = descriptionEl
-        ? renderToStaticMarkup(<TextContentAdapter element={descriptionEl} data={{}} lng={lng} />)
-        : ""
+      const description = descriptionEl ? extractText(descriptionEl, {}, lng) : ""
 
       return {
         language: lng,

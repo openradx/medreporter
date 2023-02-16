@@ -1,7 +1,7 @@
 import * as trpc from "@trpc/server"
 import * as trpcNext from "@trpc/server/adapters/next"
 import { User } from "next-auth"
-import { getServerSideSession } from "~/utils/serverSideSession"
+import { getServerSideSession } from "~/server/utils/sessionUtils"
 
 /**
  * Inner function for `createContext` where we create the context.

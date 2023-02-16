@@ -4,10 +4,10 @@ import { LoginForm } from "~/components/auth/LoginForm"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { getServerSideSession } from "~/server/utils/sessionUtils"
+import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
-import { redirectToLogin } from "~/utils/serverSideRedirects"
-import { getServerSideSession } from "~/utils/serverSideSession"
-import { getServerSideSiteTranslations } from "~/utils/serverSideSiteTranslations"
+import { redirectToLogin } from "~/utils/redirects"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
