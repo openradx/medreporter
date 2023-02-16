@@ -28,6 +28,7 @@ export function extractText(element: ElementNode, data: ContextData, lng: string
   }
   return text
 }
+
 export function convertDateToRecord(date: Date): MedtlRecord {
   const record = new MedtlRecord()
   const year = date.getFullYear()

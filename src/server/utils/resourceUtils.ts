@@ -2,8 +2,8 @@ import { ModuleDocument } from "@medreporter/medtl-schema"
 import { createModuleDraft, DocumentWrapper, renderDraft } from "@medreporter/medtl-tools"
 import { Prisma } from "@prisma/client"
 import { i18n as I18n } from "i18next"
-import { extractText } from "../../utils/adapter"
-import { unique } from "../../utils/misc"
+import { extractText } from "~/utils/adapter"
+import { unique } from "~/utils/misc"
 
 export type ResourceTranslationsUpdateArgs = Prisma.ResourceUpdateArgs["data"]["translations"]
 
