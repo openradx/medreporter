@@ -10,7 +10,7 @@ function extractText(el: Element, lng: string, ns: string = "med"): string {
 
   let text = ""
   for (const node of el.childNodes) {
-    if (node.nodeType === Node.TEXT_NODE) {
+    if (node.nodeType === node.TEXT_NODE) {
       text += node.textContent
     }
     if (node.nodeName === transName) {
@@ -21,7 +21,8 @@ function extractText(el: Element, lng: string, ns: string = "med"): string {
       }
     }
   }
-  return text
+
+  return text.trim()
 }
 
 export function extractMetadata(doc: Document, ns: string = "med"): Metadata {
