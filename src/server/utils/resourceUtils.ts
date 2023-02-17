@@ -3,6 +3,7 @@ import { createModuleDraft, DocumentWrapper, renderDraft } from "@medreporter/me
 import { Prisma } from "@prisma/client"
 import { i18n as I18n } from "i18next"
 import { extractText } from "~/utils/adapter"
+import { extractMetadata } from "~/utils/figureUtils"
 import { unique } from "~/utils/misc"
 
 export type ResourceTranslationsUpdateArgs = Prisma.ResourceUpdateArgs["data"]["translations"]
@@ -26,42 +27,17 @@ export function createModuleSource(i18n: I18n) {
 }
 
 export function createFigureTranslations(
-  document: Document,
-  namespace: string = "med"
+  doc: Document,
+  ns: string = "med"
 ): ResourceTranslationsUpdateArgs {
-  let metadataEl = document.querySelector("metadata")
-  if (!metadataEl) {
-    metadataEl = document.createElementNS("http://www.w3.org/2000/svg", "metadata")
-  }
-
-  let ns = `${namespace}\\:`
-
-  let medReporterEl = metadataEl.querySelector(`${ns}MedReporter`)
-  if (!medReporterEl) {
-    medReporterEl = metadataEl.querySelector("MedReporter")
-    ns = ""
-  }
-
-  const titleEl = medReporterEl?.querySelector(`${ns}Title`)
-  const transEls = titleEl?.querySelectorAll(`${ns}Trans`)
-
-  if (!transEls) {
-    return {
-      create: {
-        default: true,
-        language: "en",
-        title: "Untitled",
-        description: "",
-      },
-    }
-  }
-
+  const meta = extractMetadata(doc, ns)
   return {
-    create: Array.from(transEls.values()).map((transEl) => {
-      const lng = transEl.getAttribute("lng") ?? "en"
-      const title = transEl.textContent ?? "Untitled"
-      return { default: false, language: lng, title, description: "" }
-    }),
+    create: meta.lngs.map((lng) => ({
+      default: false,
+      language: lng,
+      title: meta.title[lng],
+      description: meta.description[lng],
+    })),
   }
 }
 
