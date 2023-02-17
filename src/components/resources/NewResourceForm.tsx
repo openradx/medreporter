@@ -27,7 +27,7 @@ export const NewResourceForm = ({
 
   const CreateResourceSchema = buildCreateResourceSchema(t)
   const CreateResourceSchemaExtended = CreateResourceSchema.extend({
-    name: CreateResourceSchema.shape.name.refine((name) => !onCheckDuplicate(name), {
+    name: CreateResourceSchema.shape.name.refine(async (name) => !(await onCheckDuplicate(name)), {
       message: t("formError.alreadyUsed"),
     }),
   })
