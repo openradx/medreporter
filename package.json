@@ -29,7 +29,8 @@
     "build-storybook": "storybook build",
     "image:extract-translations": "tsx scripts/extractImageTranslations.ts",
     "image:process-translations": "tsx scripts/processImageTranslations.ts",
-    "link:medtl": "bash ./scripts/link_medtl.sh"
+    "link:medtl": "bash ./scripts/link_medtl.sh",
+    "upgrade-interactive": "pnpm update --latest --interactive"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -44,11 +45,11 @@
     "@mantine/modals": "^5.10.0",
     "@mantine/next": "^5.10.0",
     "@mantine/notifications": "^5.10.0",
-    "@medreporter/medtl-language-service": "^0.19.0",
-    "@medreporter/medtl-parser": "^0.19.0",
-    "@medreporter/medtl-schema": "^0.19.0",
-    "@medreporter/medtl-tools": "^0.19.0",
-    "@medreporter/monaco-plugin-medtl": "^0.19.0",
+    "@medreporter/medtl-language-service": "latest",
+    "@medreporter/medtl-parser": "latest",
+    "@medreporter/medtl-schema": "latest",
+    "@medreporter/medtl-tools": "latest",
+    "@medreporter/monaco-plugin-medtl": "latest",
     "@next-auth/prisma-adapter": "^1.0.5",
     "@next/bundle-analyzer": "^13.1.1",
     "@next/font": "13.1.1",
@@ -82,7 +83,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
-    "react-hook-form": "^7.41.5",
+    "react-hook-form": "^7.43.1",
     "react-i18next": "^12.1.4",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
@@ -91,7 +92,7 @@
     "superjson": "^1.12.1",
     "svgo": "^3.0.2",
     "use-debounce": "^9.0.2",
-    "zod": "^3.20.2"
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
