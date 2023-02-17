@@ -1,5 +1,10 @@
+Figure:
+  title: Beispielabbildung
+  description: Eine einfache Beispielabbildung für Demonstrationszwecke.
+  optionTriangle: Dreieck
+  optionCircle: Kreis
+  optionsSquare: Quadrat
 Module:
-  lng: de
   title: Beispielmodul
-  description: Lediglich ein einfaches Beispielmodul.
+  description: Ein einfaches Beispielsmodul für Demonstrationszwecke.
   fieldLabel: Beispielfeld

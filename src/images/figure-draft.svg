@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
+<metadata xmlns:med="http://www.medreporter.org/reference/image">
+  <med:MedReporter lngs="%lng">
+    <med:Title>
+      <med:Trans lng="%lng">%title</med:Trans>
+    </med:Title>
+    <med:Description>
+      <med:Trans lng="%lng">%description</med:Trans>
+    </med:Description>
+    <med:Option id="triangle">
+      <med:Trans lng="%lng">%triangleOption</med:Trans>
+    </med:Option>
+    <med:Option id="circle">
+      <med:Trans lng="%lng">%circleOption</med:Trans>
+    </med:Option>
+    <med:Option id="square">
+      <med:Trans lng="%lng">%squareOption</med:Trans>
+    </med:Option>
+  </med:MedReporter>
+</metadata>
+<g>
+	<path fill="#FAFAFA" d="M566.06,620H73.94C44.15,620,20,595.85,20,566.06V73.94C20,44.15,44.15,20,73.94,20h492.12
+		C595.85,20,620,44.15,620,73.94v492.12C620,595.85,595.85,620,566.06,620z"/>
+</g>
+<g id="square">
+	<rect x="327.5" y="333.5" fill="#BBBBBB" width="250" height="250"/>
+</g>
+<g id="circle">
+	<circle fill="#CCCCCC" cx="185" cy="458" r="125"/>
+</g>
+<g id="triangle">
+	<polygon fill="#DDDDDD" points="319.89,56.94 175.55,306.94 464.22,306.94 	"/>
+</g>
+</svg>

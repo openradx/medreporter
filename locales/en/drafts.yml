@@ -1,5 +1,10 @@
+Figure:
+  title: Example figure
+  description: A simple example figure for demonstration purposes.
+  optionTriangle: Dreieck
+  optionCircle: Kreis
+  optionsSquare: Quadrat
 Module:
-  lng: en
   title: Example module
-  description: Just a simple example module.
+  description: A simple example module for demonstration purposes.
   fieldLabel: Example field
