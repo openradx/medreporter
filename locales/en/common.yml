@@ -127,15 +127,17 @@ NavDrawer:
   figures: Figures
   modules: Modules
   tools: Tools
+NewFigureForm:
+  formTitle: Create new figure
 NewFigurePage:
   pageTitle: Create new figure
 NewModuleForm:
-  formTitle: Create a new module
+  formTitle: Create new module
+NewModulePage:
+  pageTitle: Create new module
 NewResourceForm:
   createButtonLabel: Create
   nameInputLabel: Name
-NewModulePage:
-  pageTitle: Create new module
 QueryError:
   title: Data fetching error
   message: An unexpected error occurred during data fetching

@@ -127,15 +127,17 @@ NavDrawer:
   figures: Abbildungen
   modules: Module
   tools: Werkzeuge
+NewFigureForm:
+  formTitle: Neue Abbildung erstellen
 NewFigurePage:
   pageTitle: Neue Abbildung erstellen
 NewModuleForm:
   formTitle: Neues Modul erstellen
+NewModulePage:
+  pageTitle: Neues Modul erstellen
 NewResourceForm:
   createButtonLabel: Erzeugen
   nameInputLabel: Name
-NewModulePage:
-  pageTitle: Neues Modul erstellen
 QueryError:
   title: Fehler bei Datenabfrage
   message: Ein unerwarteter Fehler ist während der Datenabfrage aufgetreten
