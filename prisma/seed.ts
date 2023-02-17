@@ -14,14 +14,14 @@ import {
 import fs from "fs"
 import glob from "glob"
 import path from "path"
+import { syncCategories } from "~/server/utils/categoryUtils"
+import { syncDefaultFigure } from "~/server/utils/figureUtils"
 import { hashPassword } from "~/utils/cryptography"
-import { syncCategories } from "~/utils/serverSideCategoryUtils"
-import { syncDefaultFigure } from "~/utils/serverSideFigureUtils"
 import defaultCategories from "./seeds/categories.json"
 
-const SUPERADMIN_USERNAME = "roentgen"
-const SUPERADMIN_EMAIL = "roentgen@medreporter.org"
-const SUPERADMIN_PASSWORD = "roentgen"
+const SUPERADMIN_USERNAME = "medreporter"
+const SUPERADMIN_EMAIL = "medreporter@medreporter.org"
+const SUPERADMIN_PASSWORD = "medreporter"
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -83,7 +83,7 @@ async function createExampleUser(role: UserRole) {
   return createUser({
     username: faker.internet.userName(),
     email: faker.internet.email().toLowerCase(),
-    password: "roentgen",
+    password: "medreporter",
     fullName: faker.name.fullName(),
     about: faker.lorem.paragraph(),
     role,
@@ -236,16 +236,17 @@ async function seed() {
     console.log("Updating default figures.")
   }
 
-  glob
-    .sync("**/*.svg", {
-      cwd: path.join(projectDir, "prisma", "seeds", "figures"),
-      absolute: true,
-    })
-    .forEach((filename) => {
-      const { name } = path.parse(filename)
-      const source = fs.readFileSync(filename).toString()
-      syncDefaultFigure(prisma, superadmin.id, name, source)
-    })
+  const figureFiles = glob.sync("**/*.svg", {
+    cwd: path.join(projectDir, "prisma", "seeds", "figures"),
+    absolute: true,
+  })
+
+  for (const figureFile of figureFiles) {
+    const { name } = path.parse(figureFile)
+    const source = fs.readFileSync(figureFile).toString()
+    // eslint-disable-next-line no-await-in-loop
+    await syncDefaultFigure(prisma, superadmin.id, name, source)
+  }
 
   /*
    * Modules
