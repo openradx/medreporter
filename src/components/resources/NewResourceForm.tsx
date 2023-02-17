@@ -1,4 +1,5 @@
 import { Group, Stack, Text, TextInput, Title } from "@mantine/core"
+import { ResourceType } from "@prisma/client"
 import appConfig from "app.config"
 import { Controller } from "react-hook-form"
 import { z } from "zod"
@@ -12,12 +13,14 @@ import { SubmitForm } from "../common/SubmitForm"
 import { VisibilitySelector } from "../common/VisibilitySelector"
 
 interface NewResourceFormProps {
+  resourceType: ResourceType
   formTitle: string
   onCheckDuplicate: (name: string) => boolean | Promise<boolean>
   onSubmit: (values: z.infer<ReturnType<typeof buildCreateResourceSchema>>) => void
 }
 
 export const NewResourceForm = ({
+  resourceType,
   formTitle,
   onCheckDuplicate,
   onSubmit,
@@ -39,6 +42,7 @@ export const NewResourceForm = ({
         submitText={t("NewResourceForm.createButtonLabel")}
         schema={CreateResourceSchemaExtended}
         initialValues={{
+          type: resourceType,
           name: "",
           language: "en",
           visibility: "PUBLIC",

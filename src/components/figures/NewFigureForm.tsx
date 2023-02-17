@@ -14,6 +14,7 @@ export const NewFigureForm = () => {
 
   return (
     <NewResourceForm
+      resourceType="FIGURE"
       formTitle={t("NewFigureForm.formTitle")}
       onCheckDuplicate={async (name) =>
         Boolean(await fetchOwnResource.mutateAsync({ type: "FIGURE", name }))

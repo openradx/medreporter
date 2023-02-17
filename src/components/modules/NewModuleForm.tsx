@@ -14,6 +14,7 @@ export const NewModuleForm = () => {
 
   return (
     <NewResourceForm
+      resourceType="MODULE"
       formTitle={t("NewModuleForm.formTitle")}
       onCheckDuplicate={async (name) =>
         Boolean(await fetchOwnResource.mutateAsync({ type: "MODULE", name }))
