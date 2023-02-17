@@ -6,10 +6,10 @@ import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { buildCreateResourceSchema } from "~/validations/resources"
-import { CategoriesSelector } from "./CategoriesSelector"
-import { DraftLanguageSelector } from "./DraftLanguageSelector"
-import { SubmitForm } from "./SubmitForm"
-import { VisibilitySelector } from "./VisibilitySelector"
+import { CategoriesSelector } from "../common/CategoriesSelector"
+import { DraftLanguageSelector } from "../common/DraftLanguageSelector"
+import { SubmitForm } from "../common/SubmitForm"
+import { VisibilitySelector } from "../common/VisibilitySelector"
 
 interface NewResourceFormProps {
   formTitle: string
@@ -27,7 +27,7 @@ export const NewResourceForm = ({
 
   const CreateResourceSchema = buildCreateResourceSchema(t)
   const CreateResourceSchemaExtended = CreateResourceSchema.extend({
-    name: CreateResourceSchema.shape.name.refine((name) => onCheckDuplicate(name), {
+    name: CreateResourceSchema.shape.name.refine((name) => !onCheckDuplicate(name), {
       message: t("formError.alreadyUsed"),
     }),
   })

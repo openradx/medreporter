@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { NewModuleForm } from "~/components/modules/NewModuleForm"
+import { NewFigureForm } from "~/components/figures/NewFigureForm"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
@@ -36,7 +36,7 @@ const NewFigurePage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("NewFigurePage.pageTitle")} />
-      <NewModuleForm />
+      <NewFigureForm />
     </>
   )
 }

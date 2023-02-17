@@ -2,9 +2,9 @@ import { useRouter } from "next/router"
 import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
-import { NewResourceForm } from "../common/NewResourceForm"
+import { NewResourceForm } from "../resources/NewResourceForm"
 
-export const NewModuleForm = () => {
+export const NewFigureForm = () => {
   const { t } = useSiteTranslation()
   const user = useAuthenticatedUser()
   const router = useRouter()
@@ -14,7 +14,7 @@ export const NewModuleForm = () => {
 
   return (
     <NewResourceForm
-      formTitle={t("NewModuleForm.formTitle")}
+      formTitle={t("NewFigureForm.formTitle")}
       onCheckDuplicate={async (name) =>
         Boolean(await fetchOwnResource.mutateAsync({ type: "FIGURE", name }))
       }

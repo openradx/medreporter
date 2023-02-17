@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
-import { NewResourceForm } from "../common/NewResourceForm"
+import { NewResourceForm } from "../resources/NewResourceForm"
 
 export const NewModuleForm = () => {
   const { t } = useSiteTranslation()
