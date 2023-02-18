@@ -15,7 +15,6 @@ interface CodeEditorProps {
 export const CodeEditor = ({ language, initialSource, onSetup, onChange }: CodeEditorProps) => {
   const { colorScheme } = useMantineColorScheme()
 
-  const stackRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const editorRef = useRef<editor.IStandaloneCodeEditor>()
   const subscriptionRef = useRef<IDisposable>()
@@ -24,10 +23,7 @@ export const CodeEditor = ({ language, initialSource, onSetup, onChange }: CodeE
     editorRef.current?.layout()
   }, [])
 
-  useResizeDetector({
-    targetRef: stackRef,
-    onResize,
-  })
+  const { ref: resizeRef } = useResizeDetector({ onResize })
 
   const theme = colorScheme === "dark" ? "vs-dark" : "vs"
 
@@ -64,7 +60,7 @@ export const CodeEditor = ({ language, initialSource, onSetup, onChange }: CodeE
     <>
       <Global styles={{ ".monaco-hover": { zIndex: 1000 } }} />
       <Paper shadow="sm" sx={{ height: "100%" }} withBorder>
-        <Stack spacing="xs" ref={stackRef} sx={{ height: "100%" }}>
+        <Stack spacing="xs" ref={resizeRef} sx={{ height: "100%" }}>
           <CodeEditorToolbar editor={editorRef.current} />
           <Box
             sx={{
