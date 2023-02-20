@@ -8,6 +8,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    swcPlugins: [["next-superjson-plugin", {}]],
+  },
   reactStrictMode: true,
   i18n: {
     localeDetection: true,

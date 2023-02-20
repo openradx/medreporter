@@ -91,6 +91,7 @@ specifiers:
   nanoid-dictionary: ^4.3.0
   next: ^13.1.6
   next-auth: ^4.19.2
+  next-superjson-plugin: ^0.5.4
   nextjs-routes: ^1.0.8
   postcss: ^8.4.21
   prettier: ^2.8.4
@@ -160,6 +161,7 @@ dependencies:
   nanoid-dictionary: 4.3.0
   next: 13.1.6_pjwopsidmaokadturxaafygjp4
   next-auth: 4.19.2_3vryta7zmbcsw4rrqf4axjqggm
+  next-superjson-plugin: 0.5.4_6hb7bebdisxcpyppymkqpiq3a4
   nextjs-routes: 1.0.8_next@13.1.6
   preview-email: 3.0.10
   react: 18.2.0
@@ -9677,6 +9679,17 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       uuid: 8.3.2
+    dev: false
+
+  /next-superjson-plugin/0.5.4_6hb7bebdisxcpyppymkqpiq3a4:
+    resolution: {integrity: sha512-AUAqdL+yv/jqnkd583jffimRYbfbztkKkNf7qv0WhOVUGW0cIFYdtQHbOEseeCHK95hcPy7rDZY94nujjjRseQ==}
+    peerDependencies:
+      next: ^13
+      superjson: ^1
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      next: 13.1.6_pjwopsidmaokadturxaafygjp4
+      superjson: 1.12.2
     dev: false
 
   /next/13.1.6_pjwopsidmaokadturxaafygjp4:
