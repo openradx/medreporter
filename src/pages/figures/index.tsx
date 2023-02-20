@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
+import { FiguresAndCategories } from "~/components/figures/FiguresAndCategories"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
@@ -24,7 +25,7 @@ const FiguresPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("FiguresPage.pageTitle")} />
-      Figures
+      <FiguresAndCategories />
     </>
   )
 }

@@ -42,8 +42,8 @@ export const ResourceList = ({ resourceType }: ResourceListProps) => {
 
   return (
     <Stack>
-      {!data?.resources.length && <Text>{t("general.miscNoData")}</Text>}
-      {data?.resources.length && (
+      {data?.resources.length === 0 && <Text>{t("general.miscNoData")}</Text>}
+      {data?.resources.length > 0 && (
         <ScrollArea>
           <Table verticalSpacing="md">
             <tbody>

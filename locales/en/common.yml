@@ -63,6 +63,9 @@ FieldGraphics:
   buttonGraphic: Open graphic for selection
 FieldInfo:
   buttonInfo: Additional infos
+FiguresAndCategories:
+  addFigureButtonLabel: New figure
+  filterInputLabel: Filter figures
 FiguresPage:
   pageTitle: Figures
 Fleischner2017Page:
@@ -118,7 +121,8 @@ MeasurementsTablePage:
 ModuleInfo:
   buttonInfo: Module info
 ModulesAndCategories:
-  buttonNewModule: New module
+  addModuleButtonLabel: New module
+  filterInputLabel: Filter modules
 ModulesPage:
   title: Modules
 NavDrawer:
@@ -159,8 +163,6 @@ ResetPasswordForm:
   textRedirect: Go to the
 ResetPasswordPage:
   pageTitle: Reset password
-ResourcesAndCategories:
-  filterInputLabel: Filter
 ShowFigurePage:
   pageTitle: Show figure
 ShowModulePage:

@@ -63,6 +63,9 @@ FieldGraphics:
   buttonGraphic: Auswahlgrafik öffnen
 FieldInfo:
   buttonInfo: Weitere Informationen
+FiguresAndCategories:
+  addFigureButtonLabel: Neue Abbildung
+  filterInputLabel: Abbildungen filtern
 FiguresPage:
   pageTitle: Abbildungen
 Fleischner2017Page:
@@ -118,7 +121,8 @@ MeasurementsTablePage:
 ModuleInfo:
   buttonInfo: Modulinformation
 ModulesAndCategories:
-  buttonNewModule: Neues Modul
+  addModuleButtonLabel: Neues Modul
+  filterInputLabel: Module filtern
 ModulesPage:
   title: Module
 NavDrawer:
@@ -159,8 +163,6 @@ ResetPasswordForm:
   textRedirect: Gehe zum
 ResetPasswordPage:
   pageTitle: Passwort zurücksetzen
-ResourcesAndCategories:
-  filterInputLabel: Filtern
 ShowFigurePage:
   pageTitle: Abbildung anzeigen
 ShowModulePage:

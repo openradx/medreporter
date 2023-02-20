@@ -3,20 +3,20 @@ import { NavbarActions } from "../common/NavbarActions"
 import { AddResourceButton } from "../resources/AddResourceButton"
 import { ResourcesAndCategories } from "../resources/ResourcesAndCategories"
 
-export const ModulesAndCategories = () => {
+export const FiguresAndCategories = () => {
   const { t } = useSiteTranslation()
 
   return (
     <>
       <NavbarActions>
         <AddResourceButton
-          route={{ pathname: "/modules/new" }}
-          label={t("ModulesAndCategories.addModuleButtonLabel")}
+          route={{ pathname: "/figures/new" }}
+          label={t("FiguresAndCategories.addFigureButtonLabel")}
         />
       </NavbarActions>
       <ResourcesAndCategories
-        resourceType="MODULE"
-        filterInputLabel={t("ModulesAndCategories.filterInputLabel")}
+        resourceType="FIGURE"
+        filterInputLabel={t("FiguresAndCategories.filterInputLabel")}
       />
     </>
   )
