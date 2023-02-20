@@ -2,10 +2,10 @@
 import chalk from "chalk"
 import fs from "fs"
 import glob from "glob"
-import { html as format } from "js-beautify"
 import yaml from "js-yaml"
 import { JSDOM } from "jsdom"
 import path from "path"
+import { format } from "prettier"
 
 const NS = "http://www.medreporter.org/reference/figure"
 
@@ -140,6 +140,15 @@ for (const figureFile of figureFiles) {
 
   const processedFile = path.join(OUTPUT_FOLDER, figureFilename)
   const output = doc.documentElement.outerHTML
-  fs.writeFileSync(processedFile, format(output))
+  fs.writeFileSync(
+    processedFile,
+    format(output, {
+      filepath: processedFile,
+      plugins: [require.resolve("@prettier/plugin-xml")],
+      xmlWhitespaceSensitivity: "ignore",
+      singleAttributePerLine: false,
+      printWidth: Number.MAX_SAFE_INTEGER,
+    })
+  )
   console.log(chalk.green(`Successfully written "${figureFilename}".`))
 }
