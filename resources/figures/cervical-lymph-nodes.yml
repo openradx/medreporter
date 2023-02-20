@@ -1,4 +1,27 @@
 de:
+  title: Zervikale Lymphknoten
+  leftLevelVII: Level VII links
+  leftLevelVI: Level VI links
+  leftLevelVB: Level VB links
+  leftLevelVA: Level VA links
+  leftLevelIV: Level IV links
+  leftLevelIII: Level III links
+  leftLevelIIB: Level IIB links
+  leftLevelIA: Level IA links
+  leftLevelIB: Level IB links
+  leftLevelIIA: Level IIA links
+  rightLevelVII: Level VII rechts
+  rightLevelVI: Level VI rechts
+  rightLevelVB: Level VB rechts
+  rightLevelVA: Level VA rechts
+  rightLevelIV: Level IV rechts
+  rightLevelIII: Level III rechts
+  rightLevelIIB: Level IIB rechts
+  rightLevelIA: Level IA rechts
+  rightLevelIB: Level IB rechts
+  rightLevelIIA: Level IIA rechts
+
+en:
   title: Cervical lymphnodes
   leftLevelVII: Left Level VII
   leftLevelVI: Left Level VI
@@ -20,26 +43,3 @@ de:
   rightLevelIA: Right Level IA
   rightLevelIB: Right Level IB
   rightLevelIIA: Right Level IIA
-
-en:
-  title: Cervicale Lymphknoten
-  leftLevelVII: Level VII links
-  leftLevelVI: Level VI links
-  leftLevelVB: Level VB links
-  leftLevelVA: Level VA links
-  leftLevelIV: Level IV links
-  leftLevelIII: Level III links
-  leftLevelIIB: Level IIB links
-  leftLevelIA: Level IA links
-  leftLevelIB: Level IB links
-  leftLevelIIA: Level IIA links
-  rightLevelVII: Level VII rechts
-  rightLevelVI: Level VI rechts
-  rightLevelVB: Level VB rechts
-  rightLevelVA: Level VA rechts
-  rightLevelIV: Level IV rechts
-  rightLevelIII: Level III rechts
-  rightLevelIIB: Level IIB rechts
-  rightLevelIA: Level IA rechts
-  rightLevelIB: Level IB rechts
-  rightLevelIIA: Level IIA rechts

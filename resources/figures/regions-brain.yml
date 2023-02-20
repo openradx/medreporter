@@ -1,5 +1,5 @@
 de:
-  title: Regionen des Gehirns
+  title: Hirnregionen
   leftCerebellum: Cerebellum links
   rightCerebellum: Cerebellumg rechts
   leftBrainstem: Hirnstamm links
@@ -20,7 +20,7 @@ de:
   rightFrontal: Frontal rechts
 
 en:
-  title: Regions of the Brain
+  title: Brain areas
   leftCerebellum: Left cerebellum
   rightCerebellum: Right cerebellumg
   leftBrainstem: Left brainstem

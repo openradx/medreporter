@@ -41,34 +41,28 @@ for (const figureFile of figureFiles) {
   const lngs = Object.keys(translations)
 
   const dom = new JSDOM(fs.readFileSync(figureFile).toString(), { contentType: "image/svg+xml" })
-  const { document } = dom.window
+  const { document: doc } = dom.window
 
-  let metadataEl = document.querySelector("metadata")
+  let metadataEl = doc.querySelector("metadata")
   if (!metadataEl) {
-    metadataEl = document.createElementNS("http://www.w3.org/2000/svg", "metadata")
+    metadataEl = doc.createElementNS("http://www.w3.org/2000/svg", "metadata")
     metadataEl.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:med", NS)
-    const svgEl = document.querySelector("svg")
-    if (!svgEl) throw new Error(`Invalid SVG file "${figureFilename}".`)
+    const svgEl = doc.querySelector("svg")
+    if (!svgEl) {
+      console.error(chalk.red(`Invalid SVG file "${figureFilename}".`))
+      continue
+    }
     svgEl?.prepend(metadataEl)
   }
 
-  const figureEl = document.createElementNS(NS, "med:Figure")
+  const figureEl = doc.createElementNS(NS, "med:Figure")
   figureEl.setAttribute("lngs", lngs.join(","))
   metadataEl.prepend(figureEl)
 
-  const getTranslation = (lng: string, key: string) => {
-    const trans: string | undefined = translations[lng][key]
-    if (!trans)
-      console.error(
-        chalk.red(`Missing ${lng} translation with key "${key}" in "${translationsFilename}".`)
-      )
-    return trans
-  }
-
   const createTransEl = (lng: string, key: string) => {
-    const trans = getTranslation(lng, key)
+    const trans: string | undefined = translations[lng][key]
     if (trans) {
-      const transEl = document.createElementNS(NS, "med:Trans")
+      const transEl = doc.createElementNS(NS, "med:Trans")
       transEl.setAttribute("lng", lng)
       transEl.textContent = trans
       return transEl
@@ -76,49 +70,76 @@ for (const figureFile of figureFiles) {
     return null
   }
 
+  const titleEl = doc.createElementNS(NS, "med:Title")
+  lngs.forEach((lng) => {
+    const transEl = createTransEl(lng, "title")
+    if (!transEl) console.error(chalk.red(`Missing title in "${translationsFilename}".`))
+    else titleEl.append(transEl)
+  })
+  figureEl.append(titleEl)
+
+  let descriptionFound = false
+  const descriptionEl = doc.createElementNS(NS, "med:Description")
+  lngs.forEach((lng) => {
+    const transEl = createTransEl(lng, "description")
+    if (transEl) {
+      descriptionFound = true
+      descriptionEl.append(transEl)
+    }
+  })
+  if (descriptionFound) figureEl.append(descriptionEl)
+
+  // fetch all ids in the SVG
+  const svgEl = doc.querySelector("svg")
+  if (!svgEl) {
+    console.error(chalk.red(`Invalid SVG figure file "${figureFilename}".`))
+    continue
+  }
+  const svgIds = Array.from(svgEl.querySelectorAll('*[id]:not([id=""]')).map((el) => el.id)
+
+  const duplicateSvgIds = svgIds.filter((id, index) => svgIds.indexOf(id) !== index)
+  if (duplicateSvgIds.length > 0)
+    console.error(
+      chalk.red(`Figure file "${figureFilename}" has duplicate ids: ${duplicateSvgIds.join(", ")}`)
+    )
+
+  const translationIds: string[] = []
+  lngs.forEach((lng) => {
+    Object.keys(translations[lng]).forEach((key) => {
+      if (!["title", "description"].includes(key)) {
+        lngs.forEach((lng2) => {
+          if (!(key in translations[lng2]))
+            console.error(
+              chalk.red(
+                `Missing "${lng2}" translation for id "${key}" in "${translationsFilename}".`
+              )
+            )
+          if (!svgIds.includes(key))
+            console.error(chalk.red(`Missing id "${key}" in SVG figure "${figureFilename}".`))
+
+          if (!translationIds.includes(key)) translationIds.push(key)
+        })
+      }
+    })
+  })
+
   const createOptionEl = (id: string) => {
-    const partEl = document.createElementNS(NS, "med:Option")
+    const partEl = doc.createElementNS(NS, "med:Option")
     partEl.setAttribute("id", id)
-    ;(["de", "en"] as const).forEach((lng) => {
+    lngs.forEach((lng) => {
       const transEl = createTransEl(lng, id)
       if (transEl) partEl.append(transEl)
     })
     return partEl
   }
 
-  const createTitleEl = () => {
-    const titleEl = document.createElementNS(NS, "med:Title")
-    ;(["de", "en"] as const).forEach((lng) => {
-      const transEl = createTransEl(lng, "title")
-      if (transEl) titleEl.append(transEl)
-    })
-    return titleEl
-  }
-
-  const titleEl = createTitleEl()
-  figureEl.append(titleEl)
-
-  // only respect the first found in a subtree
-  const ids: string[] = []
-  const findIds = (el: Element) => {
-    const id = el.getAttribute("id")
-    if (id) {
-      ids.push(id)
-    } else {
-      Array.from(el.children).forEach((child) => {
-        findIds(child)
-      })
-    }
-  }
-  findIds(document.documentElement)
-
-  for (const id of ids) {
+  for (const id of translationIds) {
     const partEl = createOptionEl(id)
     figureEl.append(partEl)
   }
 
   const processedFile = path.join(OUTPUT_FOLDER, figureFilename)
-  const output = document.documentElement.outerHTML
+  const output = doc.documentElement.outerHTML
   fs.writeFileSync(processedFile, format(output))
   console.log(chalk.green(`Successfully written "${figureFilename}".`))
 }

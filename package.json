@@ -27,8 +27,8 @@
     "db:studio": "prisma studio",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "image:extract-translations": "tsx scripts/extractImageTranslations.ts",
-    "image:process-translations": "tsx scripts/processImageTranslations.ts",
+    "figure:extract": "tsx scripts/extractFigureTranslations.ts",
+    "figure:process": "tsx scripts/processFigureTranslations.ts",
     "link:medtl": "bash ./scripts/link_medtl.sh",
     "pkg:outdated": "pnpm outdated",
     "pkg:interactive": "pnpm update --latest --interactive"

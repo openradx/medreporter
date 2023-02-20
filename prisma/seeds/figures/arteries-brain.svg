@@ -1,0 +1,189 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 877.2 577.7" enable-background="new 0 0 877.2 577.7" xml:space="preserve">
+    <metadata xmlns:med="http://www.medreporter.org/reference/figure">
+        <med:Figure lngs="de,en">
+            <med:Title>
+                <med:Trans lng="de">Arterielle Hirngefäße</med:Trans>
+                <med:Trans lng="en">Arterial brain vessels</med:Trans>
+            </med:Title>
+            <med:Description>
+                <med:Trans lng="de">Circulus arteriosus cerebri</med:Trans>
+                <med:Trans lng="en">Circulus arteriosus cerebri</med:Trans>
+            </med:Description>
+            <med:Option id="leftM2Superior">
+                <med:Trans lng="de">superiores M2-Segment links</med:Trans>
+                <med:Trans lng="en">Left superior M2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftM2Inferior">
+                <med:Trans lng="de">inferiores M2-Segment links</med:Trans>
+                <med:Trans lng="en">Left inferior M2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftM1Bifurcation">
+                <med:Trans lng="de">Mediabifurkation links</med:Trans>
+                <med:Trans lng="en">Bifurcation of left MCA</med:Trans>
+            </med:Option>
+            <med:Option id="leftM1Distal">
+                <med:Trans lng="de">distales M1-Segment links</med:Trans>
+                <med:Trans lng="en">Left distal M1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftM1Proximal">
+                <med:Trans lng="de">proximales M1-Segment links</med:Trans>
+                <med:Trans lng="en">Left proximal M1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftACMT">
+                <med:Trans lng="de">Carotis-T links</med:Trans>
+                <med:Trans lng="en">Terminal segment of left ACI</med:Trans>
+            </med:Option>
+            <med:Option id="leftA1">
+                <med:Trans lng="de">A1-Segment links</med:Trans>
+                <med:Trans lng="en">Left A1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftA2">
+                <med:Trans lng="de">A2-Segment links</med:Trans>
+                <med:Trans lng="en">Left A2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftACI">
+                <med:Trans lng="de">A. carotis interna links</med:Trans>
+                <med:Trans lng="en">Left internal carotid artery</med:Trans>
+            </med:Option>
+            <med:Option id="leftACP">
+                <med:Trans lng="de">A. communicans posterior links</med:Trans>
+                <med:Trans lng="en">Left posterior communicating artery</med:Trans>
+            </med:Option>
+            <med:Option id="leftP2">
+                <med:Trans lng="de">P2-Segment links</med:Trans>
+                <med:Trans lng="en">Left P2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftP1">
+                <med:Trans lng="de">P1-Segment links</med:Trans>
+                <med:Trans lng="en">Left P1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="leftSCA">
+                <med:Trans lng="de">A. superior cerebelli links</med:Trans>
+                <med:Trans lng="en">Left superior cerebellar artery</med:Trans>
+            </med:Option>
+            <med:Option id="leftAICA">
+                <med:Trans lng="de">A. inferior anterior cerebelli links</med:Trans>
+                <med:Trans lng="en">Left anterior inferior cerebellar artery</med:Trans>
+            </med:Option>
+            <med:Option id="leftPICA">
+                <med:Trans lng="de">A. inferior posterior cerebelli links</med:Trans>
+                <med:Trans lng="en">Left posterior inferior cerebellar artery</med:Trans>
+            </med:Option>
+            <med:Option id="leftV4">
+                <med:Trans lng="de">V4-Segment links</med:Trans>
+                <med:Trans lng="en">Left V4-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightM2Superior">
+                <med:Trans lng="de">superiores M2-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right superior M2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightM2Inferior">
+                <med:Trans lng="de">inferiores M2-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right inferior M2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightM1Bifurcation">
+                <med:Trans lng="de">Mediabifurkation rechts</med:Trans>
+                <med:Trans lng="en">Bifucation of right MCA</med:Trans>
+            </med:Option>
+            <med:Option id="rightM1Distal">
+                <med:Trans lng="de">distales M1-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right distal M1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightM1Proximal">
+                <med:Trans lng="de">proximales M1-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right proximal M1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightACMT">
+                <med:Trans lng="de">Carotis-T rechts</med:Trans>
+                <med:Trans lng="en">Terminal segment of right ACI</med:Trans>
+            </med:Option>
+            <med:Option id="rightA1">
+                <med:Trans lng="de">A1-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right A1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightA2">
+                <med:Trans lng="de">A2-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right A2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightACI">
+                <med:Trans lng="de">A. carotis interna rechts</med:Trans>
+                <med:Trans lng="en">Right internal carotid artery</med:Trans>
+            </med:Option>
+            <med:Option id="rightACP">
+                <med:Trans lng="de">A. communicans posterior rechts</med:Trans>
+                <med:Trans lng="en">Right posterior communicating artery</med:Trans>
+            </med:Option>
+            <med:Option id="rightP2">
+                <med:Trans lng="de">P2-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right P2-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightP1">
+                <med:Trans lng="de">P1-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right P1-segment</med:Trans>
+            </med:Option>
+            <med:Option id="rightSCA">
+                <med:Trans lng="de">A. superior cerebelli rechts</med:Trans>
+                <med:Trans lng="en">Right superior cerebellar artery</med:Trans>
+            </med:Option>
+            <med:Option id="rightAICA">
+                <med:Trans lng="de">A. inferior anterior cerebelli rechts</med:Trans>
+                <med:Trans lng="en">Right anterior inferior cerebellar artery</med:Trans>
+            </med:Option>
+            <med:Option id="rightPICA">
+                <med:Trans lng="de">A. inferior posterior cerebelli rechts</med:Trans>
+                <med:Trans lng="en">Right posterior inferior cerebellar artery</med:Trans>
+            </med:Option>
+            <med:Option id="rightV4">
+                <med:Trans lng="de">V4-Segment rechts</med:Trans>
+                <med:Trans lng="en">Right V4-segment</med:Trans>
+            </med:Option>
+            <med:Option id="ACA">
+                <med:Trans lng="de">A. communicans anterior</med:Trans>
+                <med:Trans lng="en">Anterior communicating artery</med:Trans>
+            </med:Option>
+            <med:Option id="basilarisHead">
+                <med:Trans lng="de">Basilariskopf</med:Trans>
+                <med:Trans lng="en">Head of basilar artery</med:Trans>
+            </med:Option>
+            <med:Option id="basilaris">
+                <med:Trans lng="de">A. basilaris</med:Trans>
+                <med:Trans lng="en">Basilar artery</med:Trans>
+            </med:Option>
+        </med:Figure>
+    </metadata>
+    <path id="leftM2Superior" fill="#C6C6C6" d="M766.8,115.2c17.4-7.2,36.4-14.2,57.1-20.7c17.5-5.5,34.2-10,50-13.8  c0.9-1.6,5-9.3,2.6-19c-2.5-10-10.1-14.9-11.6-15.9c-7.2,1.5-17.1,3.8-28.9,7.1c-14.8,4.1-25.6,7.9-37.5,12.1  c-12.8,4.5-23.4,8.6-37.3,13.9c-6.5,2.5-11.8,4.6-15.5,6C752.8,95,759.8,105.1,766.8,115.2z" />
+    <path id="leftM2Inferior" fill="#C6C6C6" d="M766.8,115.2c-5.5,10.5-11.1,21-16.6,31.6c9.5,3.5,20.4,8.3,31.9,14.8  c15.9,8.9,27,17.8,33.4,23c6.4,5.2,11.6,9.8,15.3,13.3c0.8,0.2,10.7,2.8,18.9-4.2c8.3-7.1,7.1-17.6,7-18.3  c-4.7-5.1-10.5-11-17.5-17.2c-8.5-7.4-16.3-13.2-22.5-17.4c-6.4-4.3-14.8-9.6-25.2-14.8C782.5,121.3,774.1,117.8,766.8,115.2z" />
+    <path id="leftM1Bifurcation" fill="#B2B2B2" d="M750.2,146.8c5.5-10.5,11.1-21,16.6-31.6c-7-10.1-14.1-20.2-21.1-30.3  c-3.6,1.5-7.6,3-11.9,4.3c-4.4,1.4-8.6,2.5-12.4,3.4c0.1,15.7,0.1,31.3,0.2,47c4.3,0.5,9.1,1.4,14.3,2.6  C741.3,143.6,746.1,145.1,750.2,146.8z" />
+    <path id="leftM1Distal" fill="#9D9D9C" d="M721.4,92.6c0.1,15.7,0.1,31.3,0.2,47c-7.3-0.5-15.4-0.7-24.1-0.2  c-15.1,0.8-28.3,3.1-39.2,5.9c-1.8-13.1-3.6-26.3-5.4-39.4c12.3-1.9,25-4.1,38.1-6.7C701.5,97.1,711.6,94.9,721.4,92.6z" />
+    <path id="leftM1Proximal" fill="#878787" d="M652.9,105.8c1.8,13.1,3.6,26.3,5.4,39.4c-9.9,2-20,4.3-30.3,6.8  c-10.6,2.6-20.8,5.2-30.6,8c-3.4-13.1-6.8-26.1-10.2-39.2c11.1-2.7,22.4-5.3,33.7-7.9C631.7,110.4,642.3,108.1,652.9,105.8z" />
+    <path id="leftACMT" fill="#706F6F" d="M587.1,120.8c3.4,13.1,6.8,26.1,10.2,39.2c-10.5,4.2-19.4,6.9-25.6,8.6  c-8.9,2.5-15.9,3.9-26.7,7.9c-5,1.9-9,3.6-11.7,4.8c-7.1-11.5-14.1-23-21.2-34.5c4.2-2.6,9.3-5.2,15.2-7.7c4.8-2,9.4-3.5,13.4-4.6  c-3.1-0.6-6.5-1.4-10-2.6c-1.8-0.6-3.5-1.2-5.1-1.8c12.9-5.3,25.7-10.6,38.6-15.9c3.4,1.2,7,2.4,10.8,3.5  C579.2,119,583.3,120,587.1,120.8z" />
+    <path id="leftA1" fill="#878787" d="M525.6,130.2c12.9-5.3,25.7-10.6,38.6-15.9c-7.2-2.1-12.9-4.7-17-6.9  c-5.1-2.7-11.7-6.3-18.4-13.2c-3.4-3.5-5.8-6.9-7.4-9.4c-12,1.4-24,2.8-36,4.2c5.2,8.8,10.5,17.7,15.7,26.5c3,2.6,6.8,5.5,11.4,8.3  C517.3,126.6,521.7,128.7,525.6,130.2z" />
+    <path id="leftA2" fill="#9D9D9C" d="M485.4,89c12-1.4,24-2.8,36-4.2c-2.1-3.3-4.8-7.9-7.2-13.8c-5.2-13-5.7-24.1-5.8-28.1  c-0.1-4.9,0.2-12.8,2.8-22.2c1.4-4.9,3-8.9,4.4-11.9c-1.3-1.4-7.8-8.1-18.4-8.7c-9.4-0.5-16,4.1-17.7,5.4c-1.2,3.8-2.6,8.6-3.7,14.4  c-1.8,9.9-2,18.2-1.8,23.8c0.2,6,1,14.7,3.7,24.7C479.9,76.8,482.8,83.7,485.4,89z" />
+    <path id="leftACI" fill="#575756" d="M533.3,181.3c-2.6,1.7-6.3,4.3-10,8.4c-7.2,8.1-9.6,16.7-11.1,22.1c-1.3,4.8-2.7,12.3-2,21.6  c-2.4,1.4-11.4,6.2-23.2,4.2c-10.6-1.9-17.1-8.2-19.1-10.3c-0.2-10.6,1.3-19.4,2.8-25.6c1.5-6,4.3-16.9,12.4-28.5  c6.5-9.4,13.6-15.2,17.2-18.1c4.5-3.6,8.6-6.3,11.8-8.1C519.2,158.3,526.3,169.8,533.3,181.3z" />
+    <path id="leftACP" fill="#878787" d="M545,176.5c8.9-2.6,17.8-5.3,26.7-7.9c1,6.2,1.9,14.9,1.6,25.1c-0.1,4.2-0.8,21.5-8.2,43.1  c-4.7,13.7-10,23.2-16.2,34.3c-6.3,11.2-12.3,20.3-17,26.9c-10.8-0.7-21.6-1.4-32.5-2.1c6.8-9.6,12.3-17.7,16.3-23.7  c12.5-18.7,15.8-25.2,17.3-28c3.8-7.4,7.2-14.2,9.8-24c0.7-2.6,2.9-11.3,3.4-22.9C546.4,189.1,545.8,182,545,176.5z" />
+    <path id="leftP2" fill="#B2B2B2" d="M539.8,309.2c-1.3,7.3-2.5,14.6-3.8,21.9c5.5,0.8,11.2,1.8,17.3,3.2c12.5,2.8,22,6.1,26.7,7.7  c4.5,1.6,11.5,4.3,20,8.4c6.4,3.1,12,6.1,16.7,8.8c1.3-0.5,6.1-2.6,9-8c3.1-5.9,1.8-11.4,1.5-12.7c-4.3-2.4-9.5-5.3-15.7-8.2  c-9.3-4.4-17.2-7.4-22.6-9.3c-10.7-3.8-19.1-5.8-24.2-7C557.7,312.3,549.4,310.6,539.8,309.2z" />
+    <path id="leftP1" fill="#9D9D9C" d="M539.8,309.2c-1.3,7.3-2.5,14.6-3.8,21.9c-8.4-1.5-15.6-2.1-20.9-2.4c-11-0.6-20.7-1.1-32.5,1.7  c-7.5,1.8-13.5,4.3-17.4,6.3c-4.3-6.5-8.5-13-12.8-19.5c5.1-2.6,11.4-5.2,18.7-7.4c8-2.4,15.2-3.7,21.3-4.4c2.3-3.1,4.7-6.2,7-9.3  c10.8,0.7,21.6,1.4,32.5,2.1c-2.4,3.1-4.7,6.2-7.1,9.3C529.8,308,534.8,308.6,539.8,309.2z" />
+    <path id="leftSCA" fill="#DADADA" d="M453.9,381.9c0.6-7.2,1.2-14.4,1.8-21.5c4-0.8,8.9-1.6,14.7-2.2c8.8-1,16.4-1.2,22.5-1.1  c6.5,0.1,14.7,0.5,24.3,1.8c6.8,0.9,14.5,2.4,22.9,4.6c0.6,1.3,2.5,5.9,1.2,11.6c-1.4,5.8-5.2,9-6.3,9.9c-3.1-1.1-7-2.4-11.5-3.6  c-6.9-1.8-12.8-2.8-17.3-3.3c-7-0.9-13.1-1.1-18.2-1c-4.1,0.1-9.4,0.3-15.5,1.1C467.1,378.9,460.8,380,453.9,381.9z" />
+    <path id="leftAICA" fill="#DADADA" d="M453.5,438.2c-0.2-7.5-0.4-14.9-0.6-22.4c4.1-0.8,9.4-1.7,15.6-2.1  c11.3-0.8,20.8,0.1,27.5,1.1c5.2,0.8,13.7,2.5,23.8,6.2c5.5,2,10.1,4.2,13.6,6c0.4,0.8,2.5,5.9,0.1,11.6c-2.5,5.7-7.7,7.6-8.5,7.9  c-2.9-1.8-6.8-3.8-11.4-5.8c-7.4-3.1-13.7-4.5-17.2-5.2c-8.2-1.6-15.2-1.7-20.5-1.4C466.7,434.5,459.1,436.3,453.5,438.2z" />
+    <path id="leftPICA" fill="#EDEDED" d="M513.8,536.1c-0.3-5.2-0.6-10.5-0.9-15.7c6.2-0.7,11.9-1.1,17.1-1.4c4.1-0.2,9.6-0.4,16.2-0.4  c3,0,5.6,0.1,7.6,0.1c0.2,0.1,4.6,2.1,5.2,6.8c0.4,3.2-1,6.3-3.6,8.2c-5-0.2-9.4-0.1-13.1-0.1c-6.1,0.1-11.7,0.5-16.6,1  C521.1,535.2,517,535.7,513.8,536.1z" />
+    <path id="leftV4" fill="#DADADA" d="M446.8,484.6c4.9-5.5,9.7-11,14.6-16.4c4.5,4.1,8.4,7.1,11,9c4.5,3.2,6.3,4,14.9,9.6  c5.7,3.7,8.6,5.6,10.6,7.4c5.4,4.9,8.3,10.1,9.7,12.8c1.7,3.1,3.8,7.6,5.2,13.5c0.3,5.2,0.6,10.5,0.9,15.7c0.1,5.2,0.1,10.2,0,14.7  c-0.1,4.3-0.3,9.1-0.6,14.5c-0.2,3.1-0.4,5.8-0.5,7.9c-1.5,1.2-6.4,4.5-13.5,4.5c-7.5,0-12.6-3.8-14.1-5c0.5-7.2,0.8-13.3,1-17.9  c0,0,0.3-7.1,0.5-18.2c0.1-9,0-11.3-0.8-14.4c-1.2-5-3.3-8.9-4.8-11.3c-3.7-5.9-8.3-9.2-12.5-12.2c-4.3-3.1-5.4-3-12-7.3  C452.3,488.7,449,486.3,446.8,484.6z" />
+    <path id="rightM2Superior" fill="#C6C6C6" d="M110.4,115.2C93,108,74,101,53.3,94.5c-17.5-5.5-34.2-10-50-13.8  c-0.9-1.6-5-9.3-2.6-19c2.5-10,10.1-14.9,11.6-15.9c7.2,1.5,17.1,3.8,28.9,7.1C56,57,66.9,60.9,78.8,65c12.8,4.5,23.4,8.6,37.3,13.9  c6.5,2.5,11.8,4.6,15.5,6C124.5,95,117.5,105.1,110.4,115.2z" />
+    <path id="rightM2Inferior" fill="#C6C6C6" d="M110.4,115.2c5.5,10.5,11.1,21,16.6,31.6c-9.5,3.5-20.4,8.3-31.9,14.8  c-15.9,8.9-27,17.8-33.4,23c-6.4,5.2-11.6,9.8-15.3,13.3c-0.8,0.2-10.7,2.8-18.9-4.2c-8.3-7.1-7.1-17.6-7-18.3  c4.7-5.1,10.5-11,17.5-17.2c8.5-7.4,16.3-13.2,22.5-17.4c6.4-4.3,14.8-9.6,25.2-14.8C94.8,121.3,103.2,117.8,110.4,115.2z" />
+    <path id="rightM1Bifurcation" fill="#B2B2B2" d="M127.1,146.8c-5.5-10.5-11.1-21-16.6-31.6c7-10.1,14.1-20.2,21.1-30.3  c3.6,1.5,7.6,3,11.9,4.3c4.4,1.4,8.6,2.5,12.4,3.4c-0.1,15.7-0.1,31.3-0.2,47c-4.3,0.5-9.1,1.4-14.3,2.6  C136,143.6,131.2,145.1,127.1,146.8z" />
+    <path id="rightM1Distal" fill="#9D9D9C" d="M155.8,92.6c-0.1,15.7-0.1,31.3-0.2,47c7.3-0.5,15.4-0.7,24.1-0.2  c15.1,0.8,28.3,3.1,39.2,5.9c1.8-13.1,3.6-26.3,5.4-39.4c-12.3-1.9-25-4.1-38.1-6.7C175.8,97.1,165.6,94.9,155.8,92.6z" />
+    <path id="rightM1Proximal" fill="#878787" d="M224.3,105.8c-1.8,13.1-3.6,26.3-5.4,39.4c9.9,2,20,4.3,30.3,6.8  c10.6,2.6,20.8,5.2,30.6,8c3.4-13.1,6.8-26.1,10.2-39.2c-11.1-2.7-22.4-5.3-33.7-7.9C245.6,110.4,234.9,108.1,224.3,105.8z" />
+    <path id="rightACMT" fill="#706F6F" d="M290.1,120.8c-3.4,13.1-6.8,26.1-10.2,39.2c10.5,4.2,19.4,6.9,25.6,8.6  c8.9,2.5,15.9,3.9,26.7,7.9c5,1.9,9,3.6,11.7,4.8c7.1-11.5,14.1-23,21.2-34.5c-4.2-2.6-9.3-5.2-15.2-7.7c-4.8-2-9.4-3.5-13.4-4.6  c3.1-0.6,6.5-1.4,10-2.6c1.8-0.6,3.5-1.2,5.1-1.8c-12.9-5.3-25.7-10.6-38.6-15.9c-3.4,1.2-7,2.4-10.8,3.5  C298,119,293.9,120,290.1,120.8z" />
+    <path id="rightA1" fill="#878787" d="M351.6,130.2c-12.9-5.3-25.7-10.6-38.6-15.9c7.2-2.1,12.9-4.7,17-6.9  c5.1-2.7,11.7-6.3,18.4-13.2c3.4-3.5,5.8-6.9,7.4-9.4c12,1.4,24,2.8,36,4.2c-5.2,8.8-10.5,17.7-15.7,26.5c-3,2.6-6.8,5.5-11.4,8.3  C360,126.6,355.5,128.7,351.6,130.2z" />
+    <path id="rightA2" fill="#9D9D9C" d="M391.9,89c-12-1.4-24-2.8-36-4.2c2.1-3.3,4.8-7.9,7.2-13.8c5.2-13,5.7-24.1,5.8-28.1  c0.1-4.9-0.2-12.8-2.8-22.2c-1.4-4.9-3-8.9-4.4-11.9c1.3-1.4,7.8-8.1,18.4-8.7c9.4-0.5,16,4.1,17.7,5.4c1.2,3.8,2.6,8.6,3.7,14.4  c1.8,9.9,2,18.2,1.8,23.8c-0.2,6-1,14.7-3.7,24.7C397.3,76.8,394.5,83.7,391.9,89z" />
+    <path id="rightACI" fill="#575756" d="M343.9,181.3c2.6,1.7,6.3,4.3,10,8.4c7.2,8.1,9.6,16.7,11.1,22.1c1.3,4.8,2.7,12.3,2,21.6  c2.4,1.4,11.4,6.2,23.2,4.2c10.6-1.9,17.1-8.2,19.1-10.3c0.2-10.6-1.3-19.4-2.8-25.6c-1.5-6-4.3-16.9-12.4-28.5  c-6.5-9.4-13.6-15.2-17.2-18.1c-4.5-3.6-8.6-6.3-11.8-8.1C358,158.3,351,169.8,343.9,181.3z" />
+    <path id="rightACP" fill="#878787" d="M332.2,176.5c-8.9-2.6-17.8-5.3-26.7-7.9c-1,6.2-1.9,14.9-1.6,25.1c0.1,4.2,0.8,21.5,8.2,43.1  c4.7,13.7,10,23.2,16.2,34.3c6.3,11.2,12.3,20.3,17,26.9c10.8-0.7,21.6-1.4,32.5-2.1c-6.8-9.6-12.3-17.7-16.3-23.7  c-12.5-18.7-15.8-25.2-17.3-28c-3.8-7.4-7.2-14.2-9.8-24c-0.7-2.6-2.9-11.3-3.4-22.9C330.8,189.1,331.5,182,332.2,176.5z" />
+    <path id="rightP2" fill="#B2B2B2" d="M337.4,309.2c1.3,7.3,2.5,14.6,3.8,21.9c-5.5,0.8-11.2,1.8-17.3,3.2c-12.5,2.8-22,6.1-26.7,7.7  c-4.5,1.6-11.5,4.3-20,8.4c-6.4,3.1-12,6.1-16.7,8.8c-1.3-0.5-6.1-2.6-9-8c-3.1-5.9-1.8-11.4-1.5-12.7c4.3-2.4,9.5-5.3,15.7-8.2  c9.3-4.4,17.2-7.4,22.6-9.3c10.7-3.8,19.1-5.8,24.2-7C319.5,312.3,327.9,310.6,337.4,309.2z" />
+    <path id="rightP1" fill="#9D9D9C" d="M337.4,309.2c1.3,7.3,2.5,14.6,3.8,21.9c8.4-1.5,15.6-2.1,20.9-2.4c11-0.6,20.7-1.1,32.5,1.7  c7.5,1.8,13.5,4.3,17.4,6.3c4.3-6.5,8.5-13,12.8-19.5c-5.1-2.6-11.4-5.2-18.7-7.4c-8-2.4-15.2-3.7-21.3-4.4c-2.3-3.1-4.7-6.2-7-9.3  c-10.8,0.7-21.6,1.4-32.5,2.1c2.4,3.1,4.7,6.2,7.1,9.3C347.4,308,342.4,308.6,337.4,309.2z" />
+    <path id="rightSCA" fill="#DADADA" d="M423.3,381.9c-0.6-7.2-1.2-14.4-1.8-21.5c-4-0.8-8.9-1.6-14.7-2.2c-8.8-1-16.4-1.2-22.5-1.1  c-6.5,0.1-14.7,0.5-24.3,1.8c-6.8,0.9-14.5,2.4-22.9,4.6c-0.6,1.3-2.5,5.9-1.2,11.6c1.4,5.8,5.2,9,6.3,9.9c3.1-1.1,7-2.4,11.5-3.6  c6.9-1.8,12.8-2.8,17.3-3.3c7-0.9,13.1-1.1,18.2-1c4.1,0.1,9.4,0.3,15.5,1.1C410.2,378.9,416.4,380,423.3,381.9z" />
+    <path id="rightAICA" fill="#DADADA" d="M423.8,438.2c0.2-7.5,0.4-14.9,0.6-22.4c-4.1-0.8-9.4-1.7-15.6-2.1  c-11.3-0.8-20.8,0.1-27.5,1.1c-5.2,0.8-13.7,2.5-23.8,6.2c-5.5,2-10.1,4.2-13.6,6c-0.4,0.8-2.5,5.9-0.1,11.6  c2.5,5.7,7.7,7.6,8.5,7.9c2.9-1.8,6.8-3.8,11.4-5.8c7.4-3.1,13.7-4.5,17.2-5.2c8.2-1.6,15.2-1.7,20.5-1.4  C410.5,434.5,418.1,436.3,423.8,438.2z" />
+    <path id="rightPICA" fill="#EDEDED" d="M363.4,536.1c0.3-5.2,0.6-10.5,0.9-15.7c-6.2-0.7-11.9-1.1-17.1-1.4  c-4.1-0.2-9.6-0.4-16.2-0.4c-3,0-5.6,0.1-7.6,0.1c-0.2,0.1-4.6,2.1-5.2,6.8c-0.4,3.2,1,6.3,3.6,8.2c5-0.2,9.4-0.1,13.1-0.1  c6.1,0.1,11.7,0.5,16.6,1C356.2,535.2,360.2,535.7,363.4,536.1z" />
+    <path id="rightV4" fill="#DADADA" d="M430.4,484.6c-4.9-5.5-9.7-11-14.6-16.4c-4.5,4.1-8.4,7.1-11,9c-4.5,3.2-6.3,4-14.9,9.6  c-5.7,3.7-8.6,5.6-10.6,7.4c-5.4,4.9-8.3,10.1-9.7,12.8c-1.7,3.1-3.8,7.6-5.2,13.5c-0.3,5.2-0.6,10.5-0.9,15.7  c-0.1,5.2-0.1,10.2,0,14.7c0.1,4.3,0.3,9.1,0.6,14.5c0.2,3.1,0.4,5.8,0.5,7.9c1.5,1.2,6.4,4.5,13.5,4.5c7.5,0,12.6-3.8,14.1-5  c-0.5-7.2-0.8-13.3-1-17.9c0,0-0.3-7.1-0.5-18.2c-0.1-9,0-11.3,0.8-14.4c1.2-5,3.3-8.9,4.8-11.3c3.7-5.9,8.3-9.2,12.5-12.2  c4.3-3.1,5.4-3,12-7.3C424.9,488.7,428.2,486.3,430.4,484.6z" />
+    <path id="ACA" fill="#9D9D9C" d="M376.2,115.5c5.2-8.8,10.5-17.7,15.7-26.5c12.8-2.5,28.6-4.5,46.8-4.5c18.2,0,34,2,46.8,4.5  c5.2,8.8,10.5,17.7,15.7,26.5c-15-4.3-36.3-8.8-62-8.8C413,106.6,391.4,111.1,376.2,115.5z" />
+    <path id="basilarisHead" fill="#B2B2B2" d="M412,336.7c4.3-6.5,8.5-13,12.8-19.5c4.6,2.7,9.2,5.4,13.8,8c4.6-2.7,9.2-5.4,13.8-8  c4.3,6.5,8.5,13,12.8,19.5c-2.5,1.4-5.1,2.9-7.6,4.3c-0.7,6.5-1.3,13-2,19.4c-11.4,0-22.8,0-34.2,0c-0.7-6.5-1.3-13-2-19.4  C417,339.5,414.5,338.1,412,336.7z" />
+    <path id="basilaris" fill="#C6C6C6" d="M415.8,468.2c3-3.1,4.7-6.2,5.6-8.2c1.8-4.2,2.1-7.8,2.4-11.9c0.3-3.9,0.2-7.3,0-9.9  c0.2-7.5,0.4-14.9,0.6-22.4c-0.4-11.3-0.7-22.6-1.1-33.9c-0.6-7.2-1.2-14.4-1.8-21.5c11.4,0,22.8,0,34.2,0  c-0.6,7.2-1.2,14.4-1.8,21.5c-0.4,11.3-0.7,22.6-1.1,33.9c0.2,7.5,0.4,14.9,0.6,22.4c-0.4,4.4-0.2,8,0,10.6  c0.4,4.1,0.7,7.7,2.6,11.9c1.7,3.6,3.8,6.1,5.3,7.6c-4.9,5.5-9.7,11-14.6,16.4c-2.7-2.3-5.5-4.7-8.2-7c-2.7,2.3-5.5,4.7-8.2,7  C425.6,479.1,420.7,473.7,415.8,468.2z" />
+</svg>

@@ -44,7 +44,7 @@ export function extractMetadata(doc: Document, ns: string = "med"): Metadata {
     .map((lng) => lng.trim()) ?? ["en"]
 
   const meta: Metadata = {
-    lngs: [],
+    lngs,
     title: {},
     description: {},
     options: {},

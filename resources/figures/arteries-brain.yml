@@ -1,5 +1,6 @@
 de:
-  title: Circulus arteriosus cerebri
+  title: Arterielle Hirngefäße
+  description: Circulus arteriosus cerebri
   leftM2Superior: superiores M2-Segment links
   leftM2Inferior: inferiores M2-Segment links
   leftM1Bifurcation: Mediabifurkation links
@@ -37,7 +38,8 @@ de:
   basilaris: A. basilaris
 
 en:
-  title: Circulus arteriosus cerebri
+  title: Arterial brain vessels
+  description: Circulus arteriosus cerebri
   leftM2Superior: Left superior M2-segment
   leftM2Inferior: Left inferior M2-segment
   leftM1Bifurcation: Bifurcation of left MCA
