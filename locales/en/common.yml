@@ -117,12 +117,10 @@ MeasurementsTablePage:
   pageTitle: Measurements table
 ModuleInfo:
   buttonInfo: Module info
-ModuleList:
+ModulesAndCategories:
   buttonNewModule: New module
 ModulesPage:
   title: Modules
-ModuleSelectorWithCategories:
-  filterInputLabel: Filter modules
 NavDrawer:
   figures: Figures
   modules: Modules
@@ -161,6 +159,8 @@ ResetPasswordForm:
   textRedirect: Go to the
 ResetPasswordPage:
   pageTitle: Reset password
+ResourcesAndCategories:
+  filterInputLabel: Filter
 ShowFigurePage:
   pageTitle: Show figure
 ShowModulePage:

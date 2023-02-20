@@ -1,4 +1,4 @@
-import { Box, Center, Portal, SegmentedControl } from "@mantine/core"
+import { Box, Center, SegmentedControl } from "@mantine/core"
 import { ReactNode, useState } from "react"
 import {
   MdCode as SourceIcon,
@@ -6,20 +6,21 @@ import {
   MdRemoveRedEye as PreviewIcon,
 } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { NavbarActions } from "../common/NavbarActions"
 
-interface EditorProps {
+interface ResourceEditorProps {
   properties: ReactNode
   codeEditor: ReactNode
   preview: ReactNode
 }
 
-export const Editor = ({ properties, codeEditor, preview }: EditorProps) => {
+export const ResourceEditor = ({ properties, codeEditor, preview }: ResourceEditorProps) => {
   const [currentView, setCurrentView] = useState("properties")
   const { t } = useSiteTranslation()
 
   return (
     <>
-      <Portal target="#navbar-group">
+      <NavbarActions>
         <SegmentedControl
           value={currentView}
           onChange={setCurrentView}
@@ -29,7 +30,7 @@ export const Editor = ({ properties, codeEditor, preview }: EditorProps) => {
               label: (
                 <Center>
                   <PropertiesIcon size={16} />
-                  <Box ml={10}>{t("Editor.properties")}</Box>
+                  <Box ml={10}>{t("ResourceEditor.general")}</Box>
                 </Center>
               ),
             },
@@ -38,7 +39,7 @@ export const Editor = ({ properties, codeEditor, preview }: EditorProps) => {
               label: (
                 <Center>
                   <SourceIcon size={16} />
-                  <Box ml={10}>{t("Editor.sourceCode")}</Box>
+                  <Box ml={10}>{t("ResourceEditor.sourceCode")}</Box>
                 </Center>
               ),
             },
@@ -47,13 +48,13 @@ export const Editor = ({ properties, codeEditor, preview }: EditorProps) => {
               label: (
                 <Center>
                   <PreviewIcon size={16} />
-                  <Box ml={10}>{t("Editor.preview")}</Box>
+                  <Box ml={10}>{t("ResourceEditor.preview")}</Box>
                 </Center>
               ),
             },
           ]}
         />
-      </Portal>
+      </NavbarActions>
 
       <Box display={currentView !== "properties" ? "none" : undefined} h="100%">
         {properties}

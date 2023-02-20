@@ -1,14 +1,15 @@
+import { ResourceType } from "@prisma/client"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 
 type EditorState = {
-  resourceType: "figure" | "module" | "template"
+  resourceType: ResourceType
   resourceName: string
   compileStatus: "updating" | "ready" | "error"
 }
 
 const initialState: EditorState = {
-  resourceType: "figure",
+  resourceType: "FIGURE",
   resourceName: "",
   compileStatus: "ready",
 }
@@ -17,8 +18,8 @@ const editorSlice = createSlice({
   name: "editor",
   initialState,
   reducers: {
-    setEditorState(state, action: PayloadAction<EditorState>) {
-      state = action.payload
+    setEditorState(_state, action: PayloadAction<EditorState>) {
+      return action.payload
     },
   },
 })

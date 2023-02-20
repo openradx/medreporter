@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { ModuleListWithCategories } from "~/components/modules/ModuleListWithCategories"
+import { ModulesAndCategories } from "~/components/modules/ModulesAndCategories"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
@@ -25,7 +25,7 @@ const ModulesPage: PageWithLayout = () => {
   return (
     <>
       <PageHead title={t("ModulesPage.title")} />
-      <ModuleListWithCategories />
+      <ModulesAndCategories />
     </>
   )
 }

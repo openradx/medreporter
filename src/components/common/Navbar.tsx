@@ -33,7 +33,7 @@ export const Navbar = () => {
               </Anchor>
             </Link>
           </Group>
-          <Group id="navbar-group" spacing="sm" />
+          <Group id="navbar-actions" spacing="sm" />
           <ActionsGroup>
             <ColorSchemeToggle />
             <SiteLanguageChooser />

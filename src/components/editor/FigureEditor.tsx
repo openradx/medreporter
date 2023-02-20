@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic"
 import { CodeEditorLoader } from "./CodeEditorLoader"
-import { Editor } from "./Editor"
 import { FigurePreview } from "./FigurePreview"
 import { FigureProperties } from "./FigureProperties"
+import { ResourceEditor } from "./ResourceEditor"
 
 const FigureCodeEditor = dynamic(() => import("./FigureCodeEditor"), {
   loading: () => <CodeEditorLoader />,
@@ -10,7 +10,7 @@ const FigureCodeEditor = dynamic(() => import("./FigureCodeEditor"), {
 })
 
 export const FigureEditor = () => (
-  <Editor
+  <ResourceEditor
     properties={<FigureProperties />}
     codeEditor={<FigureCodeEditor />}
     preview={<FigurePreview />}

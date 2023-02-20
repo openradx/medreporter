@@ -1,6 +1,6 @@
-Editor:
+ResourceEditor:
+  general: Allgemein
   preview: Vorschau
-  properties: Eigenschaften
   sourceCode: Quellcode
 SourceEditorProblems:
   problemsFound_one: "{{count}} Problem gefunden"

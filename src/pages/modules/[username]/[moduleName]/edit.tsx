@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   const { author, ...rest } = module_
   store.dispatch(addResource({ ...rest, author: author.username! }))
   store.dispatch(
-    setEditorState({ resourceType: "module", resourceName: module_.name, compileStatus: "ready" })
+    setEditorState({ resourceType: "MODULE", resourceName: module_.name, compileStatus: "ready" })
   )
 
   return {

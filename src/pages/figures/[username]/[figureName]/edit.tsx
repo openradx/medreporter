@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   const { author, ...rest } = figure
   store.dispatch(addResource({ ...rest, author: author.username! }))
   store.dispatch(
-    setEditorState({ resourceType: "figure", resourceName: figure.name, compileStatus: "ready" })
+    setEditorState({ resourceType: "FIGURE", resourceName: figure.name, compileStatus: "ready" })
   )
 
   return {
