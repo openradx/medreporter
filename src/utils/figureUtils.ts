@@ -32,13 +32,13 @@ export function extractMetadata(doc: Document, ns: string = "med"): Metadata {
   }
 
   ns = `${ns}\\:`
-  let medReporterEl = metadataEl.querySelector(`${ns}MedReporter`)
-  if (!medReporterEl) {
-    medReporterEl = metadataEl.querySelector("MedReporter")
+  let figureEl = metadataEl.querySelector(`${ns}Figure`)
+  if (!figureEl) {
+    figureEl = metadataEl.querySelector("Figure")
     ns = ""
   }
 
-  const lngs = medReporterEl
+  const lngs = figureEl
     ?.getAttribute("lngs")
     ?.split(",")
     .map((lng) => lng.trim()) ?? ["en"]
@@ -51,13 +51,13 @@ export function extractMetadata(doc: Document, ns: string = "med"): Metadata {
   }
 
   lngs.forEach((lng) => {
-    const titleEl = medReporterEl?.querySelector(`${ns}Title`)
+    const titleEl = figureEl?.querySelector(`${ns}Title`)
     meta.title[lng] = titleEl ? extractText(titleEl, lng) : "Untitled"
 
-    const descriptionEl = medReporterEl?.querySelector(`${ns}Description`)
+    const descriptionEl = figureEl?.querySelector(`${ns}Description`)
     meta.description[lng] = descriptionEl ? extractText(descriptionEl, lng) : ""
 
-    const optionEls = medReporterEl?.querySelectorAll(`${ns}Option`) ?? []
+    const optionEls = figureEl?.querySelectorAll(`${ns}Option`) ?? []
     for (const optionEl of optionEls) {
       const optionId = optionEl.getAttribute("id")
       if (!optionId) continue

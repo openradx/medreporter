@@ -2,7 +2,7 @@
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
 <metadata xmlns:med="http://www.medreporter.org/reference/image">
-  <med:MedReporter lngs="%lng">
+  <med:Figure lngs="%lng">
     <med:Title>
       <med:Trans lng="%lng">%title</med:Trans>
     </med:Title>
@@ -18,7 +18,7 @@
     <med:Option id="square">
       <med:Trans lng="%lng">%squareOption</med:Trans>
     </med:Option>
-  </med:MedReporter>
+  </med:Figure>
 </metadata>
 <g>
 	<path fill="#FAFAFA" d="M566.06,620H73.94C44.15,620,20,595.85,20,566.06V73.94C20,44.15,44.15,20,73.94,20h492.12

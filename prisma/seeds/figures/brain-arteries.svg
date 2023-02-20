@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880.27 580.72">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:MedReporter lngs="de,en">
+        <med:Figure lngs="de,en">
             <med:Title>
                 <med:Trans lng="de">Circulus arteriosus cerebri</med:Trans>
                 <med:Trans lng="en">Circulus arteriosus cerebri</med:Trans>
@@ -145,7 +145,7 @@
                 <med:Trans lng="de">A. basilaris</med:Trans>
                 <med:Trans lng="en">Basilar artery</med:Trans>
             </med:Option>
-        </med:MedReporter>
+        </med:Figure>
     </metadata>
     <path id="leftM2Superior" d="M768.33,116.7c17.38-7.16,36.43-14.2,57.08-20.71,17.46-5.5,34.18-10.03,49.96-13.77,.92-1.62,5.03-9.28,2.64-19.01-2.47-10.03-10.05-14.93-11.57-15.87-7.18,1.52-17.14,3.81-28.89,7.09-14.77,4.12-25.65,7.93-37.54,12.1-12.79,4.48-23.43,8.56-37.26,13.86-6.47,2.48-11.82,4.56-15.5,6.01,7.03,10.1,14.06,20.2,21.09,30.3Z" fill="#c6c6c6" />
     <path id="leftM2Inferior" d="M768.33,116.7c-5.54,10.52-11.09,21.04-16.63,31.56,9.54,3.54,20.41,8.31,31.94,14.79,15.92,8.95,27,17.8,33.41,22.96,6.41,5.16,11.58,9.79,15.31,13.28,.8,.22,10.74,2.78,18.88-4.19,8.3-7.11,7.09-17.6,6.99-18.35-4.66-5.11-10.48-11.01-17.52-17.21-8.45-7.45-16.26-13.2-22.53-17.45-6.4-4.34-14.84-9.58-25.17-14.77-9.05-4.55-17.42-8-24.69-10.62Z" fill="#c6c6c6" />

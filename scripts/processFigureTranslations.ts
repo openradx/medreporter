@@ -52,9 +52,9 @@ for (const figureFile of figureFiles) {
     svgEl?.prepend(metadataEl)
   }
 
-  const medReporterEl = document.createElementNS(NS, "med:MedReporter")
-  medReporterEl.setAttribute("lngs", lngs.join(","))
-  metadataEl.prepend(medReporterEl)
+  const figureEl = document.createElementNS(NS, "med:Figure")
+  figureEl.setAttribute("lngs", lngs.join(","))
+  metadataEl.prepend(figureEl)
 
   const getTranslation = (lng: string, key: string) => {
     const trans: string | undefined = translations[lng][key]
@@ -96,7 +96,7 @@ for (const figureFile of figureFiles) {
   }
 
   const titleEl = createTitleEl()
-  medReporterEl.append(titleEl)
+  figureEl.append(titleEl)
 
   // only respect the first found in a subtree
   const ids: string[] = []
@@ -114,7 +114,7 @@ for (const figureFile of figureFiles) {
 
   for (const id of ids) {
     const partEl = createOptionEl(id)
-    medReporterEl.append(partEl)
+    figureEl.append(partEl)
   }
 
   const processedFile = path.join(OUTPUT_FOLDER, figureFilename)

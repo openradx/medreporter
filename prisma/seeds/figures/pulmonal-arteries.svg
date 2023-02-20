@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 474.18 439.24">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:MedReporter lngs="de,en">
+        <med:Figure lngs="de,en">
             <med:Title>
                 <med:Trans lng="de">Pulmonalarterien</med:Trans>
                 <med:Trans lng="en">Pulmonalarteries</med:Trans>
@@ -129,7 +129,7 @@
                 <med:Trans lng="de">Truncus pulmonalis</med:Trans>
                 <med:Trans lng="en">Pulmonary trunk</med:Trans>
             </med:Option>
-        </med:MedReporter>
+        </med:Figure>
     </metadata>
     <g>
         <path id="LLLBasalAnterior" d="M376.7,353.06c4.9,4.8,9.87,9.62,14.93,14.46,8.22,7.85,16.39,15.5,24.51,22.94,1.19-.6,4.38-2.39,6.52-6.26,2.14-3.88,1.96-7.54,1.83-8.87-12.31-9.67-25.58-21.91-38.33-37.29-3.84-4.63-7.36-9.22-10.59-13.72-3.89,5.33-7.77,10.66-11.66,16,4.27,4.24,8.53,8.49,12.8,12.73Z" fill="#d6d6d6" />

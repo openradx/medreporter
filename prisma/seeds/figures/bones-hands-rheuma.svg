@@ -1,6 +1,6 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1015.42 755.03" enable-background="new 0 0 1015.42 755.03" xml:space="preserve">
     <metadata xmlns:med="http://www.medreporter.org/reference/image">
-        <med:MedReporter lngs="de,en">
+        <med:Figure lngs="de,en">
             <med:Title>
                 <med:Trans lng="de">Knochen der Hand Rheuma</med:Trans>
                 <med:Trans lng="en">Bones hand rheuma</med:Trans>
@@ -861,7 +861,7 @@
                 <med:Trans lng="de">Processus styloideus ulnae rechts</med:Trans>
                 <med:Trans lng="en">Right ulnar styloid process</med:Trans>
             </med:Option>
-        </med:MedReporter>
+        </med:Figure>
     </metadata>
     <g>
         <path id="leftMetacarpal5HeadRadial" fill="#9D9D9C" d="M150.25,392.76c-0.03-0.5-0.07-1.21-0.16-2.06c0,0-0.32-3-1.11-5.88   c-1.43-5.21-3.65-13.29-10.07-16.18c-6.01-2.71-12.63,0.52-14.38,1.44c1.39,5.03,2.78,10.07,4.17,15.1   C135.88,387.71,143.06,390.23,150.25,392.76z" />
