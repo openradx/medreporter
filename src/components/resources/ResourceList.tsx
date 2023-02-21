@@ -1,6 +1,8 @@
-import { Group, Pagination, ScrollArea, Stack, Table, Text } from "@mantine/core"
+import { Anchor, Card, Group, Pagination, Stack, Text } from "@mantine/core"
 import { ResourceType } from "@prisma/client"
+import Link from "next/link"
 import { useRouter } from "next/router"
+import { Route } from "nextjs-routes"
 import { useDebounce } from "use-debounce"
 import { useFilter } from "~/contexts/FilterContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -26,7 +28,7 @@ export const ResourceList = ({ resourceType }: ResourceListProps) => {
   // https://github.com/prisma/prisma/issues/5837
   const { data, error, status } = trpc.resources.getTranslatedResources.useQuery({
     type: resourceType,
-    language: currentSiteLanguage,
+    siteLanguage: currentSiteLanguage,
     filter: filterDebounced,
     skip: ITEMS_PER_PAGE * (activePage - 1),
     take: ITEMS_PER_PAGE,
@@ -40,27 +42,47 @@ export const ResourceList = ({ resourceType }: ResourceListProps) => {
     return <QueryError message={error.message} />
   }
 
+  const totalPages = Math.ceil(data.count / ITEMS_PER_PAGE)
+
+  const getRoute = (username: string, resourceName: string): Route => {
+    switch (resourceType) {
+      case "FIGURE": {
+        return {
+          pathname: "/figures/[username]/[figureName]",
+          query: { username, figureName: resourceName },
+        }
+      }
+      case "MODULE": {
+        return {
+          pathname: "/modules/[username]/[moduleName]",
+          query: { username, moduleName: resourceName },
+        }
+      }
+      default: {
+        throw new Error(`Invalid resource type: ${resourceType}`)
+      }
+    }
+  }
+
   return (
     <Stack>
-      {data?.resources.length === 0 && <Text>{t("general.miscNoData")}</Text>}
-      {data?.resources.length > 0 && (
-        <ScrollArea>
-          <Table verticalSpacing="md">
-            <tbody>
-              {data.resources.map((module_) => (
-                <tr key={module_.id}>
-                  <td>{module_.title}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </ScrollArea>
+      {data.resources.length === 0 && <Text>{t("general.miscNoData")}</Text>}
+      {data.resources.length > 0 && (
+        <Stack>
+          {data.resources.map((resource) => (
+            <Card key={resource.id} p="xs" withBorder>
+              <Link href={getRoute(resource.author!, resource.name)} passHref legacyBehavior>
+                <Anchor weight={500}>{resource.title}</Anchor>
+              </Link>
+            </Card>
+          ))}
+        </Stack>
       )}
       <Group position="center">
-        {data?.resources.length && (
+        {totalPages > 1 && (
           <Pagination
             page={activePage}
-            total={Math.ceil(data.count / ITEMS_PER_PAGE)}
+            total={totalPages}
             onChange={(page) => router.push({ query: { page: String(page) } })}
           />
         )}

@@ -1,4 +1,4 @@
-import { PrismaClientKnownRequestError } from "@prisma/client/runtime"
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library"
 import { TRPCError } from "@trpc/server"
 
 // For codes see https://www.prisma.io/docs/reference/api-reference/error-reference

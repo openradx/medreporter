@@ -15,7 +15,7 @@ import fs from "fs"
 import glob from "glob"
 import path from "path"
 import { syncCategories } from "~/server/utils/categoryUtils"
-import { syncDefaultFigure } from "~/server/utils/figureUtils"
+import { syncFigure } from "~/server/utils/figureUtils"
 import { hashPassword } from "~/utils/cryptography"
 import defaultCategories from "./seeds/categories.json"
 
@@ -176,6 +176,8 @@ async function seed() {
     await Promise.all(promises)
   }
 
+  const users = await prisma.user.findMany()
+
   /*
    * Categories
    */
@@ -245,7 +247,7 @@ async function seed() {
     const { name } = path.parse(figureFile)
     const source = fs.readFileSync(figureFile).toString()
     // eslint-disable-next-line no-await-in-loop
-    await syncDefaultFigure(prisma, superadmin.id, name, source)
+    await syncFigure(prisma, superadmin.id, name, source)
   }
 
   /*
@@ -257,10 +259,8 @@ async function seed() {
   } else {
     console.info("Creating example modules.")
     for (let i = 0; i < EXAMPLE_MODULES; i++) {
-      const skip = Math.floor(Math.random() * userCount)
-      // eslint-disable-next-line no-await-in-loop
-      const user = (await prisma.user.findMany({ take: 1, skip })).at(0)!
-      createExampleModule(user.id)
+      const authorId = faker.helpers.arrayElement(users).id
+      createExampleModule(authorId)
     }
   }
 }

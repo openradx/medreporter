@@ -103,7 +103,7 @@ export const resourcesRouter = router({
   getTranslatedResources: publicProcedure
     .input(GetTranslatedResourcesSchema)
     .query(async ({ input, ctx }) => {
-      const { type, language, filter, skip, take } = input
+      const { type, siteLanguage, filter, skip, take } = input
       const { user } = ctx
 
       const filterObject = createFilterObject(filter ?? "", [
@@ -145,9 +145,9 @@ export const resourcesRouter = router({
           },
           {
             OR: [
-              { language },
+              { language: siteLanguage },
               {
-                resource: { translations: { none: { language } } },
+                resource: { translations: { none: { language: siteLanguage } } },
                 default: true,
               },
             ],
@@ -170,7 +170,10 @@ export const resourcesRouter = router({
                         some: {
                           Category: {
                             translations: {
-                              some: { language, label: { in: filterObject.category } },
+                              some: {
+                                language: siteLanguage,
+                                label: { in: filterObject.category },
+                              },
                             },
                           },
                         },
@@ -234,11 +237,13 @@ export const resourcesRouter = router({
       return {
         resources: resourceTranslations.map((resourceTranslation) => ({
           id: resourceTranslation.resource.id,
+          author: resourceTranslation.resource.author.username,
+          name: resourceTranslation.resource.name,
           title: resourceTranslation.title,
           description: resourceTranslation.description,
           categories: resourceTranslation.resource.categories.map((category) => {
             const label = category.Category.translations.find(
-              (translation) => translation.language === language
+              (translation) => translation.language === siteLanguage
             )?.label
 
             if (label === undefined) {

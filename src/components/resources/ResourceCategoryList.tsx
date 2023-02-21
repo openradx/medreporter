@@ -1,7 +1,8 @@
+import { Chip, Stack, Text, Title } from "@mantine/core"
 import { ResourceType } from "@prisma/client"
+import { useFilter } from "~/contexts/FilterContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
-import { CategoryList } from "../common/CategoryList"
 import { DataLoader } from "../common/DataLoader"
 import { QueryError } from "../common/QueryError"
 
@@ -10,7 +11,8 @@ interface ResourceCategoryListProps {
 }
 
 export const ResourceCategoryList = ({ resourceType }: ResourceCategoryListProps) => {
-  const { currentSiteLanguage } = useSiteTranslation()
+  const { filter, setFilter } = useFilter()
+  const { t, currentSiteLanguage } = useSiteTranslation()
   const { data, error, status } = trpc.categories.getCategories.useQuery({
     language: currentSiteLanguage,
     type: resourceType,
@@ -24,5 +26,21 @@ export const ResourceCategoryList = ({ resourceType }: ResourceCategoryListProps
     return <QueryError message={error.message} />
   }
 
-  return <CategoryList categories={data?.categories ?? []} />
+  const filterByCategory = (category: string) => {
+    setFilter(`${filter} category:${category}`)
+  }
+
+  return (
+    <Stack>
+      <Title order={6}>{t("ResourceCategoryList.title")}</Title>
+      <Stack spacing={0.5}>
+        {data.categories.length === 0 && <Text>{t("ResourceCategoryList.noCategories")}</Text>}
+        {data.categories.map((category) => (
+          <Chip key={category.key} radius="sm" onClick={() => filterByCategory(category.label)}>
+            {category.label}
+          </Chip>
+        ))}
+      </Stack>
+    </Stack>
+  )
 }

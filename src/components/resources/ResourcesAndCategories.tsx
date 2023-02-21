@@ -15,7 +15,7 @@ export const ResourcesAndCategories = ({
   filterInputLabel,
 }: ResourcesAndCategoriesProps) => (
   <FilterProvider>
-    <Grid>
+    <Grid gutter="lg">
       <Grid.Col span={8}>
         <Stack>
           <FilterInput label={filterInputLabel} />

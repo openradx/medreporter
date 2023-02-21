@@ -145,9 +145,9 @@ for (const figureFile of figureFiles) {
     format(output, {
       filepath: processedFile,
       plugins: [require.resolve("@prettier/plugin-xml")],
-      xmlWhitespaceSensitivity: "ignore",
-      singleAttributePerLine: false,
       printWidth: Number.MAX_SAFE_INTEGER,
+      singleAttributePerLine: false,
+      xmlWhitespaceSensitivity: "ignore",
     })
   )
   console.log(chalk.green(`Successfully written "${figureFilename}".`))

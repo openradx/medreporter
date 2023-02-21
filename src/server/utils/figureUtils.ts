@@ -22,7 +22,7 @@ export function optimizeSvg(source: string) {
   return data
 }
 
-export async function syncDefaultFigure(
+export async function syncFigure(
   prisma: PrismaClient,
   authorId: string,
   name: string,
@@ -34,7 +34,6 @@ export async function syncDefaultFigure(
   return await prisma.resource.upsert({
     where: { type_authorId_name: { type: "FIGURE", authorId, name } },
     update: {
-      name,
       source,
       document: optimizeSvg(source),
       translations,

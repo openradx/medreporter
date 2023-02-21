@@ -44,6 +44,6 @@ export const buildUpdateResourceSchema = (t: TFunction) =>
 
 export const GetTranslatedResourcesSchema = PaginationSchema.extend({
   type: z.nativeEnum(ResourceType),
-  language: z.string(),
+  siteLanguage: z.string(),
   filter: z.string().optional(),
 })

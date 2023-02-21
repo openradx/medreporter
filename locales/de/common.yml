@@ -163,6 +163,9 @@ ResetPasswordForm:
   textRedirect: Gehe zum
 ResetPasswordPage:
   pageTitle: Passwort zurücksetzen
+ResourceCategoryList:
+  noCategories: Keine Kategorien verfügbar
+  title: Kategorien
 ShowFigurePage:
   pageTitle: Abbildung anzeigen
 ShowModulePage:
@@ -185,8 +188,6 @@ Structure:
   title: Struktur
 StructureLanguageChooser:
   buttonLanguageStructure: Sprache Struktur
-CategoryList:
-  title: Kategorien
 ToolsPage:
   pageTitle: Werkzeuge
 UndoButton:
