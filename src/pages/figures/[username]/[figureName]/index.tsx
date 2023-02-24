@@ -1,7 +1,8 @@
-import { GetServerSideProps } from "next"
+import { GetServerSideProps, InferGetServerSidePropsType } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
+import { ShowFigure } from "~/components/figures/ShowFigure"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { resourcesRouter } from "~/server/routers/resources"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
@@ -10,7 +11,11 @@ import { addResource } from "~/state/resourcesSlice"
 import { initStore } from "~/state/store"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 
-export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
+interface PageProps extends ServerSideProps {
+  resourceId: string
+}
+
+export const getServerSideProps: GetServerSideProps<PageProps> = async ({
   req,
   res,
   locale,
@@ -24,28 +29,34 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   const figureName = params?.figureName as string
 
   const caller = resourcesRouter.createCaller({ user })
-  const figure = await caller.getResource({ type: "FIGURE", author: username, name: figureName })
+  const resource = await caller.getResource({ type: "FIGURE", author: username, name: figureName })
 
   const store = initStore()
-  const { author, ...rest } = figure
-  store.dispatch(addResource({ ...rest, author: author.username! }))
+  const { createdAt, updatedAt, ...rest } = resource
+  store.dispatch(
+    addResource({ ...rest, createdAt: createdAt.toISOString(), updatedAt: updatedAt.toISOString() })
+  )
 
   return {
     props: {
       session: await getServerSideSession(req, res),
       i18nSite: await getServerSideSiteTranslations(locale, locales),
       preloadedReduxState: store.getState(),
+      resourceId: resource.id,
     },
   }
 }
 
-const ShowFigurePage: PageWithLayout = () => {
+const ShowFigurePage: PageWithLayout<PageProps> = (
+  props: InferGetServerSidePropsType<typeof getServerSideProps>
+) => {
   const { t } = useSiteTranslation()
+  const figureId = props.resourceId
 
   return (
     <>
       <PageHead title={t("ShowFigurePage.pageTitle")} />
-      <span>Show Figure</span>
+      <ShowFigure resourceId={figureId} />
     </>
   )
 }

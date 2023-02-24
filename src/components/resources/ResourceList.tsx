@@ -71,7 +71,11 @@ export const ResourceList = ({ resourceType }: ResourceListProps) => {
         <Stack>
           {data.resources.map((resource) => (
             <Card key={resource.id} p="xs" withBorder>
-              <Link href={getRoute(resource.author!, resource.name)} passHref legacyBehavior>
+              <Link
+                href={getRoute(resource.author.username!, resource.name)}
+                passHref
+                legacyBehavior
+              >
                 <Anchor weight={500}>{resource.title}</Anchor>
               </Link>
             </Card>

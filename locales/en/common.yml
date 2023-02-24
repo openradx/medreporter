@@ -68,6 +68,8 @@ FiguresAndCategories:
   filterInputLabel: Filter figures
 FiguresPage:
   pageTitle: Figures
+FigureShowcase:
+  resetSelectionTitle: Reset selection
 Fleischner2017Page:
   toolTitle: Fleischner 2017
 ForgotPasswordForm:

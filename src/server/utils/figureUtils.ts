@@ -1,6 +1,8 @@
 import { PrismaClient } from "@prisma/client"
 import { JSDOM } from "jsdom"
 import { optimize } from "svgo"
+import { FigureDocument } from "~/types/resources"
+import { extractMetadata } from "~/utils/figureUtils"
 import { createFigureTranslations } from "./resourceUtils"
 
 export function optimizeSvg(source: string) {
@@ -12,7 +14,6 @@ export function optimizeSvg(source: string) {
           overrides: {
             cleanupIds: false,
             convertPathData: false,
-            removeMetadata: false,
           },
         },
       },
@@ -29,20 +30,26 @@ export async function syncFigure(
   source: string
 ) {
   const dom = new JSDOM(source, { contentType: "image/svg+xml" })
-  const translations = createFigureTranslations(dom.window.document)
+  const meta = extractMetadata(dom.window.document, "med")
+  const translations = createFigureTranslations(meta)
+
+  const figureDocument: FigureDocument = {
+    svg: optimizeSvg(source),
+    meta,
+  }
 
   return await prisma.resource.upsert({
     where: { type_authorId_name: { type: "FIGURE", authorId, name } },
     update: {
       source,
-      document: optimizeSvg(source),
+      document: figureDocument,
       translations,
     },
     create: {
       type: "FIGURE",
       name,
       source,
-      document: optimizeSvg(source),
+      document: figureDocument,
       visibility: "PUBLIC",
       releaseStatus: "PUBLISHED",
       authorId,
