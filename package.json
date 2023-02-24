@@ -79,7 +79,6 @@
     "nanoid-dictionary": "^4.3.0",
     "next": "^13.1.6",
     "next-auth": "^4.19.2",
-    "next-superjson-plugin": "^0.5.4",
     "nextjs-routes": "^1.0.8",
     "preview-email": "^3.0.10",
     "react": "^18.2.0",
