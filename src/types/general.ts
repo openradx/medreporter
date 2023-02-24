@@ -24,7 +24,11 @@ export type SupportedLanguage = SiteLanguage | StructuredReportLanguage
 export interface AppConfig {
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
-  structuredReportLanguages: [StructuredReportLanguage, ...StructuredReportLanguage[]]
+  supportedLanguages: [StructuredReportLanguage, ...StructuredReportLanguage[]]
+  fallbackLanguages: [
+    AppConfig["supportedLanguages"][number],
+    ...AppConfig["supportedLanguages"][number][]
+  ]
 }
 export type SiteLanguageOption = SiteLanguage | "cimode"
 
@@ -56,7 +60,7 @@ export interface ServerSideProps {
   preloadedReduxState?: PreloadedReduxState
 }
 
-export type PageWithLayout = NextPage & {
+export type PageWithLayout<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactElement) => ReactNode
 }
 

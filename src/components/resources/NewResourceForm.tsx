@@ -78,7 +78,7 @@ export const NewResourceForm = ({
           <Controller
             name="language"
             render={({ field }) => (
-              <DraftLanguageSelector {...field} languages={appConfig.structuredReportLanguages} />
+              <DraftLanguageSelector {...field} languages={appConfig.supportedLanguages} />
             )}
           />
           <Controller name="visibility" render={({ field }) => <VisibilitySelector {...field} />} />

@@ -1,8 +1,11 @@
-export interface Metadata {
-  lngs: string[]
-  title: { [lng: string]: string }
-  description: { [lng: string]: string }
-  options: { [id: string]: { [lng: string]: string } }
+import appConfig from "app.config"
+import { SupportedLanguage } from "~/types/general"
+import { FigureMetadata } from "~/types/resources"
+
+export interface TranslatedFigureMetadata {
+  title: string
+  description: string
+  options: { [id: string]: string }
 }
 
 function extractText(el: Element, lng: string, ns: string = "med"): string {
@@ -25,7 +28,7 @@ function extractText(el: Element, lng: string, ns: string = "med"): string {
   return text.trim()
 }
 
-export function extractMetadata(doc: Document, ns: string = "med"): Metadata {
+export function extractMetadata(doc: Document, ns: string = "med"): FigureMetadata {
   let metadataEl = doc.querySelector("metadata")
   if (!metadataEl) {
     metadataEl = doc.createElementNS("http://www.w3.org/2000/svg", "metadata")
@@ -43,7 +46,7 @@ export function extractMetadata(doc: Document, ns: string = "med"): Metadata {
     ?.split(",")
     .map((lng) => lng.trim()) ?? ["en"]
 
-  const meta: Metadata = {
+  const meta: FigureMetadata = {
     lngs,
     title: {},
     description: {},
@@ -68,4 +71,32 @@ export function extractMetadata(doc: Document, ns: string = "med"): Metadata {
   })
 
   return meta
+}
+
+export function translateMetadata(
+  meta: FigureMetadata,
+  lng: SupportedLanguage
+): TranslatedFigureMetadata {
+  const getTranslation = (prop: { [lng: string]: string }, defaultTranslation = ""): string => {
+    let trans = prop[lng]
+    for (const fallbackLng of appConfig.fallbackLanguages) {
+      trans = prop[fallbackLng]
+      if (trans) break
+    }
+    return trans ?? Object.values(prop)[0] ?? defaultTranslation
+  }
+
+  const title = getTranslation(meta.title, "Untitled")
+  const description = getTranslation(meta.description)
+  const options = Object.fromEntries(
+    Object.entries(meta.options)
+      .map(([id, option]) => [id, getTranslation(option)])
+      .filter(([_id, option]) => !!option)
+  )
+
+  return {
+    title,
+    description,
+    options,
+  }
 }

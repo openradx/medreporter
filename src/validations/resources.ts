@@ -20,7 +20,7 @@ export const buildCreateResourceSchema = (t?: TFunction) =>
   z.object({
     type: z.nativeEnum(ResourceType),
     name: buildResourceNameSchema(t),
-    language: z.enum(getAppConfig().structuredReportLanguages),
+    language: z.enum(getAppConfig().supportedLanguages),
     visibility: z.nativeEnum(Visibility),
     categories: z.string().array(),
   })
