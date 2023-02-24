@@ -12,6 +12,7 @@ import { addResource } from "~/state/resourcesSlice"
 import { initStore } from "~/state/store"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { redirectToLogin } from "~/utils/redirects"
+import { transformResource } from "~/utils/stateUtils"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
@@ -34,11 +35,8 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   const figure = await caller.getResource({ type: "FIGURE", author: username, name: figureName })
 
   const store = initStore()
-  const { author, ...rest } = figure
-  store.dispatch(addResource({ ...rest, author: author.username! }))
-  store.dispatch(
-    setEditorState({ resourceType: "FIGURE", resourceName: figure.name, compileStatus: "ready" })
-  )
+  store.dispatch(addResource(transformResource(figure)))
+  store.dispatch(setEditorState({ resourceId: figure.id, compileStatus: "ready" }))
 
   return {
     props: {

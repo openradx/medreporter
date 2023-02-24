@@ -2,8 +2,8 @@ import { ModuleDocument } from "@medreporter/medtl-schema"
 import { createModuleDraft, DocumentWrapper, renderDraft } from "@medreporter/medtl-tools"
 import { Prisma } from "@prisma/client"
 import { i18n as I18n } from "i18next"
+import { FigureMetadata } from "~/types/resources"
 import { extractText } from "~/utils/adapter"
-import { extractMetadata } from "~/utils/figureUtils"
 import { unique } from "~/utils/misc"
 
 export type ResourceTranslationsUpdateArgs = Prisma.ResourceUpdateArgs["data"]["translations"]
@@ -26,11 +26,7 @@ export function createModuleSource(i18n: I18n) {
   })
 }
 
-export function createFigureTranslations(
-  doc: Document,
-  ns: string = "med"
-): ResourceTranslationsUpdateArgs {
-  const meta = extractMetadata(doc, ns)
+export function createFigureTranslations(meta: FigureMetadata): ResourceTranslationsUpdateArgs {
   return {
     create: meta.lngs.map((lng) => ({
       default: false,

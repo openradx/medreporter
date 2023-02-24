@@ -1,16 +1,13 @@
-import { ResourceType } from "@prisma/client"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 
 type EditorState = {
-  resourceType: ResourceType
-  resourceName: string
+  resourceId: string
   compileStatus: "updating" | "ready" | "error"
 }
 
 const initialState: EditorState = {
-  resourceType: "FIGURE",
-  resourceName: "",
+  resourceId: "",
   compileStatus: "ready",
 }
 

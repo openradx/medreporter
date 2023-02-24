@@ -6,11 +6,11 @@ import { CodeEditor } from "./CodeEditor"
 
 const FigureCodeEditor = () => {
   const editorState = useAppSelector(selectEditorState)
-  const figure = useAppSelector(selectResource("FIGURE", editorState.resourceName))
+  const figure = useAppSelector(selectResource(editorState.resourceId))
 
   const dispatch = useAppDispatch()
   const updateSourceDebounced = useDebouncedCallback((source: string) => {
-    dispatch(updateFigureCode(editorState.resourceName, source))
+    dispatch(updateFigureCode(editorState.resourceId, source))
   }, 1000)
 
   return (

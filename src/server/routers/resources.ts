@@ -90,7 +90,7 @@ export const resourcesRouter = router({
 
     const resource = await prisma.resource.findFirst({
       where: { type, author: { username: author }, name },
-      include: { author: { select: { email: true, username: true } } },
+      include: { author: { select: { username: true } } },
     })
 
     if (!resource) {
@@ -205,7 +205,7 @@ export const resourcesRouter = router({
                 select: {
                   id: true,
                   name: true,
-                  author: { select: { email: true, username: true } },
+                  author: { select: { username: true } },
                   translations: {
                     select: {
                       language: true,
@@ -237,10 +237,10 @@ export const resourcesRouter = router({
       return {
         resources: resourceTranslations.map((resourceTranslation) => ({
           id: resourceTranslation.resource.id,
-          author: resourceTranslation.resource.author.username,
           name: resourceTranslation.resource.name,
           title: resourceTranslation.title,
           description: resourceTranslation.description,
+          author: { username: resourceTranslation.resource.author.username },
           categories: resourceTranslation.resource.categories.map((category) => {
             const label = category.Category.translations.find(
               (translation) => translation.language === siteLanguage

@@ -18,11 +18,11 @@ const setup = () => {
 
 const ModuleCodeEditor = () => {
   const editorState = useAppSelector(selectEditorState)
-  const module_ = useAppSelector(selectResource("MODULE", editorState.resourceName))
+  const module_ = useAppSelector(selectResource(editorState.resourceId))
 
   const dispatch = useAppDispatch()
   const updateSourceDebounced = useDebouncedCallback((source: string) => {
-    dispatch(updateModuleCode(editorState.resourceName, source))
+    dispatch(updateModuleCode(editorState.resourceId, source))
   }, 1000)
 
   return (

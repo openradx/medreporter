@@ -1,19 +1,15 @@
 import { parseModule } from "@medreporter/medtl-tools"
-import { Prisma, Resource, ResourceType } from "@prisma/client"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { AppThunk, RootState } from "RootTypes"
+import { ResourceWithAuthor } from "~/types/router"
 import { selectEditorState, setEditorState } from "./editorSlice"
 
-interface ResourceState extends Omit<Resource, "authorId"> {
-  author: string
-  document: Prisma.JsonValue
+export interface ResourceState extends Omit<ResourceWithAuthor, "createdAt" | "updatedAt"> {
+  createdAt: string
+  updatedAt: string
 }
 
-const initialState: { [key in ResourceType]: { [name: string]: ResourceState } } = {
-  FIGURE: {},
-  MODULE: {},
-  TEMPLATE: {},
-}
+const initialState: { [id: string]: ResourceState } = {}
 
 const resourcesSlice = createSlice({
   name: "resources",
@@ -21,8 +17,8 @@ const resourcesSlice = createSlice({
   reducers: {
     addResource(state, action: PayloadAction<ResourceState>) {
       const resource = action.payload
-      const { type, name } = resource
-      state[type][name] = resource
+      const { id } = resource
+      state[id] = resource
     },
   },
 })
@@ -31,23 +27,24 @@ export const { addResource } = resourcesSlice.actions
 
 export default resourcesSlice.reducer
 
-export const selectResource = (type: ResourceType, name: string) => (state: RootState) =>
-  state.resources[type][name]
+export const selectResource = (id: string) => (state: RootState) => state.resources[id]
 
 export const updateFigureCode =
-  (name: string, source: string): AppThunk =>
+  (id: string, source: string): AppThunk =>
   (dispatch, getState) => {
     const state = getState()
     const editorState = selectEditorState(state)
-    const figure = selectResource("FIGURE", name)(state)
+    const resource = selectResource(id)(state)
+    if (resource.type !== "FIGURE") throw new Error(`Invalid resource type: ${resource.type}`)
+
     try {
       dispatch(setEditorState({ ...editorState, compileStatus: "updating" }))
 
       // TODO: maybe handle in webworker
       // TODO: do I have to do a deep clone?
       // TODO: optimize SVG on the server
-      figure.document = source
-      dispatch(addResource(figure))
+      resource.document = source
+      dispatch(addResource(resource))
 
       dispatch(setEditorState({ ...editorState, compileStatus: "ready" }))
     } catch (error) {
@@ -59,11 +56,13 @@ export const updateFigureCode =
   }
 
 export const updateModuleCode =
-  (name: string, source: string): AppThunk =>
+  (id: string, source: string): AppThunk =>
   (dispatch, getState) => {
     const state = getState()
     const editorState = selectEditorState(state)
-    const resource = selectResource("MODULE", name)(state)
+    const resource = selectResource(id)(state)
+    if (resource.type !== "MODULE") throw new Error(`Invalid resource type: ${resource.type}`)
+
     try {
       dispatch(setEditorState({ ...editorState, compileStatus: "updating" }))
 

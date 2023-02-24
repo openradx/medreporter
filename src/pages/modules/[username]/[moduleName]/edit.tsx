@@ -12,6 +12,7 @@ import { addResource } from "~/state/resourcesSlice"
 import { initStore } from "~/state/store"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { redirectToLogin } from "~/utils/redirects"
+import { transformResource } from "~/utils/stateUtils"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
@@ -34,11 +35,8 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   const module_ = await caller.getResource({ type: "MODULE", author: username, name: moduleName })
 
   const store = initStore()
-  const { author, ...rest } = module_
-  store.dispatch(addResource({ ...rest, author: author.username! }))
-  store.dispatch(
-    setEditorState({ resourceType: "MODULE", resourceName: module_.name, compileStatus: "ready" })
-  )
+  store.dispatch(addResource(transformResource(module_)))
+  store.dispatch(setEditorState({ resourceId: module_.id, compileStatus: "ready" }))
 
   return {
     props: {
