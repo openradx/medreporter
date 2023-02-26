@@ -79,9 +79,11 @@ export function translateMetadata(
 ): TranslatedFigureMetadata {
   const getTranslation = (prop: { [lng: string]: string }, defaultTranslation = ""): string => {
     let trans = prop[lng]
-    for (const fallbackLng of appConfig.fallbackLanguages) {
-      trans = prop[fallbackLng]
-      if (trans) break
+    if (!trans) {
+      for (const fallbackLng of appConfig.fallbackLanguages) {
+        trans = prop[fallbackLng]
+        if (trans) break
+      }
     }
     return trans ?? Object.values(prop)[0] ?? defaultTranslation
   }

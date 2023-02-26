@@ -1,30 +1,29 @@
-import { Anchor, Burger, Container, Group, Header, Text } from "@mantine/core"
+import { Anchor, Burger, Group, Header, Text } from "@mantine/core"
 import Link from "next/link"
 import { useState } from "react"
+import { NAVBAR_HEIGHT } from "~/constants"
+import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
 import { NavDrawer } from "./NavDrawer"
 import { SiteLanguageChooser } from "./SiteLanguageChooser"
 
-const NAVBAR_HEIGHT = 60
-
 export const Navbar = () => {
+  const { t } = useSiteTranslation()
   const [opened, setOpened] = useState(false)
 
   return (
     <>
       <Header height={NAVBAR_HEIGHT}>
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height: "100%",
-          }}
-        >
+        <Group align="center" position="apart" h="100%" px="md">
           <Group>
-            <Burger opened={false} onClick={() => setOpened(!opened)} size="sm" />
+            <Burger
+              opened={false}
+              title={t("Navbar.openMainMenuTitle")}
+              onClick={() => setOpened(!opened)}
+              size="sm"
+            />
             <Link href="/" passHref legacyBehavior>
               <Anchor sx={{ "&:hover": { textDecoration: "none" } }}>
                 <Text fw="bold" fz="xl">
@@ -39,7 +38,7 @@ export const Navbar = () => {
             <SiteLanguageChooser />
             <AccountControl />
           </ActionsGroup>
-        </Container>
+        </Group>
       </Header>
       <NavDrawer opened={opened} setOpened={setOpened} />
     </>

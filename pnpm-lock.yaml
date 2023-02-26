@@ -58,6 +58,7 @@ specifiers:
   chalk: ^5.2.0
   commander: ^10.0.0
   cookies-next: ^2.1.1
+  csstype: ^3.1.1
   dayjs: ^1.11.7
   esbuild: ^0.17.8
   eslint: ^8.34.0
@@ -207,6 +208,7 @@ devDependencies:
   '@vue/compiler-sfc': 3.2.47
   chalk: 5.2.0
   commander: 10.0.0
+  csstype: 3.1.1
   esbuild: 0.17.8
   eslint: 8.34.0
   eslint-config-airbnb: 19.0.4_hbw3smywoiafix46yjc35xsaqq

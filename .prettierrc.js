@@ -8,4 +8,14 @@ module.exports = {
     require.resolve("@prettier/plugin-xml"),
   ],
   importOrder: ["^~", "^[./]"],
+  overrides: [
+    {
+      files: "*.svg",
+      options: {
+        printWidth: Number.MAX_SAFE_INTEGER,
+        singleAttributePerLine: false,
+        xmlWhitespaceSensitivity: "ignore",
+      },
+    },
+  ],
 }

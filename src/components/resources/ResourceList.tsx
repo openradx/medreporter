@@ -1,4 +1,4 @@
-import { Anchor, Card, Group, Pagination, Stack, Text } from "@mantine/core"
+import { Anchor, Card, Center, Pagination, Stack, Text } from "@mantine/core"
 import { ResourceType } from "@prisma/client"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -82,7 +82,7 @@ export const ResourceList = ({ resourceType }: ResourceListProps) => {
           ))}
         </Stack>
       )}
-      <Group position="center">
+      <Center>
         {totalPages > 1 && (
           <Pagination
             page={activePage}
@@ -90,7 +90,7 @@ export const ResourceList = ({ resourceType }: ResourceListProps) => {
             onChange={(page) => router.push({ query: { page: String(page) } })}
           />
         )}
-      </Group>
+      </Center>
     </Stack>
   )
 }

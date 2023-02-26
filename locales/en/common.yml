@@ -69,6 +69,7 @@ FiguresAndCategories:
 FiguresPage:
   pageTitle: Figures
 FigureShowcase:
+  languageChooserTitle: Figure language
   resetSelectionTitle: Reset selection
 Fleischner2017Page:
   toolTitle: Fleischner 2017
@@ -127,6 +128,8 @@ ModulesAndCategories:
   filterInputLabel: Filter modules
 ModulesPage:
   title: Modules
+Navbar:
+  openMainMenuTitle: Open main menu
 NavDrawer:
   figures: Figures
   modules: Modules

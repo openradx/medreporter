@@ -33,5 +33,8 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[svg]": { "editor.formatOnSave": false }
+  "[svg]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  }
 }

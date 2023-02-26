@@ -1,4 +1,4 @@
-import { ActionIcon, Flex, Group, Stack, Text } from "@mantine/core"
+import { ActionIcon, Box, Flex, Group, Stack, Text } from "@mantine/core"
 import { useState } from "react"
 import { BiReset as ResetIcon } from "react-icons/bi"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -6,6 +6,7 @@ import { ResourceState } from "~/state/resourcesSlice"
 import { SupportedLanguage } from "~/types/general"
 import { FigureDocument } from "~/types/resources"
 import { translateMetadata } from "~/utils/figureUtils"
+import { LanguageChooser } from "../common/LanguageChooser"
 import { FigureImage } from "./FigureImage"
 import { FigureLegend } from "./FigureLegend"
 
@@ -13,7 +14,7 @@ const DEFAULT_SELECTED_IDS: string[] = []
 
 interface FigureShowcaseProps {
   figure: ResourceState
-  lng: SupportedLanguage
+  defaultLng?: SupportedLanguage
   selectionMode?: "single" | "multi"
   defaultSelectedIds?: string[]
   onSelectionChanged?: (selectedIds: string[]) => void
@@ -21,13 +22,14 @@ interface FigureShowcaseProps {
 
 export const FigureShowcase = ({
   figure,
-  lng,
+  defaultLng = "en",
   selectionMode = "single",
   defaultSelectedIds = DEFAULT_SELECTED_IDS,
   onSelectionChanged,
 }: FigureShowcaseProps) => {
   const { t } = useSiteTranslation()
 
+  const [lng, setLng] = useState<SupportedLanguage>(defaultLng)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [selectedIds, setSelectedIds] = useState<string[]>(defaultSelectedIds)
 
@@ -54,27 +56,38 @@ export const FigureShowcase = ({
   }
 
   return (
-    <Stack>
-      <Group>
-        <Text weight="bold">{title}</Text>
-        <ActionIcon
-          title={t("FigureShowcase.resetSelectionTitle")}
-          variant="subtle"
-          onClick={() => setSelectedIds([])}
-        >
-          <ResetIcon size={20} />
-        </ActionIcon>
-      </Group>
-      <Flex gap="sm">
-        <FigureImage
-          {...{ svg, options, hoveredId, selectedIds, setHoveredId }}
-          onClicked={handleClicked}
-        />
-        <FigureLegend
-          {...{ options, hoveredId, selectedIds, setHoveredId }}
-          onClicked={handleClicked}
-        />
-      </Flex>
-    </Stack>
+    <Flex h="100%">
+      <Stack sx={{ flex: 1 }}>
+        <Group position="apart">
+          <Group>
+            <Text weight="bold">{title}</Text>
+            <ActionIcon
+              title={t("FigureShowcase.resetSelectionTitle")}
+              variant="transparent"
+              onClick={() => setSelectedIds([])}
+            >
+              <ResetIcon size={22} />
+            </ActionIcon>
+          </Group>
+          <LanguageChooser
+            actionTitle={t("FigureShowcase.languageChooserTitle")}
+            currentLanguage={lng}
+            supportedLanguages={meta.lngs as SupportedLanguage[]}
+            onLanguageChanged={(value) => setLng(value)}
+            disableDebugMode
+          />
+        </Group>
+        <Box sx={{ flex: 1 }}>
+          <FigureImage
+            {...{ svg, options, hoveredId, selectedIds, setHoveredId }}
+            onClicked={handleClicked}
+          />
+        </Box>
+      </Stack>
+      {/* <FigureLegend
+        {...{ options, hoveredId, selectedIds, setHoveredId }}
+        onClicked={handleClicked}
+      /> */}
+    </Flex>
   )
 }

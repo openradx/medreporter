@@ -10,6 +10,7 @@ interface LanguageChooserProps<T extends SupportedLanguageOption> {
   currentLanguage: T
   supportedLanguages: T[]
   onLanguageChanged: (language: T) => void
+  disableDebugMode?: boolean
 }
 
 export const LanguageChooser = <T extends SupportedLanguageOption>({
@@ -17,6 +18,7 @@ export const LanguageChooser = <T extends SupportedLanguageOption>({
   currentLanguage,
   supportedLanguages,
   onLanguageChanged,
+  disableDebugMode,
 }: LanguageChooserProps<T>) => {
   const { t } = useSiteTranslation()
 
@@ -52,7 +54,7 @@ export const LanguageChooser = <T extends SupportedLanguageOption>({
 
         {items}
 
-        {getAppConfig().debugTranslations && (
+        {!disableDebugMode && getAppConfig().debugTranslations && (
           <>
             <Divider />
             <Menu.Item

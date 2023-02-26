@@ -5,6 +5,11 @@ import { createModuleId, createSectionId } from "~/utils/identifiers"
 import { activateSection } from "./displaySlice"
 import { createHistorySlice, withHistory } from "./historySlice"
 
+// TODO: I guess we don't need Zod here
+// ModuleState: key, id
+// SectionState: key, title, modules
+// StructureState: templateId, sections
+
 const ModuleSchema = z.object({
   id: z.string(),
   name: z.string(),

@@ -61,6 +61,6 @@ const ShowFigurePage: PageWithLayout<PageProps> = (
   )
 }
 
-ShowFigurePage.getLayout = (page: ReactElement) => <MainLayout size="md">{page}</MainLayout>
+ShowFigurePage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
 
 export default ShowFigurePage
