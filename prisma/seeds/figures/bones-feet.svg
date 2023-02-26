@@ -2,7 +2,7 @@
   <metadata xmlns:med="http://www.medreporter.org/reference/figure">
     <med:Figure lngs="de,en">
       <med:Title>
-        <med:Trans lng="de">Knochen des Fuß</med:Trans>
+        <med:Trans lng="de">Knochen des Fußes</med:Trans>
         <med:Trans lng="en">Bones of the foot</med:Trans>
       </med:Title>
       <med:Option id="rightTalus">
