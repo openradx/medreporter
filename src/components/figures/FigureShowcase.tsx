@@ -84,10 +84,10 @@ export const FigureShowcase = ({
           />
         </Box>
       </Stack>
-      {/* <FigureLegend
+      <FigureLegend
         {...{ options, hoveredId, selectedIds, setHoveredId }}
         onClicked={handleClicked}
-      /> */}
+      />
     </Flex>
   )
 }
