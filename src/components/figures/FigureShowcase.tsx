@@ -56,7 +56,7 @@ export const FigureShowcase = ({
   }
 
   return (
-    <Flex h="100%">
+    <Flex h="100%" gap="sm">
       <Flex direction="column" sx={{ flex: 1 }}>
         <Group position="apart">
           <Group>

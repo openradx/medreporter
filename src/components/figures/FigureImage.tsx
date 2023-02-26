@@ -30,7 +30,7 @@ export const FigureImage = ({
   const floatingLabel = hoveredId && options[hoveredId]
 
   return (
-    <Tooltip.Floating label={floatingLabel} className="yyy">
+    <Tooltip.Floating label={floatingLabel} disabled={!floatingLabel} offset={10}>
       <Box
         h="100%"
         onMouseMove={(event) => {

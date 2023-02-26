@@ -20,7 +20,7 @@ export const FigureLegend = ({
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <Flex h="100%">
+    <Flex h="100%" gap="xs">
       <Box
         w={20}
         display="flex"
@@ -32,7 +32,7 @@ export const FigureLegend = ({
           {!collapsed && <CollapseIcon />}
         </Center>
       </Box>
-      <Box h="100%" sx={{ overflowY: "auto" }}>
+      <Box h="100%" sx={{ overflowY: collapsed ? "hidden" : "auto" }}>
         <Collapse in={!collapsed}>
           <List listStyleType="none">
             {Object.entries(options).map(([id, label]) => (
