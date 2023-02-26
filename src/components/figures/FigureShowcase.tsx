@@ -57,7 +57,7 @@ export const FigureShowcase = ({
 
   return (
     <Flex h="100%">
-      <Stack sx={{ flex: 1 }}>
+      <Flex direction="column" sx={{ flex: 1 }}>
         <Group position="apart">
           <Group>
             <Text weight="bold">{title}</Text>
@@ -77,13 +77,13 @@ export const FigureShowcase = ({
             disableDebugMode
           />
         </Group>
-        <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 1, minHeight: 0 }}>
           <FigureImage
             {...{ svg, options, hoveredId, selectedIds, setHoveredId }}
             onClicked={handleClicked}
           />
         </Box>
-      </Stack>
+      </Flex>
       <FigureLegend
         {...{ options, hoveredId, selectedIds, setHoveredId }}
         onClicked={handleClicked}

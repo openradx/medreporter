@@ -1,4 +1,4 @@
-import { AppShell, Container, MantineNumberSize } from "@mantine/core"
+import { AppShell, Container, MantineNumberSize, MediaQuery } from "@mantine/core"
 import { ReactNode } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 import { MainLayoutFallback } from "./MainLayoutFallback"
@@ -10,11 +10,13 @@ interface MainLayoutProps {
 }
 
 export const MainLayout = ({ size = "lg", children }: MainLayoutProps) => (
-  <AppShell padding="sm" header={<Navbar />}>
-    <ErrorBoundary FallbackComponent={MainLayoutFallback}>
-      <Container size={size !== "full" ? size : undefined} fluid={size === "full"} h="100%">
-        {children}
-      </Container>
-    </ErrorBoundary>
-  </AppShell>
+  <MediaQuery largerThan="sm" styles={{ main: { height: size === "full" ? "100vh" : undefined } }}>
+    <AppShell padding="sm" header={<Navbar />}>
+      <ErrorBoundary FallbackComponent={MainLayoutFallback}>
+        <Container size={size !== "full" ? size : undefined} fluid={size === "full"} h="100%">
+          {children}
+        </Container>
+      </ErrorBoundary>
+    </AppShell>
+  </MediaQuery>
 )

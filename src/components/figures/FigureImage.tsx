@@ -30,10 +30,9 @@ export const FigureImage = ({
   const floatingLabel = hoveredId && options[hoveredId]
 
   return (
-    <Tooltip.Floating label={floatingLabel}>
+    <Tooltip.Floating label={floatingLabel} className="yyy">
       <Box
         h="100%"
-        pos="relative"
         onMouseMove={(event) => {
           const target = event.target as Element
           setHoveredId(getId(target))
@@ -45,7 +44,7 @@ export const FigureImage = ({
           if (id) onClicked(id)
         }}
         sx={{
-          "& svg": { position: "absolute", width: "100%", height: "100%" },
+          "& svg": { display: "inline-block", width: "100%", height: "100%" },
           [`& svg #${hoveredId}`]: { cursor: "pointer", fill: "orange", fillOpacity: 1 },
           ...Object.fromEntries(
             selectedIds.map((selectedId) => [`& #${selectedId}`, { fill: "red", fillOpacity: 1 }])
