@@ -132,6 +132,7 @@ Navbar:
   openMainMenuTitle: Open main menu
 NavDrawer:
   figures: Figures
+  home: Home
   modules: Modules
   tools: Tools
 NewFigureForm:
