@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Flex, Group, Stack, Text } from "@mantine/core"
+import { ActionIcon, Box, Flex, Group, Text } from "@mantine/core"
 import { useState } from "react"
 import { BiReset as ResetIcon } from "react-icons/bi"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
