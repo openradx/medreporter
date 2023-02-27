@@ -63,9 +63,17 @@ const nextConfig = {
       )
     }
 
-    // Load SVG graphics with SVGR
+    // Load specific files (with "?raw" suffix) as raw strings,
+    // see https://webpack.js.org/guides/asset-modules/#source-assets
+    config.module?.rules.unshift({
+      resourceQuery: /raw/,
+      type: "asset/source",
+    })
+
+    // Load SVG graphics with SVGR and configure SVGO (SVG optimizer) used by SVGR
     config.module?.rules?.push({
       test: /\.svg$/,
+      resourceQuery: { not: /raw/ },
       use: [
         {
           loader: "@svgr/webpack",
