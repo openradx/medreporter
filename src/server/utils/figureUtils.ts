@@ -31,19 +31,20 @@ export async function syncFigure(
 ) {
   const dom = new JSDOM(source, { contentType: "image/svg+xml" })
   const meta = extractMetadata(dom.window.document, "med")
-  const translations = createFigureTranslations(meta)
 
   const figureDocument: FigureDocument = {
     svg: optimizeSvg(source),
     meta,
   }
 
+  const translationsCreate = createFigureTranslations(meta)
+
   return await prisma.resource.upsert({
     where: { type_authorId_name: { type: "FIGURE", authorId, name } },
     update: {
       source,
       document: figureDocument,
-      translations,
+      translations: { deleteMany: {}, ...translationsCreate },
     },
     create: {
       type: "FIGURE",
@@ -53,7 +54,7 @@ export async function syncFigure(
       visibility: "PUBLIC",
       releaseStatus: "PUBLISHED",
       authorId,
-      translations,
+      translations: translationsCreate,
     },
   })
 }
