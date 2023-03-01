@@ -15,7 +15,8 @@ import fs from "fs"
 import glob from "glob"
 import path from "path"
 import { syncCategories } from "~/server/utils/categoryUtils"
-import { syncFigure } from "~/server/utils/figureUtils"
+import { createFigureDocument } from "~/server/utils/figureUtils"
+import { createFigureTranslationsUpdateArgs } from "~/server/utils/resourceUtils"
 import { hashPassword } from "~/utils/cryptography"
 import defaultCategories from "./seeds/categories.json"
 
@@ -245,9 +246,31 @@ async function seed() {
 
   for (const figureFile of figureFiles) {
     const { name } = path.parse(figureFile)
+    const authorId = superadmin.id
     const source = fs.readFileSync(figureFile).toString()
+    const doc = createFigureDocument(source)
+    const translationsCreate = createFigureTranslationsUpdateArgs(doc.meta)
+
+    // Sync figures
     // eslint-disable-next-line no-await-in-loop
-    await syncFigure(prisma, superadmin.id, name, source)
+    await prisma.resource.upsert({
+      where: { type_authorId_name: { type: "FIGURE", authorId, name } },
+      update: {
+        source,
+        document: doc,
+        translations: { deleteMany: {}, ...translationsCreate },
+      },
+      create: {
+        type: "FIGURE",
+        name,
+        source,
+        document: doc,
+        visibility: "PUBLIC",
+        releaseStatus: "PUBLISHED",
+        authorId,
+        translations: translationsCreate,
+      },
+    })
   }
 
   /*

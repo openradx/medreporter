@@ -9,7 +9,7 @@ export const NewModuleForm = () => {
   const user = useAuthenticatedUser()
   const router = useRouter()
 
-  const createResource = trpc.resources.createNewResource.useMutation()
+  const createResource = trpc.resources.createResource.useMutation()
   const fetchOwnResource = trpc.resources.fetchOwnResource.useMutation()
 
   return (

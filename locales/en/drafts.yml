@@ -1,9 +1,9 @@
 Figure:
   title: Example figure
   description: A simple example figure for demonstration purposes.
-  optionTriangle: Dreieck
-  optionCircle: Kreis
-  optionsSquare: Quadrat
+  optionTriangle: Triangle
+  optionCircle: Circle
+  optionSquare: Square
 Module:
   title: Example module
   description: A simple example module for demonstration purposes.

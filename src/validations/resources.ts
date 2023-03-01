@@ -25,6 +25,14 @@ export const buildCreateResourceSchema = (t?: TFunction) =>
     categories: z.string().array(),
   })
 
+export const UpdateResourceSchema = z.object({
+  id: z.string(),
+  source: z.string().max(1000000).optional(),
+  visibility: z.nativeEnum(Visibility).optional(),
+  categories: z.string().array().optional(),
+  releaseStatus: z.nativeEnum(ReleaseStatus).optional(),
+})
+
 export const FetchOwnResourceSchema = z.object({
   type: z.nativeEnum(ResourceType),
   name: z.string(),
@@ -35,12 +43,6 @@ export const GetResourceSchema = z.object({
   author: z.string(), // username of author
   name: z.string(),
 })
-
-export const buildUpdateResourceSchema = (t: TFunction) =>
-  buildCreateResourceSchema(t)
-    .omit({ name: true })
-    .extend({ releaseStatus: z.nativeEnum(ReleaseStatus) })
-    .partial()
 
 export const GetTranslatedResourcesSchema = PaginationSchema.extend({
   type: z.nativeEnum(ResourceType),

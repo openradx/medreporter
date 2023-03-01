@@ -2,20 +2,25 @@ import { ModuleDocument } from "@medreporter/medtl-schema"
 import { createModuleDraft, DocumentWrapper, renderDraft } from "@medreporter/medtl-tools"
 import { Prisma } from "@prisma/client"
 import { i18n as I18n } from "i18next"
+import figureDraft from "~/images/figure-draft.svg?raw"
 import { FigureMetadata } from "~/types/resources"
 import { extractText } from "~/utils/adapter"
 import { unique } from "~/utils/misc"
 
-export type ResourceTranslationsUpdateArgs = Prisma.ResourceUpdateArgs["data"]["translations"]
-
-export function createFigureSource(i18n: I18n) {
+export function createFigureDraftSource(i18n: I18n) {
   const { language: lng, t } = i18n
 
-  // TODO:
-  return renderDraft("", {})
+  return renderDraft(figureDraft, {
+    lng,
+    title: t("Figure.title"),
+    description: t("Figure.description"),
+    optionTriangle: t("Figure.optionTriangle"),
+    optionCircle: t("Figure.optionCircle"),
+    optionSquare: t("Figure.optionSquare"),
+  })
 }
 
-export function createModuleSource(i18n: I18n) {
+export function createModuleDraftSource(i18n: I18n) {
   const { language: lng, t } = i18n
 
   return createModuleDraft({
@@ -26,7 +31,9 @@ export function createModuleSource(i18n: I18n) {
   })
 }
 
-export function createFigureTranslations(meta: FigureMetadata): ResourceTranslationsUpdateArgs {
+export function createFigureTranslationsUpdateArgs(
+  meta: FigureMetadata
+): Prisma.ResourceUpdateArgs["data"]["translations"] {
   return {
     create: meta.lngs.map((lng) => ({
       default: false,
@@ -37,7 +44,7 @@ export function createFigureTranslations(meta: FigureMetadata): ResourceTranslat
   }
 }
 
-export function createModuleTranslations(
+export function createModuleTranslationsUpdateArgs(
   document: ModuleDocument
 ): Prisma.ResourceUpdateArgs["data"]["translations"] {
   const wrapper = new DocumentWrapper(document).getRootElement()

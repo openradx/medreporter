@@ -3,9 +3,10 @@ import { Prisma, ReleaseStatus } from "@prisma/client"
 import { TRPCError } from "@trpc/server"
 import { createClient } from "~/server/utils/i18nServerClient"
 import {
-  createModuleSource,
-  createModuleTranslations,
-  ResourceTranslationsUpdateArgs,
+  createFigureDraftSource,
+  createFigureTranslationsUpdateArgs,
+  createModuleDraftSource,
+  createModuleTranslationsUpdateArgs,
 } from "~/server/utils/resourceUtils"
 import { createFilterObject } from "~/utils/filterObject"
 import { paginate } from "~/utils/pagination"
@@ -14,12 +15,14 @@ import {
   FetchOwnResourceSchema,
   GetResourceSchema,
   GetTranslatedResourcesSchema,
+  UpdateResourceSchema,
 } from "~/validations/resources"
 import { prisma } from "../prisma"
 import { authedProcedure, publicProcedure, router } from "../trpc"
+import { createFigureDocument } from "../utils/figureUtils"
 
 export const resourcesRouter = router({
-  createNewResource: authedProcedure
+  createResource: authedProcedure
     .input(buildCreateResourceSchema())
     .mutation(async ({ input, ctx }) => {
       const { type, name, language, visibility } = input
@@ -32,26 +35,24 @@ export const resourcesRouter = router({
       await initPromise
 
       let source: string
-      let document: Prisma.JsonValue
-      let translations: ResourceTranslationsUpdateArgs
+      let doc: Prisma.JsonValue
+      let resourceTranslationsUpdateArgs: Prisma.ResourceUpdateArgs["data"]["translations"]
       if (type === "FIGURE") {
-        // TODO:
-        source = ""
-        document = ""
-        translations = {}
+        source = createFigureDraftSource(i18n)
+        const figureDocument = createFigureDocument(source)
+        doc = figureDocument
+        resourceTranslationsUpdateArgs = createFigureTranslationsUpdateArgs(figureDocument.meta)
       } else if (type === "MODULE") {
-        source = createModuleSource(i18n)
-        const doc = parseModule(source)
-        document = doc as Record<string, any>
-        translations = createModuleTranslations(doc)
+        source = createModuleDraftSource(i18n)
+        const moduleDocument = parseModule(source)
+        doc = moduleDocument as Record<string, any>
+        resourceTranslationsUpdateArgs = createModuleTranslationsUpdateArgs(moduleDocument)
       } else if (type === "TEMPLATE") {
         // TODO:
         source = ""
-        document = ""
-        translations = {}
-      } else {
-        throw new Error(`Invalid resource type "${type}".`)
-      }
+        doc = ""
+        resourceTranslationsUpdateArgs = {}
+      } else throw new Error(`Invalid resource type "${type}".`)
 
       const createdResource = await prisma.resource.create({
         data: {
@@ -59,8 +60,8 @@ export const resourcesRouter = router({
           name,
           authorId: user.id,
           source,
-          document,
-          translations,
+          document: doc,
+          translations: resourceTranslationsUpdateArgs,
           visibility,
           releaseStatus: ReleaseStatus.DRAFT,
         },
@@ -73,6 +74,39 @@ export const resourcesRouter = router({
         author: createdResource.author.username,
       }
     }),
+
+  updateResource: authedProcedure.input(UpdateResourceSchema).mutation(async ({ input, ctx }) => {
+    const { id, source, visibility, categories, releaseStatus } = input
+    const { user } = ctx
+
+    const resource = await prisma.resource.findUnique({ where: { id } })
+    if (!resource)
+      throw new TRPCError({
+        code: "NOT_FOUND",
+        message: "The resource to update could not be found.",
+      })
+    if (resource?.authorId !== user.id)
+      throw new TRPCError({ code: "UNAUTHORIZED", message: "Only own resources can be updated." })
+
+    let doc: Prisma.JsonValue
+    let resourceTranslationsUpdateArgs: Prisma.ResourceUpdateArgs["data"]["translations"]
+    if (resource.type === "FIGURE") {
+      const figureDocument = createFigureDocument(source)
+      doc = figureDocument
+      resourceTranslationsUpdateArgs = createFigureTranslationsUpdateArgs(figureDocument.meta)
+    } else throw new Error(`Invalid resource type "${resource.type}".`)
+
+    return await prisma.resource.update({
+      where: { id },
+      data: {
+        source,
+        doc,
+        translations: resourceTranslationsUpdateArgs,
+        visibility,
+        releaseStatus,
+      },
+    })
+  }),
 
   fetchOwnResource: authedProcedure
     .input(FetchOwnResourceSchema)

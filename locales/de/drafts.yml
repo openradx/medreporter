@@ -3,7 +3,7 @@ Figure:
   description: Eine einfache Beispielabbildung für Demonstrationszwecke.
   optionTriangle: Dreieck
   optionCircle: Kreis
-  optionsSquare: Quadrat
+  optionSquare: Quadrat
 Module:
   title: Beispielmodul
   description: Ein einfaches Beispielsmodul für Demonstrationszwecke.
