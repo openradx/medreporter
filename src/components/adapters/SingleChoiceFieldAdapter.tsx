@@ -40,12 +40,12 @@ export const SingleChoiceFieldAdapter = ({ element, data, lng }: SingleChoiceFie
     }
   })
   const defaultValue = wrapper.getAttribute("default")?.getStringValue(context)
-  const visible = wrapper.getAttribute("visible")?.getBooleanValue(context)
-  const enabled = wrapper.getAttribute("enabled")?.getBooleanValue(context)
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
   return (
     <SingleChoiceField
-      {...{ id, label, extras, variant, options, defaultValue, visible, enabled }}
+      {...{ id, label, extras, variant, options, defaultValue, disabled, hidden }}
     />
   )
 }

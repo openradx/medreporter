@@ -14,8 +14,8 @@ export const FreeTextField = ({
   label,
   extras,
   defaultValue = "",
-  visible,
-  enabled,
+  disabled,
+  hidden,
   multiline,
 }: FreeTextFieldProps) => {
   const { id: moduleId } = useModule()
@@ -26,11 +26,9 @@ export const FreeTextField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, visible, defaultValue, value, onChange }}>
-      {!multiline && (
-        <SingleLineInput {...{ label, value, onChange, extras }} disabled={!enabled} />
-      )}
-      {multiline && <MultiLineInput {...{ label, value, onChange, extras }} disabled={!enabled} />}
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
+      {!multiline && <SingleLineInput {...{ label, extras, value, onChange, disabled }} />}
+      {multiline && <MultiLineInput {...{ label, extras, value, onChange, disabled }} />}
     </BaseField>
   )
 }

@@ -11,8 +11,8 @@ export const BinaryField = ({
   label,
   extras,
   defaultValue = false,
-  visible,
-  enabled,
+  disabled,
+  hidden,
 }: BinaryFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -22,8 +22,8 @@ export const BinaryField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
-      <BinaryInput {...{ label, extras, value, onChange }} disabled={!enabled} />
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
+      <BinaryInput {...{ label, extras, value, onChange, disabled }} />
     </BaseField>
   )
 }

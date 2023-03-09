@@ -29,8 +29,8 @@ export const MeasurementsFieldAdapter = ({ element, data, lng }: MeasurementsFie
   )
   const _default = wrapper.getAttribute("default")?.getValue(context)
   const defaultValue = _default ? convertRecordToMeasurementsData(_default) : undefined
-  const visible = wrapper.getAttribute("visible")?.getBooleanValue(context)
-  const enabled = wrapper.getAttribute("enabled")?.getBooleanValue(context)
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
-  return <MeasurementsField {...{ id, label, extras, defaultValue, visible, enabled }} />
+  return <MeasurementsField {...{ id, label, extras, defaultValue, disabled, hidden }} />
 }

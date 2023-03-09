@@ -28,8 +28,8 @@ export const BinaryFieldAdapter = ({ element, data, lng }: BinaryFieldAdapterPro
     </>
   )
   const defaultValue = wrapper.getAttribute("default")?.getBooleanValue(context)
-  const visible = wrapper.getAttribute("visible")?.getBooleanValue(context)
-  const enabled = wrapper.getAttribute("enabled")?.getBooleanValue(context)
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
-  return <BinaryField {...{ id, label, extras, defaultValue, visible, enabled }} />
+  return <BinaryField {...{ id, label, extras, defaultValue, disabled, hidden }} />
 }

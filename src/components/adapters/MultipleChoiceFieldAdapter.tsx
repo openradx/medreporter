@@ -48,12 +48,13 @@ export const MultipleChoiceFieldAdapter = ({
     ?.getRecordValue(context)
     .values()
     .map(String)
-  const visible = wrapper.getAttribute("visible")?.getBooleanValue(context)
-  const enabled = wrapper.getAttribute("enabled")?.getBooleanValue(context)
+
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
   return (
     <MultipleChoiceField
-      {...{ id, label, extras, variant, options, defaultValue, visible, enabled }}
+      {...{ id, label, extras, variant, options, defaultValue, disabled, hidden }}
     />
   )
 }

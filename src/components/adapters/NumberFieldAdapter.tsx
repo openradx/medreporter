@@ -27,8 +27,8 @@ export const NumberFieldAdapter = ({ element, data, lng }: NumberFieldAdapterPro
       {infoEl && <FieldInfoAdapter element={infoEl} {...{ data, lng }} />}
     </>
   )
-  const visible = wrapper.getAttribute("visible")?.getBooleanValue(context)
-  const enabled = wrapper.getAttribute("enabled")?.getBooleanValue(context)
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
   const defaultValue = wrapper.getAttribute("default")?.getNumberValue(context)
   const min = wrapper.getAttribute("min")?.getNumberValue(context)
   const max = wrapper.getAttribute("max")?.getNumberValue(context)
@@ -43,13 +43,13 @@ export const NumberFieldAdapter = ({ element, data, lng }: NumberFieldAdapterPro
         label,
         extras,
         defaultValue,
+        disabled,
+        hidden,
         min,
         max,
         precision,
         step,
         startValue,
-        visible,
-        enabled,
       }}
     />
   )

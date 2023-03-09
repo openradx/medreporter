@@ -17,13 +17,13 @@ export const NumberField = ({
   label,
   extras,
   defaultValue = null,
+  disabled,
+  hidden,
   min,
   max,
   precision,
   step,
   startValue,
-  visible,
-  enabled,
 }: NumberFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -32,10 +32,9 @@ export const NumberField = ({
     defaultValue,
   })
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
       <NumberInput
-        {...{ label, extras, value, onChange, min, max, precision, step, startValue }}
-        disabled={!enabled}
+        {...{ label, extras, value, onChange, disabled, min, max, precision, step, startValue }}
       />
     </BaseField>
   )

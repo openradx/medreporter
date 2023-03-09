@@ -26,8 +26,8 @@ export const MeasurementsField = ({
   label,
   extras,
   defaultValue = DEFAULT_MEASUREMENTS_DATA,
-  visible,
-  enabled,
+  disabled,
+  hidden,
 }: MeasurementsFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -58,11 +58,10 @@ export const MeasurementsField = ({
   useTransformer(transformer)
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
       <MeasurementsInput
-        {...{ label, extras, value, onChange }}
+        {...{ label, extras, value, onChange, disabled }}
         footer={null} // TODO:
-        disabled={!enabled}
       />
     </BaseField>
   )

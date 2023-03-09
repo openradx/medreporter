@@ -10,12 +10,12 @@ interface NumberInputProps {
   extras?: ReactNode
   value: number | null
   onChange: (value: number | null) => void
+  disabled?: boolean
   min?: number
   max?: number
   step?: number
   startValue?: number
   precision?: number
-  disabled?: boolean
   width?: number
   autoHideControls?: boolean
 }
@@ -25,12 +25,12 @@ export const NumberInput = ({
   extras,
   value,
   onChange,
+  disabled,
   min,
   max,
   step,
   startValue,
   precision = 0,
-  disabled,
   width,
   autoHideControls = false,
 }: NumberInputProps) => {
@@ -61,6 +61,7 @@ export const NumberInput = ({
         onBlur={() => setFocus(false)}
         value={value ?? undefined}
         onChange={(newValue) => onChange(newValue ?? null)}
+        disabled={disabled}
         min={min}
         max={max}
         step={step ?? 1 / 10 ** precision}
@@ -68,7 +69,6 @@ export const NumberInput = ({
         stepHoldDelay={300}
         stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
         precision={precision}
-        disabled={disabled}
         styles={{
           wrapper: { width },
           control: {

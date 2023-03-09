@@ -20,8 +20,8 @@ export const MultipleChoiceField = ({
   variant = "checkbox",
   options = DEFAULT_OPTIONS,
   defaultValue = DEFAULT_VALUE,
-  visible,
-  enabled,
+  disabled,
+  hidden,
 }: MultipleChoiceFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
@@ -31,15 +31,12 @@ export const MultipleChoiceField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
       {variant === "select" && (
-        <MultipleSelectInput {...{ label, extras, options, value, onChange }} disabled={!enabled} />
+        <MultipleSelectInput {...{ label, extras, options, value, onChange, disabled }} />
       )}
       {variant === "checkbox" && (
-        <MultipleCheckboxInput
-          {...{ label, extras, options, value, onChange }}
-          disabled={!enabled}
-        />
+        <MultipleCheckboxInput {...{ label, extras, options, value, onChange, disabled }} />
       )}
     </BaseField>
   )

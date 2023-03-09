@@ -11,7 +11,7 @@ interface FieldProps<TValue> {
   defaultValue: TValue
   value: TValue
   onChange: (newValue: TValue) => void
-  visible?: boolean
+  hidden?: boolean
   children: ReactNode
 }
 
@@ -22,7 +22,7 @@ export const BaseField = <TValue,>({
   label,
   value,
   onChange,
-  visible,
+  hidden,
   children,
 }: FieldProps<TValue>) => {
   const scrollInto = useAppSelector(selectScrollInto)
@@ -40,7 +40,7 @@ export const BaseField = <TValue,>({
   // But some element we need for the ref for the scroll into
   return (
     <FieldContextProvider value={{ id: fieldId, label, defaultValue, value, onChange }}>
-      <Box ref={fieldEl} sx={{ display: visible === false ? "none" : undefined }}>
+      <Box ref={fieldEl} sx={{ display: hidden ? "none" : undefined }}>
         {children}
       </Box>
     </FieldContextProvider>

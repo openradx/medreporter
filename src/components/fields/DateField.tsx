@@ -12,8 +12,8 @@ export const DateField = ({
   label,
   extras,
   defaultValue = null,
-  visible,
-  enabled,
+  disabled,
+  hidden,
 }: DateFieldProps) => {
   let serializableDefaultValue: string | null = null
   if (defaultValue) {
@@ -28,12 +28,11 @@ export const DateField = ({
   })
 
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, visible }}>
+    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
       <DateInput
-        {...{ label, extras }}
+        {...{ label, extras, disabled }}
         value={value ? new Date(value) : null}
         onChange={(date) => onChange(date ? date.toISOString() : null)}
-        disabled={!enabled}
       />
     </BaseField>
   )

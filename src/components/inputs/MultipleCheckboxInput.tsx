@@ -16,10 +16,10 @@ interface MultipleCheckboxInputProps {
 
 export const MultipleCheckboxInput = ({
   label,
+  extras,
   options = DEFAULT_OPTIONS,
   value,
   onChange,
-  extras,
   disabled,
 }: MultipleCheckboxInputProps) => (
   <Checkbox.Group

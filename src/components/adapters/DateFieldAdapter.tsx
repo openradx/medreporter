@@ -34,8 +34,8 @@ export const DateFieldAdapter = ({ element, data, lng }: DateFieldAdapterProps) 
   )
   const _default = wrapper.getAttribute("default")?.getValue(context)
   const defaultValue = _default ? convertRecordToDate(_default).toISOString() : undefined
-  const visible = wrapper.getAttribute("visible")?.getBooleanValue(context)
-  const enabled = wrapper.getAttribute("enabled")?.getBooleanValue(context)
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
-  return <DateField {...{ id, label, extras, defaultValue, visible, enabled }} />
+  return <DateField {...{ id, label, extras, defaultValue, disabled, hidden }} />
 }

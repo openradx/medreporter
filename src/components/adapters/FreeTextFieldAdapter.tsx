@@ -28,8 +28,8 @@ export const FreeTextFieldAdapter = ({ element, data, lng }: FreeTextFieldAdapte
     </>
   )
   const defaultValue = wrapper.getAttribute("default")?.getStringValue(context)
-  const visible = wrapper.getAttribute("visible")?.getBooleanValue(context)
-  const enabled = wrapper.getAttribute("enabled")?.getBooleanValue(context)
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
-  return <FreeTextField {...{ id, label, extras, defaultValue, visible, enabled }} />
+  return <FreeTextField {...{ id, label, extras, defaultValue, disabled, hidden }} />
 }

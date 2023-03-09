@@ -5,8 +5,8 @@ export interface CommonFieldProps<TDefaultValue> {
   label?: string
   extras?: ReactNode
   defaultValue?: TDefaultValue
-  visible?: boolean
-  enabled?: boolean
+  disabled?: boolean
+  hidden?: boolean
 }
 export interface ExternalLink {
   url: string
