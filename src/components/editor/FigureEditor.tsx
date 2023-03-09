@@ -11,8 +11,8 @@ const FigureCodeEditor = dynamic(() => import("./FigureCodeEditor"), {
 
 export const FigureEditor = () => (
   <ResourceEditor
-    properties={<FigureProperties />}
-    codeEditor={<FigureCodeEditor />}
+    general={<FigureProperties />}
+    source={<FigureCodeEditor />}
     preview={<FigurePreview />}
   />
 )

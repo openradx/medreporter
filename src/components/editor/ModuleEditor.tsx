@@ -11,8 +11,8 @@ const ModuleCodeEditor = dynamic(() => import("./ModuleCodeEditor"), {
 
 export const ModuleEditor = () => (
   <ResourceEditor
-    properties={<ModuleProperties />}
-    codeEditor={<ModuleCodeEditor />}
+    general={<ModuleProperties />}
+    source={<ModuleCodeEditor />}
     preview={<ModulePreview />}
   />
 )

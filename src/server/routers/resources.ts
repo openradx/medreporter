@@ -1,11 +1,10 @@
 import { parseModule } from "@medreporter/medtl-tools"
 import { Prisma, ReleaseStatus } from "@prisma/client"
 import { TRPCError } from "@trpc/server"
+import { createFigureDraftSource, createModuleDraftSource } from "~/server/utils/draftUtils"
 import { createClient } from "~/server/utils/i18nServerClient"
 import {
-  createFigureDraftSource,
   createFigureTranslationsUpdateArgs,
-  createModuleDraftSource,
   createModuleTranslationsUpdateArgs,
 } from "~/server/utils/resourceUtils"
 import { createFilterObject } from "~/utils/filterObject"
@@ -88,19 +87,24 @@ export const resourcesRouter = router({
     if (resource?.authorId !== user.id)
       throw new TRPCError({ code: "UNAUTHORIZED", message: "Only own resources can be updated." })
 
-    let doc: Prisma.JsonValue
-    let resourceTranslationsUpdateArgs: Prisma.ResourceUpdateArgs["data"]["translations"]
-    if (resource.type === "FIGURE") {
-      const figureDocument = createFigureDocument(source)
-      doc = figureDocument
-      resourceTranslationsUpdateArgs = createFigureTranslationsUpdateArgs(figureDocument.meta)
-    } else throw new Error(`Invalid resource type "${resource.type}".`)
+    let doc: Prisma.InputJsonValue | undefined
+    let resourceTranslationsUpdateArgs:
+      | Prisma.ResourceUpdateArgs["data"]["translations"]
+      | undefined
+    if (source !== undefined) {
+      // TODO: other resource types
+      if (resource.type === "FIGURE") {
+        const figureDocument = createFigureDocument(source)
+        resourceTranslationsUpdateArgs = createFigureTranslationsUpdateArgs(figureDocument.meta)
+        doc = figureDocument
+      } else throw new Error(`Invalid resource type "${resource.type}".`)
+    }
 
     return await prisma.resource.update({
       where: { id },
       data: {
         source,
-        doc,
+        document: doc,
         translations: resourceTranslationsUpdateArgs,
         visibility,
         releaseStatus,

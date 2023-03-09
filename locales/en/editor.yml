@@ -1,7 +1,9 @@
+FigureProperties:
+  title: Figure
 ResourceEditor:
   general: General
   preview: Preview
-  sourceCode: Source code
+  source: Source code
 SourceEditorProblems:
   problemsFound_one: "{{count}} problem found"
   problemsFound_other: "{{count}} problems found"

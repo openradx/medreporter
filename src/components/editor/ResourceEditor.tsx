@@ -2,20 +2,20 @@ import { Box, Center, SegmentedControl } from "@mantine/core"
 import { ReactNode, useState } from "react"
 import {
   MdCode as SourceIcon,
-  MdList as PropertiesIcon,
+  MdList as GeneralIcon,
   MdRemoveRedEye as PreviewIcon,
 } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { NavbarActions } from "../common/NavbarActions"
 
 interface ResourceEditorProps {
-  properties: ReactNode
-  codeEditor: ReactNode
+  general: ReactNode
+  source: ReactNode
   preview: ReactNode
 }
 
-export const ResourceEditor = ({ properties, codeEditor, preview }: ResourceEditorProps) => {
-  const [currentView, setCurrentView] = useState("properties")
+export const ResourceEditor = ({ general, source, preview }: ResourceEditorProps) => {
+  const [currentView, setCurrentView] = useState<"general" | "source" | "preview">("general")
   const { t } = useSiteTranslation()
 
   return (
@@ -23,23 +23,23 @@ export const ResourceEditor = ({ properties, codeEditor, preview }: ResourceEdit
       <NavbarActions>
         <SegmentedControl
           value={currentView}
-          onChange={setCurrentView}
+          onChange={(value) => setCurrentView(value as any)}
           data={[
             {
-              value: "properties",
+              value: "general",
               label: (
                 <Center>
-                  <PropertiesIcon size={16} />
+                  <GeneralIcon size={16} />
                   <Box ml={10}>{t("ResourceEditor.general")}</Box>
                 </Center>
               ),
             },
             {
-              value: "sourceCode",
+              value: "source",
               label: (
                 <Center>
                   <SourceIcon size={16} />
-                  <Box ml={10}>{t("ResourceEditor.sourceCode")}</Box>
+                  <Box ml={10}>{t("ResourceEditor.source")}</Box>
                 </Center>
               ),
             },
@@ -56,12 +56,12 @@ export const ResourceEditor = ({ properties, codeEditor, preview }: ResourceEdit
         />
       </NavbarActions>
 
-      <Box display={currentView !== "properties" ? "none" : undefined} h="100%">
-        {properties}
+      <Box display={currentView !== "general" ? "none" : undefined} h="100%">
+        {general}
       </Box>
 
-      <Box display={currentView !== "sourceCode" ? "none" : undefined} h="100%">
-        {codeEditor}
+      <Box display={currentView !== "source" ? "none" : undefined} h="100%">
+        {source}
       </Box>
 
       <Box display={currentView !== "preview" ? "none" : undefined} h="100%">
