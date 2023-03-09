@@ -2,20 +2,10 @@ import { Title, Text, Card, Grid, Button, Image, Box } from "@mantine/core"
 import Link from "next/link"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
-import { trpc } from "~/utils/trpc"
 import { LoginForm } from "../auth/LoginForm"
 import { InstituteSwitcher } from "./InstituteSwitcher"
 
 export const Home = () => {
-  const healthcheck = trpc.healthcheck.useQuery()
-
-  let result = ""
-  if (!healthcheck.data) {
-    result = "Loading ..."
-  } else {
-    result = healthcheck.data
-  }
-
   const { t } = useSiteTranslation()
   const user = useUser()
   const loggedIn = !!user
@@ -28,7 +18,6 @@ export const Home = () => {
           <Text inherit variant="gradient" component="span">
             MedReporter
           </Text>
-          <Text>{result}</Text>
         </Title>
       </Grid.Col>
       {!loggedIn && (
