@@ -12,11 +12,11 @@ specifiers:
   '@mantine/modals': ^5.10.5
   '@mantine/next': ^5.10.5
   '@mantine/notifications': ^5.10.5
-  '@medreporter/medtl-language-service': ^0.21.0
-  '@medreporter/medtl-parser': ^0.21.0
-  '@medreporter/medtl-schema': ^0.21.0
-  '@medreporter/medtl-tools': ^0.21.0
-  '@medreporter/monaco-plugin-medtl': ^0.21.0
+  '@medreporter/medtl-language-service': ^0.23.0
+  '@medreporter/medtl-parser': ^0.23.0
+  '@medreporter/medtl-schema': ^0.23.0
+  '@medreporter/medtl-tools': ^0.23.0
+  '@medreporter/monaco-plugin-medtl': ^0.23.0
   '@next-auth/prisma-adapter': ^1.0.5
   '@next/bundle-analyzer': ^13.2.1
   '@next/env': ^13.2.1
@@ -126,11 +126,11 @@ dependencies:
   '@mantine/modals': 5.10.5_7l7cohgiq6l4ncfy2pvlz3brzy
   '@mantine/next': 5.10.5_pgglsq75fvw45j476lnzqmxl6q
   '@mantine/notifications': 5.10.5_7l7cohgiq6l4ncfy2pvlz3brzy
-  '@medreporter/medtl-language-service': 0.21.0
-  '@medreporter/medtl-parser': 0.21.0
-  '@medreporter/medtl-schema': 0.21.0
-  '@medreporter/medtl-tools': 0.21.0_esbuild@0.17.10
-  '@medreporter/monaco-plugin-medtl': 0.21.0_monaco-editor@0.36.0
+  '@medreporter/medtl-language-service': 0.23.0
+  '@medreporter/medtl-parser': 0.23.0
+  '@medreporter/medtl-schema': 0.23.0
+  '@medreporter/medtl-tools': 0.23.0_esbuild@0.17.10
+  '@medreporter/monaco-plugin-medtl': 0.23.0_monaco-editor@0.36.0
   '@next-auth/prisma-adapter': 1.0.5_qpmskah7lm3ildf4stmwh4q42u
   '@next/bundle-analyzer': 13.2.1
   '@prisma/client': 4.10.1_prisma@4.10.1
@@ -2501,59 +2501,59 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@medreporter/medtl-language-service/0.21.0:
-    resolution: {integrity: sha512-A4jyMqU6r4KlvJkHdbMQNHqGsGP1kIeRaMmDTKmJcpnfF8128iGsP77EmKZF+dK3F30isCpOPTF+j2mbDEghTQ==}
+  /@medreporter/medtl-language-service/0.23.0:
+    resolution: {integrity: sha512-GAghkLP3DurepW7ZXipLeVvOHXzDJHP1CGu+VFNgCUml9+Oroy7BIzm0Z6Q7b5JfD1zPSbJ7coeGWdQUblTcLQ==}
     dependencies:
-      '@medreporter/medtl-parser': 0.21.0
-      '@medreporter/medtl-schema': 0.21.0
-      '@medreporter/prettier-plugin-medtl': 0.21.0
+      '@medreporter/medtl-parser': 0.23.0
+      '@medreporter/medtl-schema': 0.23.0
+      '@medreporter/prettier-plugin-medtl': 0.23.0
       prettier: 2.8.4
       vscode-languageserver-textdocument: 1.0.8
       vscode-languageserver-types: 3.17.3
     dev: false
 
-  /@medreporter/medtl-parser/0.21.0:
-    resolution: {integrity: sha512-GvOJTEufaFNRppxuMC8FNl5p9RC/6V7nNOnJ6Sg87VdvwOn3mbDk/tgiHizxAzJDRFpns+yF9v3y615z5MF1uQ==}
+  /@medreporter/medtl-parser/0.23.0:
+    resolution: {integrity: sha512-AxQAz+aDr6S9ToeMXU6B2Lki/D6SvDHlbtb/mI/zqi3/bWuwnfkcGStDU4DHrWNMXJJfVUX/84WZlOWCPWhrHw==}
     dependencies:
       chevrotain: 10.4.2
       underscore: 1.13.6
     dev: false
 
-  /@medreporter/medtl-schema/0.21.0:
-    resolution: {integrity: sha512-oY5Wgt5mvaBSllExjU8632X4cZj/TX1hwK52SJ3LhX7amiPGRWzKfjeMRdXS4wQY1Gptcn1fEc9ulFONEJD9XA==}
+  /@medreporter/medtl-schema/0.23.0:
+    resolution: {integrity: sha512-XrdXUcdC3I23zxYytKn2mkmjGUGGWTIIil5QDb9GsEkrp0Af9/lSCR6ONXwG5yU/hA+HePwBE32GjSuS2N5UHg==}
     dependencies:
-      '@medreporter/medtl-parser': 0.21.0
+      '@medreporter/medtl-parser': 0.23.0
       chevrotain: 10.4.2
       underscore: 1.13.6
       zod: 3.20.6
     dev: false
 
-  /@medreporter/medtl-tools/0.21.0_esbuild@0.17.10:
-    resolution: {integrity: sha512-3ce8Jp3P7id89yyAqWxtC3aX3KNDY+e/6aowinmwlSklnA/oetgtGyYSUkWe5wDN7cUNBTkyVio06pKxJavC6Q==}
+  /@medreporter/medtl-tools/0.23.0_esbuild@0.17.10:
+    resolution: {integrity: sha512-/2RdONrRg+vULyDRnFQKTd0LKgfPOl/RtiyJD9zCzaMSeFNED4Y9CFjU8glo8/Gdfo6GV5wmZOTCtO/wq4eHkg==}
     dependencies:
-      '@medreporter/medtl-parser': 0.21.0
-      '@medreporter/medtl-schema': 0.21.0
+      '@medreporter/medtl-parser': 0.23.0
+      '@medreporter/medtl-schema': 0.23.0
       dayjs: 1.11.7
       esbuild-plugin-raw: 0.1.7_esbuild@0.17.10
     transitivePeerDependencies:
       - esbuild
     dev: false
 
-  /@medreporter/monaco-plugin-medtl/0.21.0_monaco-editor@0.36.0:
-    resolution: {integrity: sha512-bg4m+scs8s2ZtlADWNeUUTeojTrVE2FcAJZqetmF4IBvDkI8mUTmOWpJw+dlwFlur3lU2DleVtTpAzAXHZORQQ==}
+  /@medreporter/monaco-plugin-medtl/0.23.0_monaco-editor@0.36.0:
+    resolution: {integrity: sha512-SObn32mXI4nL1M4rAy1ZlvekGfpbAKFgLE7Bbwi/liE1dwOPpDRLBo0R20bxU6WvuqNhqTUO1UOZNxFxl7NKsQ==}
     peerDependencies:
-      monaco-editor: ^0.34.0
+      monaco-editor: ^0.35.0
     dependencies:
-      '@medreporter/medtl-language-service': 0.21.0
+      '@medreporter/medtl-language-service': 0.23.0
       monaco-editor: 0.36.0
       vscode-languageserver-textdocument: 1.0.8
       vscode-languageserver-types: 3.17.3
     dev: false
 
-  /@medreporter/prettier-plugin-medtl/0.21.0:
-    resolution: {integrity: sha512-8VttzL9BAA6ui7eNmx5IslKF5tGVQOwGp/KctnRxeZrTcOFPA//xFlm6V/tKg/OAMUDUPgXCUkzvGRiMQ4hw4g==}
+  /@medreporter/prettier-plugin-medtl/0.23.0:
+    resolution: {integrity: sha512-XarUpJpE5SAQCNJa1lLTHOIX5jBttJjuNMiAkoJxyjs3gUJb+j6YbsQAMB4Csf8C/cAhpIjOUuS2V+5u8/PojA==}
     dependencies:
-      '@medreporter/medtl-parser': 0.21.0
+      '@medreporter/medtl-parser': 0.23.0
       prettier: 2.8.4
     dev: false
 
