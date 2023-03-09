@@ -88,7 +88,28 @@ GfrPage:
 GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 HomePage:
+  about: Mehr über MedReporter
+  newTitle: Neues Modul/Template erstellen
+  newDescription: Nutze den MedTL Editor um neue Module oder Templates zu erstellen.
+  newModuleButton: Neues Modul
+  newTemplateButton: Neues Template
+  modulesTitle: Module
+  modulesDescription: Nutze einzelne Module oder erstelle einen Report aus Modulen.
+  modulesButton: Module anzeigen
   pageTitle: Startseite
+  reportsTitle: Reports
+  reportsDescription: Gehe zu deinen bzw. den Reports deines Instituts.
+  reportsButton: Reports anzeigen
+  toolsTitle: Tools
+  toolsDescription: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren.
+  toolsButton: Tools anzeigen
+  templatesTitle: Templates
+  templatesDescription: Nutze ein Template um einen Report zu erstellen.
+  templatesButton: Templates anzeigen
+InstituteSwitcher:
+  label: Institut auswählen
+  noInstituteAvailable: Kein Institut verfügbar
+  noInstituteOption: Kein Institut
 KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
 LanguageChooser:

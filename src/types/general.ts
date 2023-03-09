@@ -60,6 +60,10 @@ export interface ServerSideProps {
   preloadedReduxState?: PreloadedReduxState
 }
 
+export interface StaticProps {
+  i18nSite?: I18nSite
+}
+
 export type PageWithLayout<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactElement) => ReactNode
 }

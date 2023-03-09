@@ -8,7 +8,11 @@ import { ColorSchemeToggle } from "./ColorSchemeToggle"
 import { NavDrawer } from "./NavDrawer"
 import { SiteLanguageChooser } from "./SiteLanguageChooser"
 
-export const Navbar = () => {
+interface NavBarProps {
+  withoutAccountControl?: boolean
+}
+
+export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
   const { t } = useSiteTranslation()
   const [opened, setOpened] = useState(false)
 
@@ -31,7 +35,7 @@ export const Navbar = () => {
           <ActionsGroup>
             <ColorSchemeToggle />
             <SiteLanguageChooser />
-            <AccountControl />
+            {!withoutAccountControl && <AccountControl />}
           </ActionsGroup>
         </Group>
       </Header>
