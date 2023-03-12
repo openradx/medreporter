@@ -1,36 +1,32 @@
-import { MultipleChoiceFieldElement } from "@medreporter/medtl-schema"
+import { SingleChoiceElement } from "@medreporter/medtl-schema"
 import { ContextData, createContext, ElementWrapper } from "@medreporter/medtl-tools"
 import { EM_DASH } from "~/chars"
 import { SupportedLanguage } from "~/types/general"
 import { extractText } from "~/utils/adapter"
-import { MultipleChoiceField } from "../fields/MultipleChoiceField"
+import { SingleChoiceField } from "../fields/SingleChoiceField"
 import { FieldOption } from "../fields/fieldTypes"
-import { FieldGraphicsAdapter } from "./FieldGraphicsAdapter"
-import { FieldInfoAdapter } from "./FieldInfoAdapter"
+import { FigureAdapter } from "./FigureAdapter"
+import { InfoAdapter } from "./InfoAdapter"
 
-interface MultipleChoiceFieldAdapterProps {
-  element: MultipleChoiceFieldElement
+interface SingleChoiceAdapterProps {
+  element: SingleChoiceElement
   data: ContextData
   lng: SupportedLanguage
 }
 
-export const MultipleChoiceFieldAdapter = ({
-  element,
-  data,
-  lng,
-}: MultipleChoiceFieldAdapterProps) => {
+export const SingleChoiceAdapter = ({ element, data, lng }: SingleChoiceAdapterProps) => {
   const context = createContext(data, lng)
 
   const wrapper = new ElementWrapper(element)
   const id = wrapper.getAttribute("id").getStringValue(context)
   const labelEl = wrapper.getFirstChildElement("Label").element
   const label = extractText(labelEl, data, lng)
-  const graphicsEl = wrapper.getFirstChildElement("Graphics")?.element
+  const graphicsEl = wrapper.getFirstChildElement("Figure")?.element
   const infoEl = wrapper.getFirstChildElement("Info")?.element
   const extras = (
     <>
-      {graphicsEl && <FieldGraphicsAdapter element={graphicsEl} lng={lng} />}
-      {infoEl && <FieldInfoAdapter element={infoEl} {...{ data, lng }} />}
+      {graphicsEl && <FigureAdapter element={graphicsEl} lng={lng} />}
+      {infoEl && <InfoAdapter element={infoEl} {...{ data, lng }} />}
     </>
   )
   const variant = wrapper.getAttribute("variant")?.getStringValue()
@@ -43,17 +39,12 @@ export const MultipleChoiceFieldAdapter = ({
       value: optionValue || optionLabel,
     }
   })
-  const defaultValue: string[] | undefined = wrapper
-    .getAttribute("default")
-    ?.getRecordValue(context)
-    .values()
-    .map(String)
-
+  const defaultValue = wrapper.getAttribute("default")?.getStringValue(context)
   const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
   const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
   return (
-    <MultipleChoiceField
+    <SingleChoiceField
       {...{ id, label, extras, variant, options, defaultValue, disabled, hidden }}
     />
   )

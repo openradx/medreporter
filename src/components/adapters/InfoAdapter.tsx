@@ -5,13 +5,13 @@ import { SupportedLanguage } from "~/types/general"
 import { FieldInfo } from "../sr/FieldInfo"
 import { TextContentAdapter } from "./TextContentAdapter"
 
-interface FieldInfoAdapterProps {
+interface InfoAdapterProps {
   element: InfoElement
   data: ContextData
   lng: SupportedLanguage
 }
 
-export const FieldInfoAdapter = ({ element, data, lng }: FieldInfoAdapterProps) => {
+export const InfoAdapter = ({ element, data, lng }: InfoAdapterProps) => {
   const { useField } = getFieldContext()
   const { label } = useField()
 

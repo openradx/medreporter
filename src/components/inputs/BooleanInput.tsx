@@ -10,7 +10,7 @@ interface BinaryInputProps {
   disabled?: boolean
 }
 
-export const BinaryInput = ({ label, extras, value, onChange, disabled }: BinaryInputProps) => (
+export const BooleanInput = ({ label, extras, value, onChange, disabled }: BinaryInputProps) => (
   <Box
     sx={(theme) => ({
       border: `1px solid ${

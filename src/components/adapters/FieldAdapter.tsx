@@ -1,30 +1,33 @@
 import {
-  BinaryFieldElement,
-  DateFieldElement,
-  FreeTextFieldElement,
-  MeasurementsFieldElement,
-  MultipleChoiceFieldElement,
-  NumberFieldElement,
-  SingleChoiceFieldElement,
+  BooleanElement,
+  DateElement,
+  FreeTextElement,
+  MeasurementsElement,
+  MultipleChoiceElement,
+  NumberElement,
+  SingleChoiceElement,
+  TimeElement,
 } from "@medreporter/medtl-schema"
 import { ContextData } from "@medreporter/medtl-tools"
 import { SupportedLanguage } from "~/types/general"
-import { BinaryFieldAdapter } from "./BinaryFieldAdapter"
-import { DateFieldAdapter } from "./DateFieldAdapter"
-import { FreeTextFieldAdapter } from "./FreeTextFieldAdapter"
-import { MeasurementsFieldAdapter } from "./MeasurementsFieldAdapter"
-import { MultipleChoiceFieldAdapter } from "./MultipleChoiceFieldAdapter"
-import { NumberFieldAdapter } from "./NumberFieldAdapter"
-import { SingleChoiceFieldAdapter } from "./SingleChoiceFieldAdapter"
+import { BooleanAdapter } from "./BooleanAdapter"
+import { DateAdapter } from "./DateAdapter"
+import { FreeTextAdapter } from "./FreeTextAdapter"
+import { MeasurementsAdapter } from "./MeasurementsAdapter"
+import { MultipleChoiceAdapter } from "./MultipleChoiceAdapter"
+import { NumberAdapter } from "./NumberAdapter"
+import { SingleChoiceAdapter } from "./SingleChoiceAdapter"
+import { TimeAdapter } from "./TimeAdapter"
 
 type FieldElement =
-  | BinaryFieldElement
-  | DateFieldElement
-  | FreeTextFieldElement
-  | MeasurementsFieldElement
-  | MultipleChoiceFieldElement
-  | NumberFieldElement
-  | SingleChoiceFieldElement
+  | BooleanElement
+  | DateElement
+  | TimeElement
+  | FreeTextElement
+  | MeasurementsElement
+  | MultipleChoiceElement
+  | NumberElement
+  | SingleChoiceElement
 
 interface FieldAdapterProps {
   element: FieldElement
@@ -34,26 +37,29 @@ interface FieldAdapterProps {
 
 export const FieldAdapter = ({ element, data, lng }: FieldAdapterProps) => {
   switch (element.kind) {
-    case "BinaryField": {
-      return <BinaryFieldAdapter {...{ element, data, lng }} />
+    case "Boolean": {
+      return <BooleanAdapter {...{ element, data, lng }} />
     }
-    case "DateField": {
-      return <DateFieldAdapter {...{ element, data, lng }} />
+    case "Date": {
+      return <DateAdapter {...{ element, data, lng }} />
     }
-    case "FreeTextField": {
-      return <FreeTextFieldAdapter {...{ element, data, lng }} />
+    case "Time": {
+      return <TimeAdapter {...{ element, data, lng }} />
     }
-    case "MeasurementsField": {
-      return <MeasurementsFieldAdapter {...{ element, data, lng }} />
+    case "FreeText": {
+      return <FreeTextAdapter {...{ element, data, lng }} />
     }
-    case "MultipleChoiceField": {
-      return <MultipleChoiceFieldAdapter {...{ element, data, lng }} />
+    case "Measurements": {
+      return <MeasurementsAdapter {...{ element, data, lng }} />
     }
-    case "NumberField": {
-      return <NumberFieldAdapter {...{ element, data, lng }} />
+    case "MultipleChoice": {
+      return <MultipleChoiceAdapter {...{ element, data, lng }} />
     }
-    case "SingleChoiceField": {
-      return <SingleChoiceFieldAdapter {...{ element, data, lng }} />
+    case "Number": {
+      return <NumberAdapter {...{ element, data, lng }} />
+    }
+    case "SingleChoice": {
+      return <SingleChoiceAdapter {...{ element, data, lng }} />
     }
     default: {
       throw new Error(`Invalid element: ${element}`)

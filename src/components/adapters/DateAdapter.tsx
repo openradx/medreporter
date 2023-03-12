@@ -1,4 +1,4 @@
-import { DateFieldElement } from "@medreporter/medtl-schema"
+import { DateElement } from "@medreporter/medtl-schema"
 import {
   ContextData,
   convertRecordToDate,
@@ -8,28 +8,28 @@ import {
 import { DateField } from "~/components/fields/DateField"
 import { SupportedLanguage } from "~/types/general"
 import { extractText } from "~/utils/adapter"
-import { FieldGraphicsAdapter } from "./FieldGraphicsAdapter"
-import { FieldInfoAdapter } from "./FieldInfoAdapter"
+import { FigureAdapter } from "./FigureAdapter"
+import { InfoAdapter } from "./InfoAdapter"
 
-interface DateFieldAdapterProps {
-  element: DateFieldElement
+interface DateAdapterProps {
+  element: DateElement
   data: ContextData
   lng: SupportedLanguage
 }
 
-export const DateFieldAdapter = ({ element, data, lng }: DateFieldAdapterProps) => {
+export const DateAdapter = ({ element, data, lng }: DateAdapterProps) => {
   const context = createContext(data, lng)
 
   const wrapper = new ElementWrapper(element)
   const id = wrapper.getAttribute("id").getStringValue(context)
   const labelEl = wrapper.getFirstChildElement("Label").element
   const label = extractText(labelEl, data, lng)
-  const graphicsEl = wrapper.getFirstChildElement("Graphics")?.element
+  const figureEl = wrapper.getFirstChildElement("Figure")?.element
   const infoEl = wrapper.getFirstChildElement("Info")?.element
   const extras = (
     <>
-      {graphicsEl && <FieldGraphicsAdapter element={graphicsEl} lng={lng} />}
-      {infoEl && <FieldInfoAdapter element={infoEl} {...{ data, lng }} />}
+      {figureEl && <FigureAdapter element={figureEl} lng={lng} />}
+      {infoEl && <InfoAdapter element={infoEl} {...{ data, lng }} />}
     </>
   )
   const _default = wrapper.getAttribute("default")?.getValue(context)

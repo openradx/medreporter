@@ -1,8 +1,8 @@
 import { FindingElement } from "@medreporter/medtl-schema"
-import { ContextData, ElementWrapper } from "@medreporter/medtl-tools"
+import { ContextData, createContext, ElementWrapper } from "@medreporter/medtl-tools"
 import { SupportedLanguage } from "~/types/general"
 import { extractText } from "~/utils/adapter"
-import { Finding } from "../fields/Finding"
+import { FindingField } from "../fields/FindingField"
 import { FieldAdapter } from "./FieldAdapter"
 import { GroupAdapter } from "./GroupAdapter"
 
@@ -14,8 +14,13 @@ interface FindingAdapterProps {
 
 export const FindingAdapter = ({ element, data, lng }: FindingAdapterProps) => {
   const wrapper = new ElementWrapper(element)
+  const context = createContext(data, lng)
+  const id = wrapper.getAttribute("id").getStringValue(context)
   const labelEl = wrapper.getFirstChildElement("Label").element
   const label = extractText(labelEl, data, lng)
+  const defaultValue = wrapper.getAttribute("default")?.getBooleanValue(context)
+  const disabled = wrapper.getAttribute("disabled")?.getBooleanValue(context)
+  const hidden = wrapper.getAttribute("hidden")?.getBooleanValue(context)
 
   // TODO: Link element
 
@@ -29,5 +34,5 @@ export const FindingAdapter = ({ element, data, lng }: FindingAdapterProps) => {
     return <FieldAdapter element={child} {...{ data, lng }} />
   })
 
-  return <Finding label={label}>{children}</Finding>
+  return <FindingField {...{ id, label, defaultValue, disabled, hidden }}>{children}</FindingField>
 }

@@ -1,19 +1,19 @@
 import { useModule } from "~/contexts/ModuleContext"
 import { useStructureController } from "~/hooks/useStructureController"
-import { BinaryInput } from "../inputs/BinaryInput"
+import { BooleanInput } from "../inputs/BooleanInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
-interface BinaryFieldProps extends CommonFieldProps<boolean> {}
+interface BooleanFieldProps extends CommonFieldProps<boolean> {}
 
-export const BinaryField = ({
+export const BooleanField = ({
   id: fieldId,
   label,
   extras,
   defaultValue = false,
   disabled,
   hidden,
-}: BinaryFieldProps) => {
+}: BooleanFieldProps) => {
   const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
     moduleId,
@@ -23,7 +23,7 @@ export const BinaryField = ({
 
   return (
     <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
-      <BinaryInput {...{ label, extras, value, onChange, disabled }} />
+      <BooleanInput {...{ label, extras, value, onChange, disabled }} />
     </BaseField>
   )
 }
