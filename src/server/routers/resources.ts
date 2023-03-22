@@ -75,7 +75,8 @@ export const resourcesRouter = router({
     }),
 
   updateResource: authedProcedure.input(UpdateResourceSchema).mutation(async ({ input, ctx }) => {
-    const { id, source, visibility, categories, releaseStatus } = input
+    // TODO: also use categories
+    const { id, source, visibility, releaseStatus } = input
     const { user } = ctx
 
     const resource = await prisma.resource.findUnique({ where: { id } })
