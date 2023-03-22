@@ -1,4 +1,4 @@
-import { Radio } from "@mantine/core"
+import { Stack, Radio } from "@mantine/core"
 import { ReactNode } from "react"
 import { FieldOption } from "../fields/fieldTypes"
 import { InputLabel } from "./InputLabel"
@@ -35,22 +35,22 @@ export const SingleRadioInput = ({
         }
       }}
       value={value ?? undefined}
-      orientation="vertical"
-      spacing="xs"
     >
-      {options.map((option) => (
-        <Radio
-          key={option.value}
-          value={option.value}
-          label={option.label}
-          onClick={() => {
-            if (value === option.value) {
-              onChange(null)
-            }
-          }}
-          disabled={disabled}
-        />
-      ))}
+      <Stack spacing="xs">
+        {options.map((option) => (
+          <Radio
+            key={option.value}
+            value={option.value}
+            label={option.label}
+            onClick={() => {
+              if (value === option.value) {
+                onChange(null)
+              }
+            }}
+            disabled={disabled}
+          />
+        ))}
+      </Stack>
     </Radio.Group>
   )
 }

@@ -85,7 +85,7 @@ export const ResourceList = ({ resourceType }: ResourceListProps) => {
       <Center>
         {totalPages > 1 && (
           <Pagination
-            page={activePage}
+            value={activePage}
             total={totalPages}
             onChange={(page) => router.push({ query: { page: String(page) } })}
           />

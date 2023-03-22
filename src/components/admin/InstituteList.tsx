@@ -66,9 +66,9 @@ export const InstituteList = () => {
         {canAddInstitute ? <AddInstituteButton /> : <div />}
         {data?.institutes.length && (
           <Pagination
-            page={activePage}
+            value={activePage}
             total={Math.ceil(data.count / ITEMS_PER_PAGE)}
-            onChange={(page) => router.push({ query: { page: String(page) } })}
+            onChange={(value) => router.push({ query: { value: String(value) } })}
           />
         )}
       </Group>

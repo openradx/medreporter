@@ -1,4 +1,4 @@
-import { Checkbox } from "@mantine/core"
+import { Checkbox, Stack } from "@mantine/core"
 import { ReactNode } from "react"
 import { FieldOption } from "../fields/fieldTypes"
 import { InputLabel } from "./InputLabel"
@@ -26,11 +26,16 @@ export const MultipleCheckboxInput = ({
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
     onChange={onChange}
     value={value}
-    orientation="vertical"
-    spacing="xs"
   >
-    {options.map((option) => (
-      <Checkbox key={option.value} value={option.value} label={option.label} disabled={disabled} />
-    ))}
+    <Stack spacing="xs">
+      {options.map((option) => (
+        <Checkbox
+          key={option.value}
+          value={option.value}
+          label={option.label}
+          disabled={disabled}
+        />
+      ))}
+    </Stack>
   </Checkbox.Group>
 )

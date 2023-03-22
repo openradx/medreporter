@@ -16,7 +16,12 @@ export const ModuleInfo = ({ children }: ModuleInfoProps) => {
 
   return (
     <>
-      <Tooltip label="Open Info" position="top" transition="pop" openDelay={1000}>
+      <Tooltip
+        label="Open Info"
+        position="top"
+        transitionProps={{ transition: "pop" }}
+        openDelay={1000}
+      >
         <ActionIcon
           title={t("ModuleInfo.buttonInfo")}
           variant="default"

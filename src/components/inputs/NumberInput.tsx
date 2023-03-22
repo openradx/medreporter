@@ -59,8 +59,8 @@ export const NumberInput = ({
         }}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
-        value={value ?? undefined}
-        onChange={(newValue) => onChange(newValue ?? null)}
+        value={value === null ? "" : value}
+        onChange={(newValue) => onChange(newValue === "" ? null : newValue)}
         disabled={disabled}
         min={min}
         max={max}
