@@ -15,7 +15,7 @@ const FindingInputWithState = ({ label }: ComponentProps<typeof FindingInput>) =
 
   return (
     <FindingInput value={value} onChange={setValue} {...{ label }}>
-      <div>here</div>
+      <div>Content</div>
     </FindingInput>
   )
 }
