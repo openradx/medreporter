@@ -1,5 +1,5 @@
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core"
-import { NotificationsProvider } from "@mantine/notifications"
+import { Notifications } from "@mantine/notifications"
 import React from "react"
 import { useMemo } from "react"
 
@@ -48,9 +48,8 @@ const withMantineTheme = (Story, context) => {
         withGlobalStyles
         withNormalizeCSS
       >
-        <NotificationsProvider>
-          <Story />
-        </NotificationsProvider>
+        <Notifications />
+        <Story />
       </MantineProvider>
     </ColorSchemeProvider>
   )
