@@ -4,19 +4,18 @@ import { InputLabel } from "./InputLabel"
 
 interface TimeInputProps {
   label?: string
-  value: Date | null
-  onChange: (value: Date | null) => void
+  value: string
+  onChange: (value: string) => void
   extras?: ReactNode
   disabled?: boolean
-  format?: "12" | "24"
+  // TODO: format?: "12" | "24"
 }
 
-export const TimeInput = ({ label, value, onChange, extras, disabled, format }: TimeInputProps) => (
+export const TimeInput = ({ label, value, onChange, extras, disabled }: TimeInputProps) => (
   <TimePicker
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
     value={value}
-    onChange={onChange}
+    onChange={(event) => onChange(event.target.value)}
     disabled={disabled}
-    format={format}
   />
 )
