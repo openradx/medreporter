@@ -1,5 +1,4 @@
 import { MedtlRecord } from "@medreporter/medtl-tools"
-import { MdRowing } from "react-icons/md"
 import { describe, expect, it } from "vitest"
 import { MeasurementsData } from "~/types/measurements"
 import {
