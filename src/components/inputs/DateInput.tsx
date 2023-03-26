@@ -1,4 +1,4 @@
-import { DatePicker } from "@mantine/dates"
+import { DateInput as MantineDateInput } from "@mantine/dates"
 import { ReactNode } from "react"
 import { InputLabel } from "./InputLabel"
 
@@ -12,12 +12,11 @@ interface DateInputProps {
 }
 
 export const DateInput = ({ label, extras, locale, value, onChange, disabled }: DateInputProps) => (
-  <DatePicker
+  <MantineDateInput
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
     locale={locale}
     value={value}
     onChange={onChange}
     disabled={disabled}
-    allowFreeInput
   />
 )

@@ -1,6 +1,6 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from "@mantine/core"
 import { ModalsProvider } from "@mantine/modals"
-import { NotificationsProvider } from "@mantine/notifications"
+import { Notifications } from "@mantine/notifications"
 import { getCookie, setCookie } from "cookies-next"
 import { enableMapSet, enablePatches } from "immer"
 import { GetServerSidePropsContext } from "next"
@@ -56,9 +56,8 @@ const MyApp = ({
             withNormalizeCSS
             theme={{ colorScheme, cursorType: "pointer", fontFamily, headings: { fontFamily } }}
           >
-            <NotificationsProvider>
-              <ModalsProvider>{getLayout(<Component {...pageProps} />)}</ModalsProvider>
-            </NotificationsProvider>
+            <Notifications />
+            <ModalsProvider>{getLayout(<Component {...pageProps} />)}</ModalsProvider>
           </MantineProvider>
         </ColorSchemeProvider>
       </SessionProvider>

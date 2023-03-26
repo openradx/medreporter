@@ -31,7 +31,7 @@ describe("convertTimeToRecord", () => {
 })
 
 describe("convertRecordToMeasurementsData", () => {
-  it.only("can convert a record to measurements data", () => {
+  it("can convert a record to measurements data", () => {
     const record = MedtlRecord.from([[[1, 2], [3, 4], "loc1", "ref1"]])
     const data = convertRecordToMeasurementsData(record)
     expect(data[0].previous).toEqual([1, 2])
@@ -47,9 +47,10 @@ describe("convertMeasurementsDataToRecord", () => {
       { previous: [1, 2], current: [3, 4], location: "loc1", reference: "ref1" },
     ]
     const record = convertMeasurementsDataToRecord(data)
-    expect(record.get(0)).toEqual([1, 2])
-    expect(record.get(1)).toEqual([3, 4])
-    expect(record.get(2)).toEqual("loc1")
-    expect(record.get(3)).toEqual("ref1")
+    const row = record.get(0) as MedtlRecord
+    expect((row.get("previous") as MedtlRecord).get(0)).toEqual(1)
+    expect((row.get("current") as MedtlRecord).get(1)).toEqual(4)
+    expect(row.get("location")).toEqual("loc1")
+    expect(row.get("reference")).toEqual("ref1")
   })
 })

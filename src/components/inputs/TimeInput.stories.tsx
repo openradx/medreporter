@@ -12,11 +12,11 @@ const meta: Meta<typeof TimeInput> = {
 export default meta
 type Story = StoryObj<typeof TimeInput>
 
-const TimeInputWithState = ({ label, format }: ComponentProps<typeof TimeInput>) => {
-  const [value, setValue] = useState<Date | null>(new Date())
+const TimeInputWithState = ({ label, accuracy }: ComponentProps<typeof TimeInput>) => {
+  const [value, setValue] = useState<string>("")
   return (
     <InputLayout>
-      <TimeInput label={label} value={value} onChange={setValue} format={format} />
+      <TimeInput label={label} value={value} onChange={setValue} accuracy={accuracy} />
     </InputLayout>
   )
 }
@@ -29,6 +29,6 @@ export const Basic: Story = {
   ...Template,
   args: {
     label: "Study time",
-    format: "24",
+    accuracy: "seconds",
   },
 }

@@ -1,22 +1,41 @@
-import { TimeInput as TimePicker } from "@mantine/dates"
-import { ReactNode } from "react"
+import { ActionIcon } from "@mantine/core"
+import { TimeInput as MantineTimeInput } from "@mantine/dates"
+import { ReactNode, useRef } from "react"
+import { FiClock } from "react-icons/fi"
 import { InputLabel } from "./InputLabel"
 
 interface TimeInputProps {
   label?: string
-  value: Date | null
-  onChange: (value: Date | null) => void
+  value: string
+  onChange: (value: string) => void
   extras?: ReactNode
   disabled?: boolean
-  format?: "12" | "24"
+  accuracy?: "minutes" | "seconds"
 }
 
-export const TimeInput = ({ label, value, onChange, extras, disabled, format }: TimeInputProps) => (
-  <TimePicker
-    label={(label || extras) && <InputLabel label={label} extras={extras} />}
-    value={value}
-    onChange={onChange}
-    disabled={disabled}
-    format={format}
-  />
-)
+export const TimeInput = ({
+  label,
+  value,
+  onChange,
+  extras,
+  disabled,
+  accuracy,
+}: TimeInputProps) => {
+  const ref = useRef<HTMLInputElement>(null)
+
+  return (
+    <MantineTimeInput
+      label={(label || extras) && <InputLabel label={label} extras={extras} />}
+      value={value}
+      onChange={(event) => onChange(event.target.value)}
+      disabled={disabled}
+      withSeconds={accuracy === "seconds"}
+      ref={ref}
+      rightSection={
+        <ActionIcon onClick={() => ref.current?.showPicker()}>
+          <FiClock size="1rem" />
+        </ActionIcon>
+      }
+    />
+  )
+}

@@ -104,60 +104,58 @@ export const GraphicsModal = ({
   }
 
   return (
-    <Modal
-      opened={opened}
-      onClose={onClose}
-      title={title}
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        pointerEvents: "auto",
-      }}
-      size="80%"
-    >
-      <Tooltip.Floating
-        label={tooltipTitle}
-        position="top"
-        sx={{ visibility: tooltipTitle ? "visible" : "hidden" }}
+    <Modal opened={opened} onClose={onClose} title={title} size="80%">
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          pointerEvents: "auto",
+        }}
       >
-        <Box
-          onMouseMove={handleMouseMove}
-          onClick={handleClick}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            outline: "none",
-            "& svg": {
-              maxWidth: "70vw",
-              maxHeight: "70vh",
-              cursor: "default",
-              [`& ${hoverTagName}[id]:hover`]: {
-                fill: "orange",
-                fillOpacity: 1,
-                stroke: "",
-                strokeWidth: "",
-              },
-            },
-            "& [id]": { cursor: "pointer" },
-            "& text": { pointerEvents: "none" },
-            ...selectedCss(),
-          }}
+        <Tooltip.Floating
+          label={tooltipTitle}
+          position="top"
+          sx={{ visibility: tooltipTitle ? "visible" : "hidden" }}
         >
-          {svg}
-          <ActionIcon
-            title={t("GraphicsModal.buttonReset")}
-            onClick={(event: { stopPropagation: () => void }) => {
-              event.stopPropagation()
-              onChange?.(multiple ? [] : null)
+          <Box
+            onMouseMove={handleMouseMove}
+            onClick={handleClick}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              outline: "none",
+              "& svg": {
+                maxWidth: "70vw",
+                maxHeight: "70vh",
+                cursor: "default",
+                [`& ${hoverTagName}[id]:hover`]: {
+                  fill: "orange",
+                  fillOpacity: 1,
+                  stroke: "",
+                  strokeWidth: "",
+                },
+              },
+              "& [id]": { cursor: "pointer" },
+              "& text": { pointerEvents: "none" },
+              ...selectedCss(),
             }}
-            sx={{ position: "absolute", right: 8, bottom: 16 }}
           >
-            <ResetIcon />
-          </ActionIcon>
-        </Box>
-      </Tooltip.Floating>
+            {svg}
+            <ActionIcon
+              title={t("GraphicsModal.buttonReset")}
+              onClick={(event: { stopPropagation: () => void }) => {
+                event.stopPropagation()
+                onChange?.(multiple ? [] : null)
+              }}
+              sx={{ position: "absolute", right: 8, bottom: 16 }}
+            >
+              <ResetIcon />
+            </ActionIcon>
+          </Box>
+        </Tooltip.Floating>
+      </Box>
     </Modal>
   )
 }
