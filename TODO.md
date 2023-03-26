@@ -41,6 +41,10 @@
 
 ## Julia
 
+- Modal Info Resource too narrow
+- Institute switcher clearable
+- Footer / copyright
+- Section layout
 - MedReporter Logo
 - Lung arteries image
 - Startpage (ideas)
