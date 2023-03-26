@@ -1,4 +1,5 @@
 import { Burger, Group, Header, Text } from "@mantine/core"
+import Link from "next/link"
 import { useState } from "react"
 import { NAVBAR_HEIGHT } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -27,9 +28,11 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
               onClick={() => setOpened(!opened)}
               size="sm"
             />
-            <Text fw={500} fz="xl" sx={{ userSelect: "none" }}>
-              MedReporter
-            </Text>
+            <Link href="/" legacyBehavior>
+              <Text fw={500} fz="xl" sx={{ userSelect: "none", cursor: "pointer" }}>
+                MedReporter
+              </Text>
+            </Link>
           </Group>
           <Group id="navbar-actions" spacing="sm" />
           <ActionsGroup>
