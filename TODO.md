@@ -41,7 +41,6 @@
 
 ## Julia
 
-- Modal Info Resource too narrow
 - Institute switcher clearable
 - Footer / copyright
 - Section layout

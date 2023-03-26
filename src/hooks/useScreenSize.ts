@@ -6,10 +6,10 @@ type ScreenSize = "xs" | "sm" | "md" | "lg" | "xl"
 export const useScreenSize = (): ScreenSize => {
   const theme = useMantineTheme()
 
-  const sm = useMediaQuery(`(min-width: ${theme.breakpoints.sm}px)`)
-  const md = useMediaQuery(`(min-width: ${theme.breakpoints.md}px)`)
-  const lg = useMediaQuery(`(min-width: ${theme.breakpoints.lg}px)`)
-  const xl = useMediaQuery(`(min-width: ${theme.breakpoints.xl}px)`)
+  const sm = useMediaQuery(`(min-width: ${theme.breakpoints.sm})`)
+  const md = useMediaQuery(`(min-width: ${theme.breakpoints.md})`)
+  const lg = useMediaQuery(`(min-width: ${theme.breakpoints.lg})`)
+  const xl = useMediaQuery(`(min-width: ${theme.breakpoints.xl})`)
 
   let screenSize: ScreenSize = "xs"
   if (sm) screenSize = "sm"
