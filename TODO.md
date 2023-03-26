@@ -41,7 +41,6 @@
 
 ## Julia
 
-- Institute switcher clearable
 - Footer / copyright
 - Section layout
 - MedReporter Logo
