@@ -7,6 +7,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { resourcesRouter } from "~/server/routers/resources"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
+import { getServerSideStructuredReportTranslations } from "~/server/utils/structuredReportTranslations"
 import { setEditorState } from "~/state/editorSlice"
 import { addResource } from "~/state/resourcesSlice"
 import { initStore } from "~/state/store"
@@ -42,6 +43,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
     props: {
       session,
       i18nSite: await getServerSideSiteTranslations(locale, locales, ["editor"]),
+      i18nStructuredReport: await getServerSideStructuredReportTranslations(locale, locales),
       preloadedReduxState: store.getState(),
     },
   }
