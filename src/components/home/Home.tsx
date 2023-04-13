@@ -31,72 +31,74 @@ export const Home = () => {
         </Grid.Col>
       )}
       <Grid.Col xs={12} sm={loggedIn ? 6 : 4}>
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
-          <Card.Section>
-            <Image src="/tools.png" height={120} fit="contain" alt="Tools Image" />
-          </Card.Section>
-          <Text weight={500}>{t("HomePage.toolsTitle")}</Text>{" "}
-          <Text size="sm" color="dimmed">
-            {t("HomePage.toolsDescription")}
-          </Text>
-          <Link href="/tools">
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-              {t("HomePage.toolsButton")}
-            </Button>
-          </Link>
-        </Card>
+        <Link href="/tools" legacyBehavior>
+          <Card
+            shadow="sm"
+            p="lg"
+            radius="md"
+            withBorder
+            style={{ minHeight: "16rem" }}
+            sx={{ cursor: "pointer" }}
+          >
+            <Card.Section>
+              <Image src="/tools.png" height="10rem" fit="contain" alt="Tools Image" />
+            </Card.Section>
+            <Text weight={500}>{t("HomePage.toolsTitle")}</Text>{" "}
+            <Text size="sm" color="dimmed">
+              {t("HomePage.toolsDescription")}
+            </Text>
+          </Card>
+        </Link>
       </Grid.Col>
       {loggedIn && (
         <Grid.Col xs={12} sm={loggedIn ? 6 : 4}>
-          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
+          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: "16rem" }}>
             <Card.Section>
-              <Image src="/exampleImage2.png" height={120} fit="contain" alt="Example image" />
+              <Image src="/exampleImage2.png" height="10rem" fit="contain" alt="Example image" />
             </Card.Section>
             <Text weight={500}>{t("HomePage.reportsTitle")}</Text>{" "}
             <Text size="sm" color="dimmed">
               {t("HomePage.reportsDescription")}
             </Text>
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-              {t("HomePage.reportsButton")}
-            </Button>
           </Card>
         </Grid.Col>
       )}
       <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={4}>
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
-          <Card.Section>
-            <Image src="/exampleImage.png" height={120} fit="contain" alt="Example image" />
-          </Card.Section>
-          <Text weight={500}>{t("HomePage.modulesTitle")}</Text>{" "}
-          <Text size="sm" color="dimmed">
-            {t("HomePage.modulesDescription")}
-          </Text>
-          <Link href="/modules">
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-              {t("HomePage.modulesButton")}
-            </Button>
-          </Link>
-        </Card>
+        <Link href="/modules" legacyBehavior>
+          <Card
+            shadow="sm"
+            p="lg"
+            radius="md"
+            withBorder
+            style={{ minHeight: "16rem" }}
+            sx={{ cursor: "pointer" }}
+          >
+            <Card.Section>
+              <Image src="/exampleImage.png" height="10rem" fit="contain" alt="Example image" />
+            </Card.Section>
+            <Text weight={500}>{t("HomePage.modulesTitle")}</Text>
+            <Text size="sm" color="dimmed">
+              {t("HomePage.modulesDescription")}
+            </Text>
+          </Card>
+        </Link>
       </Grid.Col>
       <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={4}>
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
+        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: "16rem" }}>
           <Card.Section>
-            <Image src="/exampleImage2.png" height={120} fit="contain" alt="Example image" />
+            <Image src="/exampleImage2.png" height="10rem" fit="contain" alt="Example image" />
           </Card.Section>
-          <Text weight={500}>{t("HomePage.templatesTitle")}</Text>{" "}
+          <Text weight={500}>{t("HomePage.templatesTitle")}</Text>
           <Text size="sm" color="dimmed">
             {t("HomePage.templatesDescription")}
           </Text>
-          <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-            {t("HomePage.templatesButton")}
-          </Button>
         </Card>
       </Grid.Col>
       {loggedIn && (
         <Grid.Col xs={12} sm={6} xl={4}>
-          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: 220 }}>
+          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: "16rem" }}>
             <Card.Section>
-              <Image src="/demoEditor.gif" height={120} fit="contain" alt="Editor demo" />
+              <Image src="/demoEditor.gif" height="8rem" fit="contain" alt="Editor demo" />
             </Card.Section>
             <Text weight={500}>{t("HomePage.newTitle")}</Text>{" "}
             <Text size="sm" color="dimmed">

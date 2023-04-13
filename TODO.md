@@ -41,8 +41,6 @@
 
 ## Julia
 
-- Modal Info Resource too narrow
-- Institute switcher clearable
 - Footer / copyright
 - Section layout
 - MedReporter Logo
@@ -53,7 +51,6 @@
 - Field extras
 - External link images (Next.js Image component, why?)
 - [Tools] Fleischner 2017
-- [Tools] Adrenal washout
 - [Tools] Adrenal MRI Calculator (SI-Index)
 - [Tools] Lung RADS
 - [Tools] Kidney volume

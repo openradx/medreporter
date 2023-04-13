@@ -50,6 +50,7 @@ export const InstituteSwitcher = () => {
     <Select
       label={t("InstituteSwitcher.label")}
       searchable
+      clearable
       placeholder={!options.length ? t("InstituteSwitcher.noInstituteAvailable") : undefined}
       data={options}
       itemComponent={SelectItem}
