@@ -32,6 +32,10 @@ const SandboxPage: PageWithLayout = () => (
   </>
 )
 
-SandboxPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
+SandboxPage.getLayout = (page: ReactElement) => (
+  <MainLayout size="full" footerSize="small">
+    {page}
+  </MainLayout>
+)
 
 export default SandboxPage

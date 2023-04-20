@@ -36,6 +36,10 @@ const KidneyVolumePage: PageWithLayout = () => {
   )
 }
 
-KidneyVolumePage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
+KidneyVolumePage.getLayout = (page: ReactElement) => (
+  <MainLayout size="full" footerSize="small">
+    {page}
+  </MainLayout>
+)
 
 export default KidneyVolumePage
