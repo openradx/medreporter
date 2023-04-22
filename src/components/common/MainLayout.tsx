@@ -1,7 +1,7 @@
 import { AppShell, Container, MantineNumberSize, MediaQuery } from "@mantine/core"
 import { ReactNode } from "react"
 import { ErrorBoundary } from "react-error-boundary"
-import { Footer } from "./Footer"
+import { SmallFooter } from "../sr/SmallFooter"
 import { MainLayoutFallback } from "./MainLayoutFallback"
 import { Navbar } from "./Navbar"
 
@@ -22,7 +22,7 @@ export const MainLayout = ({
     <AppShell
       padding="sm"
       header={<Navbar withoutAccountControl={withoutAccountControl} />}
-      footer={<Footer footerSize={footerSize} />}
+      footer={footerSize === "small" ? <SmallFooter /> : undefined}
     >
       <ErrorBoundary FallbackComponent={MainLayoutFallback}>
         <Container size={size !== "full" ? size : undefined} fluid={size === "full"} h="100%">
