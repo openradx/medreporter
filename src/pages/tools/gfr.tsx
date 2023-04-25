@@ -37,6 +37,10 @@ const GfrPage: PageWithLayout = () => {
   )
 }
 
-GfrPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
+GfrPage.getLayout = (page: ReactElement) => (
+  <MainLayout size="full" footerSize="small">
+    {page}
+  </MainLayout>
+)
 
 export default GfrPage

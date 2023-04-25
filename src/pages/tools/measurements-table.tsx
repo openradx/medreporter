@@ -37,7 +37,9 @@ const MeasurementsTablePage: PageWithLayout = () => {
 }
 
 MeasurementsTablePage.getLayout = (page: ReactElement) => (
-  <MainLayout size="full">{page}</MainLayout>
+  <MainLayout size="full" footerSize="small">
+    {page}
+  </MainLayout>
 )
 
 export default MeasurementsTablePage

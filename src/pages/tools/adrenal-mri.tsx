@@ -36,6 +36,10 @@ const AdrenalMriPage: PageWithLayout = () => {
   )
 }
 
-AdrenalMriPage.getLayout = (page: ReactElement) => <MainLayout size="full">{page}</MainLayout>
+AdrenalMriPage.getLayout = (page: ReactElement) => (
+  <MainLayout size="full" footerSize="small">
+    {page}
+  </MainLayout>
+)
 
 export default AdrenalMriPage
