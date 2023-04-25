@@ -11,7 +11,7 @@ export const Home = () => {
   const loggedIn = !!user
 
   return (
-    <Grid align="stretch">
+    <Grid>
       <Grid.Col span={12}>
         <Title align="center" mt={100}>
           Welcome to{" "}
@@ -37,8 +37,7 @@ export const Home = () => {
             p="lg"
             radius="md"
             withBorder
-            style={{ minHeight: "16rem" }}
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", minHeight: "16rem", height: "100%" }}
           >
             <Card.Section>
               <Image src="/tools.png" height="10rem" fit="contain" alt="Tools Image" />
@@ -52,7 +51,7 @@ export const Home = () => {
       </Grid.Col>
       {loggedIn && (
         <Grid.Col xs={12} sm={loggedIn ? 6 : 4}>
-          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: "16rem" }}>
+          <Card shadow="sm" p="lg" radius="md" withBorder sx={{ minHeight: "16rem" }}>
             <Card.Section>
               <Image src="/exampleImage2.png" height="10rem" fit="contain" alt="Example image" />
             </Card.Section>
@@ -70,8 +69,7 @@ export const Home = () => {
             p="lg"
             radius="md"
             withBorder
-            style={{ minHeight: "16rem" }}
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer", minHeight: "16rem", height: "100%" }}
           >
             <Card.Section>
               <Image src="/exampleImage.png" height="10rem" fit="contain" alt="Example image" />
@@ -84,7 +82,13 @@ export const Home = () => {
         </Link>
       </Grid.Col>
       <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={4}>
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: "16rem" }}>
+        <Card
+          shadow="sm"
+          p="lg"
+          radius="md"
+          withBorder
+          style={{ minHeight: "16rem", height: "100%" }}
+        >
           <Card.Section>
             <Image src="/exampleImage2.png" height="10rem" fit="contain" alt="Example image" />
           </Card.Section>
@@ -96,7 +100,7 @@ export const Home = () => {
       </Grid.Col>
       {loggedIn && (
         <Grid.Col xs={12} sm={6} xl={4}>
-          <Card shadow="sm" p="lg" radius="md" withBorder style={{ minHeight: "16rem" }}>
+          <Card shadow="sm" p="lg" radius="md" withBorder sx={{ minHeight: "16rem" }}>
             <Card.Section>
               <Image src="/demoEditor.gif" height="8rem" fit="contain" alt="Editor demo" />
             </Card.Section>
