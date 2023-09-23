@@ -1,9 +1,6 @@
 image:
   file: .gitpod.Dockerfile
 
-additionalRepositories:
-  - url: https://github.com/medreporter/medtl
-
 tasks:
   - name: Dev
     init: |
@@ -12,13 +9,7 @@ tasks:
       echo "NEXTAUTH_URL_INTERNAL=http://localhost:3000" >> .env.local
       pnpm db:migrate
       pnpm db:seed
-      gp sync-done install
     command: pnpm run dev
-  - name: MedTL
-    before: cd ../medtl
-    init: |
-      pnpm install
-      pnpm build
 
 vscode:
   extensions:
