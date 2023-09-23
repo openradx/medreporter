@@ -1,22 +1,8 @@
 /* eslint-disable no-console */
 import { faker } from "@faker-js/faker"
 import { loadEnvConfig } from "@next/env"
-import {
-  Institute,
-  MembershipRole,
-  Prisma,
-  PrismaClient,
-  ReleaseStatus,
-  User,
-  UserRole,
-  Visibility,
-} from "@prisma/client"
-import fs from "fs"
-import glob from "glob"
-import path from "path"
+import { Institute, MembershipRole, PrismaClient, User, UserRole } from "@prisma/client"
 import { syncCategories } from "~/server/utils/categoryUtils"
-import { createFigureDocument } from "~/server/utils/figureUtils"
-import { createFigureTranslationsUpdateArgs } from "~/server/utils/resourceUtils"
 import { hashPassword } from "~/utils/cryptography"
 import defaultCategories from "./seeds/categories.json"
 
@@ -31,8 +17,6 @@ const EXAMPLE_INSTITUTES = 10
 const EXAMPLE_MEMBERSHIPS_MEMBER = 500
 const EXAMPLE_MEMBERSHIPS_ADMIN = 100
 const EXAMPLE_MEMBERSHIPS_OWNER = 10
-
-const EXAMPLE_MODULES = 200
 
 const projectDir = process.cwd()
 loadEnvConfig(projectDir)
@@ -121,41 +105,6 @@ async function createExampleMembership(
   })
 }
 
-function createModuleTranslation(
-  language: string,
-  defaultLanguage: boolean
-): Prisma.ResourceTranslationCreateWithoutResourceInput {
-  return {
-    title: faker.lorem.sentence(),
-    description: faker.lorem.paragraph(),
-    language,
-    default: defaultLanguage,
-  }
-}
-
-async function createExampleModule(userId: string) {
-  const languages = faker.helpers.arrayElements(["de", "en", "es", "fr", "it"])
-  const translations = languages.map((language, index) =>
-    createModuleTranslation(language, index === 0)
-  )
-
-  const releaseStatus = faker.helpers.arrayElement(Object.values(ReleaseStatus))
-  const visibility = faker.helpers.arrayElement(Object.values(Visibility))
-
-  return prisma.resource.create({
-    data: {
-      type: "MODULE",
-      name: faker.helpers.unique(faker.internet.domainWord),
-      source: "",
-      authorId: userId,
-      document: {},
-      translations: { create: translations },
-      releaseStatus,
-      visibility,
-    },
-  })
-}
-
 async function seed() {
   /*
    * Users
@@ -167,6 +116,7 @@ async function seed() {
     superadmin = await fetchSuperadmin()
   } else {
     console.info("Creating superadmin.")
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     superadmin = await createSuperadmin()
 
     console.info("Creating example users.")
@@ -177,6 +127,7 @@ async function seed() {
     await Promise.all(promises)
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const users = await prisma.user.findMany()
 
   /*
@@ -226,64 +177,6 @@ async function seed() {
     }
     for (let i = 0; i < EXAMPLE_MEMBERSHIPS_OWNER; i++) {
       createExampleMembership(combinations.pop()!, MembershipRole.OWNER)
-    }
-  }
-
-  /*
-   * Figures
-   */
-  const figuresCount = await prisma.resource.count({ where: { type: "FIGURE" } })
-  if (figuresCount === 0) {
-    console.log("Creating default figures.")
-  } else {
-    console.log("Updating default figures.")
-  }
-
-  const figureFiles = glob.sync("**/*.svg", {
-    cwd: path.join(projectDir, "prisma", "seeds", "figures"),
-    absolute: true,
-  })
-
-  for (const figureFile of figureFiles) {
-    const { name } = path.parse(figureFile)
-    const authorId = superadmin.id
-    const source = fs.readFileSync(figureFile).toString()
-    const doc = createFigureDocument(source)
-    const translationsCreate = createFigureTranslationsUpdateArgs(doc.meta)
-
-    // Sync figures
-    // eslint-disable-next-line no-await-in-loop
-    await prisma.resource.upsert({
-      where: { type_authorId_name: { type: "FIGURE", authorId, name } },
-      update: {
-        source,
-        document: doc,
-        translations: { deleteMany: {}, ...translationsCreate },
-      },
-      create: {
-        type: "FIGURE",
-        name,
-        source,
-        document: doc,
-        visibility: "PUBLIC",
-        releaseStatus: "PUBLISHED",
-        authorId,
-        translations: translationsCreate,
-      },
-    })
-  }
-
-  /*
-   * Modules
-   */
-  const modulesCount = await prisma.resource.count({ where: { type: "MODULE" } })
-  if (modulesCount) {
-    console.info("Modules present. Skipping modules creation.")
-  } else {
-    console.info("Creating example modules.")
-    for (let i = 0; i < EXAMPLE_MODULES; i++) {
-      const authorId = faker.helpers.arrayElement(users).id
-      createExampleModule(authorId)
     }
   }
 }

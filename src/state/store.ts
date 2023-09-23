@@ -6,7 +6,6 @@ import editorReducer from "./editorSlice"
 import { historyMiddleware } from "./historyMiddleware"
 import historyTrackerReducer from "./historyTrackerSlice"
 import reportReducer from "./reportSlice"
-import resourcesReducer from "./resourcesSlice"
 import structureDataReducer from "./structureDataSlice"
 import structureReducer from "./structureSlice"
 
@@ -15,7 +14,6 @@ export const reducer = {
   editor: editorReducer,
   historyTracker: historyTrackerReducer,
   report: reportReducer,
-  resources: resourcesReducer,
   structureData: structureDataReducer,
   structure: structureReducer,
 }

@@ -63,7 +63,7 @@ export const Home = () => {
         </Grid.Col>
       )}
       <Grid.Col xs={12} sm={loggedIn ? 6 : 4} xl={4}>
-        <Link href="/modules" legacyBehavior>
+        <Link href="/" legacyBehavior>
           <Card
             shadow="sm"
             p="lg"
