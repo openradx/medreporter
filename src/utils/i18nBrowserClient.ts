@@ -4,7 +4,6 @@ import BackendAdapter from "i18next-multiload-backend-adapter"
 import { defaultConfig } from "./i18nDefaultConfig"
 
 const backendOption: HttpBackendOptions = {
-  allowMultiLoading: true,
   loadPath: "/api/locales?lng={{lng}}&ns={{ns}}",
 }
 

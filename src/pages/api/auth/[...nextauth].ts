@@ -96,6 +96,10 @@ export const authOptions = (
           const sessionMaxAge = 60 * 60 * 24 * 30 // 30 days
           const sessionExpiry = fromDate(sessionMaxAge)
 
+          if (!adapter.createSession) {
+            throw new Error("Adapter does not implement createSession")
+          }
+
           await adapter.createSession({
             sessionToken,
             userId: user.id,
