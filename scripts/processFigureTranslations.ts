@@ -140,15 +140,15 @@ for (const figureFile of figureFiles) {
 
   const processedFile = path.join(OUTPUT_FOLDER, figureFilename)
   const output = doc.documentElement.outerHTML
-  fs.writeFileSync(
-    processedFile,
-    format(output, {
-      filepath: processedFile,
-      plugins: [require.resolve("@prettier/plugin-xml")],
-      printWidth: Number.MAX_SAFE_INTEGER,
-      singleAttributePerLine: false,
-      xmlWhitespaceSensitivity: "ignore",
-    })
-  )
+  format(output, {
+    filepath: processedFile,
+    plugins: [require.resolve("@prettier/plugin-xml")],
+    printWidth: Number.MAX_SAFE_INTEGER,
+    singleAttributePerLine: false,
+    xmlWhitespaceSensitivity: "ignore",
+  }).then((formatted) => {
+    fs.writeFileSync(processedFile, formatted)
+  })
+
   console.log(chalk.green(`Successfully written "${figureFilename}".`))
 }
