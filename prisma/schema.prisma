@@ -106,7 +106,6 @@ model Membership {
 
 enum ResourceType {
   FIGURE
-  MODULE
   TEMPLATE
 }
 
@@ -125,10 +124,12 @@ enum ReleaseStatus {
 model Resource {
   id            String        @id @default(cuid())
   type          ResourceType
-  name          String
+  slug          String
+  locale        String
+  title         String
+  description   String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  source        String
   document      Json
   visibility    Visibility
   releaseStatus ReleaseStatus
@@ -138,55 +139,28 @@ model Resource {
   institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
   instituteId String?
 
-  translations ResourceTranslation[]
-  categories   ResourceCategory[]
+  tags ResourceTag[]
 
-  @@unique([type, authorId, name])
+  @@unique([type, authorId, slug])
 }
 
-model ResourceTranslation {
-  id          String  @id @default(cuid())
-  language    String
-  default     Boolean
-  title       String
-  description String
-
-  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  resourceId String
-
-  @@unique([language, resourceId])
-  @@index([resourceId, default])
-}
-
-model ResourceCategory {
+model ResourceTag {
   id String @id @default(cuid())
 
   resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   resourceId String
 
-  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
+  Tag   Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  tagId String
 
-  @@unique([resourceId, categoryId])
+  @@unique([resourceId, tagId])
 }
 
-model Category {
-  id  String @id @default(cuid())
-  key String @unique
+model Tag {
+  id    String @id @default(cuid())
+  label String @unique
 
-  translations CategoryTranslation[]
-  resources    ResourceCategory[]
-}
-
-model CategoryTranslation {
-  id       String @id @default(cuid())
-  language String
-  label    String
-
-  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([categoryId, language])
+  resources ResourceTag[]
 }
 
 model Report {
@@ -195,28 +169,13 @@ model Report {
   updatedAt  DateTime   @updatedAt
   visibility Visibility
 
-  template      Json
-  structureData Json
-  reportFormat  Json
-
-  details ReportDetail[]
+  frame      Json
+  data       Json
+  peferences Json
+  properties Json
 
   author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   authorId    String
   institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
   instituteId String?
-}
-
-model ReportDetail {
-  id       String    @id @default(cuid())
-  key      String
-  string   String?
-  dateTime DateTime?
-  int      BigInt?
-  float    Float?
-
-  report   Report? @relation(fields: [reportId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  reportId String?
-
-  @@unique([reportId, key])
 }

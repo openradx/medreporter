@@ -2,9 +2,7 @@
 import { faker } from "@faker-js/faker"
 import { loadEnvConfig } from "@next/env"
 import { Institute, MembershipRole, PrismaClient, User, UserRole } from "@prisma/client"
-import { syncCategories } from "~/server/utils/categoryUtils"
 import { hashPassword } from "~/utils/cryptography"
-import defaultCategories from "./seeds/categories.json"
 
 const SUPERADMIN_USERNAME = "medreporter"
 const SUPERADMIN_EMAIL = "medreporter@medreporter.org"
@@ -20,8 +18,6 @@ const EXAMPLE_MEMBERSHIPS_OWNER = 10
 
 const projectDir = process.cwd()
 loadEnvConfig(projectDir)
-
-const isProduction = process.env.NODE_ENV === "production"
 
 const prisma = new PrismaClient()
 
@@ -129,21 +125,6 @@ async function seed() {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const users = await prisma.user.findMany()
-
-  /*
-   * Categories
-   */
-  const categoryCount = await prisma.category.count()
-  if (categoryCount === 0) {
-    console.info("Creating default categories.")
-  } else {
-    console.info("Updating default categories.")
-  }
-  await syncCategories(prisma, defaultCategories)
-
-  if (isProduction) {
-    console.info("Finished seeding in production.")
-  }
 
   /*
    * Institutes
