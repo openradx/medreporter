@@ -40,7 +40,6 @@ specifiers:
   '@types/jsdom': ^21.1.3
   '@types/nanoid-dictionary': ^4.2.0
   '@types/node': ^20.6.3
-  '@types/prettier': ^3.0.0
   '@types/preview-email': ^3.0.1
   '@types/react': ^18.2.22
   '@types/react-dom': ^18.2.7
@@ -182,7 +181,6 @@ devDependencies:
   '@types/jsdom': 21.1.3
   '@types/nanoid-dictionary': 4.2.0
   '@types/node': 20.6.3
-  '@types/prettier': 3.0.0
   '@types/preview-email': 3.0.1
   '@types/react': 18.2.22
   '@types/react-dom': 18.2.7
@@ -5301,13 +5299,6 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
-
-  /@types/prettier/3.0.0:
-    resolution: {integrity: sha512-mFMBfMOz8QxhYVbuINtswBp9VL2b4Y0QqYHwqLz3YbgtfAcat2Dl6Y1o4e22S/OVE6Ebl9m7wWiMT2lSbAs1wA==}
-    deprecated: This is a stub types definition. prettier provides its own type definitions, so you do not need this installed.
-    dependencies:
-      prettier: 3.0.3
-    dev: true
 
   /@types/pretty-hrtime/1.0.1:
     resolution: {integrity: sha512-VjID5MJb1eGKthz2qUerWT8+R4b9N+CHvGCzg9fn4kWZgaF9AhdYikQio3R7wV8YY1NsQKPaCwKz1Yff+aHNUQ==}
