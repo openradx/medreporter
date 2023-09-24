@@ -1,15 +1,15 @@
 import { Prisma } from "@prisma/client"
 import { paginate } from "~/utils/pagination"
-import { GetTagsSchema } from "~/validations/categories"
+import { GetTagsSchema } from "~/validations/tags"
 import { prisma } from "../prisma"
 import { publicProcedure, router } from "../trpc"
 
 export const tagsRouter = router({
   getTags: publicProcedure.input(GetTagsSchema).query(async ({ input }) => {
-    const { type, locale, filter, skip, take } = input
+    const { locale, filter, skip, take } = input
 
     const where: Prisma.TagWhereInput = {
-      resources: { some: { resource: { type, locale } } },
+      templates: { some: { template: { locale } } },
       label: filter ? { contains: filter, mode: "insensitive" } : {},
     }
 
