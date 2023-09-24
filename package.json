@@ -9,7 +9,7 @@
     "analyze:view": "http-server ./.next/analyze/",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
+    "tsc": "tsc --noEmit",
     "test": "pnpm test:unit && pnpm test:e2e",
     "test:unit": "vitest run",
     "test:watch": "vitest watch",
