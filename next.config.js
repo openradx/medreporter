@@ -49,8 +49,7 @@ const nextConfig = {
                   name: "preset-default",
                   params: {
                     overrides: {
-                      cleanupIDs: false,
-                      prefixIds: false,
+                      cleanupIds: false,
                       convertPathData: false,
                     },
                   },
