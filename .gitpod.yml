@@ -2,14 +2,16 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Dev
+  - name: dev
     init: |
       pnpm install
       echo "NEXTAUTH_URL=$(gp url 3000)" > .env.local
       echo "NEXTAUTH_URL_INTERNAL=http://localhost:3000" >> .env.local
-      pnpm db:migrate
-      pnpm db:seed
-    command: pnpm run dev
+      pnpm run db:migrate
+      pnpm run db:seed
+    command: |
+      pnpm exec playwright install
+      pnpm run dev
 
 vscode:
   extensions:

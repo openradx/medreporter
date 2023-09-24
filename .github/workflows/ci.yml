@@ -42,11 +42,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright browsers
-        run: pnpm playwright install --with-deps
+        run: pnpm exec playwright install --with-deps
       - name: Prepare database
-        run: pnpm db:migrate
+        run: pnpm run db:migrate
       - name: Run CI
-        run: pnpm ci
+        run: pnpm run ci
         env:
           # During e2e tests dev server is setup to run on port 3100,
           # see playwright.config.ts
