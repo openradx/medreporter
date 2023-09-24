@@ -72,7 +72,7 @@ specifiers:
   glob: ^10.3.6
   hoist-non-react-statics: ^3.3.2
   http-server: ^14.1.1
-  i18next: ^22.5.1
+  i18next: ^23.5.1
   i18next-fs-backend: ^2.2.0
   i18next-http-backend: ^2.2.2
   i18next-multiload-backend-adapter: ^2.2.2
@@ -92,7 +92,7 @@ specifiers:
   react-dom: ^18.2.0
   react-error-boundary: ^3.1.4
   react-hook-form: ^7.46.2
-  react-i18next: ^12.3.1
+  react-i18next: ^13.2.2
   react-icons: ^4.11.0
   react-redux: ^8.1.2
   react-resize-detector: ^8.1.0
@@ -135,7 +135,7 @@ dependencies:
   file-watch-hmr: 0.1.2
   flag-icons: 6.11.1
   hoist-non-react-statics: 3.3.2
-  i18next: 22.5.1
+  i18next: 23.5.1
   i18next-fs-backend: 2.2.0
   i18next-http-backend: 2.2.2
   i18next-multiload-backend-adapter: 2.2.2
@@ -150,7 +150,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-error-boundary: 3.1.4_react@18.2.0
   react-hook-form: 7.46.2_react@18.2.0
-  react-i18next: 12.3.1_spyi3zqm3bqfobczid2f6jym6y
+  react-i18next: 13.2.2_fbyz2qehdhy5tmutg5l5e46zda
   react-icons: 4.11.0_react@18.2.0
   react-redux: 8.1.2_oflwbxx4bjehjxhptasossebfi
   react-resize-detector: 8.1.0_biqbaboplfbrettd7655fr4n2y
@@ -9333,8 +9333,8 @@ packages:
     resolution: {integrity: sha512-GQ4PPRk7gTwWYblFavR2mJRHRwaFGfJ4Hk7JFGJLGKxGN7s0vtPFCkKYW6Re0bsywiCpoYqDOtB2ih+JLwjSwA==}
     dev: false
 
-  /i18next/22.5.1:
-    resolution: {integrity: sha512-8TGPgM3pAD+VRsMtUMNknRz3kzqwp/gPALrWMsDnmC1mKqJwpWyooQRLMcbTwq8z8YwSmuj+ZYvc+xCuEpkssA==}
+  /i18next/23.5.1:
+    resolution: {integrity: sha512-JelYzcaCoFDaa+Ysbfz2JsGAKkrHiMG6S61+HLBUEIPaF40WMwW9hCPymlQGrP+wWawKxKPuSuD71WZscCsWHg==}
     dependencies:
       '@babel/runtime': 7.22.15
     dev: false
@@ -11800,10 +11800,10 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-i18next/12.3.1_spyi3zqm3bqfobczid2f6jym6y:
-    resolution: {integrity: sha512-5v8E2XjZDFzK7K87eSwC7AJcAkcLt5xYZ4+yTPDAW1i7C93oOY1dnr4BaQM7un4Hm+GmghuiPvevWwlca5PwDA==}
+  /react-i18next/13.2.2_fbyz2qehdhy5tmutg5l5e46zda:
+    resolution: {integrity: sha512-+nFUkbRByFwnrfDcYqvzBuaeZb+nACHx+fAWN/pZMddWOCJH5hoc21+Sa/N/Lqi6ne6/9wC/qRGOoQhJa6IkEQ==}
     peerDependencies:
-      i18next: '>= 19.0.0'
+      i18next: '>= 23.2.3'
       react: '>= 16.8.0'
       react-dom: '*'
       react-native: '*'
@@ -11815,7 +11815,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.15
       html-parse-stringify: 3.0.1
-      i18next: 22.5.1
+      i18next: 23.5.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
