@@ -162,8 +162,8 @@ NewFigurePage:
   pageTitle: Neue Abbildung erstellen
 NewModuleForm:
   formTitle: Neues Modul erstellen
-NewModulePage:
-  pageTitle: Neues Modul erstellen
+NewTemplatePage:
+  pageTitle: Neue Vorlage erstellen
 NewResourceForm:
   createButtonLabel: Erzeugen
   nameInputLabel: Name

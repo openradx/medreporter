@@ -23,6 +23,7 @@ declare module "nextjs-routes" {
     | StaticRoute<"/auth/reset-password">
     | StaticRoute<"/auth/signup">
     | StaticRoute<"/">
+    | StaticRoute<"/templates/new">
     | StaticRoute<"/tools/adrenal-mri">
     | StaticRoute<"/tools/adrenal-washout">
     | StaticRoute<"/tools/fleischner2017">
