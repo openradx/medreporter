@@ -65,7 +65,7 @@ async function createExampleUser(role: UserRole) {
     username: faker.internet.userName(),
     email: faker.internet.email().toLowerCase(),
     password: "medreporter",
-    fullName: faker.name.fullName(),
+    fullName: faker.person.fullName(),
     about: faker.lorem.paragraph(),
     role,
   })
