@@ -9,7 +9,7 @@ export const tagsRouter = router({
     const { locale, filter, skip, take } = input
 
     const where: Prisma.TagWhereInput = {
-      templates: { some: { template: { locale } } },
+      templates: { some: { locale } },
       label: filter ? { contains: filter, mode: "insensitive" } : {},
     }
 

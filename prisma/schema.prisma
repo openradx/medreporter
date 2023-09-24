@@ -133,29 +133,17 @@ model Template {
   institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull)
   instituteId String?
 
-  tags   TemplateTag[]
+  tags   Tag[]
   Report Report[]
 
   @@unique([authorId, slug])
-}
-
-model TemplateTag {
-  id String @id @default(cuid())
-
-  template   Template @relation(fields: [templateId], references: [id], onDelete: Cascade)
-  templateId String
-
-  Tag   Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
-  tagId String
-
-  @@unique([templateId, tagId])
 }
 
 model Tag {
   id    String @id @default(cuid())
   label String @unique
 
-  templates TemplateTag[]
+  templates Template[]
 }
 
 model Report {
