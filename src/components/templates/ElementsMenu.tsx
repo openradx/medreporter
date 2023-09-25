@@ -10,14 +10,14 @@ export const ElementsMenu = () => (
       <Accordion.Item value="fields">
         <Accordion.Control>Fields</Accordion.Control>
         <Accordion.Panel>
-          <DraggableElement label="Boolean" />
-          <DraggableElement label="Date" />
-          <DraggableElement label="Time" />
-          <DraggableElement label="Free Text" />
-          <DraggableElement label="Measurements" />
-          <DraggableElement label="Single Choice" />
-          <DraggableElement label="Multiple Choice" />
-          <DraggableElement label="Number" />
+          <DraggableElement id="boolean" label="Boolean" />
+          <DraggableElement id="date" label="Date" />
+          <DraggableElement id="time" label="Time" />
+          <DraggableElement id="free-text" label="Free Text" />
+          <DraggableElement id="measurements" label="Measurements" />
+          <DraggableElement id="single-choice" label="Single Choice" />
+          <DraggableElement id="multiple-choice" label="Multiple Choice" />
+          <DraggableElement id="number" label="Number" />
         </Accordion.Panel>
       </Accordion.Item>
       <Accordion.Item value="sectioning">
