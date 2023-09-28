@@ -1,24 +1,32 @@
 import { z } from "zod"
-import { code } from "./common"
+import { code, element } from "./common"
 
-const statement = z.object({
+const statement = element.extend({
   type: z.literal("Statement"),
-  reference: z.string(),
-  text: code,
+  reference: z.string().optional(),
+  text: code.optional(),
 })
 
-const conclusion = z.object({
+export type Statement = z.infer<typeof statement>
+
+const conclusion = element.extend({
   type: z.literal("Conclusion"),
-  reference: z.string(),
-  priority: z.enum(["critical", "high", "medium", "low"]),
-  text: code,
+  reference: z.string().optional(),
+  priority: z.enum(["critical", "high", "medium", "low"]).optional(),
+  text: code.optional(),
 })
 
-const paragraph = z.object({
+export type Conclusion = z.infer<typeof conclusion>
+
+const paragraph = element.extend({
   type: z.literal("Paragraph"),
-  reference: z.string(),
-  hidden: code,
-  children: z.array(z.union([statement, conclusion])),
+  reference: z.string().optional(),
+  hidden: code.optional(),
+  children: z.array(z.union([statement, conclusion])).optional(),
 })
+
+export type Paragraph = z.infer<typeof paragraph>
 
 export const report = z.array(z.union([statement, paragraph, conclusion]))
+
+export type ReportElement = Statement | Conclusion | Paragraph

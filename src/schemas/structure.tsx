@@ -1,82 +1,98 @@
 import { z } from "zod"
-import { code } from "./common"
+import { code, element } from "./common"
 
 /**
  * Shared field properties
  */
 const fieldId = z.string()
 const label = z.string()
-const hidden = code
-const disabled = code
-const info = z.string()
+const hidden = code.optional()
+const disabled = code.optional()
+const info = z.string().optional()
 
 const fieldProperties = { fieldId, label, hidden, disabled, info }
 
 /**
- * Fields
+ * Field elements
  */
-const booleanField = z.object({
+const booleanField = element.extend({
   type: z.literal("Boolean"),
   ...fieldProperties,
-  default: z.boolean(),
+  default: z.boolean().optional(),
 })
 
-const numberField = z.object({
+export type BooleanField = z.infer<typeof booleanField>
+
+const numberField = element.extend({
   type: z.literal("Number"),
   ...fieldProperties,
-  min: z.number(),
-  max: z.number(),
-  precision: z.number(),
-  start: z.number(),
-  step: z.number(),
-  default: z.number(),
+  min: z.number().optional(),
+  max: z.number().optional(),
+  precision: z.number().optional(),
+  start: z.number().optional(),
+  step: z.number().optional(),
+  default: z.number().optional(),
 })
 
-const dateField = z.object({
+export type NumberField = z.infer<typeof numberField>
+
+const dateField = element.extend({
   type: z.literal("Date"),
   ...fieldProperties,
-  min: z.coerce.date(),
-  max: z.coerce.date(),
-  default: z.coerce.date(), // TODO: Really use date?!
+  min: z.coerce.date().optional(),
+  max: z.coerce.date().optional(),
+  default: z.coerce.date().optional(), // TODO: Really use date?!
 })
 
-const timeField = z.object({
+export type DateField = z.infer<typeof dateField>
+
+const timeField = element.extend({
   type: z.literal("Time"),
   ...fieldProperties,
-  default: z.string(), // TODO: Correct time schema
+  default: z.string().optional(), // TODO: Correct time schema
 })
 
-const freeTextField = z.object({
+export type TimeField = z.infer<typeof timeField>
+
+const freeTextField = element.extend({
   type: z.literal("FreeText"),
   ...fieldProperties,
-  default: z.string(),
+  default: z.string().optional(),
 })
 
-const option = z.object({
+export type FreeTextField = z.infer<typeof freeTextField>
+
+const option = element.extend({
   label: z.string(),
   value: z.string(),
 })
 
-const singleChoiceField = z.object({
+const singleChoiceField = element.extend({
   type: z.literal("SingleChoice"),
   ...fieldProperties,
-  variant: z.enum(["radio", "select"]),
-  figure: z.string(),
-  options: z.array(option),
+  variant: z.enum(["radio", "select"]).optional(),
+  figure: z.string().optional(),
+  options: z.array(option).optional(),
 })
 
-const multipleChoiceField = z.object({
+export type SingleChoiceField = z.infer<typeof singleChoiceField>
+
+const multipleChoiceField = element.extend({
   type: z.literal("MultipleChoice"),
   ...fieldProperties,
-  variant: z.enum(["checkbox", "select"]),
-  figure: z.string(),
-  options: z.array(option),
+  variant: z.enum(["checkbox", "select"]).optional(),
+  figure: z.string().optional(),
+  options: z.array(option).optional(),
 })
 
-const measurementsField = z.object({
+export type MultipleChoiceField = z.infer<typeof multipleChoiceField>
+
+const measurementsField = element.extend({
   type: z.literal("Measurements"),
   ...fieldProperties,
 })
+
+export type MeasurementsField = z.infer<typeof measurementsField>
 
 const fields = [
   booleanField,
@@ -90,18 +106,50 @@ const fields = [
 ] as const
 
 /**
- * Sectioning
+ * Container properties
  */
-const finding = z.object({
+const orientation = z.enum(["horizontal", "vertical"]).optional()
+
+/**
+ * Container elements
+ */
+const finding = element.extend({
   type: z.literal("Finding"),
   ...fieldProperties,
-  children: z.array(z.union(fields)),
+  orientation,
+  children: z.array(z.union(fields)).optional(),
 })
 
-const group = z.object({
+export type Finding = z.infer<typeof finding>
+
+const group = element.extend({
   type: z.literal("Group"),
   ...fieldProperties,
-  children: z.array(z.union(fields)),
+  orientation,
+  children: z.array(z.union(fields)).optional(),
 })
 
-export const structure = z.array(z.union([finding, group, ...fields]))
+export type Group = z.infer<typeof group>
+
+const layout = element.extend({
+  type: z.literal("Layout"),
+  orientation,
+  children: z.array(z.union([finding, group, ...fields])).optional(),
+})
+
+export type Layout = z.infer<typeof layout>
+
+export const structure = z.array(z.union([finding, group, layout, ...fields]))
+
+export type StructureElement =
+  | BooleanField
+  | NumberField
+  | DateField
+  | TimeField
+  | FreeTextField
+  | SingleChoiceField
+  | MultipleChoiceField
+  | MeasurementsField
+  | Finding
+  | Group
+  | Layout

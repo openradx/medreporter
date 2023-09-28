@@ -1,5 +1,5 @@
 import { Box, Accordion, Card, Title } from "@mantine/core"
-import { DraggableElement } from "./DraggableElement"
+import { MenuElement } from "./MenuElement"
 
 export const ElementsMenu = () => (
   <Card shadow="sm" padding="lg" radius="md" withBorder sx={{ height: "100%" }}>
@@ -10,14 +10,14 @@ export const ElementsMenu = () => (
       <Accordion.Item value="fields">
         <Accordion.Control>Fields</Accordion.Control>
         <Accordion.Panel>
-          <DraggableElement id="boolean" label="Boolean" />
-          <DraggableElement id="date" label="Date" />
-          <DraggableElement id="time" label="Time" />
-          <DraggableElement id="free-text" label="Free Text" />
-          <DraggableElement id="measurements" label="Measurements" />
-          <DraggableElement id="single-choice" label="Single Choice" />
-          <DraggableElement id="multiple-choice" label="Multiple Choice" />
-          <DraggableElement id="number" label="Number" />
+          <MenuElement id="menu-Boolean" label="Boolean" />
+          <MenuElement id="menu-Date" label="Date" />
+          <MenuElement id="menu-Time" label="Time" />
+          <MenuElement id="menu-FreeText" label="Free Text" />
+          <MenuElement id="menu-Measurements" label="Measurements" />
+          <MenuElement id="menu-SingleChoice" label="Single Choice" />
+          <MenuElement id="menu-MultipleChoice" label="Multiple Choice" />
+          <MenuElement id="menu-Number" label="Number" />
         </Accordion.Panel>
       </Accordion.Item>
       <Accordion.Item value="sectioning">

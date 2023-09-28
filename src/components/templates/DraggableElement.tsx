@@ -1,17 +1,17 @@
 import { useDraggable } from "@dnd-kit/core"
-import { Element } from "./Element"
+import { ReactNode } from "react"
 
 interface DraggableElementProps {
   id: string
-  label: string
+  children: ReactNode
 }
 
-export const DraggableElement = ({ id, label }: DraggableElementProps) => {
+export const DraggableElement = ({ id, children }: DraggableElementProps) => {
   const { attributes, listeners, setNodeRef } = useDraggable({ id })
 
   return (
     <div ref={setNodeRef} {...attributes} {...listeners}>
-      <Element label={label} />
+      {children}
     </div>
   )
 }

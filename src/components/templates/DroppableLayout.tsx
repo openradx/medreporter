@@ -1,14 +1,18 @@
 import { useDroppable } from "@dnd-kit/core"
-import { Box } from "@mantine/core"
+import { ReactNode } from "react"
 
-export const DroppableLayout = () => {
+interface DroppableLayoutProps {
+  children: ReactNode
+}
+
+export const DroppableLayout = ({ children }: DroppableLayoutProps) => {
   const { isOver, setNodeRef } = useDroppable({ id: "droppable-area" })
 
   const style = { color: isOver ? "green" : undefined }
 
   return (
-    <Box ref={setNodeRef} style={style}>
-      Droppable
-    </Box>
+    <div ref={setNodeRef} style={style}>
+      {children}
+    </div>
   )
 }
