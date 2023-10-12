@@ -8,6 +8,7 @@ export function createOptionalContext<T extends {} | null>(contextName: string) 
 
     if (contextValue === undefined) {
       // TODO: only output in dev mode
+      // eslint-disable-next-line no-console
       console.debug(`Optional ${contextName} called without Provider.`)
     }
     return contextValue

@@ -7,6 +7,8 @@ interface TemplateProps {
   children: ReactNode
 }
 
+// TODO: use title and info, remove eslint disable
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Template = ({ title, info, children }: TemplateProps) => (
   <MediaQuery smallerThan="sm" styles={{ flexDirection: "column" }}>
     <Box
