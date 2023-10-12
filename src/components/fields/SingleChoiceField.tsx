@@ -1,15 +1,17 @@
-import { useModule } from "~/contexts/ModuleContext"
+import { ChoiceFieldContextProvider } from "~/contexts/ChoiceFieldContext"
+import { useGroup } from "~/contexts/GroupContext"
 import { useStructureController } from "~/hooks/useStructureController"
+import { Option } from "~/schemas/structure"
 import { SingleRadioInput } from "../inputs/SingleRadioInput"
 import { SingleSelectInput } from "../inputs/SingleSelectInput"
 import { BaseField } from "./BaseField"
-import { CommonFieldProps, FieldOption } from "./fieldTypes"
+import { CommonFieldProps } from "./fieldTypes"
 
-const DEFAULT_OPTIONS: FieldOption[] = []
+const DEFAULT_OPTIONS: Option[] = []
 
 interface SingleChoiceFieldProps extends CommonFieldProps<string | null> {
   variant?: "radio" | "select"
-  options?: FieldOption[]
+  options?: Option[]
 }
 
 export const SingleChoiceField = ({
@@ -22,21 +24,24 @@ export const SingleChoiceField = ({
   disabled,
   hidden,
 }: SingleChoiceFieldProps) => {
-  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    moduleId,
     fieldId,
     defaultValue,
   })
 
+  const groupDisabled = useGroup()?.disabled
+  disabled = disabled || groupDisabled
+
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
-      {variant === "select" && (
-        <SingleSelectInput {...{ label, extras, options, value, onChange, disabled }} />
-      )}
-      {variant === "radio" && (
-        <SingleRadioInput {...{ label, extras, options, value, onChange, disabled }} />
-      )}
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+      <ChoiceFieldContextProvider value={{ options }}>
+        {variant === "select" && (
+          <SingleSelectInput {...{ label, extras, options, value, onChange, disabled }} />
+        )}
+        {variant === "radio" && (
+          <SingleRadioInput {...{ label, extras, options, value, onChange, disabled }} />
+        )}
+      </ChoiceFieldContextProvider>
     </BaseField>
   )
 }

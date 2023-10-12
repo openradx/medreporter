@@ -1,7 +1,8 @@
-import { Paragraph } from "~/components/sr/Paragraph"
-import { Statement } from "~/components/sr/Statement"
-import { useReportData } from "~/contexts/ReportDataContext"
+import { Paragraph } from "~/components/template/Paragraph"
+import { Report } from "~/components/template/Report"
+import { Statement } from "~/components/template/Statement"
 import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useStructureData } from "~/hooks/useStructureData"
 import {
   calcCKDEPI,
   calcCockcroft,
@@ -21,8 +22,9 @@ type Gfr = {
 }
 
 export const GfrReport = () => {
-  const { creatinine, age, weight, height, gender, ethnicity } = useReportData(true) as Gfr
+  const { creatinine, age, weight, height, gender, ethnicity } = useStructureData() as Gfr
   const { t } = useReportTranslation()
+
   let ckdepi = t("Gfr.textCkdRequired")
   if (creatinine !== null && age !== null && gender !== null && ethnicity !== null) {
     const result = calcCKDEPI(creatinine, age, gender, ethnicity)
@@ -61,17 +63,17 @@ export const GfrReport = () => {
 
   if (age === null) {
     return (
-      <>
+      <Report>
         <Paragraph>
           <Statement>{t("Gfr.textAgeMissing")}</Statement>
         </Paragraph>
-      </>
+      </Report>
     )
   }
 
   if (age >= 18) {
     return (
-      <>
+      <Report>
         <Paragraph>
           <Statement>CKDEPI: {ckdepi}</Statement>
         </Paragraph>
@@ -81,12 +83,12 @@ export const GfrReport = () => {
         <Paragraph>
           <Statement>Mayo: {mayo}</Statement>
         </Paragraph>
-      </>
+      </Report>
     )
   }
 
   return (
-    <>
+    <Report>
       <Paragraph>
         <Statement>Counahan-Barratt: {counahan}</Statement>
       </Paragraph>
@@ -96,6 +98,6 @@ export const GfrReport = () => {
       <Paragraph>
         <Statement>Schwartz (orig.): {schwartzOrig}</Statement>
       </Paragraph>
-    </>
+    </Report>
   )
 }

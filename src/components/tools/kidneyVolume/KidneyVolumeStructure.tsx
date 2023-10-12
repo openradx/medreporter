@@ -1,54 +1,33 @@
-import { Group } from "~/components/fields/Group"
 import { NumberField } from "~/components/fields/NumberField"
-import { Description } from "~/components/sr/Description"
-import { Grid } from "~/components/sr/Grid"
-import { GridItem } from "~/components/sr/GridItem"
+import { Group } from "~/components/template/Group"
+import { Hint } from "~/components/template/Hint"
+import { Section } from "~/components/template/Section"
+import { Structure } from "~/components/template/Structure"
 import { useStructureTranslation } from "~/hooks/useStructureTranslation"
 
 export const KidneyVolumeStructure = () => {
   const { t } = useStructureTranslation()
-
   return (
-    <Grid>
-      <GridItem size="lg">
-        <Description>{t("KidneyVolume.toolDescription")}</Description>
-      </GridItem>
-      <Group label={t("KidneyVolume.right")}>
-        <GridItem size="md">
+    <Structure>
+      <Section id="default" label="default">
+        <Hint level="info">{t("KidneyVolume.toolDescription")}</Hint>
+        <Group label={t("KidneyVolume.right")}>
           <NumberField id="rightCoronal" label={t("KidneyVolume.coronal")} precision={2} />
-        </GridItem>
-        <GridItem size="md">
           <NumberField id="rightSagittal" label={t("KidneyVolume.sagittal")} precision={2} />
-        </GridItem>
-        <GridItem size="md">
           <NumberField id="rightWidth" label={t("KidneyVolume.width")} precision={2} />
-        </GridItem>
-        <GridItem size="md">
           <NumberField id="rightDepth" label={t("KidneyVolume.depth")} precision={2} />
-        </GridItem>
-      </Group>
-      <Group label={t("KidneyVolume.left")}>
-        <GridItem size="md">
+        </Group>
+        <Group label={t("KidneyVolume.left")}>
           <NumberField id="leftCoronal" label={t("KidneyVolume.coronal")} precision={2} />
-        </GridItem>
-        <GridItem size="md">
           <NumberField id="leftSagittal" label={t("KidneyVolume.sagittal")} precision={2} />
-        </GridItem>
-        <GridItem size="md">
           <NumberField id="leftWidth" label={t("KidneyVolume.width")} precision={2} />
-        </GridItem>
-        <GridItem size="md">
           <NumberField id="leftDepth" label={t("KidneyVolume.depth")} precision={2} />
-        </GridItem>
-      </Group>
-      <Group label={t("KidneyVolume.patient")}>
-        <GridItem size="md">
+        </Group>
+        <Group label={t("KidneyVolume.patient")}>
           <NumberField id="patientHeight" label={t("KidneyVolume.patientHeight")} precision={2} />
-        </GridItem>
-        <GridItem size="md">
           <NumberField id="patientAge" label={t("KidneyVolume.patientAge")} />
-        </GridItem>
-      </Group>
-    </Grid>
+        </Group>
+      </Section>
+    </Structure>
   )
 }

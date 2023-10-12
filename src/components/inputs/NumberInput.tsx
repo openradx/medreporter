@@ -13,8 +13,8 @@ interface NumberInputProps {
   disabled?: boolean
   min?: number
   max?: number
+  start?: number
   step?: number
-  startValue?: number
   precision?: number
   width?: number
   autoHideControls?: boolean
@@ -28,8 +28,8 @@ export const NumberInput = ({
   disabled,
   min,
   max,
+  start,
   step,
-  startValue,
   precision = 0,
   width,
   autoHideControls = false,
@@ -65,7 +65,7 @@ export const NumberInput = ({
         min={min}
         max={max}
         step={step ?? 1 / 10 ** precision}
-        startValue={startValue}
+        startValue={start}
         stepHoldDelay={300}
         stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
         precision={precision}

@@ -1,11 +1,10 @@
 import { Box } from "@mantine/core"
 import { ReactNode, useEffect, useRef } from "react"
 import { getFieldContext } from "~/contexts/FieldContext"
-import { selectScrollInto } from "~/state/displaySlice"
+import { selectShowFieldId } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 
 interface FieldProps<TValue> {
-  moduleId: string
   fieldId: string
   label?: string
   defaultValue: TValue
@@ -16,7 +15,6 @@ interface FieldProps<TValue> {
 }
 
 export const BaseField = <TValue,>({
-  moduleId,
   fieldId,
   defaultValue,
   label,
@@ -25,14 +23,14 @@ export const BaseField = <TValue,>({
   hidden,
   children,
 }: FieldProps<TValue>) => {
-  const scrollInto = useAppSelector(selectScrollInto)
+  const showFieldId = useAppSelector(selectShowFieldId)
   const fieldEl = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (scrollInto && scrollInto.moduleId === moduleId && scrollInto.fieldId === fieldId) {
+    if (fieldId === showFieldId) {
       fieldEl.current?.scrollIntoView({ behavior: "smooth" })
     }
-  }, [scrollInto, moduleId, fieldId])
+  }, [fieldId, showFieldId])
 
   const { FieldContextProvider } = getFieldContext<TValue>()
 

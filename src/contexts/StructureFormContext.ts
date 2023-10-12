@@ -6,8 +6,8 @@ interface StructureFormContext {
   canRedo: boolean
   undo: () => void
   redo: () => void
-  registerDefaultValue: (moduleId: string, fieldId: string, defaultValue: any) => void
-  unregisterDefaultValue: (moduleId: string, fieldId: string) => void
+  registerDefaultValue: (fieldId: string, defaultValue: any) => void
+  unregisterDefaultValue: (fieldId: string) => void
   clearForm: () => void
 }
 

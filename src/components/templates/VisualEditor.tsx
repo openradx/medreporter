@@ -2,9 +2,9 @@ import { DndContext, DragEndEvent, DragOverlay } from "@dnd-kit/core"
 import { Grid, Portal } from "@mantine/core"
 import { useState } from "react"
 import { useMounted } from "~/hooks/useMounted"
-import { addElement } from "~/state/editorSlice"
 import { useAppDispatch } from "~/state/store"
-import { EditorCanvas } from "./EditorCanvas"
+import { addElement } from "~/state/templateSlice"
+import { EditorPanel } from "./EditorPanel"
 import { ElementsMenu } from "./ElementsMenu"
 import { PropertiesPanel } from "./PropertiesPanel"
 
@@ -36,7 +36,7 @@ export const VisualEditor = () => {
             <ElementsMenu />
           </Grid.Col>
           <Grid.Col span={6}>
-            <EditorCanvas />
+            <EditorPanel />
           </Grid.Col>
           <Grid.Col span={3}>
             <PropertiesPanel />

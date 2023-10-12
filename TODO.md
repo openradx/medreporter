@@ -2,6 +2,7 @@
 
 ## Kai
 
+- Rename structured-report stuff to template
 - Go back from moduleId to instanceId
 - Maybe replace JSDOM with cheerio (also work in the browser)
 - Use Zustand instead of RTK
@@ -12,6 +13,7 @@
 - create useAppAuthenticatedSession and use it
 - Use tsconfig-paths-webpack-plugin for storybook
 - Blitz queries don't need {} anymore
+- Integrate MicroI18n
 
 - LanguageChooser vs LanguageSelector
 - Switch from Jest to vitest

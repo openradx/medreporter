@@ -28,10 +28,10 @@ const nextConfig = {
       )
     }
 
-    // Load specific files (with "?raw" suffix) as raw strings,
+    // Import Markdown files as strings,
     // see https://webpack.js.org/guides/asset-modules/#source-assets
     config.module?.rules.unshift({
-      resourceQuery: /raw/,
+      test: /\.md$/,
       type: "asset/source",
     })
 

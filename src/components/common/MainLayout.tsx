@@ -1,10 +1,10 @@
 import { AppShell, Container, MantineNumberSize, MediaQuery } from "@mantine/core"
 import { ReactNode } from "react"
 import { ErrorBoundary } from "react-error-boundary"
-import { SmallFooter } from "../sr/SmallFooter"
-import { TallFooter } from "../sr/TallFooter"
 import { MainLayoutFallback } from "./MainLayoutFallback"
 import { Navbar } from "./Navbar"
+import { SmallFooter } from "./SmallFooter"
+import { TallFooter } from "./TallFooter"
 
 interface MainLayoutProps {
   size?: "full" | MantineNumberSize

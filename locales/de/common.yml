@@ -167,19 +167,19 @@ NewTemplatePage:
 NewResourceForm:
   createButtonLabel: Erzeugen
   nameInputLabel: Name
+OutputFormat:
+  buttonFormat: Ausgabeformat ändern
+  formatHtml: HTML
+  formatText: Text
 QueryError:
   title: Fehler bei Datenabfrage
   message: Ein unerwarteter Fehler ist während der Datenabfrage aufgetreten
 RedoButton:
   buttonRedo: Wiederherstellen
-ReportFormat:
-  buttonFormat: Befundformatierung ändern
-  formatHtml: HTML
-  formatText: Text
+Report:
+  title: Befund
 ReportLanguageChooser:
   buttonLanguageReport: Sprache Befund
-ReportPanel:
-  title: Befund
 ResetPasswordForm:
   buttonReset: Bestätigen
   formTitle: Passwort zurücksetzen

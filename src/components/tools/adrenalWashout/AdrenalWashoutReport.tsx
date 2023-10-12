@@ -1,9 +1,8 @@
-import { List } from "~/components/sr/List"
-import { ListItem } from "~/components/sr/ListItem"
-import { Paragraph } from "~/components/sr/Paragraph"
-import { Statement } from "~/components/sr/Statement"
-import { useReportData } from "~/contexts/ReportDataContext"
+import { Paragraph } from "~/components/template/Paragraph"
+import { Report } from "~/components/template/Report"
+import { Statement } from "~/components/template/Statement"
 import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useStructureData } from "~/hooks/useStructureData"
 import {
   calcAbsoluteAdrenalWashout,
   calcRelativeAdrenalWashout,
@@ -17,9 +16,8 @@ type AdrenalWashoutData = {
 }
 
 export const AdrenalWashoutReport = () => {
-  const { nonEnhanced, portalVenous, delayed } = useReportData(true) as AdrenalWashoutData
+  const { nonEnhanced, portalVenous, delayed } = useStructureData() as AdrenalWashoutData
   const { t } = useReportTranslation()
-
   let absoluteWashoutText = t("AdrenalWashout.textAbsoluteWashoutRequirements")
   if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
     const result = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
@@ -47,18 +45,16 @@ export const AdrenalWashoutReport = () => {
   const suggestions = makeAdrenalWashoutSuggestion(nonEnhanced, portalVenous, delayed)
 
   return (
-    <>
+    <Report>
       <Paragraph>
-        <List>
-          <ListItem>{absoluteWashoutText}</ListItem>
-          <ListItem>{relativeWashoutText}</ListItem>
-        </List>
+        <Statement>{absoluteWashoutText}</Statement>
+        <Statement>{relativeWashoutText}</Statement>
       </Paragraph>
       <Paragraph>
         {suggestions.map((suggestion) => (
           <Statement key={suggestion}>{t(suggestion)}</Statement>
         ))}
       </Paragraph>
-    </>
+    </Report>
   )
 }

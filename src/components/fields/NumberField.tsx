@@ -1,4 +1,4 @@
-import { useModule } from "~/contexts/ModuleContext"
+import { useGroup } from "~/contexts/GroupContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { NumberInput } from "../inputs/NumberInput"
 import { BaseField } from "./BaseField"
@@ -9,7 +9,7 @@ interface NumberFieldProps extends CommonFieldProps<number | null> {
   max?: number
   precision?: number
   step?: number
-  startValue?: number
+  start?: number
 }
 
 export const NumberField = ({
@@ -22,19 +22,21 @@ export const NumberField = ({
   min,
   max,
   precision,
+  start,
   step,
-  startValue,
 }: NumberFieldProps) => {
-  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    moduleId,
     fieldId,
     defaultValue,
   })
+
+  const groupDisabled = useGroup()?.disabled
+  disabled = disabled || groupDisabled
+
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
       <NumberInput
-        {...{ label, extras, value, onChange, disabled, min, max, precision, step, startValue }}
+        {...{ label, extras, value, onChange, disabled, min, max, precision, start, step }}
       />
     </BaseField>
   )

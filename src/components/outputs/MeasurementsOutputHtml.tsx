@@ -70,7 +70,7 @@ const createTableFooter = (stats: string) => (
 
 interface MeasurementsTableHtmlProps {
   data: MeasurementsData
-  title: string
+  legend: string
   labels: {
     previous: string
     current: string
@@ -82,7 +82,7 @@ interface MeasurementsTableHtmlProps {
 
 export const MeasurementsOutputHtml = ({
   data,
-  title,
+  legend,
   labels,
   stats,
 }: MeasurementsTableHtmlProps) => {
@@ -91,7 +91,7 @@ export const MeasurementsOutputHtml = ({
   return (
     <Table>
       <Box component="caption" sx={{ textAlign: "left" }}>
-        {title}
+        {legend}
       </Box>
       {createTableHeader(
         followUp,

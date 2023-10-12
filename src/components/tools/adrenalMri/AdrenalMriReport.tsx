@@ -1,13 +1,12 @@
-import { List } from "~/components/sr/List"
-import { ListItem } from "~/components/sr/ListItem"
-import { Paragraph } from "~/components/sr/Paragraph"
-import { Statement } from "~/components/sr/Statement"
-import { useReportData } from "~/contexts/ReportDataContext"
+import { Paragraph } from "~/components/template/Paragraph"
+import { Report } from "~/components/template/Report"
+import { Statement } from "~/components/template/Statement"
 import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useStructureData } from "~/hooks/useStructureData"
 import {
-  makeAdrenalMriSuggestion,
   calcAdrenalToSpleenRatio,
   calcSignalDropout,
+  makeAdrenalMriSuggestion,
 } from "~/utils/adrenalMriUtils"
 
 type AdrenalMriData = {
@@ -18,10 +17,10 @@ type AdrenalMriData = {
 }
 
 export const AdrenalMriReport = () => {
-  const { inPhaseAdrenal, oppPhaseAdrenal, inPhaseSpleen, oppPhaseSpleen } = useReportData(
-    true
-  ) as AdrenalMriData
+  const { inPhaseAdrenal, oppPhaseAdrenal, inPhaseSpleen, oppPhaseSpleen } =
+    useStructureData() as AdrenalMriData
   const { t } = useReportTranslation()
+
   let signalDropoutText = t("AdrenalMri.textSignalDropoutRequirements")
   if (inPhaseAdrenal !== null && oppPhaseAdrenal !== null) {
     const result = calcSignalDropout(inPhaseAdrenal, oppPhaseAdrenal)
@@ -64,18 +63,16 @@ export const AdrenalMriReport = () => {
   )
 
   return (
-    <>
+    <Report>
       <Paragraph>
-        <List>
-          <ListItem>{signalDropoutText}</ListItem>
-          <ListItem>{adrenalToSpleenRatioText}</ListItem>
-        </List>
+        <Statement>{signalDropoutText}</Statement>
+        <Statement>{adrenalToSpleenRatioText}</Statement>
       </Paragraph>
       <Paragraph>
         {suggestions.map((suggestion) => (
           <Statement key={suggestion}>{t(suggestion)}</Statement>
         ))}
       </Paragraph>
-    </>
+    </Report>
   )
 }

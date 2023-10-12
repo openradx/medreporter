@@ -1,16 +1,18 @@
-import { useModule } from "~/contexts/ModuleContext"
+import { ChoiceFieldContextProvider } from "~/contexts/ChoiceFieldContext"
+import { useGroup } from "~/contexts/GroupContext"
 import { useStructureController } from "~/hooks/useStructureController"
+import { Option } from "~/schemas/structure"
 import { MultipleCheckboxInput } from "../inputs/MultipleCheckboxInput"
 import { MultipleSelectInput } from "../inputs/MultipleSelectInput"
 import { BaseField } from "./BaseField"
-import { CommonFieldProps, FieldOption } from "./fieldTypes"
+import { CommonFieldProps } from "./fieldTypes"
 
-const DEFAULT_OPTIONS: FieldOption[] = []
+const DEFAULT_OPTIONS: Option[] = []
 const DEFAULT_VALUE: string[] = []
 
 interface MultipleChoiceFieldProps extends CommonFieldProps<string[]> {
   variant?: "checkbox" | "select"
-  options?: FieldOption[]
+  options?: Option[]
 }
 
 export const MultipleChoiceField = ({
@@ -23,21 +25,24 @@ export const MultipleChoiceField = ({
   disabled,
   hidden,
 }: MultipleChoiceFieldProps) => {
-  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    moduleId,
     fieldId,
     defaultValue,
   })
 
+  const groupDisabled = useGroup()?.disabled
+  disabled = disabled || groupDisabled
+
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
-      {variant === "select" && (
-        <MultipleSelectInput {...{ label, extras, options, value, onChange, disabled }} />
-      )}
-      {variant === "checkbox" && (
-        <MultipleCheckboxInput {...{ label, extras, options, value, onChange, disabled }} />
-      )}
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+      <ChoiceFieldContextProvider value={{ options }}>
+        {variant === "select" && (
+          <MultipleSelectInput {...{ label, extras, options, value, onChange, disabled }} />
+        )}
+        {variant === "checkbox" && (
+          <MultipleCheckboxInput {...{ label, extras, options, value, onChange, disabled }} />
+        )}
+      </ChoiceFieldContextProvider>
     </BaseField>
   )
 }
