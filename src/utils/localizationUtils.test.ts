@@ -8,7 +8,9 @@ dayjs.extend(localizedFormat)
 describe("getDateLocale", () => {
   it("should work", () => {
     const locale = getDateLocale("de")
-    const time = dayjs(new Date(2022, 0, 1, 13, 59)).locale(locale).format("LT")
+    const time = dayjs(new Date(2022, 0, 1, 13, 59))
+      .locale(locale)
+      .format("LT")
     expect(time).toBe("13:59")
   })
 })
