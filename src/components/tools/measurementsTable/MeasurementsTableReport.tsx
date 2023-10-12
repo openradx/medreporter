@@ -1,13 +1,18 @@
-import { ReactNode } from "react"
-import { Paragraph } from "~/components/sr/Paragraph"
-import { useReportData } from "~/contexts/ReportDataContext"
+import { MeasurementsOutput } from "~/components/outputs/MeasurementsOutput"
+import { Report } from "~/components/template/Report"
+import { useStructureData } from "~/hooks/useStructureData"
+import { MeasurementsData } from "~/types/measurements"
 
-type MeasurementsData = {
-  measurements: ReactNode
+type MeasurementsTableData = {
+  measurements: MeasurementsData
 }
 
 export const MeasurementsTableReport = () => {
-  const { measurements } = useReportData(true) as MeasurementsData
+  const { measurements } = useStructureData() as MeasurementsTableData
 
-  return <Paragraph>{measurements}</Paragraph>
+  return (
+    <Report>
+      <MeasurementsOutput fieldId="measurements" data={measurements} />
+    </Report>
+  )
 }

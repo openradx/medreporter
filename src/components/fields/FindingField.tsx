@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { useModule } from "~/contexts/ModuleContext"
+import { useGroup } from "~/contexts/GroupContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { FindingInput } from "../inputs/FindingInput"
 import { BaseField } from "./BaseField"
@@ -18,15 +18,16 @@ export const FindingField = ({
   hidden,
   children,
 }: FindingFieldProps) => {
-  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    moduleId,
     fieldId,
     defaultValue,
   })
 
+  const groupDisabled = useGroup()?.disabled
+  disabled = disabled || groupDisabled
+
   return (
-    <BaseField {...{ moduleId, fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
       <FindingInput {...{ label, extras, value, onChange, disabled, children }} />
     </BaseField>
   )

@@ -1,10 +1,10 @@
-import { createRequiredContext } from "~/utils/createRequiredContext"
+import { createOptionalContext } from "~/utils/createOptionalContext"
 
 interface SectionContext {
   id: string
-  title?: string
+  label: string
   active: boolean
 }
 
 export const [useSection, SectionContextProvider] =
-  createRequiredContext<SectionContext>("SectionContext")
+  createOptionalContext<SectionContext>("SectionContext")

@@ -3,6 +3,4 @@ import { alphanumeric } from "nanoid-dictionary"
 
 const customId = customAlphabet(alphanumeric, 21)
 
-export const createModuleId = () => `m_${customId()}`
-
-export const createSectionId = () => `s_${customId()}`
+export const createGid = () => `gid_${customId()}`

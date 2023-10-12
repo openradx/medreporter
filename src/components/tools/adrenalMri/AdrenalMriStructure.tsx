@@ -1,56 +1,44 @@
-import { Group } from "~/components/fields/Group"
 import { NumberField } from "~/components/fields/NumberField"
-import { Description } from "~/components/sr/Description"
-import { Grid } from "~/components/sr/Grid"
-import { GridItem } from "~/components/sr/GridItem"
-import { Hint } from "~/components/sr/Hint"
-import { Hints } from "~/components/sr/Hints"
+import { Group } from "~/components/template/Group"
+import { Hint } from "~/components/template/Hint"
+import { Section } from "~/components/template/Section"
+import { Structure } from "~/components/template/Structure"
 import { useStructureTranslation } from "~/hooks/useStructureTranslation"
 
 export const AdrenalMriStructure = () => {
   const { t } = useStructureTranslation()
 
   return (
-    <Grid>
-      <GridItem size="lg">
-        <Description>{t("AdrenalMri.toolDescription")}</Description>
-      </GridItem>
-      <Group label={t("AdrenalMri.groupLabelAdrenal")}>
-        <GridItem size="md">
+    <Structure>
+      <Section id="default" label="default">
+        <Hint level="info">{t("AdrenalMri.toolDescription")}</Hint>
+        <Group label={t("AdrenalMri.groupLabelAdrenal")}>
           <NumberField
             id="inPhaseAdrenal"
             label={t("AdrenalMri.inputLabelAdrenalInPhase")}
-            startValue={0}
+            start={0}
           />
-        </GridItem>
-        <GridItem size="md">
           <NumberField
             id="oppPhaseAdrenal"
             label={t("AdrenalMri.inputLabelAdrenalOppPhase")}
-            startValue={0}
+            start={0}
           />
-        </GridItem>
-      </Group>
-      <Group label={t("AdrenalMri.groupLabelSpleen")}>
-        <GridItem size="md">
+        </Group>
+        <Group label={t("AdrenalMri.groupLabelSpleen")}>
           <NumberField
             id="inPhaseSpleen"
             label={t("AdrenalMri.inputLabelSpleenInPhase")}
-            startValue={0}
+            start={0}
           />
-        </GridItem>
-        <GridItem size="md">
           <NumberField
             id="oppPhaseSpleen"
             label={t("AdrenalMri.inputLabelSpleenOppPhase")}
-            startValue={0}
+            start={0}
           />
-        </GridItem>
-      </Group>
-      <Hints>
-        <Hint type="info">{t("AdrenalMri.hintLimitations")}</Hint>
-        <Hint type="info">{t("AdrenalMri.hintTesla")}</Hint>
-      </Hints>
-    </Grid>
+        </Group>
+        <Hint level="info">{t("AdrenalMri.hintLimitations")}</Hint>
+        <Hint level="info">{t("AdrenalMri.hintTesla")}</Hint>
+      </Section>
+    </Structure>
   )
 }

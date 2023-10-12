@@ -1,14 +1,14 @@
 import { Select } from "@mantine/core"
 import { ReactNode } from "react"
-import { FieldOption } from "../fields/fieldTypes"
+import { Option } from "~/schemas/structure"
 import { InputLabel } from "./InputLabel"
 
-const DEFAULT_OPTIONS: FieldOption[] = []
+const DEFAULT_OPTIONS: Option[] = []
 
 interface SingleSelectInputProps {
   label?: string
   extras?: ReactNode
-  options?: FieldOption[]
+  options?: Option[]
   value: string | null
   onChange: (value: string | null) => void
   disabled?: boolean

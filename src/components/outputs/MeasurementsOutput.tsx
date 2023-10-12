@@ -1,38 +1,53 @@
+import { ReactNode } from "react"
 import { useReportTranslation } from "~/hooks/useReportTranslation"
-import { OutputFormat } from "~/types/general"
+import { useStructureLink } from "~/hooks/useStructureLink"
+import { selectOutputFormat } from "~/state/displaySlice"
+import { useAppSelector } from "~/state/store"
 import { MeasurementsData } from "../../types/measurements"
+import { StructureLink } from "../template/StructureLink"
 import { MeasurementsOutputHtml } from "./MeasurementsOutputHtml"
 import { MeasurementsOutputPlain } from "./MeasurmentsOutputPlain"
 
 interface MeasurementsOutputProps {
-  format: OutputFormat
+  fieldId: string
   data: MeasurementsData
-  label?: string
+  legend?: string
   stats?: string
+  previousLabel?: string
+  currentLabel?: string
+  locationLabel?: string
+  referenceLabel?: string
 }
 
 export const MeasurementsOutput = ({
-  format,
+  fieldId,
   data,
-  label = "",
+  legend = "",
   stats = "",
+  previousLabel,
+  currentLabel,
+  locationLabel,
+  referenceLabel,
 }: MeasurementsOutputProps) => {
+  const { activateLink } = useStructureLink({ fieldId })
+  const outputFormat = useAppSelector(selectOutputFormat)
   const { t } = useReportTranslation()
 
   const labels = {
-    previous: t("MeasurementsOutput.columnPrevious"),
-    current: t("MeasurementsOutput.columnCurrent"),
-    location: t("MeasurementsOutput.columnLocation"),
-    reference: t("MeasurementsOutput.columnReference"),
+    previous: previousLabel || t("MeasurementsOutput.columnPrevious"),
+    current: currentLabel || t("MeasurementsOutput.columnCurrent"),
+    location: locationLabel || t("MeasurementsOutput.columnLocation"),
+    reference: referenceLabel || t("MeasurementsOutput.columnReference"),
   }
 
-  if (format === "html") {
-    return <MeasurementsOutputHtml title={label} {...{ data, labels, stats }} />
+  let output: ReactNode
+  if (outputFormat === "html") {
+    output = <MeasurementsOutputHtml legend={legend} {...{ data, labels, stats }} />
+  } else if (outputFormat === "plain") {
+    output = <MeasurementsOutputPlain legend={legend} {...{ data, labels, stats }} />
+  } else {
+    throw new Error(`Invalid output format: ${outputFormat}`)
   }
 
-  if (format === "plain") {
-    return <MeasurementsOutputPlain title={label} {...{ data, labels, stats }} />
-  }
-
-  throw new Error(`Invalid report format: ${format}`)
+  return <StructureLink onClick={activateLink}>{output}</StructureLink>
 }

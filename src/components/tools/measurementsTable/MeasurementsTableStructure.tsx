@@ -1,11 +1,8 @@
 import { MeasurementsField } from "~/components/fields/MeasurementsField"
-import { Grid } from "~/components/sr/Grid"
-import { GridItem } from "~/components/sr/GridItem"
+import { Structure } from "~/components/template/Structure"
 
 export const MeasurementsTableStructure = () => (
-  <Grid>
-    <GridItem size="xl">
-      <MeasurementsField id="measurements" />
-    </GridItem>
-  </Grid>
+  <Structure>
+    <MeasurementsField id="measurements" />
+  </Structure>
 )

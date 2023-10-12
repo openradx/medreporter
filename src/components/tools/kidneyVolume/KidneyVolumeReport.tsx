@@ -1,8 +1,8 @@
-import { List } from "~/components/sr/List"
-import { ListItem } from "~/components/sr/ListItem"
-import { Paragraph } from "~/components/sr/Paragraph"
-import { useReportData } from "~/contexts/ReportDataContext"
+import { Paragraph } from "~/components/template/Paragraph"
+import { Report } from "~/components/template/Report"
+import { Statement } from "~/components/template/Statement"
 import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useStructureData } from "~/hooks/useStructureData"
 import {
   calcSideVolume,
   calcTotalVolume,
@@ -34,8 +34,9 @@ export const KidneyVolumeReport = () => {
     leftDepth,
     patientHeight,
     patientAge,
-  } = useReportData(true) as KidneyVolumeData
+  } = useStructureData() as KidneyVolumeData
   const { t } = useReportTranslation()
+
   let resultRightVolume = t("KidneyVolume.required")
   if (
     rightCoronal !== null &&
@@ -110,27 +111,25 @@ export const KidneyVolumeReport = () => {
     }
   }
   return (
-    <>
+    <Report>
       <Paragraph>
-        <List>
-          <ListItem>
-            {t("KidneyVolume.resultRight")}
-            {resultRightVolume}
-          </ListItem>
-          <ListItem>
-            {t("KidneyVolume.resultLeft")}
-            {resultLeftVolume}
-          </ListItem>
-          <ListItem>
-            {t("KidneyVolume.resultTotal")}
-            {resultTotalVolume}
-          </ListItem>
-          <ListItem>
-            {t("KidneyVolume.resultTotalHeightCorrected")}
-            {resultTotalVolumeHeightCorrected}
-          </ListItem>
-        </List>
+        <Statement>
+          {t("KidneyVolume.resultRight")}
+          {resultRightVolume}
+        </Statement>
+        <Statement>
+          {t("KidneyVolume.resultLeft")}
+          {resultLeftVolume}
+        </Statement>
+        <Statement>
+          {t("KidneyVolume.resultTotal")}
+          {resultTotalVolume}
+        </Statement>
+        <Statement>
+          {t("KidneyVolume.resultTotalHeightCorrected")}
+          {resultTotalVolumeHeightCorrected}
+        </Statement>
       </Paragraph>
-    </>
+    </Report>
   )
 }
