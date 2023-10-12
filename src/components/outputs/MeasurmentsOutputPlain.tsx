@@ -130,7 +130,7 @@ const createTableFooter = (stats: string) => stats
 
 interface MeasurementsTableTextProps {
   data: MeasurementsData
-  title: string
+  legend: string
   labels: {
     previous: string
     current: string
@@ -142,7 +142,7 @@ interface MeasurementsTableTextProps {
 
 export const MeasurementsOutputPlain = ({
   data,
-  title,
+  legend,
   labels,
   stats,
 }: MeasurementsTableTextProps) => {
@@ -158,7 +158,7 @@ export const MeasurementsOutputPlain = ({
 
   return (
     <>
-      {title}
+      {legend}
       {NEWLINE_CHAR}
       {createTableHeader(
         colSizes,

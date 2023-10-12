@@ -1,6 +1,7 @@
-import { Paragraph } from "~/components/sr/Paragraph"
-import { useReportData } from "~/contexts/ReportDataContext"
+import { Paragraph } from "~/components/template/Paragraph"
+import { Report } from "~/components/template/Report"
 import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useStructureData } from "~/hooks/useStructureData"
 import { defineFleischner2017 } from "~/utils/fleischner2017Utils"
 
 export type Structure = "solid" | "groundglass" | "partsolid"
@@ -16,9 +17,8 @@ type Fleischner2017Data = {
 }
 
 export const Fleischner2017Report = () => {
-  const { longaxis, shortaxis, structure, count, riskFactors } = useReportData(
-    true
-  ) as Fleischner2017Data
+  const { longaxis, shortaxis, structure, count, riskFactors } =
+    useStructureData() as Fleischner2017Data
   const { t } = useReportTranslation()
 
   const { suggestion } = defineFleischner2017(longaxis, shortaxis, structure, count, riskFactors)
@@ -26,10 +26,10 @@ export const Fleischner2017Report = () => {
   const conclusion = t(suggestion)
 
   return (
-    <>
+    <Report>
       <Paragraph>
         {t("Fleischner2017.textRecommendation")}: {conclusion}
       </Paragraph>
-    </>
+    </Report>
   )
 }

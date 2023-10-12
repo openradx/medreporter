@@ -1,32 +1,9 @@
-import { StructureElement } from "@medreporter/medtl-schema"
-import { ContextData, ElementWrapper } from "@medreporter/medtl-tools"
-import { Structure } from "~/components/sr/Structure"
-import { SupportedLanguage } from "~/types/general"
-import { FieldAdapter } from "./FieldAdapter"
-import { FindingAdapter } from "./FindingAdapter"
-import { GroupAdapter } from "./GroupAdapter"
+import { StructureEl } from "~/schemas/structure"
+import { SectionAdapter } from "./SectionAdapter"
 
 interface StructureAdapterProps {
-  element?: StructureElement
-  data: ContextData
-  lng: SupportedLanguage
+  element: StructureEl
 }
 
-export const StructureAdapter = ({ element, data, lng }: StructureAdapterProps) => {
-  const wrapper = element && new ElementWrapper(element)
-  const children = wrapper?.getAllChildElements().map(({ element: child }, index) => {
-    switch (child.kind) {
-      case "Finding": {
-        return <FindingAdapter key={index} element={child} {...{ data, lng }} />
-      }
-      case "Group": {
-        return <GroupAdapter key={index} element={child} {...{ data, lng }} />
-      }
-      default: {
-        return <FieldAdapter key={index} element={child} {...{ data, lng }} />
-      }
-    }
-  })
-
-  return <Structure>{children}</Structure>
-}
+export const StructureAdapter = ({ element }: StructureAdapterProps) =>
+  element.children.map((child) => <SectionAdapter key={child.gid} element={child} />)

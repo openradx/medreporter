@@ -1,26 +1,31 @@
-import { GroupElement } from "@medreporter/medtl-schema"
-import { ContextData, ElementWrapper } from "@medreporter/medtl-tools"
-import { SupportedLanguage } from "~/types/general"
-import { extractText } from "~/utils/adapter"
-import { Group } from "../fields/Group"
-import { FieldAdapter } from "./FieldAdapter"
+import { evalCodeToBoolean } from "~/medtl/interpreter"
+import { GroupEl } from "~/schemas/structure"
+import { Group } from "../template/Group"
+import { Info } from "../template/Info"
+import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
+import { HintAdapter } from "./HintAdapter"
+import { LayoutAdapter } from "./LayoutAdapter"
 
 interface GroupAdapterProps {
-  element: GroupElement
-  data: ContextData
-  lng: SupportedLanguage
+  element: GroupEl
 }
 
-export const GroupAdapter = ({ element, data, lng }: GroupAdapterProps) => {
-  const wrapper = new ElementWrapper(element)
-  const labelEl = wrapper.getFirstChildElement("Label").element
-  const label = extractText(labelEl, data, lng)
-
-  const children = wrapper.getAllChildElements().map(({ element: child }) => {
-    if (child.kind === "Label") return null
-
-    return <FieldAdapter element={child} {...{ data, lng }} />
-  })
-
-  return <Group label={label}>{children}</Group>
-}
+export const GroupAdapter = ({ element }: GroupAdapterProps) => (
+  <Group
+    label={element.label}
+    extras={element.info && <Info>{element.info}</Info>}
+    disabled={evalCodeToBoolean(element.disabled)}
+    hidden={evalCodeToBoolean(element.hidden)}
+  >
+    {element.children.map((child) => {
+      switch (child.type) {
+        case "Layout":
+          return <LayoutAdapter key={child.gid} element={child} />
+        case "Hint":
+          return <HintAdapter key={child.gid} element={child} />
+        default:
+          return <DiscreteFieldAdapter key={child.gid} element={child} />
+      }
+    })}
+  </Group>
+)

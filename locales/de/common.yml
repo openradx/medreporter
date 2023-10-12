@@ -89,23 +89,15 @@ GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 HomePage:
   about: Mehr über MedReporter
-  newTitle: Neues Modul/Template erstellen
-  newDescription: Nutze den MedTL Editor um neue Module oder Templates zu erstellen.
-  newModuleButton: Neues Modul
-  newTemplateButton: Neues Template
-  modulesTitle: Module
-  modulesDescription: Nutze einzelne Module oder erstelle einen Report aus Modulen.
-  modulesButton: Module anzeigen
+  newTitle: Neue Vorlage erstellen
+  newDescription: Nutze den Editor um neue Vorlagen zu erstellen.
   pageTitle: Startseite
   reportsTitle: Reports
   reportsDescription: Gehe zu deinen bzw. den Reports deines Instituts.
-  reportsButton: Reports anzeigen
   toolsTitle: Tools
   toolsDescription: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren.
-  toolsButton: Tools anzeigen
-  templatesTitle: Templates
-  templatesDescription: Nutze ein Template um einen Report zu erstellen.
-  templatesButton: Templates anzeigen
+  templatesTitle: Vorlagen
+  templatesDescription: Nutze eine Vorlage um einen Report zu erstellen.
 InstituteSwitcher:
   label: Institut auswählen
   noInstituteAvailable: Kein Institut verfügbar
@@ -162,24 +154,24 @@ NewFigurePage:
   pageTitle: Neue Abbildung erstellen
 NewModuleForm:
   formTitle: Neues Modul erstellen
-NewModulePage:
-  pageTitle: Neues Modul erstellen
+NewTemplatePage:
+  pageTitle: Neue Vorlage erstellen
 NewResourceForm:
   createButtonLabel: Erzeugen
   nameInputLabel: Name
+OutputFormat:
+  buttonFormat: Ausgabeformat ändern
+  formatHtml: HTML
+  formatText: Text
 QueryError:
   title: Fehler bei Datenabfrage
   message: Ein unerwarteter Fehler ist während der Datenabfrage aufgetreten
 RedoButton:
   buttonRedo: Wiederherstellen
-ReportFormat:
-  buttonFormat: Befundformatierung ändern
-  formatHtml: HTML
-  formatText: Text
+Report:
+  title: Befund
 ReportLanguageChooser:
   buttonLanguageReport: Sprache Befund
-ReportPanel:
-  title: Befund
 ResetPasswordForm:
   buttonReset: Bestätigen
   formTitle: Passwort zurücksetzen

@@ -48,8 +48,8 @@ export const NavDrawer = ({ opened, setOpened }: NavDrawerProps) => {
 
   const linkData: { route: Route; label: string }[] = [
     { route: { pathname: "/" }, label: t("NavDrawer.home") },
-    { route: { pathname: "/figures" }, label: t("NavDrawer.figures") },
-    { route: { pathname: "/modules" }, label: t("NavDrawer.modules") },
+    { route: { pathname: "/" }, label: t("NavDrawer.figures") },
+    { route: { pathname: "/" }, label: t("NavDrawer.modules") },
     { route: { pathname: "/tools" }, label: t("NavDrawer.tools") },
   ]
 

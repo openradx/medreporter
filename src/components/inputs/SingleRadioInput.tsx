@@ -1,13 +1,13 @@
 import { Stack, Radio } from "@mantine/core"
 import { ReactNode } from "react"
-import { FieldOption } from "../fields/fieldTypes"
+import { Option } from "~/schemas/structure"
 import { InputLabel } from "./InputLabel"
 
-const DEFAULT_OPTIONS: FieldOption[] = []
+const DEFAULT_OPTIONS: Option[] = []
 
 interface SingleRadioInputProps {
   label?: string
-  options?: FieldOption[]
+  options?: Option[]
   extras?: ReactNode
   value: string | null
   onChange: (value: string | null) => void

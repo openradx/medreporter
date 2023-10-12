@@ -2,7 +2,10 @@
 import { useTranslation, UseTranslationOptions } from "react-i18next"
 import { useI18nStructuredReport } from "~/contexts/I18nStructuredReportContext"
 
-export const useStructureTranslation = (ns?: string, options?: UseTranslationOptions) => {
+export const useStructureTranslation = (
+  ns?: string,
+  options?: UseTranslationOptions<undefined>
+) => {
   const {
     i18nStructure: i18n,
     i18nReport,

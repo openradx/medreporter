@@ -1,17 +1,16 @@
 import { Visibility } from "@prisma/client"
 import { z } from "zod"
-import { FormatSchema, MetaInfoSchema } from "~/state/reportSlice"
-import { StructureDataSchema } from "~/state/structureDataSlice"
-import { TemplateSchema } from "~/state/structureSlice"
+import { templateElSchema } from "~/schemas/template"
+import { outputFormatSchema } from "~/state/displaySlice"
+import { structureDataSchema } from "~/state/structureDataSlice"
 
-export const CreateReportSchema = z.object({
+export const createReportSchema = z.object({
   visibility: z.nativeEnum(Visibility),
-  template: TemplateSchema,
-  structureData: StructureDataSchema,
-  reportFormat: FormatSchema,
-  metaInfos: z.array(MetaInfoSchema),
+  template: templateElSchema,
+  structureData: structureDataSchema,
+  outputFormat: outputFormatSchema,
 })
 
-export const UpdateReportSchema = CreateReportSchema.partial().extend({
+export const updateReportSchema = createReportSchema.partial().extend({
   reportId: z.string(),
 })

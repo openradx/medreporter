@@ -57,13 +57,13 @@ model User {
   fullName       String?
   about          String?
 
-  currentInstitute   Institute? @relation(fields: [currentInstituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  currentInstitute   Institute? @relation(fields: [currentInstituteId], references: [id], onDelete: SetNull)
   currentInstituteId String?
 
   accounts    Account[]
   sessions    Session[]
   memberships Membership[]
-  resources   Resource[]
+  templates   Template[]
   reports     Report[]
 }
 
@@ -81,7 +81,7 @@ model Institute {
 
   memberships  Membership[]
   currentUsers User[]
-  resources    Resource[]
+  templates    Template[]
   reports      Report[]
 }
 
@@ -95,19 +95,13 @@ model Membership {
   id   String         @id @default(cuid())
   role MembershipRole
 
-  institute   Institute @relation(fields: [instituteId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  institute   Institute @relation(fields: [instituteId], references: [id], onDelete: Cascade)
   instituteId String
 
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String
 
   @@unique([instituteId, userId])
-}
-
-enum ResourceType {
-  FIGURE
-  MODULE
-  TEMPLATE
 }
 
 enum Visibility {
@@ -122,71 +116,34 @@ enum ReleaseStatus {
   DEPRECIATED
 }
 
-model Resource {
+model Template {
   id            String        @id @default(cuid())
-  type          ResourceType
-  name          String
+  slug          String
+  locale        String
+  title         String
+  description   String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  source        String
   document      Json
   visibility    Visibility
   releaseStatus ReleaseStatus
 
-  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId    String
-  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull)
   instituteId String?
 
-  translations ResourceTranslation[]
-  categories   ResourceCategory[]
+  tags   Tag[]
+  Report Report[]
 
-  @@unique([type, authorId, name])
+  @@unique([authorId, slug])
 }
 
-model ResourceTranslation {
-  id          String  @id @default(cuid())
-  language    String
-  default     Boolean
-  title       String
-  description String
+model Tag {
+  id    String @id @default(cuid())
+  label String @unique
 
-  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  resourceId String
-
-  @@unique([language, resourceId])
-  @@index([resourceId, default])
-}
-
-model ResourceCategory {
-  id String @id @default(cuid())
-
-  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  resourceId String
-
-  Category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([resourceId, categoryId])
-}
-
-model Category {
-  id  String @id @default(cuid())
-  key String @unique
-
-  translations CategoryTranslation[]
-  resources    ResourceCategory[]
-}
-
-model CategoryTranslation {
-  id       String @id @default(cuid())
-  language String
-  label    String
-
-  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  categoryId String
-
-  @@unique([categoryId, language])
+  templates Template[]
 }
 
 model Report {
@@ -195,28 +152,14 @@ model Report {
   updatedAt  DateTime   @updatedAt
   visibility Visibility
 
-  template      Json
-  structureData Json
-  reportFormat  Json
+  data       Json
+  peferences Json
+  properties Json
 
-  details ReportDetail[]
-
-  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  template    Template   @relation(fields: [templateId], references: [id], onDelete: Restrict)
+  templateId  String
+  author      User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId    String
-  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  institute   Institute? @relation(fields: [instituteId], references: [id], onDelete: SetNull)
   instituteId String?
-}
-
-model ReportDetail {
-  id       String    @id @default(cuid())
-  key      String
-  string   String?
-  dateTime DateTime?
-  int      BigInt?
-  float    Float?
-
-  report   Report? @relation(fields: [reportId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  reportId String?
-
-  @@unique([reportId, key])
 }

@@ -1,6 +1,5 @@
 const path = require("path")
 const { env } = require("./src/server/env")
-const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 const withRoutes = require("nextjs-routes/config")({ outDir: "types" })
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
@@ -29,44 +28,10 @@ const nextConfig = {
       )
     }
 
-    // Allows to load CSS in monaco-editor as Next.js does not handle CSS in
-    // node modules folder.
-    // Workaround until RFC is through: https://github.com/vercel/next.js/discussions/27953
-    config.module?.rules
-      .find((rule) => rule.oneOf)
-      .oneOf.forEach((rule) => {
-        if (rule.issuer?.and?.[0]?.toString().includes("_app")) {
-          const and = rule.issuer.and
-          rule.issuer.or = [/[\\/]node_modules[\\/]monaco-editor[\\/]/, { and }]
-          delete rule.issuer.and
-        }
-      })
-
-    if (!options.isServer) {
-      config.plugins?.push(
-        new MonacoWebpackPlugin({
-          languages: ["html", "xml"],
-          filename: "static/[name].js",
-          customLanguages: [
-            {
-              label: "medtl",
-              entry: undefined,
-              worker: {
-                id: "vs/language/medtl/medtlWorker",
-                entry: path.resolve(
-                  "./node_modules/@medreporter/monaco-plugin-medtl/dist/medtl.worker.js"
-                ),
-              },
-            },
-          ],
-        })
-      )
-    }
-
-    // Load specific files (with "?raw" suffix) as raw strings,
+    // Import Markdown files as strings,
     // see https://webpack.js.org/guides/asset-modules/#source-assets
     config.module?.rules.unshift({
-      resourceQuery: /raw/,
+      test: /\.md$/,
       type: "asset/source",
     })
 
@@ -84,8 +49,7 @@ const nextConfig = {
                   name: "preset-default",
                   params: {
                     overrides: {
-                      cleanupIDs: false,
-                      prefixIds: false,
+                      cleanupIds: false,
                       convertPathData: false,
                     },
                   },

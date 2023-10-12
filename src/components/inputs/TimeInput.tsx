@@ -10,7 +10,7 @@ interface TimeInputProps {
   onChange: (value: string) => void
   extras?: ReactNode
   disabled?: boolean
-  accuracy?: "minutes" | "seconds"
+  withSeconds?: boolean
 }
 
 export const TimeInput = ({
@@ -19,7 +19,7 @@ export const TimeInput = ({
   onChange,
   extras,
   disabled,
-  accuracy,
+  withSeconds,
 }: TimeInputProps) => {
   const ref = useRef<HTMLInputElement>(null)
 
@@ -29,7 +29,7 @@ export const TimeInput = ({
       value={value}
       onChange={(event) => onChange(event.target.value)}
       disabled={disabled}
-      withSeconds={accuracy === "seconds"}
+      withSeconds={withSeconds}
       ref={ref}
       rightSection={
         <ActionIcon onClick={() => ref.current?.showPicker()}>

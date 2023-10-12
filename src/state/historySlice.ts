@@ -7,7 +7,7 @@ import {
   SliceCaseReducers,
   ValidateSliceCaseReducers,
 } from "@reduxjs/toolkit"
-import produce, { applyPatches, castDraft, Patch, produceWithPatches } from "immer"
+import { applyPatches, castDraft, Patch, produce, produceWithPatches } from "immer"
 import { redoHistory, undoHistory } from "./historyTrackerSlice"
 
 type PatchesState = { [historyCurrent: number]: { undo: Patch[]; redo: Patch[] } }

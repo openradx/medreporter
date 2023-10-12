@@ -1,4 +1,4 @@
-import { OutputFormat } from "~/types/general"
+import { OutputFormat } from "~/state/displaySlice"
 
 interface StubProps {
   format?: OutputFormat

@@ -1,11 +1,11 @@
-import { useModule } from "~/contexts/ModuleContext"
+import { useGroup } from "~/contexts/GroupContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { TimeInput } from "../inputs/TimeInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
 interface TimeFieldProps extends CommonFieldProps<string | null> {
-  accuracy?: "minutes" | "seconds"
+  withSeconds?: boolean
 }
 
 export const TimeField = ({
@@ -15,18 +15,19 @@ export const TimeField = ({
   defaultValue = "",
   disabled,
   hidden,
-  accuracy = "minutes",
+  withSeconds,
 }: TimeFieldProps) => {
-  const { id: moduleId } = useModule()
   const { value, onChange } = useStructureController({
-    moduleId,
     fieldId,
     defaultValue,
   })
 
+  const groupDisabled = useGroup()?.disabled
+  disabled = disabled || groupDisabled
+
   return (
-    <BaseField {...{ moduleId, fieldId, defaultValue, value, onChange, hidden }}>
-      <TimeInput {...{ label, extras, disabled, accuracy, onChange }} value={value || ""} />
+    <BaseField {...{ fieldId, defaultValue, value, onChange, hidden }}>
+      <TimeInput {...{ label, extras, disabled, withSeconds, onChange }} value={value || ""} />
     </BaseField>
   )
 }

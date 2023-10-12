@@ -27,7 +27,7 @@ export interface AppConfig {
   supportedLanguages: [StructuredReportLanguage, ...StructuredReportLanguage[]]
   fallbackLanguages: [
     AppConfig["supportedLanguages"][number],
-    ...AppConfig["supportedLanguages"][number][]
+    ...AppConfig["supportedLanguages"][number][],
   ]
 }
 export type SiteLanguageOption = SiteLanguage | "cimode"

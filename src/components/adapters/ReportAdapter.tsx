@@ -1,38 +1,23 @@
-import { ReportElement } from "@medreporter/medtl-schema"
-import { ContextData, ElementWrapper } from "@medreporter/medtl-tools"
-import { Report } from "~/components/sr/Report"
-import { SupportedLanguage } from "~/types/general"
-import { ConclusionAdapter } from "./ConclusionAdapter"
+import { ReportEl } from "~/schemas/report"
+import { MeasurementsOutputAdapter } from "./MeasurementsOutputAdapter"
 import { ParagraphAdapter } from "./ParagraphAdapter"
 import { StatementAdapter } from "./StatementAdapter"
-import { TextContentAdapter } from "./TextContentAdapter"
 
 interface ReportAdapterProps {
-  element?: ReportElement
-  data: ContextData
-  lng: SupportedLanguage
+  element: ReportEl
 }
 
-export const ReportAdapter = ({ element, data, lng }: ReportAdapterProps) => {
-  const wrapper = element && new ElementWrapper(element)
-  const children = wrapper?.getAllChildElements().map(({ element: child }, index) => {
-    switch (child.kind) {
-      case "Paragraph": {
-        return <ParagraphAdapter key={index} element={child} {...{ data, lng }} />
-      }
-      case "Statement": {
-        return <StatementAdapter key={index} element={child} {...{ data, lng }} />
-      }
-      case "Conclusion": {
-        return <ConclusionAdapter key={index} element={child} {...{ data, lng }} />
-      }
-      case "Text": {
-        return <TextContentAdapter key={index} element={child} {...{ data, lng }} />
-      }
-      default: {
-        throw new Error("Invalid element type.")
-      }
+export const ReportAdapter = ({ element }: ReportAdapterProps) =>
+  element.children.map((child) => {
+    switch (child.type) {
+      case "Paragraph":
+        return <ParagraphAdapter key={child.gid} element={child} />
+      case "Statement":
+        return <StatementAdapter key={child.gid} element={child} />
+      case "MeasurementsOutput":
+        return <MeasurementsOutputAdapter key={child.gid} element={child} />
+      default:
+        // @ts-ignore
+        throw new Error(`Invalid report element type: ${child.type}`)
     }
   })
-  return <Report>{children}</Report>
-}

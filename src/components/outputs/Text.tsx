@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react"
-import { OutputFormat } from "~/types/general"
+import { OutputFormat } from "~/state/displaySlice"
 
 interface TextProps {
   format?: OutputFormat
