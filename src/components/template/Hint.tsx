@@ -12,6 +12,7 @@ export const Hint = ({ level, children }: HintProps) => (
   <Alert
     icon={level === "warning" ? <WarningIcon /> : <InfoIcon />}
     color={level === "warning" ? "yellow" : "blue"}
+    my="sm"
   >
     {children}
   </Alert>

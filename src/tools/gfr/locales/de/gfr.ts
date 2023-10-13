@@ -6,7 +6,7 @@ export default {
     toolTitle: "GFR Rechner",
     toolHint:
       "Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault)  und Kinder (Schwartz (orig./rev.), Counahan-Barret).\n",
-    inputLabelAge: "Alter",
+    inputLabelAge: "Alter in Jahren",
     inputLabelCreatinine: "Serumkreatinin in mg/dl",
     inputLabelWeight: "Gewicht in kg",
     inputLabelHeight: "Größe in cm",

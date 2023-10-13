@@ -9,7 +9,12 @@ interface LayoutProps {
 }
 
 export const Layout = ({ direction, justify, nowrap, children }: LayoutProps) => (
-  <Flex direction={direction} justify={justify} wrap={nowrap ? "nowrap" : "wrap"}>
+  <Flex
+    direction={direction}
+    justify={justify}
+    wrap={nowrap ? "nowrap" : "wrap"}
+    gap={{ base: "sm", sm: "lg" }}
+  >
     {children}
   </Flex>
 )
