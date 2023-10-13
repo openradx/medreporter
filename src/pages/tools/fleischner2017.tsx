@@ -2,11 +2,11 @@ import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { Fleischner2017 } from "~/components/tools/fleischner2017/Fleischner2017"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { getServerSideStructuredReportTranslations } from "~/server/utils/structuredReportTranslations"
+import { Fleischner2017 } from "~/tools/fleischner2017/Fleischner2017"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({

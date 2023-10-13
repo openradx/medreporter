@@ -2,11 +2,11 @@ import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { AdrenalMri } from "~/components/tools/adrenalMri/AdrenalMri"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { getServerSideStructuredReportTranslations } from "~/server/utils/structuredReportTranslations"
+import { AdrenalMri } from "~/tools/adrenalMri/AdrenalMri"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({

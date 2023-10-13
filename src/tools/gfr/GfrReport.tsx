@@ -10,7 +10,7 @@ import {
   calcCounahan,
   calcSchwartzRev,
   calcSchwartzOrig,
-} from "~/utils/gfrUtils"
+} from "./gfrUtils"
 
 type Gfr = {
   creatinine: number | null

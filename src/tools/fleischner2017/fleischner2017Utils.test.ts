@@ -1,9 +1,5 @@
 import { describe, expect, it } from "vitest"
-import {
-  Count,
-  RiskFactors,
-  Structure,
-} from "~/components/tools/fleischner2017/Fleischner2017Report"
+import { Count, RiskFactors, Structure } from "./Fleischner2017Report"
 import { defineFleischner2017, Suggestion, calcAverageDiameter } from "./fleischner2017Utils"
 
 describe("Calculate average diameter", () => {

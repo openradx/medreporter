@@ -2,7 +2,7 @@ import { Paragraph } from "~/components/template/Paragraph"
 import { Report } from "~/components/template/Report"
 import { useReportTranslation } from "~/hooks/useReportTranslation"
 import { useStructureData } from "~/hooks/useStructureData"
-import { defineFleischner2017 } from "~/utils/fleischner2017Utils"
+import { defineFleischner2017 } from "./fleischner2017Utils"
 
 export type Structure = "solid" | "groundglass" | "partsolid"
 export type Count = "single" | "multiple" | null

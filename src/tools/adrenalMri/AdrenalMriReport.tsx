@@ -7,7 +7,7 @@ import {
   calcAdrenalToSpleenRatio,
   calcSignalDropout,
   makeAdrenalMriSuggestion,
-} from "~/utils/adrenalMriUtils"
+} from "./adrenalMriUtils"
 
 type AdrenalMriData = {
   inPhaseAdrenal: number | null

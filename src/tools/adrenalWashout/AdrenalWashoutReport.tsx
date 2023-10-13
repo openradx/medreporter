@@ -7,7 +7,7 @@ import {
   calcAbsoluteAdrenalWashout,
   calcRelativeAdrenalWashout,
   makeAdrenalWashoutSuggestion,
-} from "~/utils/adrenalWashoutUtils"
+} from "./adrenalWashoutUtils"
 
 type AdrenalWashoutData = {
   nonEnhanced: number | null

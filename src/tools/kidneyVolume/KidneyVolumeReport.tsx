@@ -7,7 +7,7 @@ import {
   calcSideVolume,
   calcTotalVolume,
   calcTotalVolumeHeightCorrected,
-} from "~/utils/kidneyVolumeUtils"
+} from "./kidneyVolumeUtils"
 
 type KidneyVolumeData = {
   rightCoronal: number | null
