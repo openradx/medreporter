@@ -1,7 +1,7 @@
 import { NumberField } from "~/components/fields/NumberField"
 import { SingleChoiceField } from "~/components/fields/SingleChoiceField"
-import { Group } from "~/components/template/Group"
 import { Hint } from "~/components/template/Hint"
+import { Layout } from "~/components/template/Layout"
 import { Section } from "~/components/template/Section"
 import { Structure } from "~/components/template/Structure"
 import { useMicroTranslation } from "~/hooks/useMicroTranslation"
@@ -14,9 +14,14 @@ export const GfrStructure = () => {
     <Structure>
       <Section id="default" label="default">
         <Hint level="info">{t("Gfr.toolHint")}</Hint>
-        <NumberField label={t("Gfr.inputLabelAge")} id="age" min={0} />
-        <NumberField label={t("Gfr.inputLabelCreatinine")} id="creatinine" precision={2} min={0} />
-        <Group>
+        <Layout>
+          <NumberField label={t("Gfr.inputLabelAge")} id="age" min={0} />
+          <NumberField
+            label={t("Gfr.inputLabelCreatinine")}
+            id="creatinine"
+            precision={2}
+            min={0}
+          />
           <NumberField label={t("Gfr.inputLabelWeight")} id="weight" min={0} />
           <NumberField label={t("Gfr.inputLabelHeight")} id="height" min={0} />
           <SingleChoiceField
@@ -35,7 +40,7 @@ export const GfrStructure = () => {
               { value: "others", label: t("Gfr.optionEthnicityOthers") },
             ]}
           />
-        </Group>
+        </Layout>
       </Section>
     </Structure>
   )

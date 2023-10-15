@@ -38,7 +38,7 @@ export const BaseField = <TValue,>({
   // But some element we need for the ref for the scroll into
   return (
     <FieldContextProvider value={{ id: fieldId, label, defaultValue, value, onChange }}>
-      <Box ref={fieldEl} sx={{ display: hidden ? "none" : undefined }}>
+      <Box ref={fieldEl} sx={{ display: hidden ? "none" : undefined }} miw={{ base: 200, lg: 300 }}>
         {children}
       </Box>
     </FieldContextProvider>

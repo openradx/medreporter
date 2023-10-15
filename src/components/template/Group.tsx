@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mantine/core"
+import { Box, Flex } from "@mantine/core"
 import { ReactNode } from "react"
 import { GroupContextProvider } from "~/contexts/GroupContext"
 import { InputLabel } from "../inputs/InputLabel"
@@ -37,7 +37,7 @@ export const Group = ({ label, extras, disabled, hidden, children }: GridGroupPr
             <InputLabel label={label} extras={extras} />
           </Box>
         )}
-        <Grid>{children}</Grid>
+        <Flex gap={{ base: "sm", sm: "lg" }}>{children}</Flex>
       </Box>
     </GroupContextProvider>
   )
