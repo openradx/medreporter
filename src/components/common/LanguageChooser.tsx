@@ -1,25 +1,24 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
 import { TbCheck as CheckIcon } from "react-icons/tb"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { SupportedLanguageOption } from "~/types/general"
 import { getAppConfig } from "~/utils/appConfig"
 import { FlagIcon } from "./FlagIcon"
 
-interface LanguageChooserProps<T extends SupportedLanguageOption> {
+interface LanguageChooserProps {
   actionTitle: string
-  currentLanguage: T
-  supportedLanguages: T[]
-  onLanguageChanged: (language: T) => void
+  currentLanguage: string
+  supportedLanguages: string[]
+  onLanguageChanged: (language: string) => void
   disableDebugMode?: boolean
 }
 
-export const LanguageChooser = <T extends SupportedLanguageOption>({
+export const LanguageChooser = ({
   actionTitle,
   currentLanguage,
   supportedLanguages,
   onLanguageChanged,
   disableDebugMode,
-}: LanguageChooserProps<T>) => {
+}: LanguageChooserProps) => {
   const { t } = useSiteTranslation()
 
   const allLanguages = [...supportedLanguages]
@@ -59,7 +58,7 @@ export const LanguageChooser = <T extends SupportedLanguageOption>({
             <Divider />
             <Menu.Item
               icon={<FlagIcon language="cimode" />}
-              onClick={() => onLanguageChanged("cimode" as T)}
+              onClick={() => onLanguageChanged("cimode")}
             >
               Debug translations
             </Menu.Item>

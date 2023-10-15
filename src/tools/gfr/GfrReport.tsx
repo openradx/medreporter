@@ -1,7 +1,7 @@
 import { Paragraph } from "~/components/template/Paragraph"
 import { Report } from "~/components/template/Report"
 import { Statement } from "~/components/template/Statement"
-import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { useStructureData } from "~/hooks/useStructureData"
 import {
   calcCKDEPI,
@@ -11,6 +11,7 @@ import {
   calcSchwartzRev,
   calcSchwartzOrig,
 } from "./gfrUtils"
+import { i18nReport } from "./locales"
 
 type Gfr = {
   creatinine: number | null
@@ -23,7 +24,7 @@ type Gfr = {
 
 export const GfrReport = () => {
   const { creatinine, age, weight, height, gender, ethnicity } = useStructureData() as Gfr
-  const { t } = useReportTranslation()
+  const { t } = useMicroTranslation(i18nReport)
 
   let ckdepi = t("Gfr.textCkdRequired")
   if (creatinine !== null && age !== null && gender !== null && ethnicity !== null) {

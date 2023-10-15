@@ -1,13 +1,14 @@
 import { Paragraph } from "~/components/template/Paragraph"
 import { Report } from "~/components/template/Report"
 import { Statement } from "~/components/template/Statement"
-import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { useStructureData } from "~/hooks/useStructureData"
 import {
   calcSideVolume,
   calcTotalVolume,
   calcTotalVolumeHeightCorrected,
 } from "./kidneyVolumeUtils"
+import { i18nReport } from "./locales"
 
 type KidneyVolumeData = {
   rightCoronal: number | null
@@ -35,7 +36,7 @@ export const KidneyVolumeReport = () => {
     patientHeight,
     patientAge,
   } = useStructureData() as KidneyVolumeData
-  const { t } = useReportTranslation()
+  const { t } = useMicroTranslation(i18nReport)
 
   let resultRightVolume = t("KidneyVolume.required")
   if (

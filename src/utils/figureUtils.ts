@@ -1,5 +1,4 @@
 import appConfig from "app.config"
-import { SupportedLanguage } from "~/types/general"
 import { FigureMetadata } from "~/types/resources"
 
 export interface TranslatedFigureMetadata {
@@ -73,10 +72,7 @@ export function extractMetadata(doc: Document, ns: string = "med"): FigureMetada
   return meta
 }
 
-export function translateMetadata(
-  meta: FigureMetadata,
-  lng: SupportedLanguage
-): TranslatedFigureMetadata {
+export function translateMetadata(meta: FigureMetadata, lng: string): TranslatedFigureMetadata {
   const getTranslation = (prop: { [lng: string]: string }, defaultTranslation = ""): string => {
     let trans = prop[lng]
     if (!trans) {

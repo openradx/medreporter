@@ -1,13 +1,14 @@
 import { Paragraph } from "~/components/template/Paragraph"
 import { Report } from "~/components/template/Report"
 import { Statement } from "~/components/template/Statement"
-import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { useStructureData } from "~/hooks/useStructureData"
 import {
   calcAbsoluteAdrenalWashout,
   calcRelativeAdrenalWashout,
   makeAdrenalWashoutSuggestion,
 } from "./adrenalWashoutUtils"
+import { i18nReport } from "./locales"
 
 type AdrenalWashoutData = {
   nonEnhanced: number | null
@@ -17,7 +18,8 @@ type AdrenalWashoutData = {
 
 export const AdrenalWashoutReport = () => {
   const { nonEnhanced, portalVenous, delayed } = useStructureData() as AdrenalWashoutData
-  const { t } = useReportTranslation()
+  const { t } = useMicroTranslation(i18nReport)
+
   let absoluteWashoutText = t("AdrenalWashout.textAbsoluteWashoutRequirements")
   if (nonEnhanced !== null && portalVenous !== null && delayed !== null) {
     const result = calcAbsoluteAdrenalWashout(nonEnhanced, portalVenous, delayed)
