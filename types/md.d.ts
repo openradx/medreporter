@@ -1,1 +1,4 @@
-declare module "*.md"
+declare module "*.md" {
+  const contents: string
+  export = contents
+}

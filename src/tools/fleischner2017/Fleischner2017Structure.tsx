@@ -5,16 +5,23 @@ import { Hint } from "~/components/template/Hint"
 import { Info } from "~/components/template/Info"
 import { Section } from "~/components/template/Section"
 import { Structure } from "~/components/template/Structure"
-import { useStructureTranslation } from "~/hooks/useStructureTranslation"
-import riskFactorsInfo_en from "./fleischner2017RiskFactorsInfo_en.md"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
+import riskFactors_de from "./fleischner2017RiskFactors_de.md"
+import riskFactors_en from "./fleischner2017RiskFactors_en.md"
+import { i18nStructure } from "./locales"
 
 export const Fleischner2017Structure = () => {
-  const { t } = useStructureTranslation()
+  const { t, currentLanguage } = useMicroTranslation(i18nStructure)
+
+  const riskFactors = {
+    de: riskFactors_de,
+    en: riskFactors_en,
+  }[currentLanguage]
 
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("Fleischner2017.toolDescription")}</Hint>
+        <Hint level="info">{t("Fleischner2017.toolHint")}</Hint>
         <Group label={t("Fleischner2017.groupDiameter")}>
           <NumberField
             id="longaxis"
@@ -57,7 +64,7 @@ export const Fleischner2017Structure = () => {
               { value: "yes", label: t("Fleischner2017.optionsRiskFactorsYes") },
               { value: "no", label: t("Fleischner2017.optionsRiskFactorsNo") },
             ]}
-            extras={<Info>{riskFactorsInfo_en}</Info>}
+            extras={<Info>{riskFactors}</Info>}
             defaultValue="no"
           />
         </Group>

@@ -1,14 +1,21 @@
 import { Template } from "~/components/template/Template"
-import { useStructureTranslation } from "~/hooks/useStructureTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { Fleischner2017Report } from "./Fleischner2017Report"
 import { Fleischner2017Structure } from "./Fleischner2017Structure"
-import fleischner2017Info_en from "./fleischner2017Info_en.md"
+import toolInfo_de from "./fleischner2017ToolInfo_de.md"
+import toolInfo_en from "./fleischner2017ToolInfo_en.md"
+import { i18nStructure } from "./locales"
 
 export const Fleischner2017Template = () => {
-  const { t } = useStructureTranslation()
+  const { t, currentLanguage } = useMicroTranslation(i18nStructure)
+
+  const toolInfo = {
+    de: toolInfo_de,
+    en: toolInfo_en,
+  }[currentLanguage]
 
   return (
-    <Template title={t("Fleischner2017.toolTitle")} info={fleischner2017Info_en}>
+    <Template title={t("Fleischner2017.toolTitle")} info={toolInfo}>
       <Fleischner2017Structure />
       <Fleischner2017Report />
     </Template>

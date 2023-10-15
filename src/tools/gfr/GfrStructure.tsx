@@ -4,15 +4,16 @@ import { Group } from "~/components/template/Group"
 import { Hint } from "~/components/template/Hint"
 import { Section } from "~/components/template/Section"
 import { Structure } from "~/components/template/Structure"
-import { useStructureTranslation } from "~/hooks/useStructureTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
+import { i18nStructure } from "./locales"
 
 export const GfrStructure = () => {
-  const { t } = useStructureTranslation()
+  const { t } = useMicroTranslation(i18nStructure)
 
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("Gfr.toolDescription")}</Hint>
+        <Hint level="info">{t("Gfr.toolHint")}</Hint>
         <NumberField label={t("Gfr.inputLabelAge")} id="age" min={0} />
         <NumberField label={t("Gfr.inputLabelCreatinine")} id="creatinine" precision={2} min={0} />
         <Group>

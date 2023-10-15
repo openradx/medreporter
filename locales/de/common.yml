@@ -1,7 +1,8 @@
 formError:
   alreadyUsed: Bereits vergeben.
   invalidChars: "Enthält ungültige Zeichen. Erlaubt: {{chars}}"
-  reservedKeyword: "Reserviertes Schlüsselwort."
+  invalidLocale: Ungültiges Sprachschema.
+  reservedKeyword: Reserviertes Schlüsselwort.
   tooLong: Zu lang. Maximal {{max}} Zeichen.
   tooShort: Zu kurz. Mindestens {{min}} Zeichen.
   unexpected: "Ein unerwarteter Fehler ist aufgetreten: "

@@ -4,14 +4,16 @@ import { Hint } from "~/components/template/Hint"
 import { Section } from "~/components/template/Section"
 import { Structure } from "~/components/template/Structure"
 import { MAX_HU, MIN_HU } from "~/constants"
-import { useStructureTranslation } from "~/hooks/useStructureTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
+import { i18nStructure } from "./locales"
 
 export const AdrenalWashoutStructure = () => {
-  const { t } = useStructureTranslation()
+  const { t } = useMicroTranslation(i18nStructure)
+
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("AdrenalWashout.toolDescription")}</Hint>
+        <Hint level="info">{t("AdrenalWashout.toolHint")}</Hint>
         <Group label={t("AdrenalWashout.groupLabelDensity")}>
           <NumberField
             id="nonEnhanced"

@@ -1,13 +1,21 @@
 import { Template } from "~/components/template/Template"
-import { useStructureTranslation } from "~/hooks/useStructureTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { AdrenalMriReport } from "./AdrenalMriReport"
 import { AdrenalMriStructure } from "./AdrenalMriStructure"
-import adrenalMriInfo_en from "./adrenalMriInfo_en.md"
+import toolInfo_de from "./AdrenalMriToolInfo_de.md"
+import toolInfo_en from "./AdrenalMriToolInfo_en.md"
+import { i18nStructure } from "./locales"
 
 export const AdrenalMriTemplate = () => {
-  const { t } = useStructureTranslation()
+  const { t, currentLanguage } = useMicroTranslation(i18nStructure)
+
+  const toolInfo = {
+    de: toolInfo_de,
+    en: toolInfo_en,
+  }[currentLanguage]
+
   return (
-    <Template title={t("AdrenalMri.toolTitle")} info={adrenalMriInfo_en}>
+    <Template title={t("AdrenalMri.toolTitle")} info={toolInfo}>
       <AdrenalMriStructure />
       <AdrenalMriReport />
     </Template>

@@ -3,7 +3,6 @@ import { ComponentProps, useState } from "react"
 import { calcStats, createEmptyMeasurements, createStatsText } from "~/utils/measurementsUtils"
 import { MeasurementsData } from "../../types/measurements"
 import { SiteTranslations } from "../storybook/SiteTranslations"
-import { StructuredReportTranslations } from "../storybook/StructuredReportTranslations"
 import { MeasurementsInput } from "./MeasurementsInput"
 
 const meta: Meta<typeof MeasurementsInput> = {
@@ -25,14 +24,12 @@ const MeasurementsInputWithState = ({
 
   return (
     <SiteTranslations>
-      <StructuredReportTranslations>
-        <MeasurementsInput
-          value={value}
-          onChange={setValue}
-          footer={footer}
-          {...{ label, extras, disabled }}
-        />
-      </StructuredReportTranslations>
+      <MeasurementsInput
+        value={value}
+        onChange={setValue}
+        footer={footer}
+        {...{ label, extras, disabled }}
+      />
     </SiteTranslations>
   )
 }

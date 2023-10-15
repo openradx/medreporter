@@ -1,13 +1,14 @@
 import { Paragraph } from "~/components/template/Paragraph"
 import { Report } from "~/components/template/Report"
 import { Statement } from "~/components/template/Statement"
-import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { useStructureData } from "~/hooks/useStructureData"
 import {
   calcAdrenalToSpleenRatio,
   calcSignalDropout,
   makeAdrenalMriSuggestion,
 } from "./adrenalMriUtils"
+import { i18nReport } from "./locales"
 
 type AdrenalMriData = {
   inPhaseAdrenal: number | null
@@ -19,7 +20,7 @@ type AdrenalMriData = {
 export const AdrenalMriReport = () => {
   const { inPhaseAdrenal, oppPhaseAdrenal, inPhaseSpleen, oppPhaseSpleen } =
     useStructureData() as AdrenalMriData
-  const { t } = useReportTranslation()
+  const { t } = useMicroTranslation(i18nReport)
 
   let signalDropoutText = t("AdrenalMri.textSignalDropoutRequirements")
   if (inPhaseAdrenal !== null && oppPhaseAdrenal !== null) {

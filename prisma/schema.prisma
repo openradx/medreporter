@@ -118,7 +118,7 @@ enum ReleaseStatus {
 
 model Template {
   id            String        @id @default(cuid())
-  slug          String
+  name          String
   locale        String
   title         String
   description   String
@@ -136,7 +136,7 @@ model Template {
   tags   Tag[]
   Report Report[]
 
-  @@unique([authorId, slug])
+  @@unique([authorId, name])
 }
 
 model Tag {
