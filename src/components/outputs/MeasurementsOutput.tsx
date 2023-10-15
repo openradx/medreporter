@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { useReportTranslation } from "~/hooks/useReportTranslation"
+import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useStructureLink } from "~/hooks/useStructureLink"
 import { selectOutputFormat } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
@@ -31,7 +31,7 @@ export const MeasurementsOutput = ({
 }: MeasurementsOutputProps) => {
   const { activateLink } = useStructureLink({ fieldId })
   const outputFormat = useAppSelector(selectOutputFormat)
-  const { t } = useReportTranslation()
+  const { t } = useSiteTranslation()
 
   const labels = {
     previous: previousLabel || t("MeasurementsOutput.columnPrevious"),

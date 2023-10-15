@@ -1,9 +1,10 @@
 import { i18n } from "i18next"
 import { useRouter } from "next/router"
+import { Locale } from "nextjs-routes"
 import { ReactNode, useCallback, useRef, useState } from "react"
 import { I18nSiteContextProvider } from "~/contexts/I18nSiteContext"
 import { useOnRouteChange } from "~/hooks/useOnRouteChange"
-import { I18nSite, SiteLanguageOption } from "~/types/general"
+import { I18nSite } from "~/types/general"
 import { createClient } from "~/utils/i18nBrowserClient"
 import { registerInstance } from "~/utils/i18nextReloader"
 
@@ -16,7 +17,7 @@ export const SiteTranslationProvider = ({
   i18nSiteProps,
   children,
 }: SiteTranslationProviderProps) => {
-  const [currentSiteLanguage, _setCurrentSiteLanguage] = useState<SiteLanguageOption>(
+  const [currentSiteLanguage, _setCurrentSiteLanguage] = useState(
     i18nSiteProps.initialSiteLanguage!
   )
 
@@ -44,7 +45,7 @@ export const SiteTranslationProvider = ({
   })
 
   const setCurrentSiteLanguage = useCallback(
-    (language: SiteLanguageOption) => {
+    (language: string) => {
       i18nInstance.current!.i18nSite.changeLanguage(language, () => {
         if (language !== "cimode") {
           router.push(
@@ -55,7 +56,7 @@ export const SiteTranslationProvider = ({
               },
             },
             undefined,
-            { shallow: true, locale: language }
+            { shallow: true, locale: language as Locale }
           )
         }
         _setCurrentSiteLanguage(language)

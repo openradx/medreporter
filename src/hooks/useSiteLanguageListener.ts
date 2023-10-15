@@ -1,8 +1,7 @@
 import { useEffect } from "react"
-import { SiteLanguageOption } from "../types/general"
 import { useSiteTranslation } from "./useSiteTranslation"
 
-type Callback = (language: SiteLanguageOption) => void
+type Callback = (language: string) => void
 
 export const useSiteLanguageListener = (callback: Callback) => {
   const { i18n } = useSiteTranslation()

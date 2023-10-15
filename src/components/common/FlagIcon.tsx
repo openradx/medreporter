@@ -22,5 +22,8 @@ interface FlagImageProps {
 
 export const FlagIcon = ({ language, size = 18 }: FlagImageProps) => {
   const Img = flagIcons[language]
+  if (!Img) {
+    throw new Error(`Missing flag for language: ${language}`)
+  }
   return <Img width={size} height={size} />
 }

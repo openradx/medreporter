@@ -1,7 +1,8 @@
 formError:
   alreadyUsed: Already in use.
   invalidChars: "Contains invalid characters. Allowed: {{chars}}"
-  reservedKeyword: "Reserved keyword."
+  invalidLocale: Invalid locale name.
+  reservedKeyword: Reserved keyword.
   tooLong: Too long. Maximum {{max}} characters.
   tooShort: Too short. Minimum {{min}} characters.
   unexpected: "An unexpected error occurred: "

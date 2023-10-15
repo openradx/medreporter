@@ -5,17 +5,14 @@ import { NextPage } from "next"
 import { Session } from "next-auth"
 import { ReactElement, ReactNode } from "react"
 
-export type SiteLanguage = "de" | "en"
-
 export interface AppConfig {
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
 }
-export type SiteLanguageOption = SiteLanguage | "cimode"
 
 export interface I18nSite {
-  initialSiteLanguage: SiteLanguageOption
-  supportedSiteLanguages: SiteLanguageOption[]
+  initialSiteLanguage: string
+  supportedSiteLanguages: string[]
   siteNamespaces: string[]
   siteStore: Resource
 }

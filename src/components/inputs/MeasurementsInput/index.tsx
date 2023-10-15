@@ -1,6 +1,6 @@
 import { Box, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
-import { useStructureTranslation } from "~/hooks/useStructureTranslation"
+import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MeasurementsAction, MeasurementsData } from "~/types/measurements"
 import { getMeasurementsDataParams, measurementsReducer } from "~/utils/measurementsUtils"
 import { InputLabel } from "../InputLabel"
@@ -38,7 +38,8 @@ export const MeasurementsInput = ({
     [onChange]
   )
 
-  const { t } = useStructureTranslation()
+  const { t } = useSiteTranslation()
+  // TODO: make label configurable props
   const labels = {
     clearAll: t("MeasurementsInput.toolClearAll"),
     clearReferences: t("MeasurementsInput.toolClearReferences"),

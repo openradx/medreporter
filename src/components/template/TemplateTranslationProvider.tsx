@@ -25,7 +25,9 @@ export const TemplateTranslationProvider = ({
   const setStructureLanguage = useCallback(
     (language: TemplateLanguage) => {
       i18nStructure.options = { debugKeys: language === "cimode" }
-      i18nStructure.changeLanguage(language === "asSite" ? currentSiteLanguage : language)
+      if (language !== "cimode") {
+        i18nStructure.changeLanguage(language === "asSite" ? currentSiteLanguage : language)
+      }
       _setStructureLanguage(language)
     },
     [i18nStructure, currentSiteLanguage]
@@ -34,17 +36,19 @@ export const TemplateTranslationProvider = ({
   const setReportLanguage = useCallback(
     (language: TemplateLanguage) => {
       i18nReport.options = { debugKeys: language === "cimode" }
-      i18nReport.changeLanguage(language === "asSite" ? currentSiteLanguage : language)
+      if (language !== "cimode") {
+        i18nReport.changeLanguage(language === "asSite" ? currentSiteLanguage : language)
+      }
       _setReportLanguage(language)
     },
     [i18nReport, currentSiteLanguage]
   )
 
   useSiteLanguageListener((language) => {
-    if (structureLanguage === "asSite") {
+    if (structureLanguage === "asSite" && language !== "cimode") {
       i18nStructure.changeLanguage(language)
     }
-    if (reportLanguage === "asSite") {
+    if (reportLanguage === "asSite" && language !== "cimode") {
       i18nReport.changeLanguage(language)
     }
   })
