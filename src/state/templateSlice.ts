@@ -1,5 +1,6 @@
 import { RootState } from "RootTypes"
 import { TemplateEl } from "~/schemas/template"
+import { createElement, findElementByGidWithContainer } from "~/utils/editorUtils"
 import { createGid } from "~/utils/identifiers"
 import { createHistorySlice, withHistory } from "./historySlice"
 
@@ -13,7 +14,14 @@ const initialState: TemplateState = {
   structure: {
     type: "Structure",
     gid: createGid(),
-    children: [],
+    children: [
+      {
+        type: "Section",
+        gid: createGid(),
+        label: "default",
+        children: [],
+      },
+    ],
   },
   report: {
     type: "Report",
@@ -28,15 +36,15 @@ const templateSlice = createHistorySlice({
   reducers: {
     setTemplate: withHistory<TemplateState, TemplateEl>((state, action) => action.payload),
     addElement: withHistory<TemplateState, { activeId: string; overId: string }>(
-      (_state, _action) => {
-        // const { activeId, overId } = action.payload
-        // const [foundElement, containerElement] = findElementByGidWithContainer(state, overId)
-        // containerElement?.children.push({
-        //   type: "NumberField",
-        //   gid: createGid(),
-        //   id: "number_field_example",
-        //   label: "Just a number",
-        // })
+      (state, action) => {
+        const { activeId, overId } = action.payload
+        const element = createElement(activeId)
+        const [, containerElement] = findElementByGidWithContainer(state, overId)
+        if (containerElement?.type === "Section") {
+          if (element.type === "BooleanField") {
+            containerElement?.children.push(element)
+          }
+        }
       }
     ),
   },

@@ -20,8 +20,8 @@ export const VisualEditor = () => {
   const handleDragEnd = (event: DragEndEvent) => {
     setDragging(false)
     const activeId = String(event.active.id)
-    const overId = String(event.over?.id)
-    if (overId === "droppable-area") {
+    const overId = event.over && String(event.over.id)
+    if (overId) {
       if (activeId.toString().startsWith("menu-")) {
         dispatch(addElement({ activeId, overId }))
       }

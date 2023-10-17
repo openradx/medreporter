@@ -1,14 +1,15 @@
-import { StatementEl, ParagraphEl, MeasurementsOutputEl, ReportEl } from "./report"
+import { StatementEl, ParagraphEl, MeasurementsOutputEl, ReportEl } from "~/schemas/report"
 import {
-  HintEl,
   DiscreteFieldEl,
-  LayoutEl,
   FindingFieldEl,
   GroupEl,
+  HintEl,
+  LayoutEl,
   SectionEl,
   StructureEl,
-} from "./structure"
-import { TemplateEl } from "./template"
+} from "~/schemas/structure"
+import { TemplateEl } from "~/schemas/template"
+import { createGid } from "./identifiers"
 
 export type Element =
   | HintEl
@@ -31,6 +32,22 @@ export type ContainerElement =
   | SectionEl
   | ParagraphEl
   | ReportEl
+
+export function createElement(id: string): Element {
+  switch (id) {
+    case "menu-Boolean": {
+      return {
+        type: "BooleanField",
+        gid: createGid(),
+        id: "boolean_field",
+        label: "Boolean",
+      }
+    }
+    default: {
+      throw new Error(`Invalid element to create: ${id}`)
+    }
+  }
+}
 
 function isContainerElement(element: Element): element is ContainerElement {
   if (element.type === "Layout") return true
