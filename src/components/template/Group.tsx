@@ -31,6 +31,7 @@ export const Group = ({ label, extras, disabled, hidden, children }: GridGroupPr
             theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2]
           }`,
         })}
+        my="sm"
       >
         {(label || extras) && (
           <Box component="legend" sx={{ padding: "0 6px" }}>

@@ -28,10 +28,15 @@ Gfr:
     A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
     and children (Schwartz (orig./rev.), Counahan-Barret).
 
-KidneyVolume: 
+KidneyVolume:
   title: Kidney volume (Mayo-Model)
   description: >
     Calculation of the kidney volume for patients with ADPKD (with or without correction against height).
+
+LungRads2022:
+  title: "Lung-RADS 2022"
+  description: >
+    "Classification proposed to aid with findings in low-dose CT screening exams for lung cancer and to standarize the Follow-Up.",
 
 MeasurementsTable:
   title: Measurements table

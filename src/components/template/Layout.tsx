@@ -14,6 +14,7 @@ export const Layout = ({ direction, justify, nowrap, children }: LayoutProps) =>
     justify={justify}
     wrap={nowrap ? "nowrap" : "wrap"}
     gap={{ base: "sm", sm: "lg" }}
+    my="sm"
   >
     {children}
   </Flex>

@@ -30,6 +30,7 @@ declare module "nextjs-routes" {
     | StaticRoute<"/tools/gfr">
     | StaticRoute<"/tools">
     | StaticRoute<"/tools/kidney-volume">
+    | StaticRoute<"/tools/lung-rads2022">
     | StaticRoute<"/tools/measurements-table">
     | StaticRoute<"/tools/sandbox">;
 

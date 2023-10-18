@@ -46,6 +46,12 @@ export const Tools = () => {
       tags: [t("tags.kidney")],
     },
     {
+      route: { pathname: "/tools/lung-rads2022" },
+      title: t("LungRads2022.title"),
+      description: t("LungRads2022.description"),
+      tags: [t("tags.radiology"), t("tags.lung")],
+    },
+    {
       route: { pathname: "/tools/measurements-table" },
       title: t("MeasurementsTable.title"),
       description: t("MeasurementsTable.description"),
