@@ -57,6 +57,9 @@ export default {
 
     inputLabelFindingCyst: "Zyste",
 
+    hintCyst:
+      "Multple Zysten können auf eine alternative Diagnose wie Langerhans-Zell-Histiozytose (LCH) oder Lymphangioleiomyomatose (LAM) hinweisen und werden nicht nach Lung-RADS klassifiziert, es sei denn, es bestehen anderweitige suspekte Merkmale.",
+
     inputLabelWall: "Zystenwand",
     optionWallThin: "Dünn (gleichmäßig, <2mm)",
     optionWallThick: "Dick, (>2mm - symmetrisch, assymmetrisch oder nodulär)",
@@ -80,7 +83,7 @@ export default {
     inputLabelSuspicious: "Andere Befunde, die die Wahrscheinlichkeit für Lungenkrebs erhöhen",
     optionSuspiciousSpiculation: "Spikulierung",
     optionSuspiciousLymphadenopathy: "Lymphadenopathie",
-    optionSuspiciousMetastasis: "Offensichtliche Metastsen",
+    optionSuspiciousMetastasis: "Offensichtliche Metastasen",
     optionSuspiciousOther: "Andere (siehe Freitext)",
 
     inputLabelSuspiciousOther: "Suspekte Befunde (andere)",

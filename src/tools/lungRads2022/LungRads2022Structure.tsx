@@ -15,6 +15,8 @@ import examInfo_de from "./lungRads2022ExamInfo_de.md"
 import examInfo_en from "./lungRads2022ExamInfo_en.md"
 import incidentalInfo_de from "./lungRads2022IncidentalInfo_de.md"
 import incidentalInfo_en from "./lungRads2022IncidentalInfo_en.md"
+import measureInfo_de from "./lungRads2022MeasureInfo_de.md"
+import measureInfo_en from "./lungRads2022MeasureInfo_en.md"
 
 export const LungRads2022Structure = () => {
   const { t, currentLanguage } = useMicroTranslation(i18nStructure)
@@ -22,6 +24,11 @@ export const LungRads2022Structure = () => {
   const examInfo = {
     de: examInfo_de,
     en: examInfo_en,
+  }[currentLanguage]
+
+  const measureInfo = {
+    de: measureInfo_de,
+    en: measureInfo_en,
   }[currentLanguage]
 
   const incidentalInfo = {
@@ -105,18 +112,20 @@ export const LungRads2022Structure = () => {
               ]}
             />
           </Layout>
-          <Group label={t("LungRads2022.groupLabelDiameter")}>
+          <Group label={t("LungRads2022.groupLabelDiameter")} extras={<Info>{measureInfo}</Info>}>
             <NumberField
               id="longaxis"
               label={t("LungRads2022.inputLabelLongaxis")}
               min={0}
               defaultValue={0}
+              precision={1}
             />
             <NumberField
               id="shortaxis"
               label={t("LungRads2022.inputLabelShortaxis")}
               min={0}
               defaultValue={0}
+              precision={1}
             />
           </Group>
           <Group label={t("LungRads2022.groupLabelDiameterSolid")}>
@@ -125,12 +134,14 @@ export const LungRads2022Structure = () => {
               label={t("LungRads2022.inputLabelSolidLongaxis")}
               min={0}
               defaultValue={0}
+              precision={1}
             />
             <NumberField
               id="shortaxis-solid"
               label={t("LungRads2022.inputLabelSolidShortaxis")}
               min={0}
               defaultValue={0}
+              precision={1}
             />
           </Group>
           <Layout>
@@ -149,6 +160,7 @@ export const LungRads2022Structure = () => {
           </Layout>
         </FindingField>
         <FindingField id="cyst" label={t("LungRads2022.inputLabelFindingCyst")}>
+          <Hint level="warning">{t("LungRads2022.hintCyst")}</Hint>
           <Layout>
             <SingleChoiceField
               variant="radio"

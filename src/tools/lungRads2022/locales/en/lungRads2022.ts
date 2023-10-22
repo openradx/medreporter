@@ -54,6 +54,9 @@ export default {
 
     inputLabelFindingCyst: "Cyst",
 
+    hintCyst:
+      "Multiple cysts may indicate an alternative diagnosis such as Langerhans cell histiocytosis (LCH) or lymphangioleiomyomatosis (LAM) and are not classified in Lung-RADS unless other concerning features are identified.",
+
     inputLabelWall: "Wall of cyst",
     optionWallThin: "Thin (uniform thickness of <2mm",
     optionWallThick: "Thick (>2mm - symmetric, assymmetric or nodular)",
@@ -81,6 +84,7 @@ export default {
 
     inputLabelSuspiciousOther: "Suspicious finding (other)",
 
-    inputLabelIncidentalFindings: "Significant incidental finding (unrelated to lung cancer, adds S-Modifier)"
+    inputLabelIncidentalFindings:
+      "Significant incidental finding (unrelated to lung cancer, adds S-Modifier)",
   },
 }
