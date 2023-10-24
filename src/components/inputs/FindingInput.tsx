@@ -29,6 +29,7 @@ export const FindingInput = ({
       backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
     })}
     my={4}
+    spacing={0}
   >
     <Switch
       label={(label || extras) && <InputLabel label={label} extras={extras} />}

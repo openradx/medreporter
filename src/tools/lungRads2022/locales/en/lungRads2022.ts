@@ -80,11 +80,23 @@ export default {
     optionSuspiciousSpiculation: "Spiculation",
     optionSuspiciousLymphadenopathy: "Lymphadenopathy",
     optionSuspiciousMetastasis: "Frank metastatic disease",
+    optionSuspiciousGgnDoubled: "Ground glas nodule, that doubled in size in 1 year",
     optionSuspiciousOther: "Other (add comment)",
 
     inputLabelSuspiciousOther: "Suspicious finding (other)",
 
     inputLabelIncidentalFindings:
       "Significant incidental finding (unrelated to lung cancer, adds S-Modifier)",
+
+    noCategory: "No categorization possible",
+    category0: "Lung-RADS 0",
+    category1: "Lung-RADS 1",
+    category2: "Lung-RADS 2",
+    category3: "Lung-RADS 3",
+    category4A: "Lung-RADS 4A",
+    category4B: "Lung-RADS 4B",
+    category4X: "Lung-RADS 4X",
+    thinWalledUnilocular:
+      "Thin-walled unilocular cysts are considered benign and are not scored in LUNG-RADS.",
   },
 }

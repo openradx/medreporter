@@ -10,6 +10,8 @@ import { Layout } from "~/components/template/Layout"
 import { Section } from "~/components/template/Section"
 import { Structure } from "~/components/template/Structure"
 import { useMicroTranslation } from "~/hooks/useMicroTranslation"
+import { useStructureData } from "~/hooks/useStructureData"
+import { LungRads2022Data } from "./LungRads2022Report"
 import { i18nStructure } from "./locales"
 import examInfo_de from "./lungRads2022ExamInfo_de.md"
 import examInfo_en from "./lungRads2022ExamInfo_en.md"
@@ -20,6 +22,18 @@ import measureInfo_en from "./lungRads2022MeasureInfo_en.md"
 
 export const LungRads2022Structure = () => {
   const { t, currentLanguage } = useMicroTranslation(i18nStructure)
+
+  const {
+    problematicExam,
+    timepoint,
+    nodule,
+    benignFeatures,
+    structure,
+    cyst,
+    formation,
+    wall,
+    suspicious,
+  } = useStructureData() as LungRads2022Data
 
   const examInfo = {
     de: examInfo_de,
@@ -43,16 +57,7 @@ export const LungRads2022Structure = () => {
         <Layout>
           <SingleChoiceField
             variant="radio"
-            id="scan"
-            label={t("LungRads2022.inputLabelScan")}
-            options={[
-              { value: "baseline", label: t("LungRads2022.optionScanBaseline") },
-              { value: "follow-up", label: t("LungRads2022.optionScanFollowUp") },
-            ]}
-          />
-          <MultipleChoiceField
-            variant="checkbox"
-            id="exam"
+            id="problematicExam"
             label={t("LungRads2022.inputLabelExam")}
             options={[
               { value: "prior-CT-not-available", label: t("LungRads2022.optionExamPriorCT") },
@@ -62,12 +67,27 @@ export const LungRads2022Structure = () => {
             ]}
             extras={<Info>{examInfo}</Info>}
           />
+          <SingleChoiceField
+            variant="radio"
+            id="timepoint"
+            label={t("LungRads2022.inputLabelScan")}
+            hidden={problematicExam !== "none"}
+            options={[
+              { value: "baseline", label: t("LungRads2022.optionScanBaseline") },
+              { value: "follow-up", label: t("LungRads2022.optionScanFollowUp") },
+            ]}
+          />
         </Layout>
-        <FindingField id="findingNodule" label={t("LungRads2022.inputLabelFindingNodule")}>
+        <FindingField
+          id="nodule"
+          label={t("LungRads2022.inputLabelFindingNodule")}
+          hidden={problematicExam !== "none"}
+          disabled={cyst}
+        >
           <Layout>
-            <MultipleChoiceField
-              variant="checkbox"
-              id="benign-features"
+            <SingleChoiceField
+              variant="radio"
+              id="benignFeatures"
               label={t("LungRads2022.inputLabelBenignFeatures")}
               options={[
                 {
@@ -82,6 +102,7 @@ export const LungRads2022Structure = () => {
               id="structure"
               label={t("LungRads2022.inputLabelStructure")}
               variant="radio"
+              hidden={benignFeatures !== "none"}
               options={[
                 { value: "solid", label: t("LungRads2022.optionStructureSolid") },
                 { value: "partsolid", label: t("LungRads2022.optionStructurePartsolid") },
@@ -92,8 +113,8 @@ export const LungRads2022Structure = () => {
           <Layout>
             <SingleChoiceField
               variant="radio"
-              id="features-solid"
-              hidden={false}
+              id="featuresSolid"
+              hidden={structure !== "solid" || benignFeatures !== "none"}
               label={t("LungRads2022.inputLabelFeaturesSolid")}
               options={[
                 {
@@ -112,43 +133,47 @@ export const LungRads2022Structure = () => {
               ]}
             />
           </Layout>
-          <Group label={t("LungRads2022.groupLabelDiameter")} extras={<Info>{measureInfo}</Info>}>
+          <Group
+            label={t("LungRads2022.groupLabelDiameter")}
+            extras={<Info>{measureInfo}</Info>}
+            hidden={benignFeatures !== "none"}
+          >
             <NumberField
               id="longaxis"
               label={t("LungRads2022.inputLabelLongaxis")}
               min={0}
-              defaultValue={0}
               precision={1}
             />
             <NumberField
               id="shortaxis"
               label={t("LungRads2022.inputLabelShortaxis")}
               min={0}
-              defaultValue={0}
               precision={1}
             />
           </Group>
-          <Group label={t("LungRads2022.groupLabelDiameterSolid")}>
+          <Group
+            label={t("LungRads2022.groupLabelDiameterSolid")}
+            hidden={structure !== "partsolid" || benignFeatures !== "none"}
+          >
             <NumberField
-              id="longaxis-solid"
+              id="longaxisSolid"
               label={t("LungRads2022.inputLabelSolidLongaxis")}
               min={0}
-              defaultValue={0}
               precision={1}
             />
             <NumberField
-              id="shortaxis-solid"
+              id="shortaxisSolid"
               label={t("LungRads2022.inputLabelSolidShortaxis")}
               min={0}
-              defaultValue={0}
               precision={1}
             />
           </Group>
           <Layout>
             <SingleChoiceField
               variant="radio"
-              id="growing"
+              id="dynamic"
               label={t("LungRads2022.inputLabelGrowing")}
+              hidden={timepoint !== "follow-up" || benignFeatures !== "none"}
               options={[
                 { value: "new", label: t("LungRads2022.optionGrowingNew") },
                 { value: "stable", label: t("LungRads2022.optionGrowingStable") },
@@ -159,7 +184,12 @@ export const LungRads2022Structure = () => {
             />
           </Layout>
         </FindingField>
-        <FindingField id="cyst" label={t("LungRads2022.inputLabelFindingCyst")}>
+        <FindingField
+          id="cyst"
+          label={t("LungRads2022.inputLabelFindingCyst")}
+          hidden={problematicExam !== "none"}
+          disabled={nodule}
+        >
           <Hint level="warning">{t("LungRads2022.hintCyst")}</Hint>
           <Layout>
             <SingleChoiceField
@@ -183,8 +213,9 @@ export const LungRads2022Structure = () => {
           </Layout>
           <MultipleChoiceField
             variant="checkbox"
-            id="growing-unilocular"
+            id="growingUnilocular"
             label={t("LungRads2022.inputLabelGrowingUnilocular")}
+            hidden={timepoint !== "follow-up" || formation !== "unilocular" || wall !== "thick"}
             options={[
               { value: "stable", label: t("LungRads2022.optionGrowingUnilocularStable") },
               {
@@ -197,10 +228,11 @@ export const LungRads2022Structure = () => {
               },
             ]}
           />
-          <MultipleChoiceField
-            variant="checkbox"
-            id="growing-multilocular"
+          <SingleChoiceField
+            variant="radio"
+            id="growingMultilocular"
             label={t("LungRads2022.inputLabelGrowingMultilocular")}
+            hidden={timepoint !== "follow-up" || formation !== "multilocular"}
             options={[
               { value: "stable", label: t("LungRads2022.optionGrowingMultilocularStable") },
               {
@@ -223,6 +255,7 @@ export const LungRads2022Structure = () => {
             variant="checkbox"
             id="suspicious"
             label={t("LungRads2022.inputLabelSuspicious")}
+            hidden={problematicExam !== "none"}
             options={[
               { value: "spiculation", label: t("LungRads2022.optionSuspiciousSpiculation") },
               {
@@ -230,16 +263,20 @@ export const LungRads2022Structure = () => {
                 label: t("LungRads2022.optionSuspiciousLymphadenopathy"),
               },
               { value: "metastasis", label: t("LungRads2022.optionSuspiciousMetastasis") },
+              { value: "GGN-doubled", label: t("LungRads2022.optionSuspiciousGgnDoubled") },
               { value: "other", label: t("LungRads2022.optionSuspiciousOther") },
             ]}
           />
           <FreeTextField
-            id="other-suspicious"
+            id="suspiciousOther"
             label={t("LungRads2022.inputLabelSuspiciousOther")}
+            hidden={!suspicious?.includes("other")}
           />
+        </Layout>
+        <Layout>
           <FreeTextField
             multiline
-            id="incidental-findings"
+            id="incidentalFindings"
             label={t("LungRads2022.inputLabelIncidentalFindings")}
             extras={<Info>{incidentalInfo}</Info>}
           />

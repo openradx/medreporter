@@ -62,7 +62,7 @@ export default {
 
     inputLabelWall: "Zystenwand",
     optionWallThin: "Dünn (gleichmäßig, <2mm)",
-    optionWallThick: "Dick, (>2mm - symmetrisch, assymmetrisch oder nodulär)",
+    optionWallThick: "Dick, (>2mm - symmetrisch, asymmetrisch oder nodulär)",
 
     inputLabelFormation: "Zystenformation",
     optionFormationUnilocular: "Unilokular",
@@ -84,11 +84,23 @@ export default {
     optionSuspiciousSpiculation: "Spikulierung",
     optionSuspiciousLymphadenopathy: "Lymphadenopathie",
     optionSuspiciousMetastasis: "Offensichtliche Metastasen",
+    optionSuspiciousGgnDoubled: "Mlchglasnodulus, welcher sich innerhalb 1 Jahres verdoppelt",
     optionSuspiciousOther: "Andere (siehe Freitext)",
 
     inputLabelSuspiciousOther: "Suspekte Befunde (andere)",
 
     inputLabelIncidentalFindings:
       "Zufallsbefunde (unabhängig von Lungenkrebs, fügt den S-Modifikator hinzu)",
+
+    noCategory: "Keine Klassifikation möglich",
+    category0: "Lung-RADS 0",
+    category1: "Lung-RADS 1",
+    category2: "Lung-RADS 2",
+    category3: "Lung-RADS 3",
+    category4A: "Lung-RADS 4A",
+    category4B: "Lung-RADS 4B",
+    category4X: "Lung-RADS 4X",
+    thinWalledUnilocular:
+      "DÜnnwandige, einfache Zysten werden als benigne eingestuft und nicht im Rahmen von LungRADS klassifiziert.",
   },
 }
