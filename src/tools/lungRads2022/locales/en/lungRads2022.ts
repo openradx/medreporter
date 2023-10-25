@@ -44,13 +44,12 @@ export default {
     inputLabelSolidLongaxis: "Long axis diameter of the solid component",
     inputLabelSolidShortaxis: "Short axis diameter of the solid component",
 
-    inputLabelGrowing: "Is the nodule growing?",
-    optionGrowingNew: "New nodule",
-    optionGrowingStable: "Stable",
-    optionGrowingSlowlyGrowing:
+    inputLabelDynamic: "Is the nodule growig?",
+    optionDynamicNew: "New nodule",
+    optionDynamicStable: "Stable or decreasing",
+    optionDynamicSlowlyGrowing:
       "Slowly growing over multiple (>1) scans (not growing >1.5mm within 12-month)",
-    optionGrowingGrowing: "Growing (> 1.5 mm within 12-month)",
-    optionGrowingDecreasing: "Decreasing",
+    optionDynamicGrowing: "Growing (> 1.5 mm within 12-month)",
 
     inputLabelFindingCyst: "Cyst",
 
@@ -65,16 +64,16 @@ export default {
     optionFormationUnilocular: "Unilocular",
     optionFormationMultilocular: "Multilocular",
 
-    inputLabelGrowingUnilocular: "Dynamic (unilocular, thick wall",
-    optionGrowingUnilocularStable: "Stable",
-    optionGrowingUnilocularCystGrowing: "Cystic component is growing",
-    optionGrowingUnilocularWallGrowing: "Wall thickness/nodularity is growing",
+    inputLabelDynamicUnilocular: "Dynamic (unilocular, thick wall",
+    optionDynamicUnilocularStable: "Stable or decreasing",
+    optionDynamicUnilocularCystGrowing: "Cystic component is growing",
+    optionDynamicUnilocularWallGrowing: "Wall thickness/nodularity is growing",
 
-    inputLabelGrowingMultilocular: "Dynamic (multilocular)",
-    optionGrowingMultilocularStable: "Stable",
-    optionGrowingMultilocularCystGrowing: "Cystic component is growing",
-    optionGrowingMultilocularNewlyMultilocular: "Multilocular cyst was unilocular before",
-    optionGrowingMultilocularIncreasedSolid: "Increased/new opacity or increased loculation",
+    inputLabelDynamicMultilocular: "Dynamic (multilocular)",
+    optionDynamicMultilocularStable: "Stable or decreasing",
+    optionDynamicMultilocularCystGrowing: "Cystic component is growing",
+    optionDynamicMultilocularNewlyMultilocular: "Multilocular cyst was unilocular before",
+    optionDynamicMultilocularIncreasedSolid: "Increased/new opacity or increased loculation",
 
     inputLabelSuspicious: "Other findings suspicious of lung cancer",
     optionSuspiciousSpiculation: "Spiculation",

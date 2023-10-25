@@ -123,6 +123,8 @@ LoginLink:
   text: Einloggen
 LoginPage:
   pageTitle: Anmeldung
+LungRads2022Page:
+  toolTitle: LungRADS
 MainLayoutFallback:
   titleAuthenticationError: Authentifizierungsfehler
   messageAuthenticationError: >

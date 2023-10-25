@@ -123,6 +123,8 @@ LoginLink:
   text: login
 LoginPage:
   pageTitle: Login
+LungRads2022Page:
+  toolTitle: LungRADS
 MainLayoutFallback:
   titleAuthenticationError: Authentication error
   messageAuthenticationError: >

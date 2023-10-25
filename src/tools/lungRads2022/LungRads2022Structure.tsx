@@ -172,14 +172,13 @@ export const LungRads2022Structure = () => {
             <SingleChoiceField
               variant="radio"
               id="dynamic"
-              label={t("LungRads2022.inputLabelGrowing")}
+              label={t("LungRads2022.inputLabelDynamic")}
               hidden={timepoint !== "follow-up" || benignFeatures !== "none"}
               options={[
-                { value: "new", label: t("LungRads2022.optionGrowingNew") },
-                { value: "stable", label: t("LungRads2022.optionGrowingStable") },
-                { value: "slowly-growing", label: t("LungRads2022.optionGrowingSlowlyGrowing") },
-                { value: "growing", label: t("LungRads2022.optionGrowingGrowing") },
-                { value: "decreasing", label: t("LungRads2022.optionGrowingDecreasing") },
+                { value: "new", label: t("LungRads2022.optionDynamicNew") },
+                { value: "slowly-growing", label: t("LungRads2022.optionDynamicSlowlyGrowing") },
+                { value: "growing", label: t("LungRads2022.optionDynamicGrowing") },
+                { value: "stable", label: t("LungRads2022.optionDynamicStable") },
               ]}
             />
           </Layout>
@@ -213,39 +212,39 @@ export const LungRads2022Structure = () => {
           </Layout>
           <MultipleChoiceField
             variant="checkbox"
-            id="growingUnilocular"
-            label={t("LungRads2022.inputLabelGrowingUnilocular")}
+            id="dynamicUnilocular"
+            label={t("LungRads2022.inputLabelDynamicUnilocular")}
             hidden={timepoint !== "follow-up" || formation !== "unilocular" || wall !== "thick"}
             options={[
-              { value: "stable", label: t("LungRads2022.optionGrowingUnilocularStable") },
+              { value: "stable", label: t("LungRads2022.optionDynamicUnilocularStable") },
               {
                 value: "cyst-growing",
-                label: t("LungRads2022.optionGrowingUnilocularCystGrowing"),
+                label: t("LungRads2022.optionDynamicUnilocularCystGrowing"),
               },
               {
                 value: "wall-growing",
-                label: t("LungRads2022.optionGrowingUnilocularWallGrowing"),
+                label: t("LungRads2022.optionDynamicUnilocularWallGrowing"),
               },
             ]}
           />
           <SingleChoiceField
             variant="radio"
-            id="growingMultilocular"
-            label={t("LungRads2022.inputLabelGrowingMultilocular")}
+            id="dynamicMultilocular"
+            label={t("LungRads2022.inputLabelDynamicMultilocular")}
             hidden={timepoint !== "follow-up" || formation !== "multilocular"}
             options={[
-              { value: "stable", label: t("LungRads2022.optionGrowingMultilocularStable") },
+              { value: "stable", label: t("LungRads2022.optionDynamicMultilocularStable") },
               {
                 value: "cyst-growing",
-                label: t("LungRads2022.optionGrowingMultilocularCystGrowing"),
+                label: t("LungRads2022.optionDynamicMultilocularCystGrowing"),
               },
               {
                 value: "newly-multilocular",
-                label: t("LungRads2022.optionGrowingMultilocularNewlyMultilocular"),
+                label: t("LungRads2022.optionDynamicMultilocularNewlyMultilocular"),
               },
               {
                 value: "increased-solid",
-                label: t("LungRads2022.optionGrowingMultilocularIncreasedSolid"),
+                label: t("LungRads2022.optionDynamicMultilocularIncreasedSolid"),
               },
             ]}
           />

@@ -11,7 +11,7 @@ export default {
     optionScanBaseline: "Baseline",
     optionScanFollowUp: "Follow-up",
 
-    inputLabelExam: "Trifft eine dieser Aussagen auf der folgenden Untersuchung zu?",
+    inputLabelExam: "Trifft eine der folgenden Aussagen auf die Untersuchung zu?",
     optionExamPriorCT:
       "Es existieren Voruntersuchungen des Patienten, welche aktuell nicht verfügbar sind.",
     optionExamNotEvaluable: "Ein Teil der oder die gesamte Lunge sind nicht evaluierbar.",
@@ -31,11 +31,10 @@ export default {
     optionStructurePartsolid: "Teils solide",
     optionStructureGroundglass: "Milchglas",
 
-    inputLabelFeaturesSolid:
-      "Zeigt der Rundherd eine der folgendenen Eigenschaften? (für solide Rundherde)",
+    inputLabelFeaturesSolid: "Zeigt der Rundherd eine der folgendenen Eigenschaften?",
     optionFeaturesSolidSmoothMargins:
       "Pleuranah mit glatter Begrenzung (& oval, linsenförmig oder dreieckig geformt)",
-    optionFeaturesSolidSubsegmentalAirway: "Assoziiert zu subsegmentalem Brnchus",
+    optionFeaturesSolidSubsegmentalAirway: "Assoziiert zu subsegmentalem Bronchus",
     optionFeaturesSolidSegmentalAirway: "Assoziiert zu segmentalem oder proximalerem Bronchus",
     optionFeaturesSolidNone: "Keine der genannten Eigenschaften.",
 
@@ -43,48 +42,47 @@ export default {
     inputLabelLongaxis: "Längsachsendurchmesser (LAD)",
     inputLabelShortaxis: "Kurzachsendurchmesser (KAD)",
 
-    groupLabelDiameterSolid: "Durchmesser (mm) der soliden Komponente (für teils solide Noduli)",
+    groupLabelDiameterSolid: "Durchmesser (mm) der soliden Komponente",
     inputLabelSolidLongaxis: "LAD der soliden Komponente",
     inputLabelSolidShortaxis: "KAD der soliden Komponente",
 
-    inputLabelGrowing: "Dynamik",
-    optionGrowingNew: "Neu aufgetretener Nodulus",
-    optionGrowingStable: "Stabil",
-    optionGrowingSlowlyGrowing:
+    inputLabelDynamic: "Dynamik",
+    optionDynamicNew: "Neu aufgetretener Nodulus",
+    optionDynamicStable: "Stabil oder abnehmend",
+    optionDynamicSlowlyGrowing:
       "Langsame Größenzunahme über mehrere (>1) Scans (nicht >1.5mm innerhalb von 12 Monaten)",
-    optionGrowingGrowing: "Größenzunahme (>1.5mm innerhalb von 12 Monaten)",
-    optionGrowingDecreasing: "Größenabnahme",
+    optionDynamicGrowing: "Größenzunahme (>1.5mm innerhalb von 12 Monaten)",
 
     inputLabelFindingCyst: "Zyste",
 
     hintCyst:
-      "Multple Zysten können auf eine alternative Diagnose wie Langerhans-Zell-Histiozytose (LCH) oder Lymphangioleiomyomatose (LAM) hinweisen und werden nicht nach Lung-RADS klassifiziert, es sei denn, es bestehen anderweitige suspekte Merkmale.",
+      "Multiple Zysten können auf eine alternative Diagnose wie Langerhans-Zell-Histiozytose (LCH) oder Lymphangioleiomyomatose (LAM) hinweisen und werden nicht nach Lung-RADS klassifiziert, es sei denn, es bestehen anderweitige suspekte Merkmale.",
 
     inputLabelWall: "Zystenwand",
     optionWallThin: "Dünn (gleichmäßig, <2mm)",
-    optionWallThick: "Dick, (>2mm - symmetrisch, asymmetrisch oder nodulär)",
+    optionWallThick: "Dick (>2mm - symmetrisch, asymmetrisch oder nodulär)",
 
     inputLabelFormation: "Zystenformation",
     optionFormationUnilocular: "Unilokular",
     optionFormationMultilocular: "Multilokular",
 
-    inputLabelGrowingUnilocular: "Dynamik (unilokular, dicke Wand)",
-    optionGrowingUnilocularStable: "Konstant",
-    optionGrowingUnilocularCystGrowing: "Größenzunahme der zystischen Komponente",
-    optionGrowingUnilocularWallGrowing: "Zunahme der Wand/nodulären Komponente",
+    inputLabelDynamicUnilocular: "Dynamik",
+    optionDynamicUnilocularStable: "Konstant oder abnehmend",
+    optionDynamicUnilocularCystGrowing: "Größenzunahme der zystischen Komponente",
+    optionDynamicUnilocularWallGrowing: "Zunahme der Wand/nodulären Komponente",
 
-    inputLabelGrowingMultilocular: "Dynamik (multilokular)",
-    optionGrowingMultilocularStable: "Konstant",
-    optionGrowingMultilocularCystGrowing: "Größenzunahme",
-    optionGrowingMultilocularNewlyMultilocular: "Multilokulare Zyste war zuvor unilokular",
-    optionGrowingMultilocularIncreasedSolid:
+    inputLabelDynamicMultilocular: "Dynamik",
+    optionDynamicMultilocularStable: "Konstant oder abnehmend",
+    optionDynmaicMultilocularCystGrowing: "Größenzunahme",
+    optionDynamicMultilocularNewlyMultilocular: "Multilokulare Zyste war zuvor unilokular",
+    optionDynmaicMultilocularIncreasedSolid:
       "Zunehmende/neue Verdichtung oder zunehmende Lobulierung",
 
-    inputLabelSuspicious: "Andere Befunde, die die Wahrscheinlichkeit für Lungenkrebs erhöhen",
+    inputLabelSuspicious: "Suspekte Befunde, die die Wahrscheinlichkeit für Lungenkrebs erhöhen",
     optionSuspiciousSpiculation: "Spikulierung",
     optionSuspiciousLymphadenopathy: "Lymphadenopathie",
     optionSuspiciousMetastasis: "Offensichtliche Metastasen",
-    optionSuspiciousGgnDoubled: "Mlchglasnodulus, welcher sich innerhalb 1 Jahres verdoppelt",
+    optionSuspiciousGgnDoubled: "Milchglasnodulus, welcher sich innerhalb 1 Jahres verdoppelt",
     optionSuspiciousOther: "Andere (siehe Freitext)",
 
     inputLabelSuspiciousOther: "Suspekte Befunde (andere)",
@@ -101,6 +99,6 @@ export default {
     category4B: "Lung-RADS 4B",
     category4X: "Lung-RADS 4X",
     thinWalledUnilocular:
-      "DÜnnwandige, einfache Zysten werden als benigne eingestuft und nicht im Rahmen von LungRADS klassifiziert.",
+      "Dünnwandige, einfache Zysten werden als benigne eingestuft und nicht im Rahmen von LungRADS klassifiziert.",
   },
 }

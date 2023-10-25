@@ -13,16 +13,16 @@ export type LungRads2022Data = {
   benignFeatures: "calcification" | "fat" | "none"
   structure: "solid" | "groundglass" | "partsolid"
   featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none"
-  longaxis: number
-  shortaxis: number
-  longaxisSolid: number
-  shortaxisSolid: number
+  longaxis: number | null
+  shortaxis: number | null
+  longaxisSolid: number | null
+  shortaxisSolid: number | null
   dynamic: "new" | "stable" | "slowly-growing" | "growing" | "decreasing"
   cyst: boolean
   wall: "thin" | "thick"
   formation: "unilocular" | "multilocular"
-  growingUnilocular: "stable" | "cyst-growing" | "wall-growing"
-  growingMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid"
+  dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing"
+  dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid"
   suspicious: "spiculation" | "lymphadenopathy" | "metastasis" | "other"
   suspiciousOther: string
   incidentalFindings: string
@@ -44,8 +44,8 @@ export const LungRads2022Report = () => {
     cyst,
     wall,
     formation,
-    growingUnilocular,
-    growingMultilocular,
+    dynamicUnilocular,
+    dynamicMultilocular,
     suspicious,
     suspiciousOther,
     incidentalFindings,
@@ -68,8 +68,8 @@ export const LungRads2022Report = () => {
     cyst,
     wall,
     formation,
-    growingUnilocular,
-    growingMultilocular,
+    dynamicUnilocular,
+    dynamicMultilocular,
     suspicious
   )
 
