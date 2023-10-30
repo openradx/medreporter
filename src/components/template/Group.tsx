@@ -14,10 +14,14 @@ interface GridGroupProps {
 export const Group = ({ label, extras, disabled, hidden, children }: GridGroupProps) => {
   if (!label) {
     return (
-      <>
+      <Box
+        sx={{
+          display: hidden ? "none" : undefined,
+        }}
+        my="sm"
+      >
         {children}
-        <Box sx={{ height: 0, flexBasis: "100%" }} />
-      </>
+      </Box>
     )
   }
   return (

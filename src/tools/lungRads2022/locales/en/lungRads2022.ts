@@ -129,7 +129,8 @@ export default {
     ClinicalEvaluation: "Referral for further clinical evaluation.",
     TissueSamplingPetFollowUp:
       "Diagnostic chest CT with or without contrast. PET/CT may be considered if there is a solid nodule or solid component of 8 mm or more. Tissue sampling. And/or referral for further clinical evaluation. Management depends on clinical evaluation, patient preference, and the probability of maligancy.",
-    SpecificFinding: "Management as appropriate to the finding.",
+    SpecificFinding:
+      "Management should adhere to available ACR Incidental Findings management recommendations (https://www.acr.org/Clinical-Resources/Incidental-Findings). See the quick guide for management of incidental findings (https://www.acr.org/-/media/ACR/Files/Lung-Cancer-Screening-Resources/March-2022-LCS-Incidental-Findings-Quick-Guide_F).",
 
     suspiciousSpiculation: "Spiculation",
     suspiciousLymphadenopathy: "Lymphadenopathy",

@@ -89,7 +89,7 @@ export default {
     optionDynamicMultilocularIncreasedSolid:
       "Zunehmende/neue Verdichtung oder zunehmende Lobulierung",
 
-    inputLabelDynamicTimeOfCyst: "Zeit der Stabilität/Abnahme der Zyste (Monate)",
+    inputLabelTimeOfDynamicCyst: "Zeit der Stabilität/Abnahme der Zyste (Monate)",
 
     inputLabelSuspicious: "Suspekte Befunde, die die Wahrscheinlichkeit für Lungenkrebs erhöhen",
     optionSuspiciousSpiculation: "Spikulierung",
@@ -131,11 +131,12 @@ export default {
     ClinicalEvaluation: "Referral for further clinical evaluation.",
     TissueSamplingPetFollowUp:
       "Diagnostische CT mit oder ohne Kontrastmittel. Eine PET-CT sollte erwogen werden, wenn ein solider Nodulus oder eine solide Komponente von 8 mm oder mehr vorliegt. Alternativ kann eine bioptische Sicherung erfolgen. Das Management hängt von der klinischen Bewertung, dem Patientenwunsch und der Wahrscheinlichkeit für Malignität ab.",
-    SpecificFinding: "Management entsprechend des Befundes.",
+    SpecificFinding:
+      "Das Management sollte nach den ACR Richtlinien zum Umgang mit inzidentellen Befunden erfolgen (https://www.acr.org/Clinical-Resources/Incidental-Findings). Siehe hierzu auch den entsprechenden Quick Guide (https://www.acr.org/-/media/ACR/Files/Lung-Cancer-Screening-Resources/March-2022-LCS-Incidental-Findings-Quick-Guide_F).",
 
     suspiciousSpiculation: "Spikulierung",
     suspiciousLymphadenopathy: "Lymphadenopathie",
-    suspiciousMetastasis: "Offensichtliche Metastasen",
+    suspiciousMetastasis: "offensichtliche Metastasen",
     suspiciousGgnDoubled: "Milchglasnodulus, welcher sich innerhalb 1 Jahres verdoppelt",
   },
 }

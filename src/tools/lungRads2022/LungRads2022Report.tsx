@@ -4,7 +4,7 @@ import { Statement } from "~/components/template/Statement"
 import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { useStructureData } from "~/hooks/useStructureData"
 import { i18nReport } from "./locales"
-import { defineLungRads2022, giveLungRads2022Recommendation } from "./lungRads2022Utils"
+import { Category, defineLungRads2022, giveLungRads2022Recommendation } from "./lungRads2022Utils"
 
 export type LungRads2022Data = {
   problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none"
@@ -26,7 +26,7 @@ export type LungRads2022Data = {
   dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing"
   dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid"
   timeOfDynamicCyst: number
-  suspicious: "spiculation" | "lymphadenopathy" | "metastasis" | "other"
+  suspicious: ("spiculation" | "lymphadenopathy" | "metastasis" | "GGN-doubled" | "other")[]
   suspiciousOther: string
   incidentalFindings: string
 }
@@ -84,7 +84,11 @@ export const LungRads2022Report = () => {
 
   let conclusion = t(category)
 
-  if (incidentalFindings) {
+  if (
+    incidentalFindings &&
+    category !== Category.NoCategory &&
+    category !== Category.thinWalledUnilocular
+  ) {
     conclusion = `${t(category)} S`
   }
 
@@ -94,20 +98,42 @@ export const LungRads2022Report = () => {
     featuresSolid
   )
 
+  const suspiciousSummaryList: string[] = []
+  if (suspicious?.includes("spiculation"))
+    suspiciousSummaryList.push(t("LungRads2022.suspiciousSpiculation"))
+
+  if (suspicious?.includes("lymphadenopathy"))
+    suspiciousSummaryList.push(t("LungRads2022.suspiciousLymphadenopathy"))
+
+  if (suspicious?.includes("metastasis"))
+    suspiciousSummaryList.push(t("LungRads2022.suspiciousMetastasis"))
+
+  if (suspiciousSummaryList?.includes("GGN-doubled"))
+    suspiciousSummaryList.push(t("LungRads2022.suspiciousGgnDoubled"))
+
+  if (suspicious?.includes("other") && suspiciousOther) suspiciousSummaryList.push(suspiciousOther)
+
+  const suspiciousSummary = suspiciousSummaryList.join(", ")
+
   return (
     <Report>
-      <Statement>
-        {t("LungRads2022.category")}: {conclusion}
-      </Statement>
-      <Paragraph hidden={suspicious?.length === 0}>
+      <Paragraph title="Lung-RADS v2022">
+        <br />
         <Statement>
-          {t("LungRads2022.reasonForX")}: {suspicious}, {suspiciousOther}
+          {t("LungRads2022.category")}: {conclusion}
+        </Statement>
+      </Paragraph>
+      <Paragraph hidden={category !== Category.Category4X}>
+        <Statement>
+          {t("LungRads2022.reasonForX")}: {suspiciousSummary}
+          <br />
         </Statement>
       </Paragraph>
       <Statement>
         {t("LungRads2022.recommendation")}: {t(recommendation)}
       </Statement>
-      <Paragraph hidden={!incidentalFindings}>
+      <br />
+      <Paragraph hidden={!incidentalFindings || category === Category.NoCategory}>
         <Statement>
           {t("LungRads2022.incidentalFindings")}: {incidentalFindings}
         </Statement>

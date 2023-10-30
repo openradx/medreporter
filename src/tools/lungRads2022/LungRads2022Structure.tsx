@@ -216,7 +216,7 @@ export const LungRads2022Structure = () => {
               label={t("LungRads2022.inputLabelTimeOfDynamicNodule")}
               min={0}
               precision={0}
-              hidden={dynamic !== "stable"}
+              hidden={dynamic !== "stable" || timepoint !== "follow-up"}
             />
           </Layout>
         </FindingField>
@@ -247,75 +247,78 @@ export const LungRads2022Structure = () => {
               ]}
             />
           </Layout>
-          <MultipleChoiceField
-            variant="checkbox"
-            id="dynamicUnilocular"
-            label={t("LungRads2022.inputLabelDynamicUnilocular")}
-            hidden={timepoint !== "follow-up" || formation !== "unilocular" || wall !== "thick"}
-            options={[
-              { value: "stable", label: t("LungRads2022.optionDynamicUnilocularStable") },
-              {
-                value: "cyst-growing",
-                label: t("LungRads2022.optionDynamicUnilocularCystGrowing"),
-              },
-              {
-                value: "wall-growing",
-                label: t("LungRads2022.optionDynamicUnilocularWallGrowing"),
-              },
-            ]}
-          />
-          <SingleChoiceField
-            variant="radio"
-            id="dynamicMultilocular"
-            label={t("LungRads2022.inputLabelDynamicMultilocular")}
-            hidden={timepoint !== "follow-up" || formation !== "multilocular"}
-            options={[
-              { value: "stable", label: t("LungRads2022.optionDynamicMultilocularStable") },
-              {
-                value: "cyst-growing",
-                label: t("LungRads2022.optionDynamicMultilocularCystGrowing"),
-              },
-              {
-                value: "newly-multilocular",
-                label: t("LungRads2022.optionDynamicMultilocularNewlyMultilocular"),
-              },
-              {
-                value: "increased-solid",
-                label: t("LungRads2022.optionDynamicMultilocularIncreasedSolid"),
-              },
-            ]}
-          />
-          <NumberField
-            id="timeOfDynamicCyst"
-            label={t("LungRads2022.inputLabelTimeOfDynamicCyst")}
-            min={0}
-            precision={0}
-            hidden={dynamicMultilocular !== "stable" && dynamicUnilocular !== "stable"}
-          />
+          <Layout>
+            <MultipleChoiceField
+              variant="checkbox"
+              id="dynamicUnilocular"
+              label={t("LungRads2022.inputLabelDynamicUnilocular")}
+              hidden={timepoint !== "follow-up" || formation !== "unilocular" || wall !== "thick"}
+              options={[
+                { value: "stable", label: t("LungRads2022.optionDynamicUnilocularStable") },
+                {
+                  value: "cyst-growing",
+                  label: t("LungRads2022.optionDynamicUnilocularCystGrowing"),
+                },
+                {
+                  value: "wall-growing",
+                  label: t("LungRads2022.optionDynamicUnilocularWallGrowing"),
+                },
+              ]}
+            />
+            <SingleChoiceField
+              variant="radio"
+              id="dynamicMultilocular"
+              label={t("LungRads2022.inputLabelDynamicMultilocular")}
+              hidden={timepoint !== "follow-up" || formation !== "multilocular"}
+              options={[
+                { value: "stable", label: t("LungRads2022.optionDynamicMultilocularStable") },
+                {
+                  value: "cyst-growing",
+                  label: t("LungRads2022.optionDynamicMultilocularCystGrowing"),
+                },
+                {
+                  value: "newly-multilocular",
+                  label: t("LungRads2022.optionDynamicMultilocularNewlyMultilocular"),
+                },
+                {
+                  value: "increased-solid",
+                  label: t("LungRads2022.optionDynamicMultilocularIncreasedSolid"),
+                },
+              ]}
+            />
+            <NumberField
+              id="timeOfDynamicCyst"
+              label={t("LungRads2022.inputLabelTimeOfDynamicCyst")}
+              min={0}
+              precision={0}
+              hidden={dynamicMultilocular !== "stable" && dynamicUnilocular !== "stable"}
+            />
+          </Layout>
         </FindingField>
-        <Layout>
-          <MultipleChoiceField
-            variant="checkbox"
-            id="suspicious"
-            label={t("LungRads2022.inputLabelSuspicious")}
-            hidden={problematicExam !== "none"}
-            options={[
-              { value: "spiculation", label: t("LungRads2022.optionSuspiciousSpiculation") },
-              {
-                value: "lymphadenopathy",
-                label: t("LungRads2022.optionSuspiciousLymphadenopathy"),
-              },
-              { value: "metastasis", label: t("LungRads2022.optionSuspiciousMetastasis") },
-              { value: "GGN-doubled", label: t("LungRads2022.optionSuspiciousGgnDoubled") },
-              { value: "other", label: t("LungRads2022.optionSuspiciousOther") },
-            ]}
-          />
-          <FreeTextField
-            id="suspiciousOther"
-            label={t("LungRads2022.inputLabelSuspiciousOther")}
-            hidden={!suspicious?.includes("other")}
-          />
-        </Layout>
+        <Group hidden={problematicExam !== "none"}>
+          <Layout>
+            <MultipleChoiceField
+              variant="checkbox"
+              id="suspicious"
+              label={t("LungRads2022.inputLabelSuspicious")}
+              options={[
+                { value: "spiculation", label: t("LungRads2022.optionSuspiciousSpiculation") },
+                {
+                  value: "lymphadenopathy",
+                  label: t("LungRads2022.optionSuspiciousLymphadenopathy"),
+                },
+                { value: "metastasis", label: t("LungRads2022.optionSuspiciousMetastasis") },
+                { value: "GGN-doubled", label: t("LungRads2022.optionSuspiciousGgnDoubled") },
+                { value: "other", label: t("LungRads2022.optionSuspiciousOther") },
+              ]}
+            />
+            <FreeTextField
+              id="suspiciousOther"
+              label={t("LungRads2022.inputLabelSuspiciousOther")}
+              hidden={!suspicious?.includes("other")}
+            />
+          </Layout>
+        </Group>
         <Layout>
           <FreeTextField
             multiline

@@ -45,7 +45,7 @@ export const defineLungRads2022 = (
   dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing",
   dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid",
   timeOfDynamicCyst: number,
-  suspicious: "spiculation" | "lymphadenopathy" | "metastasis" | "other"
+  suspicious: ("spiculation" | "lymphadenopathy" | "metastasis" | "GGN-doubled" | "other")[]
 ): LungRads2022Result => {
   const averageDiameter: number | null = calcAverageDiameter(longaxis, shortaxis)
   const averageDiameterSolid: number | null = calcAverageDiameter(longaxisSolid, shortaxisSolid)
@@ -256,6 +256,8 @@ export const giveLungRads2022Recommendation = (
     } else {
       recommendation = Recommendation.TissueSamplingPetFollowUp
     }
+  } else if (category === Category.Category4X) {
+    recommendation = Recommendation.TissueSamplingPetFollowUp
   }
 
   return { recommendation }
