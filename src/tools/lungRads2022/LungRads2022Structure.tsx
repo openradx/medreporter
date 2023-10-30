@@ -29,9 +29,12 @@ export const LungRads2022Structure = () => {
     nodule,
     benignFeatures,
     structure,
+    dynamic,
     cyst,
     formation,
     wall,
+    dynamicUnilocular,
+    dynamicMultilocular,
     suspicious,
   } = useStructureData() as LungRads2022Data
 
@@ -70,11 +73,38 @@ export const LungRads2022Structure = () => {
           <SingleChoiceField
             variant="radio"
             id="timepoint"
-            label={t("LungRads2022.inputLabelScan")}
+            label={t("LungRads2022.inputLabelTimepoint")}
             hidden={problematicExam !== "none"}
             options={[
-              { value: "baseline", label: t("LungRads2022.optionScanBaseline") },
-              { value: "follow-up", label: t("LungRads2022.optionScanFollowUp") },
+              { value: "baseline", label: t("LungRads2022.optionTimepointBaseline") },
+              { value: "follow-up", label: t("LungRads2022.optionTimepointFollowUp") },
+            ]}
+          />
+          <SingleChoiceField
+            variant="select"
+            id="previous"
+            label={t("LungRads2022.inputLabelPrevious")}
+            hidden={timepoint !== "follow-up" || problematicExam !== "none"}
+            options={[
+              { value: "0", label: t("LungRads2022.optionPrevious0") },
+              { value: "1", label: t("LungRads2022.optionPrevious1") },
+              {
+                value: "2",
+                label: t("LungRads2022.optionPrevious2"),
+              },
+              {
+                value: "3",
+                label: t("LungRads2022.optionPrevious3"),
+              },
+              {
+                value: "4A",
+                label: t("LungRads2022.optionPrevious4A"),
+              },
+              { value: "4B", label: t("LungRads2022.optionPrevious4B") },
+              {
+                value: "5",
+                label: t("LungRads2022.optionPrevious4X"),
+              },
             ]}
           />
         </Layout>
@@ -181,6 +211,13 @@ export const LungRads2022Structure = () => {
                 { value: "stable", label: t("LungRads2022.optionDynamicStable") },
               ]}
             />
+            <NumberField
+              id="timeOfDynamicNodule"
+              label={t("LungRads2022.inputLabelTimeOfDynamicNodule")}
+              min={0}
+              precision={0}
+              hidden={dynamic !== "stable"}
+            />
           </Layout>
         </FindingField>
         <FindingField
@@ -247,6 +284,13 @@ export const LungRads2022Structure = () => {
                 label: t("LungRads2022.optionDynamicMultilocularIncreasedSolid"),
               },
             ]}
+          />
+          <NumberField
+            id="timeOfDynamicCyst"
+            label={t("LungRads2022.inputLabelTimeOfDynamicCyst")}
+            min={0}
+            precision={0}
+            hidden={dynamicMultilocular !== "stable" && dynamicUnilocular !== "stable"}
           />
         </FindingField>
         <Layout>

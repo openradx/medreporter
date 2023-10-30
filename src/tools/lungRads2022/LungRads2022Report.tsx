@@ -4,11 +4,12 @@ import { Statement } from "~/components/template/Statement"
 import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { useStructureData } from "~/hooks/useStructureData"
 import { i18nReport } from "./locales"
-import { defineLungRads2022 } from "./lungRads2022Utils"
+import { defineLungRads2022, giveLungRads2022Recommendation } from "./lungRads2022Utils"
 
 export type LungRads2022Data = {
-  timepoint: "baseline" | "follow-up"
   problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none"
+  timepoint: "baseline" | "follow-up"
+  previous: "0" | "1" | "2" | "3" | "4A" | "4B" | "4X"
   nodule: boolean
   benignFeatures: "calcification" | "fat" | "none"
   structure: "solid" | "groundglass" | "partsolid"
@@ -18,11 +19,13 @@ export type LungRads2022Data = {
   longaxisSolid: number | null
   shortaxisSolid: number | null
   dynamic: "new" | "stable" | "slowly-growing" | "growing" | "decreasing"
+  timeOfDynamicNodule: number
   cyst: boolean
   wall: "thin" | "thick"
   formation: "unilocular" | "multilocular"
   dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing"
   dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid"
+  timeOfDynamicCyst: number
   suspicious: "spiculation" | "lymphadenopathy" | "metastasis" | "other"
   suspiciousOther: string
   incidentalFindings: string
@@ -30,8 +33,9 @@ export type LungRads2022Data = {
 
 export const LungRads2022Report = () => {
   const {
-    timepoint,
     problematicExam,
+    timepoint,
+    previous,
     nodule,
     benignFeatures,
     structure,
@@ -41,11 +45,13 @@ export const LungRads2022Report = () => {
     longaxisSolid,
     shortaxisSolid,
     dynamic,
+    timeOfDynamicNodule,
     cyst,
     wall,
     formation,
     dynamicUnilocular,
     dynamicMultilocular,
+    timeOfDynamicCyst,
     suspicious,
     suspiciousOther,
     incidentalFindings,
@@ -54,8 +60,9 @@ export const LungRads2022Report = () => {
   const { t } = useMicroTranslation(i18nReport)
 
   const { category } = defineLungRads2022(
-    timepoint,
     problematicExam,
+    timepoint,
+    previous,
     nodule,
     benignFeatures,
     structure,
@@ -65,11 +72,13 @@ export const LungRads2022Report = () => {
     longaxisSolid,
     shortaxisSolid,
     dynamic,
+    timeOfDynamicNodule,
     cyst,
     wall,
     formation,
     dynamicUnilocular,
     dynamicMultilocular,
+    timeOfDynamicCyst,
     suspicious
   )
 
@@ -79,17 +88,31 @@ export const LungRads2022Report = () => {
     conclusion = `${t(category)} S`
   }
 
+  const { recommendation } = giveLungRads2022Recommendation(
+    category,
+    problematicExam,
+    featuresSolid
+  )
+
   return (
     <Report>
       <Statement>
-        <Paragraph>{conclusion}</Paragraph>
-        <Paragraph hidden={suspicious?.length === 0}>
-          Reason for X:
-          {suspicious}
-          {suspiciousOther}
-        </Paragraph>
+        {t("LungRads2022.category")}: {conclusion}
       </Statement>
-      <Paragraph>{incidentalFindings}</Paragraph>
+      <Paragraph hidden={suspicious?.length === 0}>
+        <Statement>
+          {t("LungRads2022.reasonForX")}: {suspicious}, {suspiciousOther}
+        </Statement>
+      </Paragraph>
+      <Statement>
+        {t("LungRads2022.recommendation")}: {t(recommendation)}
+      </Statement>
+      <Paragraph hidden={!incidentalFindings}>
+        <Statement>
+          {t("LungRads2022.incidentalFindings")}: {incidentalFindings}
+        </Statement>
+        <Paragraph>{t("LungRads2022.SpecificFinding")}</Paragraph>
+      </Paragraph>
     </Report>
   )
 }

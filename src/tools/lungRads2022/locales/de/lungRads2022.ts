@@ -7,16 +7,25 @@ export default {
     toolHint:
       "Klassifizierung zur Unterstützung bei Befunden in der Niedrigdosis-CT-Screeninguntersuchung auf Lungenkrebs und zur Standardisierung des Follow-up. Nicht geeignet zur Klassifizierung inzidenteller Rundherde, siehe hierzu Fleischner 2017.",
 
-    inputLabelScan: "Zeitpunkt",
-    optionScanBaseline: "Baseline",
-    optionScanFollowUp: "Follow-up",
-
     inputLabelExam: "Trifft eine der folgenden Aussagen auf die Untersuchung zu?",
     optionExamPriorCT:
       "Es existieren Voruntersuchungen des Patienten, welche aktuell nicht verfügbar sind.",
     optionExamNotEvaluable: "Ein Teil der oder die gesamte Lunge sind nicht evaluierbar.",
     optionExamInfectious: "Es bestehen Zeichen einer entzündlichen oder infektiösen Erkrankung.",
     optionExamNone: "Keine der Aussagen trifft zu.",
+
+    inputLabelTimepoint: "Zeitpunkt",
+    optionTimepointBaseline: "Baseline",
+    optionTimepointFollowUp: "Follow-up",
+
+    inputLabelPrevious: "Vorherige Klassifikation",
+    optionPrevious0: "LungRADS 0",
+    optionPrevious1: "LungRADS 1",
+    optionPrevious2: "LungRADS 2",
+    optionPrevious3: "LungRADS 3",
+    optionPrevious4A: "LungRADS 4A",
+    optionPrevious4B: "LungRADS 4B",
+    optionPrevious4X: "LungRADS 4X",
 
     inputLabelFindingNodule: "Rundherd",
 
@@ -53,6 +62,8 @@ export default {
       "Langsame Größenzunahme über mehrere (>1) Scans (nicht >1.5mm innerhalb von 12 Monaten)",
     optionDynamicGrowing: "Größenzunahme (>1.5mm innerhalb von 12 Monaten)",
 
+    inputLabelTimeOfDynamicNodule: "Zeit der Stabilität/Abnahme des Nodulus (Monate)",
+
     inputLabelFindingCyst: "Zyste",
 
     hintCyst:
@@ -73,10 +84,12 @@ export default {
 
     inputLabelDynamicMultilocular: "Dynamik",
     optionDynamicMultilocularStable: "Konstant oder abnehmend",
-    optionDynmaicMultilocularCystGrowing: "Größenzunahme",
+    optionDynamicMultilocularCystGrowing: "Größenzunahme",
     optionDynamicMultilocularNewlyMultilocular: "Multilokulare Zyste war zuvor unilokular",
-    optionDynmaicMultilocularIncreasedSolid:
+    optionDynamicMultilocularIncreasedSolid:
       "Zunehmende/neue Verdichtung oder zunehmende Lobulierung",
+
+    inputLabelDynamicTimeOfCyst: "Zeit der Stabilität/Abnahme der Zyste (Monate)",
 
     inputLabelSuspicious: "Suspekte Befunde, die die Wahrscheinlichkeit für Lungenkrebs erhöhen",
     optionSuspiciousSpiculation: "Spikulierung",
@@ -90,6 +103,12 @@ export default {
     inputLabelIncidentalFindings:
       "Zufallsbefunde (unabhängig von Lungenkrebs, fügt den S-Modifikator hinzu)",
 
+    // Report
+    category: "Klassifikation",
+    recommendation: "Handlungsempfehlung",
+    reasonForX: "Grund für die Heraufstufung auf 4X",
+    incidentalFindings: "Signifikante Nebenbefunde",
+
     noCategory: "Keine Klassifikation möglich",
     category0: "Lung-RADS 0",
     category1: "Lung-RADS 1",
@@ -100,5 +119,23 @@ export default {
     category4X: "Lung-RADS 4X",
     thinWalledUnilocular:
       "Dünnwandige, einfache Zysten werden als benigne eingestuft und nicht im Rahmen von LungRADS klassifiziert.",
+
+    NoRecommendationPossible: "Keine Handlungsempfehlung möglich.",
+    Comparison: "Vergleich zu vorherigen CT-Bildgebungen.",
+    Additional: "Erneute CT-Bildgebung im Rahmen des Lungenkarzinoms-Screenings.",
+    Ct1To3Months: "Low dose CT in 1 bis 3 Monaten.",
+    Ct12Months: "Low dose CT in 12 Monaten.",
+    Ct6Months: "Low dose CT in 6 Monaten.",
+    Ct3MonthsOrPet:
+      "Low dose CT in 3 Monaten. Eine PET-CT sollte erwogen werden, wenn ein solider Nodulus oder eine solide Komponente von 8 mm oder mehr vorliegt.",
+    ClinicalEvaluation: "Referral for further clinical evaluation.",
+    TissueSamplingPetFollowUp:
+      "Diagnostische CT mit oder ohne Kontrastmittel. Eine PET-CT sollte erwogen werden, wenn ein solider Nodulus oder eine solide Komponente von 8 mm oder mehr vorliegt. Alternativ kann eine bioptische Sicherung erfolgen. Das Management hängt von der klinischen Bewertung, dem Patientenwunsch und der Wahrscheinlichkeit für Malignität ab.",
+    SpecificFinding: "Management entsprechend des Befundes.",
+
+    suspiciousSpiculation: "Spikulierung",
+    suspiciousLymphadenopathy: "Lymphadenopathie",
+    suspiciousMetastasis: "Offensichtliche Metastasen",
+    suspiciousGgnDoubled: "Milchglasnodulus, welcher sich innerhalb 1 Jahres verdoppelt",
   },
 }
