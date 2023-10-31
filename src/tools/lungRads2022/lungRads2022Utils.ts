@@ -179,25 +179,31 @@ export const defineLungRads2022 = (
         }
       }
     }
-  } else if (
+  }
+
+  if (
     previous === "3" &&
     timepoint === "follow-up" &&
-    (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable") &&
-    (timeOfDynamicNodule >= 3 || timeOfDynamicCyst >= 3)
+    (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable")
   ) {
-    category = Category.Category2
+    if (timeOfDynamicNodule >= 3 || timeOfDynamicCyst >= 3) {
+      category = Category.Category2
+    } else {
+      category = Category.Category3
+    }
   } else if (
     previous === "4A" &&
     timepoint === "follow-up" &&
     featuresSolid !== "segmental-airway" &&
     featuresSolid !== "subsegmental-airway" &&
     structure !== "groundglass" &&
-    averageDiameter &&
-    averageDiameter < 30 &&
-    (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable") &&
-    (timeOfDynamicNodule >= 6 || timeOfDynamicCyst >= 6)
+    (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable")
   ) {
-    category = Category.Category3
+    if (timeOfDynamicNodule >= 6 || timeOfDynamicCyst >= 6) {
+      category = Category.Category3
+    } else {
+      category = Category.Category4A
+    }
   }
 
   if (
