@@ -219,16 +219,16 @@ export const defineLungRads2022 = (
 }
 
 export enum Recommendation {
-  NoRecommendationPossible = "LungRads2022.NoRecommendationPossible",
-  Comparison = "LungRads2022.Comparison",
-  Additional = "LungRads2022.Additional",
-  Ct1To3Months = "LungRads2022.Ct1To3Months",
-  Ct12Months = "LungRads2022.Ct12Months",
-  Ct6Months = "LungRads2022.Ct6Months",
-  Ct3MonthsOrPet = "LungRads2022.Ct3MonthsOrPet",
-  ClinicalEvaluation = "LungRads2022.ClinicalEvaluation",
-  TissueSamplingPetFollowUp = "LungRads2022.TissueSamplingPetFollowUp",
-  SpecificFinding = "LungRads2022.SpecificFinding",
+  NoRecommendationPossible = "LungRads2022.noRecommendationPossible",
+  Comparison = "LungRads2022.comparison",
+  Additional = "LungRads2022.additional",
+  Ct1To3Months = "LungRads2022.ct1To3Months",
+  Ct12Months = "LungRads2022.ct12Months",
+  Ct6Months = "LungRads2022.ct6Months",
+  Ct3MonthsOrPet = "LungRads2022.ct3MonthsOrPet",
+  ClinicalEvaluation = "LungRads2022.clinicalEvaluation",
+  TissueSamplingPetFollowUp = "LungRads2022.tissueSamplingPetFollowUp",
+  SpecificFinding = "LungRads2022.specificFinding",
 }
 
 export type LungRads2022Recommendation = { recommendation: Recommendation }

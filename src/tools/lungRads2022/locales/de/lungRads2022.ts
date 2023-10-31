@@ -40,7 +40,7 @@ export default {
     optionStructurePartsolid: "Teils solide",
     optionStructureGroundglass: "Milchglas",
 
-    inputLabelFeaturesSolid: "Zeigt der Rundherd eine der folgendenen Eigenschaften?",
+    inputLabelFeaturesSolid: "Zeigt der Rundherd eine der folgenden Eigenschaften?",
     optionFeaturesSolidSmoothMargins:
       "Pleuranah mit glatter Begrenzung (& oval, linsenförmig oder dreieckig geformt)",
     optionFeaturesSolidSubsegmentalAirway: "Assoziiert zu subsegmentalem Bronchus",
@@ -54,6 +54,9 @@ export default {
     groupLabelDiameterSolid: "Durchmesser (mm) der soliden Komponente",
     inputLabelSolidLongaxis: "LAD der soliden Komponente",
     inputLabelSolidShortaxis: "KAD der soliden Komponente",
+
+    hintSolidMean:
+      "Der mittlere Durchmesser der soliden Komponente kann nicht größer sein als der Gesamtdurchmesser des Nodulus.",
 
     inputLabelDynamic: "Dynamik",
     optionDynamicNew: "Neu aufgetretener Nodulus",
@@ -103,7 +106,9 @@ export default {
     inputLabelIncidentalFindings:
       "Zufallsbefunde (unabhängig von Lungenkrebs, fügt den S-Modifikator hinzu)",
 
-    // Report
+    /**
+     * Report
+     */
     category: "Klassifikation",
     recommendation: "Handlungsempfehlung",
     reasonForX: "Grund für die Heraufstufung auf 4X",
@@ -120,18 +125,18 @@ export default {
     thinWalledUnilocular:
       "Dünnwandige, einfache Zysten werden als benigne eingestuft und nicht im Rahmen von LungRADS klassifiziert.",
 
-    NoRecommendationPossible: "Keine Handlungsempfehlung möglich.",
-    Comparison: "Vergleich zu vorherigen CT-Bildgebungen.",
-    Additional: "Erneute CT-Bildgebung im Rahmen des Lungenkarzinoms-Screenings.",
-    Ct1To3Months: "Low dose CT in 1 bis 3 Monaten.",
-    Ct12Months: "Low dose CT in 12 Monaten.",
-    Ct6Months: "Low dose CT in 6 Monaten.",
-    Ct3MonthsOrPet:
+    noRecommendationPossible: "Keine Handlungsempfehlung möglich.",
+    comparison: "Vergleich zu vorherigen CT-Bildgebungen.",
+    additional: "Erneute CT-Bildgebung im Rahmen des Lungenkarzinoms-Screenings.",
+    ct1To3Months: "Low dose CT in 1 bis 3 Monaten.",
+    ct12Months: "Low dose CT in 12 Monaten.",
+    ct6Months: "Low dose CT in 6 Monaten.",
+    ct3MonthsOrPet:
       "Low dose CT in 3 Monaten. Eine PET-CT sollte erwogen werden, wenn ein solider Nodulus oder eine solide Komponente von 8 mm oder mehr vorliegt.",
-    ClinicalEvaluation: "Referral for further clinical evaluation.",
-    TissueSamplingPetFollowUp:
+    clinicalEvaluation: "Referral for further clinical evaluation.",
+    tissueSamplingPetFollowUp:
       "Diagnostische CT mit oder ohne Kontrastmittel. Eine PET-CT sollte erwogen werden, wenn ein solider Nodulus oder eine solide Komponente von 8 mm oder mehr vorliegt. Alternativ kann eine bioptische Sicherung erfolgen. Das Management hängt von der klinischen Bewertung, dem Patientenwunsch und der Wahrscheinlichkeit für Malignität ab.",
-    SpecificFinding:
+    specificFinding:
       "Das Management sollte nach den ACR Richtlinien zum Umgang mit inzidentellen Befunden erfolgen (https://www.acr.org/Clinical-Resources/Incidental-Findings). Siehe hierzu auch den entsprechenden Quick Guide (https://www.acr.org/-/media/ACR/Files/Lung-Cancer-Screening-Resources/March-2022-LCS-Incidental-Findings-Quick-Guide_F).",
 
     suspiciousSpiculation: "Spikulierung",

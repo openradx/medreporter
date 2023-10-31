@@ -53,7 +53,10 @@ export default {
     inputLabelSolidLongaxis: "Long axis diameter of the solid component",
     inputLabelSolidShortaxis: "Short axis diameter of the solid component",
 
-    inputLabelDynamic: "Is the nodule growig?",
+    hintSolidMean:
+      "Mean diameter of the solid component cannot be larger than the total mean diameter.",
+
+    inputLabelDynamic: "Is the nodule growing?",
     optionDynamicNew: "New nodule",
     optionDynamicStable: "Stable or decreasing",
     optionDynamicSlowlyGrowing:
@@ -100,7 +103,9 @@ export default {
     inputLabelIncidentalFindings:
       "Significant incidental finding (unrelated to lung cancer, adds S-Modifier)",
 
-    // Report
+    /**
+     * Report
+     */
 
     category: "Category",
     recommendation: "Recommendation of action",
@@ -118,18 +123,18 @@ export default {
     thinWalledUnilocular:
       "Thin-walled unilocular cysts are considered benign and are not scored in LUNG-RADS.",
 
-    NoRecommendationPossible: "No recommendation possible.",
-    Comparison: "Comparison to prior chest CT.",
-    Additional: "Additional lung cancer screening CT imaging needed.",
-    Ct1To3Months: "Low dose CT in 1 to 3 months.",
-    Ct12Months: "Low dose CT in 12 months.",
-    Ct6Months: "Low dose CT in 6 months.",
-    Ct3MonthsOrPet:
+    noRecommendationPossible: "No recommendation possible.",
+    comparison: "Comparison to prior chest CT.",
+    additional: "Additional lung cancer screening CT imaging needed.",
+    ct1To3Months: "Low dose CT in 1 to 3 months.",
+    ct12Months: "Low dose CT in 12 months.",
+    ct6Months: "Low dose CT in 6 months.",
+    ct3MonthsOrPet:
       "Low dose CT in 3 months. PET/CT may be considered if there is a solid nodule or solid component of 8 mm or more.",
-    ClinicalEvaluation: "Referral for further clinical evaluation.",
-    TissueSamplingPetFollowUp:
+    clinicalEvaluation: "Referral for further clinical evaluation.",
+    tissueSamplingPetFollowUp:
       "Diagnostic chest CT with or without contrast. PET/CT may be considered if there is a solid nodule or solid component of 8 mm or more. Tissue sampling. And/or referral for further clinical evaluation. Management depends on clinical evaluation, patient preference, and the probability of maligancy.",
-    SpecificFinding:
+    specificFinding:
       "Management should adhere to available ACR Incidental Findings management recommendations (https://www.acr.org/Clinical-Resources/Incidental-Findings). See the quick guide for management of incidental findings (https://www.acr.org/-/media/ACR/Files/Lung-Cancer-Screening-Resources/March-2022-LCS-Incidental-Findings-Quick-Guide_F).",
 
     suspiciousSpiculation: "Spiculation",

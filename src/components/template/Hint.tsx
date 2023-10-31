@@ -6,10 +6,14 @@ import { RiLightbulbLine as InfoIcon } from "react-icons/ri"
 interface HintProps {
   level?: "info" | "warning" | "error"
   children: ReactNode
+  hidden?: boolean
 }
 
-export const Hint = ({ level, children }: HintProps) => (
+export const Hint = ({ level, children, hidden = false }: HintProps) => (
   <Alert
+    sx={{
+      display: hidden ? "none" : undefined,
+    }}
     icon={level === "warning" ? <WarningIcon /> : <InfoIcon />}
     color={level === "warning" ? "yellow" : "blue"}
     my="sm"

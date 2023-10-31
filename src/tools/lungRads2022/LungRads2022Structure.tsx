@@ -29,6 +29,10 @@ export const LungRads2022Structure = () => {
     nodule,
     benignFeatures,
     structure,
+    longaxis,
+    shortaxis,
+    shortaxisSolid,
+    longaxisSolid,
     dynamic,
     cyst,
     formation,
@@ -198,6 +202,19 @@ export const LungRads2022Structure = () => {
               precision={1}
             />
           </Group>
+          <Hint
+            level="warning"
+            hidden={
+              structure !== "partsolid" ||
+              !longaxis ||
+              !shortaxis ||
+              !longaxisSolid ||
+              !shortaxisSolid ||
+              (longaxis + shortaxis) / 2 >= (longaxisSolid + shortaxisSolid) / 2
+            }
+          >
+            {t("LungRads2022.hintSolidMean")}
+          </Hint>
           <Layout>
             <SingleChoiceField
               variant="radio"
