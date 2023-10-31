@@ -248,8 +248,8 @@ export const LungRads2022Structure = () => {
             />
           </Layout>
           <Layout>
-            <MultipleChoiceField
-              variant="checkbox"
+            <SingleChoiceField
+              variant="radio"
               id="dynamicUnilocular"
               label={t("LungRads2022.inputLabelDynamicUnilocular")}
               hidden={timepoint !== "follow-up" || formation !== "unilocular" || wall !== "thick"}
