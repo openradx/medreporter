@@ -117,27 +117,31 @@ export const LungRads2022Report = () => {
 
   return (
     <Report>
-      <Paragraph title="Lung-RADS v2022">
+      <Paragraph>
         <br />
         <Statement>
-          {t("LungRads2022.category")}: {conclusion}
+          <h3>
+            {t("LungRads2022.category")}: {conclusion}
+          </h3>
+          <hr />
         </Statement>
       </Paragraph>
       <Paragraph hidden={category !== Category.Category4X}>
         <Statement>
           {t("LungRads2022.reasonForX")}: {suspiciousSummary}
-          <br />
         </Statement>
+        <br /> <br />
       </Paragraph>
       <Statement>
         {t("LungRads2022.recommendation")}: {t(recommendation)}
       </Statement>
-      <br />
+      <hr />
       <Paragraph hidden={!incidentalFindings || category === Category.NoCategory}>
         <Statement>
           {t("LungRads2022.incidentalFindings")}: {incidentalFindings}
         </Statement>
-        <Paragraph>{t("LungRads2022.SpecificFinding")}</Paragraph>
+        <br /> <br />
+        <Statement>{t("LungRads2022.specificFinding")}</Statement>
       </Paragraph>
     </Report>
   )

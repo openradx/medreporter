@@ -75,7 +75,10 @@ export const defineLungRads2022 = (
       } else if (dynamic === "stable" || dynamic === "growing") {
         category = Category.Category4B
       }
-    } else if (structure === "solid") {
+    } else if (
+      (structure === "solid" && featuresSolid === "none") ||
+      featuresSolid === "smooth-margins"
+    ) {
       if (timepoint === "baseline") {
         if (averageDiameter !== null && averageDiameter < 6) {
           category = Category.Category2

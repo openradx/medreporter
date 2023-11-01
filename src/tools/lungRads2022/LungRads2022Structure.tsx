@@ -203,7 +203,7 @@ export const LungRads2022Structure = () => {
             />
           </Group>
           <Hint
-            level="warning"
+            level="error"
             hidden={
               structure !== "partsolid" ||
               !longaxis ||

@@ -124,7 +124,7 @@ LoginLink:
 LoginPage:
   pageTitle: Login
 LungRads2022Page:
-  toolTitle: LungRADS
+  toolTitle: Lung-RADS
 MainLayoutFallback:
   titleAuthenticationError: Authentication error
   messageAuthenticationError: >
