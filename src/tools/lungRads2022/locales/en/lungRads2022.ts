@@ -137,6 +137,9 @@ export default {
     specificFinding:
       "Management should adhere to available ACR Incidental Findings management recommendations (https://www.acr.org/Clinical-Resources/Incidental-Findings). See the quick guide for management of incidental findings (https://www.acr.org/-/media/ACR/Files/Lung-Cancer-Screening-Resources/March-2022-LCS-Incidental-Findings-Quick-Guide_F).",
 
+    additionSlowlyGrowing:
+      "Slow growing nodules may not have increased metabolic activity on PET/CT; therefore, biopsy, if feasible, or surgical evaluation may be the most appropriate management recommendation.",
+
     suspiciousSpiculation: "Spiculation",
     suspiciousLymphadenopathy: "Lymphadenopathy",
     suspiciousMetastasis: "Frank metastatic disease",

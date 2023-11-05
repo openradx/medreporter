@@ -37,7 +37,7 @@ export const defineLungRads2022 = (
   shortaxis: number | null,
   longaxisSolid: number | null,
   shortaxisSolid: number | null,
-  dynamic: "new" | "stable" | "slowly-growing" | "growing" | "decreasing",
+  dynamic: "new" | "stable" | "growing" | "slowlyGrowing",
   timeOfDynamicNodule: number,
   cyst: boolean,
   wall: "thin" | "thick",
@@ -64,6 +64,8 @@ export const defineLungRads2022 = (
       averageDiameter < 10
     ) {
       category = Category.Category2
+    } else if (dynamic === "slowlyGrowing" && structure !== "groundglass") {
+      category = Category.Category4B
     } else if (
       featuresSolid === "subsegmental-airway" &&
       (timepoint === "baseline" || dynamic === "new" || dynamic === "stable")
@@ -72,12 +74,13 @@ export const defineLungRads2022 = (
     } else if (featuresSolid === "segmental-airway") {
       if (timepoint === "baseline") {
         category = Category.Category4A
-      } else if (dynamic === "stable" || dynamic === "growing") {
+      } else if (dynamic === "stable" || dynamic === "growing" || dynamic === "new") {
+        // new solid nodule associated to segmental airway does not exist
         category = Category.Category4B
       }
     } else if (
-      (structure === "solid" && featuresSolid === "none") ||
-      featuresSolid === "smooth-margins"
+      structure === "solid" &&
+      (featuresSolid === "none" || featuresSolid === "smooth-margins")
     ) {
       if (timepoint === "baseline") {
         if (averageDiameter !== null && averageDiameter < 6) {
@@ -106,8 +109,6 @@ export const defineLungRads2022 = (
           } else if (averageDiameter !== null && averageDiameter >= 8) {
             category = Category.Category4B
           }
-        } else if (dynamic === "slowly-growing") {
-          Category.Category4B
         }
       }
     } else if (structure === "partsolid") {
@@ -146,7 +147,7 @@ export const defineLungRads2022 = (
         (averageDiameter < 30 ||
           (averageDiameter >= 30 &&
             timepoint === "follow-up" &&
-            (dynamic === "slowly-growing" || dynamic === "stable")))
+            (dynamic === "slowlyGrowing" || dynamic === "stable")))
       ) {
         category = Category.Category2
       } else if (
@@ -239,6 +240,7 @@ export type LungRads2022Recommendation = { recommendation: Recommendation }
 export const giveLungRads2022Recommendation = (
   category: Category,
   problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none",
+  structure: "solid" | "groundglass" | "partsolid",
   featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none"
 ): LungRads2022Recommendation => {
   let recommendation: Recommendation = Recommendation.NoRecommendationPossible
@@ -260,7 +262,7 @@ export const giveLungRads2022Recommendation = (
   } else if (category === Category.Category4A) {
     recommendation = Recommendation.Ct3MonthsOrPet
   } else if (category === Category.Category4B) {
-    if (featuresSolid === "segmental-airway") {
+    if (structure === "solid" && featuresSolid === "segmental-airway") {
       recommendation = Recommendation.ClinicalEvaluation
     } else {
       recommendation = Recommendation.TissueSamplingPetFollowUp

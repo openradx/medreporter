@@ -18,7 +18,7 @@ export type LungRads2022Data = {
   shortaxis: number | null
   longaxisSolid: number | null
   shortaxisSolid: number | null
-  dynamic: "new" | "stable" | "slowly-growing" | "growing" | "decreasing"
+  dynamic: "new" | "stable" | "slowlyGrowing" | "growing"
   timeOfDynamicNodule: number
   cyst: boolean
   wall: "thin" | "thick"
@@ -95,6 +95,7 @@ export const LungRads2022Report = () => {
   const { recommendation } = giveLungRads2022Recommendation(
     category,
     problematicExam,
+    structure,
     featuresSolid
   )
 
@@ -135,6 +136,12 @@ export const LungRads2022Report = () => {
       <Statement>
         {t("LungRads2022.recommendation")}: {t(recommendation)}
       </Statement>
+      {dynamic === "slowlyGrowing" &&
+        (category === Category.Category4A ||
+          category === Category.Category4B ||
+          category === Category.Category4X) && (
+          <Statement>{t("LungRads2022.additionSlowlyGrowing")}:</Statement>
+        )}
       <hr />
       <Paragraph hidden={!incidentalFindings || category === Category.NoCategory}>
         <Statement>

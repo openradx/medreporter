@@ -133,11 +133,14 @@ export default {
     ct6Months: "Low dose CT in 6 Monaten.",
     ct3MonthsOrPet:
       "Low dose CT in 3 Monaten. Eine PET-CT sollte erwogen werden, wenn ein solider Nodulus oder eine solide Komponente von 8 mm oder mehr vorliegt.",
-    clinicalEvaluation: "Referral for further clinical evaluation.",
+    clinicalEvaluation: "Weitere klinische Beurteilung notwendig.",
     tissueSamplingPetFollowUp:
       "Diagnostische CT mit oder ohne Kontrastmittel. Eine PET-CT sollte erwogen werden, wenn ein solider Nodulus oder eine solide Komponente von 8 mm oder mehr vorliegt. Alternativ kann eine bioptische Sicherung erfolgen. Das Management hängt von der klinischen Bewertung, dem Patientenwunsch und der Wahrscheinlichkeit für Malignität ab.",
     specificFinding:
       "Das Management sollte nach den ACR Richtlinien zum Umgang mit inzidentellen Befunden erfolgen (https://www.acr.org/Clinical-Resources/Incidental-Findings). Siehe hierzu auch den entsprechenden Quick Guide (https://www.acr.org/-/media/ACR/Files/Lung-Cancer-Screening-Resources/March-2022-LCS-Incidental-Findings-Quick-Guide_F).",
+
+    additionSlowlyGrowing:
+      "Langsam wachsende Noduli weisen möglicherweise keine erhöhte Stoffwechselaktivität in der PET-CT auf. Eine chirurgische Biopsie, wenn verfügbar, oder eine chirurgische Evaluation kann daher das angemessenste Vorgehen sein.",
 
     suspiciousSpiculation: "Spikulierung",
     suspiciousLymphadenopathy: "Lymphadenopathie",

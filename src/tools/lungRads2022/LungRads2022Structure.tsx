@@ -177,12 +177,14 @@ export const LungRads2022Structure = () => {
               label={t("LungRads2022.inputLabelLongaxis")}
               min={0}
               precision={1}
+              step={1}
             />
             <NumberField
               id="shortaxis"
               label={t("LungRads2022.inputLabelShortaxis")}
               min={0}
               precision={1}
+              step={1}
             />
           </Group>
           <Group
@@ -194,12 +196,14 @@ export const LungRads2022Structure = () => {
               label={t("LungRads2022.inputLabelSolidLongaxis")}
               min={0}
               precision={1}
+              step={1}
             />
             <NumberField
               id="shortaxisSolid"
               label={t("LungRads2022.inputLabelSolidShortaxis")}
               min={0}
               precision={1}
+              step={1}
             />
           </Group>
           <Hint
@@ -223,7 +227,7 @@ export const LungRads2022Structure = () => {
               hidden={timepoint !== "follow-up" || benignFeatures !== "none"}
               options={[
                 { value: "new", label: t("LungRads2022.optionDynamicNew") },
-                { value: "slowly-growing", label: t("LungRads2022.optionDynamicSlowlyGrowing") },
+                { value: "slowlyGrowing", label: t("LungRads2022.optionDynamicSlowlyGrowing") },
                 { value: "growing", label: t("LungRads2022.optionDynamicGrowing") },
                 { value: "stable", label: t("LungRads2022.optionDynamicStable") },
               ]}
