@@ -1,20 +1,20 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { TimeFieldEl } from "~/schemas/structure"
+import { TimeFieldNode } from "~/schemas/structure"
 import { TimeField } from "../fields/TimeField"
 import { Info } from "../template/Info"
 
 interface TimeFieldAdapterProps {
-  element: TimeFieldEl
+  node: TimeFieldNode
 }
 
-export const TimeFieldAdapter = ({ element }: TimeFieldAdapterProps) => (
+export const TimeFieldAdapter = ({ node }: TimeFieldAdapterProps) => (
   <TimeField
-    id={element.id}
-    label={element.label}
-    extras={element.info && <Info>{element.info}</Info>}
-    disabled={evalCodeToBoolean(element.disabled)}
-    hidden={evalCodeToBoolean(element.hidden)}
-    withSeconds={element.withSeconds}
-    defaultValue={element.default}
+    id={node.fieldId}
+    label={node.label}
+    extras={node.info && <Info>{node.info}</Info>}
+    disabled={evalCodeToBoolean(node.disabled)}
+    hidden={evalCodeToBoolean(node.hidden)}
+    withSeconds={node.withSeconds}
+    defaultValue={node.default}
   />
 )

@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// TODO: delete file ... unneeded
 import chalk from "chalk"
 import fs from "fs"
 import glob from "glob"
@@ -150,5 +151,5 @@ for (const figureFile of figureFiles) {
     fs.writeFileSync(processedFile, formatted)
   })
 
-  console.log(chalk.green(`Successfully written "${figureFilename}".`))
+  console.info(chalk.green(`Successfully written "${figureFilename}".`))
 }

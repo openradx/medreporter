@@ -1,20 +1,20 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { FreeTextFieldEl } from "~/schemas/structure"
+import { FreeTextFieldNode } from "~/schemas/structure"
 import { FreeTextField } from "../fields/FreeTextField"
 import { Info } from "../template/Info"
 
 interface FreeTextFieldAdapterProps {
-  element: FreeTextFieldEl
+  node: FreeTextFieldNode
 }
 
-export const FreeTextFieldAdapter = ({ element }: FreeTextFieldAdapterProps) => (
+export const FreeTextFieldAdapter = ({ node }: FreeTextFieldAdapterProps) => (
   <FreeTextField
-    id={element.id}
-    label={element.label}
-    extras={element.info && <Info>{element.info}</Info>}
-    disabled={evalCodeToBoolean(element.disabled)}
-    hidden={evalCodeToBoolean(element.hidden)}
-    defaultValue={element.default}
-    multiline={element.multiline}
+    id={node.fieldId}
+    label={node.label}
+    extras={node.info && <Info>{node.info}</Info>}
+    disabled={evalCodeToBoolean(node.disabled)}
+    hidden={evalCodeToBoolean(node.hidden)}
+    defaultValue={node.default}
+    multiline={node.multiline}
   />
 )

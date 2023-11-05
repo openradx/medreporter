@@ -9,7 +9,7 @@ import NL from "flag-icons/flags/4x3/nl.svg"
 import PT from "flag-icons/flags/4x3/pt.svg"
 import SE from "flag-icons/flags/4x3/se.svg"
 import US from "flag-icons/flags/4x3/us.svg"
-import { VisualEditor } from "./VisualEditor"
+import { TemplateDesigner } from "./TemplateDesigner"
 
 export const NewTemplate = () => {
   const [opened, { open, close }] = useDisclosure(false)
@@ -65,7 +65,7 @@ export const NewTemplate = () => {
           Close
         </Button>
       </Modal>
-      <VisualEditor />
+      <TemplateDesigner />
     </>
   )
 }

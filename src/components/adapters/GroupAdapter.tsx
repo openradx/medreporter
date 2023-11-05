@@ -1,5 +1,5 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { GroupEl } from "~/schemas/structure"
+import { GroupNode } from "~/schemas/structure"
 import { Group } from "../template/Group"
 import { Info } from "../template/Info"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
@@ -7,24 +7,24 @@ import { HintAdapter } from "./HintAdapter"
 import { LayoutAdapter } from "./LayoutAdapter"
 
 interface GroupAdapterProps {
-  element: GroupEl
+  node: GroupNode
 }
 
-export const GroupAdapter = ({ element }: GroupAdapterProps) => (
+export const GroupAdapter = ({ node }: GroupAdapterProps) => (
   <Group
-    label={element.label}
-    extras={element.info && <Info>{element.info}</Info>}
-    disabled={evalCodeToBoolean(element.disabled)}
-    hidden={evalCodeToBoolean(element.hidden)}
+    label={node.label}
+    extras={node.info && <Info>{node.info}</Info>}
+    disabled={evalCodeToBoolean(node.disabled)}
+    hidden={evalCodeToBoolean(node.hidden)}
   >
-    {element.children.map((child) => {
+    {node.children.map((child) => {
       switch (child.type) {
         case "Layout":
-          return <LayoutAdapter key={child.gid} element={child} />
+          return <LayoutAdapter key={child.nodeId} node={child} />
         case "Hint":
-          return <HintAdapter key={child.gid} element={child} />
+          return <HintAdapter key={child.nodeId} node={child} />
         default:
-          return <DiscreteFieldAdapter key={child.gid} element={child} />
+          return <DiscreteFieldAdapter key={child.nodeId} node={child} />
       }
     })}
   </Group>

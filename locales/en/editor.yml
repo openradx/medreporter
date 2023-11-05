@@ -1,3 +1,17 @@
+EditorItem:
+  id: ID
+  type: Type
+EditorMenu:
+  booleanFieldLabel: Boolean
+  dateFieldLabel: Date
+  freeTextFieldLabel: Free Text
+  measurementsFieldLabel: Measurements
+  multipleChoiceFieldLabel: Multiple Choice
+  numberFieldLabel: Number
+  singleChoiceFieldLabel: Single Choice
+  timeFieldLabel: Time
+  statementLabel: Statement
+  layoutLabel: Layout
 FigureProperties:
   title: Figure
 ResourceEditor:

@@ -1,14 +1,14 @@
 import { z } from "zod"
-import { elementSchema } from "./common"
-import { reportElSchema } from "./report"
-import { structureElSchema } from "./structure"
+import { nodeSchema } from "./common"
+import { reportNodeSchema } from "./report"
+import { structureNodeSchema } from "./structure"
 
-export const templateElSchema = elementSchema.extend({
+export const templateNodeSchema = nodeSchema.extend({
   type: z.literal("Template"),
   title: z.string(),
   info: z.string().optional(),
-  structure: structureElSchema,
-  report: reportElSchema,
+  structure: structureNodeSchema,
+  report: reportNodeSchema,
 })
 
-export type TemplateEl = z.infer<typeof templateElSchema>
+export type TemplateNode = z.infer<typeof templateNodeSchema>

@@ -1,19 +1,19 @@
-import { MeasurementsOutputEl } from "~/schemas/report"
+import { MeasurementsOutputNode } from "~/schemas/report"
 import { MeasurementsOutput } from "../outputs/MeasurementsOutput"
 
 interface MeasurementsOutputAdapterProps {
-  element: MeasurementsOutputEl
+  node: MeasurementsOutputNode
 }
 
-export const MeasurementsOutputAdapter = ({ element }: MeasurementsOutputAdapterProps) => (
+export const MeasurementsOutputAdapter = ({ node }: MeasurementsOutputAdapterProps) => (
   <MeasurementsOutput
-    fieldId={element.fieldId}
+    fieldId={node.link} // TODO: rename fieldId of MeasurementsOutput to link
     data={[]} // TODO:
     stats="" // TODO:
-    legend={element.legend}
-    previousLabel={element.previousLabel}
-    currentLabel={element.currentLabel}
-    locationLabel={element.locationLabel}
-    referenceLabel={element.referenceLabel}
+    legend={node.legend}
+    previousLabel={node.previousLabel}
+    currentLabel={node.currentLabel}
+    locationLabel={node.locationLabel}
+    referenceLabel={node.referenceLabel}
   />
 )

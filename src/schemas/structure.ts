@@ -1,38 +1,38 @@
 import { z } from "zod"
-import { codeSchema, elementSchema } from "./common"
+import { codeSchema, nodeSchema } from "./common"
 
 /**
  * Shared properties
  */
-const id = z.string()
+const fieldId = z.string()
 const label = z.string()
 const info = z.string().optional()
 const disabled = codeSchema.optional()
 const hidden = codeSchema.optional()
 
-const fieldProperties = { id, label, info, disabled, hidden }
+const fieldProperties = { fieldId, label, info, disabled, hidden }
 
 /**
- * Elements
+ * Nodes
  */
-const hintElSchema = elementSchema.extend({
+const hintNodeSchema = nodeSchema.extend({
   type: z.literal("Hint"),
-  level: z.enum(["info", "warning", "error"]),
+  level: z.enum(["info", "warning", "error"]).optional(),
   fieldRef: z.string().optional(),
   content: codeSchema.optional(),
 })
 
-export type HintEl = z.infer<typeof hintElSchema>
+export type HintNode = z.infer<typeof hintNodeSchema>
 
-const booleanFieldElSchema = elementSchema.extend({
+const booleanFieldNodeSchema = nodeSchema.extend({
   type: z.literal("BooleanField"),
   ...fieldProperties,
   default: z.boolean().optional(),
 })
 
-export type BooleanFieldEl = z.infer<typeof booleanFieldElSchema>
+export type BooleanFieldNode = z.infer<typeof booleanFieldNodeSchema>
 
-const numberFieldElSchema = elementSchema.extend({
+const numberFieldNodeSchema = nodeSchema.extend({
   type: z.literal("NumberField"),
   ...fieldProperties,
   min: z.number().optional(),
@@ -43,36 +43,36 @@ const numberFieldElSchema = elementSchema.extend({
   default: z.number().optional(),
 })
 
-export type NumberFieldEl = z.infer<typeof numberFieldElSchema>
+export type NumberFieldNode = z.infer<typeof numberFieldNodeSchema>
 
 // TODO: refine format and default
-const dateFieldElSchema = elementSchema.extend({
+const dateFieldNodeSchema = nodeSchema.extend({
   type: z.literal("DateField"),
   ...fieldProperties,
   format: z.string().optional(),
   default: z.string().optional(),
 })
 
-export type DateFieldEl = z.infer<typeof dateFieldElSchema>
+export type DateFieldNode = z.infer<typeof dateFieldNodeSchema>
 
 // TODO: refine default
-const timeFieldElSchema = elementSchema.extend({
+const timeFieldNodeSchema = nodeSchema.extend({
   type: z.literal("TimeField"),
   ...fieldProperties,
   withSeconds: z.boolean().optional(),
   default: z.string().optional(),
 })
 
-export type TimeFieldEl = z.infer<typeof timeFieldElSchema>
+export type TimeFieldNode = z.infer<typeof timeFieldNodeSchema>
 
-const freeTextFieldElSchema = elementSchema.extend({
+const freeTextFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FreeTextField"),
   ...fieldProperties,
   multiline: z.boolean().optional(),
   default: z.string().optional(),
 })
 
-export type FreeTextFieldEl = z.infer<typeof freeTextFieldElSchema>
+export type FreeTextFieldNode = z.infer<typeof freeTextFieldNodeSchema>
 
 const option = z.object({
   label: z.string(),
@@ -81,7 +81,7 @@ const option = z.object({
 
 export type Option = z.infer<typeof option>
 
-const singleChoiceFieldElSchema = elementSchema.extend({
+const singleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("SingleChoiceField"),
   ...fieldProperties,
   variant: z.enum(["radio", "select"]).optional(),
@@ -90,9 +90,9 @@ const singleChoiceFieldElSchema = elementSchema.extend({
   default: z.string().optional(),
 })
 
-export type SingleChoiceFieldEl = z.infer<typeof singleChoiceFieldElSchema>
+export type SingleChoiceFieldNode = z.infer<typeof singleChoiceFieldNodeSchema>
 
-const multipleChoiceFieldElSchema = elementSchema.extend({
+const multipleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MultipleChoiceField"),
   ...fieldProperties,
   variant: z.enum(["checkbox", "select"]).optional(),
@@ -101,93 +101,125 @@ const multipleChoiceFieldElSchema = elementSchema.extend({
   default: z.array(z.string()).optional(),
 })
 
-export type MultipleChoiceFieldEl = z.infer<typeof multipleChoiceFieldElSchema>
+export type MultipleChoiceFieldNode = z.infer<typeof multipleChoiceFieldNodeSchema>
 
-const measurementsFieldElSchema = elementSchema.extend({
+const measurementsFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MeasurementsField"),
   ...fieldProperties,
 })
 
-export type MeasurementsFieldEl = z.infer<typeof measurementsFieldElSchema>
+export type MeasurementsFieldNode = z.infer<typeof measurementsFieldNodeSchema>
 
-export type DiscreteFieldEl =
-  | BooleanFieldEl
-  | NumberFieldEl
-  | DateFieldEl
-  | TimeFieldEl
-  | FreeTextFieldEl
-  | SingleChoiceFieldEl
-  | MultipleChoiceFieldEl
-  | MeasurementsFieldEl
+export type DiscreteFieldNode =
+  | BooleanFieldNode
+  | NumberFieldNode
+  | DateFieldNode
+  | TimeFieldNode
+  | FreeTextFieldNode
+  | SingleChoiceFieldNode
+  | MultipleChoiceFieldNode
+  | MeasurementsFieldNode
 
-export type LayoutEl = z.infer<typeof elementSchema> & {
+export type LayoutNode = z.infer<typeof nodeSchema> & {
   type: "Layout"
   direction?: "row" | "column"
   nowrap?: boolean
   justify?: "start" | "center" | "end" | "space-between" | "space-around"
-  children: (DiscreteFieldEl | HintEl | LayoutEl)[]
+  children: (DiscreteFieldNode | HintNode | LayoutNode)[]
 }
 
-const discreteFieldElSchemas = [
-  booleanFieldElSchema,
-  numberFieldElSchema,
-  dateFieldElSchema,
-  timeFieldElSchema,
-  freeTextFieldElSchema,
-  singleChoiceFieldElSchema,
-  multipleChoiceFieldElSchema,
-  measurementsFieldElSchema,
+const discreteFieldNodeSchemas = [
+  booleanFieldNodeSchema,
+  numberFieldNodeSchema,
+  dateFieldNodeSchema,
+  timeFieldNodeSchema,
+  freeTextFieldNodeSchema,
+  singleChoiceFieldNodeSchema,
+  multipleChoiceFieldNodeSchema,
+  measurementsFieldNodeSchema,
 ] as const
 
-const layoutElSchema: z.ZodType<LayoutEl> = z.lazy(() =>
-  elementSchema.extend({
-    type: z.literal("Layout"),
-    direction: z.enum(["row", "column"]).optional(),
-    justify: z.enum(["start", "center", "end", "space-between", "space-around"]).optional(),
-    nowrap: z.boolean().optional(),
-    children: z.array(z.union([layoutElSchema, hintElSchema, ...discreteFieldElSchemas])),
+// eslint-disable-next-line @typescript-eslint/no-use-before-define
+const layoutNodeSchema: z.ZodType<LayoutNode> = z.lazy(() => layoutLazyNodeSchema)
+
+const layoutLazyNodeSchema = nodeSchema.extend({
+  type: z.literal("Layout"),
+  direction: z.enum(["row", "column"]).optional(),
+  justify: z.enum(["start", "center", "end", "space-between", "space-around"]).optional(),
+  nowrap: z.boolean().optional(),
+  children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),
+})
+
+export const layoutChildrenTypes = new Set(
+  layoutLazyNodeSchema.shape.children.element.options.map((o) => {
+    if (!("shape" in o)) return "Layout"
+    return o.shape.type.value
   })
 )
 
-const findingFieldElSchema = elementSchema.extend({
+const findingFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FindingField"),
   ...fieldProperties,
   default: z.boolean().optional(),
-  children: z.array(z.union([layoutElSchema, hintElSchema, ...discreteFieldElSchemas])),
+  children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),
 })
 
-export type FindingFieldEl = z.infer<typeof findingFieldElSchema>
+export type FindingFieldNode = z.infer<typeof findingFieldNodeSchema>
 
-const groupElSchema = elementSchema.extend({
+export const findingFieldChildrenTypes = new Set(
+  findingFieldNodeSchema.shape.children.element.options.map((o) => {
+    if (!("shape" in o)) return "Layout"
+    return o.shape.type.value
+  })
+)
+
+const groupNodeSchema = nodeSchema.extend({
   type: z.literal("Group"),
+  ...fieldProperties,
+  fieldId: fieldId.optional(),
   label: label.optional(),
-  info,
-  disabled,
-  hidden,
-  children: z.array(z.union([layoutElSchema, hintElSchema, ...discreteFieldElSchemas])),
+  children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),
 })
 
-export type GroupEl = z.infer<typeof groupElSchema>
+export type GroupNode = z.infer<typeof groupNodeSchema>
 
-const sectionElSchema = elementSchema.extend({
+export const groupChildrenTypes = new Set(
+  groupNodeSchema.shape.children.element.options.map((o) => {
+    if (!("shape" in o)) return "Layout"
+    return o.shape.type.value
+  })
+)
+
+const sectionNodeSchema = nodeSchema.extend({
   type: z.literal("Section"),
   label,
   children: z.array(
     z.union([
-      findingFieldElSchema,
-      groupElSchema,
-      layoutElSchema,
-      hintElSchema,
-      ...discreteFieldElSchemas,
+      findingFieldNodeSchema,
+      groupNodeSchema,
+      layoutNodeSchema,
+      hintNodeSchema,
+      ...discreteFieldNodeSchemas,
     ])
   ),
 })
 
-export type SectionEl = z.infer<typeof sectionElSchema>
+export type SectionNode = z.infer<typeof sectionNodeSchema>
 
-export const structureElSchema = elementSchema.extend({
+export const sectionChildrenTypes = new Set(
+  sectionNodeSchema.shape.children.element.options.map((o) => {
+    if (!("shape" in o)) return "Layout"
+    return o.shape.type.value
+  })
+)
+
+export const structureNodeSchema = nodeSchema.extend({
   type: z.literal("Structure"),
-  children: z.array(sectionElSchema),
+  children: z.array(sectionNodeSchema),
 })
 
-export type StructureEl = z.infer<typeof structureElSchema>
+export type StructureNode = z.infer<typeof structureNodeSchema>
+
+export const structureChildrenTypes = new Set([
+  structureNodeSchema.shape.children.element.shape.type.value,
+])

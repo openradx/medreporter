@@ -1,28 +1,32 @@
 import { z } from "zod"
-import { codeSchema, elementSchema } from "./common"
+import { codeSchema, nodeSchema } from "./common"
 
-const statementElSchema = elementSchema.extend({
+const statementNodeSchema = nodeSchema.extend({
   type: z.literal("Statement"),
-  fieldId: z.string().optional(), // link to a field
+  link: z.string().optional(), // link to a field
   content: codeSchema.optional(),
 })
 
-export type StatementEl = z.infer<typeof statementElSchema>
+export type StatementNode = z.infer<typeof statementNodeSchema>
 
-const paragraphElSchema = elementSchema.extend({
+const paragraphNodeSchema = nodeSchema.extend({
   type: z.literal("Paragraph"),
-  fieldId: z.string().optional(), // link to a field
+  link: z.string().optional(), // link to a field
   title: z.string().optional(),
   hidden: codeSchema.optional(),
   list: z.boolean().optional(),
-  children: z.array(statementElSchema),
+  children: z.array(statementNodeSchema),
 })
 
-export type ParagraphEl = z.infer<typeof paragraphElSchema>
+export type ParagraphNode = z.infer<typeof paragraphNodeSchema>
 
-export const measurementsOutputElSchema = elementSchema.extend({
+export const paragraphChildrenTypes = new Set([
+  paragraphNodeSchema.shape.children.element.shape.type.value,
+])
+
+export const measurementsOutputNodeSchema = nodeSchema.extend({
   type: z.literal("MeasurementsOutput"),
-  fieldId: z.string(),
+  link: z.string(), // link to a field
   legend: z.string().optional(),
   previousLabel: z.string().optional(),
   currentLabel: z.string().optional(),
@@ -30,11 +34,17 @@ export const measurementsOutputElSchema = elementSchema.extend({
   referenceLabel: z.string().optional(),
 })
 
-export type MeasurementsOutputEl = z.infer<typeof measurementsOutputElSchema>
+export type MeasurementsOutputNode = z.infer<typeof measurementsOutputNodeSchema>
 
-export const reportElSchema = elementSchema.extend({
+export const reportNodeSchema = nodeSchema.extend({
   type: z.literal("Report"),
-  children: z.array(z.union([statementElSchema, paragraphElSchema, measurementsOutputElSchema])),
+  children: z.array(
+    z.union([statementNodeSchema, paragraphNodeSchema, measurementsOutputNodeSchema])
+  ),
 })
 
-export type ReportEl = z.infer<typeof reportElSchema>
+export const reportChildrenTypes = new Set(
+  reportNodeSchema.shape.children.element.options.map((o) => o.shape.type.value)
+)
+
+export type ReportNode = z.infer<typeof reportNodeSchema>

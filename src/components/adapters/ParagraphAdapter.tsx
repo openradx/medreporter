@@ -1,21 +1,21 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { ParagraphEl } from "~/schemas/report"
+import { ParagraphNode } from "~/schemas/report"
 import { Paragraph } from "../template/Paragraph"
 import { StatementAdapter } from "./StatementAdapter"
 
 interface ParagraphAdapterProps {
-  element: ParagraphEl
+  node: ParagraphNode
 }
 
-export const ParagraphAdapter = ({ element }: ParagraphAdapterProps) => (
+export const ParagraphAdapter = ({ node }: ParagraphAdapterProps) => (
   <Paragraph
-    title={element.title}
-    fieldId={element.fieldId}
-    hidden={evalCodeToBoolean(element.hidden)}
-    list={element.list}
+    title={node.title}
+    fieldId={node.link} // TODO: rename fieldId of Paragraph to link
+    hidden={evalCodeToBoolean(node.hidden)}
+    list={node.list}
   >
-    {element.children.map((child) => (
-      <StatementAdapter key={child.gid} element={child} />
+    {node.children.map((child) => (
+      <StatementAdapter key={child.nodeId} node={child} />
     ))}
   </Paragraph>
 )

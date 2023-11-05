@@ -1,15 +1,15 @@
-import { StructureEl } from "~/schemas/structure"
+import { StructureNode } from "~/schemas/structure"
 import { Structure } from "../template/Structure"
 import { SectionAdapter } from "./SectionAdapter"
 
 interface StructureAdapterProps {
-  element: StructureEl
+  node: StructureNode
 }
 
-export const StructureAdapter = ({ element }: StructureAdapterProps) => (
+export const StructureAdapter = ({ node }: StructureAdapterProps) => (
   <Structure>
-    {element.children.map((child) => (
-      <SectionAdapter key={child.gid} element={child} />
+    {node.children.map((child) => (
+      <SectionAdapter key={child.nodeId} node={child} />
     ))}
   </Structure>
 )

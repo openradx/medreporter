@@ -1,23 +1,23 @@
-import { ReportEl } from "~/schemas/report"
+import { ReportNode } from "~/schemas/report"
 import { MeasurementsOutputAdapter } from "./MeasurementsOutputAdapter"
 import { ParagraphAdapter } from "./ParagraphAdapter"
 import { StatementAdapter } from "./StatementAdapter"
 
 interface ReportAdapterProps {
-  element: ReportEl
+  node: ReportNode
 }
 
-export const ReportAdapter = ({ element }: ReportAdapterProps) =>
-  element.children.map((child) => {
+export const ReportAdapter = ({ node }: ReportAdapterProps) =>
+  node.children.map((child) => {
     switch (child.type) {
       case "Paragraph":
-        return <ParagraphAdapter key={child.gid} element={child} />
+        return <ParagraphAdapter key={child.nodeId} node={child} />
       case "Statement":
-        return <StatementAdapter key={child.gid} element={child} />
+        return <StatementAdapter key={child.nodeId} node={child} />
       case "MeasurementsOutput":
-        return <MeasurementsOutputAdapter key={child.gid} element={child} />
+        return <MeasurementsOutputAdapter key={child.nodeId} node={child} />
       default:
         // @ts-ignore
-        throw new Error(`Invalid report element type: ${child.type}`)
+        throw new Error(`Invalid report node with type: ${child.type}`)
     }
   })

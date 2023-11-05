@@ -1,5 +1,5 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { FindingFieldEl } from "~/schemas/structure"
+import { FindingFieldNode } from "~/schemas/structure"
 import { FindingField } from "../fields/FindingField"
 import { Info } from "../template/Info"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
@@ -7,26 +7,26 @@ import { HintAdapter } from "./HintAdapter"
 import { LayoutAdapter } from "./LayoutAdapter"
 
 interface FindingFieldAdapterProps {
-  element: FindingFieldEl
+  node: FindingFieldNode
 }
 
-export const FindingFieldAdapter = ({ element }: FindingFieldAdapterProps) => (
+export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => (
   <FindingField
-    id={element.id}
-    label={element.label}
-    extras={element.info && <Info>{element.info}</Info>}
-    disabled={evalCodeToBoolean(element.disabled)}
-    hidden={evalCodeToBoolean(element.hidden)}
-    defaultValue={element.default}
+    id={node.fieldId}
+    label={node.label}
+    extras={node.info && <Info>{node.info}</Info>}
+    disabled={evalCodeToBoolean(node.disabled)}
+    hidden={evalCodeToBoolean(node.hidden)}
+    defaultValue={node.default}
   >
-    {element.children.map((child) => {
+    {node.children.map((child) => {
       switch (child.type) {
         case "Layout":
-          return <LayoutAdapter key={child.gid} element={child} />
+          return <LayoutAdapter key={child.nodeId} node={child} />
         case "Hint":
-          return <HintAdapter key={child.gid} element={child} />
+          return <HintAdapter key={child.nodeId} node={child} />
         default:
-          return <DiscreteFieldAdapter key={child.gid} element={child} />
+          return <DiscreteFieldAdapter key={child.nodeId} node={child} />
       }
     })}
   </FindingField>

@@ -1,29 +1,29 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { MultipleChoiceFieldEl } from "~/schemas/structure"
+import { MultipleChoiceFieldNode } from "~/schemas/structure"
 import { MultipleChoiceField } from "../fields/MultipleChoiceField"
 import { Figure } from "../template/Figure"
 import { Info } from "../template/Info"
 
 interface MultipleChoiceFieldAdapterProps {
-  element: MultipleChoiceFieldEl
+  node: MultipleChoiceFieldNode
 }
 
-export const MultipleChoiceFieldAdapter = ({ element }: MultipleChoiceFieldAdapterProps) => {
+export const MultipleChoiceFieldAdapter = ({ node }: MultipleChoiceFieldAdapterProps) => {
   const extras = (
     <>
-      {element.info?.trim() && <Info>{element.info}</Info>}
-      {element.figure?.trim() && <Figure>{element.figure}</Figure>}
+      {node.info?.trim() && <Info>{node.info}</Info>}
+      {node.figure?.trim() && <Figure>{node.figure}</Figure>}
     </>
   )
   return (
     <MultipleChoiceField
-      id={element.id}
-      label={element.label}
+      id={node.fieldId}
+      label={node.label}
       extras={extras}
-      disabled={evalCodeToBoolean(element.disabled)}
-      hidden={evalCodeToBoolean(element.hidden)}
-      options={element.options}
-      defaultValue={element.default}
+      disabled={evalCodeToBoolean(node.disabled)}
+      hidden={evalCodeToBoolean(node.hidden)}
+      options={node.options}
+      defaultValue={node.default}
     />
   )
 }

@@ -1,29 +1,29 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { SingleChoiceFieldEl } from "~/schemas/structure"
+import { SingleChoiceFieldNode } from "~/schemas/structure"
 import { SingleChoiceField } from "../fields/SingleChoiceField"
 import { Figure } from "../template/Figure"
 import { Info } from "../template/Info"
 
 interface SingleChoiceFieldAdapterProps {
-  element: SingleChoiceFieldEl
+  node: SingleChoiceFieldNode
 }
 
-export const SingleChoiceFieldAdapter = ({ element }: SingleChoiceFieldAdapterProps) => {
+export const SingleChoiceFieldAdapter = ({ node }: SingleChoiceFieldAdapterProps) => {
   const extras = (
     <>
-      {element.info?.trim() && <Info>{element.info}</Info>}
-      {element.figure?.trim() && <Figure>{element.figure}</Figure>}
+      {node.info?.trim() && <Info>{node.info}</Info>}
+      {node.figure?.trim() && <Figure>{node.figure}</Figure>}
     </>
   )
   return (
     <SingleChoiceField
-      id={element.id}
-      label={element.label}
+      id={node.fieldId}
+      label={node.label}
       extras={extras}
-      disabled={evalCodeToBoolean(element.disabled)}
-      hidden={evalCodeToBoolean(element.hidden)}
-      options={element.options}
-      defaultValue={element.default}
+      disabled={evalCodeToBoolean(node.disabled)}
+      hidden={evalCodeToBoolean(node.hidden)}
+      options={node.options}
+      defaultValue={node.default}
     />
   )
 }

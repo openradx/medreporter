@@ -1,24 +1,24 @@
 import { evalCodeToBoolean } from "~/medtl/interpreter"
-import { NumberFieldEl } from "~/schemas/structure"
+import { NumberFieldNode } from "~/schemas/structure"
 import { NumberField } from "../fields/NumberField"
 import { Info } from "../template/Info"
 
 interface NumberFieldAdapterProps {
-  element: NumberFieldEl
+  node: NumberFieldNode
 }
 
-export const NumberFieldAdapter = ({ element }: NumberFieldAdapterProps) => (
+export const NumberFieldAdapter = ({ node }: NumberFieldAdapterProps) => (
   <NumberField
-    id={element.id}
-    label={element.label}
-    extras={element.info && <Info>{element.info}</Info>}
-    disabled={evalCodeToBoolean(element.disabled)}
-    hidden={evalCodeToBoolean(element.hidden)}
-    defaultValue={element.default}
-    min={element.min}
-    max={element.max}
-    precision={element.precision}
-    start={element.start}
-    step={element.step}
+    id={node.fieldId}
+    label={node.label}
+    extras={node.info && <Info>{node.info}</Info>}
+    disabled={evalCodeToBoolean(node.disabled)}
+    hidden={evalCodeToBoolean(node.hidden)}
+    defaultValue={node.default}
+    min={node.min}
+    max={node.max}
+    precision={node.precision}
+    start={node.start}
+    step={node.step}
   />
 )

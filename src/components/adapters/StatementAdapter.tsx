@@ -1,10 +1,10 @@
-import { StatementEl } from "~/schemas/report"
+import { StatementNode } from "~/schemas/report"
 import { Statement } from "../template/Statement"
 
 interface StatementAdapterProps {
-  element: StatementEl
+  node: StatementNode
 }
 
-export const StatementAdapter = ({ element }: StatementAdapterProps) => (
-  <Statement fieldId={element.fieldId}>{element.content}</Statement>
+export const StatementAdapter = ({ node }: StatementAdapterProps) => (
+  <Statement fieldId={node.link}>{node.content}</Statement> // TODO: Rename fieldId of Statement to link
 )

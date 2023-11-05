@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// TODO: delete file ... unneeded
 import chalk from "chalk"
 import { program } from "commander"
 import fs from "fs"
@@ -39,4 +40,4 @@ const findIds = (el: Element) => {
 findIds(document.documentElement)
 
 const result = dump(Object.fromEntries(ids.map((id) => [id, PLACEHOLDER])))
-console.log(result)
+console.info(result)
