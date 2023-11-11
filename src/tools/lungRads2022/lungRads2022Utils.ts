@@ -168,15 +168,18 @@ export const defineLungRads2022 = (
           category = Category.Category4A
         } else if (timepoint === "follow-up" && dynamicUnilocular === "wall-growing") {
           category = Category.Category4B
+        } else if (timepoint === "follow-up" && dynamicUnilocular === "cyst-growing") {
+          category = Category.Category3
         }
       }
     } else if (formation === "multilocular") {
       if (timepoint === "baseline") {
         category = Category.Category4A
       } else if (timepoint === "follow-up") {
-        if (
+        if (dynamicMultilocular === "newly-multilocular") {
+          category = Category.Category4A
+        } else if (
           dynamicMultilocular === "increased-solid" ||
-          dynamicMultilocular === "newly-multilocular" ||
           dynamicMultilocular === "cyst-growing"
         ) {
           category = Category.Category4B
@@ -273,3 +276,8 @@ export const giveLungRads2022Recommendation = (
 
   return { recommendation }
 }
+
+/**
+ * TODO:
+ * - Abfrage, ob gleicher Herd beurteilt wird
+ */

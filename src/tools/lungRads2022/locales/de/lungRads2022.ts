@@ -19,13 +19,13 @@ export default {
     optionTimepointFollowUp: "Follow-up",
 
     inputLabelPrevious: "Vorherige Klassifikation",
-    optionPrevious0: "LungRADS 0",
-    optionPrevious1: "LungRADS 1",
-    optionPrevious2: "LungRADS 2",
-    optionPrevious3: "LungRADS 3",
-    optionPrevious4A: "LungRADS 4A",
-    optionPrevious4B: "LungRADS 4B",
-    optionPrevious4X: "LungRADS 4X",
+    optionPrevious0: "Lung-RADS 0",
+    optionPrevious1: "Lung-RADS 1",
+    optionPrevious2: "Lung-RADS 2",
+    optionPrevious3: "Lung-RADS 3",
+    optionPrevious4A: "Lung-RADS 4A",
+    optionPrevious4B: "Lung-RADS 4B",
+    optionPrevious4X: "Lung-RADS 4X",
 
     inputLabelFindingNodule: "Rundherd",
 
@@ -140,7 +140,7 @@ export default {
       "Das Management sollte nach den ACR Richtlinien zum Umgang mit inzidentellen Befunden erfolgen (https://www.acr.org/Clinical-Resources/Incidental-Findings). Siehe hierzu auch den entsprechenden Quick Guide (https://www.acr.org/-/media/ACR/Files/Lung-Cancer-Screening-Resources/March-2022-LCS-Incidental-Findings-Quick-Guide_F).",
 
     additionSlowlyGrowing:
-      "Langsam wachsende Noduli weisen möglicherweise keine erhöhte Stoffwechselaktivität in der PET-CT auf. Eine chirurgische Biopsie, wenn verfügbar, oder eine chirurgische Evaluation kann daher das angemessenste Vorgehen sein.",
+      "Langsam wachsende Noduli weisen möglicherweise keine erhöhte Stoffwechselaktivität in der PET-CT auf. Eine Biopsie, wenn verfügbar, oder eine chirurgische Evaluation kann daher das angemessenste Vorgehen sein.",
 
     suspiciousSpiculation: "Spikulierung",
     suspiciousLymphadenopathy: "Lymphadenopathie",

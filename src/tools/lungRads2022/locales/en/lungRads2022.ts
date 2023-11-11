@@ -18,13 +18,13 @@ export default {
     optionTimepointFollowUp: "Follow-up",
 
     inputLabelPrevious: "Previous Classification",
-    optionPrevious0: "LungRADS 0",
-    optionPrevious1: "LungRADS 1",
-    optionPrevious2: "LungRADS 2",
-    optionPrevious3: "LungRADS 3",
-    optionPrevious4A: "LungRADS 4A",
-    optionPrevious4B: "LungRADS 4B",
-    optionPrevious4X: "LungRADS 4X",
+    optionPrevious0: "Lung-RADS 0",
+    optionPrevious1: "Lung-RADS 1",
+    optionPrevious2: "Lung-RADS 2",
+    optionPrevious3: "Lung-RADS 3",
+    optionPrevious4A: "Lung-RADS 4A",
+    optionPrevious4B: "Lung-RADS 4B",
+    optionPrevious4X: "Lung-RADS 4X",
 
     inputLabelFindingNodule: "Nodule",
 

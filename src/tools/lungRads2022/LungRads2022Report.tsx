@@ -140,7 +140,7 @@ export const LungRads2022Report = () => {
         (category === Category.Category4A ||
           category === Category.Category4B ||
           category === Category.Category4X) && (
-          <Statement>{t("LungRads2022.additionSlowlyGrowing")}:</Statement>
+          <Statement>{t("LungRads2022.additionSlowlyGrowing")}</Statement>
         )}
       <hr />
       <Paragraph hidden={!incidentalFindings || category === Category.NoCategory}>
