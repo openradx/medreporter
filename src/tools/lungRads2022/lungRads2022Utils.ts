@@ -9,6 +9,29 @@ export function calcAverageDiameter(
   return average
 }
 
+export type LungRads2022Input = {
+  problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none" | null
+  timepoint: "baseline" | "follow-up" | null
+  previous: "0" | "1" | "2" | "3" | "4A" | "4B" | "4X" | null
+  nodule: boolean
+  benignFeatures: "calcification" | "fat" | "none" | null
+  structure: "solid" | "groundglass" | "partsolid" | null
+  featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none" | null
+  longaxis: number | null
+  shortaxis: number | null
+  longaxisSolid: number | null
+  shortaxisSolid: number | null
+  dynamic: "new" | "stable" | "slowlyGrowing" | "growing" | null
+  timeOfDynamicNodule: number | null
+  cyst: boolean
+  wall: "thin" | "thick" | null
+  formation: "unilocular" | "multilocular" | null
+  dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing" | null
+  dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid" | null
+  timeOfDynamicCyst: number | null
+  suspicious: ("spiculation" | "lymphadenopathy" | "metastasis" | "GGN-doubled" | "other")[]
+}
+
 export enum Category {
   NoCategory = "LungRads2022.noCategory",
   Category0 = "LungRads2022.category0",
@@ -21,32 +44,28 @@ export enum Category {
   thinWalledUnilocular = "LungRads2022.thinWalledUnilocular",
 }
 
-export type LungRads2022Result = {
-  category: Category
-}
-
-export const defineLungRads2022 = (
-  problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none",
-  timepoint: "baseline" | "follow-up",
-  previous: "0" | "1" | "2" | "3" | "4A" | "4B" | "4X",
-  nodule: boolean,
-  benignFeatures: "calcification" | "fat" | "none",
-  structure: "solid" | "groundglass" | "partsolid",
-  featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none",
-  longaxis: number | null,
-  shortaxis: number | null,
-  longaxisSolid: number | null,
-  shortaxisSolid: number | null,
-  dynamic: "new" | "stable" | "growing" | "slowlyGrowing",
-  timeOfDynamicNodule: number,
-  cyst: boolean,
-  wall: "thin" | "thick",
-  formation: "unilocular" | "multilocular",
-  dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing",
-  dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid",
-  timeOfDynamicCyst: number,
-  suspicious: ("spiculation" | "lymphadenopathy" | "metastasis" | "GGN-doubled" | "other")[]
-): LungRads2022Result => {
+export const defineLungRads2022 = ({
+  problematicExam,
+  timepoint,
+  previous,
+  nodule,
+  benignFeatures,
+  structure,
+  featuresSolid,
+  longaxis,
+  shortaxis,
+  longaxisSolid,
+  shortaxisSolid,
+  dynamic,
+  timeOfDynamicNodule,
+  cyst,
+  wall,
+  formation,
+  dynamicUnilocular,
+  dynamicMultilocular,
+  timeOfDynamicCyst,
+  suspicious,
+}: LungRads2022Input): Category => {
   const averageDiameter: number | null = calcAverageDiameter(longaxis, shortaxis)
   const averageDiameterSolid: number | null = calcAverageDiameter(longaxisSolid, shortaxisSolid)
   let category: Category = Category.NoCategory
@@ -75,7 +94,7 @@ export const defineLungRads2022 = (
       if (timepoint === "baseline") {
         category = Category.Category4A
       } else if (dynamic === "stable" || dynamic === "growing" || dynamic === "new") {
-        // new solid nodule associated to segmental airway does not exist
+        // TODO: new solid nodule associated to segmental airway does not exist
         category = Category.Category4B
       }
     } else if (
@@ -154,8 +173,9 @@ export const defineLungRads2022 = (
         averageDiameter !== null &&
         averageDiameter >= 30 &&
         (timepoint === "baseline" ||
-          (timepoint === "follow-up" && (dynamic === "growing" || dynamic === "new"))) //growing GGN is not in classification
+          (timepoint === "follow-up" && (dynamic === "growing" || dynamic === "new")))
       ) {
+        // TODO: growing GGN is not in classification
         category = Category.Category3
       }
     }
@@ -193,7 +213,10 @@ export const defineLungRads2022 = (
     timepoint === "follow-up" &&
     (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable")
   ) {
-    if (timeOfDynamicNodule >= 3 || timeOfDynamicCyst >= 3) {
+    if (
+      (timeOfDynamicNodule && timeOfDynamicNodule >= 3) ||
+      (timeOfDynamicCyst && timeOfDynamicCyst >= 3)
+    ) {
       category = Category.Category2
     } else {
       category = Category.Category3
@@ -206,7 +229,10 @@ export const defineLungRads2022 = (
     structure !== "groundglass" &&
     (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable")
   ) {
-    if (timeOfDynamicNodule >= 6 || timeOfDynamicCyst >= 6) {
+    if (
+      (timeOfDynamicNodule && timeOfDynamicNodule >= 6) ||
+      (timeOfDynamicCyst && timeOfDynamicCyst >= 6)
+    ) {
       category = Category.Category3
     } else {
       category = Category.Category4A
@@ -222,7 +248,8 @@ export const defineLungRads2022 = (
   ) {
     category = Category.Category4X
   }
-  return { category }
+
+  return category
 }
 
 export enum Recommendation {
@@ -238,14 +265,12 @@ export enum Recommendation {
   SpecificFinding = "LungRads2022.specificFinding",
 }
 
-export type LungRads2022Recommendation = { recommendation: Recommendation }
-
 export const giveLungRads2022Recommendation = (
   category: Category,
-  problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none",
-  structure: "solid" | "groundglass" | "partsolid",
-  featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none"
-): LungRads2022Recommendation => {
+  problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none" | null,
+  structure: "solid" | "groundglass" | "partsolid" | null,
+  featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none" | null
+): Recommendation => {
   let recommendation: Recommendation = Recommendation.NoRecommendationPossible
 
   if (category === Category.Category0) {
@@ -274,10 +299,10 @@ export const giveLungRads2022Recommendation = (
     recommendation = Recommendation.TissueSamplingPetFollowUp
   }
 
-  return { recommendation }
+  return recommendation
 }
 
 /**
  * TODO:
- * - Abfrage, ob gleicher Herd beurteilt wird
+ * - S Modifier in Utils
  */

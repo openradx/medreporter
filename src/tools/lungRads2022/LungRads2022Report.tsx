@@ -8,24 +8,24 @@ import { Category, defineLungRads2022, giveLungRads2022Recommendation } from "./
 
 export type LungRads2022Data = {
   problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none"
-  timepoint: "baseline" | "follow-up"
-  previous: "0" | "1" | "2" | "3" | "4A" | "4B" | "4X"
+  timepoint: "baseline" | "follow-up" | null
+  previous: "0" | "1" | "2" | "3" | "4A" | "4B" | "4X" | null
   nodule: boolean
-  benignFeatures: "calcification" | "fat" | "none"
-  structure: "solid" | "groundglass" | "partsolid"
-  featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none"
+  benignFeatures: "calcification" | "fat" | "none" | null
+  structure: "solid" | "groundglass" | "partsolid" | null
+  featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none" | null
   longaxis: number | null
   shortaxis: number | null
   longaxisSolid: number | null
   shortaxisSolid: number | null
-  dynamic: "new" | "stable" | "slowlyGrowing" | "growing"
-  timeOfDynamicNodule: number
+  dynamic: "new" | "stable" | "slowlyGrowing" | "growing" | null
+  timeOfDynamicNodule: number | null
   cyst: boolean
-  wall: "thin" | "thick"
-  formation: "unilocular" | "multilocular"
-  dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing"
-  dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid"
-  timeOfDynamicCyst: number
+  wall: "thin" | "thick" | null
+  formation: "unilocular" | "multilocular" | null
+  dynamicUnilocular: "stable" | "cyst-growing" | "wall-growing" | null
+  dynamicMultilocular: "stable" | "cyst-growing" | "newly-multilocular" | "increased-solid" | null
+  timeOfDynamicCyst: number | null
   suspicious: ("spiculation" | "lymphadenopathy" | "metastasis" | "GGN-doubled" | "other")[]
   suspiciousOther: string
   incidentalFindings: string
@@ -59,7 +59,7 @@ export const LungRads2022Report = () => {
 
   const { t } = useMicroTranslation(i18nReport)
 
-  const { category } = defineLungRads2022(
+  const category = defineLungRads2022({
     problematicExam,
     timepoint,
     previous,
@@ -79,8 +79,8 @@ export const LungRads2022Report = () => {
     dynamicUnilocular,
     dynamicMultilocular,
     timeOfDynamicCyst,
-    suspicious
-  )
+    suspicious,
+  })
 
   let conclusion = t(category)
 
@@ -92,7 +92,7 @@ export const LungRads2022Report = () => {
     conclusion = `${t(category)} S`
   }
 
-  const { recommendation } = giveLungRads2022Recommendation(
+  const recommendation = giveLungRads2022Recommendation(
     category,
     problematicExam,
     structure,
