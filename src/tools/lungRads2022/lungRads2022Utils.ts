@@ -78,6 +78,7 @@ export const defineLungRads2022 = ({
     if (benignFeatures === "calcification" || benignFeatures === "fat") {
       category = Category.Category1
     } else if (
+      structure === "solid" &&
       featuresSolid === "smooth-margins" &&
       averageDiameter !== null &&
       averageDiameter < 10
@@ -211,6 +212,9 @@ export const defineLungRads2022 = ({
   if (
     previous === "3" &&
     timepoint === "follow-up" &&
+    featuresSolid !== "segmental-airway" &&
+    featuresSolid !== "subsegmental-airway" &&
+    structure !== "groundglass" &&
     (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable")
   ) {
     if (
@@ -305,4 +309,5 @@ export const giveLungRads2022Recommendation = (
 /**
  * TODO:
  * - S Modifier in Utils
+ * - 4B lesion proven to be benign
  */
