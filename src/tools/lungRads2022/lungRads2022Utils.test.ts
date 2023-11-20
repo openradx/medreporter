@@ -59,6 +59,18 @@ const previous3Input: LungRads2022Input = {
   timepoint: "follow-up",
 }
 
+const previous4AInput: LungRads2022Input = {
+  ...emptyInput,
+  previous: "4A",
+  timepoint: "follow-up",
+}
+
+const cystInput: LungRads2022Input = {
+  ...emptyInput,
+  timepoint: "baseline",
+  cyst: true,
+}
+
 describe("Calculate average diameter", () => {
   it.each([
     [2, 1, 1.5],
@@ -167,12 +179,67 @@ describe("Category 2", () => {
   })
 
   it.each<[Partial<LungRads2022Input>]>([
-    [{ nodule: true, dynamic: "stable", timeOfDynamicNodule: 4 }],
-    [{ cyst: true, dynamicMultilocular: "stable", timeOfDynamicCyst: 4 }],
-    [{ cyst: true, dynamicUnilocular: "stable", timeOfDynamicCyst: 4 }],
+    [{ nodule: true, dynamic: "stable", timeOfDynamicNodule: 7 }],
+    [{ cyst: true, dynamicMultilocular: "stable", timeOfDynamicCyst: 7 }],
+    [{ cyst: true, dynamicUnilocular: "stable", timeOfDynamicCyst: 7 }],
   ])("should give correct result for stable lesion", (input) => {
     const finalInput = { ...previous3Input, ...input }
     const category = defineLungRads2022(finalInput)
     expect(category).toBe(Category.Category2)
+  })
+})
+
+/** Category 3 */
+describe("Category 3", () => {
+  it.each<[Partial<LungRads2022Input>]>([
+    [{ timepoint: "baseline", featuresSolid: "none", longaxis: 6, shortaxis: 6 }],
+    [{ timepoint: "baseline", featuresSolid: "none", longaxis: 9, shortaxis: 6 }],
+    [{ timepoint: "follow-up", featuresSolid: "none", longaxis: 4, shortaxis: 4, dynamic: "new" }],
+    [{ timepoint: "follow-up", featuresSolid: "none", longaxis: 7, shortaxis: 4, dynamic: "new" }],
+  ])("should give correct result for medium solid nodules", (input) => {
+    const finalInput = { ...solidNoduleInput, ...input }
+    const category = defineLungRads2022(finalInput)
+    expect(category).toBe(Category.Category3)
+  })
+
+  it.each<[Partial<LungRads2022Input>]>([
+    [{ timepoint: "baseline", longaxis: 6, shortaxis: 6, longaxisSolid: 6, shortaxisSolid: 5 }],
+    [{ timepoint: "baseline", longaxis: 9, shortaxis: 6, longaxisSolid: 7, shortaxisSolid: 4 }],
+    [{ timepoint: "follow-up", longaxis: 7, shortaxis: 4, dynamic: "new" }],
+  ])("should give correct result for medium part solid nodules", (input) => {
+    const finalInput = { ...partSolidNoduleInpput, ...input }
+    const category = defineLungRads2022(finalInput)
+    expect(category).toBe(Category.Category3)
+  })
+
+  it.each<[Partial<LungRads2022Input>]>([
+    [{ timepoint: "baseline", longaxis: 30, shortaxis: 31 }],
+    [{ timepoint: "follow-up", longaxis: 30, shortaxis: 31, dynamic: "new" }],
+  ])("should give correct result for large ground glass nodules", (input) => {
+    const finalInput = { ...groundGlassNoduleInput, ...input }
+    const category = defineLungRads2022(finalInput)
+    expect(category).toBe(Category.Category3)
+  })
+
+  it("should give correct result for growing cystic component", () => {
+    const finalInput: LungRads2022Input = {
+      ...cystInput,
+      timepoint: "follow-up",
+      wall: "thick",
+      formation: "unilocular",
+      dynamicUnilocular: "cyst-growing",
+    }
+    const category = defineLungRads2022(finalInput)
+    expect(category).toBe(Category.Category3)
+  })
+
+  it.each<[Partial<LungRads2022Input>]>([
+    [{ nodule: true, dynamic: "stable", timeOfDynamicNodule: 4 }],
+    [{ cyst: true, dynamicMultilocular: "stable", timeOfDynamicCyst: 4 }],
+    [{ cyst: true, dynamicUnilocular: "stable", timeOfDynamicCyst: 4 }],
+  ])("should give correct result for stable lesion", (input) => {
+    const finalInput = { ...previous4AInput, ...input }
+    const category = defineLungRads2022(finalInput)
+    expect(category).toBe(Category.Category3)
   })
 })

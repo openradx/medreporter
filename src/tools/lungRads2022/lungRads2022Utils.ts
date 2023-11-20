@@ -218,8 +218,8 @@ export const defineLungRads2022 = ({
     (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable")
   ) {
     if (
-      (timeOfDynamicNodule && timeOfDynamicNodule >= 3) ||
-      (timeOfDynamicCyst && timeOfDynamicCyst >= 3)
+      (timeOfDynamicNodule && timeOfDynamicNodule >= 6) ||
+      (timeOfDynamicCyst && timeOfDynamicCyst >= 6)
     ) {
       category = Category.Category2
     } else {
@@ -234,8 +234,8 @@ export const defineLungRads2022 = ({
     (dynamic === "stable" || dynamicUnilocular === "stable" || dynamicMultilocular === "stable")
   ) {
     if (
-      (timeOfDynamicNodule && timeOfDynamicNodule >= 6) ||
-      (timeOfDynamicCyst && timeOfDynamicCyst >= 6)
+      (timeOfDynamicNodule && timeOfDynamicNodule >= 3) ||
+      (timeOfDynamicCyst && timeOfDynamicCyst >= 3)
     ) {
       category = Category.Category3
     } else {
