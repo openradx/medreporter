@@ -310,4 +310,5 @@ export const giveLungRads2022Recommendation = (
  * TODO:
  * - S Modifier in Utils
  * - 4B lesion proven to be benign
+ * - part solid nodule growing solid component
  */
