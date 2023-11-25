@@ -1,13 +1,14 @@
-import { AppShell, Container, MantineNumberSize, MediaQuery } from "@mantine/core"
+import { AppShell, Container, MantineSize } from "@mantine/core"
 import { ReactNode } from "react"
 import { ErrorBoundary } from "react-error-boundary"
+import { NAVBAR_HEIGHT } from "~/constants"
 import { MainLayoutFallback } from "./MainLayoutFallback"
 import { Navbar } from "./Navbar"
 import { SmallFooter } from "./SmallFooter"
 import { TallFooter } from "./TallFooter"
 
 interface MainLayoutProps {
-  size?: "full" | MantineNumberSize
+  size?: "full" | MantineSize
   withoutAccountControl?: boolean
   footerSize?: "small" | "tall"
   children: ReactNode
@@ -19,18 +20,16 @@ export const MainLayout = ({
   children,
   footerSize = "tall",
 }: MainLayoutProps) => (
-  <MediaQuery largerThan="sm" styles={{ main: { height: size === "full" ? "100vh" : undefined } }}>
-    <AppShell
-      padding="sm"
-      header={<Navbar withoutAccountControl={withoutAccountControl} />}
-      footer={footerSize === "small" ? <SmallFooter /> : undefined}
-    >
+  <AppShell padding="sm" header={{ height: NAVBAR_HEIGHT }} styles={{ main: { height: "100vh" } }}>
+    <Navbar withoutAccountControl={withoutAccountControl} />
+    <AppShell.Main>
       <ErrorBoundary FallbackComponent={MainLayoutFallback}>
         <Container size={size !== "full" ? size : undefined} fluid={size === "full"} h="100%">
           {children}
           {footerSize === "tall" && <TallFooter />}
         </Container>
       </ErrorBoundary>
-    </AppShell>
-  </MediaQuery>
+    </AppShell.Main>
+    {footerSize === "small" ? <SmallFooter /> : undefined}
+  </AppShell>
 )

@@ -90,7 +90,7 @@ export const MeasurementsOutputHtml = ({
 
   return (
     <Table>
-      <Box component="caption" sx={{ textAlign: "left" }}>
+      <Box component="caption" ta="left">
         {legend}
       </Box>
       {createTableHeader(

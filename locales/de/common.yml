@@ -12,7 +12,6 @@ formError:
 general:
   buttonAdd: Hinzufügen
   buttonCancel: Abbrechen
-  buttonClear: Löschen
   buttonClose: Schließen
   buttonDelete: Löschen
   buttonSave: Sichern
@@ -100,9 +99,11 @@ HomePage:
   templatesTitle: Vorlagen
   templatesDescription: Nutze eine Vorlage um einen Report zu erstellen.
 InstituteSwitcher:
-  label: Institut auswählen
-  noInstituteAvailable: Kein Institut verfügbar
-  noInstituteOption: Kein Institut
+  groupIndividual: Persönlich
+  groupInstitutes: Institute
+  inputLabel: Aktuelles Institut
+  optionIndividual: Persönlich
+  optionNoInstituteAvailable: Kein Institut verfügbar
 KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
 LanguageChooser:
@@ -147,9 +148,7 @@ ModulesPage:
 Navbar:
   openMainMenuTitle: Hauptmenü öffnen
 NavDrawer:
-  figures: Abbildungen
   home: Startseite
-  modules: Module
   tools: Werkzeuge
 NewFigureForm:
   formTitle: Neue Abbildung erstellen

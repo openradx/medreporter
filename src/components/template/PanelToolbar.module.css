@@ -1,0 +1,7 @@
+.panelToolbar {
+  border-bottom: 1px solid var(--mantine-color-gray-2);
+
+  @mixin dark {
+    border-bottom: 1px solid var(--mantine-color-dark-6);
+  }
+}

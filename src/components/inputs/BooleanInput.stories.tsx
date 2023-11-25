@@ -3,21 +3,21 @@ import { ComponentProps, useState } from "react"
 import { BooleanInput } from "./BooleanInput"
 
 const meta: Meta<typeof BooleanInput> = {
-  title: "Inputs / BinaryInput",
+  title: "Inputs / BooleanInput",
   component: BooleanInput,
 }
 
 export default meta
 type Story = StoryObj<typeof BooleanInput>
 
-const BinaryInputWithState = ({ label }: ComponentProps<typeof BooleanInput>) => {
+const BooleanInputWithState = ({ label }: ComponentProps<typeof BooleanInput>) => {
   const [value, setValue] = useState(false)
 
   return <BooleanInput value={value} onChange={setValue} {...{ label }} />
 }
 
 const Template: Story = {
-  render: (props) => <BinaryInputWithState {...props} />,
+  render: (props) => <BooleanInputWithState {...props} />,
 }
 
 export const Basic: Story = {

@@ -21,7 +21,7 @@ export const DataRow = ({
   disabled,
 }: DataRowProps) => (
   <tr>
-    <Box component="th" sx={{ paddingRight: 5, textAlign: "right", minWidth: 30 }}>
+    <Box component="th" miw={30} pr={5} ta="right">
       {rowNumber + 1}
     </Box>
     {followUp &&

@@ -1,16 +1,18 @@
-import { ColorScheme, ColorSchemeProvider, MantineProvider } from "@mantine/core"
+import { MantineProvider } from "@mantine/core"
+import "@mantine/core/styles.css"
+import "@mantine/dates/styles.css"
 import { ModalsProvider } from "@mantine/modals"
 import { Notifications } from "@mantine/notifications"
-import { getCookie, setCookie } from "cookies-next"
+import { getCookie } from "cookies-next"
 import { enableMapSet, enablePatches } from "immer"
 import { GetServerSidePropsContext } from "next"
 import { SessionProvider } from "next-auth/react"
 import { AppProps } from "next/app"
 import Head from "next/head"
-import { useState } from "react"
 import { compose } from "redux"
 import { withReduxState } from "~/hocs/withReduxState"
 import { withTranslations } from "~/hocs/withTranslations"
+import { theme } from "~/theme"
 import { PageWithLayout } from "~/types/general"
 import { trpc } from "~/utils/trpc"
 
@@ -18,50 +20,29 @@ import { trpc } from "~/utils/trpc"
 enablePatches() // for undo / redo
 enableMapSet() // for TransformerRegistry
 
-const fontFamily =
-  "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-
 export interface MyAppProps extends AppProps {
-  colorScheme: ColorScheme
   Component: PageWithLayout
 }
 
-const MyApp = ({
-  Component,
-  pageProps: { session, ...pageProps },
-  colorScheme: initialColorScheme,
-}: MyAppProps) => {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(initialColorScheme)
-
-  const toggleColorScheme = (value?: ColorScheme) => {
-    const nextColorScheme = value || (colorScheme === "dark" ? "light" : "dark")
-    setColorScheme(nextColorScheme)
-    setCookie("mantine-color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 })
-  }
-
+const MyApp = ({ Component, pageProps: { session, ...pageProps } }: MyAppProps) => {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
-    <>
+    <MantineProvider theme={theme}>
       <Head>
         <title>Medreporter</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+        />
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <SessionProvider session={session}>
-        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-          <MantineProvider
-            withGlobalStyles
-            withNormalizeCSS
-            theme={{ colorScheme, cursorType: "pointer", fontFamily, headings: { fontFamily } }}
-          >
-            <Notifications />
-            <ModalsProvider>{getLayout(<Component {...pageProps} />)}</ModalsProvider>
-          </MantineProvider>
-        </ColorSchemeProvider>
+        <Notifications />
+        <ModalsProvider>{getLayout(<Component {...pageProps} />)}</ModalsProvider>
       </SessionProvider>
-    </>
+    </MantineProvider>
   )
 }
 

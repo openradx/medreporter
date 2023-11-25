@@ -51,7 +51,7 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
             }
           }}
         />
-        <Group position="right">
+        <Group justify="flex-end">
           <Button variant="default" onClick={onClose}>
             {t("general.buttonCancel")}
           </Button>

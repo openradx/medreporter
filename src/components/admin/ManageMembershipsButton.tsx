@@ -17,6 +17,8 @@ export const ManageMembershipsButton = ({ institute }: ManageMembershipsButtonPr
     <>
       <ActionIcon
         title={t("ManageMembershipsButton.buttonManageMemberships")}
+        variant="subtle"
+        color="gray"
         onClick={() => setOpened(true)}
       >
         <ManageMembershipsIcon size={16} />

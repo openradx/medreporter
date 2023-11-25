@@ -6,8 +6,8 @@ export const DataLoader = () => {
 
   return (
     <Center py="xl">
-      <Stack>
-        <Loader variant="bars" />
+      <Stack align="center">
+        <Loader type="bars" />
         <Text>{t("DataLoader.subtitle")}</Text>
       </Stack>
     </Center>

@@ -3,15 +3,7 @@ import { CopyrightMessage } from "./CopyrightMessage"
 
 export const TallFooter = () => (
   <>
-    <Group
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: 60,
-        width: "100%",
-      }}
-    >
+    <Group justify="center" align="center" h={60} w="100%">
       <CopyrightMessage />
     </Group>
   </>

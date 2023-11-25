@@ -31,7 +31,7 @@ export const VisualEditor = () => {
   return (
     mounted && (
       <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-        <Grid sx={{ height: "100%" }}>
+        <Grid h="100%">
           <Grid.Col span={3}>
             <ElementsMenu />
           </Grid.Col>

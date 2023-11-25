@@ -7,7 +7,7 @@ export const EditorPanel = () => {
   const template = useAppSelector(selectTemplate)
 
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder sx={{ height: "100%" }}>
+    <Card shadow="sm" padding="lg" radius="md" h="100%" withBorder>
       <TemplateAdapter element={template} />
     </Card>
   )

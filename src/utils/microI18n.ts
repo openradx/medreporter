@@ -12,18 +12,18 @@ type PathKeys<T> = T extends string
 type Join<T extends string[], Delimiter extends string> = T extends []
   ? never
   : T extends [infer F]
-  ? F
-  : T extends [infer F, ...infer Other]
-  ? F extends string
-    ? `${F}${Delimiter}${Join<Extract<Other, string[]>, Delimiter>}`
-    : never
-  : string
+    ? F
+    : T extends [infer F, ...infer Other]
+      ? F extends string
+        ? `${F}${Delimiter}${Join<Extract<Other, string[]>, Delimiter>}`
+        : never
+      : string
 
 type Trim<A extends string> = A extends ` ${infer B}`
   ? Trim<B>
   : A extends `${infer C} `
-  ? Trim<C>
-  : A
+    ? Trim<C>
+    : A
 
 type SearchForVariable<T extends string> = T extends `${infer A}{{${infer B}}}${infer C}`
   ? SearchForVariable<A> | Trim<B> | SearchForVariable<C>
@@ -38,10 +38,10 @@ type Variables<
     ? Variables<Extract<T[A], string | object>, O, Delimiter>
     : never
   : Path extends `${infer A}`
-  ? A extends keyof T
-    ? SearchForVariable<Extract<T[A], string>>
+    ? A extends keyof T
+      ? SearchForVariable<Extract<T[A], string>>
+      : never
     : never
-  : never
 
 type Resource = { [key: string]: Resource | string }
 export type Resources = { [lng: string]: Resource }

@@ -13,12 +13,12 @@ interface AdminFeatureCardProps {
 export const AdminFeatureCard = ({ route, icon, title, description }: AdminFeatureCardProps) => (
   <Link href={route} passHref legacyBehavior>
     <Card component="a" withBorder>
-      <Stack spacing={4} sx={{ height: 100 }}>
-        <Group spacing="sm">
+      <Stack gap={4} h={100}>
+        <Group gap="sm">
           {icon}
-          <Text weight={500}>{title}</Text>
+          <Text fw={500}>{title}</Text>
         </Group>
-        <Text size="sm" color="dimmed" sx={{ flexGrow: 1 }}>
+        <Text size="sm" c="dimmed" style={{ flexGrow: 1 }}>
           {description}
         </Text>
       </Stack>

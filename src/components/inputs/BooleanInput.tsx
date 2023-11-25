@@ -1,5 +1,6 @@
 import { Switch, Box } from "@mantine/core"
 import { ReactNode } from "react"
+import classes from "./BooleanInput.module.css"
 import { InputLabel } from "./InputLabel"
 
 interface BinaryInputProps {
@@ -11,17 +12,7 @@ interface BinaryInputProps {
 }
 
 export const BooleanInput = ({ label, extras, value, onChange, disabled }: BinaryInputProps) => (
-  <Box
-    sx={(theme) => ({
-      border: `1px solid ${
-        theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[4]
-      }`,
-      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
-      transition: "border-color 100ms ease",
-      borderRadius: "4px",
-      marginTop: "24.8px",
-    })}
-  >
+  <Box className={classes.root} mt={24.8}>
     <Switch
       label={(label || extras) && <InputLabel label={label} extras={extras} />}
       checked={value}
@@ -29,12 +20,12 @@ export const BooleanInput = ({ label, extras, value, onChange, disabled }: Binar
         onChange(ev.currentTarget.checked)
       }}
       disabled={disabled === true}
-      sx={{
-        display: "flex",
+      h={36}
+      pl={12}
+      pr={12}
+      display="flex"
+      style={{
         alignItems: "center",
-        height: "36px",
-        paddingLeft: "12px",
-        paddingRight: "12px",
       }}
     />
   </Box>

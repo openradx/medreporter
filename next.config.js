@@ -9,9 +9,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    localeDetection: true,
     locales: ["de", "en"],
     defaultLocale: "en",
+    localeDetection: false,
   },
   env: {
     // make url available on the client

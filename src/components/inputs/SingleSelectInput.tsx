@@ -30,6 +30,8 @@ export const SingleSelectInput = ({
     disabled={disabled}
     searchable
     clearable
-    withinPortal
+    comboboxProps={{
+      withinPortal: true,
+    }}
   />
 )

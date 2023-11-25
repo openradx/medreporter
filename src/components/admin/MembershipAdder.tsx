@@ -28,17 +28,18 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
 
   return (
     <Select
-      icon={status === "loading" ? <Loader /> : undefined}
+      leftSection={status === "loading" ? <Loader type="bars" size="sm" /> : undefined}
       label={t("MembershipAdder.inputLabelAddMember")}
       data={data?.users.map((user) => ({ value: user.id.toString(), label: user.username! })) ?? []}
       value={selectedUserId}
       onChange={setSelectedUserId}
       searchable
-      onKeyPress={(event) => event.key === "Enter" && handleAddMembership()}
+      onKeyDown={(event) => event.key === "Enter" && handleAddMembership()}
+      rightSectionPointerEvents="all"
       rightSection={
         <ActionIcon
           title={t("MembershipAdder.buttonAddMember")}
-          variant="filled"
+          variant="transparent"
           color="green"
           onClick={handleAddMembership}
         >

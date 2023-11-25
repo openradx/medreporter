@@ -41,7 +41,7 @@ export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) =
             }
           }}
         />
-        <Group position="right">
+        <Group justify="flex-end">
           <Button variant="default" onClick={onClose}>
             {t("general.buttonCancel")}
           </Button>

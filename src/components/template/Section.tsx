@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core"
+import { Stack } from "@mantine/core"
 import { ReactNode } from "react"
 import { SectionContextProvider } from "~/contexts/SectionContext"
 
@@ -11,14 +11,8 @@ interface SectionProps {
 
 export const Section = ({ id, label, active = true, children }: SectionProps) => (
   <SectionContextProvider value={{ id, label, active }}>
-    <Box
-      sx={{
-        display: active ? "flex" : "none",
-        flexDirection: "column",
-        alignItems: "stretch",
-      }}
-    >
+    <Stack display={active ? "flex" : "none"} align="stretch">
       {children}
-    </Box>
+    </Stack>
   </SectionContextProvider>
 )

@@ -2,6 +2,7 @@ import { Box, Flex } from "@mantine/core"
 import { ReactNode } from "react"
 import { GroupContextProvider } from "~/contexts/GroupContext"
 import { InputLabel } from "../inputs/InputLabel"
+import classes from "./Group.module.css"
 
 interface GridGroupProps {
   label?: string
@@ -14,12 +15,7 @@ interface GridGroupProps {
 export const Group = ({ label, extras, disabled, hidden, children }: GridGroupProps) => {
   if (!label) {
     return (
-      <Box
-        sx={{
-          display: hidden ? "none" : undefined,
-        }}
-        my="sm"
-      >
+      <Box display={hidden ? "none" : undefined} my="sm">
         {children}
       </Box>
     )
@@ -28,17 +24,12 @@ export const Group = ({ label, extras, disabled, hidden, children }: GridGroupPr
     <GroupContextProvider value={{ disabled }}>
       <Box
         component="fieldset"
-        sx={(theme) => ({
-          display: hidden ? "none" : undefined,
-          flexBasis: "100%",
-          border: `1px solid ${
-            theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2]
-          }`,
-        })}
+        display={hidden ? "none" : undefined}
+        className={classes.group}
         my="sm"
       >
         {(label || extras) && (
-          <Box component="legend" sx={{ padding: "0 6px" }}>
+          <Box component="legend" px={0} py={6}>
             <InputLabel label={label} extras={extras} />
           </Box>
         )}

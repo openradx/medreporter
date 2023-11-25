@@ -50,7 +50,7 @@ export const ManageMembershipsModal = ({
             role={MembershipRole.OWNER}
           />
         </Tabs>
-        <Group position="right">
+        <Group justify="flex-end">
           <Button variant="default" onClick={onClose}>
             {t("general.buttonClose")}
           </Button>

@@ -11,7 +11,7 @@ export const ForgotPasswordForm = () => {
   const forgotPassword = trpc.auth.forgotPassword.useMutation()
 
   return (
-    <Stack spacing="md">
+    <Stack gap="md">
       <Title order={3}>{t("ForgotPasswordForm.formTitle")}</Title>
       {forgotPassword.isSuccess && (
         <Alert title={t("ForgotPasswordForm.messageSubmitted")} color="green">

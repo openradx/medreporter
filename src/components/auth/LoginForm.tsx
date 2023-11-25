@@ -13,7 +13,7 @@ export const LoginForm = () => {
   const router = useRouter()
 
   return (
-    <Stack spacing="md">
+    <Stack gap="md">
       <Title order={3}>{t("LoginForm.formTitle")}</Title>
       <SubmitForm
         submitText={t("LoginForm.buttonLogIn")}
@@ -43,7 +43,7 @@ export const LoginForm = () => {
           }
         }}
       >
-        <Stack spacing="sm">
+        <Stack gap="sm">
           <Controller
             name="usernameOrEmail"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
@@ -70,7 +70,7 @@ export const LoginForm = () => {
           />
         </Stack>
       </SubmitForm>
-      <Stack spacing="xs">
+      <Stack gap="xs">
         <PageLink url={{ pathname: "/auth/forgot-password" }}>
           {t("LoginForm.linkForgotPassword")}
         </PageLink>

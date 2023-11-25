@@ -61,7 +61,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
         className="form"
         {...props}
       >
-        <Stack spacing="md">
+        <Stack gap="md">
           {formError && <Alert color="red">{formError}</Alert>}
 
           {children}

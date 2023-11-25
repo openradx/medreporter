@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mantine/core"
+import { Box, Group, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MeasurementsAction, MeasurementsData } from "~/types/measurements"
@@ -52,10 +52,8 @@ export const MeasurementsInput = ({
   }
 
   return (
-    <Stack spacing="xs">
-      <Box sx={{ marginLeft: 35 }}>
-        {(label || extras) && <InputLabel label={label} extras={extras} />}
-      </Box>
+    <Stack gap="xs">
+      <Box ml={35}>{(label || extras) && <InputLabel label={label} extras={extras} />}</Box>
       <ControlPanel
         labels={labels}
         followUp={params.followUp}
@@ -64,7 +62,7 @@ export const MeasurementsInput = ({
         dispatch={dispatch}
         disabled={disabled === true}
       />
-      <Box sx={{ overflow: "auto" }}>
+      <Box style={{ overflow: "auto" }}>
         <table>
           <tbody>
             <HeaderRow labels={labels} followUp={params.followUp} dimensions={params.dimensions} />
@@ -85,7 +83,7 @@ export const MeasurementsInput = ({
               <tr>
                 <th />
                 <th colSpan={8}>
-                  <Box sx={{ display: "flex" }}>{footer}</Box>
+                  <Group>{footer}</Group>
                 </th>
               </tr>
             </tfoot>

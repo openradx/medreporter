@@ -1,17 +1,8 @@
-import { Footer as MantineFooter } from "@mantine/core"
+import { AppShell } from "@mantine/core"
 import { CopyrightMessage } from "./CopyrightMessage"
 
 export const SmallFooter = () => (
-  <>
-    <MantineFooter
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-      height={40}
-    >
-      <CopyrightMessage />
-    </MantineFooter>
-  </>
+  <AppShell.Footer h={40}>
+    <CopyrightMessage />
+  </AppShell.Footer>
 )

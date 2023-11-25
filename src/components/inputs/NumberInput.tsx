@@ -2,6 +2,7 @@ import { NumberInput as MantineNumberInput, NumberInputHandlers } from "@mantine
 import { ReactNode, useRef, useState } from "react"
 import { ScrollBlocker } from "../common/ScrollBlocker"
 import { InputLabel } from "./InputLabel"
+import classes from "./NumberInput.module.css"
 
 const SCROLL_SENSITIVITY = 4
 
@@ -60,23 +61,23 @@ export const NumberInput = ({
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         value={value === null ? "" : value}
-        onChange={(newValue) => onChange(newValue === "" ? null : newValue)}
+        onChange={(newValue) => onChange(typeof newValue === "string" ? null : newValue)}
         disabled={disabled}
         min={min}
         max={max}
         step={step ?? 1 / 10 ** precision}
         startValue={start}
-        stepHoldDelay={300}
-        stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
-        precision={precision}
+        decimalScale={precision}
+        classNames={{
+          control: classes.control,
+        }}
         styles={{
           wrapper: { width },
           control: {
             flexGrow: 1,
             flex: "auto",
-            "&:hover": { flex: "0 0 60%" },
           },
-          rightSection: {
+          controls: {
             alignItems: "stretch",
             display: !autoHideControls || focus || hovered ? undefined : "none",
           },

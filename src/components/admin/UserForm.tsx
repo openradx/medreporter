@@ -10,7 +10,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
 
   return (
     <SubmitForm<S> {...props}>
-      <Stack spacing="sm">
+      <Stack gap="sm">
         <Controller
           name="username"
           render={({ field: { value, onChange }, fieldState: { error } }) => (

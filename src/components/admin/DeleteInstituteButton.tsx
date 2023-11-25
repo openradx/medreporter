@@ -17,6 +17,7 @@ export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps)
   return (
     <ActionIcon
       title={t("DeleteInstituteButton.buttonDeleteInstitute")}
+      variant="subtle"
       color="red"
       onClick={() =>
         openConfirmModal({

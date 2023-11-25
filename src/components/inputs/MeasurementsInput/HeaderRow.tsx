@@ -14,7 +14,7 @@ interface HeaderRowProps {
 }
 
 export const HeaderRow = ({ labels, followUp, dimensions }: HeaderRowProps) => (
-  <Box component="tr" sx={{ textAlign: "center" }}>
+  <Box component="tr" ta="center">
     <th />
     {followUp && <th>X{PREVIOUS_SIGN}</th>}
     {followUp && dimensions > 1 && <th>Y{PREVIOUS_SIGN}</th>}
