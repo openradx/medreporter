@@ -16,7 +16,7 @@ export const SignupForm = (props: SignupFormProps) => {
   const signup = trpc.auth.signup.useMutation()
 
   return (
-    <Stack spacing="md">
+    <Stack gap="md">
       <Title order={3}>{t("SignupForm.formTitle")}</Title>
       <SubmitForm
         submitText={t("SignupForm.buttonSubmit")}
@@ -42,7 +42,7 @@ export const SignupForm = (props: SignupFormProps) => {
           }
         }}
       >
-        <Stack spacing="sm">
+        <Stack gap="sm">
           <Controller
             name="username"
             render={({ field: { value, onChange }, fieldState: { error } }) => (

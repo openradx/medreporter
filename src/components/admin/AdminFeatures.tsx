@@ -49,7 +49,7 @@ export const AdminFeatures = () => {
       {features.length > 0 && (
         <Grid>
           {features.map((feature) => (
-            <Grid.Col key={feature.route.pathname} sm={12} md={6} lg={4}>
+            <Grid.Col key={feature.route.pathname} span={{ sm: 12, md: 6, lg: 4 }}>
               <AdminFeatureCard
                 route={feature.route}
                 icon={feature.icon}

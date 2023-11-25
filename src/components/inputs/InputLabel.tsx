@@ -7,13 +7,13 @@ interface InputLabelProps {
 }
 
 export const InputLabel = ({ label, extras }: InputLabelProps) => (
-  <Group sx={{ alignContent: "center", flexWrap: "nowrap", width: "100%" }} spacing={2}>
+  <Group w="100%" wrap="nowrap" gap={2}>
     <Text
-      sx={{
+      w="calc(100% - 20px)"
+      style={{
         overflow: "hidden",
         textOverflow: "ellipsis",
         whiteSpace: "nowrap",
-        width: "calc(100% - 20px)",
         flexGrow: 1,
       }}
     >

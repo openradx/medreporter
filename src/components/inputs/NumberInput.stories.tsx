@@ -18,6 +18,7 @@ const NumberInputWithState = ({
   min,
   max,
   precision,
+  start,
   step,
   extras,
 }: ComponentProps<typeof NumberInput>) => {
@@ -28,7 +29,7 @@ const NumberInputWithState = ({
       <NumberInput
         value={value}
         onChange={setValue}
-        {...{ label, min, max, precision, step, extras }}
+        {...{ label, min, max, precision, start, step, extras }}
       />
     </InputLayout>
   )

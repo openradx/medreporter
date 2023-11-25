@@ -70,7 +70,7 @@ export const Tools = () => {
       {tools
         .sort((tool1, tool2) => tool1.title.localeCompare(tool2.title))
         .map((tool) => (
-          <Grid.Col key={tool.route.pathname} sm={12} md={6} lg={4}>
+          <Grid.Col key={tool.route.pathname} span={{ base: 12, md: 6, lg: 4 }}>
             <ToolCard
               route={tool.route}
               title={tool.title}

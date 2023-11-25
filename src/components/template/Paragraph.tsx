@@ -25,20 +25,16 @@ export const Paragraph = ({
   const outputFormat = useAppSelector(selectOutputFormat)
 
   return (
-    <Box
-      sx={{
-        display: hidden ? "none" : "block",
-      }}
-    >
+    <Box display={hidden ? "none" : "block"}>
       <ParagraphContextProvider value={{ list }}>
         <StructureLink onClick={activateLink}>
           {title && <Text fw={700}>{title}</Text>}
           {list && (
             <Box
-              sx={{
-                margin: 0,
-                padding: 0,
-                paddingLeft: outputFormat === "html" ? 18 : 0,
+              m={0}
+              p={0}
+              pl={outputFormat === "html" ? 18 : 0}
+              style={{
                 listStyleType: outputFormat === "html" ? "square" : "none",
               }}
             >

@@ -19,11 +19,7 @@ export const MeasurementsActions = ({ labels, dispatch, disabled }: Measurements
   return (
     <Menu>
       <Menu.Target>
-        <ActionIcon
-          title={t("MeasurementsActions.buttonActions")}
-          sx={{ marginTop: 20 }}
-          disabled={disabled}
-        >
+        <ActionIcon title={t("MeasurementsActions.buttonActions")} mt={20} disabled={disabled}>
           <ToolIcon />
         </ActionIcon>
       </Menu.Target>

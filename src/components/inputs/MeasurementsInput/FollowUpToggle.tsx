@@ -21,7 +21,7 @@ export const FollowUpToggle = memo(
         })
       }}
       disabled={disabled}
-      sx={{ marginTop: 20 }}
+      mt={20}
     />
   )
 )

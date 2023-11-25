@@ -1,4 +1,4 @@
-import { Box, Center, Loader, Paper, ScrollArea } from "@mantine/core"
+import { Center, Flex, Loader, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -20,7 +20,7 @@ export const Report = ({ children }: ReportProps) => {
 
   return (
     <Paper
-      sx={{
+      style={{
         flex: "1 1 0",
         display: "flex",
         flexDirection: "column",
@@ -31,7 +31,7 @@ export const Report = ({ children }: ReportProps) => {
       <PanelToolbar
         title={t("Report.title")}
         actions={
-          <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
+          <ActionsGroup grow>
             <CopyButton />
             <OutputFormat />
             <ReportLanguageChooser />
@@ -39,25 +39,22 @@ export const Report = ({ children }: ReportProps) => {
         }
       />
       {!dataInitialized && (
-        <Center sx={{ flexGrow: 1 }}>
-          <Loader variant="bars" />
+        <Center style={{ flexGrow: 1 }}>
+          <Loader type="bars" />
         </Center>
       )}
       {dataInitialized && (
-        <ScrollArea sx={{ flexGrow: 1 }}>
-          <Box
+        <ScrollArea style={{ flexGrow: 1 }}>
+          <Flex
             id={REPORT_CONTENT_ID}
-            sx={(theme) => ({
-              padding: theme.spacing.sm,
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              whiteSpace: "pre-wrap",
-              fontFamily: "monospace",
-            })}
+            h="100%"
+            direction="column"
+            ff="monospace"
+            p="sm"
+            style={{ whiteSpace: "pre-wrap" }}
           >
             {children}
-          </Box>
+          </Flex>
         </ScrollArea>
       )}
     </Paper>

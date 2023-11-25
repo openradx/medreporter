@@ -1,7 +1,6 @@
-import { Burger, Group, Header, Text } from "@mantine/core"
+import { Burger, Group, AppShell, Text } from "@mantine/core"
 import Link from "next/link"
 import { useState } from "react"
-import { NAVBAR_HEIGHT } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
@@ -19,8 +18,8 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
 
   return (
     <>
-      <Header height={NAVBAR_HEIGHT}>
-        <Group align="center" position="apart" h="100%" px="md">
+      <AppShell.Header>
+        <Group align="center" justify="space-between" h="100%" px="md">
           <Group>
             <Burger
               opened={false}
@@ -29,19 +28,19 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
               size="sm"
             />
             <Link href="/" legacyBehavior>
-              <Text fw={500} fz="xl" sx={{ userSelect: "none", cursor: "pointer" }}>
+              <Text fw={500} fz="xl" style={{ userSelect: "none", cursor: "pointer" }}>
                 MedReporter
               </Text>
             </Link>
           </Group>
-          <Group id="navbar-actions" spacing="sm" />
+          <Group id="navbar-actions" gap="sm" />
           <ActionsGroup>
             <ColorSchemeToggle />
             <SiteLanguageChooser />
             {!withoutAccountControl && <AccountControl />}
           </ActionsGroup>
         </Group>
-      </Header>
+      </AppShell.Header>
       <NavDrawer opened={opened} setOpened={setOpened} />
     </>
   )

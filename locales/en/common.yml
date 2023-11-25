@@ -12,7 +12,6 @@ formError:
 general:
   buttonAdd: Add
   buttonCancel: Cancel
-  buttonClear: Clear
   buttonClose: Close
   buttonDelete: Delete
   buttonSave: Save
@@ -100,9 +99,11 @@ HomePage:
   templatesTitle: Templates
   templatesDescription: Use a template to build a report.
 InstituteSwitcher:
-  label: Choose institute
-  noInstituteAvailable: No institute available
-  noInstituteOption: No institute
+  groupIndividual: Individual
+  groupInstitutes: Institutes
+  inputLabel: Current institute
+  optionIndividual: Individual
+  optionNoInstituteAvailable: No institute available
 KidneyVolumePage:
   toolTitle: Kidney volume (Mayo-Model)
 LanguageChooser:
@@ -147,9 +148,7 @@ ModulesPage:
 Navbar:
   openMainMenuTitle: Open main menu
 NavDrawer:
-  figures: Figures
   home: Home
-  modules: Modules
   tools: Tools
 NewFigureForm:
   formTitle: Create new figure

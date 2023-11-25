@@ -29,7 +29,7 @@ export const ControlPanel = ({
   dispatch,
   disabled,
 }: ControlPanelProps) => (
-  <Group spacing="lg" sx={{ marginLeft: 35 }}>
+  <Group gap="lg" ml={35}>
     <FollowUpToggle
       label={labels.followUp}
       followUp={followUp}
@@ -43,7 +43,7 @@ export const ControlPanel = ({
       dispatch={dispatch}
       disabled={disabled}
     />
-    <Box sx={{ alignSelf: "center" }}>
+    <Box style={{ alignSelf: "center" }}>
       <MeasurementsActions labels={labels} dispatch={dispatch} disabled={disabled} />
     </Box>
   </Group>

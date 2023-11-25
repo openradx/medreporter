@@ -37,32 +37,32 @@ export const UserList = () => {
       {!data?.users.length && <Text>{t("general.miscNoData")}</Text>}
       {data?.users.length && (
         <ScrollArea>
-          <Table sx={{ minWidth: 800 }} verticalSpacing="md">
-            <tbody>
+          <Table miw={800}>
+            <Table.Tbody>
               {data.users.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.username}</td>
-                  <td>{user.email}</td>
-                  <td>{user.role}</td>
-                  <td>
-                    <Group spacing={0} position="right">
+                <Table.Tr key={user.id}>
+                  <Table.Td>{user.username}</Table.Td>
+                  <Table.Td>{user.email}</Table.Td>
+                  <Table.Td>{user.role}</Table.Td>
+                  <Table.Td>
+                    <Group gap={0} justify="flex-end">
                       <EditUserButton user={user} />
                       <DeleteUserButton user={user} />
                     </Group>
-                  </td>
-                </tr>
+                  </Table.Td>
+                </Table.Tr>
               ))}
-            </tbody>
+            </Table.Tbody>
           </Table>
         </ScrollArea>
       )}
-      <Group position="apart">
+      <Group justify="space-between">
         <AddUserButton />
         {data?.users.length && (
           <Pagination
             value={activePage}
             total={Math.ceil(data.count / ITEMS_PER_PAGE)}
-            onChange={(value) => router.push({ query: { value: String(value) } })}
+            onChange={(value) => router.push({ query: { page: String(value) } })}
           />
         )}
       </Group>

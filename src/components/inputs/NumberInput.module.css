@@ -1,0 +1,7 @@
+.control {
+  flex-grow: 1;
+
+  &:hover {
+    flex: 0 0 60%;
+  }
+}

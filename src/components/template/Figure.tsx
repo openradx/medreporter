@@ -27,7 +27,7 @@ export const Figure = ({ children }: FigureProps) => {
       <ActionIcon
         title={t("FieldGraphics.buttonGraphic")}
         onClick={handleClickOpen}
-        sx={{ pointerEvents: "auto" }}
+        style={{ pointerEvents: "auto" }}
         size={20}
       >
         <ImageIcon />

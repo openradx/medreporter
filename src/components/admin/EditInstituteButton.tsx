@@ -17,6 +17,8 @@ export const EditInstituteButton = ({ institute }: EditInstituteButtonProps) => 
     <>
       <ActionIcon
         title={t("EditInstituteButton.buttonEditInstitute")}
+        variant="subtle"
+        color="gray"
         onClick={() => setOpened(true)}
       >
         <EditIcon />

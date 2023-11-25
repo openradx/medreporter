@@ -1,58 +1,26 @@
-import { ColorSchemeProvider, MantineProvider } from "@mantine/core"
-import { Notifications } from "@mantine/notifications"
-import React from "react"
-import { useMemo } from "react"
+import { MantineProvider, useMantineColorScheme } from "@mantine/core"
+import "@mantine/core/styles.css"
+import "@mantine/dates/styles.css"
+import { addons } from "@storybook/preview-api"
+import React, { useEffect } from "react"
+import { DARK_MODE_EVENT_NAME } from "storybook-dark-mode"
+import { theme } from "../src/theme"
 
-export const parameters = { layout: "padded" }
+const channel = addons.getChannel()
 
-const fontFamily =
-  "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
+  const { setColorScheme } = useMantineColorScheme()
+  const handleColorScheme = (value: boolean) => setColorScheme(value ? "dark" : "light")
 
-// Inspired by https://storybook.js.org/blog/material-ui-in-storybook/
-export const globalTypes = {
-  theme: {
-    name: "Theme",
-    title: "Theme",
-    description: "Theme for your components",
-    defaultValue: "light",
-    toolbar: {
-      icon: "paintbrush",
-      dynamicTitle: true,
-      items: [
-        { value: "light", left: "☀️", title: "Light mode" },
-        { value: "dark", left: "🌙", title: "Dark mode" },
-      ],
-    },
-  },
+  useEffect(() => {
+    channel.on(DARK_MODE_EVENT_NAME, handleColorScheme)
+    return () => channel.off(DARK_MODE_EVENT_NAME, handleColorScheme)
+  }, [channel])
+
+  return <>{children}</>
 }
 
-const THEMES = {
-  light: "light",
-  dark: "dark",
-}
-
-const withMantineTheme = (Story, context) => {
-  const { theme: themeKey } = context.globals
-
-  const theme = useMemo(() => THEMES[themeKey] || THEMES["light"], [themeKey])
-
-  return (
-    <ColorSchemeProvider colorScheme="light" toggleColorScheme={() => {}}>
-      <MantineProvider
-        theme={{
-          colorScheme: theme,
-          cursorType: "pointer",
-          fontFamily,
-          headings: { fontFamily },
-        }}
-        withGlobalStyles
-        withNormalizeCSS
-      >
-        <Notifications />
-        <Story />
-      </MantineProvider>
-    </ColorSchemeProvider>
-  )
-}
-
-export const decorators = [withMantineTheme]
+export const decorators = [
+  (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
+  (renderStory: any) => <MantineProvider theme={theme}>{renderStory()}</MantineProvider>,
+]

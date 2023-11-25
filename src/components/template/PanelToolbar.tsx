@@ -1,5 +1,6 @@
-import { Box, Text } from "@mantine/core"
+import { Flex, Text } from "@mantine/core"
 import { ReactNode } from "react"
+import classes from "./PanelToolbar.module.css"
 
 interface PanelToolbarProps {
   title: string
@@ -7,17 +8,8 @@ interface PanelToolbarProps {
 }
 
 export const PanelToolbar = ({ title, actions }: PanelToolbarProps) => (
-  <Box
-    component="header"
-    sx={(theme) => ({
-      borderBottom: `1px solid ${
-        theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2]
-      }`,
-      padding: theme.spacing.xs,
-      display: "flex",
-    })}
-  >
+  <Flex component="header" className={classes.panelToolbar} p="xs">
     <Text>{title}</Text>
     {actions}
-  </Box>
+  </Flex>
 )

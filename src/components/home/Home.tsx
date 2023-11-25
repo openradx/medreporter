@@ -1,7 +1,11 @@
 import { Title, Text, Card, Grid, Image } from "@mantine/core"
+import NextImage from "next/image"
 import Link from "next/link"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
+import exampleImage2 from "~/images/exampleImage2.png"
+import exampleImage from "~/images/exampleImage.png"
+import toolsImage from "~/images/tools.png"
 import { LoginForm } from "../auth/LoginForm"
 import { InstituteSwitcher } from "./InstituteSwitcher"
 
@@ -13,7 +17,7 @@ export const Home = () => {
   return (
     <Grid>
       <Grid.Col span={12}>
-        <Title align="center" mt={100}>
+        <Title ta="center" mt={100}>
           Welcome to{" "}
           <Text inherit variant="gradient" component="span">
             MedReporter
@@ -30,38 +34,26 @@ export const Home = () => {
           <InstituteSwitcher />
         </Grid.Col>
       )}
-      <Grid.Col xs={12} sm={6} xl={6}>
-        <Card
-          shadow="sm"
-          p="lg"
-          radius="md"
-          withBorder
-          style={{ cursor: "pointer", minHeight: "12rem" }}
-        >
+      <Grid.Col span={{ xs: 12, sm: 6, xl: 6 }}>
+        <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
           <Card.Section>
-            <Image src="/exampleImage2.png" height="10rem" fit="contain" alt="Example image" />
+            <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
           </Card.Section>
-          <Text weight={500}>{t("HomePage.templatesTitle")}</Text>
-          <Text size="sm" color="dimmed">
+          <Text fw={500}>{t("HomePage.templatesTitle")}</Text>
+          <Text size="sm" c="dimmed">
             {t("HomePage.templatesDescription")}
           </Text>
         </Card>
       </Grid.Col>
       {loggedIn && (
-        <Grid.Col xs={12} sm={6} xl={6}>
+        <Grid.Col span={{ xs: 12, sm: 6, xl: 6 }}>
           <Link href="/templates/new" legacyBehavior>
-            <Card
-              shadow="sm"
-              p="lg"
-              radius="md"
-              withBorder
-              sx={{ cursor: "pointer", minHeight: "12rem" }}
-            >
+            <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
               <Card.Section>
-                <Image src="/exampleImage.png" height="10rem" fit="contain" alt="Editor demo" />
+                <Image component={NextImage} src={exampleImage} alt="Example image" h={160} />
               </Card.Section>
-              <Text weight={500}> {t("HomePage.newTitle")}</Text>
-              <Text size="sm" color="dimmed">
+              <Text fw={500}> {t("HomePage.newTitle")}</Text>
+              <Text size="sm" c="dimmed">
                 {t("HomePage.newDescription")}
               </Text>
             </Card>
@@ -69,38 +61,26 @@ export const Home = () => {
         </Grid.Col>
       )}
       {loggedIn && (
-        <Grid.Col xs={12} sm={6}>
-          <Card
-            shadow="sm"
-            p="lg"
-            radius="md"
-            withBorder
-            sx={{ cursor: "pointer", minHeight: "12rem" }}
-          >
+        <Grid.Col span={{ xs: 12, sm: 6 }}>
+          <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
             <Card.Section>
-              <Image src="/exampleImage2.png" height="10rem" fit="contain" alt="Example image" />
+              <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
             </Card.Section>
-            <Text weight={500}>{t("HomePage.reportsTitle")}</Text>{" "}
-            <Text size="sm" color="dimmed">
+            <Text fw={500}>{t("HomePage.reportsTitle")}</Text>
+            <Text size="sm" c="dimmed">
               {t("HomePage.reportsDescription")}
             </Text>
           </Card>
         </Grid.Col>
       )}
-      <Grid.Col xs={12} sm={6}>
+      <Grid.Col span={{ xs: 12, sm: 6 }}>
         <Link href="/tools" legacyBehavior>
-          <Card
-            shadow="sm"
-            p="lg"
-            radius="md"
-            withBorder
-            sx={{ cursor: "pointer", minHeight: "12rem" }}
-          >
+          <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
             <Card.Section>
-              <Image src="/tools.png" height="10rem" fit="contain" alt="Tools Image" />
+              <Image component={NextImage} src={toolsImage} alt="Tools Image" h={160} />
             </Card.Section>
-            <Text weight={500}>{t("HomePage.toolsTitle")}</Text>{" "}
-            <Text size="sm" color="dimmed">
+            <Text fw={500}>{t("HomePage.toolsTitle")}</Text>{" "}
+            <Text size="sm" c="dimmed">
               {t("HomePage.toolsDescription")}
             </Text>
           </Card>

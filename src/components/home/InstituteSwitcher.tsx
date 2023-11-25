@@ -1,7 +1,13 @@
-import { Group, Loader, Select, Text } from "@mantine/core"
+import {
+  Combobox,
+  ComboboxItem,
+  ComboboxOption,
+  InputBase,
+  Loader,
+  useCombobox,
+} from "@mantine/core"
 import { openModal } from "@mantine/modals"
-import { forwardRef, ReactElement } from "react"
-import { BsPersonSquare as NoInstituteIcon } from "react-icons/bs"
+import { BsPersonSquare as IndividualIcon } from "react-icons/bs"
 import { MdBusiness as InstituteIcon } from "react-icons/md"
 import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -14,58 +20,25 @@ export const InstituteSwitcher = () => {
   const { currentInstituteId } = user
   const ownMemberships = trpc.profile.getOwnMemberships.useQuery()
   const updateCurrentInstitute = trpc.profile.updateCurrentInstitute.useMutation()
-  interface ItemProps extends React.ComponentPropsWithoutRef<"div"> {
-    image: ReactElement
-    label: string
-    value: string
-  }
 
-  const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
-    ({ image, label, ...others }: ItemProps, ref) => (
-      <div ref={ref} {...others}>
-        <Group noWrap>
-          {image} <Text size="sm">{label}</Text>
-        </Group>
-      </div>
-    )
-  )
-
-  const options: ItemProps[] =
+  const options: ComboboxItem[] =
     ownMemberships.data?.map((membership) => {
       const instituteId = membership.institute.id
       const instituteName = membership.institute.name
-
-      return { value: instituteId, label: instituteName, image: <InstituteIcon /> }
+      return { value: instituteId, label: instituteName }
     }) ?? []
 
-  if (options.length) {
-    options.unshift({
-      value: "",
-      label: t("InstituteSwitcher.noInstituteOption"),
-      image: <NoInstituteIcon />,
-    })
-  }
+  const currentInstituteName = options.find((option) => option.value === currentInstituteId)?.label
+
+  const combobox = useCombobox({
+    onDropdownClose: () => combobox.resetSelectedOption(),
+  })
 
   return (
-    <Select
-      label={t("InstituteSwitcher.label")}
-      searchable
-      clearable
-      placeholder={!options.length ? t("InstituteSwitcher.noInstituteAvailable") : undefined}
-      data={options}
-      itemComponent={SelectItem}
-      value={currentInstituteId === null ? "" : currentInstituteId}
+    <Combobox
+      store={combobox}
       disabled={!ownMemberships.isSuccess}
-      icon={
-        ownMemberships.isLoading || updateCurrentInstitute.isLoading ? (
-          <Loader size="sm" />
-        ) : currentInstituteId ? (
-          <InstituteIcon size={20} />
-        ) : (
-          <NoInstituteIcon size={20} />
-        )
-      }
-      onChange={async (value) => {
+      onOptionSubmit={async (value) => {
         const newInstituteId = value === "" ? null : value
         updateCurrentInstitute.mutate(
           { instituteId: newInstituteId },
@@ -81,7 +54,55 @@ export const InstituteSwitcher = () => {
             },
           }
         )
+        combobox.closeDropdown()
       }}
-    />
+    >
+      <Combobox.Target>
+        <InputBase
+          component="button"
+          pointer
+          label={t("InstituteSwitcher.inputLabel")}
+          leftSection={
+            ownMemberships.isLoading || updateCurrentInstitute.isLoading ? (
+              <Loader type="bars" size="sm" />
+            ) : currentInstituteId ? (
+              <InstituteIcon size={20} />
+            ) : (
+              <IndividualIcon size={20} />
+            )
+          }
+          rightSection={<Combobox.Chevron />}
+          value={currentInstituteId ?? ""}
+          onClick={() => combobox.openDropdown()}
+          onFocus={() => combobox.openDropdown()}
+          onBlur={() => combobox.closeDropdown()}
+        >
+          {currentInstituteName ?? t("InstituteSwitcher.optionIndividual")}
+        </InputBase>
+      </Combobox.Target>
+
+      <Combobox.Dropdown>
+        <Combobox.Options>
+          <Combobox.Group label={t("InstituteSwitcher.groupIndividual")}>
+            <Combobox.Option value="" key="">
+              {t("InstituteSwitcher.optionIndividual")}
+            </Combobox.Option>
+          </Combobox.Group>
+          <Combobox.Group label={t("InstituteSwitcher.groupInstitutes")}>
+            {options.length > 0 &&
+              options.map((option) => (
+                <ComboboxOption key={option.value} value={option.value}>
+                  {option.label}
+                </ComboboxOption>
+              ))}
+            {options.length === 0 && (
+              <ComboboxOption value="none" key="none">
+                {t("InstituteSwitcher.optionNoInstituteAvailable")}
+              </ComboboxOption>
+            )}
+          </Combobox.Group>
+        </Combobox.Options>
+      </Combobox.Dropdown>
+    </Combobox>
   )
 }

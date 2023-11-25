@@ -53,20 +53,20 @@ export const AccountControl = () => {
 
           <Menu.Dropdown>
             <Menu.Label>{session.data.user.username}</Menu.Label>
-            <Menu.Item icon={<ProfileIcon size={18} />}>
+            <Menu.Item leftSection={<ProfileIcon size={18} />}>
               {t("AccountControl.optionProfile")}
             </Menu.Item>
             {canAdministrate && (
               <Menu.Item
                 component={Link}
                 href={{ pathname: "/admin" }}
-                icon={<AdminIcon size={18} />}
+                leftSection={<AdminIcon size={18} />}
               >
                 {t("AccountControl.optionAdmin")}
               </Menu.Item>
             )}
             <Menu.Item
-              icon={<LogoutIcon size={18} />}
+              leftSection={<LogoutIcon size={18} />}
               onClick={async () => {
                 await signOut({ redirect: false })
                 router.push("/")

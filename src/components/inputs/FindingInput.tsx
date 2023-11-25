@@ -1,5 +1,6 @@
 import { Box, Collapse, Stack, Switch } from "@mantine/core"
 import { ReactNode } from "react"
+import classes from "./FindingInput.module.css"
 import { InputLabel } from "./InputLabel"
 
 interface FindingInputProps {
@@ -19,18 +20,7 @@ export const FindingInput = ({
   disabled,
   children,
 }: FindingInputProps) => (
-  <Stack
-    sx={(theme) => ({
-      flexBasis: "100%",
-      border: `1px solid ${
-        theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[2]
-      }`,
-      borderRadius: "4px",
-      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
-    })}
-    my={4}
-    spacing={0}
-  >
+  <Stack className={classes.root} my={4} gap={0}>
     <Switch
       label={(label || extras) && <InputLabel label={label} extras={extras} />}
       checked={value}
@@ -38,16 +28,15 @@ export const FindingInput = ({
         onChange(ev.currentTarget.checked)
       }}
       disabled={disabled === true}
-      sx={{
-        display: "flex",
+      h={36}
+      px={12}
+      display="flex"
+      style={{
         alignItems: "center",
-        height: "36px",
-        paddingLeft: "12px",
-        paddingRight: "12px",
       }}
     />
     <Collapse in={value}>
-      <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
+      <Box p="sm">{children}</Box>
     </Collapse>
   </Stack>
 )

@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core"
+import { Flex } from "@mantine/core"
 import copy from "fast-copy"
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react"
 import { FormProvider, useForm } from "react-hook-form"
@@ -110,12 +110,9 @@ export const StructureForm = ({ children }: StructureFormProps) => {
       }}
     >
       <FormProvider {...methods}>
-        <Box
-          component="form"
-          sx={{ position: "relative", height: "100%", display: "flex", flexDirection: "column" }}
-        >
+        <Flex component="form" pos="relative" h="100%" direction="column">
           {children}
-        </Box>
+        </Flex>
         {/* TODO: see https://github.com/react-hook-form/devtools/issues/141 */}
         {/* {config.reactHookFormDevToolsEnabled && (
           <DevTool placement="top-right" control={methods?.control} />

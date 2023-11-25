@@ -13,12 +13,12 @@ export const StructureLink = ({ enabled = true, onClick, children }: StructureLi
   }
 
   return (
-    <Box component="div" sx={{ display: "inline-block" }}>
+    <Box component="div" display="inline-block">
       <Box
         component="div"
         onClick={onClick}
-        sx={{
-          display: "inline-block",
+        display="inline-block"
+        style={{
           cursor: "pointer",
           "&:hover": { textDecoration: "underline", textDecorationStyle: "dotted" },
         }}

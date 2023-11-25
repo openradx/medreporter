@@ -29,6 +29,8 @@ export const MultipleSelectInput = ({
     data={options}
     disabled={disabled}
     searchable
-    withinPortal
+    comboboxProps={{
+      withinPortal: true,
+    }}
   />
 )

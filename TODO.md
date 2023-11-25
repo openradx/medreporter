@@ -2,6 +2,7 @@
 
 ## Kai
 
+- Get rid of images in /public/images (when we use images we can import them as a component)
 - Rename structured-report stuff to template
 - Go back from moduleId to instanceId
 - Maybe replace JSDOM with cheerio (also work in the browser)
@@ -14,6 +15,9 @@
 - Use tsconfig-paths-webpack-plugin for storybook
 - Blitz queries don't need {} anymore
 - Integrate MicroI18n
+- Remove unneed:
+  -- extractFigureTranslations and its package.json script
+  -- processFigureTranslations and its package.json script
 
 - LanguageChooser vs LanguageSelector
 - Switch from Jest to vitest
@@ -42,6 +46,7 @@
 
 ## Julia
 
+- Buttons don't get bigger anymore on hover of NumberInput
 - Footer / copyright
 - Section layout
 - MedReporter Logo
@@ -76,3 +81,9 @@
 - Integrate components that use tRPC into storybook
   -- https://github.com/trpc/trpc/discussions/1879#discussioncomment-4356424
   -- can also be used for React testing framework
+
+## Mantine v7 issues
+
+- Alert now always needs a title <https://github.com/mantinedev/mantine/issues/5293>
+- Missing hold feature of NumberInput <https://github.com/orgs/mantinedev/discussions/5292>
+- Value type of NumberInput now string | number, but in v6 "" | number

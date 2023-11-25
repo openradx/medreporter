@@ -18,7 +18,7 @@ export const ResetPasswordForm = () => {
   const token = router.query.token as string
 
   return (
-    <Stack spacing="md">
+    <Stack gap="md">
       <Title order={3}>{t("ResetPasswordForm.formTitle")}</Title>
       {resetPassword.isSuccess ? (
         <Alert title={t("ResetPasswordForm.messageSuccess")}>
@@ -50,7 +50,7 @@ export const ResetPasswordForm = () => {
             }
           }}
         >
-          <Stack spacing={2}>
+          <Stack gap={2}>
             <Controller
               name="password"
               render={({ field: { value, onChange }, fieldState: { error } }) => (

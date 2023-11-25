@@ -44,31 +44,31 @@ export const InstituteList = () => {
       {!data?.institutes.length && <Text>{t("general.miscNoData")}</Text>}
       {data?.institutes.length && (
         <ScrollArea>
-          <Table sx={{ minWidth: 800 }} verticalSpacing="md">
-            <tbody>
+          <Table miw={800}>
+            <Table.Tbody>
               {data.institutes.map((institute) => (
-                <tr key={institute.id}>
-                  <td>{institute.name}</td>
-                  <td>
-                    <Group spacing={0} position="right">
+                <Table.Tr key={institute.id}>
+                  <Table.Td>{institute.name}</Table.Td>
+                  <Table.Td>
+                    <Group gap={0} justify="flex-end">
                       <ManageMembershipsButton institute={institute} />
                       <EditInstituteButton institute={institute} />
                       <DeleteInstituteButton institute={institute} />
                     </Group>
-                  </td>
-                </tr>
+                  </Table.Td>
+                </Table.Tr>
               ))}
-            </tbody>
+            </Table.Tbody>
           </Table>
         </ScrollArea>
       )}
-      <Group position="apart">
+      <Group justify="space-between">
         {canAddInstitute ? <AddInstituteButton /> : <div />}
         {data?.institutes.length && (
           <Pagination
             value={activePage}
             total={Math.ceil(data.count / ITEMS_PER_PAGE)}
-            onChange={(value) => router.push({ query: { value: String(value) } })}
+            onChange={(value) => router.push({ query: { page: String(value) } })}
           />
         )}
       </Group>

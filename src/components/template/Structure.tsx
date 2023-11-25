@@ -1,4 +1,5 @@
-import { Box, MediaQuery, Paper, ScrollArea } from "@mantine/core"
+import { Box, Paper, ScrollArea } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ActionsGroup } from "../common/ActionsGroup"
@@ -15,35 +16,34 @@ interface StructureProps {
 
 export const Structure = ({ children }: StructureProps) => {
   const { t } = useSiteTranslation()
+  const matches = useMediaQuery("(min-width: 88em)")
 
   return (
-    <MediaQuery largerThan="xl" styles={{ flex: "1.5 1 0" }}>
-      <Paper
-        sx={{
-          flex: "1 1 0",
-          display: "flex",
-          flexDirection: "column",
-        }}
-        shadow="sm"
-        withBorder
-      >
-        <StructureForm>
-          <PanelToolbar
-            title={t("Structure.title")}
-            actions={
-              <ActionsGroup sx={{ flexGrow: 1, justifyContent: "center" }}>
-                <ClearStructureButton />
-                <UndoButton />
-                <RedoButton />
-                <StructureLanguageChooser />
-              </ActionsGroup>
-            }
-          />
-          <ScrollArea sx={{ flexGrow: 1 }}>
-            <Box sx={(theme) => ({ padding: theme.spacing.sm })}>{children}</Box>
-          </ScrollArea>
-        </StructureForm>
-      </Paper>
-    </MediaQuery>
+    <Paper
+      style={{
+        flex: matches ? "1.5 1 0" : "1 1 0",
+        display: "flex",
+        flexDirection: "column",
+      }}
+      shadow="sm"
+      withBorder
+    >
+      <StructureForm>
+        <PanelToolbar
+          title={t("Structure.title")}
+          actions={
+            <ActionsGroup grow>
+              <ClearStructureButton />
+              <UndoButton />
+              <RedoButton />
+              <StructureLanguageChooser />
+            </ActionsGroup>
+          }
+        />
+        <ScrollArea style={{ flexGrow: 1 }}>
+          <Box p="sm">{children}</Box>
+        </ScrollArea>
+      </StructureForm>
+    </Paper>
   )
 }

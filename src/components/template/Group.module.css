@@ -1,0 +1,8 @@
+.group {
+  flex-basis: 100%;
+  border: 1px solid var(--mantine-color-gray-2);
+
+  @mixin dark {
+    border: 1px solid var(--mantine-color-dark-6);
+  }
+}

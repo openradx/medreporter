@@ -1,0 +1,27 @@
+.root {
+  color: var(--mantine-color-blue-6);
+
+  @mixin dark {
+    color: var(--mantine-color-yellow-4);
+  }
+}
+
+.sun {
+  @mixin light {
+    display: none;
+  }
+
+  @mixin dark {
+    display: block;
+  }
+}
+
+.moon {
+  @mixin dark {
+    display: none;
+  }
+
+  @mixin light {
+    display: block;
+  }
+}

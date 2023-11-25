@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Modal, Tooltip } from "@mantine/core"
+import { ActionIcon, Box, Flex, Modal, Tooltip } from "@mantine/core"
 import { MouseEvent, useState } from "react"
 import { GrRotateLeft as ResetIcon } from "react-icons/gr"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -91,23 +91,22 @@ export const FigureModal = ({
 
   return (
     <Modal opened={opened} onClose={onClose} withCloseButton={false} size="80%">
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+      <Flex
+        align="center"
+        justify="center"
+        style={{
           pointerEvents: "auto",
         }}
       >
         <Tooltip.Floating
           label={tooltipTitle}
           position="top"
-          sx={{ visibility: tooltipTitle ? "visible" : "hidden" }}
+          style={{ visibility: tooltipTitle ? "visible" : "hidden" }}
         >
           <Box
             onMouseMove={handleMouseMove}
             onClick={handleClick}
-            sx={{
+            style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -135,13 +134,15 @@ export const FigureModal = ({
                 event.stopPropagation()
                 onChange?.(multiple ? [] : null)
               }}
-              sx={{ position: "absolute", right: 8, bottom: 16 }}
+              pos="absolute"
+              right={8}
+              bottom={16}
             >
               <ResetIcon />
             </ActionIcon>
           </Box>
         </Tooltip.Floating>
-      </Box>
+      </Flex>
     </Modal>
   )
 }

@@ -1,4 +1,4 @@
-import { Modal, TextInput, Select, Button, Box, Title, MultiSelect } from "@mantine/core"
+import { Modal, TextInput, Select, Button, Title, MultiSelect, Flex } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import DE from "flag-icons/flags/4x3/de.svg"
 import ES from "flag-icons/flags/4x3/es.svg"
@@ -35,22 +35,21 @@ export const NewTemplate = () => {
 
   return (
     <>
-      <Box display="flex" mb={4} sx={{ justifyContent: "space-between" }}>
-        <Title order={3} color="dimmed">
+      <Flex mb={4} justify="space-between">
+        <Title order={3} c="dimmed">
           Create new template
         </Title>
         <Button variant="outline" onClick={open}>
           Template properties
         </Button>
-      </Box>
+      </Flex>
       <Modal opened={opened} onClose={close} title="New Template - Properties">
         <TextInput label="Name" />
         <Select
           label="Language"
           placeholder="Pick language"
           searchable
-          nothingFound="No options"
-          dropdownPosition="bottom"
+          nothingFoundMessage="No options"
           data={languageData}
           maxDropdownHeight={100}
         />
@@ -58,8 +57,7 @@ export const NewTemplate = () => {
           label="Tags"
           placeholder="Pick tags"
           searchable
-          nothingFound="No options"
-          dropdownPosition="bottom"
+          nothingFoundMessage="No options"
           data={tagsData}
           clearable
         />

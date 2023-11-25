@@ -36,7 +36,7 @@ export const SingleRadioInput = ({
       }}
       value={value ?? undefined}
     >
-      <Stack spacing="xs">
+      <Stack gap="xs">
         {options.map((option) => (
           <Radio
             key={option.value}

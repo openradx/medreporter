@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, locales }) => {
 const Custom404: PageWithLayout = () => (
   <>
     <PageHead title="404" />
-    <Title align="center" mt={100}>
+    <Title ta="center" mt={100}>
       <Text inherit variant="gradient" span>
         404{" "}
       </Text>

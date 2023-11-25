@@ -40,5 +40,8 @@ next-env.d.ts
 /playwright-report/
 /playwright/.cache/
 
+# stylelint
+.stylelintcache
+
 # misc
 /bin

@@ -26,14 +26,7 @@ export const Hint = ({ level, children, hidden = false }: HintProps) => {
   }
 
   return (
-    <Alert
-      sx={{
-        display: hidden ? "none" : undefined,
-      }}
-      icon={icon}
-      color={color}
-      my="sm"
-    >
+    <Alert display={hidden ? "none" : undefined} icon={icon} color={color} my="sm">
       {children}
     </Alert>
   )

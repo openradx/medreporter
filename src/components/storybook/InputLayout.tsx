@@ -7,5 +7,5 @@ interface InputLayoutProps {
 }
 
 export const InputLayout = ({ width = 250, children }: InputLayoutProps) => (
-  <Box sx={{ width }}>{children}</Box>
+  <Box w={width}>{children}</Box>
 )

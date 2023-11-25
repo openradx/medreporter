@@ -1,8 +1,8 @@
 import { Box, Accordion, Card, Title } from "@mantine/core"
 
 export const PropertiesPanel = () => (
-  <Card shadow="sm" padding="lg" radius="md" withBorder sx={{ height: "100%" }}>
-    <Title order={5} color="dimmed">
+  <Card shadow="sm" padding="lg" radius="md" h="100%" withBorder>
+    <Title order={5} c="dimmed">
       Properties
     </Title>
     <Accordion defaultValue="fields" variant="contained">

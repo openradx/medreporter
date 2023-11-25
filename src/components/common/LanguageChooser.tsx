@@ -32,7 +32,7 @@ export const LanguageChooser = ({
     .map((item) => (
       <Menu.Item
         key={item.language}
-        icon={<FlagIcon language={item.language} />}
+        leftSection={<FlagIcon language={item.language} />}
         rightSection={item.language === currentLanguage ? <CheckIcon /> : null}
         onClick={() => onLanguageChanged(item.language)}
       >
@@ -57,7 +57,7 @@ export const LanguageChooser = ({
           <>
             <Divider />
             <Menu.Item
-              icon={<FlagIcon language="cimode" />}
+              leftSection={<FlagIcon language="cimode" />}
               onClick={() => onLanguageChanged("cimode")}
             >
               Debug translations
