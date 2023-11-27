@@ -256,7 +256,7 @@ export const defineLungRads2022 = ({
   return category
 }
 
-export enum Recommendation {
+export enum LungRads2022Recommendation {
   NoRecommendationPossible = "LungRads2022.noRecommendationPossible",
   Comparison = "LungRads2022.comparison",
   Additional = "LungRads2022.additional",
@@ -268,39 +268,45 @@ export enum Recommendation {
   TissueSamplingPetFollowUp = "LungRads2022.tissueSamplingPetFollowUp",
   SpecificFinding = "LungRads2022.specificFinding",
 }
-
-export const giveLungRads2022Recommendation = (
-  category: Category,
-  problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none" | null,
-  structure: "solid" | "groundglass" | "partsolid" | null,
+export type LungRads2022RecommendationInput = {
+  category: Category
+  problematicExam: "prior-CT-not-available" | "not-evaluable" | "infectious" | "none" | null
+  structure: "solid" | "groundglass" | "partsolid" | null
   featuresSolid: "smooth-margins" | "subsegmental-airway" | "segmental-airway" | "none" | null
-): Recommendation => {
-  let recommendation: Recommendation = Recommendation.NoRecommendationPossible
+}
+export const giveLungRads2022Recommendation = ({
+  category,
+  problematicExam,
+  structure,
+  featuresSolid,
+}: LungRads2022RecommendationInput): LungRads2022Recommendation => {
+  let recommendation: LungRads2022Recommendation =
+    LungRads2022Recommendation.NoRecommendationPossible
 
   if (category === Category.Category0) {
     if (problematicExam === "prior-CT-not-available") {
-      recommendation = Recommendation.Comparison
+      recommendation = LungRads2022Recommendation.Comparison
     } else if (problematicExam === "not-evaluable") {
-      recommendation = Recommendation.Additional
+      recommendation = LungRads2022Recommendation.Additional
     } else if (problematicExam === "infectious") {
-      recommendation = Recommendation.Ct1To3Months
+      recommendation = LungRads2022Recommendation.Ct1To3Months
     }
   } else if (category === Category.Category1) {
-    recommendation = Recommendation.Ct12Months
+    recommendation = LungRads2022Recommendation.Ct12Months
   } else if (category === Category.Category2) {
-    recommendation = Recommendation.Ct12Months
+    recommendation = LungRads2022Recommendation.Ct12Months
   } else if (category === Category.Category3) {
-    recommendation = Recommendation.Ct6Months
+    recommendation = LungRads2022Recommendation.Ct6Months
   } else if (category === Category.Category4A) {
-    recommendation = Recommendation.Ct3MonthsOrPet
+    recommendation = LungRads2022Recommendation.Ct3MonthsOrPet
   } else if (category === Category.Category4B) {
     if (structure === "solid" && featuresSolid === "segmental-airway") {
-      recommendation = Recommendation.ClinicalEvaluation
+      recommendation = LungRads2022Recommendation.ClinicalEvaluation
     } else {
-      recommendation = Recommendation.TissueSamplingPetFollowUp
+      recommendation = LungRads2022Recommendation.TissueSamplingPetFollowUp
     }
   } else if (category === Category.Category4X) {
-    recommendation = Recommendation.TissueSamplingPetFollowUp
+    recommendation = LungRads2022Recommendation.TissueSamplingPetFollowUp
   }
 
   return recommendation
@@ -308,6 +314,7 @@ export const giveLungRads2022Recommendation = (
 
 /**
  * TODO:
- * - S Modifier in Utils
- * - 4B lesion proven to be benign
+ * - S Modifier in Utils?
+ * - 4B lesion proven to be benign?
+ * - part solid nodule growing solid component?
  */
