@@ -92,12 +92,12 @@ export const LungRads2022Report = () => {
     conclusion = `${t(category)} S`
   }
 
-  const recommendation = giveLungRads2022Recommendation(
+  const recommendation = giveLungRads2022Recommendation({
     category,
     problematicExam,
     structure,
-    featuresSolid
-  )
+    featuresSolid,
+  })
 
   const suspiciousSummaryList: string[] = []
   if (suspicious?.includes("spiculation"))
