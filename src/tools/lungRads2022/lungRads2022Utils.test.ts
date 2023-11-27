@@ -4,6 +4,9 @@ import {
   Category,
   calcAverageDiameter,
   LungRads2022Input,
+  giveLungRads2022Recommendation,
+  LungRads2022RecommendationInput,
+  LungRads2022Recommendation,
 } from "./lungRads2022Utils"
 
 const emptyInput: LungRads2022Input = {
@@ -476,5 +479,116 @@ describe("Category 4X", () => {
     const finalInput = { ...emptyInput, ...input }
     const category = defineLungRads2022(finalInput)
     expect(category).toBe(Category.Category4X)
+  })
+})
+
+/** Recommendation */
+const emptyRecommendationInput: LungRads2022RecommendationInput = {
+  category: Category.NoCategory,
+  problematicExam: null,
+  structure: null,
+  featuresSolid: null,
+}
+
+describe("giveLungRads2022Recommendation", () => {
+  it("should give corect result for no recommendation possible", () => {
+    const recommendation = giveLungRads2022Recommendation({ ...emptyRecommendationInput })
+    expect(recommendation).toBe(LungRads2022Recommendation.NoRecommendationPossible)
+  })
+
+  it("should give corect result for necessary comparison", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category0,
+      problematicExam: "prior-CT-not-available",
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.Comparison)
+  })
+
+  it("should give corect result for necessary additional", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category0,
+      problematicExam: "not-evaluable",
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.Additional)
+  })
+
+  it("should give corect result for infectious exams", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category0,
+      problematicExam: "infectious",
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.Ct1To3Months)
+  })
+
+  it("should give corect result for category 1", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category1,
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.Ct12Months)
+  })
+
+  it("should give corect result for category 2", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category2,
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.Ct12Months)
+  })
+
+  it("should give corect result for category 3", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category3,
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.Ct6Months)
+  })
+
+  it("should give corect result for category 4A", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category4A,
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.Ct3MonthsOrPet)
+  })
+
+  it("should give corect result for category 4B with airway nodule", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category4B,
+      structure: "solid",
+      featuresSolid: "segmental-airway",
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.ClinicalEvaluation)
+  })
+
+  it("should give corect result for category 4B without airway nodule", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category4B,
+      structure: "solid",
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.TissueSamplingPetFollowUp)
+  })
+
+  it("should give correct result for Category 4X", () => {
+    const finalInput: LungRads2022RecommendationInput = {
+      ...emptyRecommendationInput,
+      category: Category.Category4X,
+    }
+    const recommendation = giveLungRads2022Recommendation(finalInput)
+    expect(recommendation).toBe(LungRads2022Recommendation.TissueSamplingPetFollowUp)
   })
 })
