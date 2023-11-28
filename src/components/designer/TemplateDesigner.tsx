@@ -27,6 +27,7 @@ import {
 import { DesignerCanvas } from "./DesignerCanvas"
 import { DesignerSidebar } from "./DesignerSidebar"
 import { DragOverlayWrapper } from "./DragOverlayWrapper"
+import classes from "./TemplateDesigner.module.css"
 
 export const TemplateDesigner = () => {
   const mounted = useMounted()
@@ -132,11 +133,11 @@ export const TemplateDesigner = () => {
         collisionDetection={customCollisionDetection}
         onDragEnd={handleDragEnd}
       >
-        <Grid h="100%">
-          <Grid.Col span="content" miw={250}>
+        <Grid classNames={{ inner: classes.inner }} h="100%">
+          <Grid.Col span="content" miw={250} h="100%" pb={0}>
             <DesignerSidebar />
           </Grid.Col>
-          <Grid.Col span="auto">
+          <Grid.Col span="auto" h="100%" pb={0}>
             <DesignerCanvas templateEl={template} />
           </Grid.Col>
         </Grid>

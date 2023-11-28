@@ -1,4 +1,4 @@
-import { Modal, TextInput, Select, Button, Title, MultiSelect, Flex } from "@mantine/core"
+import { Modal, TextInput, Select, Button, Title, MultiSelect, Flex, Stack } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import DE from "flag-icons/flags/4x3/de.svg"
 import ES from "flag-icons/flags/4x3/es.svg"
@@ -34,7 +34,7 @@ export const NewTemplate = () => {
   ]
 
   return (
-    <>
+    <Stack h="100%">
       <Flex mb={4} justify="space-between">
         <Title order={3} c="dimmed">
           Create new template
@@ -66,6 +66,6 @@ export const NewTemplate = () => {
         </Button>
       </Modal>
       <TemplateDesigner />
-    </>
+    </Stack>
   )
 }
