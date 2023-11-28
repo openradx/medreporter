@@ -1,7 +1,7 @@
 import { Card, Text } from "@mantine/core"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { ContainerNode } from "~/utils/editorUtils"
+import { ContainerNode } from "~/utils/designerUtils"
 
 interface DesignerContainerItemProps {
   node: ContainerNode

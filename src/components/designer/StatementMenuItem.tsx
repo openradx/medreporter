@@ -1,8 +1,8 @@
 import { useMemo } from "react"
 import { StatementNode } from "~/schemas/report"
-import { selectMenuTimestamp } from "~/state/editorSlice"
+import { selectMenuTimestamp } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
-import { createNodeId } from "~/utils/editorUtils"
+import { createNodeId } from "~/utils/designerUtils"
 import { DraggableMenuItem } from "./DraggableMenuItem"
 import { MenuItem } from "./MenuItem"
 

@@ -2,15 +2,15 @@ import { useDraggable } from "@dnd-kit/core"
 import { ReactNode } from "react"
 import { AddableNode, DraggableData } from "~/utils/designerUtils"
 
-interface DraggableMenuItemProps {
+interface DraggableItemProps {
   node: AddableNode
   children: ReactNode
 }
 
-export const DraggableMenuItem = ({ node, children }: DraggableMenuItemProps) => {
+export const DraggableItem = ({ node, children }: DraggableItemProps) => {
   const { attributes, listeners, setNodeRef } = useDraggable({
     id: node.nodeId,
-    data: { origin: "menu", node } satisfies DraggableData,
+    data: { origin: "template", node } satisfies DraggableData,
   })
 
   return (

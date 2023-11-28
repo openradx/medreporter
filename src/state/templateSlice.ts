@@ -1,6 +1,13 @@
 import { RootState } from "RootTypes"
+import invariant from "tiny-invariant"
 import { TemplateNode } from "~/schemas/template"
-import { AddableNode, createNodeId, findNode, isContainerNode } from "~/utils/editorUtils"
+import {
+  AddableNode,
+  createNodeId,
+  findContainer,
+  findNode,
+  isContainerNode,
+} from "~/utils/designerUtils"
 import { createHistorySlice, withHistory } from "./historySlice"
 
 type TemplateState = TemplateNode
@@ -8,18 +15,15 @@ type TemplateState = TemplateNode
 const initialState: TemplateState = {
   type: "Template",
   nodeId: createNodeId("template"),
-  timestamp: Date.now(),
   title: "",
   info: "",
   structure: {
     type: "Structure",
     nodeId: createNodeId("structure"),
-    timestamp: Date.now(),
     children: [
       {
         type: "Section",
         nodeId: createNodeId("section"),
-        timestamp: Date.now(),
         label: "default",
         children: [],
       },
@@ -28,7 +32,6 @@ const initialState: TemplateState = {
   report: {
     type: "Report",
     nodeId: createNodeId("report"),
-    timestamp: Date.now(),
     children: [],
   },
 }
@@ -38,60 +41,65 @@ const templateSlice = createHistorySlice({
   initialState,
   reducers: {
     setTemplate: withHistory<TemplateState, TemplateNode>((state, action) => action.payload),
-    addNewNodeToContainer: withHistory<
-      TemplateState,
-      { node: AddableNode; containerId: string; index: number }
-    >((state, action) => {
-      const { node, containerId, index } = action.payload
+    addNode: withHistory<TemplateState, { node: AddableNode; containerId: string; index: number }>(
+      (state, action) => {
+        const { node, containerId, index } = action.payload
 
-      const containerNode = findNode(state, containerId)
-      if (!containerNode || !isContainerNode(containerNode))
-        throw new Error(`Invalid container with ID: ${containerId}`)
+        const containerNode = findNode(state, containerId)
+        invariant(
+          containerNode && isContainerNode(containerNode),
+          `Invalid container with ID: ${containerId}`
+        )
 
-      containerNode.children.splice(index, 0, node as any)
-    }),
-    moveNodeBetweenContainers: withHistory<
+        containerNode.children.splice(index, 0, node as any)
+      }
+    ),
+    moveNode: withHistory<
       TemplateState,
-      { sourceContainerId: string; oldIndex: number; targetContainerId: string; newIndex: number }
+      {
+        sourceContainerId: string
+        sourceIndex: number
+        targetContainerId: string
+        targetIndex: number
+      }
     >((state, action) => {
-      const { sourceContainerId, oldIndex, targetContainerId, newIndex } = action.payload
+      const { sourceContainerId, sourceIndex, targetContainerId, targetIndex } = action.payload
 
       const sourceContainerNode = findNode(state, sourceContainerId)
-      if (!sourceContainerNode || !isContainerNode(sourceContainerNode))
-        throw new Error(`Invalid container with ID: ${sourceContainerId}`)
+      invariant(
+        sourceContainerNode && isContainerNode(sourceContainerNode),
+        `Invalid container with ID: ${sourceContainerId}`
+      )
 
-      const nodeToMove = sourceContainerNode.children.splice(oldIndex, 1)[0]
+      let targetContainerNode = sourceContainerNode
+      if (targetContainerId !== targetContainerNode.nodeId) {
+        const node = findNode(state, targetContainerId)
+        invariant(node && isContainerNode(node), `Invalid container with ID: ${targetContainerId}`)
+        targetContainerNode = node
+      }
 
-      const targetContainerNode = findNode(state, targetContainerId)
-      if (!targetContainerNode || !isContainerNode(targetContainerNode))
-        throw new Error(`Invalid container with ID: ${targetContainerId}`)
-
-      console.log("redux", nodeToMove, sourceContainerNode, targetContainerNode, newIndex)
-
-      targetContainerNode.children.splice(newIndex, 0, nodeToMove as any)
+      const nodeToMove = sourceContainerNode.children.splice(sourceIndex, 1)[0]
+      invariant(
+        nodeToMove,
+        `Invalid node to move with index ${sourceIndex} in container ${sourceContainerId}`
+      )
+      targetContainerNode.children.splice(targetIndex, 0, nodeToMove as any)
     }),
-    moveNodeInsideContainer: withHistory<
-      TemplateState,
-      { containerId: string; oldIndex: number; newIndex: number }
-    >((state, action) => {
-      const { containerId, oldIndex, newIndex } = action.payload
+    deleteNode: withHistory<TemplateState, { nodeId: string }>((state, action) => {
+      const { nodeId } = action.payload
+      const node = findNode(state, nodeId)
+      invariant(node, `No node with ID: ${nodeId}`)
 
-      const containerNode = findNode(state, containerId)
-      if (!containerNode || !isContainerNode(containerNode))
-        throw new Error(`Invalid container with ID: ${containerId}`)
+      const container = findContainer(state, nodeId)
+      invariant(container, `No container for node with ID: ${action.payload.nodeId}`)
 
-      const nodeToMove = containerNode.children.splice(oldIndex, 1)[0]
-      containerNode.children.splice(newIndex, 0, nodeToMove as any)
+      const index = container.children.findIndex((child) => child.nodeId === nodeId)
+      container.children.splice(index, 1)
     }),
   },
 })
 
-export const {
-  setTemplate,
-  addNewNodeToContainer,
-  moveNodeBetweenContainers,
-  moveNodeInsideContainer,
-} = templateSlice.actions
+export const { setTemplate, addNode, deleteNode, moveNode } = templateSlice.actions
 
 export default templateSlice.reducer
 

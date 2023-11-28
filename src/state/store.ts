@@ -7,16 +7,16 @@ import {
 } from "@reduxjs/toolkit"
 import { RootState } from "RootTypes"
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
+import designerReducer from "./designerSlice"
 import displayReducer from "./displaySlice"
-import editorReducer from "./editorSlice"
 import { historyMiddleware } from "./historyMiddleware"
 import historyTrackerReducer from "./historyTrackerSlice"
 import structureDataReducer from "./structureDataSlice"
 import templateReducer from "./templateSlice"
 
 export const reducer = {
+  designer: designerReducer,
   display: displayReducer,
-  editor: editorReducer,
   historyTracker: historyTrackerReducer,
   structureData: structureDataReducer,
   template: templateReducer,

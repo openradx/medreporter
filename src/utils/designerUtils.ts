@@ -50,9 +50,14 @@ export type ContainerNode =
   | ReportNode
   | ParagraphNode
 
-export type DragData = {
+export type DraggableData = {
   origin: "menu" | "template"
   node: StructuredReportNode
+}
+
+export type DroppableData = DraggableData & {
+  origin: "template"
+  dropType: "start" | "end" | "container"
 }
 
 const createNodeHash = customAlphabet(alphanumeric, 21)
@@ -257,7 +262,7 @@ export function findNode(templateNode: TemplateNode, nodeId: string): Structured
 
 /**
  * Get the container node of a node in a template based on the given node ID. When the node with
- * the provided ID itself is a container, then also its surrounding container will be returned.
+ * the provided ID itself is a container, then its surrounding container will be returned!
  *
  * @param {TemplateNode} templateNode - The template node to search in.
  * @param {string} nodeId - The ID of the node for which to find its container.

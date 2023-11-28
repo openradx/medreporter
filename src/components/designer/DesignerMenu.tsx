@@ -7,16 +7,14 @@ export const DesignerMenu = () => {
   const { t } = useSiteTranslation()
 
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder style={{ height: "100%" }}>
-      <Stack>
-        <Title order={5} color="dimmed">
-          Components
-        </Title>
-        <Stack spacing="xs">
-          <BooleanFieldMenuItem label={t("EditorMenu.booleanFieldLabel")} />
-          <LayoutMenuItem label={t("EditorMenu.layoutLabel")} />
-        </Stack>
+    <Stack>
+      <Title order={5} color="dimmed">
+        Components
+      </Title>
+      <Stack spacing="xs">
+        <BooleanFieldMenuItem label={t("EditorMenu.booleanFieldLabel")} />
+        <LayoutMenuItem label={t("EditorMenu.layoutLabel")} />
       </Stack>
-    </Card>
+    </Stack>
   )
 }

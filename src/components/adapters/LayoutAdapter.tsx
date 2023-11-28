@@ -1,9 +1,8 @@
-import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
-import { useDesigner } from "~/contexts/DesignerContext"
 import { LayoutNode } from "~/schemas/structure"
+import { selectEditing } from "~/state/designerSlice"
+import { useAppSelector } from "~/state/store"
 import { DesignerContainerItem } from "../designer/DesignerContainerItem"
 import { DroppableContainer } from "../designer/DroppableContainer"
-import { SortableItem } from "../designer/SortableItem"
 import { Layout } from "../template/Layout"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { HintAdapter } from "./HintAdapter"
@@ -13,7 +12,7 @@ interface LayoutAdapterProps {
 }
 
 export const LayoutAdapter = ({ node }: LayoutAdapterProps) => {
-  const designer = useDesigner()
+  const editing = useAppSelector(selectEditing)
 
   const content = node.children.map((child) => {
     switch (child.type) {
@@ -26,20 +25,11 @@ export const LayoutAdapter = ({ node }: LayoutAdapterProps) => {
     }
   })
 
-  if (designer?.designMode) {
+  if (editing) {
     return (
-      <SortableItem node={node}>
-        <DroppableContainer node={node}>
-          <DesignerContainerItem node={node}>
-            <SortableContext
-              items={[...node.children.map((child) => child.nodeId)]}
-              strategy={verticalListSortingStrategy}
-            >
-              {content}
-            </SortableContext>
-          </DesignerContainerItem>
-        </DroppableContainer>
-      </SortableItem>
+      <DroppableContainer node={node} direction={node.direction ?? "row"}>
+        <DesignerContainerItem node={node}>{content}</DesignerContainerItem>
+      </DroppableContainer>
     )
   }
 
