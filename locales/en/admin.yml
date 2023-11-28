@@ -24,7 +24,7 @@ DeleteInstituteButton:
   titleConfirmDialog: Delete institute
 DeleteUserButton:
   buttonDeleteUser: Delete user
-  messageConfirmDialog: Do you really want to irreversibly delete the user "{{email}}"?
+  messageConfirmDialog: Do you really want to irreversibly delete the user "{{username}}"?
   titleConfirmDialog: Delete user
 EditInstituteButton:
   buttonEditInstitute: Edit institute

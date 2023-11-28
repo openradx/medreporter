@@ -29,7 +29,8 @@ export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps)
             confirm: t("general.buttonDelete"),
             cancel: t("general.buttonCancel"),
           },
-          confirmProps: { color: "red" },
+          confirmProps: { color: "red", variant: "outline" },
+          cancelProps: { color: "gray", variant: "transparent" },
           onConfirm: async () => {
             try {
               await deleteInstitute.mutateAsync({ id: institute.id })

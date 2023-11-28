@@ -52,10 +52,10 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
           }}
         />
         <Group justify="flex-end">
-          <Button variant="default" onClick={onClose}>
+          <Button variant="transparent" onClick={onClose}>
             {t("general.buttonCancel")}
           </Button>
-          <Button form="edit-user-form" type="submit">
+          <Button variant="outline" form="edit-user-form" type="submit">
             {t("general.buttonSave")}
           </Button>
         </Group>

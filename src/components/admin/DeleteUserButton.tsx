@@ -29,7 +29,8 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
             confirm: t("general.buttonDelete"),
             cancel: t("general.buttonCancel"),
           },
-          confirmProps: { color: "red" },
+          confirmProps: { color: "red", variant: "outline" },
+          cancelProps: { color: "gray", variant: "transparent" },
           onConfirm: async () => {
             try {
               await deleteUser.mutateAsync({ id: user.id })

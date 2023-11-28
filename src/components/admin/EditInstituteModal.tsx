@@ -44,10 +44,10 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
           }}
         />
         <Group justify="flex-end">
-          <Button variant="default" onClick={onClose}>
+          <Button variant="transparent" onClick={onClose}>
             {t("general.buttonCancel")}
           </Button>
-          <Button form="edit-institute-form" type="submit">
+          <Button variant="outline" form="edit-institute-form" type="submit">
             {t("general.buttonSave")}
           </Button>
         </Group>

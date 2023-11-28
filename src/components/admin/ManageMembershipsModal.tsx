@@ -51,7 +51,7 @@ export const ManageMembershipsModal = ({
           />
         </Tabs>
         <Group justify="flex-end">
-          <Button variant="default" onClick={onClose}>
+          <Button variant="outline" onClick={onClose}>
             {t("general.buttonClose")}
           </Button>
         </Group>
