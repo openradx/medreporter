@@ -46,23 +46,33 @@ export const DesignerItem = ({ node }: DesignerItemProps) => {
     data: { origin: "template", dropType: "container", node } satisfies DroppableData,
   })
 
-  let boxShadow = match({
-    direction,
-    overStart: droppableStart.isOver,
-    overEnd: droppableEnd.isOver,
-  })
-    .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 blue inset")
-    .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 blue inset")
-    .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px blue inset")
-    .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px blue inset")
-    .otherwise(() => undefined)
+  let boxShadow: string | undefined
 
-  if (selectedItem === node.nodeId) {
-    boxShadow = "0 0 4px 4px gray"
+  if (!draggable.isDragging) {
+    boxShadow = match({
+      direction,
+      overStart: droppableStart.isOver,
+      overEnd: droppableEnd.isOver,
+    })
+      .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 blue inset")
+      .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 blue inset")
+      .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px blue inset")
+      .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px blue inset")
+      .otherwise(() => undefined)
+
+    if (selectedItem === node.nodeId) {
+      boxShadow = "0 0 4px 4px gray"
+    }
+  }
+
+  let opacity: number | undefined
+  if (draggable.isDragging) {
+    opacity = 0.5
   }
 
   return (
     <Box
+      w={250}
       pos="relative"
       ref={draggable.setNodeRef}
       {...draggable.listeners}
@@ -81,7 +91,7 @@ export const DesignerItem = ({ node }: DesignerItemProps) => {
           <Box ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h="50%" bottom={0} />
         </>
       )}
-      <Card padding="xs" shadow="sm" w={250} style={{ boxShadow }} withBorder>
+      <Card padding="xs" shadow="sm" style={{ boxShadow, opacity }} withBorder>
         <Text>
           {t("EditorItem.type")}: {type}
         </Text>

@@ -13,7 +13,7 @@ import { snapCenterToCursor } from "@dnd-kit/modifiers"
 import { Grid } from "@mantine/core"
 import invariant from "tiny-invariant"
 import { useMounted } from "~/hooks/useMounted"
-import { refreshMenu } from "~/state/designerSlice"
+import { refreshMenu, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { addNode, deleteNode, moveNode, selectTemplate } from "~/state/templateSlice"
 import {
@@ -64,10 +64,12 @@ export const TemplateDesigner = () => {
         targetIndex !== -1,
         `Node ${overNode.nodeId} is not in container ${targetContainer.nodeId}`
       )
-      dropType === "end" && targetIndex++
     }
 
     if (origin === "menu") {
+      if (dropType === "end") {
+        targetIndex++
+      }
       dispatch(
         addNode({
           node: activeNode as AddableNode,
@@ -88,6 +90,19 @@ export const TemplateDesigner = () => {
       sourceIndex !== -1,
       `Node ${activeNode.nodeId} is not in container ${sourceContainer.nodeId}`
     )
+
+    if (sourceContainer === targetContainer) {
+      if (sourceIndex === targetIndex) {
+        return
+      }
+      if (sourceIndex < targetIndex && dropType === "start") {
+        targetIndex--
+      } else if (sourceIndex > targetIndex && dropType === "end") {
+        targetIndex++
+      }
+    } else if (dropType === "end") {
+      targetIndex++
+    }
 
     dispatch(
       moveNode({
@@ -131,6 +146,7 @@ export const TemplateDesigner = () => {
         sensors={sensors}
         modifiers={[snapCenterToCursor]}
         collisionDetection={customCollisionDetection}
+        onDragStart={() => dispatch(setSelectedItem(null))}
         onDragEnd={handleDragEnd}
       >
         <Grid classNames={{ inner: classes.inner }} h="100%">
