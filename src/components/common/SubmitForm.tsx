@@ -68,7 +68,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
 
           {submitText && (
             <Group mt="sm">
-              <Button type="submit" color="green" disabled={submitting}>
+              <Button type="submit" color="green" variant="outline" disabled={submitting}>
                 {submitText}
               </Button>
             </Group>

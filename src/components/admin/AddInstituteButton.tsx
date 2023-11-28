@@ -9,7 +9,9 @@ export const AddInstituteButton = () => {
 
   return (
     <>
-      <Button onClick={() => setOpened(true)}>{t("AddInstituteButton.buttonAddInstitute")}</Button>
+      <Button variant="light" onClick={() => setOpened(true)}>
+        {t("AddInstituteButton.buttonAddInstitute")}
+      </Button>
       {opened && <AddInstituteModal opened={opened} onClose={() => setOpened(false)} />}
     </>
   )

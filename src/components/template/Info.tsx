@@ -20,7 +20,12 @@ export const Info = ({ children }: InfoProps) => {
         transitionProps={{ transition: "pop" }}
         openDelay={1000}
       >
-        <ActionIcon title={t("FieldInfo.buttonInfo")} size={20} onClick={() => setOpen(true)}>
+        <ActionIcon
+          variant="transparent"
+          title={t("FieldInfo.buttonInfo")}
+          size={20}
+          onClick={() => setOpen(true)}
+        >
           <InfoIcon />
         </ActionIcon>
       </Tooltip>

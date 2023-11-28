@@ -20,7 +20,12 @@ export const MainLayout = ({
   children,
   footerSize = "tall",
 }: MainLayoutProps) => (
-  <AppShell padding="sm" header={{ height: NAVBAR_HEIGHT }} styles={{ main: { height: "100vh" } }}>
+  <AppShell
+    padding="sm"
+    header={{ height: NAVBAR_HEIGHT }}
+    footer={{ height: 30 }}
+    styles={{ main: { height: "100vh" } }}
+  >
     <Navbar withoutAccountControl={withoutAccountControl} />
     <AppShell.Main>
       <ErrorBoundary FallbackComponent={MainLayoutFallback}>

@@ -43,10 +43,10 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
           }}
         />
         <Group justify="flex-end">
-          <Button variant="default" onClick={onClose}>
+          <Button variant="transparent" onClick={onClose}>
             {t("general.buttonCancel")}
           </Button>
-          <Button form="add-user-form" type="submit">
+          <Button variant="outline" form="add-user-form" type="submit">
             {t("general.buttonAdd")}
           </Button>
         </Group>
