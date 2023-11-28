@@ -17,7 +17,7 @@ export const Home = () => {
   return (
     <Grid>
       <Grid.Col span={12}>
-        <Title ta="center" mt={100}>
+        <Title ta="center" mt={10}>
           Welcome to{" "}
           <Text inherit variant="gradient" component="span">
             MedReporter
