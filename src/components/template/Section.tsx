@@ -11,8 +11,6 @@ interface SectionProps {
 
 export const Section = ({ id, label, active = true, children }: SectionProps) => (
   <SectionContextProvider value={{ id, label, active }}>
-    <Stack display={active ? "flex" : "none"} align="stretch">
-      {children}
-    </Stack>
+    <Stack display={active ? "flex" : "none"}>{children}</Stack>
   </SectionContextProvider>
 )

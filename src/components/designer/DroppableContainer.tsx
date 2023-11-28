@@ -1,5 +1,6 @@
 import { useDroppable } from "@dnd-kit/core"
-import { Box } from "@mantine/core"
+import { useAutoAnimate } from "@formkit/auto-animate/react"
+import { Box, Flex } from "@mantine/core"
 import { ReactNode } from "react"
 import { ContainerContextProvider } from "~/contexts/ContainerContext"
 import {
@@ -29,10 +30,14 @@ export const DroppableContainer = ({ node, direction, children }: DroppableConta
     }
   }
 
+  const [animationParent] = useAutoAnimate()
+
   return (
     <ContainerContextProvider value={{ direction }}>
       <Box style={{ flexGrow: 1, boxShadow }} ref={setNodeRef}>
-        {children}
+        <Flex direction={direction} gap="xs" ref={animationParent}>
+          {children}
+        </Flex>
       </Box>
     </ContainerContextProvider>
   )
