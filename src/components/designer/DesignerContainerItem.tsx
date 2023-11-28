@@ -23,7 +23,7 @@ export const DesignerContainerItem = ({ node, children }: DesignerContainerItemP
       <Text>
         {t("EditorItem.id")}: {fieldId ?? "-"}
       </Text>
-      <Text size="sm" color="dimmed">
+      <Text size="sm" c="dimmed">
         {t("EditorItem.type")}: {type}
       </Text>
       <Card>{children}</Card>

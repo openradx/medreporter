@@ -61,21 +61,6 @@ export const DesignerItem = ({ node }: DesignerItemProps) => {
     boxShadow = "0 0 4px 4px gray"
   }
 
-  // let boxShadow: string = "none"
-  // if (direction === "row") {
-  //   if (droppableStart.isOver) {
-  //     boxShadow = "-4px 0 2px -2px blue"
-  //   } else if (droppableEnd.isOver) {
-  //     boxShadow = "4px 0 2px -2px blue"
-  //   }
-  // } else {
-  //   if (droppableStart.isOver) {
-  //     boxShadow = "0 -4px 2px -2px blue"
-  //   } else if (droppableEnd.isOver) {
-  //     boxShadow = "0 4px 2px -2px blue"
-  //   }
-  // }
-
   return (
     <Box
       pos="relative"
@@ -100,7 +85,7 @@ export const DesignerItem = ({ node }: DesignerItemProps) => {
         <Text>
           {t("EditorItem.type")}: {type}
         </Text>
-        <Text size="sm" color="dimmed">
+        <Text size="sm" c="dimmed">
           {t("EditorItem.id")}: {fieldId ?? "-"}
         </Text>
         {isContainer && <Box ref={droppableContainer.setNodeRef} h={200} bg="blue" />}
