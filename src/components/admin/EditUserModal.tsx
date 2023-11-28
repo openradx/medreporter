@@ -16,7 +16,7 @@ interface EditUserModalProps {
 export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => {
   const { t } = useSiteTranslation()
   const updateUser = trpc.admin.updateUser.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   return (
     <Modal title={t("EditUserModal.formTitle")} opened={opened} onClose={onClose}>

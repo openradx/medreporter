@@ -15,7 +15,7 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
   const { data, status } = trpc.admin.getUsersForMembership.useQuery({ instituteId })
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null)
   const createMembership = trpc.admin.createMembership.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   const handleAddMembership = async () => {
     if (!selectedUserId) return

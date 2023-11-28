@@ -12,7 +12,7 @@ interface DeleteUserButtonProps {
 export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
   const { t } = useSiteTranslation()
   const deleteUser = trpc.admin.deleteUser.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   return (
     <ActionIcon
