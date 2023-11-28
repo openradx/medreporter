@@ -11,7 +11,7 @@ export const PropertiesPanel = () => {
   return (
     <Stack>
       <Group>
-        <Title order={5} color="dimmed">
+        <Title order={5} c="dimmed">
           Properties
         </Title>
         <CloseButton onClick={() => dispatch(setSelectedItem(null))} />

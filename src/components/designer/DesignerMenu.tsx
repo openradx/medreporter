@@ -8,10 +8,10 @@ export const DesignerMenu = () => {
 
   return (
     <Stack>
-      <Title order={5} color="dimmed">
+      <Title order={5} c="dimmed">
         Components
       </Title>
-      <Stack spacing="xs">
+      <Stack gap="xs">
         <BooleanFieldMenuItem label={t("EditorMenu.booleanFieldLabel")} />
         <LayoutMenuItem label={t("EditorMenu.layoutLabel")} />
       </Stack>

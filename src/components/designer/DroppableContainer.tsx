@@ -1,6 +1,6 @@
 import { useDroppable } from "@dnd-kit/core"
 import { Box } from "@mantine/core"
-import { CSSProperties, ReactNode } from "react"
+import { ReactNode } from "react"
 import { ContainerContextProvider } from "~/contexts/ContainerContext"
 import {
   ContainerNode,
@@ -21,17 +21,17 @@ export const DroppableContainer = ({ node, direction, children }: DroppableConta
     data: { origin: "template", dropType: "container", node } satisfies DroppableData,
   })
 
-  let style: CSSProperties = {}
+  let boxShadow: string | undefined
   if (isOver && active) {
     const { node: activeNode } = active.data.current as DraggableData
     if (isFittingContainer(activeNode, node)) {
-      style = { boxShadow: "0 0 4px 4px gray inset" }
+      boxShadow = "0 0 4px 4px gray inset"
     }
   }
 
   return (
     <ContainerContextProvider value={{ direction }}>
-      <Box sx={{ flexGrow: 1 }} ref={setNodeRef} style={style}>
+      <Box style={{ flexGrow: 1, boxShadow }} ref={setNodeRef}>
         {children}
       </Box>
     </ContainerContextProvider>
