@@ -19,7 +19,7 @@ export const ToolCard = ({ route, title, description, tags }: ToolCardProps) => 
         </Text>
         <Group pt="xs" gap={4}>
           {tags.map((tag) => (
-            <Badge style={{ cursor: "pointer" }} key={tag}>
+            <Badge variant="light" style={{ cursor: "pointer" }} key={tag}>
               {tag}
             </Badge>
           ))}

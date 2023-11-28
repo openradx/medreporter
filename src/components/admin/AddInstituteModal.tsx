@@ -42,10 +42,10 @@ export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) =
           }}
         />
         <Group justify="flex-end">
-          <Button variant="default" onClick={onClose}>
+          <Button variant="transparent" onClick={onClose}>
             {t("general.buttonCancel")}
           </Button>
-          <Button form="add-institute-form" type="submit">
+          <Button variant="outline" form="add-institute-form" type="submit">
             {t("general.buttonAdd")}
           </Button>
         </Group>
