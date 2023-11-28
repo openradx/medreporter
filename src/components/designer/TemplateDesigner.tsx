@@ -130,7 +130,6 @@ export const TemplateDesigner = () => {
         sensors={sensors}
         modifiers={[snapCenterToCursor]}
         collisionDetection={customCollisionDetection}
-        onDragStart={(e) => console.log("drag start", e.active)}
         onDragEnd={handleDragEnd}
       >
         <Grid h="100%">

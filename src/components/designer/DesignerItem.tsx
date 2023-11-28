@@ -1,6 +1,6 @@
 import { useDraggable, useDroppable } from "@dnd-kit/core"
 import { Box, Card, Text } from "@mantine/core"
-import { CSSProperties, useMemo } from "react"
+import { useMemo } from "react"
 import { match } from "ts-pattern"
 import { useContainer } from "~/contexts/ContainerContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"

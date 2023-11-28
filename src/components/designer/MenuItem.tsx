@@ -1,4 +1,4 @@
-import { Box, Card } from "@mantine/core"
+import { Card } from "@mantine/core"
 
 interface MenuItemProps {
   label: string

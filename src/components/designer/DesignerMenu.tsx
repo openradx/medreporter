@@ -1,4 +1,4 @@
-import { Card, Stack, Title } from "@mantine/core"
+import { Stack, Title } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { BooleanFieldMenuItem } from "./BooleanFieldMenuItem"
 import { LayoutMenuItem } from "./LayoutMenuItem"
