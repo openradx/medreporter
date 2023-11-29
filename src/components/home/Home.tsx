@@ -39,7 +39,9 @@ export const Home = () => {
           <Card.Section>
             <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
           </Card.Section>
-          <Text fw={500}>{t("HomePage.templatesTitle")}</Text>
+          <Text fw={500} pt="xs">
+            {t("HomePage.templatesTitle")}
+          </Text>
           <Text size="sm" c="dimmed">
             {t("HomePage.templatesDescription")}
           </Text>
@@ -52,7 +54,10 @@ export const Home = () => {
               <Card.Section>
                 <Image component={NextImage} src={exampleImage} alt="Example image" h={160} />
               </Card.Section>
-              <Text fw={500}> {t("HomePage.newTitle")}</Text>
+              <Text fw={500} pt="xs">
+                {" "}
+                {t("HomePage.newTitle")}
+              </Text>
               <Text size="sm" c="dimmed">
                 {t("HomePage.newDescription")}
               </Text>
@@ -66,7 +71,9 @@ export const Home = () => {
             <Card.Section>
               <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
             </Card.Section>
-            <Text fw={500}>{t("HomePage.reportsTitle")}</Text>
+            <Text fw={500} pt="xs">
+              {t("HomePage.reportsTitle")}
+            </Text>
             <Text size="sm" c="dimmed">
               {t("HomePage.reportsDescription")}
             </Text>
@@ -79,7 +86,9 @@ export const Home = () => {
             <Card.Section>
               <Image component={NextImage} src={toolsImage} alt="Tools Image" h={160} />
             </Card.Section>
-            <Text fw={500}>{t("HomePage.toolsTitle")}</Text>{" "}
+            <Text fw={500} pt="xs">
+              {t("HomePage.toolsTitle")}
+            </Text>
             <Text size="sm" c="dimmed">
               {t("HomePage.toolsDescription")}
             </Text>
