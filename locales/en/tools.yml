@@ -34,9 +34,9 @@ KidneyVolume:
     Calculation of the kidney volume for patients with ADPKD (with or without correction against height).
 
 LungRads2022:
-  title: "Lung-RADS 2022"
+  title: Lung-RADS 2022
   description: >
-    "Classification proposed to aid with findings in low-dose CT screening exams for lung cancer and to standarize the Follow-Up.",
+    Classification proposed to aid with findings in low-dose CT screening exams for lung cancer and to standarize the Follow-Up.
 
 MeasurementsTable:
   title: Measurements table

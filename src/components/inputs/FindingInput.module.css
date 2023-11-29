@@ -9,3 +9,7 @@
     background-color: var(--mantine-color-dark-6);
   }
 }
+
+.body {
+  align-items: center ;
+}
