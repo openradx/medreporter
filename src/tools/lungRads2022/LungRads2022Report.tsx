@@ -124,7 +124,6 @@ export const LungRads2022Report = () => {
           <h3>
             {t("LungRads2022.category")}: {conclusion}
           </h3>
-          <hr />
         </Statement>
       </Paragraph>
       <Paragraph hidden={category !== Category.Category4X}>
@@ -142,7 +141,6 @@ export const LungRads2022Report = () => {
           category === Category.Category4X) && (
           <Statement>{t("LungRads2022.additionSlowlyGrowing")}</Statement>
         )}
-      <hr />
       <Paragraph hidden={!incidentalFindings || category === Category.NoCategory}>
         <Statement>
           {t("LungRads2022.incidentalFindings")}: {incidentalFindings}
