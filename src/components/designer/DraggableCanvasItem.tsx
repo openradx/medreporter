@@ -83,11 +83,11 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
       )}
       {direction === "column" && (
         <>
-          <Box ref={droppableStart.setNodeRef} pos="absolute" w="100%" h="50%" top={0} />
-          <Box ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h="50%" bottom={0} />
+          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="100%" h={10} top={0} />
+          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h={10} bottom={0} />
         </>
       )}
-      <Card padding="xs" shadow="sm" style={{ boxShadow, opacity }} withBorder>
+      <Card padding="xs" shadow="sm" style={{ boxShadow, opacity: 0.5 }} withBorder>
         <Text>
           {t("EditorItem.type")}: {type}
         </Text>
