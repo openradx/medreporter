@@ -2,7 +2,7 @@ import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { BooleanFieldNode } from "~/schemas/structure"
 import { selectEditing } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
-import { DesignerItem } from "../designer/DesignerItem"
+import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { BooleanField } from "../fields/BooleanField"
 import { Info } from "../template/Info"
 
@@ -14,7 +14,7 @@ export const BooleanFieldAdapter = ({ node }: BooleanFieldAdapterProps) => {
   const editing = useAppSelector(selectEditing)
 
   if (editing) {
-    return <DesignerItem node={node} />
+    return <DraggableCanvasItem node={node} />
   }
 
   return (

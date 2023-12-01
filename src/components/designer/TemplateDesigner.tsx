@@ -52,7 +52,11 @@ export const TemplateDesigner = () => {
 
     let targetContainer: ContainerNode
     let targetIndex: number = 0
-    if (isContainerNode(overNode)) {
+    if (dropType === "container") {
+      invariant(
+        isContainerNode(overNode),
+        `Node ${overNode.nodeId} is not a container but has dropType container.`
+      )
       targetContainer = overNode
       targetIndex = targetContainer.children.length
     } else {

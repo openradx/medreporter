@@ -1,23 +1,24 @@
 import { useDraggable, useDroppable } from "@dnd-kit/core"
 import { Box, Card, Text } from "@mantine/core"
-import { useMemo } from "react"
+import { ReactNode } from "react"
 import { match } from "ts-pattern"
 import { useContainer } from "~/contexts/ContainerContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectSelectedItem, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { AddableNode, DraggableData, DroppableData, isContainerNode } from "~/utils/designerUtils"
+import { DroppableContainer } from "./DroppableContainer"
 
-interface DesignerItemProps {
+interface DraggableCanvasItemProps {
   node: AddableNode
+  children?: ReactNode
 }
 
-export const DesignerItem = ({ node }: DesignerItemProps) => {
+export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps) => {
   const { t } = useSiteTranslation()
   const selectedItem = useAppSelector(selectSelectedItem)
   const dispatch = useAppDispatch()
   const { direction } = useContainer()
-  const isContainer = useMemo(() => isContainerNode(node), [node])
 
   const { type } = node
 
@@ -39,11 +40,6 @@ export const DesignerItem = ({ node }: DesignerItemProps) => {
   const droppableEnd = useDroppable({
     id: `${node.nodeId}-end`,
     data: { origin: "template", dropType: "end", node } satisfies DroppableData,
-  })
-
-  const droppableContainer = useDroppable({
-    id: `${node.nodeId}-container`,
-    data: { origin: "template", dropType: "container", node } satisfies DroppableData,
   })
 
   let boxShadow: string | undefined
@@ -72,7 +68,7 @@ export const DesignerItem = ({ node }: DesignerItemProps) => {
 
   return (
     <Box
-      w={250}
+      miw={250}
       pos="relative"
       ref={draggable.setNodeRef}
       {...draggable.listeners}
@@ -98,7 +94,7 @@ export const DesignerItem = ({ node }: DesignerItemProps) => {
         <Text size="sm" c="dimmed">
           {t("EditorItem.id")}: {fieldId ?? "-"}
         </Text>
-        {isContainer && <Box ref={droppableContainer.setNodeRef} h={200} bg="blue" />}
+        {isContainerNode(node) && <DroppableContainer node={node}>{children}</DroppableContainer>}
       </Card>
     </Box>
   )

@@ -1,8 +1,7 @@
 import { LayoutNode } from "~/schemas/structure"
 import { selectEditing } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
-import { DesignerContainerItem } from "../designer/DesignerContainerItem"
-import { DroppableContainer } from "../designer/DroppableContainer"
+import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { Layout } from "../template/Layout"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { HintAdapter } from "./HintAdapter"
@@ -14,7 +13,7 @@ interface LayoutAdapterProps {
 export const LayoutAdapter = ({ node }: LayoutAdapterProps) => {
   const editing = useAppSelector(selectEditing)
 
-  const content = node.children.map((child) => {
+  const children = node.children.map((child) => {
     switch (child.type) {
       case "Layout":
         return <LayoutAdapter key={child.nodeId} node={child} />
@@ -26,16 +25,12 @@ export const LayoutAdapter = ({ node }: LayoutAdapterProps) => {
   })
 
   if (editing) {
-    return (
-      <DroppableContainer node={node} direction={node.direction ?? "row"}>
-        <DesignerContainerItem node={node}>{content}</DesignerContainerItem>
-      </DroppableContainer>
-    )
+    return <DraggableCanvasItem node={node}>{children}</DraggableCanvasItem>
   }
 
   return (
     <Layout direction={node.direction} justify={node.justify} nowrap={node.nowrap}>
-      {content}
+      {children}
     </Layout>
   )
 }

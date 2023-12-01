@@ -12,13 +12,12 @@ import {
 
 interface DroppableContainerProps {
   node: ContainerNode
-  direction: "row" | "column"
   children: ReactNode
 }
 
-export const DroppableContainer = ({ node, direction, children }: DroppableContainerProps) => {
+export const DroppableContainer = ({ node, children }: DroppableContainerProps) => {
   const { isOver, active, setNodeRef } = useDroppable({
-    id: node.nodeId,
+    id: `${node.nodeId}-container`,
     data: { origin: "template", dropType: "container", node } satisfies DroppableData,
   })
 
@@ -30,11 +29,17 @@ export const DroppableContainer = ({ node, direction, children }: DroppableConta
     }
   }
 
+  // TODO: fix this for group
+  let direction: "row" | "column" = "column"
+  if ("direction" in node && node.direction) {
+    direction = node.direction
+  }
+
   const [animationParent] = useAutoAnimate()
 
   return (
     <ContainerContextProvider value={{ direction }}>
-      <Box style={{ flexGrow: 1, boxShadow }} ref={setNodeRef}>
+      <Box mih={200} bg="green" style={{ boxShadow }} ref={setNodeRef}>
         <Flex direction={direction} gap="xs" ref={animationParent}>
           {children}
         </Flex>
