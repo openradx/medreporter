@@ -22,6 +22,7 @@ export const FindingInput = ({
 }: FindingInputProps) => (
   <Stack className={classes.root} my={4} gap={0}>
     <Switch
+      classNames={{ body: classes.body }}
       label={(label || extras) && <InputLabel label={label} extras={extras} />}
       checked={value}
       onChange={(ev) => {

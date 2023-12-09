@@ -15,8 +15,15 @@ interface GridGroupProps {
 export const Group = ({ label, extras, disabled, hidden, children }: GridGroupProps) => {
   if (!label) {
     return (
-      <Box display={hidden ? "none" : undefined} my="sm">
-        {children}
+      <Box
+        component="fieldset"
+        display={hidden ? "none" : undefined}
+        className={classes.group}
+        my="sm"
+      >
+        <Flex wrap="wrap" gap={{ base: "sm", sm: "lg" }}>
+          {children}
+        </Flex>
       </Box>
     )
   }
@@ -33,7 +40,9 @@ export const Group = ({ label, extras, disabled, hidden, children }: GridGroupPr
             <InputLabel label={label} extras={extras} />
           </Box>
         )}
-        <Flex gap={{ base: "sm", sm: "lg" }}>{children}</Flex>
+        <Flex gap={{ base: "sm", sm: "lg" }} wrap="wrap">
+          {children}
+        </Flex>
       </Box>
     </GroupContextProvider>
   )
