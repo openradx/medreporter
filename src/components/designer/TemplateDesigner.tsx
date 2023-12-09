@@ -156,7 +156,7 @@ export const TemplateDesigner = () => {
         onDragEnd={handleDragEnd}
       >
         <Grid classNames={{ inner: classes.inner }} h="100%">
-          <Grid.Col span="content" miw={250} h="100%" pb={0}>
+          <Grid.Col span="content" w={250} h="100%" pb={0}>
             <DesignerSidebar />
           </Grid.Col>
           <Grid.Col span="auto" h="100%" pb={0}>

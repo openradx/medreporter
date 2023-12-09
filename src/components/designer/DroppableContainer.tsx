@@ -40,7 +40,7 @@ export const DroppableContainer = ({ node, children }: DroppableContainerProps) 
   return (
     <ContainerContextProvider value={{ direction }}>
       <Box mih={200} bg="green" style={{ boxShadow }} ref={setNodeRef}>
-        <Flex direction={direction} gap="xs" ref={animationParent}>
+        <Flex direction={direction} wrap="wrap" gap="xs" ref={animationParent}>
           {children}
         </Flex>
       </Box>

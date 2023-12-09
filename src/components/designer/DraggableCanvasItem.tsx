@@ -68,12 +68,15 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
 
   return (
     <Box
-      miw={250}
+      w={direction === "row" ? 250 : undefined}
       pos="relative"
       ref={draggable.setNodeRef}
       {...draggable.listeners}
       {...draggable.attributes}
-      onClick={() => dispatch(setSelectedItem(node.nodeId))}
+      onClick={(ev) => {
+        ev.stopPropagation()
+        dispatch(setSelectedItem(node.nodeId))
+      }}
     >
       {direction === "row" && (
         <>
@@ -91,10 +94,10 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
         <Text>
           {t("EditorItem.type")}: {type}
         </Text>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="dimmed" truncate>
           {t("EditorItem.id")}: {fieldId ?? "-"}
         </Text>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="dimmed" truncate>
           Node ID: {node.nodeId}
         </Text>
         {isContainerNode(node) && <DroppableContainer node={node}>{children}</DroppableContainer>}
