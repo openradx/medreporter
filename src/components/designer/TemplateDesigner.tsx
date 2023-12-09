@@ -4,8 +4,8 @@ import {
   DragEndEvent,
   MouseSensor,
   TouchSensor,
-  closestCorners,
   pointerWithin,
+  rectIntersection,
   useSensor,
   useSensors,
 } from "@dnd-kit/core"
@@ -140,8 +140,9 @@ export const TemplateDesigner = () => {
       return collisions
     }
 
-    collisions = closestCorners(args)
-    console.log(collisions)
+    // collisions = closestCorners(args)
+    // collisions = closestCenter(args)
+    collisions = rectIntersection(args)
     return collisions.filter((col) => col.id !== "trash-can")
   }
 

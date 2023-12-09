@@ -77,8 +77,8 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
     >
       {direction === "row" && (
         <>
-          <Box ref={droppableStart.setNodeRef} pos="absolute" w="100%" h="50%" top={0} />
-          <Box ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h="50%" bottom={0} />
+          <Box ref={droppableStart.setNodeRef} pos="absolute" w={10} h="100%" left={0} />
+          <Box ref={droppableEnd.setNodeRef} pos="absolute" w={10} h="100%" right={0} />
         </>
       )}
       {direction === "column" && (
@@ -93,6 +93,9 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
         </Text>
         <Text size="sm" c="dimmed">
           {t("EditorItem.id")}: {fieldId ?? "-"}
+        </Text>
+        <Text size="sm" c="dimmed">
+          Node ID: {node.nodeId}
         </Text>
         {isContainerNode(node) && <DroppableContainer node={node}>{children}</DroppableContainer>}
       </Card>

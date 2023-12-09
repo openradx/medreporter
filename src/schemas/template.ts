@@ -5,8 +5,8 @@ import { structureNodeSchema } from "./structure"
 
 export const templateNodeSchema = nodeSchema.extend({
   type: z.literal("Template"),
-  title: z.string(),
-  info: z.string().optional(),
+  title: z.string().trim().min(1).max(100),
+  info: z.string().trim().max(1000).optional(),
   structure: structureNodeSchema,
   report: reportNodeSchema,
 })

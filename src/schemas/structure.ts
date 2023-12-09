@@ -4,13 +4,24 @@ import { codeSchema, nodeSchema } from "./common"
 /**
  * Shared properties
  */
-const fieldId = z.string()
-const label = z.string()
-const info = z.string().optional()
-const disabled = codeSchema.optional()
-const hidden = codeSchema.optional()
+const fieldIdSchema = z
+  .string()
+  .min(3)
+  .max(50)
+  .regex(/^[a-z0-9_]+$/i, "Field ID must only contain letters, numbers, and underscores")
+const labelSchema = z.string().trim().min(1).max(100)
+const infoSchema = z.string().trim().optional()
+const disabledSchema = codeSchema.optional()
+const hiddenSchema = codeSchema.optional()
+const figureSchema = z.string().trim().max(10000).optional()
 
-const fieldProperties = { fieldId, label, info, disabled, hidden }
+const fieldProperties = {
+  fieldId: fieldIdSchema,
+  label: labelSchema,
+  info: infoSchema,
+  disabled: disabledSchema,
+  hidden: hiddenSchema,
+}
 
 /**
  * Nodes
@@ -18,13 +29,13 @@ const fieldProperties = { fieldId, label, info, disabled, hidden }
 const hintNodeSchema = nodeSchema.extend({
   type: z.literal("Hint"),
   level: z.enum(["info", "warning", "error"]).optional(),
-  fieldRef: z.string().optional(),
+  fieldRef: z.string().trim().optional(),
   content: codeSchema.optional(),
 })
 
 export type HintNode = z.infer<typeof hintNodeSchema>
 
-const booleanFieldNodeSchema = nodeSchema.extend({
+export const booleanFieldNodeSchema = nodeSchema.extend({
   type: z.literal("BooleanField"),
   ...fieldProperties,
   default: z.boolean().optional(),
@@ -49,8 +60,8 @@ export type NumberFieldNode = z.infer<typeof numberFieldNodeSchema>
 const dateFieldNodeSchema = nodeSchema.extend({
   type: z.literal("DateField"),
   ...fieldProperties,
-  format: z.string().optional(),
-  default: z.string().optional(),
+  format: z.string().trim().optional(),
+  default: z.string().trim().optional(),
 })
 
 export type DateFieldNode = z.infer<typeof dateFieldNodeSchema>
@@ -60,7 +71,7 @@ const timeFieldNodeSchema = nodeSchema.extend({
   type: z.literal("TimeField"),
   ...fieldProperties,
   withSeconds: z.boolean().optional(),
-  default: z.string().optional(),
+  default: z.string().trim().optional(),
 })
 
 export type TimeFieldNode = z.infer<typeof timeFieldNodeSchema>
@@ -69,14 +80,14 @@ const freeTextFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FreeTextField"),
   ...fieldProperties,
   multiline: z.boolean().optional(),
-  default: z.string().optional(),
+  default: z.string().trim().optional(),
 })
 
 export type FreeTextFieldNode = z.infer<typeof freeTextFieldNodeSchema>
 
 const option = z.object({
-  label: z.string(),
-  value: z.string(),
+  label: labelSchema,
+  value: labelSchema,
 })
 
 export type Option = z.infer<typeof option>
@@ -85,9 +96,22 @@ const singleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("SingleChoiceField"),
   ...fieldProperties,
   variant: z.enum(["radio", "select"]).optional(),
-  figure: z.string().optional(),
-  options: z.array(option).optional(),
-  default: z.string().optional(),
+  figure: figureSchema,
+  options: z
+    .array(option)
+    .refine((options) => {
+      // check for duplicate values
+      const set = new Set()
+      for (const opt of options) {
+        if (set.has(opt.value)) {
+          return false
+        }
+        set.add(opt.value)
+      }
+      return true // no duplicates found
+    })
+    .optional(),
+  default: z.string().trim().optional(),
 })
 
 export type SingleChoiceFieldNode = z.infer<typeof singleChoiceFieldNodeSchema>
@@ -96,9 +120,9 @@ const multipleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MultipleChoiceField"),
   ...fieldProperties,
   variant: z.enum(["checkbox", "select"]).optional(),
-  figure: z.string().optional(),
+  figure: figureSchema,
   options: z.array(option).optional(),
-  default: z.array(z.string()).optional(),
+  default: z.array(z.string().trim()).optional(),
 })
 
 export type MultipleChoiceFieldNode = z.infer<typeof multipleChoiceFieldNodeSchema>
@@ -139,10 +163,12 @@ const discreteFieldNodeSchemas = [
   measurementsFieldNodeSchema,
 ] as const
 
+// TODO: rename this to lazy
 // eslint-disable-next-line @typescript-eslint/no-use-before-define
 const layoutNodeSchema: z.ZodType<LayoutNode> = z.lazy(() => layoutLazyNodeSchema)
 
-const layoutLazyNodeSchema = nodeSchema.extend({
+// TODO: rename this to non lazy
+export const layoutLazyNodeSchema = nodeSchema.extend({
   type: z.literal("Layout"),
   direction: z.enum(["row", "column"]).optional(),
   justify: z.enum(["start", "center", "end", "space-between", "space-around"]).optional(),
@@ -176,8 +202,8 @@ export const findingFieldChildrenTypes = new Set(
 const groupNodeSchema = nodeSchema.extend({
   type: z.literal("Group"),
   ...fieldProperties,
-  fieldId: fieldId.optional(),
-  label: label.optional(),
+  fieldId: fieldIdSchema.optional(),
+  label: labelSchema.optional(),
   children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),
 })
 
@@ -192,7 +218,7 @@ export const groupChildrenTypes = new Set(
 
 const sectionNodeSchema = nodeSchema.extend({
   type: z.literal("Section"),
-  label,
+  label: labelSchema,
   children: z.array(
     z.union([
       findingFieldNodeSchema,

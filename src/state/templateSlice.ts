@@ -96,10 +96,18 @@ const templateSlice = createHistorySlice({
       const index = container.children.findIndex((child) => child.nodeId === nodeId)
       container.children.splice(index, 1)
     }),
+    updateNode: withHistory<TemplateState, { nodeId: string; data: Partial<AddableNode> }>(
+      (state, action) => {
+        const { nodeId, data } = action.payload
+        const node = findNode(state, nodeId)
+        invariant(node, `No node with ID: ${nodeId}`)
+        Object.assign(node, data)
+      }
+    ),
   },
 })
 
-export const { setTemplate, addNode, deleteNode, moveNode } = templateSlice.actions
+export const { setTemplate, addNode, deleteNode, moveNode, updateNode } = templateSlice.actions
 
 export default templateSlice.reducer
 
