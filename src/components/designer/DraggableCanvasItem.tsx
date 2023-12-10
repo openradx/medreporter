@@ -61,10 +61,10 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
     }
   }
 
-  let opacity: number | undefined
-  if (draggable.isDragging) {
-    opacity = 0.5
-  }
+  // let opacity: number | undefined
+  // if (draggable.isDragging) {
+  //   opacity = 0.5
+  // }
 
   return (
     <Box
@@ -80,27 +80,55 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
     >
       {direction === "row" && (
         <>
-          <Box ref={droppableStart.setNodeRef} pos="absolute" w={10} h="100%" left={0} />
-          <Box ref={droppableEnd.setNodeRef} pos="absolute" w={10} h="100%" right={0} />
+          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="50%" h="100%" left={0} />
+          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="50%" h="100%" right={0} />
         </>
       )}
-      {direction === "column" && (
+      {direction === "column" && !isContainerNode(node) && (
         <>
-          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="100%" h={10} top={0} />
-          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h={10} bottom={0} />
+          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="100%" h="50%" top={0} />
+          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h="50%" bottom={0} />
         </>
       )}
       <Card padding="xs" shadow="sm" style={{ boxShadow, opacity: 0.5 }} withBorder>
-        <Text>
-          {t("EditorItem.type")}: {type}
-        </Text>
-        <Text size="sm" c="dimmed" truncate>
-          {t("EditorItem.id")}: {fieldId ?? "-"}
-        </Text>
-        <Text size="sm" c="dimmed" truncate>
-          Node ID: {node.nodeId}
-        </Text>
-        {isContainerNode(node) && <DroppableContainer node={node}>{children}</DroppableContainer>}
+        <Card.Section inheritPadding pos="relative">
+          {isContainerNode(node) && (
+            <Box
+              bg="red"
+              ref={droppableStart.setNodeRef}
+              pos="absolute"
+              w="100%"
+              h="100%"
+              top={0}
+              left={0}
+              opacity={0.5}
+            />
+          )}
+          <Text>
+            {t("EditorItem.type")}: {type}
+          </Text>
+          <Text size="sm" c="dimmed" truncate>
+            {t("EditorItem.id")}: {fieldId ?? "-"}
+          </Text>
+          <Text size="sm" c="dimmed" truncate>
+            Node ID: {node.nodeId}
+          </Text>
+        </Card.Section>
+        {isContainerNode(node) && (
+          <>
+            <DroppableContainer node={node}>{children}</DroppableContainer>
+            <Box
+              bg="blue"
+              ref={droppableEnd.setNodeRef}
+              opacity={0.5}
+              pos="absolute"
+              w="100%"
+              h={10}
+              bottom={0}
+              left={0}
+            />
+          </>
+        )}
       </Card>
     </Box>
   )
