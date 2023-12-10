@@ -10,7 +10,7 @@ export const SandboxStructure = () => (
   <Structure>
     <Section label="default" id="default">
       <Hint>Just a tool to play with the layout and the functions of the fields.</Hint>
-      <Group label="Sandbox">
+      <Group border label="Sandbox">
         <DateField id="today" label="Today" />
         <NumberField
           id="number"

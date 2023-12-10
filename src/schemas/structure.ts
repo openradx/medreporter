@@ -202,6 +202,9 @@ export const findingFieldChildrenTypes = new Set(
 const groupNodeSchema = nodeSchema.extend({
   type: z.literal("Group"),
   ...fieldProperties,
+  direction: z.enum(["row", "column"]).optional(),
+  justify: z.enum(["start", "center", "end", "space-between", "space-around"]).optional(),
+  border: z.boolean().optional(),
   fieldId: fieldIdSchema.optional(),
   label: labelSchema.optional(),
   children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),

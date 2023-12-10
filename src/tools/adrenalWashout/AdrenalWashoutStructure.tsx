@@ -14,7 +14,7 @@ export const AdrenalWashoutStructure = () => {
     <Structure>
       <Section id="default" label="default">
         <Hint level="info">{t("AdrenalWashout.toolHint")}</Hint>
-        <Group label={t("AdrenalWashout.groupLabelDensity")}>
+        <Group border label={t("AdrenalWashout.groupLabelDensity")}>
           <NumberField
             id="nonEnhanced"
             label={t("AdrenalWashout.inputLabelNonEnhanced")}

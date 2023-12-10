@@ -1,4 +1,4 @@
-import { Box, Collapse, Stack, Switch } from "@mantine/core"
+import { Collapse, Stack, Switch } from "@mantine/core"
 import { ReactNode } from "react"
 import classes from "./FindingInput.module.css"
 import { InputLabel } from "./InputLabel"
@@ -20,7 +20,7 @@ export const FindingInput = ({
   disabled,
   children,
 }: FindingInputProps) => (
-  <Stack className={classes.root} my={4} gap={0}>
+  <Stack className={classes.root} gap={0}>
     <Switch
       classNames={{ body: classes.body }}
       label={(label || extras) && <InputLabel label={label} extras={extras} />}
@@ -37,7 +37,9 @@ export const FindingInput = ({
       }}
     />
     <Collapse in={value}>
-      <Box p="sm">{children}</Box>
+      <Stack gap="xs" p="sm">
+        {children}
+      </Stack>
     </Collapse>
   </Stack>
 )

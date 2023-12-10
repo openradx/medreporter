@@ -1,8 +1,14 @@
-.group {
+.groupBorder {
   flex-basis: 100%;
   border: 1px solid var(--mantine-color-gray-2);
 
   @mixin dark {
     border: 1px solid var(--mantine-color-dark-6);
   }
+}
+
+.groupNoBorder {
+  flex-basis: 100%;
+  border: 0px;
+  padding: 0;
 }
