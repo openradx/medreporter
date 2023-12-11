@@ -12,6 +12,7 @@ EditorMenu:
   timeFieldLabel: Zeit
   statementLabel: Aussage
   layoutLabel: Layout
+  groupLabel: Gruppe
 FigureProperties:
   figureTitle: Abbildung
 ResourceEditor:

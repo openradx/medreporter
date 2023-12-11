@@ -1,14 +1,14 @@
 import { Select } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { LayoutNode, layoutLazyNodeSchema } from "~/schemas/structure"
-import { PropertyForm } from "./PropertiesForm"
+import { PropertiesForm } from "./PropertiesForm"
 
 interface LayoutPropertiesFormProps {
   node: LayoutNode
 }
 
 export const LayoutPropertiesForm = ({ node }: LayoutPropertiesFormProps) => (
-  <PropertyForm
+  <PropertiesForm
     nodeId={node.nodeId}
     schema={layoutLazyNodeSchema.omit({ nodeId: true, type: true, children: true })}
     initialValues={node}
@@ -28,5 +28,5 @@ export const LayoutPropertiesForm = ({ node }: LayoutPropertiesFormProps) => (
         />
       )}
     />
-  </PropertyForm>
+  </PropertiesForm>
 )

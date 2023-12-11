@@ -7,19 +7,19 @@ import { z } from "zod"
 import { useAppDispatch } from "~/state/store"
 import { updateNode } from "~/state/templateSlice"
 
-interface PropertyFormProps<S extends z.ZodType<any, any>> {
+interface PropertiesFormProps<S extends z.ZodType<any, any>> {
   nodeId: string
   schema: S
   initialValues: z.infer<S>
   children: ReactNode
 }
 
-export const PropertyForm = <S extends z.ZodType<any, any>>({
+export const PropertiesForm = <S extends z.ZodType<any, any>>({
   nodeId,
   schema,
   initialValues,
   children,
-}: PropertyFormProps<S>) => {
+}: PropertiesFormProps<S>) => {
   const methods = useForm({
     mode: "all",
     resolver: zodResolver(schema),

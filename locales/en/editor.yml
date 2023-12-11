@@ -12,6 +12,7 @@ EditorMenu:
   timeFieldLabel: Time
   statementLabel: Statement
   layoutLabel: Layout
+  groupLabel: Group
 FigureProperties:
   title: Figure
 ResourceEditor:

@@ -199,7 +199,7 @@ export const findingFieldChildrenTypes = new Set(
   })
 )
 
-const groupNodeSchema = nodeSchema.extend({
+export const groupNodeSchema = nodeSchema.extend({
   type: z.literal("Group"),
   ...fieldProperties,
   direction: z.enum(["row", "column"]).optional(),

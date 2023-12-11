@@ -29,7 +29,6 @@ export const DroppableContainer = ({ node, children }: DroppableContainerProps) 
     }
   }
 
-  // TODO: fix this for group
   let direction: "row" | "column" = "column"
   if ("direction" in node && node.direction) {
     direction = node.direction

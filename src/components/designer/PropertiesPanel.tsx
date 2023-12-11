@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "~/state/store"
 import { deleteNode, selectTemplate } from "~/state/templateSlice"
 import { findNode } from "~/utils/designerUtils"
 import { BooleanFieldPropertiesForm } from "./BooleanFieldPropertiesForm"
+import { GroupPropertiesForm } from "./GroupPropertiesForm"
 import { LayoutPropertiesForm } from "./LayoutPropertiesForm"
 
 export const PropertiesPanel = () => {
@@ -21,6 +22,7 @@ export const PropertiesPanel = () => {
   const propertiesForm = match(selectedNode)
     .with({ type: "BooleanField" }, (node) => <BooleanFieldPropertiesForm node={node} />)
     .with({ type: "Layout" }, (node) => <LayoutPropertiesForm node={node} />)
+    .with({ type: "Group" }, (node) => <GroupPropertiesForm node={node} />)
     .otherwise(() => {
       throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
     })

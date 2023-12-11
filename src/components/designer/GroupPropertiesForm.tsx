@@ -1,23 +1,23 @@
-import { Switch, TextInput } from "@mantine/core"
+import { Select, Switch, TextInput } from "@mantine/core"
 import { Controller } from "react-hook-form"
-import { BooleanFieldNode, booleanFieldNodeSchema } from "~/schemas/structure"
+import { GroupNode, groupNodeSchema } from "~/schemas/structure"
 import { PropertiesForm } from "./PropertiesForm"
 
-interface BooleanFieldPropertiesFormProps {
-  node: BooleanFieldNode
+interface GroupPropertiesFormProps {
+  node: GroupNode
 }
 
-export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormProps) => (
+export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
   <PropertiesForm
     nodeId={node.nodeId}
-    schema={booleanFieldNodeSchema.omit({ nodeId: true, type: true })}
+    schema={groupNodeSchema.omit({ nodeId: true, type: true, children: true })}
     initialValues={node}
   >
     <Controller
-      name="fieldId"
+      name="border"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Field ID"
+        <Switch
+          label="Border"
           value={value}
           onChange={onChange}
           error={error ? error.message : null}
@@ -36,13 +36,16 @@ export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormP
       )}
     />
     <Controller
-      name="default"
+      name="direction"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch
-          label="Default Value"
-          labelPosition="left"
-          checked={!!value}
+        <Select
+          label="Direction"
+          value={value}
           onChange={onChange}
+          data={[
+            { label: "Row", value: "row" },
+            { label: "Column", value: "column" },
+          ]}
           error={error ? error.message : null}
         />
       )}
