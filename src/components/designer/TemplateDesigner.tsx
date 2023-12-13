@@ -23,6 +23,7 @@ import {
   DroppableData,
   findContainer,
   isContainerNode,
+  isFittingContainer,
 } from "~/utils/designerUtils"
 import { DesignerCanvas } from "./DesignerCanvas"
 import { DesignerSidebar } from "./DesignerSidebar"
@@ -39,6 +40,7 @@ export const TemplateDesigner = () => {
 
     const { node: activeNode, origin } = event.active.data.current as DraggableData
 
+    // Handle trash can to remove node
     if (event.over.id === "trash-can") {
       if (origin === "menu") {
         dispatch(refreshMenu())
@@ -50,6 +52,7 @@ export const TemplateDesigner = () => {
 
     const { node: overNode, dropType } = event.over.data.current as DroppableData
 
+    // Find final target container
     let targetContainer: ContainerNode
     let targetIndex: number = 0
     if (dropType === "container") {
@@ -70,6 +73,12 @@ export const TemplateDesigner = () => {
       )
     }
 
+    // Check if node fits into target container
+    if (!isFittingContainer(activeNode, targetContainer)) {
+      return
+    }
+
+    // Add node if it's from the menu
     if (origin === "menu") {
       if (dropType === "end") {
         targetIndex++
@@ -85,6 +94,7 @@ export const TemplateDesigner = () => {
       return
     }
 
+    // Move node if it's from the canvas
     const sourceContainer = findContainer(template, activeNode.nodeId)
     invariant(sourceContainer, `No container for node ${activeNode.nodeId}.`)
     const sourceIndex = sourceContainer.children.findIndex(

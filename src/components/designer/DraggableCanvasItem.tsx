@@ -1,12 +1,20 @@
 import { useDraggable, useDroppable } from "@dnd-kit/core"
 import { Box, Card, Text } from "@mantine/core"
-import { ReactNode } from "react"
+import { ReactNode, useMemo } from "react"
 import { match } from "ts-pattern"
 import { useContainer } from "~/contexts/ContainerContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectSelectedItem, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
-import { AddableNode, DraggableData, DroppableData, isContainerNode } from "~/utils/designerUtils"
+import { selectTemplate } from "~/state/templateSlice"
+import {
+  AddableNode,
+  DraggableData,
+  DroppableData,
+  findContainer,
+  isContainerNode,
+  isFittingContainer,
+} from "~/utils/designerUtils"
 import { DroppableContainer } from "./DroppableContainer"
 
 interface DraggableCanvasItemProps {
@@ -17,6 +25,7 @@ interface DraggableCanvasItemProps {
 export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps) => {
   const { t } = useSiteTranslation()
   const selectedItem = useAppSelector(selectSelectedItem)
+  const template = useAppSelector(selectTemplate)
   const dispatch = useAppDispatch()
   const { direction } = useContainer()
 
@@ -42,19 +51,27 @@ export const DraggableCanvasItem = ({ node, children }: DraggableCanvasItemProps
     data: { origin: "template", dropType: "end", node } satisfies DroppableData,
   })
 
+  const container = useMemo(() => findContainer(template, node.nodeId), [template, node])
+  const dataStart = droppableStart.active?.data.current as DroppableData | undefined
+  const dataEnd = droppableEnd.active?.data.current as DroppableData | undefined
+  const activeNode = dataStart?.node || dataEnd?.node
+  const isFitting = !!activeNode && !!container && isFittingContainer(activeNode, container)
+
   let boxShadow: string | undefined
 
   if (!draggable.isDragging) {
-    boxShadow = match({
-      direction,
-      overStart: droppableStart.isOver,
-      overEnd: droppableEnd.isOver,
-    })
-      .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 blue inset")
-      .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 blue inset")
-      .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px blue inset")
-      .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px blue inset")
-      .otherwise(() => undefined)
+    if (isFitting) {
+      boxShadow = match({
+        direction,
+        overStart: droppableStart.isOver,
+        overEnd: droppableEnd.isOver,
+      })
+        .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 blue inset")
+        .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 blue inset")
+        .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px blue inset")
+        .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px blue inset")
+        .otherwise(() => undefined)
+    }
 
     if (selectedItem === node.nodeId) {
       boxShadow = "0 0 4px 4px gray"
