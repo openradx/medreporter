@@ -35,9 +35,7 @@ export const SectionAdapter = ({ node, active }: SectionAdapterProps) => {
   if (editing) {
     return (
       <Section id={node.nodeId} label={node.label} active={active}>
-        <DroppableContainer node={node} direction="column">
-          {children}
-        </DroppableContainer>
+        <DroppableContainer node={node}>{children}</DroppableContainer>
       </Section>
     )
   }
