@@ -7,7 +7,6 @@ import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { FindingFieldAdapter } from "./FindingFieldAdapter"
 import { GroupAdapter } from "./GroupAdapter"
 import { HintAdapter } from "./HintAdapter"
-import { LayoutAdapter } from "./LayoutAdapter"
 
 interface SectionAdapterProps {
   node: SectionNode
@@ -19,14 +18,12 @@ export const SectionAdapter = ({ node, active }: SectionAdapterProps) => {
 
   const children = node.children.map((child) => {
     switch (child.type) {
-      case "FindingField":
-        return <FindingFieldAdapter key={child.nodeId} node={child} />
-      case "Group":
-        return <GroupAdapter key={child.nodeId} node={child} />
-      case "Layout":
-        return <LayoutAdapter key={child.nodeId} node={child} />
       case "Hint":
         return <HintAdapter key={child.nodeId} node={child} />
+      case "Group":
+        return <GroupAdapter key={child.nodeId} node={child} />
+      case "FindingField":
+        return <FindingFieldAdapter key={child.nodeId} node={child} />
       default:
         return <DiscreteFieldAdapter key={child.nodeId} node={child} />
     }

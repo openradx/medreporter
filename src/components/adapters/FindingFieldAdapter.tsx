@@ -3,8 +3,8 @@ import { FindingFieldNode } from "~/schemas/structure"
 import { FindingField } from "../fields/FindingField"
 import { Info } from "../template/Info"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
+import { GroupAdapter } from "./GroupAdapter"
 import { HintAdapter } from "./HintAdapter"
-import { LayoutAdapter } from "./LayoutAdapter"
 
 interface FindingFieldAdapterProps {
   node: FindingFieldNode
@@ -21,10 +21,10 @@ export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => (
   >
     {node.children.map((child) => {
       switch (child.type) {
-        case "Layout":
-          return <LayoutAdapter key={child.nodeId} node={child} />
         case "Hint":
           return <HintAdapter key={child.nodeId} node={child} />
+        case "Group":
+          return <GroupAdapter key={child.nodeId} node={child} />
         default:
           return <DiscreteFieldAdapter key={child.nodeId} node={child} />
       }

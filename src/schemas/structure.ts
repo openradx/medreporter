@@ -144,14 +144,6 @@ export type DiscreteFieldNode =
   | MultipleChoiceFieldNode
   | MeasurementsFieldNode
 
-export type LayoutNode = z.infer<typeof nodeSchema> & {
-  type: "Layout"
-  direction?: "row" | "column"
-  nowrap?: boolean
-  justify?: "start" | "center" | "end" | "space-between" | "space-around"
-  children: (DiscreteFieldNode | HintNode | LayoutNode)[]
-}
-
 const discreteFieldNodeSchemas = [
   booleanFieldNodeSchema,
   numberFieldNodeSchema,
@@ -163,42 +155,6 @@ const discreteFieldNodeSchemas = [
   measurementsFieldNodeSchema,
 ] as const
 
-// TODO: rename this to lazy
-// eslint-disable-next-line @typescript-eslint/no-use-before-define
-const layoutNodeSchema: z.ZodType<LayoutNode> = z.lazy(() => layoutLazyNodeSchema)
-
-// TODO: rename this to non lazy
-export const layoutLazyNodeSchema = nodeSchema.extend({
-  type: z.literal("Layout"),
-  direction: z.enum(["row", "column"]).optional(),
-  justify: z.enum(["start", "center", "end", "space-between", "space-around"]).optional(),
-  nowrap: z.boolean().optional(),
-  children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),
-})
-
-export const layoutChildrenTypes = new Set(
-  layoutLazyNodeSchema.shape.children.element.options.map((o) => {
-    if (!("shape" in o)) return "Layout"
-    return o.shape.type.value
-  })
-)
-
-const findingFieldNodeSchema = nodeSchema.extend({
-  type: z.literal("FindingField"),
-  ...fieldProperties,
-  default: z.boolean().optional(),
-  children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),
-})
-
-export type FindingFieldNode = z.infer<typeof findingFieldNodeSchema>
-
-export const findingFieldChildrenTypes = new Set(
-  findingFieldNodeSchema.shape.children.element.options.map((o) => {
-    if (!("shape" in o)) return "Layout"
-    return o.shape.type.value
-  })
-)
-
 export const groupNodeSchema = nodeSchema.extend({
   type: z.literal("Group"),
   ...fieldProperties,
@@ -207,39 +163,40 @@ export const groupNodeSchema = nodeSchema.extend({
   border: z.boolean().optional(),
   fieldId: fieldIdSchema.optional(),
   label: labelSchema.optional(),
-  children: z.array(z.union([layoutNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])),
+  children: z.array(z.union([hintNodeSchema, ...discreteFieldNodeSchemas])),
 })
 
 export type GroupNode = z.infer<typeof groupNodeSchema>
 
 export const groupChildrenTypes = new Set(
-  groupNodeSchema.shape.children.element.options.map((o) => {
-    if (!("shape" in o)) return "Layout"
-    return o.shape.type.value
-  })
+  groupNodeSchema.shape.children.element.options.map((o) => o.shape.type.value)
+)
+
+const findingFieldNodeSchema = nodeSchema.extend({
+  type: z.literal("FindingField"),
+  ...fieldProperties,
+  default: z.boolean().optional(),
+  children: z.array(z.union([hintNodeSchema, ...discreteFieldNodeSchemas, groupNodeSchema])),
+})
+
+export type FindingFieldNode = z.infer<typeof findingFieldNodeSchema>
+
+export const findingFieldChildrenTypes = new Set(
+  findingFieldNodeSchema.shape.children.element.options.map((o) => o.shape.type.value)
 )
 
 const sectionNodeSchema = nodeSchema.extend({
   type: z.literal("Section"),
   label: labelSchema,
   children: z.array(
-    z.union([
-      findingFieldNodeSchema,
-      groupNodeSchema,
-      layoutNodeSchema,
-      hintNodeSchema,
-      ...discreteFieldNodeSchemas,
-    ])
+    z.union([findingFieldNodeSchema, groupNodeSchema, hintNodeSchema, ...discreteFieldNodeSchemas])
   ),
 })
 
 export type SectionNode = z.infer<typeof sectionNodeSchema>
 
 export const sectionChildrenTypes = new Set(
-  sectionNodeSchema.shape.children.element.options.map((o) => {
-    if (!("shape" in o)) return "Layout"
-    return o.shape.type.value
-  })
+  sectionNodeSchema.shape.children.element.options.map((o) => o.shape.type.value)
 )
 
 export const structureNodeSchema = nodeSchema.extend({

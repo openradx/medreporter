@@ -7,7 +7,6 @@ import { Group } from "../template/Group"
 import { Info } from "../template/Info"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { HintAdapter } from "./HintAdapter"
-import { LayoutAdapter } from "./LayoutAdapter"
 
 interface GroupAdapterProps {
   node: GroupNode
@@ -18,8 +17,6 @@ export const GroupAdapter = ({ node }: GroupAdapterProps) => {
 
   const children = node.children.map((child) => {
     switch (child.type) {
-      case "Layout":
-        return <LayoutAdapter key={child.nodeId} node={child} />
       case "Hint":
         return <HintAdapter key={child.nodeId} node={child} />
       default:

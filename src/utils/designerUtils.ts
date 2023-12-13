@@ -13,12 +13,10 @@ import {
   FindingFieldNode,
   GroupNode,
   HintNode,
-  LayoutNode,
   SectionNode,
   StructureNode,
   findingFieldChildrenTypes,
   groupChildrenTypes,
-  layoutChildrenTypes,
   sectionChildrenTypes,
   structureChildrenTypes,
 } from "~/schemas/structure"
@@ -27,7 +25,6 @@ import { TemplateNode } from "~/schemas/template"
 export type AddableNode =
   | HintNode
   | DiscreteFieldNode
-  | LayoutNode
   | FindingFieldNode
   | GroupNode
   | StatementNode
@@ -46,7 +43,6 @@ export type ContainerNode =
   | SectionNode
   | FindingFieldNode
   | GroupNode
-  | LayoutNode
   | ReportNode
   | ParagraphNode
 
@@ -109,11 +105,6 @@ export function isFittingGroup(node: StructuredReportNode): node is GroupNode["c
   return groupChildrenTypesAsStrings.has(node.type)
 }
 
-export function isFittingLayout(node: StructuredReportNode): node is LayoutNode["children"][0] {
-  const layoutChildrenTypesAsStrings: Set<string> = layoutChildrenTypes
-  return layoutChildrenTypesAsStrings.has(node.type)
-}
-
 export function isFittingReport(node: StructuredReportNode): node is ReportNode["children"][0] {
   const reportChildrenTypesAsStrings: Set<string> = reportChildrenTypes
   return reportChildrenTypesAsStrings.has(node.type)
@@ -132,7 +123,6 @@ export function isFittingContainer(node: StructuredReportNode, container: Contai
     (container.type === "Section" && isFittingSection(node)) ||
     (container.type === "FindingField" && isFittingFindingField(node)) ||
     (container.type === "Group" && isFittingGroup(node)) ||
-    (container.type === "Layout" && isFittingLayout(node)) ||
     (container.type === "Report" && isFittingReport(node)) ||
     (container.type === "Paragraph" && isFittingParagraph(node))
   )
@@ -143,7 +133,6 @@ const containerNodes: Set<ContainerNode["type"]> = new Set([
   "Section",
   "FindingField",
   "Group",
-  "Layout",
   "Report",
   "Paragraph",
 ])

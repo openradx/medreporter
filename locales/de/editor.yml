@@ -11,7 +11,6 @@ EditorMenu:
   singleChoiceFieldLabel: Einzelauswahl
   timeFieldLabel: Zeit
   statementLabel: Aussage
-  layoutLabel: Layout
   groupLabel: Gruppe
 FigureProperties:
   figureTitle: Abbildung
