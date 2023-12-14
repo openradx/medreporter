@@ -17,9 +17,17 @@ export const GroupMenuItem = ({ label }: GroupMenuItemProps) => {
     () => ({
       type: "Group",
       nodeId: createNodeId("group"),
-      timestamp,
+      fieldId: "",
+      label: "",
+      info: "",
+      disabled: "",
+      hidden: "",
+      direction: "row",
+      justify: "start",
+      border: false,
       children: [],
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [timestamp]
   )
 

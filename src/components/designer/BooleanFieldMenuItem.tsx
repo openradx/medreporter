@@ -19,8 +19,12 @@ export const BooleanFieldMenuItem = ({ label }: BooleanFieldMenuItemProps) => {
       nodeId: createNodeId("boolean"),
       fieldId: createFieldId("boolean"),
       label: "Boolean",
-      timestamp,
+      info: "",
+      disabled: "",
+      hidden: "",
+      default: false,
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [timestamp]
   )
 

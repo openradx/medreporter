@@ -14,7 +14,7 @@ const paragraphNodeSchema = nodeSchema.extend({
   link: z.string().optional(), // link to a field
   title: z.string().optional(),
   hidden: codeSchema.optional(),
-  list: z.boolean().optional(),
+  list: z.boolean(),
   children: z.array(statementNodeSchema),
 })
 
