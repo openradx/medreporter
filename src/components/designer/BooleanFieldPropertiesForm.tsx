@@ -39,7 +39,7 @@ export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormP
       name="default"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
         <Switch
-          label="Default Value"
+          label="Default value"
           labelPosition="left"
           checked={!!value}
           onChange={onChange}

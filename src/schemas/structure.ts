@@ -48,7 +48,7 @@ export const booleanFieldNodeSchema = nodeSchema.extend({
 
 export type BooleanFieldNode = z.infer<typeof booleanFieldNodeSchema>
 
-const numberFieldNodeSchema = nodeSchema.extend({
+export const numberFieldNodeSchema = nodeSchema.extend({
   type: z.literal("NumberField"),
   ...fieldProperties,
   min: z.number().optional(),

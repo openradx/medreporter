@@ -3,7 +3,9 @@ EditorItem:
   type: Type
 EditorMenu:
   booleanFieldLabel: Boolean
+  components: Components
   dateFieldLabel: Date
+  fields: Fields
   freeTextFieldLabel: Free Text
   measurementsFieldLabel: Measurements
   multipleChoiceFieldLabel: Multiple Choice
