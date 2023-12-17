@@ -29,7 +29,7 @@ export const PropertiesPanel = () => {
 
   return (
     <ScrollArea offsetScrollbars h="100%" style={{ flexGrow: 1 }}>
-      <Stack>
+      <Stack pl="xs" pb="xs">
         <Group justify="space-between">
           <Title order={5} c="dimmed">
             Properties

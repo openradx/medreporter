@@ -1,4 +1,4 @@
-import { Select, Switch, TextInput } from "@mantine/core"
+import { Select, Switch, TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { GroupNode, groupNodeSchema } from "~/schemas/structure"
 import { PropertiesForm } from "./PropertiesForm"
@@ -14,10 +14,10 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
     initialValues={node}
   >
     <Controller
-      name="border"
+      name="label"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch
-          label="Border"
+        <TextInput
+          label="Label"
           value={value}
           onChange={onChange}
           error={error ? error.message : null}
@@ -25,10 +25,32 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
       )}
     />
     <Controller
-      name="label"
+      name="info"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Label"
+        <Textarea
+          label="Info"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="disabled"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Textarea
+          label="Disabled"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="hidden"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Textarea
+          label="Hidden"
           value={value}
           onChange={onChange}
           error={error ? error.message : null}
@@ -46,6 +68,35 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
             { label: "Row", value: "row" },
             { label: "Column", value: "column" },
           ]}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="justify"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Select
+          label="Justify"
+          value={value}
+          onChange={onChange}
+          data={[
+            { label: "Start", value: "start" },
+            { label: "Center", value: "center" },
+            { label: "End", value: "end" },
+            { label: "Space Between", value: "space-between" },
+            { label: "Space Around", value: "space-around" },
+          ]}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="border"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Switch
+          label="Border"
+          value={value}
+          onChange={onChange}
           error={error ? error.message : null}
         />
       )}

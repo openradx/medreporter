@@ -1,4 +1,4 @@
-import { Switch, TextInput } from "@mantine/core"
+import { Switch, TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { BooleanFieldNode, booleanFieldNodeSchema } from "~/schemas/structure"
 import { PropertiesForm } from "./PropertiesForm"
@@ -14,6 +14,17 @@ export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormP
     initialValues={node}
   >
     <Controller
+      name="label"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <TextInput
+          label="Label"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
       name="fieldId"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
         <TextInput
@@ -25,10 +36,32 @@ export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormP
       )}
     />
     <Controller
-      name="label"
+      name="info"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Label"
+        <Textarea
+          label="Info"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="disabled"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Textarea
+          label="Disabled"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="hidden"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Textarea
+          label="Hidden"
           value={value}
           onChange={onChange}
           error={error ? error.message : null}

@@ -1,4 +1,4 @@
-import { NumberInput, TextInput } from "@mantine/core"
+import { NumberInput, TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { NumberFieldNode, numberFieldNodeSchema } from "~/schemas/structure"
 import { PropertiesForm } from "./PropertiesForm"
@@ -14,6 +14,17 @@ export const NumberFieldPropertiesForm = ({ node }: NumberFieldPropertiesFormPro
     initialValues={node}
   >
     <Controller
+      name="label"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <TextInput
+          label="Label"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
       name="fieldId"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
         <TextInput
@@ -25,10 +36,32 @@ export const NumberFieldPropertiesForm = ({ node }: NumberFieldPropertiesFormPro
       )}
     />
     <Controller
-      name="label"
+      name="info"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Label"
+        <Textarea
+          label="Info"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="disabled"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Textarea
+          label="Disabled"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="hidden"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Textarea
+          label="Hidden"
           value={value}
           onChange={onChange}
           error={error ? error.message : null}
@@ -60,7 +93,7 @@ export const NumberFieldPropertiesForm = ({ node }: NumberFieldPropertiesFormPro
     <Controller
       name="precision"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
+        <NumberInput
           label="Precision"
           value={value}
           onChange={onChange}
