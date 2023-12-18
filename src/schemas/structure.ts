@@ -81,7 +81,7 @@ const timeFieldNodeSchema = nodeSchema.extend({
 
 export type TimeFieldNode = z.infer<typeof timeFieldNodeSchema>
 
-const freeTextFieldNodeSchema = nodeSchema.extend({
+export const freeTextFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FreeTextField"),
   ...fieldProperties,
   multiline: z.boolean(),

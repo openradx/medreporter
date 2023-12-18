@@ -1,6 +1,7 @@
 import { Stack, Title } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { BooleanFieldMenuItem } from "./BooleanFieldMenuItem"
+import { FreeTextFieldMenuItem } from "./FreeTextFieldMenuItem"
 import { GroupMenuItem } from "./GroupMenuItem"
 import { NumberFieldMenuItem } from "./NumberFieldMenuItem"
 
@@ -18,6 +19,7 @@ export const DesignerMenu = () => {
           {t("EditorMenu.fields")}
         </Title>
         <BooleanFieldMenuItem label={t("EditorMenu.booleanFieldLabel")} />
+        <FreeTextFieldMenuItem label={t("EditorMenu.freeTextFieldLabel")} />
         <NumberFieldMenuItem label={t("EditorMenu.numberFieldLabel")} />
       </Stack>
     </Stack>

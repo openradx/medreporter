@@ -6,7 +6,7 @@ EditorMenu:
   components: Components
   dateFieldLabel: Date
   fields: Fields
-  freeTextFieldLabel: Free Text
+  freeTextFieldLabel: Free text
   measurementsFieldLabel: Measurements
   multipleChoiceFieldLabel: Multiple Choice
   numberFieldLabel: Number

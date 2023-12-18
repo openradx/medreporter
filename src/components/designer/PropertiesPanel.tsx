@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "~/state/store"
 import { deleteNode, selectTemplate } from "~/state/templateSlice"
 import { findNode } from "~/utils/designerUtils"
 import { BooleanFieldPropertiesForm } from "./BooleanFieldPropertiesForm"
+import { FreeTextFieldPropertiesForm } from "./FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./GroupPropertiesForm"
 import { NumberFieldPropertiesForm } from "./NumberFieldPropertiesForm"
 
@@ -23,6 +24,7 @@ export const PropertiesPanel = () => {
     .with({ type: "BooleanField" }, (node) => <BooleanFieldPropertiesForm node={node} />)
     .with({ type: "Group" }, (node) => <GroupPropertiesForm node={node} />)
     .with({ type: "NumberField" }, (node) => <NumberFieldPropertiesForm node={node} />)
+    .with({ type: "FreeTextField" }, (node) => <FreeTextFieldPropertiesForm node={node} />)
     .otherwise(() => {
       throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
     })
