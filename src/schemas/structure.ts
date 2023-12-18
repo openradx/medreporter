@@ -128,7 +128,7 @@ const optionsSchema = z
     { message: "Duplicate option values." }
   )
 
-const singleChoiceFieldNodeSchema = nodeSchema.extend({
+export const singleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("SingleChoiceField"),
   ...fieldProperties,
   variant: z.enum(["radio", "select"]),

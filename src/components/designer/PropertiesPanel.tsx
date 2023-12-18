@@ -9,6 +9,7 @@ import { BooleanFieldPropertiesForm } from "./BooleanFieldPropertiesForm"
 import { FreeTextFieldPropertiesForm } from "./FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./GroupPropertiesForm"
 import { NumberFieldPropertiesForm } from "./NumberFieldPropertiesForm"
+import { SingleChoiceFieldPropertiesForm } from "./SingleChoiceFieldPropertiesForm"
 
 export const PropertiesPanel = () => {
   const selectedItem = useAppSelector(selectSelectedItem)
@@ -21,10 +22,11 @@ export const PropertiesPanel = () => {
   invariant(selectedNode, `Node ${selectedItem} not found in template.`)
 
   const propertiesForm = match(selectedNode)
-    .with({ type: "BooleanField" }, (node) => <BooleanFieldPropertiesForm node={node} />)
     .with({ type: "Group" }, (node) => <GroupPropertiesForm node={node} />)
+    .with({ type: "BooleanField" }, (node) => <BooleanFieldPropertiesForm node={node} />)
     .with({ type: "NumberField" }, (node) => <NumberFieldPropertiesForm node={node} />)
     .with({ type: "FreeTextField" }, (node) => <FreeTextFieldPropertiesForm node={node} />)
+    .with({ type: "SingleChoiceField" }, (node) => <SingleChoiceFieldPropertiesForm node={node} />)
     .otherwise(() => {
       throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
     })

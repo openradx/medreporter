@@ -4,6 +4,7 @@ import { BooleanFieldMenuItem } from "./BooleanFieldMenuItem"
 import { FreeTextFieldMenuItem } from "./FreeTextFieldMenuItem"
 import { GroupMenuItem } from "./GroupMenuItem"
 import { NumberFieldMenuItem } from "./NumberFieldMenuItem"
+import { SingleChoiceFieldMenuItem } from "./SingleChoiceFieldMenuItem"
 
 export const DesignerMenu = () => {
   const { t } = useSiteTranslation()
@@ -21,6 +22,7 @@ export const DesignerMenu = () => {
         <BooleanFieldMenuItem label={t("EditorMenu.booleanFieldLabel")} />
         <FreeTextFieldMenuItem label={t("EditorMenu.freeTextFieldLabel")} />
         <NumberFieldMenuItem label={t("EditorMenu.numberFieldLabel")} />
+        <SingleChoiceFieldMenuItem label={t("EditorMenu.singleChoiceFieldLabel")} />
       </Stack>
     </Stack>
   )

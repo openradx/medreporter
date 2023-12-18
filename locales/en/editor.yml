@@ -10,7 +10,7 @@ EditorMenu:
   measurementsFieldLabel: Measurements
   multipleChoiceFieldLabel: Multiple Choice
   numberFieldLabel: Number
-  singleChoiceFieldLabel: Single Choice
+  singleChoiceFieldLabel: Single choice
   timeFieldLabel: Time
   statementLabel: Statement
   groupLabel: Group
