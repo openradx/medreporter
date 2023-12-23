@@ -7,15 +7,16 @@ EditorMenu:
   dateFieldLabel: Date
   fields: Fields
   freeTextFieldLabel: Free text
+  groupLabel: Group
   measurementsFieldLabel: Measurements
   multipleChoiceFieldLabel: Multiple choice
   numberFieldLabel: Number
   others: Others
+  paragraphLabel: Paragraph
   report: Report
   singleChoiceFieldLabel: Single choice
   timeFieldLabel: Time
   statementLabel: Statement
-  groupLabel: Group
 FigureProperties:
   title: Figure
 ResourceEditor:

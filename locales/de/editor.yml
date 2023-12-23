@@ -7,15 +7,16 @@ EditorMenu:
   dateFieldLabel: Datum
   fields: Felder
   freeTextFieldLabel: Freitext
+  groupLabel: Gruppe
   measurementsFieldLabel: Messtabelle
   multipleChoiceFieldLabel: Mehrfachauswahl
   numberFieldLabel: Zahl
   others: Sonstiges
+  paragraphLabel: Absatz
   report: Bericht
   singleChoiceFieldLabel: Einzelauswahl
   timeFieldLabel: Zeit
   statementLabel: Aussage
-  groupLabel: Gruppe
 FigureProperties:
   figureTitle: Abbildung
 ResourceEditor:

@@ -2,6 +2,7 @@ import { Center, Flex, Loader, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { selectEditing } from "~/state/designerSlice"
 import { selectDataInitialized } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
@@ -18,6 +19,7 @@ export const Report = ({ children }: ReportProps) => {
   const { t } = useSiteTranslation()
   const dataInitialized = useAppSelector(selectDataInitialized)
 
+  const editing = useAppSelector(selectEditing)
   return (
     <Paper
       style={{
@@ -38,12 +40,12 @@ export const Report = ({ children }: ReportProps) => {
           </ActionsGroup>
         }
       />
-      {!dataInitialized && (
+      {!dataInitialized && !editing && (
         <Center style={{ flexGrow: 1 }}>
           <Loader type="bars" />
         </Center>
       )}
-      {dataInitialized && (
+      {(dataInitialized || editing) && (
         <ScrollArea style={{ flexGrow: 1 }}>
           <Flex
             id={REPORT_CONTENT_ID}

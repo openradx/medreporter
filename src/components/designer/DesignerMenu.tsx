@@ -5,6 +5,7 @@ import { FreeTextFieldMenuItem } from "./FreeTextFieldMenuItem"
 import { GroupMenuItem } from "./GroupMenuItem"
 import { MultipleChoiceFieldMenuItem } from "./MultipleChoiceFieldMenuItem"
 import { NumberFieldMenuItem } from "./NumberFieldMenuItem"
+import { ParagraphMenuItem } from "./ParagraphMenuItem"
 import { SingleChoiceFieldMenuItem } from "./SingleChoiceFieldMenuItem"
 import { StatementMenuItem } from "./StatementMenuItem"
 
@@ -29,6 +30,7 @@ export const DesignerMenu = () => {
         <Title order={5} c="dimmed">
           {t("EditorMenu.report")}
         </Title>
+        <ParagraphMenuItem label={t("EditorMenu.paragraphLabel")} />
         <StatementMenuItem label={t("EditorMenu.statementLabel")} />
         <Title order={5} c="dimmed">
           {t("EditorMenu.others")}

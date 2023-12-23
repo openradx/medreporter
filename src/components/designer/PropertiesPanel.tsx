@@ -10,7 +10,9 @@ import { FreeTextFieldPropertiesForm } from "./FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./GroupPropertiesForm"
 import { MultipleChoiceFieldPropertiesForm } from "./MultipleChoiceFieldPropertiesForm"
 import { NumberFieldPropertiesForm } from "./NumberFieldPropertiesForm"
+import { ParagraphPropertiesForm } from "./ParagraphPropertiesForm"
 import { SingleChoiceFieldPropertiesForm } from "./SingleChoiceFieldPropertiesForm"
+import { StatementPropertiesForm } from "./StatementPropertiesForm"
 
 export const PropertiesPanel = () => {
   const selectedItem = useAppSelector(selectSelectedItem)
@@ -31,6 +33,8 @@ export const PropertiesPanel = () => {
     .with({ type: "MultipleChoiceField" }, (node) => (
       <MultipleChoiceFieldPropertiesForm node={node} />
     ))
+    .with({ type: "Statement" }, (node) => <StatementPropertiesForm node={node} />)
+    .with({ type: "Paragraph" }, (node) => <ParagraphPropertiesForm node={node} />)
     .otherwise(() => {
       throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
     })
