@@ -8,6 +8,7 @@ import { findNode } from "~/utils/designerUtils"
 import { BooleanFieldPropertiesForm } from "./BooleanFieldPropertiesForm"
 import { FreeTextFieldPropertiesForm } from "./FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./GroupPropertiesForm"
+import { MultipleChoiceFieldPropertiesForm } from "./MultipleChoiceFieldPropertiesForm"
 import { NumberFieldPropertiesForm } from "./NumberFieldPropertiesForm"
 import { SingleChoiceFieldPropertiesForm } from "./SingleChoiceFieldPropertiesForm"
 
@@ -27,6 +28,9 @@ export const PropertiesPanel = () => {
     .with({ type: "NumberField" }, (node) => <NumberFieldPropertiesForm node={node} />)
     .with({ type: "FreeTextField" }, (node) => <FreeTextFieldPropertiesForm node={node} />)
     .with({ type: "SingleChoiceField" }, (node) => <SingleChoiceFieldPropertiesForm node={node} />)
+    .with({ type: "MultipleChoiceField" }, (node) => (
+      <MultipleChoiceFieldPropertiesForm node={node} />
+    ))
     .otherwise(() => {
       throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
     })

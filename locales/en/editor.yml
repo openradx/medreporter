@@ -8,8 +8,10 @@ EditorMenu:
   fields: Fields
   freeTextFieldLabel: Free text
   measurementsFieldLabel: Measurements
-  multipleChoiceFieldLabel: Multiple Choice
+  multipleChoiceFieldLabel: Multiple choice
   numberFieldLabel: Number
+  others: Others
+  report: Report
   singleChoiceFieldLabel: Single choice
   timeFieldLabel: Time
   statementLabel: Statement

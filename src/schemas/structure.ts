@@ -139,7 +139,7 @@ export const singleChoiceFieldNodeSchema = nodeSchema.extend({
 
 export type SingleChoiceFieldNode = z.infer<typeof singleChoiceFieldNodeSchema>
 
-const multipleChoiceFieldNodeSchema = nodeSchema.extend({
+export const multipleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MultipleChoiceField"),
   ...fieldProperties,
   variant: z.enum(["checkbox", "select"]),

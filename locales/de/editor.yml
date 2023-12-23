@@ -10,6 +10,8 @@ EditorMenu:
   measurementsFieldLabel: Messtabelle
   multipleChoiceFieldLabel: Mehrfachauswahl
   numberFieldLabel: Zahl
+  others: Sonstiges
+  report: Bericht
   singleChoiceFieldLabel: Einzelauswahl
   timeFieldLabel: Zeit
   statementLabel: Aussage

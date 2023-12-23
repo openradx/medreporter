@@ -3,6 +3,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { BooleanFieldMenuItem } from "./BooleanFieldMenuItem"
 import { FreeTextFieldMenuItem } from "./FreeTextFieldMenuItem"
 import { GroupMenuItem } from "./GroupMenuItem"
+import { MultipleChoiceFieldMenuItem } from "./MultipleChoiceFieldMenuItem"
 import { NumberFieldMenuItem } from "./NumberFieldMenuItem"
 import { SingleChoiceFieldMenuItem } from "./SingleChoiceFieldMenuItem"
 
@@ -23,6 +24,13 @@ export const DesignerMenu = () => {
         <FreeTextFieldMenuItem label={t("EditorMenu.freeTextFieldLabel")} />
         <NumberFieldMenuItem label={t("EditorMenu.numberFieldLabel")} />
         <SingleChoiceFieldMenuItem label={t("EditorMenu.singleChoiceFieldLabel")} />
+        <MultipleChoiceFieldMenuItem label={t("EditorMenu.multipleChoiceFieldLabel")} />
+        <Title order={5} c="dimmed">
+          {t("EditorMenu.report")}
+        </Title>
+        <Title order={5} c="dimmed">
+          {t("EditorMenu.others")}
+        </Title>
       </Stack>
     </Stack>
   )
