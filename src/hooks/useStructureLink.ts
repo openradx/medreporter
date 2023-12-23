@@ -2,16 +2,16 @@ import { useSection } from "~/contexts/SectionContext"
 import { showField } from "~/state/displaySlice"
 import { useAppDispatch } from "~/state/store"
 
-export const useStructureLink = ({ fieldId }: { fieldId?: string }) => {
+export const useStructureLink = ({ link }: { link?: string }) => {
   const dispatch = useAppDispatch()
   const section = useSection()
 
   const activateLink = () => {
-    if (fieldId) {
+    if (link) {
       dispatch(
         showField({
           sectionId: section?.id,
-          fieldId,
+          fieldId: link,
         })
       )
     }

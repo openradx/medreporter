@@ -66,12 +66,12 @@ export const AdrenalMriReport = () => {
   return (
     <Report>
       <Paragraph>
-        <Statement>{signalDropoutText}</Statement>
-        <Statement>{adrenalToSpleenRatioText}</Statement>
+        <Statement content={signalDropoutText} />
+        <Statement content={adrenalToSpleenRatioText} />
       </Paragraph>
       <Paragraph>
         {suggestions.map((suggestion) => (
-          <Statement key={suggestion}>{t(suggestion)}</Statement>
+          <Statement key={suggestion} content={t(suggestion)} />
         ))}
       </Paragraph>
     </Report>

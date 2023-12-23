@@ -20,6 +20,7 @@ export default {
      * Report
      */
     required: "Missing inputs.",
+    result: "Result",
     resultRight: "Volume right kidney: ",
     resultLeft: "Volume left kidney: ",
     resultTotal: "Total kidney volume: ",

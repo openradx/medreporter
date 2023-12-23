@@ -6,6 +6,7 @@ import { GroupMenuItem } from "./GroupMenuItem"
 import { MultipleChoiceFieldMenuItem } from "./MultipleChoiceFieldMenuItem"
 import { NumberFieldMenuItem } from "./NumberFieldMenuItem"
 import { SingleChoiceFieldMenuItem } from "./SingleChoiceFieldMenuItem"
+import { StatementMenuItem } from "./StatementMenuItem"
 
 export const DesignerMenu = () => {
   const { t } = useSiteTranslation()
@@ -28,6 +29,7 @@ export const DesignerMenu = () => {
         <Title order={5} c="dimmed">
           {t("EditorMenu.report")}
         </Title>
+        <StatementMenuItem label={t("EditorMenu.statementLabel")} />
         <Title order={5} c="dimmed">
           {t("EditorMenu.others")}
         </Title>

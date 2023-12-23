@@ -49,12 +49,12 @@ export const AdrenalWashoutReport = () => {
   return (
     <Report>
       <Paragraph>
-        <Statement>{absoluteWashoutText}</Statement>
-        <Statement>{relativeWashoutText}</Statement>
+        <Statement content={absoluteWashoutText} />
+        <Statement content={relativeWashoutText} />
       </Paragraph>
       <Paragraph>
         {suggestions.map((suggestion) => (
-          <Statement key={suggestion}>{t(suggestion)}</Statement>
+          <Statement key={suggestion} content={t(suggestion)} />
         ))}
       </Paragraph>
     </Report>

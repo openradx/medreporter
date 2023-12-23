@@ -20,6 +20,7 @@ export default {
      * Report
      */
     required: "Fehlende Eingaben.",
+    result: "Ergebnis",
     resultRight: "Volumen rechte Niere: ",
     resultLeft: "Volumen linke Niere: ",
     resultTotal: "Gesamtnierenvolumen: ",

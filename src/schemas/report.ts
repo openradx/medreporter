@@ -1,7 +1,7 @@
 import { z } from "zod"
 import { codeSchema, nodeSchema } from "./common"
 
-const statementNodeSchema = nodeSchema.extend({
+export const statementNodeSchema = nodeSchema.extend({
   type: z.literal("Statement"),
   link: z.string().optional(), // link to a field
   content: codeSchema.optional(),
@@ -9,7 +9,7 @@ const statementNodeSchema = nodeSchema.extend({
 
 export type StatementNode = z.infer<typeof statementNodeSchema>
 
-const paragraphNodeSchema = nodeSchema.extend({
+export const paragraphNodeSchema = nodeSchema.extend({
   type: z.literal("Paragraph"),
   link: z.string().optional(), // link to a field
   title: z.string().optional(),

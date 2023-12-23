@@ -113,23 +113,15 @@ export const KidneyVolumeReport = () => {
   }
   return (
     <Report>
-      <Paragraph>
-        <Statement>
-          {t("KidneyVolume.resultRight")}
-          {resultRightVolume}
-        </Statement>
-        <Statement>
-          {t("KidneyVolume.resultLeft")}
-          {resultLeftVolume}
-        </Statement>
-        <Statement>
-          {t("KidneyVolume.resultTotal")}
-          {resultTotalVolume}
-        </Statement>
-        <Statement>
-          {t("KidneyVolume.resultTotalHeightCorrected")}
-          {resultTotalVolumeHeightCorrected}
-        </Statement>
+      <Paragraph list title={t("KidneyVolume.result")}>
+        <Statement content={`${t("KidneyVolume.resultRight")} ${resultRightVolume}`} />
+        <Statement content={`${t("KidneyVolume.resultLeft")} ${resultLeftVolume}`} />
+        <Statement content={`${t("KidneyVolume.resultTotal")} ${resultTotalVolume}`} />
+        <Statement
+          content={`${t(
+            "KidneyVolume.resultTotalHeightCorrected"
+          )} ${resultTotalVolumeHeightCorrected}`}
+        />
       </Paragraph>
     </Report>
   )

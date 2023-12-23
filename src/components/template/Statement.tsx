@@ -6,12 +6,13 @@ import { useAppSelector } from "~/state/store"
 import { StructureLink } from "./StructureLink"
 
 interface StatementProps {
-  fieldId?: string
-  children?: ReactNode
+  link?: string
+  content?: ReactNode
 }
 
-export const Statement = ({ fieldId, children }: StatementProps) => {
-  const { activateLink } = useStructureLink({ fieldId })
+export const Statement = ({ link, content }: StatementProps) => {
+  const { activateLink } = useStructureLink({ link })
+
   const outputFormat = useAppSelector(selectOutputFormat)
 
   const paragraph = useParagraph()
@@ -22,10 +23,10 @@ export const Statement = ({ fieldId, children }: StatementProps) => {
       {list && (
         <li>
           {outputFormat === "plain" && "- "}
-          {children}
+          {content}
         </li>
       )}
-      {!list && children}
+      {!list && content}
     </StructureLink>
   )
 }

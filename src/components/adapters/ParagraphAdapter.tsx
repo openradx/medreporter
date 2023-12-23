@@ -10,7 +10,7 @@ interface ParagraphAdapterProps {
 export const ParagraphAdapter = ({ node }: ParagraphAdapterProps) => (
   <Paragraph
     title={node.title}
-    fieldId={node.link} // TODO: rename fieldId of Paragraph to link
+    link={node.link}
     hidden={evalCodeToBoolean(node.hidden)}
     list={node.list}
   >
