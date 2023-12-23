@@ -17,10 +17,11 @@ export const StatementMenuItem = ({ label }: StatementMenuItemProps) => {
     () => ({
       type: "Statement",
       nodeId: createNodeId("statement"),
-      timestamp,
+      hidden: "",
       content: "",
       link: "",
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [timestamp]
   )
 

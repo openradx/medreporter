@@ -3,6 +3,7 @@ import { codeSchema, nodeSchema } from "./common"
 
 export const statementNodeSchema = nodeSchema.extend({
   type: z.literal("Statement"),
+  hidden: codeSchema.optional(),
   link: z.string().optional(), // link to a field
   content: codeSchema.optional(),
 })

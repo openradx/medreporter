@@ -1,4 +1,4 @@
-import { TextInput } from "@mantine/core"
+import { TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { StatementNode, statementNodeSchema } from "~/schemas/report"
 import { PropertiesForm } from "./PropertiesForm"
@@ -27,8 +27,19 @@ export const StatementPropertiesForm = ({ node }: StatementPropertiesFormProps) 
     <Controller
       name="content"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Field ID"
+        <Textarea
+          label="Content"
+          value={value}
+          onChange={onChange}
+          error={error ? error.message : null}
+        />
+      )}
+    />
+    <Controller
+      name="hidden"
+      render={({ field: { value, onChange }, fieldState: { error } }) => (
+        <Textarea
+          label="Hidden"
           value={value}
           onChange={onChange}
           error={error ? error.message : null}

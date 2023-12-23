@@ -1,3 +1,4 @@
+import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { StatementNode } from "~/schemas/report"
 import { selectEditing } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
@@ -15,5 +16,6 @@ export const StatementAdapter = ({ node }: StatementAdapterProps) => {
     return <DraggableCanvasItem node={node} />
   }
   return (
-    <Statement link={node.link} content={node.content}/>   )
+    <Statement link={node.link} hidden={evalCodeToBoolean(node.hidden)} content={node.content} />
+  )
 }
