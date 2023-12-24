@@ -25,7 +25,7 @@ export const DesignerSidebar = () => {
 
   return (
     <Card shadow="sm" padding="lg" radius="md" h="100%" withBorder>
-      <Box display={draggedItem || selectedItem ? "none" : "block"}>
+      <Box h="100%" display={draggedItem || selectedItem ? "none" : "block"}>
         <DesignerMenu />
       </Box>
       <Box h="100%" display={draggedItem ? "block" : "none"}>

@@ -1,0 +1,6 @@
+.structure {
+  div:first-of-type {
+    min-height: 100%;
+  }
+  flex-grow: 1;
+}

@@ -9,6 +9,7 @@ import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
 import { OutputFormat } from "./OutputFormat"
 import { PanelToolbar } from "./PanelToolbar"
+import classes from "./Report.module.css"
 import { ReportLanguageChooser } from "./ReportLanguageChooser"
 
 interface ReportProps {
@@ -46,14 +47,14 @@ export const Report = ({ children }: ReportProps) => {
         </Center>
       )}
       {(dataInitialized || editing) && (
-        <ScrollArea style={{ flexGrow: 1 }}>
+        <ScrollArea className={classes.report}>
           <Flex
             id={REPORT_CONTENT_ID}
             h="100%"
             direction="column"
             ff="monospace"
             p="sm"
-            style={{ whiteSpace: "pre-wrap" }}
+            style={{ whiteSpace: "pre-wrap", flexGrow: 1 }}
           >
             {children}
           </Flex>
