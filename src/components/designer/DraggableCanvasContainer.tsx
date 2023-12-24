@@ -1,6 +1,6 @@
 import { useDraggable, useDroppable } from "@dnd-kit/core"
 import { Box, Card, Stack, Text } from "@mantine/core"
-import { useMemo } from "react"
+import { ReactNode, useMemo } from "react"
 import { match } from "ts-pattern"
 import { useContainer } from "~/contexts/ContainerContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -8,18 +8,20 @@ import { selectSelectedItem, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectTemplate } from "~/state/templateSlice"
 import {
-  AddableNode,
+  ContainerNode,
   DraggableData,
   DroppableData,
   findContainer,
   isFittingContainer,
 } from "~/utils/designerUtils"
+import { DroppableContainer } from "./DroppableContainer"
 
-interface DraggableCanvasItemProps {
-  node: AddableNode
+interface DraggableCanvasContainerProps {
+  node: ContainerNode
+  children?: ReactNode
 }
 
-export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
+export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasContainerProps) => {
   const { t } = useSiteTranslation()
   const selectedItem = useAppSelector(selectSelectedItem)
   const template = useAppSelector(selectTemplate)
@@ -82,7 +84,6 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
 
   return (
     <Box
-      w={direction === "row" ? 250 : undefined}
       pos="relative"
       ref={draggable.setNodeRef}
       {...draggable.listeners}
@@ -92,20 +93,18 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
         dispatch(setSelectedItem(node.nodeId))
       }}
     >
-      {direction === "row" && (
-        <>
-          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="50%" h="100%" left={0} />
-          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="50%" h="100%" right={0} />
-        </>
-      )}
-      {direction === "column" && (
-        <>
-          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="100%" h="50%" top={0} />
-          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h="50%" bottom={0} />
-        </>
-      )}
       <Card padding="xs" shadow="sm" style={{ boxShadow, opacity: 0.5 }} withBorder>
         <Card.Section inheritPadding pos="relative">
+          <Box
+            bg="red"
+            ref={droppableStart.setNodeRef}
+            pos="absolute"
+            w="100%"
+            h="100%"
+            top={0}
+            left={0}
+            opacity={0.5}
+          />
           <Stack gap={0}>
             <Text>
               {t("EditorItem.type")}: {type}
@@ -118,6 +117,19 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
             </Text>
           </Stack>
         </Card.Section>
+        <>
+          <DroppableContainer node={node}>{children}</DroppableContainer>
+          <Box
+            bg="blue"
+            ref={droppableEnd.setNodeRef}
+            opacity={0.5}
+            pos="absolute"
+            w="100%"
+            h={10}
+            bottom={0}
+            left={0}
+          />
+        </>
       </Card>
     </Box>
   )

@@ -2,7 +2,7 @@ import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { ParagraphNode } from "~/schemas/report"
 import { selectEditing } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
-import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
+import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
 import { Paragraph } from "../template/Paragraph"
 import { StatementAdapter } from "./StatementAdapter"
 
@@ -18,7 +18,7 @@ export const ParagraphAdapter = ({ node }: ParagraphAdapterProps) => {
   ))
 
   if (editing) {
-    return <DraggableCanvasItem node={node}>{children}</DraggableCanvasItem>
+    return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
 
   return (

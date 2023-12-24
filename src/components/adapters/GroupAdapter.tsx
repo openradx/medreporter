@@ -2,7 +2,7 @@ import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { GroupNode } from "~/schemas/structure"
 import { selectEditing } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
-import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
+import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
 import { Group } from "../template/Group"
 import { Info } from "../template/Info"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
@@ -25,7 +25,7 @@ export const GroupAdapter = ({ node }: GroupAdapterProps) => {
   })
 
   if (editing) {
-    return <DraggableCanvasItem node={node}>{children}</DraggableCanvasItem>
+    return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
 
   return (
