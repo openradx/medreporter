@@ -12,7 +12,7 @@ interface DeleteInstituteButtonProps {
 export const DeleteInstituteButton = ({ institute }: DeleteInstituteButtonProps) => {
   const { t } = useSiteTranslation()
   const deleteInstitute = trpc.admin.deleteInstitute.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   return (
     <ActionIcon

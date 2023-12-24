@@ -1,4 +1,4 @@
-import { DiscreteFieldEl } from "~/schemas/structure"
+import { DiscreteFieldNode } from "~/schemas/structure"
 import { BooleanFieldAdapter } from "./BooleanFieldAdapter"
 import { DateFieldAdapter } from "./DateFieldAdapter"
 import { FreeTextFieldAdapter } from "./FreeTextFieldAdapter"
@@ -9,29 +9,29 @@ import { SingleChoiceFieldAdapter } from "./SingleChoiceFieldAdapter"
 import { TimeFieldAdapter } from "./TimeFieldAdapter"
 
 interface DiscreteFieldAdapterProps {
-  element: DiscreteFieldEl
+  node: DiscreteFieldNode
 }
 
-export const DiscreteFieldAdapter = ({ element }: DiscreteFieldAdapterProps) => {
-  switch (element.type) {
+export const DiscreteFieldAdapter = ({ node }: DiscreteFieldAdapterProps) => {
+  switch (node.type) {
     case "BooleanField":
-      return <BooleanFieldAdapter key={element.gid} element={element} />
+      return <BooleanFieldAdapter key={node.nodeId} node={node} />
     case "DateField":
-      return <DateFieldAdapter key={element.gid} element={element} />
+      return <DateFieldAdapter key={node.nodeId} node={node} />
     case "FreeTextField":
-      return <FreeTextFieldAdapter key={element.gid} element={element} />
+      return <FreeTextFieldAdapter key={node.nodeId} node={node} />
     case "MeasurementsField":
-      return <MeasurementsFieldAdapter key={element.gid} element={element} />
+      return <MeasurementsFieldAdapter key={node.nodeId} node={node} />
     case "MultipleChoiceField":
-      return <MultipleChoiceFieldAdapter key={element.gid} element={element} />
+      return <MultipleChoiceFieldAdapter key={node.nodeId} node={node} />
     case "NumberField":
-      return <NumberFieldAdapter key={element.gid} element={element} />
+      return <NumberFieldAdapter key={node.nodeId} node={node} />
     case "SingleChoiceField":
-      return <SingleChoiceFieldAdapter key={element.gid} element={element} />
+      return <SingleChoiceFieldAdapter key={node.nodeId} node={node} />
     case "TimeField":
-      return <TimeFieldAdapter key={element.gid} element={element} />
+      return <TimeFieldAdapter key={node.nodeId} node={node} />
     default:
       // @ts-ignore
-      throw new Error(`Invalid discrete field type: ${element.type}`)
+      throw new Error(`Invalid discrete field type: ${node.type}`)
   }
 }

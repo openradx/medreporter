@@ -1,15 +1,15 @@
-import { TemplateEl } from "~/schemas/template"
+import { TemplateNode } from "~/schemas/template"
 import { Template } from "../template/Template"
 import { ReportAdapter } from "./ReportAdapter"
 import { StructureAdapter } from "./StructureAdapter"
 
 interface TemplateAdapterProps {
-  element: TemplateEl
+  node: TemplateNode
 }
 
-export const TemplateAdapter = ({ element }: TemplateAdapterProps) => (
-  <Template title={element.title} info={element.info}>
-    <StructureAdapter element={element.structure} />
-    <ReportAdapter element={element.report} />
+export const TemplateAdapter = ({ node }: TemplateAdapterProps) => (
+  <Template title={node.title} info={node.info}>
+    <StructureAdapter node={node.structure} />
+    <ReportAdapter node={node.report} />
   </Template>
 )

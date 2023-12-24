@@ -7,7 +7,7 @@ import { useAppSelector } from "~/state/store"
 import { StructureLink } from "./StructureLink"
 
 interface ParagraphProps {
-  fieldId?: string
+  link?: string
   title?: string
   hidden?: boolean
   list?: boolean
@@ -15,13 +15,13 @@ interface ParagraphProps {
 }
 
 export const Paragraph = ({
-  fieldId,
+  link,
   title = "",
   hidden = false,
   list = false,
   children,
 }: ParagraphProps) => {
-  const { activateLink } = useStructureLink({ fieldId })
+  const { activateLink } = useStructureLink({ link })
   const outputFormat = useAppSelector(selectOutputFormat)
 
   return (
@@ -41,7 +41,7 @@ export const Paragraph = ({
               {children}
             </Box>
           )}
-          {children}
+          {!list && children}
         </StructureLink>
       </ParagraphContextProvider>
     </Box>

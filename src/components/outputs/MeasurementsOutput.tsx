@@ -29,7 +29,7 @@ export const MeasurementsOutput = ({
   locationLabel,
   referenceLabel,
 }: MeasurementsOutputProps) => {
-  const { activateLink } = useStructureLink({ fieldId })
+  const { activateLink } = useStructureLink({ link: fieldId })
   const outputFormat = useAppSelector(selectOutputFormat)
   const { t } = useSiteTranslation()
 

@@ -12,7 +12,7 @@ interface RemoveMembershipButtonProps {
 export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonProps) => {
   const { t } = useSiteTranslation()
   const deleteMembership = trpc.admin.deleteMembership.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   return (
     <ActionIcon

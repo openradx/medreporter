@@ -3,6 +3,8 @@
 ## Kai
 
 - Get rid of images in /public/images (when we use images we can import them as a component)
+- Rename link to fieldRef
+- Rename id to fieldId to make it more distinct from gid
 - Rename structured-report stuff to template
 - Go back from moduleId to instanceId
 - Maybe replace JSDOM with cheerio (also work in the browser)

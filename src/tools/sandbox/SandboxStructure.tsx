@@ -9,8 +9,8 @@ import { Structure } from "~/components/template/Structure"
 export const SandboxStructure = () => (
   <Structure>
     <Section label="default" id="default">
-      <Hint>Just a tool to play with the layout and the functions of the fields.</Hint>
-      <Group label="Sandbox">
+      <Hint>Just a tool to play with the group and the functions of the fields.</Hint>
+      <Group border label="Sandbox">
         <DateField id="today" label="Today" />
         <NumberField
           id="number"

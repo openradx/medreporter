@@ -1,9 +1,25 @@
-import { StructureEl } from "~/schemas/structure"
+import { StructureNode } from "~/schemas/structure"
+import { selectActiveSectionId } from "~/state/displaySlice"
+import { useAppSelector } from "~/state/store"
+import { Structure } from "../template/Structure"
 import { SectionAdapter } from "./SectionAdapter"
 
 interface StructureAdapterProps {
-  element: StructureEl
+  node: StructureNode
 }
 
-export const StructureAdapter = ({ element }: StructureAdapterProps) =>
-  element.children.map((child) => <SectionAdapter key={child.gid} element={child} />)
+export const StructureAdapter = ({ node }: StructureAdapterProps) => {
+  const activeSectionId = useAppSelector(selectActiveSectionId)
+
+  return (
+    <Structure>
+      {node.children.map((child, index) => (
+        <SectionAdapter
+          key={child.nodeId}
+          node={child}
+          active={activeSectionId === null ? index === 0 : activeSectionId === child.nodeId}
+        />
+      ))}
+    </Structure>
+  )
+}

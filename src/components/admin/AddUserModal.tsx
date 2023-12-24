@@ -15,7 +15,7 @@ interface AddUserModalProps {
 export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
   const { t } = useSiteTranslation()
   const createUser = trpc.admin.createUser.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   return (
     <Modal title={t("AddUserModal.formTitle")} opened={opened} onClose={onClose}>

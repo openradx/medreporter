@@ -1,3 +1,22 @@
+EditorItem:
+  id: ID
+  type: Type
+EditorMenu:
+  booleanFieldLabel: Boolean
+  components: Components
+  dateFieldLabel: Date
+  fields: Fields
+  freeTextFieldLabel: Free text
+  groupLabel: Group
+  measurementsFieldLabel: Measurements
+  multipleChoiceFieldLabel: Multiple choice
+  numberFieldLabel: Number
+  others: Others
+  paragraphLabel: Paragraph
+  report: Report
+  singleChoiceFieldLabel: Single choice
+  timeFieldLabel: Time
+  statementLabel: Statement
 FigureProperties:
   title: Figure
 ResourceEditor:

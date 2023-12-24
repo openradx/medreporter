@@ -118,35 +118,23 @@ export const LungRads2022Report = () => {
 
   return (
     <Report>
-      <Paragraph>
-        <br />
-        <Statement>
-          <h3>
-            {t("LungRads2022.category")}: {conclusion}
-          </h3>
-        </Statement>
+      <Paragraph title={t("LungRads2022.category")}>
+        <Statement content={conclusion} />
       </Paragraph>
       <Paragraph hidden={category !== Category.Category4X}>
-        <Statement>
-          {t("LungRads2022.reasonForX")}: {suspiciousSummary}
-        </Statement>
-        <br /> <br />
+        <Statement content={`${t("LungRads2022.reasonForX")}: ${suspiciousSummary}`} />
       </Paragraph>
-      <Statement>
-        {t("LungRads2022.recommendation")}: {t(recommendation)}
-      </Statement>
+      <Statement content={`${t("LungRads2022.recommendation")}: ${t(recommendation)}`} />
+      {/* TODO: Change to hidden */}
       {dynamic === "slowlyGrowing" &&
         (category === Category.Category4A ||
           category === Category.Category4B ||
           category === Category.Category4X) && (
-          <Statement>{t("LungRads2022.additionSlowlyGrowing")}</Statement>
+          <Statement content={t("LungRads2022.additionSlowlyGrowing")} />
         )}
       <Paragraph hidden={!incidentalFindings || category === Category.NoCategory}>
-        <Statement>
-          {t("LungRads2022.incidentalFindings")}: {incidentalFindings}
-        </Statement>
-        <br /> <br />
-        <Statement>{t("LungRads2022.specificFinding")}</Statement>
+        <Statement content={`${t("LungRads2022.incidentalFindings")}: ${incidentalFindings}`} />
+        <Statement content={t("LungRads2022.specificFinding")} />
       </Paragraph>
     </Report>
   )

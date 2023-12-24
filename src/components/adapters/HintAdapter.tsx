@@ -1,10 +1,10 @@
-import { HintEl } from "~/schemas/structure"
+import { HintNode } from "~/schemas/structure"
 import { Hint } from "../template/Hint"
 
 interface HintAdapterProps {
-  element: HintEl
+  node: HintNode
 }
 
-export const HintAdapter = ({ element }: HintAdapterProps) => (
-  <Hint level={element.level}>{element.content}</Hint>
+export const HintAdapter = ({ node }: HintAdapterProps) => (
+  <Hint level={node.level}>{node.content}</Hint>
 )

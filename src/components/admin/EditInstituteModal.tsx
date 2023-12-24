@@ -16,7 +16,7 @@ interface EditInstituteModalProps {
 export const EditInstituteModal = ({ institute, opened, onClose }: EditInstituteModalProps) => {
   const { t } = useSiteTranslation()
   const updateInstitute = trpc.admin.updateInstitute.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   return (
     <Modal title={t("EditInstituteModal.formTitle")} opened={opened} onClose={onClose}>

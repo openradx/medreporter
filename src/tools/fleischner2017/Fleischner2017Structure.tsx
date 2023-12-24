@@ -3,7 +3,6 @@ import { SingleChoiceField } from "~/components/fields/SingleChoiceField"
 import { Group } from "~/components/template/Group"
 import { Hint } from "~/components/template/Hint"
 import { Info } from "~/components/template/Info"
-import { Layout } from "~/components/template/Layout"
 import { Section } from "~/components/template/Section"
 import { Structure } from "~/components/template/Structure"
 import { useMicroTranslation } from "~/hooks/useMicroTranslation"
@@ -23,7 +22,7 @@ export const Fleischner2017Structure = () => {
     <Structure>
       <Section id="default" label="default">
         <Hint level="info">{t("Fleischner2017.toolHint")}</Hint>
-        <Group label={t("Fleischner2017.groupDiameter")}>
+        <Group border label={t("Fleischner2017.groupDiameter")}>
           <NumberField
             id="longaxis"
             label={t("Fleischner2017.inputLabelLongaxis")}
@@ -37,7 +36,7 @@ export const Fleischner2017Structure = () => {
             defaultValue={0}
           />
         </Group>
-        <Layout>
+        <Group>
           <SingleChoiceField
             id="structure"
             label={t("Fleischner2017.inputLabelStructure")}
@@ -68,7 +67,7 @@ export const Fleischner2017Structure = () => {
             extras={<Info>{riskFactors}</Info>}
             defaultValue="no"
           />
-        </Layout>
+        </Group>
         <Hint level="warning">{t("Fleischner2017.hintApplicability")}</Hint>
       </Section>
     </Structure>

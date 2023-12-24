@@ -14,7 +14,7 @@ interface AddInstituteModalProps {
 export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) => {
   const { t } = useSiteTranslation()
   const createInstitute = trpc.admin.createInstitute.useMutation()
-  const utils = trpc.useContext()
+  const utils = trpc.useUtils()
 
   return (
     <Modal title={t("AddInstituteModal.formTitle")} opened={opened} onClose={onClose}>

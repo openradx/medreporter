@@ -2,12 +2,14 @@ import { Center, Flex, Loader, Paper, ScrollArea } from "@mantine/core"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { selectEditing } from "~/state/designerSlice"
 import { selectDataInitialized } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
 import { OutputFormat } from "./OutputFormat"
 import { PanelToolbar } from "./PanelToolbar"
+import classes from "./Report.module.css"
 import { ReportLanguageChooser } from "./ReportLanguageChooser"
 
 interface ReportProps {
@@ -18,6 +20,7 @@ export const Report = ({ children }: ReportProps) => {
   const { t } = useSiteTranslation()
   const dataInitialized = useAppSelector(selectDataInitialized)
 
+  const editing = useAppSelector(selectEditing)
   return (
     <Paper
       style={{
@@ -38,20 +41,20 @@ export const Report = ({ children }: ReportProps) => {
           </ActionsGroup>
         }
       />
-      {!dataInitialized && (
+      {!dataInitialized && !editing && (
         <Center style={{ flexGrow: 1 }}>
           <Loader type="bars" />
         </Center>
       )}
-      {dataInitialized && (
-        <ScrollArea style={{ flexGrow: 1 }}>
+      {(dataInitialized || editing) && (
+        <ScrollArea className={classes.report}>
           <Flex
             id={REPORT_CONTENT_ID}
             h="100%"
             direction="column"
             ff="monospace"
             p="sm"
-            style={{ whiteSpace: "pre-wrap" }}
+            style={{ whiteSpace: "pre-wrap", flexGrow: 1 }}
           >
             {children}
           </Flex>

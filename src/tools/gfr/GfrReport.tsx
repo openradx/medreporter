@@ -65,9 +65,7 @@ export const GfrReport = () => {
   if (age === null) {
     return (
       <Report>
-        <Paragraph>
-          <Statement>{t("Gfr.textAgeMissing")}</Statement>
-        </Paragraph>
+        <Statement content={t("Gfr.textAgeMissing")} />
       </Report>
     )
   }
@@ -76,13 +74,13 @@ export const GfrReport = () => {
     return (
       <Report>
         <Paragraph>
-          <Statement>CKDEPI: {ckdepi}</Statement>
+          <Statement content={`CKDEPI: ${ckdepi}`} />
         </Paragraph>
         <Paragraph>
-          <Statement>Cockcroft-Gault: {cockcroft}</Statement>
+          <Statement content={`Cockcroft-Gault: ${cockcroft}`} />
         </Paragraph>
         <Paragraph>
-          <Statement>Mayo: {mayo}</Statement>
+          <Statement content={`Mayo: ${mayo}$`} />
         </Paragraph>
       </Report>
     )
@@ -91,13 +89,13 @@ export const GfrReport = () => {
   return (
     <Report>
       <Paragraph>
-        <Statement>Counahan-Barratt: {counahan}</Statement>
+        <Statement content={`Counahan-Barratt: ${counahan}`} />
       </Paragraph>
       <Paragraph>
-        <Statement>Schwartz (rev.): {schwartzRev}</Statement>
+        <Statement content={`Schwartz (rev.): ${schwartzRev}`} />
       </Paragraph>
       <Paragraph>
-        <Statement>Schwartz (orig.): {schwartzOrig}</Statement>
+        <Statement content={`Schwartz (orig.): ${schwartzOrig}`} />
       </Paragraph>
     </Report>
   )

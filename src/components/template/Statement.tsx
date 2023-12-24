@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { Box } from "@mantine/core"
 import { useParagraph } from "~/contexts/ParagraphContext"
 import { useStructureLink } from "~/hooks/useStructureLink"
 import { selectOutputFormat } from "~/state/displaySlice"
@@ -6,12 +6,14 @@ import { useAppSelector } from "~/state/store"
 import { StructureLink } from "./StructureLink"
 
 interface StatementProps {
-  fieldId?: string
-  children?: ReactNode
+  link?: string
+  hidden?: boolean
+  content?: string
 }
 
-export const Statement = ({ fieldId, children }: StatementProps) => {
-  const { activateLink } = useStructureLink({ fieldId })
+export const Statement = ({ link, hidden, content }: StatementProps) => {
+  const { activateLink } = useStructureLink({ link })
+
   const outputFormat = useAppSelector(selectOutputFormat)
 
   const paragraph = useParagraph()
@@ -19,13 +21,15 @@ export const Statement = ({ fieldId, children }: StatementProps) => {
 
   return (
     <StructureLink onClick={activateLink}>
-      {list && (
-        <li>
-          {outputFormat === "plain" && "- "}
-          {children}
-        </li>
-      )}
-      {!list && children}
+      <Box display={hidden ? "none" : undefined}>
+        {list && (
+          <li>
+            {outputFormat === "plain" && "- "}
+            {content}
+          </li>
+        )}
+        {!list && content}
+      </Box>
     </StructureLink>
   )
 }
