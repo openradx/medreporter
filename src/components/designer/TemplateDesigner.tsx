@@ -165,7 +165,7 @@ export const TemplateDesigner = () => {
         onDragStart={() => dispatch(setSelectedItem(null))}
         onDragEnd={handleDragEnd}
       >
-        <Grid classNames={{ inner: classes.inner }} h="100%">
+        <Grid overflow="hidden" classNames={{ inner: classes.inner }} h="100%">
           <Grid.Col span="content" w={250} h="100%" pb={0}>
             <DesignerSidebar />
           </Grid.Col>
