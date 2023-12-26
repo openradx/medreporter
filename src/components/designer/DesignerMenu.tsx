@@ -1,13 +1,13 @@
 import { ScrollArea, Stack, Title } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { BooleanFieldMenuItem } from "./BooleanFieldMenuItem"
-import { FreeTextFieldMenuItem } from "./FreeTextFieldMenuItem"
-import { GroupMenuItem } from "./GroupMenuItem"
-import { MultipleChoiceFieldMenuItem } from "./MultipleChoiceFieldMenuItem"
-import { NumberFieldMenuItem } from "./NumberFieldMenuItem"
-import { ParagraphMenuItem } from "./ParagraphMenuItem"
-import { SingleChoiceFieldMenuItem } from "./SingleChoiceFieldMenuItem"
-import { StatementMenuItem } from "./StatementMenuItem"
+import { BooleanFieldMenuItem } from "./menuItems/BooleanFieldMenuItem"
+import { FreeTextFieldMenuItem } from "./menuItems/FreeTextFieldMenuItem"
+import { GroupMenuItem } from "./menuItems/GroupMenuItem"
+import { MultipleChoiceFieldMenuItem } from "./menuItems/MultipleChoiceFieldMenuItem"
+import { NumberFieldMenuItem } from "./menuItems/NumberFieldMenuItem"
+import { ParagraphMenuItem } from "./menuItems/ParagraphMenuItem"
+import { SingleChoiceFieldMenuItem } from "./menuItems/SingleChoiceFieldMenuItem"
+import { StatementMenuItem } from "./menuItems/StatementMenuItem"
 
 export const DesignerMenu = () => {
   const { t } = useSiteTranslation()
