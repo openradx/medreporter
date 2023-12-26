@@ -1,4 +1,14 @@
-import { Modal, TextInput, Select, Button, Title, MultiSelect, Flex, Stack } from "@mantine/core"
+import {
+  Modal,
+  TextInput,
+  Select,
+  Button,
+  Title,
+  MultiSelect,
+  Flex,
+  Stack,
+  Switch,
+} from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import DE from "flag-icons/flags/4x3/de.svg"
 import ES from "flag-icons/flags/4x3/es.svg"
@@ -9,10 +19,14 @@ import NL from "flag-icons/flags/4x3/nl.svg"
 import PT from "flag-icons/flags/4x3/pt.svg"
 import SE from "flag-icons/flags/4x3/se.svg"
 import US from "flag-icons/flags/4x3/us.svg"
+import { selectEditing, setEditing } from "~/state/designerSlice"
+import { useAppDispatch, useAppSelector } from "~/state/store"
 import { TemplateDesigner } from "./TemplateDesigner"
 
 export const NewTemplate = () => {
   const [opened, { open, close }] = useDisclosure(false)
+  const editing = useAppSelector(selectEditing)
+  const dispatch = useAppDispatch()
 
   const languageData = [
     { value: "gb", label: "English (UK)", image: GB },
@@ -42,6 +56,11 @@ export const NewTemplate = () => {
         <Button variant="outline" onClick={open}>
           Template properties
         </Button>
+        <Switch
+          label="Preview"
+          checked={!editing}
+          onChange={(event) => dispatch(setEditing(!event.currentTarget.checked))}
+        />
       </Flex>
       <Modal opened={opened} onClose={close} title="New Template - Properties">
         <TextInput label="Name" />
