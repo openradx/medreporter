@@ -1,6 +1,6 @@
-import { RootState } from "RootTypes"
 import { z } from "zod"
 import { createHistorySlice, withHistory } from "./historySlice"
+import type { RootState } from "./store"
 
 export const structureDataSchema = z.record(z.any()) // {fieldId: value}
 
@@ -9,7 +9,7 @@ export type StructureDataState = z.infer<typeof structureDataSchema>
 const initialState: StructureDataState = {}
 
 export const structureDataSlice = createHistorySlice({
-  name: "data",
+  name: "structureData",
   initialState,
   reducers: {
     resetStructureData() {

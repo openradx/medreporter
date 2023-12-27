@@ -1,5 +1,5 @@
 import { createAction, createSlice } from "@reduxjs/toolkit"
-import { AppThunk, RootState } from "RootTypes"
+import type { AppThunk, RootState } from "./store"
 
 const initialState = {
   current: 0,

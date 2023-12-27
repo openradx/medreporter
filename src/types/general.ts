@@ -1,9 +1,8 @@
-import { CombinedState, PreloadedState } from "@reduxjs/toolkit"
-import { RootState } from "RootTypes"
-import { Resource } from "i18next"
-import { NextPage } from "next"
-import { Session } from "next-auth"
-import { ReactElement, ReactNode } from "react"
+import type { Resource } from "i18next"
+import type { NextPage } from "next"
+import type { Session } from "next-auth"
+import type { ReactElement, ReactNode } from "react"
+import type { RootState } from "~/state/store"
 
 export interface AppConfig {
   debugTranslations: boolean
@@ -17,12 +16,10 @@ export interface I18nSite {
   siteStore: Resource
 }
 
-export type PreloadedReduxState = PreloadedState<CombinedState<RootState>>
-
 export interface ServerSideProps {
   session?: Session | null
   i18nSite?: I18nSite
-  preloadedReduxState?: PreloadedReduxState
+  preloadedReduxState?: Partial<RootState>
 }
 
 export interface StaticProps {

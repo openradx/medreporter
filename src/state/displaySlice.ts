@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { RootState } from "RootTypes"
 import { z } from "zod"
+import type { RootState } from "./store"
 
 export const outputFormatSchema = z.enum(["html", "plain"])
 

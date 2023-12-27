@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
-import { RootState } from "RootTypes"
+import type { RootState } from "./store"
 
 interface DesignerState {
   editing: boolean

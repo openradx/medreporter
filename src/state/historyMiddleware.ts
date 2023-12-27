@@ -1,17 +1,23 @@
-import { PayloadAction } from "@reduxjs/toolkit"
-import { RootState } from "RootTypes"
-import { Middleware } from "redux"
+import { PayloadAction, Middleware } from "@reduxjs/toolkit"
 import { forwardTracker } from "./historyTrackerSlice"
+import type { RootState } from "./store"
 
 export const historyMiddleware: Middleware<{}, RootState> =
   ({ dispatch, getState }) =>
   (next) =>
-  (action: PayloadAction<any, any, { undoable?: boolean; historyCurrent?: number }>) => {
-    if (!action.meta?.undoable) {
+  (action) => {
+    const { meta } = action as PayloadAction<
+      any,
+      any,
+      { undoable?: boolean; historyCurrent?: number } | undefined
+    >
+
+    if (!meta?.undoable) {
       return next(action)
     }
 
     dispatch(forwardTracker())
-    action.meta.historyCurrent = getState().historyTracker.current
+    const state = getState()
+    meta.historyCurrent = state.historyTracker.current
     return next(action)
   }

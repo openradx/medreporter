@@ -1,4 +1,3 @@
-import { RootState } from "RootTypes"
 import invariant from "tiny-invariant"
 import { TemplateNode } from "~/schemas/template"
 import {
@@ -9,6 +8,7 @@ import {
   isContainerNode,
 } from "~/utils/designerUtils"
 import { createHistorySlice, withHistory } from "./historySlice"
+import type { RootState } from "./store"
 
 type TemplateState = TemplateNode
 
