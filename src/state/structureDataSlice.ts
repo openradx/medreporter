@@ -14,9 +14,9 @@ export const structureDataSlice = createHistorySlice({
   reducers: {
     resetStructureData() {
       return {
-        past: {},
+        past: [],
         present: initialState,
-        future: {},
+        future: [],
       }
     },
     setStructureData: withHistory<StructureDataState, StructureDataState>(
@@ -31,8 +31,11 @@ export const structureDataSlice = createHistorySlice({
   },
 })
 
-export const { resetStructureData, setStructureData, changeStructureValue } =
+export const { undo, redo, resetStructureData, setStructureData, changeStructureValue } =
   structureDataSlice.actions
+
+// TODO: remove, just for debugging purposes
+changeStructureValue({ fieldId: "a", value: 1 })
 
 export default structureDataSlice.reducer
 
