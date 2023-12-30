@@ -1,3 +1,4 @@
+import { createSlice } from "@reduxjs/toolkit"
 import invariant from "tiny-invariant"
 import { TemplateNode } from "~/schemas/template"
 import {
@@ -7,12 +8,14 @@ import {
   findNode,
   isContainerNode,
 } from "~/utils/designerUtils"
-import { createHistorySlice, withHistory } from "./historySlice"
+import { createHistoryAdapter } from "./historyAdapter"
 import type { RootState } from "./store"
 
 type TemplateState = TemplateNode
 
-const initialState: TemplateState = {
+const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
+
+const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
   nodeId: createNodeId("template"),
   title: "",
@@ -34,35 +37,36 @@ const initialState: TemplateState = {
     nodeId: createNodeId("report"),
     children: [],
   },
-}
+})
 
-const templateSlice = createHistorySlice({
+const templateSlice = createSlice({
   name: "template",
   initialState,
   reducers: {
-    setTemplate: withHistory<TemplateState, TemplateNode>((state, action) => action.payload),
-    addNode: withHistory<TemplateState, { node: AddableNode; containerId: string; index: number }>(
-      (state, action) => {
-        const { node, containerId, index } = action.payload
+    undo: templateHistoryAdapter.undo,
+    redo: templateHistoryAdapter.redo,
+    setTemplate: templateHistoryAdapter.undoable<TemplateNode>((state, action) => action.payload),
+    addNode: templateHistoryAdapter.undoable<{
+      node: AddableNode
+      containerId: string
+      index: number
+    }>((state, action) => {
+      const { node, containerId, index } = action.payload
 
-        const containerNode = findNode(state, containerId)
-        invariant(
-          containerNode && isContainerNode(containerNode),
-          `Invalid container with ID: ${containerId}`
-        )
+      const containerNode = findNode(state, containerId)
+      invariant(
+        containerNode && isContainerNode(containerNode),
+        `Invalid container with ID: ${containerId}`
+      )
 
-        containerNode.children.splice(index, 0, node as any)
-      }
-    ),
-    moveNode: withHistory<
-      TemplateState,
-      {
-        sourceContainerId: string
-        sourceIndex: number
-        targetContainerId: string
-        targetIndex: number
-      }
-    >((state, action) => {
+      containerNode.children.splice(index, 0, node as any)
+    }),
+    moveNode: templateHistoryAdapter.undoable<{
+      sourceContainerId: string
+      sourceIndex: number
+      targetContainerId: string
+      targetIndex: number
+    }>((state, action) => {
       const { sourceContainerId, sourceIndex, targetContainerId, targetIndex } = action.payload
 
       const sourceContainerNode = findNode(state, sourceContainerId)
@@ -85,7 +89,7 @@ const templateSlice = createHistorySlice({
       )
       targetContainerNode.children.splice(targetIndex, 0, nodeToMove as any)
     }),
-    deleteNode: withHistory<TemplateState, { nodeId: string }>((state, action) => {
+    deleteNode: templateHistoryAdapter.undoable<{ nodeId: string }>((state, action) => {
       const { nodeId } = action.payload
       const node = findNode(state, nodeId)
       invariant(node, `No node with ID: ${nodeId}`)
@@ -96,7 +100,7 @@ const templateSlice = createHistorySlice({
       const index = container.children.findIndex((child) => child.nodeId === nodeId)
       container.children.splice(index, 1)
     }),
-    updateNode: withHistory<TemplateState, { nodeId: string; data: Partial<AddableNode> }>(
+    updateNode: templateHistoryAdapter.undoable<{ nodeId: string; data: Partial<AddableNode> }>(
       (state, action) => {
         const { nodeId, data } = action.payload
         const node = findNode(state, nodeId)
@@ -107,7 +111,8 @@ const templateSlice = createHistorySlice({
   },
 })
 
-export const { setTemplate, addNode, deleteNode, moveNode, updateNode } = templateSlice.actions
+export const { undo, redo, setTemplate, addNode, deleteNode, moveNode, updateNode } =
+  templateSlice.actions
 
 export default templateSlice.reducer
 

@@ -5,17 +5,15 @@ import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
 import { StructureFormContextProvider } from "~/contexts/StructureFormContext"
 import { setDataInitialized } from "~/state/displaySlice"
-import {
-  selectCanRedo,
-  selectCanUndo,
-  undo as doUndo,
-  redo as doRedo,
-} from "~/state/historyTrackerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import {
   changeStructureValue,
+  redoAndSelect,
+  selectCanRedo,
+  selectCanUndo,
   setStructureData,
   StructureDataState,
+  undoAndSelect,
 } from "~/state/structureDataSlice"
 
 interface StructureFormProps {
@@ -84,15 +82,15 @@ export const StructureForm = ({ children }: StructureFormProps) => {
 
   const undo = useCallback(() => {
     changeStructureValueDebounced.flush()
-    const state = dispatch(doUndo())
-    reset(copy(state.structureData.present))
+    const state = dispatch(undoAndSelect())
+    reset(copy(state))
     setModified(true)
   }, [changeStructureValueDebounced, dispatch, reset])
 
   const redo = useCallback(() => {
     changeStructureValueDebounced.flush()
-    const state = dispatch(doRedo())
-    reset(copy(state.structureData.present))
+    const state = dispatch(redoAndSelect())
+    reset(copy(state))
     setModified(true)
   }, [changeStructureValueDebounced, dispatch, reset])
 
