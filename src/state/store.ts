@@ -1,5 +1,5 @@
 import { configureStore, combineReducers, ThunkAction, Action } from "@reduxjs/toolkit"
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
+import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from "react-redux"
 import designerReducer from "./designerSlice"
 import displayReducer from "./displaySlice"
 import structureDataReducer from "./structureDataSlice"
@@ -23,10 +23,11 @@ export function initStore(preloadedState?: Partial<RootState>) {
   return store
 }
 
-type Store = ReturnType<typeof initStore>
-export type AppDispatch = Store["dispatch"]
+type AppStore = ReturnType<typeof initStore>
+export type AppDispatch = AppStore["dispatch"]
 
-export const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+export const useAppStore: () => AppStore = useStore
 
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action>
