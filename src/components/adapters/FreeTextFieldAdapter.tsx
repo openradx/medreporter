@@ -1,7 +1,6 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { FreeTextFieldNode } from "~/schemas/structure"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { FreeTextField } from "../fields/FreeTextField"
 import { Info } from "../template/Info"
@@ -11,9 +10,9 @@ interface FreeTextFieldAdapterProps {
 }
 
 export const FreeTextFieldAdapter = ({ node }: FreeTextFieldAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
-  if (editing) {
+  if (isDesigning) {
     return <DraggableCanvasItem node={node} />
   }
 

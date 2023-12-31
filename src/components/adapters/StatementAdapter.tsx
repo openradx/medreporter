@@ -1,7 +1,6 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { StatementNode } from "~/schemas/report"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { Statement } from "../template/Statement"
 
@@ -10,9 +9,9 @@ interface StatementAdapterProps {
 }
 
 export const StatementAdapter = ({ node }: StatementAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
-  if (editing) {
+  if (isDesigning) {
     return <DraggableCanvasItem node={node} />
   }
   return (

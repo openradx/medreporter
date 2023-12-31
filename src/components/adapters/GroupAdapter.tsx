@@ -1,7 +1,6 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { GroupNode } from "~/schemas/structure"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
 import { Group } from "../template/Group"
 import { Info } from "../template/Info"
@@ -13,7 +12,7 @@ interface GroupAdapterProps {
 }
 
 export const GroupAdapter = ({ node }: GroupAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
   const children = node.children.map((child) => {
     switch (child.type) {
@@ -24,7 +23,7 @@ export const GroupAdapter = ({ node }: GroupAdapterProps) => {
     }
   })
 
-  if (editing) {
+  if (isDesigning) {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
 

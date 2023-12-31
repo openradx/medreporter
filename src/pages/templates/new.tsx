@@ -6,7 +6,6 @@ import { NewTemplate } from "~/components/designer/NewTemplate"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
-import { initialState as initialDesignerState } from "~/state/designerSlice"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
@@ -18,7 +17,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   props: {
     session: await getServerSideSession(req, res),
     i18nSite: await getServerSideSiteTranslations(locale, locales, ["editor", "template"]),
-    preloadedReduxState: { designer: { ...initialDesignerState, editing: true } },
+    preloadedReduxState: {},
   },
 })
 

@@ -1,7 +1,6 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { SingleChoiceFieldNode } from "~/schemas/structure"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { SingleChoiceField } from "../fields/SingleChoiceField"
 import { Figure } from "../template/Figure"
@@ -12,9 +11,9 @@ interface SingleChoiceFieldAdapterProps {
 }
 
 export const SingleChoiceFieldAdapter = ({ node }: SingleChoiceFieldAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
-  if (editing) {
+  if (isDesigning) {
     return <DraggableCanvasItem node={node} />
   }
 

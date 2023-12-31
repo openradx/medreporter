@@ -1,7 +1,6 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { NumberFieldNode } from "~/schemas/structure"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { NumberField } from "../fields/NumberField"
 import { Info } from "../template/Info"
@@ -11,9 +10,9 @@ interface NumberFieldAdapterProps {
 }
 
 export const NumberFieldAdapter = ({ node }: NumberFieldAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
-  if (editing) {
+  if (isDesigning) {
     return <DraggableCanvasItem node={node} />
   }
   return (

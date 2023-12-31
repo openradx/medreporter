@@ -1,6 +1,5 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { SectionNode } from "~/schemas/structure"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DroppableContainer } from "../designer/DroppableContainer"
 import { Section } from "../template/Section"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
@@ -14,7 +13,7 @@ interface SectionAdapterProps {
 }
 
 export const SectionAdapter = ({ node, active }: SectionAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
   const children = node.children.map((child) => {
     switch (child.type) {
@@ -29,7 +28,7 @@ export const SectionAdapter = ({ node, active }: SectionAdapterProps) => {
     }
   })
 
-  if (editing) {
+  if (isDesigning) {
     return (
       <Section id={node.nodeId} label={node.label} active={active}>
         <DroppableContainer node={node}>{children}</DroppableContainer>

@@ -19,13 +19,13 @@ import NL from "flag-icons/flags/4x3/nl.svg"
 import PT from "flag-icons/flags/4x3/pt.svg"
 import SE from "flag-icons/flags/4x3/se.svg"
 import US from "flag-icons/flags/4x3/us.svg"
-import { selectEditing, setEditing } from "~/state/designerSlice"
+import { selectPreview, setPreview } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { TemplateDesigner } from "./TemplateDesigner"
 
 export const NewTemplate = () => {
   const [opened, { open, close }] = useDisclosure(false)
-  const editing = useAppSelector(selectEditing)
+  const preview = useAppSelector(selectPreview)
   const dispatch = useAppDispatch()
 
   const languageData = [
@@ -58,8 +58,8 @@ export const NewTemplate = () => {
         </Button>
         <Switch
           label="Preview"
-          checked={!editing}
-          onChange={(event) => dispatch(setEditing(!event.currentTarget.checked))}
+          checked={preview}
+          onChange={(event) => dispatch(setPreview(event.currentTarget.checked))}
         />
       </Flex>
       <Modal opened={opened} onClose={close} title="New Template - Properties">

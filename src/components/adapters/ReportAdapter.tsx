@@ -1,6 +1,5 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { ReportNode } from "~/schemas/report"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DroppableContainer } from "../designer/DroppableContainer"
 import { Report } from "../template/Report"
 import { MeasurementsOutputAdapter } from "./MeasurementsOutputAdapter"
@@ -12,7 +11,7 @@ interface ReportAdapterProps {
 }
 
 export const ReportAdapter = ({ node }: ReportAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
   const children = node.children.map((child) => {
     switch (child.type) {
@@ -28,7 +27,7 @@ export const ReportAdapter = ({ node }: ReportAdapterProps) => {
     }
   })
 
-  if (editing) {
+  if (isDesigning) {
     return (
       <Report>
         <DroppableContainer node={node}>{children}</DroppableContainer>

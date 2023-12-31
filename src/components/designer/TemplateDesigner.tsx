@@ -12,6 +12,7 @@ import {
 import { snapCenterToCursor } from "@dnd-kit/modifiers"
 import { Grid } from "@mantine/core"
 import invariant from "tiny-invariant"
+import { DesignerContextProvider } from "~/contexts/DesignerContext"
 import { useMounted } from "~/hooks/useMounted"
 import { refreshMenu, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
@@ -157,24 +158,26 @@ export const TemplateDesigner = () => {
   }
 
   return (
-    mounted && (
-      <DndContext
-        sensors={sensors}
-        modifiers={[snapCenterToCursor]}
-        collisionDetection={customCollisionDetection}
-        onDragStart={() => dispatch(setSelectedItem(null))}
-        onDragEnd={handleDragEnd}
-      >
-        <Grid overflow="hidden" classNames={{ inner: classes.inner }} h="100%">
-          <Grid.Col span="content" w={250} h="100%" pb={0}>
-            <DesignerSidebar />
-          </Grid.Col>
-          <Grid.Col span="auto" h="100%" pb={0}>
-            <DesignerCanvas templateEl={template} />
-          </Grid.Col>
-        </Grid>
-        <DragOverlayWrapper />
-      </DndContext>
-    )
+    <DesignerContextProvider value={{ isInsideDesigner: true }}>
+      {mounted && (
+        <DndContext
+          sensors={sensors}
+          modifiers={[snapCenterToCursor]}
+          collisionDetection={customCollisionDetection}
+          onDragStart={() => dispatch(setSelectedItem(null))}
+          onDragEnd={handleDragEnd}
+        >
+          <Grid overflow="hidden" classNames={{ inner: classes.inner }} h="100%">
+            <Grid.Col span="content" w={250} h="100%" pb={0}>
+              <DesignerSidebar />
+            </Grid.Col>
+            <Grid.Col span="auto" h="100%" pb={0}>
+              <DesignerCanvas templateEl={template} />
+            </Grid.Col>
+          </Grid>
+          <DragOverlayWrapper />
+        </DndContext>
+      )}
+    </DesignerContextProvider>
   )
 }

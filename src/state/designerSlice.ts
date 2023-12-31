@@ -2,13 +2,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 import type { RootState } from "./store"
 
 interface DesignerState {
-  editing: boolean
+  preview: boolean
   menuTimestamp: number
   selectedItem: string | null
 }
 
 export const initialState: DesignerState = {
-  editing: false,
+  preview: false,
   menuTimestamp: Date.now(),
   selectedItem: null,
 }
@@ -20,8 +20,8 @@ export const designerSlice = createSlice({
     refreshMenu(state) {
       state.menuTimestamp = Date.now()
     },
-    setEditing(state, action: PayloadAction<boolean>) {
-      state.editing = action.payload
+    setPreview(state, action: PayloadAction<boolean>) {
+      state.preview = action.payload
     },
     setSelectedItem(state, action: PayloadAction<string | null>) {
       state.selectedItem = action.payload
@@ -29,11 +29,11 @@ export const designerSlice = createSlice({
   },
 })
 
-export const { refreshMenu, setEditing, setSelectedItem } = designerSlice.actions
+export const { refreshMenu, setPreview, setSelectedItem } = designerSlice.actions
 
 export default designerSlice.reducer
 
-export const selectEditing = (state: RootState) => state.designer.editing
+export const selectPreview = (state: RootState) => state.designer.preview
 
 export const selectMenuTimestamp = (state: RootState) => state.designer.menuTimestamp
 

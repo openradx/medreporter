@@ -1,7 +1,6 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { MultipleChoiceFieldNode } from "~/schemas/structure"
-import { selectEditing } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { MultipleChoiceField } from "../fields/MultipleChoiceField"
 import { Figure } from "../template/Figure"
@@ -12,9 +11,9 @@ interface MultipleChoiceFieldAdapterProps {
 }
 
 export const MultipleChoiceFieldAdapter = ({ node }: MultipleChoiceFieldAdapterProps) => {
-  const editing = useAppSelector(selectEditing)
+  const isDesigning = useIsDesigning()
 
-  if (editing) {
+  if (isDesigning) {
     return <DraggableCanvasItem node={node} />
   }
   const extras = (
