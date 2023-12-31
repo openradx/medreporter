@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 }) => ({
   props: {
     session: await getServerSideSession(req, res),
-    i18nSite: await getServerSideSiteTranslations(locale, locales, ["editor", "template"]),
+    i18nSite: await getServerSideSiteTranslations(locale, locales, ["designer", "template"]),
     preloadedReduxState: {},
   },
 })

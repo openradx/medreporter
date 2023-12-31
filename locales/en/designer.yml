@@ -19,11 +19,5 @@ EditorMenu:
   statementLabel: Statement
 FigureProperties:
   title: Figure
-ResourceEditor:
-  general: General
-  preview: Preview
-  source: Source code
-SourceEditorProblems:
-  problemsFound_one: "{{count}} problem found"
-  problemsFound_other: "{{count}} problems found"
-  noProblemsFound: No problems found
+PreviewSwitch:
+  label: Preview

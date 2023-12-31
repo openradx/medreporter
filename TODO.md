@@ -2,6 +2,7 @@
 
 ## Kai
 
+- Are those flag icons really needed?
 - Get rid of images in /public/images (when we use images we can import them as a component)
 - Rename link to fieldRef
 - Rename id to fieldId to make it more distinct from gid

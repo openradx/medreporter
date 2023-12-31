@@ -3,6 +3,8 @@ import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ActionsGroup } from "../common/ActionsGroup"
+import { PreviewSwitch } from "../designer/PreviewSwitch"
+import { TemplatePropertiesButton } from "../designer/TemplatePropertiesButton"
 import { ClearStructureButton } from "./ClearStructureButton"
 import { PanelToolbar } from "./PanelToolbar"
 import { RedoButton } from "./RedoButton"
@@ -37,6 +39,8 @@ export const Structure = ({ children }: StructureProps) => {
               <ClearStructureButton />
               <UndoButton />
               <RedoButton />
+              <PreviewSwitch />
+              <TemplatePropertiesButton />
               <StructureLanguageChooser />
             </ActionsGroup>
           }

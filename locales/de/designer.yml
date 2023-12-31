@@ -19,11 +19,5 @@ EditorMenu:
   statementLabel: Aussage
 FigureProperties:
   figureTitle: Abbildung
-ResourceEditor:
-  general: Allgemein
-  preview: Vorschau
-  source: Quellcode
-SourceEditorProblems:
-  problemsFound_one: "{{count}} Problem gefunden"
-  problemsFound_other: "{{count}} Probleme gefunden"
-  noProblemsFound: Keine Probleme gefunden
+PreviewSwitch:
+  label: Vorschau
