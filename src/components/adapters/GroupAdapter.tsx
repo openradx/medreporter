@@ -37,7 +37,7 @@ export const GroupAdapter = ({ node }: GroupAdapterProps) => {
       direction={node.direction}
       justify={node.justify}
     >
-      {}
+      {children}
     </Group>
   )
 }
