@@ -10,11 +10,11 @@ import {
   useSensors,
 } from "@dnd-kit/core"
 import { snapCenterToCursor } from "@dnd-kit/modifiers"
-import { Flex } from "@mantine/core"
+import { Flex, Transition } from "@mantine/core"
 import invariant from "tiny-invariant"
 import { DesignerContextProvider } from "~/contexts/DesignerContext"
 import { useMounted } from "~/hooks/useMounted"
-import { refreshMenu, setSelectedItem } from "~/state/designerSlice"
+import { refreshMenu, selectPreview, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { addNode, deleteNode, moveNode, selectTemplate } from "~/state/templateSlice"
 import {
@@ -34,6 +34,7 @@ export const TemplateDesigner = () => {
   const mounted = useMounted()
   const dispatch = useAppDispatch()
   const template = useAppSelector(selectTemplate)
+  const preview = useAppSelector(selectPreview)
 
   const handleDragEnd = (event: DragEndEvent) => {
     if (!event.over) return
@@ -167,7 +168,13 @@ export const TemplateDesigner = () => {
           onDragEnd={handleDragEnd}
         >
           <Flex h="100%" align="stretch" gap="xs">
-            <DesignerSidebar />
+            <Transition mounted={!preview} transition="slide-right">
+              {(styles) => (
+                <div style={styles}>
+                  <DesignerSidebar />
+                </div>
+              )}
+            </Transition>
             <DesignerCanvas templateEl={template} />
           </Flex>
           <DragOverlayWrapper />
