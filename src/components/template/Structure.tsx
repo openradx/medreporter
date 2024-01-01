@@ -8,7 +8,6 @@ import { TemplatePropertiesButton } from "../designer/TemplatePropertiesButton"
 import { ClearStructureButton } from "./ClearStructureButton"
 import { PanelToolbar } from "./PanelToolbar"
 import { RedoButton } from "./RedoButton"
-import classes from "./Structure.module.css"
 import { StructureForm } from "./StructureForm"
 import { StructureLanguageChooser } from "./StructureLanguageChooser"
 import { UndoButton } from "./UndoButton"
@@ -46,7 +45,7 @@ export const Structure = ({ children }: StructureProps) => {
               </ActionsGroup>
             }
           />
-          <ScrollArea className={classes.structure}>
+          <ScrollArea style={{ flexGrow: 1 }}>
             <Box p="sm">{children}</Box>
           </ScrollArea>
         </Flex>

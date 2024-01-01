@@ -8,6 +8,8 @@ import { ColorSchemeToggle } from "./ColorSchemeToggle"
 import { NavDrawer } from "./NavDrawer"
 import { SiteLanguageChooser } from "./SiteLanguageChooser"
 
+export const NAVBAR_CENTER_ID = "navbar-center"
+
 interface NavBarProps {
   withoutAccountControl?: boolean
 }
@@ -33,7 +35,7 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
               </Text>
             </Link>
           </Group>
-          <Group id="navbar-actions" gap="sm" />
+          <Group id={NAVBAR_CENTER_ID} gap="sm" />
           <ActionsGroup>
             <ColorSchemeToggle />
             <SiteLanguageChooser />
