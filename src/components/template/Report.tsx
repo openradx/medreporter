@@ -13,10 +13,11 @@ import classes from "./Report.module.css"
 import { ReportLanguageChooser } from "./ReportLanguageChooser"
 
 interface ReportProps {
+  actions?: ReactNode
   children?: ReactNode
 }
 
-export const Report = ({ children }: ReportProps) => {
+export const Report = ({ actions, children }: ReportProps) => {
   const { t } = useSiteTranslation()
   const dataInitialized = useAppSelector(selectDataInitialized)
   const isDesigning = useIsDesigning()
@@ -34,11 +35,13 @@ export const Report = ({ children }: ReportProps) => {
       <PanelToolbar
         title={t("Report.title")}
         actions={
-          <ActionsGroup grow>
-            <CopyButton />
-            <OutputFormat />
-            <ReportLanguageChooser />
-          </ActionsGroup>
+          actions || (
+            <ActionsGroup grow>
+              <CopyButton />
+              <OutputFormat />
+              <ReportLanguageChooser />
+            </ActionsGroup>
+          )
         }
       />
       {!dataInitialized && !isDesigning && (

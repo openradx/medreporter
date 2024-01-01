@@ -41,8 +41,8 @@ AdrenalWashoutPage:
   toolTitle: Adrenal washout
 CategoriesSelector:
   inputLabelCategories: Categories
-ClearStructureButton:
-  buttonClearStructure: Clear structure form
+ClearAllButton:
+  title: Clear all
 ColorSchemeToggle:
   buttonToggleTheme: Toggle theme
 CopyButton:
@@ -169,7 +169,7 @@ QueryError:
   title: Data fetching error
   message: An unexpected error occurred during data fetching
 RedoButton:
-  buttonRedo: Redo
+  title: Redo
 Report:
   title: Report
 ReportLanguageChooser:
@@ -212,7 +212,7 @@ StructureLanguageChooser:
 ToolsPage:
   pageTitle: Tools
 UndoButton:
-  buttonUndo: Undo
+  title: Undo
 VisibilitySelector:
   inputLabelVisibility: Visibility
   optionPublic: Public

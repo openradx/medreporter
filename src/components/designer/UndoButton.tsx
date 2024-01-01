@@ -1,18 +1,20 @@
 import { ActionIcon } from "@mantine/core"
 import { MdUndo as UndoIcon } from "react-icons/md"
-import { useStructureForm } from "~/contexts/StructureFormContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useAppDispatch, useAppSelector } from "~/state/store"
+import { undo, selectCanUndo } from "~/state/templateSlice"
 
 export const UndoButton = () => {
   const { t } = useSiteTranslation()
-  const { canUndo, undo } = useStructureForm()
+  const canUndo = useAppSelector(selectCanUndo)
+  const dispatch = useAppDispatch()
 
   return (
     <ActionIcon
       title={t("UndoButton.title")}
       variant="default"
       disabled={!canUndo}
-      onClick={() => undo()}
+      onClick={() => dispatch(undo())}
       aria-label="Undo"
     >
       <UndoIcon size={20} />

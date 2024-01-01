@@ -41,8 +41,8 @@ AdrenalWashoutPage:
   toolTitle: Nebennieren Washout
 CategoriesSelector:
   inputLabelCategories: Kategorien
-ClearStructureButton:
-  buttonClearStructure: Strukturformular zurücksetzen
+ClearAllButton:
+  title: Alles löschen
 ColorSchemeToggle:
   buttonToggleTheme: Farbschema wechseln
 CopyButton:
@@ -169,7 +169,7 @@ QueryError:
   title: Fehler bei Datenabfrage
   message: Ein unerwarteter Fehler ist während der Datenabfrage aufgetreten
 RedoButton:
-  buttonRedo: Wiederherstellen
+  title: Wiederherstellen
 Report:
   title: Befund
 ReportLanguageChooser:
@@ -212,7 +212,7 @@ StructureLanguageChooser:
 ToolsPage:
   pageTitle: Werkzeuge
 UndoButton:
-  buttonUndo: Rückgängig machen
+  title: Rückgängig machen
 VisibilitySelector:
   inputLabelVisibility: Sichtbarkeit
   optionPublic: Öffentlich

@@ -29,11 +29,11 @@ export const ReportAdapter = ({ node }: ReportAdapterProps) => {
 
   if (isDesigning) {
     return (
-      <Report>
+      <Report actions={<></>}>
         <DroppableContainer node={node}>{children}</DroppableContainer>
       </Report>
     )
   }
 
-  return <Report> {children} </Report>
+  return <Report>{children}</Report>
 }

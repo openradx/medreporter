@@ -45,6 +45,7 @@ const templateSlice = createSlice({
   reducers: {
     undo: templateHistoryAdapter.undo,
     redo: templateHistoryAdapter.redo,
+    resetTemplate: templateHistoryAdapter.undoable<{}>(() => initialState.present),
     setTemplate: templateHistoryAdapter.undoable<TemplateNode>((state, action) => action.payload),
     addNode: templateHistoryAdapter.undoable<{
       node: AddableNode
@@ -111,9 +112,11 @@ const templateSlice = createSlice({
   },
 })
 
-export const { undo, redo, setTemplate, addNode, deleteNode, moveNode, updateNode } =
+export const { undo, redo, resetTemplate, setTemplate, addNode, deleteNode, moveNode, updateNode } =
   templateSlice.actions
 
 export default templateSlice.reducer
 
 export const selectTemplate = (state: RootState) => state.template.present
+export const selectCanUndo = (state: RootState) => state.template.past.length > 0
+export const selectCanRedo = (state: RootState) => state.template.future.length > 0

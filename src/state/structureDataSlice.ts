@@ -15,6 +15,8 @@ export const structureDataSlice = createSlice({
   name: "structureData",
   initialState,
   reducers: {
+    undo: structureDataHistoryAdapter.undo,
+    redo: structureDataHistoryAdapter.redo,
     resetStructureData() {
       return {
         past: [],
@@ -22,8 +24,6 @@ export const structureDataSlice = createSlice({
         future: [],
       }
     },
-    undo: structureDataHistoryAdapter.undo,
-    redo: structureDataHistoryAdapter.redo,
     setStructureData: structureDataHistoryAdapter.undoable<StructureDataState>(
       (_, action) => action.payload
     ),

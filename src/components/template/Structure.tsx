@@ -5,7 +5,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { PreviewSwitch } from "../designer/PreviewSwitch"
 import { TemplatePropertiesButton } from "../designer/TemplatePropertiesButton"
-import { ClearStructureButton } from "./ClearStructureButton"
+import { ClearAllButton } from "./ClearAllButton"
 import { PanelToolbar } from "./PanelToolbar"
 import { RedoButton } from "./RedoButton"
 import { StructureForm } from "./StructureForm"
@@ -13,10 +13,11 @@ import { StructureLanguageChooser } from "./StructureLanguageChooser"
 import { UndoButton } from "./UndoButton"
 
 interface StructureProps {
+  actions?: ReactNode
   children?: ReactNode
 }
 
-export const Structure = ({ children }: StructureProps) => {
+export const Structure = ({ actions, children }: StructureProps) => {
   const { t } = useSiteTranslation()
   const matches = useMediaQuery("(min-width: 88em)")
 
@@ -35,14 +36,16 @@ export const Structure = ({ children }: StructureProps) => {
           <PanelToolbar
             title={t("Structure.title")}
             actions={
-              <ActionsGroup grow>
-                <ClearStructureButton />
-                <UndoButton />
-                <RedoButton />
-                <PreviewSwitch />
-                <TemplatePropertiesButton />
-                <StructureLanguageChooser />
-              </ActionsGroup>
+              actions || (
+                <ActionsGroup grow>
+                  <ClearAllButton />
+                  <UndoButton />
+                  <RedoButton />
+                  <PreviewSwitch />
+                  <TemplatePropertiesButton />
+                  <StructureLanguageChooser />
+                </ActionsGroup>
+              )
             }
           />
           <ScrollArea style={{ flexGrow: 1 }}>
