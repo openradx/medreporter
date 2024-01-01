@@ -1,7 +1,9 @@
 EditorItem:
   id: ID
   type: Type
-EditorMenu:
+FigureProperties:
+  title: Figure
+MenuPanel:
   booleanFieldLabel: Boolean
   components: Components
   dateFieldLabel: Date
@@ -17,7 +19,5 @@ EditorMenu:
   singleChoiceFieldLabel: Single choice
   timeFieldLabel: Time
   statementLabel: Statement
-FigureProperties:
-  title: Figure
 PreviewSwitch:
   label: Preview

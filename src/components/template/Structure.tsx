@@ -1,4 +1,4 @@
-import { Box, Paper, ScrollArea } from "@mantine/core"
+import { Box, Flex, Paper, ScrollArea } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -32,22 +32,24 @@ export const Structure = ({ children }: StructureProps) => {
       withBorder
     >
       <StructureForm>
-        <PanelToolbar
-          title={t("Structure.title")}
-          actions={
-            <ActionsGroup grow>
-              <ClearStructureButton />
-              <UndoButton />
-              <RedoButton />
-              <PreviewSwitch />
-              <TemplatePropertiesButton />
-              <StructureLanguageChooser />
-            </ActionsGroup>
-          }
-        />
-        <ScrollArea className={classes.structure}>
-          <Box p="sm">{children}</Box>
-        </ScrollArea>
+        <Flex component="form" pos="relative" h="100%" direction="column">
+          <PanelToolbar
+            title={t("Structure.title")}
+            actions={
+              <ActionsGroup grow>
+                <ClearStructureButton />
+                <UndoButton />
+                <RedoButton />
+                <PreviewSwitch />
+                <TemplatePropertiesButton />
+                <StructureLanguageChooser />
+              </ActionsGroup>
+            }
+          />
+          <ScrollArea className={classes.structure}>
+            <Box p="sm">{children}</Box>
+          </ScrollArea>
+        </Flex>
       </StructureForm>
     </Paper>
   )

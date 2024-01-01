@@ -1,9 +1,9 @@
 import { Active, useDndMonitor } from "@dnd-kit/core"
-import { Box, Card } from "@mantine/core"
+import { Box, Paper } from "@mantine/core"
 import { useState } from "react"
 import { selectSelectedItem } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
-import { DesignerMenu } from "./DesignerMenu"
+import { MenuPanel } from "./MenuPanel"
 import { PropertiesPanel } from "./PropertiesPanel"
 import { TrashCan } from "./TrashCan"
 
@@ -24,9 +24,9 @@ export const DesignerSidebar = () => {
   })
 
   return (
-    <Card shadow="sm" padding="xs" radius="md" h="100%" withBorder>
+    <Paper shadow="sm" p="xs" h="100%" w={250} withBorder>
       <Box h="100%" display={draggedItem || selectedItem ? "none" : "block"}>
-        <DesignerMenu />
+        <MenuPanel />
       </Box>
       <Box h="100%" display={draggedItem ? "block" : "none"}>
         <TrashCan />
@@ -34,6 +34,6 @@ export const DesignerSidebar = () => {
       <Box h="100%" display={selectedItem ? "block" : "none"}>
         <PropertiesPanel />
       </Box>
-    </Card>
+    </Paper>
   )
 }

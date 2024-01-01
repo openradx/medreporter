@@ -1,7 +1,9 @@
 EditorItem:
   id: ID
   type: Typ
-EditorMenu:
+FigureProperties:
+  figureTitle: Abbildung
+MenuPanel:
   booleanFieldLabel: Boolisch
   components: Komponenten
   dateFieldLabel: Datum
@@ -17,7 +19,5 @@ EditorMenu:
   singleChoiceFieldLabel: Einzelauswahl
   timeFieldLabel: Zeit
   statementLabel: Aussage
-FigureProperties:
-  figureTitle: Abbildung
 PreviewSwitch:
   label: Vorschau

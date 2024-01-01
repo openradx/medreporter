@@ -9,32 +9,32 @@ import { ParagraphMenuItem } from "./menuItems/ParagraphMenuItem"
 import { SingleChoiceFieldMenuItem } from "./menuItems/SingleChoiceFieldMenuItem"
 import { StatementMenuItem } from "./menuItems/StatementMenuItem"
 
-export const DesignerMenu = () => {
+export const MenuPanel = () => {
   const { t } = useSiteTranslation()
 
   return (
     <ScrollArea offsetScrollbars h="100%" style={{ flexGrow: 1 }}>
       <Stack pl="xs">
         <Title order={4} c="dimmed">
-          {t("EditorMenu.components")}
+          {t("MenuPanel.components")}
         </Title>
         <Stack gap="xs">
-          <GroupMenuItem label={t("EditorMenu.groupLabel")} />
+          <GroupMenuItem label={t("MenuPanel.groupLabel")} />
           <Title order={5} c="dimmed">
-            {t("EditorMenu.fields")}
+            {t("MenuPanel.fields")}
           </Title>
-          <BooleanFieldMenuItem label={t("EditorMenu.booleanFieldLabel")} />
-          <FreeTextFieldMenuItem label={t("EditorMenu.freeTextFieldLabel")} />
-          <NumberFieldMenuItem label={t("EditorMenu.numberFieldLabel")} />
-          <SingleChoiceFieldMenuItem label={t("EditorMenu.singleChoiceFieldLabel")} />
-          <MultipleChoiceFieldMenuItem label={t("EditorMenu.multipleChoiceFieldLabel")} />
+          <BooleanFieldMenuItem label={t("MenuPanel.booleanFieldLabel")} />
+          <FreeTextFieldMenuItem label={t("MenuPanel.freeTextFieldLabel")} />
+          <NumberFieldMenuItem label={t("MenuPanel.numberFieldLabel")} />
+          <SingleChoiceFieldMenuItem label={t("MenuPanel.singleChoiceFieldLabel")} />
+          <MultipleChoiceFieldMenuItem label={t("MenuPanel.multipleChoiceFieldLabel")} />
           <Title order={5} c="dimmed">
-            {t("EditorMenu.report")}
+            {t("MenuPanel.report")}
           </Title>
-          <ParagraphMenuItem label={t("EditorMenu.paragraphLabel")} />
-          <StatementMenuItem label={t("EditorMenu.statementLabel")} />
+          <ParagraphMenuItem label={t("MenuPanel.paragraphLabel")} />
+          <StatementMenuItem label={t("MenuPanel.statementLabel")} />
           <Title order={5} c="dimmed">
-            {t("EditorMenu.others")}
+            {t("MenuPanel.others")}
           </Title>
         </Stack>
       </Stack>

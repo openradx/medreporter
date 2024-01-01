@@ -10,7 +10,7 @@ import {
   useSensors,
 } from "@dnd-kit/core"
 import { snapCenterToCursor } from "@dnd-kit/modifiers"
-import { Grid } from "@mantine/core"
+import { Flex } from "@mantine/core"
 import invariant from "tiny-invariant"
 import { DesignerContextProvider } from "~/contexts/DesignerContext"
 import { useMounted } from "~/hooks/useMounted"
@@ -29,7 +29,6 @@ import {
 import { DesignerCanvas } from "./DesignerCanvas"
 import { DesignerSidebar } from "./DesignerSidebar"
 import { DragOverlayWrapper } from "./DragOverlayWrapper"
-import classes from "./TemplateDesigner.module.css"
 
 export const TemplateDesigner = () => {
   const mounted = useMounted()
@@ -167,14 +166,10 @@ export const TemplateDesigner = () => {
           onDragStart={() => dispatch(setSelectedItem(null))}
           onDragEnd={handleDragEnd}
         >
-          <Grid overflow="hidden" classNames={{ inner: classes.inner }} h="100%">
-            <Grid.Col span="content" w={250} h="100%" pb={0}>
-              <DesignerSidebar />
-            </Grid.Col>
-            <Grid.Col span="auto" h="100%" pb={0}>
-              <DesignerCanvas templateEl={template} />
-            </Grid.Col>
-          </Grid>
+          <Flex h="100%" align="stretch" gap="xs">
+            <DesignerSidebar />
+            <DesignerCanvas templateEl={template} />
+          </Flex>
           <DragOverlayWrapper />
         </DndContext>
       )}
