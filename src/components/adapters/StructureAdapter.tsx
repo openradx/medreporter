@@ -26,7 +26,6 @@ export const StructureAdapter = ({ node }: StructureAdapterProps) => {
         <ClearAllButton />
         <UndoButton />
         <RedoButton />
-        <PreviewSwitch />
       </ActionsGroup>
     )
   }

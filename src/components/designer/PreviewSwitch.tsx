@@ -10,6 +10,7 @@ export const PreviewSwitch = () => {
 
   return (
     <Switch
+      size="sm"
       label={t("PreviewSwitch.label")}
       checked={preview}
       onChange={(event) => dispatch(setPreview(event.currentTarget.checked))}
