@@ -1,4 +1,4 @@
-import { Group, Text } from "@mantine/core"
+import { Box, Group } from "@mantine/core"
 import { ReactNode } from "react"
 
 interface InputLabelProps {
@@ -8,7 +8,8 @@ interface InputLabelProps {
 
 export const InputLabel = ({ label, extras }: InputLabelProps) => (
   <Group w="100%" wrap="nowrap" gap={2}>
-    <Text
+    <Box
+      component="span"
       w="calc(100% - 20px)"
       style={{
         overflow: "hidden",
@@ -18,7 +19,7 @@ export const InputLabel = ({ label, extras }: InputLabelProps) => (
       }}
     >
       {label}
-    </Text>
+    </Box>
     {extras}
   </Group>
 )

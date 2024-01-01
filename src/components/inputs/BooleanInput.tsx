@@ -12,7 +12,7 @@ interface BinaryInputProps {
 }
 
 export const BooleanInput = ({ label, extras, value, onChange, disabled }: BinaryInputProps) => (
-  <Box className={classes.root} mt={24.8}>
+  <Box className={classes.root}>
     <Switch
       label={(label || extras) && <InputLabel label={label} extras={extras} />}
       checked={value}
