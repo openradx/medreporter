@@ -23,10 +23,12 @@ export const SingleChoiceFieldAdapter = ({ node }: SingleChoiceFieldAdapterProps
       {node.figure?.trim() && <Figure>{node.figure}</Figure>}
     </>
   )
+
   return (
     <SingleChoiceField
       id={node.fieldId}
       label={node.label}
+      variant={node.variant}
       extras={extras}
       disabled={evalCodeToBoolean(node.disabled)}
       hidden={evalCodeToBoolean(node.hidden)}

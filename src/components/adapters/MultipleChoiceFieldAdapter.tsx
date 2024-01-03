@@ -16,16 +16,19 @@ export const MultipleChoiceFieldAdapter = ({ node }: MultipleChoiceFieldAdapterP
   if (isDesigning) {
     return <DraggableCanvasItem node={node} />
   }
+
   const extras = (
     <>
       {node.info?.trim() && <Info>{node.info}</Info>}
       {node.figure?.trim() && <Figure>{node.figure}</Figure>}
     </>
   )
+
   return (
     <MultipleChoiceField
       id={node.fieldId}
       label={node.label}
+      variant={node.variant}
       extras={extras}
       disabled={evalCodeToBoolean(node.disabled)}
       hidden={evalCodeToBoolean(node.hidden)}
