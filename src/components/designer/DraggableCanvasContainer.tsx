@@ -65,10 +65,10 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
         overStart: droppableStart.isOver,
         overEnd: droppableEnd.isOver,
       })
-        .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 blue inset")
-        .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 blue inset")
-        .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px blue inset")
-        .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px blue inset")
+        .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 gray inset")
+        .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 gray inset")
+        .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px gray inset")
+        .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px gray inset")
         .otherwise(() => undefined)
     }
 
@@ -77,13 +77,14 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
     }
   }
 
-  // let opacity: number | undefined
-  // if (draggable.isDragging) {
-  //   opacity = 0.5
-  // }
+  let opacity: number | undefined
+  if (draggable.isDragging) {
+    opacity = 0.5
+  }
 
   return (
     <Box
+      w="100%"
       pos="relative"
       ref={draggable.setNodeRef}
       {...draggable.listeners}
@@ -93,10 +94,9 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
         dispatch(setSelectedItem(node.nodeId))
       }}
     >
-      <Card padding="xs" shadow="sm" style={{ boxShadow, opacity: 0.5 }} withBorder>
+      <Card padding="xs" shadow="sm" style={{ boxShadow, opacity }} withBorder>
         <Card.Section inheritPadding pos="relative">
           <Box
-            bg="red"
             ref={droppableStart.setNodeRef}
             pos="absolute"
             w="100%"
@@ -120,7 +120,6 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
         <>
           <DroppableContainer node={node}>{children}</DroppableContainer>
           <Box
-            bg="blue"
             ref={droppableEnd.setNodeRef}
             opacity={0.5}
             pos="absolute"

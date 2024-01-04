@@ -8,7 +8,7 @@ interface PanelToolbarProps {
 }
 
 export const PanelToolbar = ({ title, actions }: PanelToolbarProps) => (
-  <Flex component="header" className={classes.panelToolbar} p="xs">
+  <Flex h={52} component="header" className={classes.panelToolbar} p="xs">
     <Text>{title}</Text>
     {actions}
   </Flex>
