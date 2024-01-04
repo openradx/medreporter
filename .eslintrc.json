@@ -3,7 +3,13 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["next/core-web-vitals", "mantine", "prettier", "plugin:storybook/recommended"],
+      "extends": [
+        "next/core-web-vitals",
+        "mantine",
+        "prettier",
+        "plugin:storybook/recommended",
+        "plugin:i18next/recommended"
+      ],
       "parserOptions": {
         "project": "./tsconfig.json"
       },
