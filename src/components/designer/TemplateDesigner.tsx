@@ -157,6 +157,12 @@ export const TemplateDesigner = () => {
     return collisions.filter((col) => col.id !== "trash-can")
   }
 
+  const collapse = {
+    in: { opacity: 1, width: 300 },
+    out: { opacity: 0, width: 0 },
+    transitionProperty: "width, opacity",
+  }
+
   return (
     <DesignerContextProvider value={{ isInsideDesigner: true }}>
       {mounted && (
@@ -168,9 +174,9 @@ export const TemplateDesigner = () => {
           onDragEnd={handleDragEnd}
         >
           <Flex h="100%" align="stretch" gap="xs">
-            <Transition mounted={!preview} transition="slide-right">
+            <Transition mounted={!preview} transition={collapse} duration={400}>
               {(styles) => (
-                <div style={styles}>
+                <div style={{ ...styles, overflowX: "hidden" }}>
                   <DesignerSidebar />
                 </div>
               )}
