@@ -50,8 +50,8 @@
 
 ## Julia
 
+- remove height in Template Flex and in appshell.main for wrapping layout. But what about the trash can?
 - Buttons don't get bigger anymore on hover of NumberInput
-- Footer / copyright
 - Section layout
 - MedReporter Logo
 - Lung arteries image

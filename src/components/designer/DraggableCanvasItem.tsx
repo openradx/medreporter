@@ -82,7 +82,7 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
 
   return (
     <Box
-      w={direction === "row" ? 250 : 400}
+      w={direction === "row" ? 250 : 300}
       pos="relative"
       ref={draggable.setNodeRef}
       {...draggable.listeners}
