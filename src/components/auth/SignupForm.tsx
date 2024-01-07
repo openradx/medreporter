@@ -50,7 +50,7 @@ export const SignupForm = (props: SignupFormProps) => {
                 label={t("SignupForm.inputLabelUsername")}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
                 autoComplete="off"
                 required
               />
@@ -63,7 +63,7 @@ export const SignupForm = (props: SignupFormProps) => {
                 label={t("SignupForm.inputLabelEmail")}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
                 autoComplete="off"
                 required
               />
@@ -76,7 +76,7 @@ export const SignupForm = (props: SignupFormProps) => {
                 label={t("SignupForm.inputLabelPassword")}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
                 type="password"
                 autoComplete="off"
                 required
@@ -90,7 +90,7 @@ export const SignupForm = (props: SignupFormProps) => {
                 label={t("SignupForm.inputLabelFullName")}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
                 autoComplete="off"
                 required
               />
@@ -104,7 +104,7 @@ export const SignupForm = (props: SignupFormProps) => {
                 minRows={2}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
                 autoComplete="off"
                 autosize
               />

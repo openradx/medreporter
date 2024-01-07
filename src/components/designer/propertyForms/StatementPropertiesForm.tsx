@@ -16,34 +16,19 @@ export const StatementPropertiesForm = ({ node }: StatementPropertiesFormProps) 
     <Controller
       name="link"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Link"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <TextInput label="Link" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="content"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Content"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Content" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="hidden"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Hidden"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Hidden" value={value} onChange={onChange} error={error?.message} />
       )}
     />
   </PropertiesForm>

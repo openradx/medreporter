@@ -41,7 +41,7 @@ export const ForgotPasswordForm = () => {
                 label={t("ForgotPasswordForm.inputLabelEmail")}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
               />
             )}
           />

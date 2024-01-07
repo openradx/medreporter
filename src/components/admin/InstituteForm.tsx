@@ -16,7 +16,7 @@ export const InstituteForm = <S extends z.ZodType<any, any>>(props: SubmitFormPr
             label={t("InstituteForm.inputLabelName")}
             value={value}
             onChange={onChange}
-            error={error ? error.message : null}
+            error={error?.message}
           />
         )}
       />

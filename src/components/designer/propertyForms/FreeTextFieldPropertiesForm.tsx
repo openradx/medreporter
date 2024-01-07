@@ -16,56 +16,31 @@ export const FreeTextFieldPropertiesForm = ({ node }: FreeTextFieldPropertiesFor
     <Controller
       name="label"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Label"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <TextInput label="Label" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="fieldId"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Field ID"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <TextInput label="Field ID" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="info"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Info"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Info" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="disabled"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Disabled"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Disabled" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="hidden"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Hidden"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Hidden" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
@@ -76,19 +51,14 @@ export const FreeTextFieldPropertiesForm = ({ node }: FreeTextFieldPropertiesFor
           labelPosition="left"
           checked={!!value}
           onChange={onChange}
-          error={error ? error.message : null}
+          error={error?.message}
         />
       )}
     />
     <Controller
       name="default"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Default value"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <TextInput label="Default value" value={value} onChange={onChange} error={error?.message} />
       )}
     />
   </PropertiesForm>

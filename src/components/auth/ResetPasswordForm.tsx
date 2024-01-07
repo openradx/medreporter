@@ -58,7 +58,7 @@ export const ResetPasswordForm = () => {
                   label={t("ResetPasswordForm.inputLabelNewPassword")}
                   value={value}
                   onChange={onChange}
-                  error={error ? error.message : null}
+                  error={error?.message}
                   type="password"
                   required
                 />
@@ -71,7 +71,7 @@ export const ResetPasswordForm = () => {
                   label={t("ResetPasswordForm.inputLabelConfirmPassword")}
                   value={value}
                   onChange={onChange}
-                  error={error ? error.message : null}
+                  error={error?.message}
                   type="password"
                   required
                 />

@@ -51,7 +51,7 @@ export const LoginForm = () => {
                 label={t("LoginForm.inputLabelUsernameOrEmail")}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
               />
             )}
           />
@@ -63,7 +63,7 @@ export const LoginForm = () => {
                 label={t("LoginForm.inputLabelPassword")}
                 value={value}
                 onChange={onChange}
-                error={error ? error.message : null}
+                error={error?.message}
                 type="password"
               />
             )}

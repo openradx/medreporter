@@ -16,34 +16,19 @@ export const ParagraphPropertiesForm = ({ node }: ParagraphPropertiesFormProps) 
     <Controller
       name="link"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Link"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <TextInput label="Link" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="title"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Title"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Title" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="hidden"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Hidden"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Hidden" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
@@ -54,7 +39,7 @@ export const ParagraphPropertiesForm = ({ node }: ParagraphPropertiesFormProps) 
           labelPosition="left"
           checked={!!value}
           onChange={onChange}
-          error={error ? error.message : null}
+          error={error?.message}
         />
       )}
     />

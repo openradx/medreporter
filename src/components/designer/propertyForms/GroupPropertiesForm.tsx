@@ -16,45 +16,25 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
     <Controller
       name="label"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label="Label"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <TextInput label="Label" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="info"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Info"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Info" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="disabled"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Disabled"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Disabled" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
       name="hidden"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea
-          label="Hidden"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Textarea label="Hidden" value={value} onChange={onChange} error={error?.message} />
       )}
     />
     <Controller
@@ -68,7 +48,7 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
             { label: "Row", value: "row" },
             { label: "Column", value: "column" },
           ]}
-          error={error ? error.message : null}
+          error={error?.message}
         />
       )}
     />
@@ -86,19 +66,14 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
             { label: "Space Between", value: "space-between" },
             { label: "Space Around", value: "space-around" },
           ]}
-          error={error ? error.message : null}
+          error={error?.message}
         />
       )}
     />
     <Controller
       name="border"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch
-          label="Border"
-          value={value}
-          onChange={onChange}
-          error={error ? error.message : null}
-        />
+        <Switch label="Border" value={value} onChange={onChange} error={error?.message} />
       )}
     />
   </PropertiesForm>

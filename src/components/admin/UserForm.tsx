@@ -18,7 +18,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
               label={t("UserForm.inputLabelUsername")}
               value={value}
               onChange={onChange}
-              error={error ? error.message : null}
+              error={error?.message}
               autoComplete="off"
               required
             />
@@ -31,7 +31,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
               label={t("UserForm.inputLabelEmail")}
               value={value}
               onChange={onChange}
-              error={error ? error.message : null}
+              error={error?.message}
               autoComplete="off"
               required
             />
@@ -44,7 +44,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
               label={t("UserForm.inputLabelPassword")}
               value={value}
               onChange={onChange}
-              error={error ? error.message : null}
+              error={error?.message}
               type="password"
               autoComplete="off"
               required
@@ -58,7 +58,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
               label={t("UserForm.inputLabelFullName")}
               value={value}
               onChange={onChange}
-              error={error ? error.message : null}
+              error={error?.message}
               autoComplete="off"
               required
             />
@@ -72,7 +72,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
               minRows={2}
               value={value}
               onChange={onChange}
-              error={error ? error.message : null}
+              error={error?.message}
               autoComplete="off"
               autosize
             />
