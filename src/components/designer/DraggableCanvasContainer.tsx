@@ -112,9 +112,6 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
             <Text size="sm" c="dimmed" truncate>
               {t("EditorItem.id")}: {fieldId ?? "-"}
             </Text>
-            <Text size="sm" c="dimmed" truncate>
-              Node ID: {node.nodeId}
-            </Text>
           </Stack>
         </Card.Section>
         <>

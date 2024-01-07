@@ -1,6 +1,7 @@
 import { Burger, Group, AppShell, Text } from "@mantine/core"
 import Link from "next/link"
 import { useState } from "react"
+import { appConfig } from "~/appConfig"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
@@ -31,7 +32,7 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
             />
             <Link href="/" legacyBehavior>
               <Text fw={500} fz="xl" style={{ userSelect: "none", cursor: "pointer" }}>
-                MedReporter
+                {appConfig.medreporterTitle}
               </Text>
             </Link>
           </Group>

@@ -5,8 +5,11 @@ import type { ReactElement, ReactNode } from "react"
 import type { RootState } from "~/state/store"
 
 export interface AppConfig {
+  medreporterTitle: string
   debugTranslations: boolean
   reactHookFormDevToolsEnabled: boolean
+  supportedTemplateLanguages: string[]
+  availableCategories: Record<string, string[]>
 }
 
 export interface I18nSite {

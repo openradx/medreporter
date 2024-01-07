@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { Meta, StoryObj } from "@storybook/react"
 import { ComponentProps, useState } from "react"
 import { FindingInput } from "./FindingInput"

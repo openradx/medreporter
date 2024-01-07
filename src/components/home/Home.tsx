@@ -1,6 +1,7 @@
 import { Title, Text, Card, Grid, Image } from "@mantine/core"
 import NextImage from "next/image"
 import Link from "next/link"
+import { appConfig } from "~/appConfig"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
 import exampleImage2 from "~/images/exampleImage2.png"
@@ -18,9 +19,9 @@ export const Home = () => {
     <Grid>
       <Grid.Col span={12}>
         <Title ta="center" mt={10}>
-          Welcome to{" "}
+          {t("Home.welcomeText")}{" "}
           <Text inherit variant="gradient" component="span">
-            MedReporter
+            {appConfig.medreporterTitle}
           </Text>
         </Title>
       </Grid.Col>
@@ -40,10 +41,10 @@ export const Home = () => {
             <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
           </Card.Section>
           <Text fw={500} pt="xs">
-            {t("HomePage.templatesTitle")}
+            {t("Home.templatesTitle")}
           </Text>
           <Text size="sm" c="dimmed">
-            {t("HomePage.templatesDescription")}
+            {t("Home.templatesDescription")}
           </Text>
         </Card>
       </Grid.Col>
@@ -56,10 +57,10 @@ export const Home = () => {
               </Card.Section>
               <Text fw={500} pt="xs">
                 {" "}
-                {t("HomePage.newTitle")}
+                {t("Home.newTitle")}
               </Text>
               <Text size="sm" c="dimmed">
-                {t("HomePage.newDescription")}
+                {t("Home.newDescription")}
               </Text>
             </Card>
           </Link>
@@ -72,10 +73,10 @@ export const Home = () => {
               <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
             </Card.Section>
             <Text fw={500} pt="xs">
-              {t("HomePage.reportsTitle")}
+              {t("Home.reportsTitle")}
             </Text>
             <Text size="sm" c="dimmed">
-              {t("HomePage.reportsDescription")}
+              {t("Home.reportsDescription")}
             </Text>
           </Card>
         </Grid.Col>
@@ -87,10 +88,10 @@ export const Home = () => {
               <Image component={NextImage} src={toolsImage} alt="Tools Image" h={160} />
             </Card.Section>
             <Text fw={500} pt="xs">
-              {t("HomePage.toolsTitle")}
+              {t("Home.toolsTitle")}
             </Text>
             <Text size="sm" c="dimmed">
-              {t("HomePage.toolsDescription")}
+              {t("Home.toolsDescription")}
             </Text>
           </Card>
         </Link>

@@ -1,0 +1,229 @@
+languages:
+  af: Afrikaans
+  af-ZA: Afrikaans (Südafrika)
+  ar: Arabisch
+  ar-AE: Arabisch (V.A.E.)
+  ar-BH: Arabisch (Bahrain)
+  ar-DZ: Arabisch (Algerien)
+  ar-EG: Arabisch (Ägypten)
+  ar-IQ: Arabisch (Irak)
+  ar-JO: Arabisch (Jordanien)
+  ar-KW: Arabisch (Kuwait)
+  ar-LB: Arabisch (Libanon)
+  ar-LY: Arabisch (Libyen)
+  ar-MA: Arabisch (Marokko)
+  ar-OM: Arabisch (Oman)
+  ar-QA: Arabisch (Katar)
+  ar-SA: Arabisch (Saudi-Arabien)
+  ar-SY: Arabisch (Syrien)
+  ar-TN: Arabisch (Tunesien)
+  ar-YE: Arabisch (Jemen)
+  az: Aserbaidschanisch
+  az-AZ: Aserbaidschanisch (Aserbaidschan)
+  be: Weißrussisch
+  be-BY: Weißrussisch (Weißrussland)
+  bg: Bulgarisch
+  bg-BG: Bulgarisch (Bulgarien)
+  bs-BA: Bosnisch (Bosnien und Herzegowina)
+  ca: Katalanisch
+  ca-ES: Katalanisch (Spanien)
+  cs: Tschechisch
+  cs-CZ: Tschechisch (Tschechische Republik)
+  cy: Walisisch
+  cy-GB: Walisisch (Vereinigtes Königreich)
+  da: Dänisch
+  da-DK: Dänisch (Dänemark)
+  de: Deutsch
+  de-AT: Deutsch (Österreich)
+  de-CH: Deutsch (Schweiz)
+  de-DE: Deutsch (Deutschland)
+  de-LI: Deutsch (Liechtenstein)
+  de-LU: Deutsch (Luxemburg)
+  dv: Dhivehi
+  dv-MV: Dhivehi (Malediven)
+  el: Griechisch
+  el-GR: Griechisch (Griechenland)
+  en: Englisch
+  en-AU: Englisch (Australien)
+  en-BZ: Englisch (Belize)
+  en-CA: Englisch (Kanada)
+  en-CB: Englisch (Karibik)
+  en-GB: Englisch (Vereinigtes Königreich)
+  en-IE: Englisch (Irland)
+  en-JM: Englisch (Jamaika)
+  en-NZ: Englisch (Neuseeland)
+  en-PH: Englisch (Republik der Philippinen)
+  en-TT: Englisch (Trinidad und Tobago)
+  en-US: Englisch (Vereinigte Staaten)
+  en-ZA: Englisch (Südafrika)
+  en-ZW: Englisch (Simbabwe)
+  eo: Esperanto
+  es: Spanisch
+  es-AR: Spanisch (Argentinien)
+  es-BO: Spanisch (Bolivien)
+  es-CL: Spanisch (Chile)
+  es-CO: Spanisch (Kolumbien)
+  es-CR: Spanisch (Costa Rica)
+  es-DO: Spanisch (Dominikanische Republik)
+  es-EC: Spanisch (Ecuador)
+  es-ES: Spanisch (Kastilisch)
+  es-GT: Spanisch (Guatemala)
+  es-HN: Spanisch (Honduras)
+  es-MX: Spanisch (Mexiko)
+  es-NI: Spanisch (Nicaragua)
+  es-PA: Spanisch (Panama)
+  es-PE: Spanisch (Peru)
+  es-PR: Spanisch (Puerto Rico)
+  es-PY: Spanisch (Paraguay)
+  es-SV: Spanisch (El Salvador)
+  es-UY: Spanisch (Uruguay)
+  es-VE: Spanisch (Venezuela)
+  et: Estnisch
+  et-EE: Estnisch (Estland)
+  eu: Baskisch
+  eu-ES: Baskisch (Spanien)
+  fa: Persisch
+  fa-IR: Persisch (Iran)
+  fi: Finnisch
+  fi-FI: Finnisch (Finnland)
+  fo: Färöisch
+  fo-FO: Färöisch (Färöer Inseln)
+  fr: Französisch
+  fr-BE: Französisch (Belgien)
+  fr-CA: Französisch (Kanada)
+  fr-CH: Französisch (Schweiz)
+  fr-FR: Französisch (Frankreich)
+  fr-LU: Französisch (Luxemburg)
+  fr-MC: Französisch (Fürstentum Monaco)
+  gl: Galizisch
+  gl-ES: Galizisch (Spanien)
+  gu: Gujarati
+  gu-IN: Gujarati (Indien)
+  he: Hebräisch
+  he-IL: Hebräisch (Israel)
+  hi: Hindi
+  hi-IN: Hindi (Indien)
+  hr: Kroatisch
+  hr-BA: Kroatisch (Bosnien und Herzegowina)
+  hr-HR: Kroatisch (Kroatien)
+  hu: Ungarisch
+  hu-HU: Ungarisch (Ungarn)
+  hy: Armenisch
+  hy-AM: Armenisch (Armenien)
+  id: Indonesisch
+  id-ID: Indonesisch (Indonesien)
+  is: Isländisch
+  is-IS: Isländisch (Island)
+  it: Italienisch
+  it-CH: Italienisch (Schweiz)
+  it-IT: Italienisch (Italien)
+  ja: Japanisch
+  ja-JP: Japanisch (Japan)
+  ka: Georgisch
+  ka-GE: Georgisch (Georgien)
+  kk: Kasachisch
+  kk-KZ: Kasachisch (Kasachstan)
+  kn: Kannada
+  kn-IN: Kannada (Indien)
+  ko: Koreanisch
+  ko-KR: Koreanisch (Korea)
+  kok: Konkani
+  kok-IN: Konkani (Indien)
+  ky: Kirgisisch
+  ky-KG: Kirgisisch (Kirgisistan)
+  lt: Litauisch
+  lt-LT: Litauisch (Litauen)
+  lv: Lettisch
+  lv-LV: Lettisch (Lettland)
+  mi: Maori
+  mi-NZ: Maori (Neuseeland)
+  mk: Mazedonisch
+  mk-MK: Mazedonisch (Ehemalige Jugoslawische Republik Mazedonien)
+  mn: Mongolisch
+  mn-MN: Mongolisch (Mongolei)
+  mr: Marathi
+  mr-IN: Marathi (Indien)
+  ms: Malaysisch
+  ms-BN: Malaysisch (Brunei Darussalam)
+  ms-MY: Malaysisch (Malaysia)
+  mt: Maltesisch
+  mt-MT: Maltesisch (Malta)
+  nb: Norwegisch (Bokmål)
+  nb-NO: Norwegisch (Bokmål) (Norwegen)
+  nl: Niederländisch
+  nl-BE: Niederländisch (Belgien)
+  nl-NL: Niederländisch (Niederlande)
+  nn-NO: Norwegisch (Nynorsk) (Norwegen)
+  ns: Nord-Sotho
+  ns-ZA: Nord-Sotho (Südafrika)
+  pa: Punjabi
+  pa-IN: Punjabi (Indien)
+  pl: Polnisch
+  pl-PL: Polnisch (Polen)
+  ps: Paschtu
+  ps-AR: Paschtu (Afghanistan)
+  pt: Portugiesisch
+  pt-BR: Portugiesisch (Brasilien)
+  pt-PT: Portugiesisch (Portugal)
+  qu: Quechua
+  qu-BO: Quechua (Bolivien)
+  qu-EC: Quechua (Ecuador)
+  qu-PE: Quechua (Peru)
+  ro: Rumänisch
+  ro-RO: Rumänisch (Rumänien)
+  ru: Russisch
+  ru-RU: Russisch (Russland)
+  sa: Sanskrit
+  sa-IN: Sanskrit (Indien)
+  se: Samisch
+  se-FI: Samisch (Finnland)
+  se-NO: Samisch (Norwegen)
+  se-SE: Samisch (Schweden)
+  sk: Slowakisch
+  sk-SK: Slowakisch (Slowakei)
+  sl: Slowenisch
+  sl-SI: Slowenisch (Slowenien)
+  sq: Albanisch
+  sq-AL: Albanisch (Albanien)
+  sr-BA: Serbisch (Bosnien und Herzegowina)
+  sr-SP: Serbisch (Serbien und Montenegro)
+  sv: Schwedisch
+  sv-FI: Schwedisch (Finnland)
+  sv-SE: Schwedisch (Schweden)
+  sw: Swahili
+  sw-KE: Swahili (Kenia)
+  syr: Syrisch
+  syr-SY: Syrisch (Syrien)
+  ta: Tamil
+  ta-IN: Tamil (Indien)
+  te: Telugu
+  te-IN: Telugu (Indien)
+  th: Thai
+  th-TH: Thai (Thailand)
+  tl: Tagalog
+  tl-PH: Tagalog (Philippinen)
+  tn: Setswana
+  tn-ZA: Setswana (Südafrika)
+  tr: Türkisch
+  tr-TR: Türkisch (Türkei)
+  tt: Tataren
+  tt-RU: Tataren (Russland)
+  ts: Tsonga
+  uk: Ukrainisch
+  uk-UA: Ukrainisch (Ukraine)
+  ur: Urdu
+  ur-PK: Urdu (Islamische Republik Pakistan)
+  uz: Usbekisch
+  uz-UZ: Usbekisch (Usbekistan)
+  vi: Vietnamesisch
+  vi-VN: Vietnamesisch (Vietnam)
+  xh: isiXhosa
+  xh-ZA: isiXhosa (Südafrika)
+  zh: Chinesisch
+  zh-CN: Chinesisch (S)
+  zh-HK: Chinesisch (Hongkong)
+  zh-MO: Chinesisch (Macao)
+  zh-SG: Chinesisch (Singapur)
+  zh-TW: Chinesisch (T)
+  zu: isiZulu
+  zu-ZA: isiZulu (Südafrika)

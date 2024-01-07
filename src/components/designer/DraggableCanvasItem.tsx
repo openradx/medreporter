@@ -113,9 +113,6 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
             <Text size="sm" c="dimmed" truncate>
               {t("EditorItem.id")}: {fieldId ?? "-"}
             </Text>
-            <Text size="sm" c="dimmed" truncate>
-              Node ID: {node.nodeId}
-            </Text>
           </Stack>
         </Card.Section>
       </Card>

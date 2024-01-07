@@ -1,6 +1,7 @@
 import { Button, CloseButton, Group, Stack, Title, ScrollArea } from "@mantine/core"
 import invariant from "tiny-invariant"
 import { match } from "ts-pattern"
+import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectSelectedItem, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { deleteNode, selectTemplate } from "~/state/templateSlice"
@@ -18,6 +19,7 @@ export const PropertiesPanel = () => {
   const selectedItem = useAppSelector(selectSelectedItem)
   const template = useAppSelector(selectTemplate)
   const dispatch = useAppDispatch()
+  const { t } = useSiteTranslation()
 
   if (!selectedItem) return null
 
@@ -44,7 +46,7 @@ export const PropertiesPanel = () => {
       <Stack pl="xs">
         <Group justify="space-between">
           <Title order={5} c="dimmed">
-            Properties
+            {t("PropertiesPanel.panelTitle")}
           </Title>
           <CloseButton onClick={() => dispatch(setSelectedItem(null))} />
         </Group>
@@ -57,7 +59,7 @@ export const PropertiesPanel = () => {
             dispatch(setSelectedItem(null))
           }}
         >
-          Delete
+          {t("PropertiesPanel.deleteItemButtonLabel")}
         </Button>
       </Stack>
     </ScrollArea>

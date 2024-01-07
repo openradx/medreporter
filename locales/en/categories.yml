@@ -1,0 +1,18 @@
+categories:
+  group:
+    modalities: Modalities
+    organs: Organs
+    specialties: Specialties
+  # Modalities
+  ct: CT
+  mri: MRI
+  us: Ultrasound
+  xray: X-Ray
+  # Organs
+  kidney: Kidney
+  liver: Liver
+  lung: Lung
+  # Specialties
+  internalMedicine: Internal Medicine
+  radiology: Radiology
+  surgery: Surgery

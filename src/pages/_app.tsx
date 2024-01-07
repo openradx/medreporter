@@ -10,6 +10,7 @@ import { SessionProvider } from "next-auth/react"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import { compose } from "redux"
+import { appConfig } from "~/appConfig"
 import { withReduxState } from "~/hocs/withReduxState"
 import { withTranslations } from "~/hocs/withTranslations"
 import { theme } from "~/theme"
@@ -30,7 +31,7 @@ const MyApp = ({ Component, pageProps: { session, ...pageProps } }: MyAppProps) 
   return (
     <MantineProvider theme={theme}>
       <Head>
-        <title>Medreporter</title>
+        <title>{appConfig.medreporterTitle}</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"

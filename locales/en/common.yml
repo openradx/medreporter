@@ -87,17 +87,19 @@ GfrPage:
   toolTitle: GFR
 GraphicsModal:
   buttonReset: Reset selection
-HomePage:
+Home:
   about: Learn more about MedReporter
   newTitle: New template
   newDescription: Go to the Editor to create new templates.
-  pageTitle: Home
   reportsTitle: Reports
   reportsDescription: Go to your reports or the reports of your institute.
   toolsTitle: Tools
   toolsDescription: Use our tools to calculate or to classify results.
   templatesTitle: Templates
   templatesDescription: Use a template to build a report.
+  welcomeText: Welcome to
+HomePage:
+  pageTitle: Home
 InstituteSwitcher:
   groupIndividual: Individual
   groupInstitutes: Institutes
@@ -108,6 +110,7 @@ KidneyVolumePage:
   toolTitle: Kidney volume (Mayo-Model)
 LanguageChooser:
   menuTitleLanguages: Language
+  menuLabelDebugMode: Debug translations
 LanguageSelector:
   inputLabelLanguage: Language
 Loading:

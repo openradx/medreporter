@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { Text, Title } from "@mantine/core"
 import { GetStaticProps } from "next"
 import Link from "next/link"

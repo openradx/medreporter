@@ -19,5 +19,20 @@ MenuPanel:
   singleChoiceFieldLabel: Single choice
   timeFieldLabel: Time
   statementLabel: Statement
+NewTemplate:
+  navbarTitle: New Template
 PreviewSwitch:
   label: Preview
+PropertiesPanel:
+  panelTitle: Properties
+  deleteItemButtonLabel: Delete
+TemplatePropertiesButton:
+  title: Template Properties
+TemplatePropertiesModal:
+  categoriesLabel: Category
+  categoriesPlaceholder: Pick fitting categories
+  descriptionLabel: Description
+  languageLabel: Language
+  languagePlaceholder: Pick language
+  nameLabel: Name
+  titleLabel: Title

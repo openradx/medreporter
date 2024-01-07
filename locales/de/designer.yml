@@ -19,5 +19,12 @@ MenuPanel:
   singleChoiceFieldLabel: Einzelauswahl
   timeFieldLabel: Zeit
   statementLabel: Aussage
+NewTemplate:
+  navbarTitle: Neue Vorlage
 PreviewSwitch:
   label: Vorschau
+PropertiesPanel:
+  panelTitle: Eigenschaften
+  deleteItemButtonLabel: Löschen
+TemplatePropertiesButton:
+  title: Vorlageneigenschaften

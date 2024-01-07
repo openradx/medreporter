@@ -8,7 +8,7 @@ interface TemplateAdapterProps {
 }
 
 export const TemplateAdapter = ({ node }: TemplateAdapterProps) => (
-  <Template title={node.title} info={node.info}>
+  <Template title={node.title} description={node.description}>
     <StructureAdapter node={node.structure} />
     <ReportAdapter node={node.report} />
   </Template>

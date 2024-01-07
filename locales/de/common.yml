@@ -87,17 +87,19 @@ GfrPage:
   toolTitle: GFR
 GraphicsModal:
   buttonReset: Auswahl zurücksetzen
-HomePage:
+Home:
   about: Mehr über MedReporter
   newTitle: Neue Vorlage erstellen
   newDescription: Nutze den Editor um neue Vorlagen zu erstellen.
-  pageTitle: Startseite
   reportsTitle: Reports
   reportsDescription: Gehe zu deinen bzw. den Reports deines Instituts.
   toolsTitle: Tools
   toolsDescription: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren.
   templatesTitle: Vorlagen
   templatesDescription: Nutze eine Vorlage um einen Report zu erstellen.
+  welcomeText: Willkommen bei
+HomePage:
+  pageTitle: Startseite
 InstituteSwitcher:
   groupIndividual: Persönlich
   groupInstitutes: Institute
@@ -108,6 +110,7 @@ KidneyVolumePage:
   toolTitle: Nierenvolumen (Mayo-Modell)
 LanguageChooser:
   menuTitleLanguages: Sprache
+  menuLabelDebugMode: Debug translations
 LanguageSelector:
   inputLabelLanguage: Sprache
 Loading:

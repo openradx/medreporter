@@ -18,7 +18,11 @@ const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
 const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
   nodeId: createNodeId("template"),
+  language: "",
+  name: "",
   title: "",
+  description: "",
+  categories: [],
   info: "",
   structure: {
     type: "Structure",
