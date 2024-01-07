@@ -1,4 +1,4 @@
-.droppableContainer {
+.droppableItemContainer {
   background-color: var(--mantine-color-gray-1);
 
   @mixin dark {

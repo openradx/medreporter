@@ -14,7 +14,7 @@ import {
   findContainer,
   isFittingContainer,
 } from "~/utils/designerUtils"
-import { DroppableContainer } from "./DroppableContainer"
+import { DroppableItemContainer } from "./DroppableItemContainer"
 
 interface DraggableCanvasContainerProps {
   node: ContainerNode
@@ -118,7 +118,7 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
           </Stack>
         </Card.Section>
         <>
-          <DroppableContainer node={node}>{children}</DroppableContainer>
+          <DroppableItemContainer node={node}>{children}</DroppableItemContainer>
           <Box
             ref={droppableEnd.setNodeRef}
             opacity={0.5}

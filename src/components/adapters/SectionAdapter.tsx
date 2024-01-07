@@ -1,6 +1,6 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { SectionNode } from "~/schemas/structure"
-import { DroppableContainer } from "../designer/DroppableContainer"
+import { DroppableCanvasContainer } from "../designer/DroppableCanvasContainer"
 import { Section } from "../template/Section"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { FindingFieldAdapter } from "./FindingFieldAdapter"
@@ -31,7 +31,7 @@ export const SectionAdapter = ({ node, active }: SectionAdapterProps) => {
   if (isDesigning) {
     return (
       <Section id={node.nodeId} label={node.label} active={active}>
-        <DroppableContainer node={node}>{children}</DroppableContainer>
+        <DroppableCanvasContainer node={node}>{children}</DroppableCanvasContainer>
       </Section>
     )
   }
