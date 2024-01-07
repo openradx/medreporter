@@ -5,7 +5,7 @@ export const CopyrightMessage = () => (
   <Group p={4} gap={8} align="center" justify="center">
     <CopyrightIcon size={16} color="grey" />
     <Text size="sm" c="dimmed" fw={500} lineClamp={1}>
-      2023 MedReporter. All Rights Reserved.
+      2024 MedReporter. All Rights Reserved.
     </Text>
   </Group>
 )
