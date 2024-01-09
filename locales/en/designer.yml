@@ -7,9 +7,9 @@ MenuPanel:
   booleanFieldLabel: Boolean
   components: Components
   dateFieldLabel: Date
-  fields: Fields
   freeTextFieldLabel: Free text
   groupLabel: Group
+  hintLabel: Hint
   measurementsFieldLabel: Measurements
   multipleChoiceFieldLabel: Multiple choice
   numberFieldLabel: Number
@@ -17,6 +17,7 @@ MenuPanel:
   paragraphLabel: Paragraph
   report: Report
   singleChoiceFieldLabel: Single choice
+  structure: Structure
   timeFieldLabel: Time
   statementLabel: Statement
 NewTemplate:

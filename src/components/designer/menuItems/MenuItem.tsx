@@ -5,7 +5,7 @@ interface MenuItemProps {
 }
 
 export const MenuItem = ({ label }: MenuItemProps) => (
-  <Card padding="xs" shadow="sm" radius="md" withBorder>
+  <Card padding="xs" shadow="sm" radius="sm" withBorder>
     {label}
   </Card>
 )

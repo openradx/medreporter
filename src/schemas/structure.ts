@@ -32,7 +32,7 @@ const fieldProperties = {
 /**
  * Nodes
  */
-const hintNodeSchema = nodeSchema.extend({
+export const hintNodeSchema = nodeSchema.extend({
   type: z.literal("Hint"),
   level: z.enum(["info", "warning", "error"]),
   content: codeSchema,

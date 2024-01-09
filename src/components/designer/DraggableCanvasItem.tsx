@@ -63,10 +63,10 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
         overStart: droppableStart.isOver,
         overEnd: droppableEnd.isOver,
       })
-        .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 blue inset")
-        .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 blue inset")
-        .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px blue inset")
-        .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px blue inset")
+        .with({ direction: "row", overStart: true, overEnd: false }, () => "4px 0 gray inset")
+        .with({ direction: "row", overStart: false, overEnd: true }, () => "-4px 0 gray inset")
+        .with({ direction: "column", overStart: true, overEnd: false }, () => "0 4px gray inset")
+        .with({ direction: "column", overStart: false, overEnd: true }, () => "0 -4px gray inset")
         .otherwise(() => undefined)
     }
 
@@ -75,14 +75,14 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
     }
   }
 
-  // let opacity: number | undefined
-  // if (draggable.isDragging) {
-  //   opacity = 0.5
-  // }
+  let opacity: number | undefined
+  if (draggable.isDragging) {
+    opacity = 0.5
+  }
 
   return (
     <Box
-      w={direction === "row" ? 250 : undefined}
+      w={direction === "row" ? 250 : 300}
       pos="relative"
       ref={draggable.setNodeRef}
       {...draggable.listeners}
@@ -94,17 +94,17 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
     >
       {direction === "row" && (
         <>
-          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="50%" h="100%" left={0} />
-          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="50%" h="100%" right={0} />
+          <Box ref={droppableStart.setNodeRef} pos="absolute" w="50%" h="100%" left={0} />
+          <Box ref={droppableEnd.setNodeRef} pos="absolute" w="50%" h="100%" right={0} />
         </>
       )}
       {direction === "column" && (
         <>
-          <Box bg="red" ref={droppableStart.setNodeRef} pos="absolute" w="100%" h="50%" top={0} />
-          <Box bg="blue" ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h="50%" bottom={0} />
+          <Box ref={droppableStart.setNodeRef} pos="absolute" w="100%" h="50%" top={0} />
+          <Box ref={droppableEnd.setNodeRef} pos="absolute" w="100%" h="50%" bottom={0} />
         </>
       )}
-      <Card padding="xs" shadow="sm" style={{ boxShadow, opacity: 0.5 }} withBorder>
+      <Card padding="xs" shadow="sm" style={{ boxShadow, opacity }} withBorder>
         <Card.Section inheritPadding pos="relative">
           <Stack gap={0}>
             <Text>

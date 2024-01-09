@@ -1,6 +1,6 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { ReportNode } from "~/schemas/report"
-import { DroppableContainer } from "../designer/DroppableContainer"
+import { DroppableCanvasContainer } from "../designer/DroppableCanvasContainer"
 import { Report } from "../template/Report"
 import { MeasurementsOutputAdapter } from "./MeasurementsOutputAdapter"
 import { ParagraphAdapter } from "./ParagraphAdapter"
@@ -30,7 +30,7 @@ export const ReportAdapter = ({ node }: ReportAdapterProps) => {
   if (isDesigning) {
     return (
       <Report actions={<></>}>
-        <DroppableContainer node={node}>{children}</DroppableContainer>
+        <DroppableCanvasContainer node={node}>{children}</DroppableCanvasContainer>
       </Report>
     )
   }

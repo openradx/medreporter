@@ -9,6 +9,7 @@ import { findNode } from "~/utils/designerUtils"
 import { BooleanFieldPropertiesForm } from "./propertyForms/BooleanFieldPropertiesForm"
 import { FreeTextFieldPropertiesForm } from "./propertyForms/FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./propertyForms/GroupPropertiesForm"
+import { HintPropertiesForm } from "./propertyForms/HintPropertiesForm"
 import { MultipleChoiceFieldPropertiesForm } from "./propertyForms/MultipleChoiceFieldPropertiesForm"
 import { NumberFieldPropertiesForm } from "./propertyForms/NumberFieldPropertiesForm"
 import { ParagraphPropertiesForm } from "./propertyForms/ParagraphPropertiesForm"
@@ -37,6 +38,7 @@ export const PropertiesPanel = () => {
     ))
     .with({ type: "Statement" }, (node) => <StatementPropertiesForm node={node} />)
     .with({ type: "Paragraph" }, (node) => <ParagraphPropertiesForm node={node} />)
+    .with({ type: "Hint" }, (node) => <HintPropertiesForm node={node} />)
     .otherwise(() => {
       throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
     })
@@ -44,7 +46,7 @@ export const PropertiesPanel = () => {
   return (
     <ScrollArea offsetScrollbars h="100%" style={{ flexGrow: 1 }}>
       <Stack pl="xs">
-        <Group justify="space-between">
+        <Group justify="space-between" wrap="nowrap">
           <Title order={5} c="dimmed">
             {t("PropertiesPanel.panelTitle")}
           </Title>

@@ -27,7 +27,7 @@ export const MainLayout = ({
     styles={{ main: { height: "100vh" } }}
   >
     <Navbar withoutAccountControl={withoutAccountControl} />
-    <AppShell.Main>
+    <AppShell.Main pb={footerSize === "small" ? 30 : undefined}>
       <ErrorBoundary FallbackComponent={MainLayoutFallback}>
         <Container size={size !== "full" ? size : undefined} fluid={size === "full"} h="100%">
           {children}

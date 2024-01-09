@@ -9,13 +9,14 @@ import {
   DroppableData,
   isFittingContainer,
 } from "~/utils/designerUtils"
+import classes from "./DroppableItemContainer.module.css"
 
-interface DroppableContainerProps {
+interface DroppableItemContainerProps {
   node: ContainerNode
   children: ReactNode
 }
 
-export const DroppableContainer = ({ node, children }: DroppableContainerProps) => {
+export const DroppableItemContainer = ({ node, children }: DroppableItemContainerProps) => {
   const { isOver, active, setNodeRef } = useDroppable({
     id: `${node.nodeId}-container`,
     data: { origin: "template", dropType: "container", node } satisfies DroppableData,
@@ -43,8 +44,20 @@ export const DroppableContainer = ({ node, children }: DroppableContainerProps) 
 
   return (
     <ContainerContextProvider value={{ direction, justify }}>
-      <Box bg="green" p="xs" mih="100%" style={{ boxShadow }} ref={setNodeRef}>
-        <Flex direction={direction} justify={justify} wrap="wrap" gap="xs" ref={animationParent}>
+      <Box
+        className={classes.droppableItemContainer}
+        p="xs"
+        mih={100}
+        style={{ boxShadow }}
+        ref={setNodeRef}
+      >
+        <Flex
+          direction={direction}
+          justify={justify}
+          wrap={direction === "column" ? "nowrap" : "wrap"}
+          gap="xs"
+          ref={animationParent}
+        >
           {children}
         </Flex>
       </Box>

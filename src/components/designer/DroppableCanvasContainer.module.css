@@ -1,0 +1,7 @@
+.droppableCanvasContainer {
+  background-color: var(--mantine-color-gray-1);
+
+  @mixin dark {
+    background-color: var(--mantine-color-dark-8);
+  }
+}

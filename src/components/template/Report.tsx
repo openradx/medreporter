@@ -55,7 +55,7 @@ export const Report = ({ actions, children }: ReportProps) => {
             id={REPORT_CONTENT_ID}
             h="100%"
             direction="column"
-            ff="monospace"
+            ff={isDesigning ? "inherit" : "monospace"}
             p="sm"
             style={{ whiteSpace: "pre-wrap", flexGrow: 1 }}
           >
