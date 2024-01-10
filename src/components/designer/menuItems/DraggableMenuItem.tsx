@@ -14,7 +14,7 @@ export const DraggableMenuItem = ({ node, children }: DraggableMenuItemProps) =>
   })
 
   return (
-    <div ref={setNodeRef} {...attributes} {...listeners}>
+    <div ref={setNodeRef} {...attributes} {...listeners} style={{ cursor: "grab" }}>
       {children}
     </div>
   )

@@ -13,6 +13,7 @@ import { snapCenterToCursor } from "@dnd-kit/modifiers"
 import { Flex, Transition } from "@mantine/core"
 import invariant from "tiny-invariant"
 import { DesignerContextProvider } from "~/contexts/DesignerContext"
+import { useGrabbingCursor } from "~/hooks/useGrabbingCursor"
 import { useMounted } from "~/hooks/useMounted"
 import { refreshMenu, selectPreview, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
@@ -35,8 +36,16 @@ export const TemplateDesigner = () => {
   const dispatch = useAppDispatch()
   const template = useAppSelector(selectTemplate)
   const preview = useAppSelector(selectPreview)
+  const [grabbingCursorOn, grabbingCursorOff] = useGrabbingCursor()
+
+  const handleDragStart = () => {
+    grabbingCursorOn()
+    dispatch(setSelectedItem(null))
+  }
 
   const handleDragEnd = (event: DragEndEvent) => {
+    grabbingCursorOff()
+
     if (!event.over) return
 
     const { node: activeNode, origin } = event.active.data.current as DraggableData
@@ -168,7 +177,7 @@ export const TemplateDesigner = () => {
           sensors={sensors}
           modifiers={[snapCenterToCursor]}
           collisionDetection={customCollisionDetection}
-          onDragStart={() => dispatch(setSelectedItem(null))}
+          onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
         >
           <Flex h="100%" align="stretch" gap="xs">

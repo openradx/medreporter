@@ -3,6 +3,7 @@ import { restrictToParentElement, restrictToVerticalAxis } from "@dnd-kit/modifi
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import { Table } from "@mantine/core"
 import { Control, FieldArrayWithId, UseFieldArrayMove, UseFieldArrayRemove } from "react-hook-form"
+import { useGrabbingCursor } from "~/hooks/useGrabbingCursor"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { Option } from "~/schemas/structure"
 import { DraggableOptionRow } from "./DraggableOptionRow"
@@ -16,16 +17,16 @@ interface OptionsTableProps {
 
 export const OptionsTable = ({ control, fields, move, remove }: OptionsTableProps) => {
   const { t } = useSiteTranslation()
+  const [grabbingCursorOn, grabbingCursorOff] = useGrabbingCursor()
 
   const handleDragStart = () => {
-    document.body.classList.add("grabbing")
+    grabbingCursorOn()
   }
 
   const handleDragEnd = (event: DragEndEvent) => {
+    grabbingCursorOff()
+
     const { active, over } = event
-
-    document.body.classList.remove("grabbing")
-
     if (over && active.id !== over.id) {
       const oldIndex = fields.findIndex((item) => item.id === active.id)
       const newIndex = fields.findIndex((item) => item.id === over.id)

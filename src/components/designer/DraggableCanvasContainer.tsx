@@ -89,6 +89,7 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
       ref={draggable.setNodeRef}
       {...draggable.listeners}
       {...draggable.attributes}
+      style={{ cursor: "grab" }}
       onClick={(ev) => {
         ev.stopPropagation()
         dispatch(setSelectedItem(node.nodeId))
