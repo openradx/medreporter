@@ -48,8 +48,10 @@ export const DroppableItemContainer = ({ node, children }: DroppableItemContaine
         className={classes.droppableItemContainer}
         p="xs"
         mih={100}
-        style={{ boxShadow }}
+        style={{ boxShadow, cursor: "default" }}
         ref={setNodeRef}
+        // Don't allow the container element to start a dragging
+        onMouseDown={(e) => e.stopPropagation()}
       >
         <Flex
           direction={direction}
