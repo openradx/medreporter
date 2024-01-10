@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Stack } from "@mantine/core"
+import copy from "fast-copy"
 import { ReactNode, useEffect } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
@@ -26,20 +27,16 @@ export const PropertiesForm = <S extends z.ZodType<any, any>>({
     defaultValues: initialValues,
   })
 
-  useEffect(() => {
-    methods.reset(initialValues)
-  }, [initialValues, methods, nodeId])
-
   const dispatch = useAppDispatch()
 
   const { watch, handleSubmit } = methods
 
   const debounced = useDebouncedCallback((changedValues: z.infer<S>) => {
-    dispatch(updateNode({ nodeId, data: changedValues }))
+    dispatch(updateNode({ nodeId, data: copy(changedValues) }))
   }, 200)
 
   useEffect(() => {
-    const subscription = watch(handleSubmit(debounced))
+    const subscription = watch(() => handleSubmit(debounced)())
     return () => subscription.unsubscribe()
   }, [watch, handleSubmit, debounced])
 

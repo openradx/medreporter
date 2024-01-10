@@ -3,6 +3,7 @@ import { MultipleChoiceFieldNode } from "~/schemas/structure"
 import { selectMenuTimestamp } from "~/state/designerSlice"
 import { useAppSelector } from "~/state/store"
 import { createFieldId, createNodeId } from "~/utils/designerUtils"
+import { createExampleOptions } from "~/utils/fieldUtils"
 import { DraggableMenuItem } from "./DraggableMenuItem"
 import { MenuItem } from "./MenuItem"
 
@@ -24,7 +25,7 @@ export const MultipleChoiceFieldMenuItem = ({ label }: MultipleChoiceFieldMenuIt
       hidden: "",
       variant: "checkbox",
       figure: "",
-      options: [],
+      options: createExampleOptions(3),
       default: [],
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

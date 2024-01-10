@@ -151,8 +151,6 @@ export const TemplateDesigner = () => {
       return collisions
     }
 
-    // collisions = closestCorners(args)
-    // collisions = closestCenter(args)
     collisions = rectIntersection(args)
     return collisions.filter((col) => col.id !== "trash-can")
   }

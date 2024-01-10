@@ -2,8 +2,11 @@
 
 ## Kai
 
+- Rename Designer to Builder
+- Use timestamp and key prop in MenuPanel and use useRef in menu items itself
 - there is languages in common.yml and a languages.yml, decide for one
 - bring in template description and info (simply make both non optional in Template.tsx)
+- useDisclosure instead of useState in all modal buttons (see options editor button)
 - useDesigner instead of useIsDesigning
 - Are those flag icons really needed?
 - Get rid of images in /public/images (when we use images we can import them as a component)

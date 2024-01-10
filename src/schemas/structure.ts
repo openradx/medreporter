@@ -91,42 +91,28 @@ export const freeTextFieldNodeSchema = nodeSchema.extend({
 export type FreeTextFieldNode = z.infer<typeof freeTextFieldNodeSchema>
 
 const optionSchema = z.object({
-  label: requiredLabelSchema,
-  value: optionalLabelSchema,
+  label: z.string().trim().min(1),
+  value: z.string().trim().min(1),
 })
 
 export type Option = z.infer<typeof optionSchema>
 
-const optionsSchema = z
+export const optionsSchema = z
   .array(optionSchema)
-  .refine(
-    (options) => {
-      // check for duplicate labels
-      const labelSet = new Set()
-      for (const opt of options) {
-        if (labelSet.has(opt.label)) {
-          return false
-        }
-        labelSet.add(opt.label)
+  .min(1)
+  .superRefine((options, ctx) => {
+    const values = new Set()
+    options.forEach((option, index) => {
+      if (option.value && values.has(option.value)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "Duplicate option value", // TODO: i18n
+          path: [index, "value"],
+        })
       }
-      return true // no duplicates found
-    },
-    { message: "Duplicate option labels." }
-  )
-  .refine(
-    (options) => {
-      // check for duplicate values
-      const valueSet = new Set()
-      for (const opt of options) {
-        if (valueSet.has(opt.value)) {
-          return false
-        }
-        valueSet.add(opt.value)
-      }
-      return true // no duplicates found
-    },
-    { message: "Duplicate option values." }
-  )
+      values.add(option.value)
+    })
+  })
 
 export const singleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("SingleChoiceField"),

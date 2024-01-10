@@ -27,18 +27,34 @@ export const PropertiesPanel = () => {
   const selectedNode = findNode(template, selectedItem)
   invariant(selectedNode, `Node ${selectedItem} not found in template.`)
 
+  // By using the `key` prop we make sure that the respective component gets remounted and the
+  // form is recreated correctly. Otherwise the form would not be reinitialized when when for
+  // example another field of the same type is selected.
+  // See https://legacy.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key
   const propertiesForm = match(selectedNode)
-    .with({ type: "Group" }, (node) => <GroupPropertiesForm node={node} />)
-    .with({ type: "BooleanField" }, (node) => <BooleanFieldPropertiesForm node={node} />)
-    .with({ type: "NumberField" }, (node) => <NumberFieldPropertiesForm node={node} />)
-    .with({ type: "FreeTextField" }, (node) => <FreeTextFieldPropertiesForm node={node} />)
-    .with({ type: "SingleChoiceField" }, (node) => <SingleChoiceFieldPropertiesForm node={node} />)
-    .with({ type: "MultipleChoiceField" }, (node) => (
-      <MultipleChoiceFieldPropertiesForm node={node} />
+    .with({ type: "Group" }, (node) => <GroupPropertiesForm key={node.nodeId} node={node} />)
+    .with({ type: "BooleanField" }, (node) => (
+      <BooleanFieldPropertiesForm key={node.nodeId} node={node} />
     ))
-    .with({ type: "Statement" }, (node) => <StatementPropertiesForm node={node} />)
-    .with({ type: "Paragraph" }, (node) => <ParagraphPropertiesForm node={node} />)
-    .with({ type: "Hint" }, (node) => <HintPropertiesForm node={node} />)
+    .with({ type: "NumberField" }, (node) => (
+      <NumberFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "FreeTextField" }, (node) => (
+      <FreeTextFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "SingleChoiceField" }, (node) => (
+      <SingleChoiceFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "MultipleChoiceField" }, (node) => (
+      <MultipleChoiceFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "Statement" }, (node) => (
+      <StatementPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "Paragraph" }, (node) => (
+      <ParagraphPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "Hint" }, (node) => <HintPropertiesForm key={node.nodeId} node={node} />)
     .otherwise(() => {
       throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
     })

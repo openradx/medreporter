@@ -22,6 +22,15 @@ MenuPanel:
   statementLabel: Statement
 NewTemplate:
   navbarTitle: New Template
+OptionsEditorButton:
+  label_one: "{{count}} option"
+  label_other: "{{count}} options"
+OptionsEditorModal:
+  addOptionLabel: Add new option
+  modalTitle: Options Editor
+OptionsTable:
+  labelColumnHeader: Label
+  valueColumnHeader: Value
 PreviewSwitch:
   label: Preview
 PropertiesPanel:
@@ -30,10 +39,8 @@ PropertiesPanel:
 TemplatePropertiesButton:
   title: Template Properties
 TemplatePropertiesModal:
-  categoriesLabel: Category
-  categoriesPlaceholder: Pick fitting categories
+  categoriesLabel: Categories
   descriptionLabel: Description
+  identifierLabel: Identifier
   languageLabel: Language
-  languagePlaceholder: Pick language
-  nameLabel: Name
   titleLabel: Title

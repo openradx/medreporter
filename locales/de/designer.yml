@@ -22,6 +22,15 @@ MenuPanel:
   statementLabel: Aussage
 NewTemplate:
   navbarTitle: Neue Vorlage
+OptionsEditorButton:
+  label_one: "{{count}} Option"
+  label_other: "{{count}} Optionen"
+OptionsEditorModal:
+  addOptionLabel: Neue Option hinzufügen
+  modalTitle: Optionseditor
+OptionsTable:
+  labelColumnHeader: Bezeichnung
+  valueColumnHeader: Wert
 PreviewSwitch:
   label: Vorschau
 PropertiesPanel:
@@ -29,3 +38,9 @@ PropertiesPanel:
   deleteItemButtonLabel: Löschen
 TemplatePropertiesButton:
   title: Vorlageneigenschaften
+TemplatePropertiesModal:
+  categoriesLabel: Kategorien
+  descriptionLabel: Beschreibung
+  identifierLabel: Bezeichner
+  languageLabel: Sprache
+  titleLabel: Title

@@ -12,11 +12,10 @@ export const TemplatePropertiesModal = ({ opened, onClose }: TemplatePropertiesM
 
   return (
     <Modal opened={opened} onClose={onClose} title="New Template - Properties">
-      <TextInput label={t("TemplatePropertiesModal.nameLabel")} />
+      <TextInput label={t("TemplatePropertiesModal.identifierLabel")} />
       <TextInput label={t("TemplatePropertiesModal.titleLabel")} />
       <Select
         label={t("TemplatePropertiesModal.languageLabel")}
-        placeholder={t("TemplatePropertiesModal.languagePlaceholder")}
         searchable
         data={appConfig.supportedTemplateLanguages.map((language) => ({
           value: language,
@@ -27,7 +26,6 @@ export const TemplatePropertiesModal = ({ opened, onClose }: TemplatePropertiesM
       <Textarea label={t("TemplatePropertiesModal.descriptionLabel")} />
       <MultiSelect
         label={t("TemplatePropertiesModal.categoriesLabel")}
-        placeholder={t("TemplatePropertiesModal.categoriesPlaceholder")}
         searchable
         data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
           group: t(`categories.group.${group}`),

@@ -1,0 +1,4 @@
+body.gabbing,
+body.grabbing * {
+  cursor: grabbing !important;
+}
