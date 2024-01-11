@@ -1,5 +1,6 @@
-import { ScrollArea, Stack, Text, Title } from "@mantine/core"
+import { Flex, ScrollArea, Stack, Text } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { PanelToolbar } from "../template/PanelToolbar"
 import { BooleanFieldMenuItem } from "./menuItems/BooleanFieldMenuItem"
 import { FreeTextFieldMenuItem } from "./menuItems/FreeTextFieldMenuItem"
 import { GroupMenuItem } from "./menuItems/GroupMenuItem"
@@ -14,12 +15,10 @@ export const MenuPanel = () => {
   const { t } = useSiteTranslation()
 
   return (
-    <ScrollArea offsetScrollbars h="100%" style={{ flexGrow: 1 }}>
-      <Stack pl="xs">
-        <Title order={4} c="dimmed">
-          {t("MenuPanel.components")}
-        </Title>
-        <Stack gap="xs">
+    <Flex component="form" pos="relative" h="100%" direction="column">
+      <PanelToolbar title={t("MenuPanel.components")} />
+      <ScrollArea h="100%">
+        <Stack gap="xs" p="xs">
           <Text c="dimmed">{t("MenuPanel.structure")}</Text>
           <GroupMenuItem label={t("MenuPanel.groupLabel")} />
           <BooleanFieldMenuItem label={t("MenuPanel.booleanFieldLabel")} />
@@ -33,7 +32,7 @@ export const MenuPanel = () => {
           <Text c="dimmed">{t("MenuPanel.others")}</Text>
           <HintMenuItem label={t("MenuPanel.hintLabel")} />
         </Stack>
-      </Stack>
-    </ScrollArea>
+      </ScrollArea>
+    </Flex>
   )
 }

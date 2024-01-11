@@ -48,7 +48,7 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
           <Loader type="bars" />
         </Center>
       )}
-      {(dataInitialized || !isDesigning) && (
+      {dataInitialized && !isDesigning && (
         <ScrollArea>
           <Stack
             id={REPORT_CONTENT_ID}

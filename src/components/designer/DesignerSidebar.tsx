@@ -24,7 +24,7 @@ export const DesignerSidebar = () => {
   })
 
   return (
-    <Paper shadow="sm" p="xs" h="100%" withBorder>
+    <Paper shadow="sm" h="100%" withBorder>
       <Box h="100%" display={draggedItem || selectedItem ? "none" : "block"}>
         <MenuPanel />
       </Box>

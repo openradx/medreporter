@@ -1,4 +1,4 @@
-import { Button, CloseButton, Group, Stack, Title, ScrollArea } from "@mantine/core"
+import { Button, CloseButton, Stack, ScrollArea, Flex } from "@mantine/core"
 import invariant from "tiny-invariant"
 import { match } from "ts-pattern"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -6,6 +6,7 @@ import { selectSelectedItem, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { deleteNode, selectTemplate } from "~/state/templateSlice"
 import { findNode } from "~/utils/designerUtils"
+import { PanelToolbar } from "../template/PanelToolbar"
 import { BooleanFieldPropertiesForm } from "./propertyForms/BooleanFieldPropertiesForm"
 import { FreeTextFieldPropertiesForm } from "./propertyForms/FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./propertyForms/GroupPropertiesForm"
@@ -44,26 +45,27 @@ export const PropertiesPanel = () => {
     })
 
   return (
-    <ScrollArea offsetScrollbars h="100%" style={{ flexGrow: 1 }}>
-      <Stack pl="xs">
-        <Group justify="space-between" wrap="nowrap">
-          <Title order={5} c="dimmed">
-            {t("PropertiesPanel.panelTitle")}
-          </Title>
-          <CloseButton onClick={() => dispatch(setSelectedItem(null))} />
-        </Group>
-        {propertiesForm}
-        <Button
-          color="red"
-          onClick={() => {
-            invariant(selectedItem, "No item selected")
-            dispatch(deleteNode({ nodeId: selectedItem }))
-            dispatch(setSelectedItem(null))
-          }}
-        >
-          {t("PropertiesPanel.deleteItemButtonLabel")}
-        </Button>
-      </Stack>
-    </ScrollArea>
+    <Flex component="form" pos="relative" h="100%" direction="column">
+      <PanelToolbar
+        title={t("PropertiesPanel.panelTitle")}
+        actions={<CloseButton onClick={() => dispatch(setSelectedItem(null))} />}
+        actionsPosition="right"
+      />
+      <ScrollArea h="100%" style={{ flexGrow: 1 }}>
+        <Stack gap="xs" p="xs">
+          {propertiesForm}
+          <Button
+            color="red"
+            onClick={() => {
+              invariant(selectedItem, "No item selected")
+              dispatch(deleteNode({ nodeId: selectedItem }))
+              dispatch(setSelectedItem(null))
+            }}
+          >
+            {t("PropertiesPanel.deleteItemButtonLabel")}
+          </Button>
+        </Stack>
+      </ScrollArea>
+    </Flex>
   )
 }

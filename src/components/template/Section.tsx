@@ -20,11 +20,11 @@ export const Section = ({
 }: SectionProps) => (
   <SectionContextProvider value={{ id, label, active }}>
     {isDesigning ? (
-      <ScrollArea style={{ flexGrow: 1 }} className={classes.designerSection}>
+      <ScrollArea h="100%" style={{ flexGrow: 1 }} className={classes.designerSection}>
         {children}
       </ScrollArea>
     ) : (
-      <ScrollArea style={{ flexGrow: 1 }}>
+      <ScrollArea h="100%" style={{ flexGrow: 1 }}>
         <Stack h="100%" display={active ? "flex" : "none"} gap="sm" p="sm">
           {children}
         </Stack>
