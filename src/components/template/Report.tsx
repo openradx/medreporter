@@ -49,7 +49,7 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
         </Center>
       )}
       {(dataInitialized || !isDesigning) && (
-        <ScrollArea className={classes.report}>
+        <ScrollArea>
           <Stack
             id={REPORT_CONTENT_ID}
             h="100%"
@@ -61,7 +61,11 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
           </Stack>
         </ScrollArea>
       )}
-      {isDesigning && <ScrollArea h="100%">{children}</ScrollArea>}
+      {isDesigning && (
+        <ScrollArea h="100%" className={classes.designerReport}>
+          {children}
+        </ScrollArea>
+      )}
     </Paper>
   )
 }
