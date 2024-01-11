@@ -30,14 +30,14 @@ export const SectionAdapter = ({ node, active }: SectionAdapterProps) => {
 
   if (isDesigning) {
     return (
-      <Section id={node.nodeId} label={node.label} active={active}>
+      <Section id={node.nodeId} label={node.label} active={active} isDesigning={isDesigning}>
         <DroppableCanvasContainer node={node}>{children}</DroppableCanvasContainer>
       </Section>
     )
   }
 
   return (
-    <Section id={node.nodeId} label={node.label} active={active}>
+    <Section id={node.nodeId} label={node.label} active={active} isDesigning={isDesigning}>
       {children}
     </Section>
   )

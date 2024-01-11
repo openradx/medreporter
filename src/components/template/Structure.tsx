@@ -1,4 +1,4 @@
-import { Box, Flex, Paper, ScrollArea } from "@mantine/core"
+import { Flex, Paper } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -48,9 +48,7 @@ export const Structure = ({ actions, children }: StructureProps) => {
               )
             }
           />
-          <ScrollArea style={{ flexGrow: 1 }}>
-            <Box p="sm">{children}</Box>
-          </ScrollArea>
+          {children}
         </Flex>
       </StructureForm>
     </Paper>

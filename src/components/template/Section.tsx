@@ -1,4 +1,4 @@
-import { Stack } from "@mantine/core"
+import { ScrollArea, Stack } from "@mantine/core"
 import { ReactNode } from "react"
 import { SectionContextProvider } from "~/contexts/SectionContext"
 
@@ -7,12 +7,25 @@ interface SectionProps {
   label: string
   active?: boolean
   children?: ReactNode
+  isDesigning?: boolean
 }
 
-export const Section = ({ id, label, active = true, children }: SectionProps) => (
+export const Section = ({
+  id,
+  label,
+  active = true,
+  children,
+  isDesigning = false,
+}: SectionProps) => (
   <SectionContextProvider value={{ id, label, active }}>
-    <Stack h="100%" display={active ? "flex" : "none"} gap="sm">
-      {children}
-    </Stack>
+    <ScrollArea style={{ flexGrow: 1 }}>
+      {isDesigning ? (
+        <>{children}</>
+      ) : (
+        <Stack h="100%" display={active ? "flex" : "none"} gap="sm" p="sm">
+          {children}
+        </Stack>
+      )}
+    </ScrollArea>
   </SectionContextProvider>
 )
