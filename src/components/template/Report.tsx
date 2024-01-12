@@ -1,7 +1,6 @@
-import { Center, Flex, Loader, Paper, ScrollArea } from "@mantine/core"
+import { Center, Loader, Paper, ScrollArea, Stack } from "@mantine/core"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants"
-import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectDataInitialized } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
@@ -15,12 +14,12 @@ import { ReportLanguageChooser } from "./ReportLanguageChooser"
 interface ReportProps {
   actions?: ReactNode
   children?: ReactNode
+  isDesigning?: boolean
 }
 
-export const Report = ({ actions, children }: ReportProps) => {
+export const Report = ({ actions, children, isDesigning = false }: ReportProps) => {
   const { t } = useSiteTranslation()
   const dataInitialized = useAppSelector(selectDataInitialized)
-  const isDesigning = useIsDesigning()
 
   return (
     <Paper
@@ -49,18 +48,22 @@ export const Report = ({ actions, children }: ReportProps) => {
           <Loader type="bars" />
         </Center>
       )}
-      {(dataInitialized || isDesigning) && (
-        <ScrollArea className={classes.report}>
-          <Flex
+      {dataInitialized && !isDesigning && (
+        <ScrollArea>
+          <Stack
             id={REPORT_CONTENT_ID}
             h="100%"
-            direction="column"
-            ff={isDesigning ? "inherit" : "monospace"}
+            ff="monospace"
             p="sm"
             style={{ whiteSpace: "pre-wrap", flexGrow: 1 }}
           >
             {children}
-          </Flex>
+          </Stack>
+        </ScrollArea>
+      )}
+      {isDesigning && (
+        <ScrollArea h="100%" className={classes.designerReport}>
+          {children}
         </ScrollArea>
       )}
     </Paper>
