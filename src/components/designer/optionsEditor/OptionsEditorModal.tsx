@@ -1,20 +1,9 @@
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Button, Group, Modal, Stack } from "@mantine/core"
-import copy from "fast-copy"
-import { useEffect } from "react"
-import { useFieldArray, useForm } from "react-hook-form"
-import { useDebouncedCallback } from "use-debounce"
-import { z } from "zod"
+import { Group, Modal, SegmentedControl, Stack } from "@mantine/core"
+import { useState } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import {
-  MultipleChoiceFieldNode,
-  Option,
-  SingleChoiceFieldNode,
-  optionsSchema,
-} from "~/schemas/structure"
-import { useAppDispatch } from "~/state/store"
-import { updateNode } from "~/state/templateSlice"
-import { OptionsTable } from "./OptionsTable"
+import { MultipleChoiceFieldNode, SingleChoiceFieldNode } from "~/schemas/structure"
+import { OptionsCodeEditor } from "./OptionsCodeEditor"
+import { OptionsFormEditor } from "./OptionsFormEditor"
 
 interface OptionsEditorModalProps {
   opened: boolean
@@ -24,48 +13,24 @@ interface OptionsEditorModalProps {
 
 export const OptionsEditorModal = ({ opened, onClose, node }: OptionsEditorModalProps) => {
   const { t } = useSiteTranslation()
-  const dispatch = useAppDispatch()
-
-  const { control, handleSubmit, watch, getValues } = useForm({
-    mode: "all",
-    resolver: zodResolver(z.object({ options: optionsSchema })),
-    defaultValues: { options: node.options },
-  })
-  const { fields, append, remove, move } = useFieldArray({
-    control,
-    name: "options",
-  })
-
-  const debounced = useDebouncedCallback((data: Option[]) => {
-    dispatch(updateNode({ nodeId: node.nodeId, data: { options: copy(data) } }))
-  }, 200)
-
-  useEffect(() => {
-    const subscription = watch(() => {
-      handleSubmit((data) => {
-        debounced(data.options)
-      })()
-    })
-    return () => subscription.unsubscribe()
-  }, [watch, handleSubmit, debounced])
-
-  const appendOption = () => {
-    const num = getValues("options").length + 1
-    return append({ label: `Option ${num}`, value: `option-${num}` })
-  }
+  const [panel, setPanel] = useState<"formEditor" | "codeEditor">("formEditor")
 
   return (
     <Modal size="lg" title={t("OptionsEditorModal.modalTitle")} opened={opened} onClose={onClose}>
-      <form>
-        <Stack>
-          <OptionsTable control={control} fields={fields} move={move} remove={remove} />
-          <Group justify="center">
-            <Button variant="outline" type="button" onClick={appendOption}>
-              {t("OptionsEditorModal.addOptionLabel")}
-            </Button>
-          </Group>
-        </Stack>
-      </form>
+      <Stack gap="xs">
+        <Group justify="center">
+          <SegmentedControl
+            value={panel}
+            onChange={(value) => setPanel(value as any)}
+            data={[
+              { value: "formEditor", label: t("OptionsEditorModal.formEditorLabel") },
+              { value: "codeEditor", label: t("OptionsEditorModal.codeEditorLabel") },
+            ]}
+          />
+        </Group>
+        {panel === "formEditor" && <OptionsFormEditor node={node} />}
+        {panel === "codeEditor" && <OptionsCodeEditor node={node} />}
+      </Stack>
     </Modal>
   )
 }

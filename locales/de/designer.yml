@@ -26,8 +26,11 @@ OptionsEditorButton:
   label_one: "{{count}} Option"
   label_other: "{{count}} Optionen"
 OptionsEditorModal:
-  addOptionLabel: Neue Option hinzufügen
+  codeEditorLabel: Codeeditor
+  formEditorLabel: Formulareditor
   modalTitle: Optionseditor
+OptionsFormEditor:
+  addOptionLabel: Neue Option hinzufügen
 OptionsTable:
   labelColumnHeader: Bezeichnung
   valueColumnHeader: Wert
