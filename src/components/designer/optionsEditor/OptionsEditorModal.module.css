@@ -1,0 +1,11 @@
+.optionsEditorModalTitle {
+  flex-grow: 1;
+}
+
+.optionsEditorModalBody {
+  height: calc(100% - 68px);
+}
+
+.optionsEditorContent {
+  height: 90vh;
+}

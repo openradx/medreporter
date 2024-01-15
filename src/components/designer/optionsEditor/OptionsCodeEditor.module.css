@@ -1,0 +1,10 @@
+.optionsCodeEditor {
+  & :global(.cm-theme-light) {
+    height: calc(100% - 50px);
+    padding-top: 4px;
+  }
+  & :global(.cm-theme-dark) {
+    height: calc(100% - 50px);
+    padding-top: 4px;
+  }
+}

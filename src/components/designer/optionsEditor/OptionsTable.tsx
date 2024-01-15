@@ -42,13 +42,18 @@ export const OptionsTable = ({ control, fields, move, remove }: OptionsTableProp
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <Table withRowBorders={false} horizontalSpacing={4} verticalSpacing={4}>
+      <Table
+        withRowBorders={false}
+        horizontalSpacing={4}
+        verticalSpacing={4}
+        style={{ tableLayout: "fixed" }}
+      >
         <Table.Thead>
           <Table.Tr>
-            <Table.Th />
-            <Table.Th>{t("OptionsTable.labelColumnHeader")}</Table.Th>
-            <Table.Th>{t("OptionsTable.valueColumnHeader")}</Table.Th>
-            <Table.Th />
+            <Table.Th style={{ width: "7%" }} />
+            <Table.Th style={{ width: "43%" }}>{t("OptionsTable.labelColumnHeader")}</Table.Th>
+            <Table.Th style={{ width: "43%" }}>{t("OptionsTable.valueColumnHeader")}</Table.Th>
+            <Table.Th style={{ width: "7%" }} />
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>

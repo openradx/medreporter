@@ -40,7 +40,7 @@ export const DraggableOptionRow = ({
           <DragIcon size={20} />
         </div>
       </Table.Td>
-      <Table.Td>
+      <Table.Td style={{ verticalAlign: "top" }}>
         <Controller
           control={control}
           name={`options.${index}.label`}
@@ -54,7 +54,7 @@ export const DraggableOptionRow = ({
           )}
         />
       </Table.Td>
-      <Table.Td>
+      <Table.Td style={{ verticalAlign: "top" }}>
         <Controller
           control={control}
           name={`options.${index}.value`}

@@ -9,6 +9,7 @@ import { ZodError } from "zod"
 import { MultipleChoiceFieldNode, SingleChoiceFieldNode, optionsSchema } from "~/schemas/structure"
 import { useAppDispatch } from "~/state/store"
 import { updateNode } from "~/state/templateSlice"
+import classes from "./OptionsCodeEditor.module.css"
 
 interface OptionsCodeEditorProps {
   node: SingleChoiceFieldNode | MultipleChoiceFieldNode
@@ -53,15 +54,16 @@ export const OptionsCodeEditor = ({ node }: OptionsCodeEditorProps) => {
   const linterExt = linter(jsonParseLinter())
 
   return (
-    <Stack>
+    <Stack h="100%" gap={0} className={classes.optionsCodeEditor}>
       <CodeMirror
         minHeight={minHeight}
+        height="100%"
         theme={colorScheme === "dark" ? "dark" : "light"}
         extensions={[theme, json(), linterExt]}
         value={sourceRef.current}
         onChange={handleChange}
       />
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red", height: "50px", margin: 0, padding: 4 }}>{error}</p>}
     </Stack>
   )
 }

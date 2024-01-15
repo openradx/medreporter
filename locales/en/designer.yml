@@ -28,7 +28,7 @@ OptionsEditorButton:
 OptionsEditorModal:
   codeEditorLabel: Code Editor
   formEditorLabel: Form Editor
-  modalTitle: Options Editor
+  modalTitle: Options
 OptionsFormEditor:
   addOptionLabel: Add new option
 OptionsTable:
