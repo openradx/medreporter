@@ -44,12 +44,12 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
         }
       />
       {!dataInitialized && !isDesigning && (
-        <Center style={{ flexGrow: 1 }}>
+        <Center h="100%" style={{ flexGrow: 1 }}>
           <Loader type="bars" />
         </Center>
       )}
       {dataInitialized && !isDesigning && (
-        <ScrollArea>
+        <ScrollArea h="100%">
           <Stack
             id={REPORT_CONTENT_ID}
             h="100%"
