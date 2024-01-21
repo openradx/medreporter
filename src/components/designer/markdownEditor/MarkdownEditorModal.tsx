@@ -43,10 +43,10 @@ export const MarkdownEditorModal = ({
       onClose={onClose}
       classNames={{
         title: classes.markdownEditorModalTitle,
-        body: classes.markdownEditorModalBody,
+        body: panel === "preview" ? classes.markdownEditorModalBody : undefined,
         content: classes.markdownEditorContent,
       }}
-      scrollAreaComponent={ScrollArea.Autosize}
+      scrollAreaComponent={panel === "preview" ? ScrollArea.Autosize : undefined}
     >
       {panel === "editor" && <MarkdownCodeEditor value={value} onChange={onChange} />}
       {panel === "preview" && <MarkdownPreview value={value} />}

@@ -8,6 +8,7 @@ interface MarkdownCodeEditorProps {
 export const MarkdownCodeEditor = ({ value, onChange }: MarkdownCodeEditorProps) => (
   <Textarea
     minRows={10}
+    h="100%"
     autosize
     value={value}
     onChange={(event) => onChange(event.currentTarget.value)}

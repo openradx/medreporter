@@ -3,7 +3,7 @@
 }
 
 .markdownEditorModalBody{
-  height: calc(100% - 68px);
+  height: 100%;
 }
 
 .markdownEditorContent {
