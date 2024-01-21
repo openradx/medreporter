@@ -34,5 +34,6 @@ vscode:
     - streetsidesoftware.code-spell-checker
     - streetsidesoftware.code-spell-checker-german
     - streetsidesoftware.code-spell-checker-medical-terms
+    - stylelint.vscode-stylelint
     - vunguyentuan.vscode-postcss
     - wayou.vscode-todo-highlight
