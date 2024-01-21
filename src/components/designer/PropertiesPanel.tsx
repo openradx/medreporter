@@ -17,6 +17,7 @@ import { NumberFieldPropertiesForm } from "./propertyForms/NumberFieldProperties
 import { ParagraphPropertiesForm } from "./propertyForms/ParagraphPropertiesForm"
 import { SingleChoiceFieldPropertiesForm } from "./propertyForms/SingleChoiceFieldPropertiesForm"
 import { StatementPropertiesForm } from "./propertyForms/StatementPropertiesForm"
+import { TimeFieldPropertiesForm } from "./propertyForms/TimeFieldPropertiesForm"
 
 export const PropertiesPanel = () => {
   const selectedItem = useAppSelector(selectSelectedItem)
@@ -37,6 +38,9 @@ export const PropertiesPanel = () => {
     .with({ type: "Group" }, (node) => <GroupPropertiesForm key={node.nodeId} node={node} />)
     .with({ type: "DateField" }, (node) => (
       <DateFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "TimeField" }, (node) => (
+      <TimeFieldPropertiesForm key={node.nodeId} node={node} />
     ))
     .with({ type: "BooleanField" }, (node) => (
       <BooleanFieldPropertiesForm key={node.nodeId} node={node} />

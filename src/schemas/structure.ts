@@ -72,7 +72,7 @@ export const dateFieldNodeSchema = nodeSchema.extend({
 export type DateFieldNode = z.infer<typeof dateFieldNodeSchema>
 
 // TODO: refine default
-const timeFieldNodeSchema = nodeSchema.extend({
+export const timeFieldNodeSchema = nodeSchema.extend({
   type: z.literal("TimeField"),
   ...fieldProperties,
   withSeconds: z.boolean(),

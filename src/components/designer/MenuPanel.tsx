@@ -11,6 +11,7 @@ import { NumberFieldMenuItem } from "./menuItems/NumberFieldMenuItem"
 import { ParagraphMenuItem } from "./menuItems/ParagraphMenuItem"
 import { SingleChoiceFieldMenuItem } from "./menuItems/SingleChoiceFieldMenuItem"
 import { StatementMenuItem } from "./menuItems/StatementMenuItem"
+import { TimeFieldMenuItem } from "./menuItems/TimeFieldMenuItem"
 
 export const MenuPanel = () => {
   const { t } = useSiteTranslation()
@@ -23,6 +24,7 @@ export const MenuPanel = () => {
           <Text c="dimmed">{t("MenuPanel.structure")}</Text>
           <GroupMenuItem label={t("MenuPanel.groupLabel")} />
           <DateFieldMenuItem label={t("MenuPanel.dateFieldLabel")} />
+          <TimeFieldMenuItem label={t("MenuPanel.timeFieldLabel")} />
           <BooleanFieldMenuItem label={t("MenuPanel.booleanFieldLabel")} />
           <FreeTextFieldMenuItem label={t("MenuPanel.freeTextFieldLabel")} />
           <NumberFieldMenuItem label={t("MenuPanel.numberFieldLabel")} />
