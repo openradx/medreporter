@@ -5,15 +5,18 @@ import { DateInput } from "../inputs/DateInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
-interface DateFieldProps extends CommonFieldProps<string | null> {}
+interface DateFieldProps extends CommonFieldProps<string | null> {
+  format?: string
+}
 
 export const DateField = ({
   id: fieldId,
   label,
   extras,
-  defaultValue = null,
   disabled,
   hidden,
+  format = "YYYY-MM-DD",
+  defaultValue = null,
 }: DateFieldProps) => {
   let serializableDefaultValue: string | null = null
   if (defaultValue) {
@@ -29,10 +32,11 @@ export const DateField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, value, onChange, hidden, format, defaultValue }}>
       <DateInput
         {...{ label, extras, disabled }}
         value={value ? new Date(value) : null}
+        format={format}
         onChange={(date) => onChange(date ? date.toISOString() : null)}
       />
     </BaseField>

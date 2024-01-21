@@ -8,6 +8,7 @@ import { deleteNode, selectTemplate } from "~/state/templateSlice"
 import { findNode } from "~/utils/designerUtils"
 import { PanelToolbar } from "../template/PanelToolbar"
 import { BooleanFieldPropertiesForm } from "./propertyForms/BooleanFieldPropertiesForm"
+import { DateFieldPropertiesForm } from "./propertyForms/DateFieldPropertiesForm"
 import { FreeTextFieldPropertiesForm } from "./propertyForms/FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./propertyForms/GroupPropertiesForm"
 import { HintPropertiesForm } from "./propertyForms/HintPropertiesForm"
@@ -34,6 +35,9 @@ export const PropertiesPanel = () => {
   // See https://legacy.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key
   const propertiesForm = match(selectedNode)
     .with({ type: "Group" }, (node) => <GroupPropertiesForm key={node.nodeId} node={node} />)
+    .with({ type: "DateField" }, (node) => (
+      <DateFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
     .with({ type: "BooleanField" }, (node) => (
       <BooleanFieldPropertiesForm key={node.nodeId} node={node} />
     ))
