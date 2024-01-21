@@ -1,20 +1,22 @@
-import { Group, Textarea } from "@mantine/core"
+import { ActionIcon, Group, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
+import { MdCode as CodeIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { MarkdownEditorButton } from "../markdownEditor/MarkdownEditorButton"
 
-export const InfoProperty = () => {
+export const DisabledProperty = () => {
   const { t } = useSiteTranslation()
 
   return (
     <Controller
-      name="info"
+      name="disabled"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
         <Textarea
           label={
             <Group gap="xs" align="center">
-              {t("InfoProperty.label")}
-              <MarkdownEditorButton value={value} onChange={onChange} />
+              {t("DisabledProperty.label")}
+              <ActionIcon color="red" size="sm" variant="subtle">
+                <CodeIcon size={20} />
+              </ActionIcon>
             </Group>
           }
           value={value}

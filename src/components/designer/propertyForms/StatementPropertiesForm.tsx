@@ -1,6 +1,7 @@
 import { TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { StatementNode, statementNodeSchema } from "~/schemas/report"
+import { HiddenProperty } from "../properties/HiddenProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface StatementPropertiesFormProps {
@@ -25,11 +26,6 @@ export const StatementPropertiesForm = ({ node }: StatementPropertiesFormProps) 
         <Textarea label="Content" value={value} onChange={onChange} error={error?.message} />
       )}
     />
-    <Controller
-      name="hidden"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Hidden" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <HiddenProperty />
   </PropertiesForm>
 )

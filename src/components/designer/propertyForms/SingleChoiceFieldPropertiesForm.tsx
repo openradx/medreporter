@@ -1,8 +1,12 @@
-import { Input, Select, TextInput, Textarea } from "@mantine/core"
+import { Input, Select, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { SingleChoiceFieldNode, singleChoiceFieldNodeSchema } from "~/schemas/structure"
 import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
+import { DisabledProperty } from "../properties/DisabledProperty"
+import { FieldIdProperty } from "../properties/FieldIdProperty"
+import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
+import { LabelProperty } from "../properties/LabelProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface SingleChoiceFieldPropertiesFormProps {
@@ -15,31 +19,11 @@ export const SingleChoiceFieldPropertiesForm = ({ node }: SingleChoiceFieldPrope
     schema={singleChoiceFieldNodeSchema.omit({ nodeId: true, type: true })}
     initialValues={node}
   >
-    <Controller
-      name="label"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput label="Label" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
-    <Controller
-      name="fieldId"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput label="Field ID" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <LabelProperty />
+    <FieldIdProperty />
     <InfoProperty />
-    <Controller
-      name="disabled"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Disabled" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
-    <Controller
-      name="hidden"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Hidden" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <DisabledProperty />
+    <HiddenProperty />
     <Controller
       name="variant"
       render={({ field: { value, onChange }, fieldState: { error } }) => (

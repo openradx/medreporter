@@ -1,10 +1,18 @@
+DisabledProperty:
+  label: Disabled
 EditorItem:
   id: ID
   type: Type
+FieldIdProperty:
+  label: ID
 FigureProperties:
   title: Figure
+HiddenProperty:
+  label: Hidden
 InfoProperty:
   label: Info
+LabelProperty:
+  label: Label
 MarkdownEditorButton:
   title: Markdown Editor
 MarkdownEditorModal:

@@ -1,8 +1,18 @@
+DisabledProperty:
+  label: Deaktiviert
 EditorItem:
   id: ID
   type: Typ
+FieldIdProperty:
+  label: ID
 FigureProperties:
   figureTitle: Abbildung
+HiddenProperty:
+  label: Ausgeblendet
+InfoProperty:
+  label: Info
+LabelProperty:
+  label: Bezeichnung
 MarkdownEditorButton:
   title: Markdown Editor
 MarkdownEditorModal:

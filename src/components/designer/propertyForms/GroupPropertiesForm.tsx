@@ -1,7 +1,10 @@
-import { Select, Switch, TextInput, Textarea } from "@mantine/core"
+import { Select, Switch } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { GroupNode, groupNodeSchema } from "~/schemas/structure"
+import { DisabledProperty } from "../properties/DisabledProperty"
+import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
+import { LabelProperty } from "../properties/LabelProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface GroupPropertiesFormProps {
@@ -14,25 +17,10 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
     schema={groupNodeSchema.omit({ nodeId: true, type: true, children: true })}
     initialValues={node}
   >
-    <Controller
-      name="label"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput label="Label" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <LabelProperty />
     <InfoProperty />
-    <Controller
-      name="disabled"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Disabled" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
-    <Controller
-      name="hidden"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Hidden" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <DisabledProperty />
+    <HiddenProperty />
     <Controller
       name="direction"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
