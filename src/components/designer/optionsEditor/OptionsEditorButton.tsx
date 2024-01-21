@@ -4,11 +4,11 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MultipleChoiceFieldNode, SingleChoiceFieldNode } from "~/schemas/structure"
 import { OptionsEditorModal } from "./OptionsEditorModal"
 
-interface OptionsEditorProps {
+interface OptionsEditorButtonProps {
   node: SingleChoiceFieldNode | MultipleChoiceFieldNode
 }
 
-export const OptionsEditorButton = ({ node }: OptionsEditorProps) => {
+export const OptionsEditorButton = ({ node }: OptionsEditorButtonProps) => {
   const { t } = useSiteTranslation()
   const [opened, { open, close }] = useDisclosure(false)
 

@@ -1,6 +1,7 @@
 import { Select, Switch, TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { GroupNode, groupNodeSchema } from "~/schemas/structure"
+import { InfoProperty } from "../properties/InfoProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface GroupPropertiesFormProps {
@@ -19,12 +20,7 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
         <TextInput label="Label" value={value} onChange={onChange} error={error?.message} />
       )}
     />
-    <Controller
-      name="info"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Info" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <InfoProperty />
     <Controller
       name="disabled"
       render={({ field: { value, onChange }, fieldState: { error } }) => (

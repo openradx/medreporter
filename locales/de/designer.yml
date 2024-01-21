@@ -3,6 +3,12 @@ EditorItem:
   type: Typ
 FigureProperties:
   figureTitle: Abbildung
+MarkdownEditorButton:
+  title: Markdown Editor
+MarkdownEditorModal:
+  modalTitle: Markdown Editor
+  editorLabel: Editor
+  previewLabel: Vorschau
 MenuPanel:
   booleanFieldLabel: Boolisch
   components: Komponenten

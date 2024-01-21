@@ -3,6 +3,14 @@ EditorItem:
   type: Type
 FigureProperties:
   title: Figure
+InfoProperty:
+  label: Info
+MarkdownEditorButton:
+  title: Markdown Editor
+MarkdownEditorModal:
+  modalTitle: Markdown Editor
+  editorLabel: Editor
+  previewLabel: Preview
 MenuPanel:
   booleanFieldLabel: Boolean
   components: Components

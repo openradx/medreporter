@@ -2,6 +2,7 @@
 
 ## Kai
 
+- Check where fast copy is really necessary in StructureForm
 - Rename Designer to Builder
 - Use timestamp and key prop in MenuPanel and use useRef in menu items itself
 - there is languages in common.yml and a languages.yml, decide for one
