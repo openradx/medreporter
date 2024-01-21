@@ -1,0 +1,12 @@
+.markdownEditorModalTitle {
+  flex-grow: 1;
+}
+
+.markdownEditorModalBody{
+  height: calc(100% - 68px);
+}
+
+.markdownEditorContent {
+  height: 90vh;
+}
+

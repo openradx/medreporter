@@ -1,6 +1,7 @@
-import { Select, Textarea } from "@mantine/core"
+import { Input, Select, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { MultipleChoiceFieldNode, multipleChoiceFieldNodeSchema } from "~/schemas/structure"
+import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
@@ -48,8 +49,10 @@ export const MultipleChoiceFieldPropertiesForm = ({
     />
     <Controller
       name="options"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Options" value={value} onChange={onChange} error={error?.message} />
+      render={({ fieldState: { error } }) => (
+        <Input.Wrapper label="Options" error={error?.message}>
+          <OptionsEditorButton node={node} />
+        </Input.Wrapper>
       )}
     />
     <Controller
