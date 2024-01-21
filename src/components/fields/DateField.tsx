@@ -15,7 +15,7 @@ export const DateField = ({
   extras,
   disabled,
   hidden,
-  format = "YYYY-MM-DD",
+  format,
   defaultValue = null,
 }: DateFieldProps) => {
   let serializableDefaultValue: string | null = null

@@ -4,6 +4,8 @@ import "@mantine/dates/styles.css"
 import { ModalsProvider } from "@mantine/modals"
 import { Notifications } from "@mantine/notifications"
 import { getCookie } from "cookies-next"
+import dayjs from "dayjs"
+import customParseFormat from "dayjs/plugin/customParseFormat"
 import { enableMapSet, enablePatches } from "immer"
 import { GetServerSidePropsContext } from "next"
 import { SessionProvider } from "next-auth/react"
@@ -21,6 +23,9 @@ import { trpc } from "~/utils/trpc"
 // Enable additional Immer.js features
 enablePatches() // for undo / redo
 enableMapSet() // for TransformerRegistry
+
+// Allow dayjs to use custom format
+dayjs.extend(customParseFormat)
 
 export interface MyAppProps extends AppProps {
   Component: PageWithLayout

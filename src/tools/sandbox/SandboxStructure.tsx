@@ -12,7 +12,9 @@ export const SandboxStructure = () => (
     <Section label="default" id="default">
       <Hint>Just a tool to play with the group and the functions of the fields.</Hint>
       <Group border label="Sandbox">
-        <DateField id="today" label="Today" />
+        <DateField id="today" label="Today" format="DD/MM/YYYY" />
+        <DateField id="tomorrow" label="Tomorrow" format="YYYY-MM-DD" />
+        <DateField id="yesterday" label="Yesterday" />
         <NumberField
           id="number"
           label="Random number"

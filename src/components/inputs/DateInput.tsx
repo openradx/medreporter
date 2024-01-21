@@ -1,6 +1,4 @@
 import { DateInput as MantineDateInput } from "@mantine/dates"
-import dayjs from "dayjs"
-import customParseFormat from "dayjs/plugin/customParseFormat"
 import { ReactNode } from "react"
 import { InputLabel } from "./InputLabel"
 
@@ -22,17 +20,13 @@ export const DateInput = ({
   onChange,
   disabled,
   format,
-}: DateInputProps) => {
-  dayjs.extend(customParseFormat)
-
-  return (
-    <MantineDateInput
-      label={(label || extras) && <InputLabel label={label} extras={extras} />}
-      locale={locale}
-      value={value}
-      onChange={onChange}
-      valueFormat={format}
-      disabled={disabled}
-    />
-  )
-}
+}: DateInputProps) => (
+  <MantineDateInput
+    label={(label || extras) && <InputLabel label={label} extras={extras} />}
+    locale={locale}
+    value={value}
+    onChange={onChange}
+    valueFormat={format || "MM/DD/YYYY"}
+    disabled={disabled}
+  />
+)

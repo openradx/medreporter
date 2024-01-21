@@ -65,7 +65,7 @@ export const PropertiesPanel = () => {
     })
 
   return (
-    <Flex component="form" pos="relative" h="100%" direction="column">
+    <Flex pos="relative" h="100%" direction="column">
       <PanelToolbar
         title={t("PropertiesPanel.panelTitle")}
         actions={<CloseButton onClick={() => dispatch(setSelectedItem(null))} />}
