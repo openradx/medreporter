@@ -1,6 +1,7 @@
 import { Switch, TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { BooleanFieldNode, booleanFieldNodeSchema } from "~/schemas/structure"
+import { InfoProperty } from "../properties/InfoProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface BooleanFieldPropertiesFormProps {
@@ -25,12 +26,7 @@ export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormP
         <TextInput label="Field ID" value={value} onChange={onChange} error={error?.message} />
       )}
     />
-    <Controller
-      name="info"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Info" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <InfoProperty />
     <Controller
       name="disabled"
       render={({ field: { value, onChange }, fieldState: { error } }) => (

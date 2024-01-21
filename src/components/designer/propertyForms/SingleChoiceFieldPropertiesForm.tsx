@@ -2,6 +2,7 @@ import { Input, Select, TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { SingleChoiceFieldNode, singleChoiceFieldNodeSchema } from "~/schemas/structure"
 import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
+import { InfoProperty } from "../properties/InfoProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface SingleChoiceFieldPropertiesFormProps {
@@ -26,12 +27,7 @@ export const SingleChoiceFieldPropertiesForm = ({ node }: SingleChoiceFieldPrope
         <TextInput label="Field ID" value={value} onChange={onChange} error={error?.message} />
       )}
     />
-    <Controller
-      name="info"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Info" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <InfoProperty />
     <Controller
       name="disabled"
       render={({ field: { value, onChange }, fieldState: { error } }) => (
