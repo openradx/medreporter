@@ -1,7 +1,7 @@
-import { ActionIcon, Group, Textarea } from "@mantine/core"
+import { Group, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
-import { MdCode as CodeIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { ScriptEditorButton } from "../scriptEditor/ScriptEditorButton"
 
 export const HiddenProperty = () => {
   const { t } = useSiteTranslation()
@@ -14,9 +14,7 @@ export const HiddenProperty = () => {
           label={
             <Group gap="xs" align="center">
               {t("HiddenProperty.label")}
-              <ActionIcon color="red" size="sm" variant="subtle">
-                <CodeIcon size={20} />
-              </ActionIcon>
+              <ScriptEditorButton />
             </Group>
           }
           value={value}
