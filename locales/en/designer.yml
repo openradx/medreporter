@@ -19,6 +19,8 @@ MarkdownEditorModal:
   modalTitle: Markdown Editor
   editorLabel: Editor
   previewLabel: Preview
+MaxProperty:
+  label: Maximal value
 MenuPanel:
   booleanFieldLabel: Boolean
   components: Components
@@ -36,8 +38,12 @@ MenuPanel:
   structure: Structure
   timeFieldLabel: Time
   statementLabel: Statement
+MinProperty:
+  label: Minimal value
 NewTemplate:
   navbarTitle: New Template
+NumberDefaultProperty:
+  label: Default
 OptionsEditorButton:
   label_one: "{{count}} option"
   label_other: "{{count}} options"
@@ -50,11 +56,17 @@ OptionsFormEditor:
 OptionsTable:
   labelColumnHeader: Label
   valueColumnHeader: Value
+PrecisionProperty:
+  label: Precision
 PreviewSwitch:
   label: Preview
 PropertiesPanel:
   panelTitle: Properties
   deleteItemButtonLabel: Delete
+StartProperty:
+  label: Start
+StepProperty:
+  label: Step
 TemplatePropertiesButton:
   title: Template Properties
 TemplatePropertiesModal:
