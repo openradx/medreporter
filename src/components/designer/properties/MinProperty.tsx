@@ -1,3 +1,7 @@
+import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { NumberMetaProperty } from "./NumberMetaProperty"
 
-export const MinProperty = () => <NumberMetaProperty name="min" labelKey="MinProperty.label" />
+export const MinProperty = () => {
+  const { t } = useSiteTranslation()
+  return <NumberMetaProperty name="min" label={t("MinProperty.label")} />
+}

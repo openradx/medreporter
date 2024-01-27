@@ -1,21 +1,8 @@
-import { TextInput } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { TextMetaProperty } from "./TextMetaProperty"
 
 export const LabelProperty = () => {
   const { t } = useSiteTranslation()
 
-  return (
-    <Controller
-      name="label"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput
-          label={t("LabelProperty.label")}
-          value={value}
-          onChange={onChange}
-          error={error?.message}
-        />
-      )}
-    />
-  )
+  return <TextMetaProperty name="label" label={t("LabelProperty.label")} />
 }

@@ -1,5 +1,7 @@
+import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { NumberMetaProperty } from "./NumberMetaProperty"
 
-export const NumberDefaultProperty = () => (
-  <NumberMetaProperty name="default" labelKey="DefaultProperty.label" />
-)
+export const NumberDefaultProperty = () => {
+  const { t } = useSiteTranslation()
+  return <NumberMetaProperty name="default" label={t("NumberDefaultProperty.label")} />
+}
