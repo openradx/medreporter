@@ -1,3 +1,7 @@
+BooleanDefaultProperty:
+  label: Default
+BorderProperty:
+  label: Border
 DisabledProperty:
   label: Disabled
 EditorItem:
@@ -7,12 +11,18 @@ FieldIdProperty:
   label: ID
 FigureProperties:
   title: Figure
+FreeTextDefaultProperty:
+  label: Default
 HiddenProperty:
   label: Hidden
 InfoProperty:
   label: Info
 LabelProperty:
   label: Label
+LinkProperty:
+  label: Link
+ListProperty:
+  label: List
 MarkdownEditorButton:
   title: Markdown Editor
 MarkdownEditorModal:
@@ -40,6 +50,8 @@ MenuPanel:
   statementLabel: Statement
 MinProperty:
   label: Minimal value
+MultilineProperty:
+  label: Multiline
 NewTemplate:
   navbarTitle: New Template
 NumberDefaultProperty:
@@ -75,3 +87,5 @@ TemplatePropertiesModal:
   identifierLabel: Identifier
   languageLabel: Language
   titleLabel: Title
+WithSecondsProperty:
+  label: With seconds

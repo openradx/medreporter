@@ -1,4 +1,4 @@
-import { Switch, TextInput } from "@mantine/core"
+import { TextInput } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { TimeFieldNode, timeFieldNodeSchema } from "~/schemas/structure"
 import { DisabledProperty } from "../properties/DisabledProperty"
@@ -6,6 +6,7 @@ import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { WithSecondsProperty } from "../properties/WithSecondsProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface TimeFieldPropertiesFormProps {
@@ -23,12 +24,7 @@ export const TimeFieldPropertiesForm = ({ node }: TimeFieldPropertiesFormProps) 
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
-    <Controller
-      name="withSeconds"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch label="With seconds" checked={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <WithSecondsProperty />
     <Controller
       name="default"
       render={({ field: { value, onChange }, fieldState: { error } }) => (

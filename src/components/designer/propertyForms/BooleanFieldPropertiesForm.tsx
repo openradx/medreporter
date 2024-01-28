@@ -1,6 +1,5 @@
-import { Switch } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { BooleanFieldNode, booleanFieldNodeSchema } from "~/schemas/structure"
+import { BooleanDefaultProperty } from "../properties/BooleanDefaultProperty"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
@@ -23,17 +22,6 @@ export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormP
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
-    <Controller
-      name="default"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch
-          label="Default value"
-          labelPosition="left"
-          checked={!!value}
-          onChange={onChange}
-          error={error?.message}
-        />
-      )}
-    />
+    <BooleanDefaultProperty />
   </PropertiesForm>
 )
