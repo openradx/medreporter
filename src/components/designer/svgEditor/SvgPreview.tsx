@@ -1,5 +1,7 @@
+import SVG from "react-inlinesvg"
+
 interface SvgPreviewProps {
   value: string
 }
 
-export const SvgPreview = ({ value }: SvgPreviewProps) => <div>{value}</div>
+export const SvgPreview = ({ value }: SvgPreviewProps) => <SVG src={value} />
