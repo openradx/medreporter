@@ -2,6 +2,8 @@ BooleanDefaultProperty:
   label: Default
 BorderProperty:
   label: Begrenzung
+DateDefaultProperty:
+  label: Default
 DisabledProperty:
   label: Deaktiviert
   modalTitle: Deaktiviert

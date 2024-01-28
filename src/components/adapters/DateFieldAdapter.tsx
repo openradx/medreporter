@@ -25,7 +25,7 @@ export const DateFieldAdapter = ({ node }: DateFieldAdapterProps) => {
       disabled={evalCodeToBoolean(node.disabled)}
       hidden={evalCodeToBoolean(node.hidden)}
       format={node.format}
-      defaultValue={node.default ? dayjs(node.default, node.format).toISOString() : undefined}
+      defaultValue={node.default ? dayjs(node.default).toISOString() : undefined}
     />
   )
 }
