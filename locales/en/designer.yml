@@ -25,6 +25,8 @@ FieldIdProperty:
   label: ID
 FigureProperty:
   label: Figure
+FormatProperty:
+  label: Format
 FreeTextDefaultProperty:
   label: Default
 HiddenProperty:

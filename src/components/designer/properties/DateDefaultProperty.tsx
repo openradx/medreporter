@@ -20,7 +20,7 @@ export const DateDefaultProperty = ({
           onChange={(newValue) => onChange(newValue?.toISOString() ?? null)}
           error={error?.message}
           clearable
-          valueFormat={node.format}
+          valueFormat={node.format || "YYYY-MM-DD"}
         />
       )}
     />

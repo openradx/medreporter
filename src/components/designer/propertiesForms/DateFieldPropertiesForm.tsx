@@ -1,9 +1,8 @@
-import { TextInput } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { DateFieldNode, dateFieldNodeSchema } from "~/schemas/structure"
 import { DateDefaultProperty } from "../properties/DateDefaultProperty"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
+import { FormatProperty } from "../properties/FormatProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
@@ -24,12 +23,7 @@ export const DateFieldPropertiesForm = ({ node }: DateFieldPropertiesFormProps) 
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
-    <Controller
-      name="format"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput label="Format" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <FormatProperty />
     <DateDefaultProperty node={node} />
   </PropertiesForm>
 )
