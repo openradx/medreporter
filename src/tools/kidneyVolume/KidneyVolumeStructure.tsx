@@ -12,7 +12,7 @@ export const KidneyVolumeStructure = () => {
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("KidneyVolume.toolHint")}</Hint>
+        <Hint level="info" content={t("KidneyVolume.toolHint")} />
         <Group border label={t("KidneyVolume.right")}>
           <NumberField id="rightCoronal" label={t("KidneyVolume.coronal")} precision={2} />
           <NumberField id="rightSagittal" label={t("KidneyVolume.sagittal")} precision={2} />

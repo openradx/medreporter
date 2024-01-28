@@ -12,7 +12,7 @@ export const AdrenalMriStructure = () => {
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("AdrenalMri.toolHint")}</Hint>
+        <Hint level="info" content={t("AdrenalMri.toolHint")} />
         <Group border label={t("AdrenalMri.groupLabelAdrenal")}>
           <NumberField
             id="inPhaseAdrenal"
@@ -37,8 +37,8 @@ export const AdrenalMriStructure = () => {
             start={0}
           />
         </Group>
-        <Hint level="info">{t("AdrenalMri.hintLimitations")}</Hint>
-        <Hint level="info">{t("AdrenalMri.hintTesla")}</Hint>
+        <Hint level="info" content={t("AdrenalMri.hintLimitations")} />
+        <Hint level="info" content={t("AdrenalMri.hintTesla")} />
       </Section>
     </Structure>
   )

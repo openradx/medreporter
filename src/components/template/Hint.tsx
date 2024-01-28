@@ -1,16 +1,15 @@
 import { Alert } from "@mantine/core"
-import { ReactNode } from "react"
 import { AiOutlineWarning as WarningIcon } from "react-icons/ai"
 import { MdErrorOutline as ErrorIcon } from "react-icons/md"
 import { RiLightbulbLine as InfoIcon } from "react-icons/ri"
 
 interface HintProps {
   level?: "info" | "warning" | "error"
-  children: ReactNode
+  content: string
   hidden?: boolean
 }
 
-export const Hint = ({ level, children, hidden = false }: HintProps) => {
+export const Hint = ({ level, content, hidden = false }: HintProps) => {
   let icon = <InfoIcon />
   if (level === "warning") {
     icon = <WarningIcon />
@@ -27,7 +26,7 @@ export const Hint = ({ level, children, hidden = false }: HintProps) => {
 
   return (
     <Alert display={hidden ? "none" : undefined} icon={icon} color={color} my="sm">
-      {children}
+      {content}
     </Alert>
   )
 }

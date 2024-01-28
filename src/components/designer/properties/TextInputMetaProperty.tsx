@@ -1,12 +1,12 @@
 import { TextInput } from "@mantine/core"
 import { Controller } from "react-hook-form"
 
-interface TextMetaPropertyProps {
+interface TextInputMetaPropertyProps {
   name: string
   label: string
 }
 
-export const TextMetaProperty = ({ name, label }: TextMetaPropertyProps) => (
+export const TextInputMetaProperty = ({ name, label }: TextInputMetaPropertyProps) => (
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (

@@ -4,6 +4,8 @@ BorderProperty:
   label: Begrenzung
 DateDefaultProperty:
   label: Default
+DirectionProperty:
+  label: Richtung
 DisabledProperty:
   label: Deaktiviert
   modalTitle: Deaktiviert
@@ -37,6 +39,8 @@ InfoProperty:
   label: Info
 LabelProperty:
   label: Bezeichnung
+LevelProperty:
+  label: Level
 LinkProperty:
   label: Link
 ListProperty:
@@ -70,6 +74,10 @@ MinProperty:
   label: Minimum
 MultilineProperty:
   label: Mehrzeilig
+MultipleChoiceVariantProperty:
+  label: Variante
+  selectLabel: Auswahlmenü
+  checkboxLabel: Ankreuzen
 NewTemplate:
   navbarTitle: Neue Vorlage
 NumberDefaultProperty:
@@ -95,6 +103,10 @@ PropertiesPanel:
   deleteItemButtonLabel: Löschen
 ScriptEditorButton:
   buttonTooltip: Skript-Editor
+SingleChoiceVariantProperty:
+  label: Variante
+  selectLabel: Auswahlmenü
+  radioLabel: Ankreuzen
 StartProperty:
   label: Startwert
 StepProperty:

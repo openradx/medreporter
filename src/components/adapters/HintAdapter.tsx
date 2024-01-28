@@ -1,4 +1,5 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
+import { evalCodeToBoolean } from "~/medtl/interpreter"
 import { HintNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { Hint } from "../template/Hint"
@@ -12,5 +13,5 @@ export const HintAdapter = ({ node }: HintAdapterProps) => {
   if (isDesigning) {
     return <DraggableCanvasItem node={node} />
   }
-  return <Hint level={node.level}>{node.content}</Hint>
+  return <Hint level={node.level} content={node.content} hidden={evalCodeToBoolean(node.hidden)} />
 }

@@ -35,7 +35,8 @@ const fieldProperties = {
 export const hintNodeSchema = nodeSchema.extend({
   type: z.literal("Hint"),
   level: z.enum(["info", "warning", "error"]),
-  content: codeSchema,
+  content: z.string().trim().max(1000),
+  hidden: hiddenSchema,
 })
 
 export type HintNode = z.infer<typeof hintNodeSchema>

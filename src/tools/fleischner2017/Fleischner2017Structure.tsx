@@ -21,7 +21,7 @@ export const Fleischner2017Structure = () => {
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("Fleischner2017.toolHint")}</Hint>
+        <Hint level="info" content={t("Fleischner2017.toolHint")} />
         <Group border label={t("Fleischner2017.groupDiameter")}>
           <NumberField
             id="longaxis"
@@ -68,7 +68,7 @@ export const Fleischner2017Structure = () => {
             defaultValue="no"
           />
         </Group>
-        <Hint level="warning">{t("Fleischner2017.hintApplicability")}</Hint>
+        <Hint level="warning" content={t("Fleischner2017.hintApplicability")} />
       </Section>
     </Structure>
   )

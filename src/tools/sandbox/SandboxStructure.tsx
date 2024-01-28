@@ -10,7 +10,7 @@ import { Structure } from "~/components/template/Structure"
 export const SandboxStructure = () => (
   <Structure>
     <Section label="default" id="default">
-      <Hint>Just a tool to play with the group and the functions of the fields.</Hint>
+      <Hint content="Just a tool to play with the group and the functions of the fields." />
       <Group border label="Sandbox">
         <DateField id="today" label="Today" format="DD/MM/YYYY" />
         <DateField id="tomorrow" label="Tomorrow" format="YYYY-MM-DD" />

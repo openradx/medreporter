@@ -59,7 +59,7 @@ export const LungRads2022Structure = () => {
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("LungRads2022.toolHint")}</Hint>
+        <Hint level="info" content={t("LungRads2022.toolHint")} />
         <Group>
           <SingleChoiceField
             variant="radio"
@@ -215,9 +215,8 @@ export const LungRads2022Structure = () => {
               !shortaxisSolid ||
               (longaxis + shortaxis) / 2 >= (longaxisSolid + shortaxisSolid) / 2
             }
-          >
-            {t("LungRads2022.hintSolidMean")}
-          </Hint>
+            content={t("LungRads2022.hintSolidMean")}
+          />
           <Group>
             <SingleChoiceField
               variant="radio"
@@ -246,7 +245,7 @@ export const LungRads2022Structure = () => {
           hidden={problematicExam !== "none"}
           disabled={nodule}
         >
-          <Hint level="warning">{t("LungRads2022.hintCyst")}</Hint>
+          <Hint level="warning" content={t("LungRads2022.hintCyst")} />
           <Group>
             <SingleChoiceField
               variant="radio"

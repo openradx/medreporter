@@ -8,6 +8,7 @@ import { FigureProperty } from "../properties/FigureProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { MultipleChoiceVariantProperty } from "../properties/MultipleChoiceVariantProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface MultipleChoiceFieldPropertiesFormProps {
@@ -27,21 +28,7 @@ export const MultipleChoiceFieldPropertiesForm = ({
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
-    <Controller
-      name="variant"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Select
-          label="Variant"
-          value={value}
-          onChange={onChange}
-          data={[
-            { label: "Select", value: "select" },
-            { label: "Radio", value: "radio" },
-          ]}
-          error={error?.message}
-        />
-      )}
-    />
+    <MultipleChoiceVariantProperty />
     <FigureProperty />
     <Controller
       name="options"

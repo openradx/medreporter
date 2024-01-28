@@ -8,6 +8,7 @@ import { FigureProperty } from "../properties/FigureProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { SingleChoiceVariantProperty } from "../properties/SingleChoiceVariantProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface SingleChoiceFieldPropertiesFormProps {
@@ -25,21 +26,7 @@ export const SingleChoiceFieldPropertiesForm = ({ node }: SingleChoiceFieldPrope
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
-    <Controller
-      name="variant"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Select
-          label="Variant"
-          value={value}
-          onChange={onChange}
-          data={[
-            { label: "Select", value: "select" },
-            { label: "Radio", value: "radio" },
-          ]}
-          error={error?.message}
-        />
-      )}
-    />
+    <SingleChoiceVariantProperty />
     <FigureProperty />
     <Controller
       name="options"

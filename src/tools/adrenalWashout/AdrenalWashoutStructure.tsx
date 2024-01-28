@@ -13,7 +13,7 @@ export const AdrenalWashoutStructure = () => {
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("AdrenalWashout.toolHint")}</Hint>
+        <Hint level="info" content={t("AdrenalWashout.toolHint")} />
         <Group border label={t("AdrenalWashout.groupLabelDensity")}>
           <NumberField
             id="nonEnhanced"
@@ -37,8 +37,8 @@ export const AdrenalWashoutStructure = () => {
             start={0}
           />
         </Group>
-        <Hint level="info">{t("AdrenalWashout.hintRoiPlacement")}</Hint>
-        <Hint level="info">{t("AdrenalWashout.hintPreferAbsoluteWashout")}</Hint>
+        <Hint level="info" content={t("AdrenalWashout.hintRoiPlacement")} />
+        <Hint level="info" content={t("AdrenalWashout.hintPreferAbsoluteWashout")} />
       </Section>
     </Structure>
   )

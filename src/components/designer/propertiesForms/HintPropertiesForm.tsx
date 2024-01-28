@@ -1,6 +1,8 @@
-import { Select, Textarea } from "@mantine/core"
+import { Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { HintNode, hintNodeSchema } from "~/schemas/structure"
+import { HiddenProperty } from "../properties/HiddenProperty"
+import { LevelProperty } from "../properties/LevelProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface HintPropertiesFormProps {
@@ -24,21 +26,7 @@ export const HintPropertiesForm = ({ node }: HintPropertiesFormProps) => (
         />
       )}
     />
-    <Controller
-      name="level"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Select
-          label="level"
-          value={value}
-          onChange={onChange}
-          data={[
-            { label: "Info", value: "info" },
-            { label: "Warning", value: "warning" },
-            { label: "Error", value: "error" },
-          ]}
-          error={error ? error.message : null}
-        />
-      )}
-    />
+    <HiddenProperty />
+    <LevelProperty />
   </PropertiesForm>
 )

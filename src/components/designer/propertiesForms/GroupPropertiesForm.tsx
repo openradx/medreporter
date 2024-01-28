@@ -1,7 +1,6 @@
-import { Select } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { GroupNode, groupNodeSchema } from "~/schemas/structure"
 import { BorderProperty } from "../properties/BorderProperty"
+import { DirectionProperty } from "../properties/DirectionProperty"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
@@ -22,39 +21,7 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
-    <Controller
-      name="direction"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Select
-          label="Direction"
-          value={value}
-          onChange={onChange}
-          data={[
-            { label: "Row", value: "row" },
-            { label: "Column", value: "column" },
-          ]}
-          error={error?.message}
-        />
-      )}
-    />
-    <Controller
-      name="justify"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Select
-          label="Justify"
-          value={value}
-          onChange={onChange}
-          data={[
-            { label: "Start", value: "start" },
-            { label: "Center", value: "center" },
-            { label: "End", value: "end" },
-            { label: "Space Between", value: "space-between" },
-            { label: "Space Around", value: "space-around" },
-          ]}
-          error={error?.message}
-        />
-      )}
-    />
+    <DirectionProperty />
     <BorderProperty />
   </PropertiesForm>
 )

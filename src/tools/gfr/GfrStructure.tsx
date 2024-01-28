@@ -13,7 +13,7 @@ export const GfrStructure = () => {
   return (
     <Structure>
       <Section id="default" label="default">
-        <Hint level="info">{t("Gfr.toolHint")}</Hint>
+        <Hint level="info" content={t("Gfr.toolHint")} />
         <Group>
           <NumberField label={t("Gfr.inputLabelAge")} id="age" min={0} />
           <NumberField
