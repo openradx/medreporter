@@ -4,9 +4,21 @@ BorderProperty:
   label: Begrenzung
 DisabledProperty:
   label: Deaktiviert
-EditorItem:
+  modalTitle: Deaktiviert
+  modalDescription: Wenn das Skript zu wahr evaluiert, dann ist das Feld nicht änderbar.
+EditorItem: # TODO: Component was renamed
   id: ID
   type: Typ
+EditorToolbar:
+  copyTooltip: Kopieren
+  formatTooltip: Code formatieren
+  diagnosticsTooltip: Diagnosen
+  helpTooltip: Hilfe
+  pasteTooltip: Einfügen
+  redoTooltip: Wiederholen
+  searchTooltip: Suchen
+  toggleCommentTooltip: Kommentar umschalten
+  undoTooltip: Rückgängig machen
 FieldIdProperty:
   label: ID
 FigureProperty:
@@ -15,6 +27,8 @@ FreeTextDefaultProperty:
   label: Default
 HiddenProperty:
   label: Ausgeblendet
+  modalTitle: Ausgeblendet
+  modalDescription: Wenn das Skript zu wahr evaluiert, wird das Feld nicht angezeigt.
 InfoProperty:
   label: Info
 LabelProperty:
@@ -24,7 +38,7 @@ LinkProperty:
 ListProperty:
   label: Liste
 MarkdownEditorButton:
-  title: Markdown Editor
+  buttonTooltip: Markdown Editor
 MarkdownEditorModal:
   modalTitle: Markdown Editor
   editorLabel: Editor
@@ -75,12 +89,20 @@ PreviewSwitch:
 PropertiesPanel:
   panelTitle: Eigenschaften
   deleteItemButtonLabel: Löschen
-TemplatePropertiesButton:
-  title: Vorlageneigenschaften
+ScriptEditorButton:
+  buttonTooltip: Skript-Editor
 StartProperty:
   label: Startwert
 StepProperty:
   label: Schritt
+SvgEditorButton:
+  buttonTooltip: SVG-Editor
+SvgEditorModal:
+  modalTitle: SVG-Editor
+  editorLabel: Editor
+  previewLabel: Vorschau
+TemplatePropertiesButton:
+  title: Vorlageneigenschaften
 TemplatePropertiesModal:
   categoriesLabel: Kategorien
   descriptionLabel: Beschreibung

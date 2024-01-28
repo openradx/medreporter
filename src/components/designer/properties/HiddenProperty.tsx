@@ -4,5 +4,12 @@ import { ScriptEditorMetaProperty } from "./ScriptEditorMetaProperty"
 export const HiddenProperty = () => {
   const { t } = useSiteTranslation()
 
-  return <ScriptEditorMetaProperty name="hidden" label={t("HiddenProperty.label")} />
+  return (
+    <ScriptEditorMetaProperty
+      name="hidden"
+      label={t("HiddenProperty.label")}
+      modalTitle={t("HiddenProperty.modalTitle")}
+      modalDescription={t("HiddenProperty.modalDescription")}
+    />
+  )
 }

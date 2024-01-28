@@ -4,9 +4,21 @@ BorderProperty:
   label: Border
 DisabledProperty:
   label: Disabled
-EditorItem:
+  modalTitle: Disabled
+  modalDescription: When the script evaluates to true the field is read-only.
+EditorItem: # TODO: Component was renamed
   id: ID
   type: Type
+EditorToolbar:
+  copyTooltip: Copy
+  formatTooltip: Format code
+  diagnosticsTooltip: Diagnostics
+  helpTooltip: Help
+  pasteTooltip: Paste
+  redoTooltip: Redo
+  searchTooltip: Search
+  toggleCommentTooltip: Toggle comment
+  undoTooltip: Undo
 FieldIdProperty:
   label: ID
 FigureProperty:
@@ -15,6 +27,8 @@ FreeTextDefaultProperty:
   label: Default
 HiddenProperty:
   label: Hidden
+  modalTitle: Hidden
+  modalDescription: When the script evaluates to true the field is not displayed.
 InfoProperty:
   label: Info
 LabelProperty:
@@ -24,7 +38,7 @@ LinkProperty:
 ListProperty:
   label: List
 MarkdownEditorButton:
-  title: Markdown Editor
+  buttonTooltip: Markdown Editor
 MarkdownEditorModal:
   modalTitle: Markdown Editor
   editorLabel: Editor
@@ -75,10 +89,18 @@ PreviewSwitch:
 PropertiesPanel:
   panelTitle: Properties
   deleteItemButtonLabel: Delete
+ScriptEditorButton:
+  buttonTooltip: Script Editor
 StartProperty:
   label: Start
 StepProperty:
   label: Step
+SvgEditorButton:
+  buttonTooltip: SVG Editor
+SvgEditorModal:
+  modalTitle: SVG Editor
+  editorLabel: Editor
+  previewLabel: Preview
 TemplatePropertiesButton:
   title: Template Properties
 TemplatePropertiesModal:

@@ -5,8 +5,15 @@ import { ScriptEditorButton } from "../scriptEditor/ScriptEditorButton"
 interface ScriptEditorMetaPropertyProps {
   name: string
   label: string
+  modalTitle: string
+  modalDescription: string
 }
-export const ScriptEditorMetaProperty = ({ name, label }: ScriptEditorMetaPropertyProps) => (
+export const ScriptEditorMetaProperty = ({
+  name,
+  label,
+  modalTitle,
+  modalDescription,
+}: ScriptEditorMetaPropertyProps) => (
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (
@@ -14,7 +21,12 @@ export const ScriptEditorMetaProperty = ({ name, label }: ScriptEditorMetaProper
         label={
           <Group gap="xs" align="center">
             {label}
-            <ScriptEditorButton />
+            <ScriptEditorButton
+              modalTitle={modalTitle}
+              modalDescription={modalDescription}
+              value={value}
+              onChange={onChange}
+            />
           </Group>
         }
         value={value}

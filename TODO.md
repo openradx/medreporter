@@ -2,7 +2,48 @@
 
 ## Kai
 
+- Maybe embed CodeMirror ourself instead of using react-codemirror
+  -- See <https://www.codiga.io/blog/revisiting-codemirror-6-react-implementation/>
+  -- <https://discuss.codemirror.net/t/reconfiguring-theme/7083>
+  -- <https://github.com/uiwjs/react-codemirror/blob/master/core/src/useCodeMirror.ts>
+- Use <https://github.com/EskiMojo14/history-adapter>
+- Fix "opened &&"
+- Fix autogrow of CodeMirror
+  -- <https://discuss.codemirror.net/t/codemirror-6-setting-a-minimum-height-but-allow-the-editor-to-grow/2520/7>
+- Integrate prettier to format source code
+  -- <https://discuss.codemirror.net/t/formatting-the-code/2442/5>
+- Put search panel on top of CodeMirror
+  -- <https://discuss.codemirror.net/t/search-panel-placement-and-size/4030/4>
+- Write an overview of available key commands
+  -- Search for "keymap" in the reference <https://codemirror.net/docs/ref/#h_undo_history>
+- Only use CodeMirror extensions we need
+  -- see <https://codemirror.net/docs/ref/#codemirror.basicSetup>
+- Use workerpool or Comlink to do heavy stuff in web workers (like linting, formatting or completion generation)
+  -- <https://github.com/josdejong/workerpool>
+- Autocomplete fields. object (e.g. fields.myFieldId.value)
+  -- Maybe parse with <https://github.com/acornjs/acorn/tree/master/acorn/> for that, or better <https://github.com/eslint/espree> (uses acorn internally and used by eslint)
+- Autocomplete and validate SVG tags and attributes in editor
+  -- At least autocompletion is supported by @codemirror/lang-xml with a given schema
+  -- Possible base for a schema: <https://github.com/nbelyh/editsvgcode/blob/master/src/svg-schema.js>
+  -- See also <https://www.npmjs.com/package/fast-xml-parser>
+  -- and <https://github.com/sindresorhus/is-svg/blob/main/index.js>
+  -- another option would be to use <https://github.com/SAP/xml-tools/>
+  --- It has a parser built on Chevrotain and some schema validator
+  --- We simply wouldn't use the languageServer then (for Monaco only)
+- Autocomplete and validate JSON in editor (e.g. for options)
+  -- Currently not supported by @codemirror/lang-json
+  -- Maybe some schema like in <https://github.com/remcohaszing/monaco-yaml> can be adapted
+  -- But that we would have to implement ourself with something like this <https://discuss.codemirror.net/t/showing-syntax-errors/3111/6>
+  -- We could build our own parser using Chevrotain with schema validation
+  --- Starting points <https://github.com/Chevrotain/chevrotain/blob/master/examples/grammars/json/json.js>
+  --- or <https://github.com/Chevrotain/chevrotain/tree/gh-pages/performance/jsonParsers/chevrotain>
+  --- <https://github.com/microsoft/vscode-json-languageservice/blob/main/src/services/jsonValidation.ts>
+  --- and then after generating the AST implement something like <https://github.com/SAP/xml-tools/tree/master/packages/simple-schema>
 - Check where fast copy is really necessary in StructureForm
+- Check if one of the other parsers for Javascript is faster than babel when formatting code with prettier
+  -- Currently using babel
+  -- Alternatives see <https://prettier.io/docs/en/options#parser>
+  -- Also see <https://prettier.io/blog/2020/11/20/2.2.0.html>
 - Rename Designer to Builder
 - Use timestamp and key prop in MenuPanel and use useRef in menu items itself
 - there is languages in common.yml and a languages.yml, decide for one
@@ -91,6 +132,8 @@
 - Integrate components that use tRPC into storybook
   -- https://github.com/trpc/trpc/discussions/1879#discussioncomment-4356424
   -- can also be used for React testing framework
+- Use structuredClone instead of fast-copy to clone objects
+  -- Contra ... seems to be slower somehow
 
 ## Mantine v7 issues
 

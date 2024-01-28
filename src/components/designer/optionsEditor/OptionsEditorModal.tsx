@@ -18,7 +18,7 @@ export const OptionsEditorModal = ({ opened, onClose, node }: OptionsEditorModal
 
   return (
     <Modal
-      size="lg"
+      size="xl"
       title={
         <Flex p="xs" pos="relative">
           {t("OptionsEditorModal.modalTitle")}
@@ -43,10 +43,12 @@ export const OptionsEditorModal = ({ opened, onClose, node }: OptionsEditorModal
       }}
       scrollAreaComponent={panel === "formEditor" ? ScrollArea.Autosize : undefined}
     >
-      <>
-        {panel === "formEditor" && <OptionsFormEditor node={node} />}
-        {panel === "codeEditor" && <OptionsCodeEditor node={node} />}
-      </>
+      <Box display={panel === "formEditor" ? "block" : "none"}>
+        <OptionsFormEditor node={node} />
+      </Box>
+      <Box display={panel === "codeEditor" ? "block" : "none"}>
+        <OptionsCodeEditor node={node} />
+      </Box>
     </Modal>
   )
 }

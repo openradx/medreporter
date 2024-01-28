@@ -3,14 +3,14 @@ import { useDisclosure } from "@mantine/hooks"
 import { memo } from "react"
 import { MdCode as CodeIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { MarkdownEditorModal } from "./MarkdownEditorModal"
+import { SvgEditorModal } from "./SvgEditorModal"
 
-interface MarkdownEditorButtonProps {
+interface SvgEditorButtonProps {
   value: string
   onChange: (value: string) => void
 }
 
-export const MarkdownEditorButton = memo(({ value, onChange }: MarkdownEditorButtonProps) => {
+export const SvgEditorButton = memo(({ value, onChange }: SvgEditorButtonProps) => {
   const { t } = useSiteTranslation()
   const [opened, { open, close }] = useDisclosure(false)
 
@@ -19,13 +19,13 @@ export const MarkdownEditorButton = memo(({ value, onChange }: MarkdownEditorBut
       <ActionIcon
         size="sm"
         variant="subtle"
-        title={t("MarkdownEditorButton.buttonTooltip")}
+        title={t("SvgEditorButton.buttonTooltip")}
         onClick={open}
-        aria-label="Open markdown editor"
+        aria-label="Open SVG editor"
       >
         <CodeIcon size={20} />
       </ActionIcon>
-      <MarkdownEditorModal opened={opened} onClose={close} value={value} onChange={onChange} />
+      <SvgEditorModal opened={opened} onClose={close} value={value} onChange={onChange} />
     </>
   )
 })

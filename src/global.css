@@ -1,4 +1,10 @@
+/* Show grabbing cursor everywhere during DnD */
 body.grabbing,
 body.grabbing * {
   cursor: grabbing !important;
+}
+
+/* Make sure CodeMirror tooltips are on top inside of a modal */
+.cm-editor .cm-tooltip {
+  z-index: 1000;
 }

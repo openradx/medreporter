@@ -1,23 +1,18 @@
 import { Box, Flex, Modal, ScrollArea, SegmentedControl } from "@mantine/core"
 import { useState } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { MarkdownEditor } from "../editors/MarkdownEditor"
-import classes from "./MarkdownEditorModal.module.css"
-import { MarkdownPreview } from "./MarkdownPreview"
+import { SvgEditor } from "../editors/SvgEditor"
+import classes from "./SvgEditorModal.module.css"
+import { SvgPreview } from "./SvgPreview"
 
-interface MarkdownEditorModalProps {
+interface SvgEditorModalProps {
   opened: boolean
   onClose: () => void
   value: string
   onChange: (value: string) => void
 }
 
-export const MarkdownEditorModal = ({
-  opened,
-  onClose,
-  value,
-  onChange,
-}: MarkdownEditorModalProps) => {
+export const SvgEditorModal = ({ opened, onClose, value, onChange }: SvgEditorModalProps) => {
   const { t } = useSiteTranslation()
   const [panel, setPanel] = useState<"editor" | "preview">("editor")
 
@@ -26,14 +21,14 @@ export const MarkdownEditorModal = ({
       size="xl"
       title={
         <Flex p="xs" pos="relative">
-          {t("MarkdownEditorModal.modalTitle")}
+          {t("SvgEditorModal.modalTitle")}
           <Box pos="absolute" top="50%" left="50%" style={{ transform: "translate(-50%, -50%)" }}>
             <SegmentedControl
               value={panel}
               onChange={setPanel as any}
               data={[
-                { value: "editor", label: t("MarkdownEditorModal.editorLabel") },
-                { value: "preview", label: t("MarkdownEditorModal.previewLabel") },
+                { value: "editor", label: t("SvgEditorModal.editorLabel") },
+                { value: "preview", label: t("SvgEditorModal.previewLabel") },
               ]}
             />
           </Box>
@@ -49,10 +44,10 @@ export const MarkdownEditorModal = ({
       scrollAreaComponent={panel === "preview" ? ScrollArea.Autosize : undefined}
     >
       <Box display={panel === "editor" ? "block" : "none"}>
-        <MarkdownEditor value={value} onChange={onChange} />
+        <SvgEditor value={value} onChange={onChange} />
       </Box>
       <Box display={panel === "preview" ? "block" : "none"}>
-        <MarkdownPreview value={value} />
+        <SvgPreview value={value} />
       </Box>
     </Modal>
   )
