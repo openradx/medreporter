@@ -1,3 +1,7 @@
+BooleanDefaultProperty:
+  label: Default
+BorderProperty:
+  label: Begrenzung
 DisabledProperty:
   label: Deaktiviert
 EditorItem:
@@ -5,20 +9,28 @@ EditorItem:
   type: Typ
 FieldIdProperty:
   label: ID
-FigureProperties:
-  figureTitle: Abbildung
+FigureProperty:
+  label: Abbildung
+FreeTextDefaultProperty:
+  label: Default
 HiddenProperty:
   label: Ausgeblendet
 InfoProperty:
   label: Info
 LabelProperty:
   label: Bezeichnung
+LinkProperty:
+  label: Link
+ListProperty:
+  label: Liste
 MarkdownEditorButton:
   title: Markdown Editor
 MarkdownEditorModal:
   modalTitle: Markdown Editor
   editorLabel: Editor
   previewLabel: Vorschau
+MaxProperty:
+  label: Maximum
 MenuPanel:
   booleanFieldLabel: Boolisch
   components: Komponenten
@@ -36,8 +48,14 @@ MenuPanel:
   structure: Struktur
   timeFieldLabel: Zeit
   statementLabel: Aussage
+MinProperty:
+  label: Minimum
+MultilineProperty:
+  label: Mehrzeilig
 NewTemplate:
   navbarTitle: Neue Vorlage
+NumberDefaultProperty:
+  label: Default
 OptionsEditorButton:
   label_one: "{{count}} Option"
   label_other: "{{count}} Optionen"
@@ -50,6 +68,8 @@ OptionsFormEditor:
 OptionsTable:
   labelColumnHeader: Bezeichnung
   valueColumnHeader: Wert
+PrecisionProperty:
+  label: Nachkommastellen
 PreviewSwitch:
   label: Vorschau
 PropertiesPanel:
@@ -57,9 +77,15 @@ PropertiesPanel:
   deleteItemButtonLabel: Löschen
 TemplatePropertiesButton:
   title: Vorlageneigenschaften
+StartProperty:
+  label: Startwert
+StepProperty:
+  label: Schritt
 TemplatePropertiesModal:
   categoriesLabel: Kategorien
   descriptionLabel: Beschreibung
   identifierLabel: Bezeichner
   languageLabel: Sprache
   titleLabel: Title
+WithSecondsProperty:
+  label: Mit Sekunden

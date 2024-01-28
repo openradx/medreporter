@@ -1,6 +1,7 @@
-import { Select, Switch } from "@mantine/core"
+import { Select } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { GroupNode, groupNodeSchema } from "~/schemas/structure"
+import { BorderProperty } from "../properties/BorderProperty"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
@@ -54,11 +55,6 @@ export const GroupPropertiesForm = ({ node }: GroupPropertiesFormProps) => (
         />
       )}
     />
-    <Controller
-      name="border"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch label="Border" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <BorderProperty />
   </PropertiesForm>
 )

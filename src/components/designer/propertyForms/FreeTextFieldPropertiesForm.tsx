@@ -1,11 +1,11 @@
-import { Switch, TextInput } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { FreeTextFieldNode, freeTextFieldNodeSchema } from "~/schemas/structure"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
+import { FreeTextDefaultProperty } from "../properties/FreeTextDefaultProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { MultilineProperty } from "../properties/MultilineProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface FreeTextFieldPropertiesFormProps {
@@ -23,23 +23,7 @@ export const FreeTextFieldPropertiesForm = ({ node }: FreeTextFieldPropertiesFor
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
-    <Controller
-      name="multiline"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch
-          label="Multiline"
-          labelPosition="left"
-          checked={!!value}
-          onChange={onChange}
-          error={error?.message}
-        />
-      )}
-    />
-    <Controller
-      name="default"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput label="Default value" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <MultilineProperty />
+    <FreeTextDefaultProperty />
   </PropertiesForm>
 )

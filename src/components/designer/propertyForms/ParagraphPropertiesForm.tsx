@@ -1,7 +1,8 @@
-import { Switch, TextInput, Textarea } from "@mantine/core"
+import { TextInput, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { ParagraphNode, paragraphNodeSchema } from "~/schemas/report"
 import { HiddenProperty } from "../properties/HiddenProperty"
+import { ListProperty } from "../properties/ListProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface ParagraphPropertiesFormProps {
@@ -27,17 +28,6 @@ export const ParagraphPropertiesForm = ({ node }: ParagraphPropertiesFormProps) 
       )}
     />
     <HiddenProperty />
-    <Controller
-      name="list"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Switch
-          label="List"
-          labelPosition="left"
-          checked={!!value}
-          onChange={onChange}
-          error={error?.message}
-        />
-      )}
-    />
+    <ListProperty />
   </PropertiesForm>
 )

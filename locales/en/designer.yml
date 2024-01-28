@@ -1,3 +1,7 @@
+BooleanDefaultProperty:
+  label: Default
+BorderProperty:
+  label: Border
 DisabledProperty:
   label: Disabled
 EditorItem:
@@ -5,20 +9,28 @@ EditorItem:
   type: Type
 FieldIdProperty:
   label: ID
-FigureProperties:
-  title: Figure
+FigureProperty:
+  label: Figure
+FreeTextDefaultProperty:
+  label: Default
 HiddenProperty:
   label: Hidden
 InfoProperty:
   label: Info
 LabelProperty:
   label: Label
+LinkProperty:
+  label: Link
+ListProperty:
+  label: List
 MarkdownEditorButton:
   title: Markdown Editor
 MarkdownEditorModal:
   modalTitle: Markdown Editor
   editorLabel: Editor
   previewLabel: Preview
+MaxProperty:
+  label: Maximal value
 MenuPanel:
   booleanFieldLabel: Boolean
   components: Components
@@ -36,8 +48,14 @@ MenuPanel:
   structure: Structure
   timeFieldLabel: Time
   statementLabel: Statement
+MinProperty:
+  label: Minimal value
+MultilineProperty:
+  label: Multiline
 NewTemplate:
   navbarTitle: New Template
+NumberDefaultProperty:
+  label: Default
 OptionsEditorButton:
   label_one: "{{count}} option"
   label_other: "{{count}} options"
@@ -50,11 +68,17 @@ OptionsFormEditor:
 OptionsTable:
   labelColumnHeader: Label
   valueColumnHeader: Value
+PrecisionProperty:
+  label: Precision
 PreviewSwitch:
   label: Preview
 PropertiesPanel:
   panelTitle: Properties
   deleteItemButtonLabel: Delete
+StartProperty:
+  label: Start
+StepProperty:
+  label: Step
 TemplatePropertiesButton:
   title: Template Properties
 TemplatePropertiesModal:
@@ -63,3 +87,5 @@ TemplatePropertiesModal:
   identifierLabel: Identifier
   languageLabel: Language
   titleLabel: Title
+WithSecondsProperty:
+  label: With seconds

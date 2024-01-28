@@ -1,8 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { TextMetaProperty } from "./TextMetaProperty"
 
-export const FieldIdProperty = () => {
+export const LinkProperty = () => {
   const { t } = useSiteTranslation()
-
-  return <TextMetaProperty label={t("FieldIdProperty.label")} name="id" />
+  return <TextMetaProperty name="link" label={t("LinkProperty.label")} />
 }
