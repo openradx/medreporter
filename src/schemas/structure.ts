@@ -61,7 +61,7 @@ export const numberFieldNodeSchema = nodeSchema.extend({
 
 export type NumberFieldNode = z.infer<typeof numberFieldNodeSchema>
 
-// TODO: refine format and default
+// TODO: refine default
 export const dateFieldNodeSchema = nodeSchema.extend({
   type: z.literal("DateField"),
   ...fieldProperties,

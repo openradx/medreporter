@@ -9,8 +9,8 @@ EditorItem:
   type: Typ
 FieldIdProperty:
   label: ID
-FigureProperties:
-  figureTitle: Abbildung
+FigureProperty:
+  label: Abbildung
 FreeTextDefaultProperty:
   label: Default
 HiddenProperty:

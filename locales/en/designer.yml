@@ -9,8 +9,8 @@ EditorItem:
   type: Type
 FieldIdProperty:
   label: ID
-FigureProperties:
-  title: Figure
+FigureProperty:
+  label: Figure
 FreeTextDefaultProperty:
   label: Default
 HiddenProperty:

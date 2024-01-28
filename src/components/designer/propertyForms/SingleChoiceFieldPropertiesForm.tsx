@@ -1,9 +1,10 @@
-import { Input, Select, Textarea } from "@mantine/core"
+import { Input, Select } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { SingleChoiceFieldNode, singleChoiceFieldNodeSchema } from "~/schemas/structure"
 import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
+import { FigureProperty } from "../properties/FigureProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
@@ -39,12 +40,7 @@ export const SingleChoiceFieldPropertiesForm = ({ node }: SingleChoiceFieldPrope
         />
       )}
     />
-    <Controller
-      name="figure"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Figure" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <FigureProperty />
     <Controller
       name="options"
       render={({ fieldState: { error } }) => (
