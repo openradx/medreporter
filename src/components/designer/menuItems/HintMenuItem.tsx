@@ -17,6 +17,7 @@ export const HintMenuItem = ({ label }: HintMenuItemProps) => {
     () => ({
       type: "Hint",
       nodeId: createNodeId("hint"),
+      hidden: "",
       level: "info",
       content: "",
     }),
