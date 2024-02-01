@@ -46,7 +46,7 @@ export const OptionsEditorModal = ({ opened, onClose, node }: OptionsEditorModal
       <Box display={panel === "formEditor" ? "block" : "none"}>
         <OptionsFormEditor node={node} />
       </Box>
-      <Box display={panel === "codeEditor" ? "block" : "none"}>
+      <Box display={panel === "codeEditor" ? "flex" : "none"} h="100%">
         <OptionsCodeEditor node={node} />
       </Box>
     </Modal>

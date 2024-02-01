@@ -1,0 +1,15 @@
+.scriptEditorModalTitle {
+  flex-grow: 1;
+}
+
+.scriptEditorModalHeader {
+  height: 68px;
+}
+
+.scriptEditorModalBody {
+  height: calc(100% - 68px);
+}
+
+.scriptEditorContent {
+  height: 90vh;
+}

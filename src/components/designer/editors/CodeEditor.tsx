@@ -22,16 +22,17 @@ export const CodeEditor = ({ codeType, extensions, value, onChange }: CodeEditor
     "& div.cm-scroller": {
       minHeight: `${minHeight} !important`,
     },
+    "&": { height: "100%" },
+    ".cm-scroller": { overflow: "auto" },
   })
 
   const handleChange = useDebouncedCallback(onChange, 500)
 
   return (
-    <Stack gap="xs">
+    <Stack gap="xs" h="calc(100% - 32px)" style={{ flexGrow: 1 }}>
       <EditorToolbar codeType={codeType} viewRef={viewRef} />
       <CodeMirror
         minHeight={minHeight}
-        height="100%"
         theme={colorScheme === "dark" ? "dark" : "light"}
         extensions={[theme, ...extensions]}
         value={valueRef.current}

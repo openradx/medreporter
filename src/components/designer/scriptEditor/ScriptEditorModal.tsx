@@ -1,6 +1,7 @@
 import { Modal } from "@mantine/core"
 import { EditorModalTitle } from "../ModalHeader"
 import { ScriptEditor } from "../editors/ScriptEditor"
+import classes from "./ScriptEditorModal.module.css"
 
 interface ScriptEditorModalProps {
   title: string
@@ -24,6 +25,12 @@ export const ScriptEditorModal = ({
     title={<EditorModalTitle title={title} info={description} />}
     opened={opened}
     onClose={onClose}
+    classNames={{
+      title: classes.scriptEditorModalTitle,
+      body: classes.scriptEditorModalBody,
+      content: classes.scriptEditorContent,
+      header: classes.scriptEditorModalHeader,
+    }}
   >
     <ScriptEditor value={value} onChange={onChange} />
   </Modal>

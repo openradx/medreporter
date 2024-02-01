@@ -17,6 +17,7 @@ export const SvgEditorButton = memo(({ value, onChange }: SvgEditorButtonProps) 
   return (
     <>
       <ActionIcon
+        color="green"
         size="sm"
         variant="subtle"
         title={t("SvgEditorButton.buttonTooltip")}

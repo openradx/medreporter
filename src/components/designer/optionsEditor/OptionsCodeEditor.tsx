@@ -1,4 +1,4 @@
-import { Stack } from "@mantine/core"
+import { Stack, Text } from "@mantine/core"
 import copy from "fast-copy"
 import { useState } from "react"
 import { useDebouncedCallback } from "use-debounce"
@@ -40,9 +40,11 @@ export const OptionsCodeEditor = ({ node }: OptionsCodeEditorProps) => {
   }
 
   return (
-    <Stack h="100%" gap={0} className={classes.optionsCodeEditor}>
+    <Stack h="100%" w="100%" gap={0} className={classes.optionsCodeEditor}>
       <JsonEditor value={source} onChange={handleChange} />
-      {error && <p style={{ color: "red", height: "50px", margin: 0, padding: 4 }}>{error}</p>}
+      {error && (
+        <Text style={{ color: "red", height: "50px", margin: 0, padding: 4 }}>{error}</Text>
+      )}
     </Stack>
   )
 }

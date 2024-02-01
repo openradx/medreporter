@@ -1,4 +1,4 @@
-.optionsCodeEditor {
+.svgEditor {
   & :global(.cm-theme-light) {
     height: calc(100% - 40px);
     padding-top: 4px;

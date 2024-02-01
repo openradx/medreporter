@@ -1,4 +1,4 @@
-import { Box, Flex, Modal, ScrollArea, SegmentedControl } from "@mantine/core"
+import { Box, Flex, Modal, SegmentedControl } from "@mantine/core"
 import { useState } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { SvgEditor } from "../editors/SvgEditor"
@@ -38,12 +38,11 @@ export const SvgEditorModal = ({ opened, onClose, value, onChange }: SvgEditorMo
       onClose={onClose}
       classNames={{
         title: classes.markdownEditorModalTitle,
-        body: panel === "preview" ? classes.markdownEditorModalBody : undefined,
+        body: classes.markdownEditorModalBody,
         content: classes.markdownEditorContent,
       }}
-      scrollAreaComponent={panel === "preview" ? ScrollArea.Autosize : undefined}
     >
-      <Box display={panel === "editor" ? "block" : "none"}>
+      <Box display={panel === "editor" ? "flex" : "none"} h="100%">
         <SvgEditor value={value} onChange={onChange} />
       </Box>
       <Box display={panel === "preview" ? "block" : "none"}>
