@@ -136,7 +136,7 @@ TemplatePropertiesButton:
 TemplatePropertiesModal:
   categoriesLabel: Categories
   descriptionLabel: Description
-  identifierLabel: Identifier
+  identifierLabel: ID
   languageLabel: Language
   titleLabel: Title
 TimeDefaultProperty:

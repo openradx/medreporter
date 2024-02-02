@@ -1,7 +1,7 @@
 BooleanDefaultProperty:
   label: Default
 BorderProperty:
-  label: Begrenzung
+  label: Berandung
 ContentProperty:
   label: Inhalt
 DateDefaultProperty:
@@ -10,7 +10,7 @@ DesignerContainerItem:
   id: ID
   type: Typ
 DirectionProperty:
-  label: Richtung
+  label: Orientierung
 DisabledProperty:
   label: Deaktiviert
   modalTitle: Deaktiviert
@@ -46,7 +46,7 @@ HiddenProperty:
 InfoProperty:
   label: Info
 LabelProperty:
-  label: Bezeichnung
+  label: Beschriftung
 LevelProperty:
   label: Level
 LinkProperty:
@@ -62,7 +62,7 @@ MarkdownEditorModal:
 MaxProperty:
   label: Maximum
 MenuPanel:
-  booleanFieldLabel: Boolisch
+  booleanFieldLabel: Ja/Nein
   components: Komponenten
   dateFieldLabel: Datum
   freeTextFieldLabel: Freitext
@@ -76,7 +76,7 @@ MenuPanel:
   report: Bericht
   singleChoiceFieldLabel: Einzelauswahl
   structure: Struktur
-  timeFieldLabel: Zeit
+  timeFieldLabel: Uhrzeit
   statementLabel: Aussage
 MinProperty:
   label: Minimum
@@ -136,7 +136,7 @@ TemplatePropertiesButton:
 TemplatePropertiesModal:
   categoriesLabel: Kategorien
   descriptionLabel: Beschreibung
-  identifierLabel: Bezeichner
+  identifierLabel: ID
   languageLabel: Sprache
   titleLabel: Title
 TimeDefaultProperty:
