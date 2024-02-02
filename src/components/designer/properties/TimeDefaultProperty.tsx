@@ -1,8 +1,12 @@
 import { TimeInput } from "@mantine/dates"
 import { Controller } from "react-hook-form"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { TimeFieldNode } from "~/schemas/structure"
 
-export const TimeDefaultProperty = () => {
+interface TimeDefaultPropertyProps {
+  node: TimeFieldNode
+}
+export const TimeDefaultProperty = ({ node }: TimeDefaultPropertyProps) => {
   const { t } = useSiteTranslation()
   return (
     <Controller
@@ -13,6 +17,7 @@ export const TimeDefaultProperty = () => {
           value={value}
           onChange={onChange}
           error={error?.message}
+          withSeconds={node.withSeconds}
         />
       )}
     />

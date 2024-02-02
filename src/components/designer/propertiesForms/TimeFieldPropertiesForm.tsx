@@ -24,6 +24,6 @@ export const TimeFieldPropertiesForm = ({ node }: TimeFieldPropertiesFormProps) 
     <DisabledProperty />
     <HiddenProperty />
     <WithSecondsProperty />
-    <TimeDefaultProperty />
+    <TimeDefaultProperty node={node} />
   </PropertiesForm>
 )
