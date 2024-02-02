@@ -109,10 +109,10 @@ export const DraggableCanvasItem = ({ node }: DraggableCanvasItemProps) => {
         <Card.Section inheritPadding pos="relative">
           <Stack gap={0}>
             <Text>
-              {t("EditorItem.type")}: {type}
+              {t("DraggableCanvasItem.type")}: {type}
             </Text>
             <Text size="sm" c="dimmed" truncate>
-              {t("EditorItem.id")}: {fieldId ?? "-"}
+              {t("DraggableCanvasItem.id")}: {fieldId ?? "-"}
             </Text>
           </Stack>
         </Card.Section>

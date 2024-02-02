@@ -6,13 +6,19 @@ ContentProperty:
   label: Inhalt
 DateDefaultProperty:
   label: Default
+DesignerContainerItem:
+  id: ID
+  type: Typ
 DirectionProperty:
   label: Richtung
 DisabledProperty:
   label: Deaktiviert
   modalTitle: Deaktiviert
   modalDescription: Wenn das Skript zu wahr evaluiert, dann ist das Feld nicht änderbar.
-EditorItem: # TODO: Component was renamed
+DraggableCanvasContainer:
+  id: ID
+  type: Typ
+DraggableCanvasItem:
   id: ID
   type: Typ
 EditorToolbar:

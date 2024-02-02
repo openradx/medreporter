@@ -12,7 +12,13 @@ DisabledProperty:
   label: Disabled
   modalTitle: Disabled
   modalDescription: When the script evaluates to true the field is read-only.
-EditorItem: # TODO: Component was renamed
+DesignerContainerItem:
+  id: ID
+  type: Type
+DraggableCanvasContainer:
+  id: ID
+  type: Type
+DraggableCanvasItem:
   id: ID
   type: Type
 EditorToolbar:
