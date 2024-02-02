@@ -1,14 +1,13 @@
-import { Input, Select } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { MultipleChoiceFieldNode, multipleChoiceFieldNodeSchema } from "~/schemas/structure"
-import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { FigureProperty } from "../properties/FigureProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { MultipleChoiceDefaultProperty } from "../properties/MultipleChoiceDefaultProperty"
 import { MultipleChoiceVariantProperty } from "../properties/MultipleChoiceVariantProperty"
+import { OptionsProperty } from "../properties/OptionsProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface MultipleChoiceFieldPropertiesFormProps {
@@ -30,25 +29,7 @@ export const MultipleChoiceFieldPropertiesForm = ({
     <HiddenProperty />
     <MultipleChoiceVariantProperty />
     <FigureProperty />
-    <Controller
-      name="options"
-      render={({ fieldState: { error } }) => (
-        <Input.Wrapper label="Options" error={error?.message}>
-          <OptionsEditorButton node={node} />
-        </Input.Wrapper>
-      )}
-    />
-    <Controller
-      name="default"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Select
-          label="Default value"
-          value={value}
-          onChange={onChange}
-          data={node.options}
-          error={error?.message}
-        />
-      )}
-    />
+    <OptionsProperty node={node} />
+    <MultipleChoiceDefaultProperty node={node} />
   </PropertiesForm>
 )

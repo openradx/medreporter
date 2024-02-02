@@ -2,6 +2,8 @@ BooleanDefaultProperty:
   label: Default
 BorderProperty:
   label: Begrenzung
+ContentProperty:
+  label: Inhalt
 DateDefaultProperty:
   label: Default
 DirectionProperty:
@@ -74,6 +76,8 @@ MinProperty:
   label: Minimum
 MultilineProperty:
   label: Mehrzeilig
+MultipleChoiceDefaultProperty:
+  label: Default
 MultipleChoiceVariantProperty:
   label: Variante
   selectLabel: Auswahlmenü
@@ -91,6 +95,8 @@ OptionsEditorModal:
   modalTitle: Optionen
 OptionsFormEditor:
   addOptionLabel: Neue Option hinzufügen
+OptionsProperty:
+  label: Optionen
 OptionsTable:
   labelColumnHeader: Bezeichnung
   valueColumnHeader: Wert
@@ -103,6 +109,8 @@ PropertiesPanel:
   deleteItemButtonLabel: Löschen
 ScriptEditorButton:
   buttonTooltip: Skript-Editor
+SingleChoiceDefaultProperty:
+  label: Default
 SingleChoiceVariantProperty:
   label: Variante
   selectLabel: Auswahlmenü
@@ -125,5 +133,9 @@ TemplatePropertiesModal:
   identifierLabel: Bezeichner
   languageLabel: Sprache
   titleLabel: Title
+TimeDefaultProperty:
+  label: Default
+TitleProperty:
+  label: Titel
 WithSecondsProperty:
   label: Mit Sekunden

@@ -1,13 +1,12 @@
-import { Input, Select } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { SingleChoiceFieldNode, singleChoiceFieldNodeSchema } from "~/schemas/structure"
-import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { FigureProperty } from "../properties/FigureProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { OptionsProperty } from "../properties/OptionsProperty"
+import { SingleChoiceDefaultProperty } from "../properties/SingleChoiceDefaultProperty"
 import { SingleChoiceVariantProperty } from "../properties/SingleChoiceVariantProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
@@ -28,25 +27,7 @@ export const SingleChoiceFieldPropertiesForm = ({ node }: SingleChoiceFieldPrope
     <HiddenProperty />
     <SingleChoiceVariantProperty />
     <FigureProperty />
-    <Controller
-      name="options"
-      render={({ fieldState: { error } }) => (
-        <Input.Wrapper label="Options" error={error?.message}>
-          <OptionsEditorButton node={node} />
-        </Input.Wrapper>
-      )}
-    />
-    <Controller
-      name="default"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Select
-          label="Default value"
-          value={value}
-          onChange={onChange}
-          data={node.options}
-          error={error?.message}
-        />
-      )}
-    />
+    <OptionsProperty node={node} />
+    <SingleChoiceDefaultProperty node={node} />
   </PropertiesForm>
 )

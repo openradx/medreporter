@@ -1,11 +1,10 @@
-import { TextInput } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { TimeFieldNode, timeFieldNodeSchema } from "~/schemas/structure"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { TimeDefaultProperty } from "../properties/TimeDefaultProperty"
 import { WithSecondsProperty } from "../properties/WithSecondsProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
@@ -25,11 +24,6 @@ export const TimeFieldPropertiesForm = ({ node }: TimeFieldPropertiesFormProps) 
     <DisabledProperty />
     <HiddenProperty />
     <WithSecondsProperty />
-    <Controller
-      name="default"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput label="Default value" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <TimeDefaultProperty />
   </PropertiesForm>
 )

@@ -1,8 +1,8 @@
-import { TextInput, Textarea } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { ParagraphNode, paragraphNodeSchema } from "~/schemas/report"
 import { HiddenProperty } from "../properties/HiddenProperty"
+import { LinkProperty } from "../properties/LinkProperty"
 import { ListProperty } from "../properties/ListProperty"
+import { TitleProperty } from "../properties/TitleProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface ParagraphPropertiesFormProps {
@@ -15,18 +15,8 @@ export const ParagraphPropertiesForm = ({ node }: ParagraphPropertiesFormProps) 
     schema={paragraphNodeSchema.omit({ nodeId: true, type: true })}
     initialValues={node}
   >
-    <Controller
-      name="link"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <TextInput label="Link" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
-    <Controller
-      name="title"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <Textarea label="Title" value={value} onChange={onChange} error={error?.message} />
-      )}
-    />
+    <LinkProperty />
+    <TitleProperty />
     <HiddenProperty />
     <ListProperty />
   </PropertiesForm>
