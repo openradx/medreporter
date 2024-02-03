@@ -17,8 +17,8 @@ export const HintMenuItem = ({ label }: HintMenuItemProps) => {
     () => ({
       type: "Hint",
       nodeId: createNodeId("hint"),
-      hidden: "",
       level: "info",
+      hidden: "",
       content: "",
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

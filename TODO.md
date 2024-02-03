@@ -134,6 +134,18 @@
   -- can also be used for React testing framework
 - Use structuredClone instead of fast-copy to clone objects
   -- Contra ... seems to be slower somehow
+- Switch to another i18n framework
+  -- Paraglide.js <https://inlang.com/m/gerre34r/library-inlang-paraglideJs>
+  -- Lingui <https://lingui.dev/>
+  -- <https://betterprogramming.pub/react-app-internationalization-with-linguijs-9486ccd80e07>
+  -- <https://bravo-kernel.com/blog/2023/05/how-to-build-a-fully-internationalized-nextjs-application-using-lingui-v4>
+  -- i18nifty <https://github.com/garronej/i18nifty>
+  -- <https://github.com/ivanhofer/typesafe-i18n> maintainer passed away - successor is Paraglide
+  -- <https://github.com/amannn/next-intl>
+- Rethink how to name translation keys
+  -- <https://dev.to/omaiboroda/three-ways-to-name-i18n-translation-keys-2fed>
+  -- <https://lokalise.com/blog/translation-keys-naming-and-organizing/>
+  -- <https://poeditor.com/blog/translation-keys/#:~:text=Choose%20keys%20that%20clearly%20describe,button.>
 
 ## Mantine v7 issues
 

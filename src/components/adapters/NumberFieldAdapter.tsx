@@ -1,5 +1,8 @@
+import { useMemo } from "react"
+import { useInterpreter } from "~/contexts/InterpreterContext"
+import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { useIsDesigning } from "~/hooks/useIsDesigning"
-import { evalCodeToBoolean } from "~/medtl/interpreter"
+import { useSharedCode } from "~/hooks/useSharedCode"
 import { NumberFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { NumberField } from "../fields/NumberField"
@@ -11,6 +14,19 @@ interface NumberFieldAdapterProps {
 
 export const NumberFieldAdapter = ({ node }: NumberFieldAdapterProps) => {
   const isDesigning = useIsDesigning()
+  const interpreter = useInterpreter()
+  const sharedCode = useSharedCode()
+  const fieldsCode = useFieldsCode()
+
+  const disabled = useMemo(
+    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.disabled),
+    [interpreter, sharedCode, fieldsCode, node.disabled]
+  )
+
+  const hidden = useMemo(
+    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.hidden),
+    [interpreter, sharedCode, fieldsCode, node.hidden]
+  )
 
   if (isDesigning) {
     return <DraggableCanvasItem node={node} />
@@ -20,11 +36,11 @@ export const NumberFieldAdapter = ({ node }: NumberFieldAdapterProps) => {
       id={node.fieldId}
       label={node.label}
       extras={node.info && <Info>{node.info}</Info>}
-      disabled={evalCodeToBoolean(node.disabled)}
-      hidden={evalCodeToBoolean(node.hidden)}
+      disabled={disabled}
+      hidden={hidden}
       defaultValue={node.default}
-      min={node.min}
-      max={node.max}
+      min={node.min ?? undefined}
+      max={node.max ?? undefined}
       precision={node.precision}
       start={node.start}
       step={node.step}

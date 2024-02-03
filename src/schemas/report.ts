@@ -3,18 +3,18 @@ import { codeSchema, nodeSchema } from "./common"
 
 export const statementNodeSchema = nodeSchema.extend({
   type: z.literal("Statement"),
-  hidden: codeSchema.optional(),
-  link: z.string().optional(), // link to a field
-  content: codeSchema.optional(),
+  hidden: codeSchema,
+  link: z.string().nullable(), // link to a field
+  content: codeSchema,
 })
 
 export type StatementNode = z.infer<typeof statementNodeSchema>
 
 export const paragraphNodeSchema = nodeSchema.extend({
   type: z.literal("Paragraph"),
-  link: z.string().optional(), // link to a field
-  title: z.string().optional(),
-  hidden: codeSchema.optional(),
+  link: z.string().nullable(), // link to a field
+  title: z.string(),
+  hidden: codeSchema,
   list: z.boolean(),
   children: z.array(statementNodeSchema),
 })

@@ -1,7 +1,6 @@
 import { Stack, useMantineColorScheme } from "@mantine/core"
 import CodeMirror, { EditorView, Extension } from "@uiw/react-codemirror"
 import { useRef } from "react"
-import { useDebouncedCallback } from "use-debounce"
 import { EditorToolbar } from "./EditorToolbar"
 
 interface CodeEditorProps {
@@ -26,8 +25,6 @@ export const CodeEditor = ({ codeType, extensions, value, onChange }: CodeEditor
     ".cm-scroller": { overflow: "auto" },
   })
 
-  const handleChange = useDebouncedCallback(onChange, 500)
-
   return (
     <Stack gap="xs" h="calc(100% - 32px)" style={{ flexGrow: 1 }}>
       <EditorToolbar codeType={codeType} viewRef={viewRef} />
@@ -36,7 +33,7 @@ export const CodeEditor = ({ codeType, extensions, value, onChange }: CodeEditor
         theme={colorScheme === "dark" ? "dark" : "light"}
         extensions={[theme, ...extensions]}
         value={valueRef.current}
-        onChange={handleChange}
+        onChange={onChange}
         onCreateEditor={(view) => {
           viewRef.current = view
         }}

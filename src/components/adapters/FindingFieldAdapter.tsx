@@ -1,4 +1,7 @@
-import { evalCodeToBoolean } from "~/medtl/interpreter"
+import { useMemo } from "react"
+import { useInterpreter } from "~/contexts/InterpreterContext"
+import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useSharedCode } from "~/hooks/useSharedCode"
 import { FindingFieldNode } from "~/schemas/structure"
 import { FindingField } from "../fields/FindingField"
 import { Info } from "../template/Info"
@@ -10,24 +13,40 @@ interface FindingFieldAdapterProps {
   node: FindingFieldNode
 }
 
-export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => (
-  <FindingField
-    id={node.fieldId}
-    label={node.label}
-    extras={node.info && <Info>{node.info}</Info>}
-    disabled={evalCodeToBoolean(node.disabled)}
-    hidden={evalCodeToBoolean(node.hidden)}
-    defaultValue={node.default}
-  >
-    {node.children.map((child) => {
-      switch (child.type) {
-        case "Hint":
-          return <HintAdapter key={child.nodeId} node={child} />
-        case "Group":
-          return <GroupAdapter key={child.nodeId} node={child} />
-        default:
-          return <DiscreteFieldAdapter key={child.nodeId} node={child} />
-      }
-    })}
-  </FindingField>
-)
+export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
+  const interpreter = useInterpreter()
+  const sharedCode = useSharedCode()
+  const fieldsCode = useFieldsCode()
+
+  const disabled = useMemo(
+    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.disabled),
+    [interpreter, sharedCode, fieldsCode, node.disabled]
+  )
+
+  const hidden = useMemo(
+    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.hidden),
+    [interpreter, sharedCode, fieldsCode, node.hidden]
+  )
+
+  return (
+    <FindingField
+      id={node.fieldId}
+      label={node.label}
+      extras={node.info && <Info>{node.info}</Info>}
+      disabled={disabled}
+      hidden={hidden}
+      defaultValue={node.default}
+    >
+      {node.children.map((child) => {
+        switch (child.type) {
+          case "Hint":
+            return <HintAdapter key={child.nodeId} node={child} />
+          case "Group":
+            return <GroupAdapter key={child.nodeId} node={child} />
+          default:
+            return <DiscreteFieldAdapter key={child.nodeId} node={child} />
+        }
+      })}
+    </FindingField>
+  )
+}

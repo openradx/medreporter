@@ -9,7 +9,7 @@ interface HintProps {
   hidden?: boolean
 }
 
-export const Hint = ({ level, content, hidden = false }: HintProps) => {
+export const Hint = ({ level, hidden = false, content }: HintProps) => {
   let icon = <InfoIcon />
   if (level === "warning") {
     icon = <WarningIcon />

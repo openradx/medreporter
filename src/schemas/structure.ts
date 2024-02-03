@@ -35,8 +35,8 @@ const fieldProperties = {
 export const hintNodeSchema = nodeSchema.extend({
   type: z.literal("Hint"),
   level: z.enum(["info", "warning", "error"]),
-  content: z.string().trim().max(1000),
   hidden: hiddenSchema,
+  content: z.string().trim().max(1000),
 })
 
 export type HintNode = z.infer<typeof hintNodeSchema>
@@ -52,8 +52,8 @@ export type BooleanFieldNode = z.infer<typeof booleanFieldNodeSchema>
 export const numberFieldNodeSchema = nodeSchema.extend({
   type: z.literal("NumberField"),
   ...fieldProperties,
-  min: z.number().optional(),
-  max: z.number().optional(),
+  min: z.number().nullable(),
+  max: z.number().nullable(),
   precision: z.number(),
   start: z.number(),
   step: z.number(),
@@ -65,7 +65,7 @@ export type NumberFieldNode = z.infer<typeof numberFieldNodeSchema>
 export const dateFieldNodeSchema = nodeSchema.extend({
   type: z.literal("DateField"),
   ...fieldProperties,
-  format: z.string().trim().optional(),
+  format: z.string().trim().nullable(),
   default: z.string().trim().nullable(),
 })
 
@@ -184,7 +184,7 @@ export const groupChildrenTypes = new Set(
 const findingFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FindingField"),
   ...fieldProperties,
-  default: z.boolean().optional(),
+  default: z.boolean(),
   children: z.array(z.union([hintNodeSchema, ...discreteFieldNodeSchemas, groupNodeSchema])),
 })
 

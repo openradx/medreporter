@@ -9,6 +9,8 @@ async function formatScript(code: string, cursorOffset: number): Promise<[string
     parser: "babel",
     cursorOffset,
     plugins: [babelPlugin, estreePlugin],
+    semi: false,
+    printWidth: 100,
   })
   return [result.formatted, result.cursorOffset]
 }
