@@ -1,6 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { MdUndo as UndoIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { undo, selectCanUndo } from "~/state/templateSlice"
 
@@ -14,7 +15,10 @@ export const UndoButton = () => {
       title={t("UndoButton.title")}
       variant="default"
       disabled={!canUndo}
-      onClick={() => dispatch(undo())}
+      onClick={() => {
+        dispatch(setSelectedItem(null))
+        dispatch(undo())
+      }}
       aria-label="Undo"
     >
       <UndoIcon size={20} />

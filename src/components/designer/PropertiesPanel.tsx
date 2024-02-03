@@ -82,8 +82,8 @@ export const PropertiesPanel = () => {
             color="red"
             onClick={() => {
               invariant(selectedItem, "No item selected")
-              dispatch(deleteNode({ nodeId: selectedItem }))
               dispatch(setSelectedItem(null))
+              dispatch(deleteNode({ nodeId: selectedItem }))
             }}
           >
             {t("PropertiesPanel.deleteItemButtonLabel")}

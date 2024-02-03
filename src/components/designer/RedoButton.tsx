@@ -1,6 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { MdRedo as RedoIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { redo, selectCanRedo } from "~/state/templateSlice"
 
@@ -14,7 +15,10 @@ export const RedoButton = () => {
       title={t("RedoButton.title")}
       variant="default"
       disabled={!canRedo}
-      onClick={() => dispatch(redo())}
+      onClick={() => {
+        dispatch(setSelectedItem(null))
+        dispatch(redo())
+      }}
       aria-label="Redo"
     >
       <RedoIcon size={20} />
