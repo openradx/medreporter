@@ -8,7 +8,7 @@ interface ScriptEditorMetaPropertyProps {
   modalTitle: string
   modalDescription: string
 }
-export const ScriptEditorMetaProperty = ({
+export const ScriptMetaProperty = ({
   name,
   label,
   modalTitle,

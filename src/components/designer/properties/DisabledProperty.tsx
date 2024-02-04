@@ -1,10 +1,10 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { ScriptEditorMetaProperty } from "./ScriptEditorMetaProperty"
+import { ScriptMetaProperty } from "./ScriptMetaProperty"
 
 export const DisabledProperty = () => {
   const { t } = useSiteTranslation()
   return (
-    <ScriptEditorMetaProperty
+    <ScriptMetaProperty
       name="disabled"
       label={t("DisabledProperty.label")}
       modalTitle={t("DisabledProperty.modalTitle")}
