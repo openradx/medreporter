@@ -1,8 +1,10 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { useSharedCode } from "~/hooks/useSharedCode"
 import { FindingFieldNode } from "~/schemas/structure"
+import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
 import { FindingField } from "../fields/FindingField"
 import { Info } from "../template/Info"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
@@ -14,6 +16,7 @@ interface FindingFieldAdapterProps {
 }
 
 export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
+  const isDesigning = useIsDesigning()
   const interpreter = useInterpreter()
   const sharedCode = useSharedCode()
   const fieldsCode = useFieldsCode()
@@ -28,6 +31,20 @@ export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
     [interpreter, sharedCode, fieldsCode, node.hidden]
   )
 
+  const children = node.children.map((child) => {
+    switch (child.type) {
+      case "Hint":
+        return <HintAdapter key={child.nodeId} node={child} />
+      case "Group":
+        return <GroupAdapter key={child.nodeId} node={child} />
+      default:
+        return <DiscreteFieldAdapter key={child.nodeId} node={child} />
+    }
+  })
+
+  if (isDesigning) {
+    return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
+  }
   return (
     <FindingField
       id={node.fieldId}
@@ -37,16 +54,7 @@ export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
       hidden={hidden}
       defaultValue={node.default}
     >
-      {node.children.map((child) => {
-        switch (child.type) {
-          case "Hint":
-            return <HintAdapter key={child.nodeId} node={child} />
-          case "Group":
-            return <GroupAdapter key={child.nodeId} node={child} />
-          default:
-            return <DiscreteFieldAdapter key={child.nodeId} node={child} />
-        }
-      })}
+      {children}
     </FindingField>
   )
 }

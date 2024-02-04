@@ -181,7 +181,7 @@ export const groupChildrenTypes = new Set(
   groupNodeSchema.shape.children.element.options.map((o) => o.shape.type.value)
 )
 
-const findingFieldNodeSchema = nodeSchema.extend({
+export const findingFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FindingField"),
   ...fieldProperties,
   default: z.boolean(),

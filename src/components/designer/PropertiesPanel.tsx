@@ -9,6 +9,7 @@ import { findNode } from "~/utils/designerUtils"
 import { PanelToolbar } from "../template/PanelToolbar"
 import { BooleanFieldPropertiesForm } from "./propertiesForms/BooleanFieldPropertiesForm"
 import { DateFieldPropertiesForm } from "./propertiesForms/DateFieldPropertiesForm"
+import { FindingFieldPropertiesForm } from "./propertiesForms/FindingFieldPropertiesForm"
 import { FreeTextFieldPropertiesForm } from "./propertiesForms/FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./propertiesForms/GroupPropertiesForm"
 import { HintPropertiesForm } from "./propertiesForms/HintPropertiesForm"
@@ -36,6 +37,9 @@ export const PropertiesPanel = () => {
   // See https://legacy.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key
   const propertiesForm = match(selectedNode)
     .with({ type: "Group" }, (node) => <GroupPropertiesForm key={node.nodeId} node={node} />)
+    .with({ type: "FindingField" }, (node) => (
+      <FindingFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
     .with({ type: "DateField" }, (node) => (
       <DateFieldPropertiesForm key={node.nodeId} node={node} />
     ))

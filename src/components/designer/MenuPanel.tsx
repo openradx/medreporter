@@ -3,6 +3,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { PanelToolbar } from "../template/PanelToolbar"
 import { BooleanFieldMenuItem } from "./menuItems/BooleanFieldMenuItem"
 import { DateFieldMenuItem } from "./menuItems/DateFieldMenuItem"
+import { FindingFieldMenuItem } from "./menuItems/FindingFieldMenuItem"
 import { FreeTextFieldMenuItem } from "./menuItems/FreeTextFieldMenuItem"
 import { GroupMenuItem } from "./menuItems/GroupMenuItem"
 import { HintMenuItem } from "./menuItems/HintMenuItem"
@@ -23,6 +24,7 @@ export const MenuPanel = () => {
         <Stack gap="xs" p="xs">
           <Text c="dimmed">{t("MenuPanel.structure")}</Text>
           <GroupMenuItem label={t("MenuPanel.groupLabel")} />
+          <FindingFieldMenuItem label={t("MenuPanel.findingFieldLabel")} />
           <DateFieldMenuItem label={t("MenuPanel.dateFieldLabel")} />
           <TimeFieldMenuItem label={t("MenuPanel.timeFieldLabel")} />
           <BooleanFieldMenuItem label={t("MenuPanel.booleanFieldLabel")} />

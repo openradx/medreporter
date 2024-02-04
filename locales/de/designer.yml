@@ -65,6 +65,7 @@ MenuPanel:
   booleanFieldLabel: Ja/Nein
   components: Komponenten
   dateFieldLabel: Datum
+  findingFieldLabel: Befund
   freeTextFieldLabel: Freitext
   groupLabel: Gruppe
   hintLabel: Hinweis

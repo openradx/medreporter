@@ -65,6 +65,7 @@ MenuPanel:
   booleanFieldLabel: Boolean
   components: Components
   dateFieldLabel: Date
+  findingFieldLabel: Finding
   freeTextFieldLabel: Free text
   groupLabel: Group
   hintLabel: Hint
