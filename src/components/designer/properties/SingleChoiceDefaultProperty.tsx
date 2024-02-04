@@ -8,6 +8,7 @@ interface SingleChoiceDefaultPropertyProps {
 
 export const SingleChoiceDefaultProperty = ({ node }: SingleChoiceDefaultPropertyProps) => {
   const { t } = useSiteTranslation()
+
   return (
     <SelectMetaProperty
       name="default"

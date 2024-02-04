@@ -6,10 +6,10 @@ import { DateFieldNode } from "~/schemas/structure"
 interface DateDefaultPropertyProps {
   node: DateFieldNode
 }
-export const DateDefaultProperty = ({
-  node,
-}: DateDefaultPropertyProps & { node: DateFieldNode }) => {
+
+export const DateDefaultProperty = ({ node }: DateDefaultPropertyProps) => {
   const { t } = useSiteTranslation()
+
   return (
     <Controller
       name="default"

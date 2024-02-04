@@ -6,10 +6,10 @@ import { MultipleChoiceFieldNode } from "~/schemas/structure"
 interface MultipleChoiceDefaultPropertyProps {
   node: MultipleChoiceFieldNode
 }
-export const MultipleChoiceDefaultProperty = ({
-  node,
-}: MultipleChoiceDefaultPropertyProps & { node: MultipleChoiceFieldNode }) => {
+
+export const MultipleChoiceDefaultProperty = ({ node }: MultipleChoiceDefaultPropertyProps) => {
   const { t } = useSiteTranslation()
+
   return (
     <Controller
       name="default"
