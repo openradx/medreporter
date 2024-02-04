@@ -1,17 +1,17 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Alert, Button, Group, Stack } from "@mantine/core"
 import { useState, ReactNode, PropsWithoutRef } from "react"
-import { FormProvider, useForm, UseFormProps } from "react-hook-form"
+import { Control, FormProvider, useForm, UseFormProps } from "react-hook-form"
 import { z } from "zod"
 import { FormSubmitError, SUBMIT_FORM_ERROR } from "~/utils/formErrors"
 
 export interface SubmitFormProps<S extends z.ZodType<any, any>>
-  extends Omit<PropsWithoutRef<JSX.IntrinsicElements["form"]>, "onSubmit"> {
+  extends Omit<PropsWithoutRef<JSX.IntrinsicElements["form"]>, "onSubmit" | "children"> {
   submitText?: string
   schema?: S
   onSubmit: (values: z.infer<S>) => Promise<void>
   initialValues?: UseFormProps<z.infer<S>>["defaultValues"]
-  children?: ReactNode
+  children?: (controller: Control<z.infer<S>>) => ReactNode
 }
 
 export const SubmitForm = <S extends z.ZodType<any, any>>({
@@ -64,7 +64,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
         <Stack gap="md">
           {formError && <Alert color="red">{formError}</Alert>}
 
-          {children}
+          {children && children(methods.control)}
 
           {submitText && (
             <Group mt="sm">
