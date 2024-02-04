@@ -27,7 +27,7 @@ export const MultipleCheckboxInput = ({
     onChange={onChange}
     value={value}
   >
-    <Stack gap="xs">
+    <Stack pt="xs" gap="xs">
       {options.map((option) => (
         <Checkbox
           key={option.value}
