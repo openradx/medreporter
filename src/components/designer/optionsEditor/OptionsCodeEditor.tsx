@@ -1,28 +1,25 @@
 import { Stack, Text } from "@mantine/core"
-import copy from "fast-copy"
 import { useState } from "react"
+import { useController } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
 import { ZodError } from "zod"
-import { MultipleChoiceFieldNode, SingleChoiceFieldNode, optionsSchema } from "~/schemas/structure"
-import { useAppDispatch } from "~/state/store"
-import { updateNode } from "~/state/templateSlice"
+import { Option, optionsSchema } from "~/schemas/structure"
 import { JsonEditor } from "../editors/JsonEditor"
 import classes from "./OptionsCodeEditor.module.css"
 
-interface OptionsCodeEditorProps {
-  node: SingleChoiceFieldNode | MultipleChoiceFieldNode
-}
+export const OptionsCodeEditor = () => {
+  const {
+    field: { value, onChange },
+  } = useController<{ options: Option[] }>({ name: "options" })
 
-export const OptionsCodeEditor = ({ node }: OptionsCodeEditorProps) => {
-  const dispatch = useAppDispatch()
-  const source = JSON.stringify(node.options, null, "  ")
+  const source = JSON.stringify(value, null, "  ")
   const [error, setError] = useState<string | null>(null)
 
-  const debounced = useDebouncedCallback((value: string) => {
+  const debounced = useDebouncedCallback((newOptionsString: string) => {
     try {
-      const data = JSON.parse(value)
+      const data = JSON.parse(newOptionsString)
       const options = optionsSchema.parse(data)
-      dispatch(updateNode({ nodeId: node.nodeId, data: { options: copy(options) } }))
+      onChange(options)
     } catch (e) {
       if (e instanceof SyntaxError) {
         setError(`Invalid JSON: ${e.message}`)
@@ -34,9 +31,9 @@ export const OptionsCodeEditor = ({ node }: OptionsCodeEditorProps) => {
     }
   }, 200)
 
-  const handleChange = (value: string) => {
+  const handleChange = (newOptionsString: string) => {
     setError(null)
-    debounced(value)
+    debounced(newOptionsString)
   }
 
   return (

@@ -1,7 +1,6 @@
 import { Box, Flex, Modal, ScrollArea, SegmentedControl } from "@mantine/core"
 import { useState } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { MultipleChoiceFieldNode, SingleChoiceFieldNode } from "~/schemas/structure"
 import { OptionsCodeEditor } from "./OptionsCodeEditor"
 import classes from "./OptionsEditorModal.module.css"
 import { OptionsFormEditor } from "./OptionsFormEditor"
@@ -9,10 +8,9 @@ import { OptionsFormEditor } from "./OptionsFormEditor"
 interface OptionsEditorModalProps {
   opened: boolean
   onClose: () => void
-  node: SingleChoiceFieldNode | MultipleChoiceFieldNode
 }
 
-export const OptionsEditorModal = ({ opened, onClose, node }: OptionsEditorModalProps) => {
+export const OptionsEditorModal = ({ opened, onClose }: OptionsEditorModalProps) => {
   const { t } = useSiteTranslation()
   const [panel, setPanel] = useState<"formEditor" | "codeEditor">("formEditor")
 
@@ -44,10 +42,10 @@ export const OptionsEditorModal = ({ opened, onClose, node }: OptionsEditorModal
       scrollAreaComponent={panel === "formEditor" ? ScrollArea.Autosize : undefined}
     >
       <Box display={panel === "formEditor" ? "block" : "none"}>
-        <OptionsFormEditor node={node} />
+        <OptionsFormEditor />
       </Box>
       <Box display={panel === "codeEditor" ? "flex" : "none"} h="100%">
-        <OptionsCodeEditor node={node} />
+        <OptionsCodeEditor />
       </Box>
     </Modal>
   )

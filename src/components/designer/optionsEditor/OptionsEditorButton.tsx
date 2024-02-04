@@ -18,7 +18,7 @@ export const OptionsEditorButton = ({ node }: OptionsEditorButtonProps) => {
         {/* OptionsEditorButton.label can't be found by i18n Ally as it is pluralized */}
         {t("OptionsEditorButton.label", { count: node.options.length })}
       </Input>
-      {opened && <OptionsEditorModal opened={opened} onClose={close} node={node} />}
+      {opened && <OptionsEditorModal opened={opened} onClose={close} />}
     </>
   )
 }
