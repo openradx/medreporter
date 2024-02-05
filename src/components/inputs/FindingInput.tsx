@@ -37,7 +37,7 @@ export const FindingInput = ({
       }}
     />
     <Collapse in={value}>
-      <Stack gap="xs" p="sm">
+      <Stack gap="xs" p={children?.toString()?.length ? "sm" : 0}>
         {children}
       </Stack>
     </Collapse>

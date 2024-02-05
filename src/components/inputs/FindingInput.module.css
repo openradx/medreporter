@@ -1,11 +1,11 @@
 .root {
   flex-basis: 100%;
-  border: 1px solid var(--mantine-color-gray-2);
+  border: 1px solid var(--mantine-color-gray-3);
   border-radius: 4px;
   background-color: var(--mantine-color-gray-0);
 
   @mixin dark {
-    border: 1px solid var(--mantine-color-dark-6);
+    border: 1px solid var(--mantine-color-dark-5);
     background-color: var(--mantine-color-dark-6);
   }
 }

@@ -4,7 +4,7 @@
   border-radius: 4px;
 
   @mixin dark {
-    border: 1px solid var(--mantine-color-dark-6);
+    border: 1px solid var(--mantine-color-dark-5);
   }
 }
 

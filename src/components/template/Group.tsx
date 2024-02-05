@@ -36,7 +36,7 @@ export const Group = ({
           <InputLabel label={label} extras={extras} />
         </Box>
       )}
-      <Flex direction={direction} justify={justify} gap={{ base: "md", md: "lg" }} wrap="wrap">
+      <Flex direction={direction} justify={justify} gap={{ base: "sm", sm: "lg" }} wrap="wrap">
         {children}
       </Flex>
     </Box>
