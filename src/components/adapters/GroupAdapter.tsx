@@ -51,7 +51,6 @@ export const GroupAdapter = ({ node }: GroupAdapterProps) => {
       hidden={hidden}
       border={node.border}
       direction={node.direction}
-      justify={node.justify}
     >
       {children}
     </Group>

@@ -22,6 +22,7 @@ export const FindingFieldMenuItem = ({ label }: FindingFieldMenuItemProps) => {
       info: "",
       disabled: "",
       hidden: "",
+      direction: "row",
       default: false,
       children: [],
     }),

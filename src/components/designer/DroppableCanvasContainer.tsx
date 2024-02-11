@@ -36,7 +36,7 @@ export const DroppableCanvasContainer = ({ node, children }: DroppableCanvasCont
   const [animationParent] = useAutoAnimate()
 
   return (
-    <ContainerContextProvider value={{ direction, justify }}>
+    <ContainerContextProvider value={{ direction }}>
       <Box
         className={classes.droppableCanvasContainer}
         p="xs"

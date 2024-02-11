@@ -20,6 +20,7 @@ const infoSchema = z.string().trim()
 const disabledSchema = codeSchema
 const hiddenSchema = codeSchema
 const figureSchema = z.string().trim().max(10000)
+const directionSchema = z.enum(["row", "column"])
 
 const fieldProperties = {
   fieldId: requiredFieldIdSchema,
@@ -167,8 +168,7 @@ const discreteFieldNodeSchemas = [
 export const groupNodeSchema = nodeSchema.extend({
   type: z.literal("Group"),
   ...fieldProperties,
-  direction: z.enum(["row", "column"]),
-  justify: z.enum(["start", "center", "end", "space-between", "space-around"]),
+  direction: directionSchema,
   border: z.boolean(),
   fieldId: optionalFieldIdSchema,
   label: optionalLabelSchema,
@@ -185,6 +185,7 @@ export const findingFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FindingField"),
   ...fieldProperties,
   default: z.boolean(),
+  direction: directionSchema,
   children: z.array(z.union([hintNodeSchema, ...discreteFieldNodeSchemas, groupNodeSchema])),
 })
 

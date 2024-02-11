@@ -52,6 +52,7 @@ export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
+      direction={node.direction}
       defaultValue={node.default}
     >
       {children}

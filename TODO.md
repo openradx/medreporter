@@ -97,20 +97,18 @@
 
 ## Julia
 
+- Layout:
+  -- direction in Finding
+  -- two layers of containers: finding > group or group > group
+  -- width for Fields: default (fit content for choice, 250 px for empty) - s - m -l - full width
 - remove height in Template Flex and in appshell.main for wrapping layout. But what about the trash can?
 - Buttons don't get bigger anymore on hover of NumberInput
 - Section layout
 - MedReporter Logo
-- Lung arteries image
-- Startpage (ideas)
 - Main Page
-- Collapse report panel
 - Field extras
 - External link images (Next.js Image component, why?)
-- [Tools] Fleischner 2017
-- [Tools] Adrenal MRI Calculator (SI-Index)
-- [Tools] Lung RADS
-- [Tools] Kidney volume
+- [Tools] Lung RADS - add volume
 - [Tools] Fazekas scale
 - [Tools] PI-RADS
 - [Tools] Liver Lab

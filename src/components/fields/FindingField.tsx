@@ -7,6 +7,7 @@ import { CommonFieldProps } from "./fieldTypes"
 
 interface FindingFieldProps extends CommonFieldProps<boolean> {
   children: ReactNode
+  direction?: "row" | "column"
 }
 
 export const FindingField = ({
@@ -16,6 +17,7 @@ export const FindingField = ({
   defaultValue = false,
   disabled,
   hidden,
+  direction,
   children,
 }: FindingFieldProps) => {
   const { value, onChange } = useStructureController({
@@ -28,7 +30,7 @@ export const FindingField = ({
 
   return (
     <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
-      <FindingInput {...{ label, extras, value, onChange, disabled, children }} />
+      <FindingInput {...{ label, extras, value, onChange, direction, disabled, children }} />
     </BaseField>
   )
 }

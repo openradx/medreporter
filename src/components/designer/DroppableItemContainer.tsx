@@ -35,15 +35,10 @@ export const DroppableItemContainer = ({ node, children }: DroppableItemContaine
     direction = node.direction
   }
 
-  let justify: "start" | "center" | "end" | "space-between" | "space-around" = "start"
-  if ("justify" in node && node.justify) {
-    justify = node.justify
-  }
-
   const [animationParent] = useAutoAnimate()
 
   return (
-    <ContainerContextProvider value={{ direction, justify }}>
+    <ContainerContextProvider value={{ direction }}>
       <Box
         className={classes.droppableItemContainer}
         p="xs"
@@ -55,7 +50,7 @@ export const DroppableItemContainer = ({ node, children }: DroppableItemContaine
       >
         <Flex
           direction={direction}
-          justify={justify}
+          justify="start"
           wrap={direction === "column" ? "nowrap" : "wrap"}
           gap="xs"
           ref={animationParent}

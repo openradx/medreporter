@@ -23,7 +23,6 @@ export const GroupMenuItem = ({ label }: GroupMenuItemProps) => {
       disabled: "",
       hidden: "",
       direction: "row",
-      justify: "start",
       border: false,
       children: [],
     }),

@@ -11,7 +11,6 @@ interface GroupProps {
   hidden?: boolean
   border?: boolean
   direction?: "row" | "column"
-  justify?: "start" | "center" | "end" | "space-between" | "space-around"
   children?: ReactNode
 }
 
@@ -22,7 +21,6 @@ export const Group = ({
   hidden,
   border,
   direction,
-  justify,
   children,
 }: GroupProps) => (
   <GroupContextProvider value={{ disabled }}>
@@ -36,7 +34,7 @@ export const Group = ({
           <InputLabel label={label} extras={extras} />
         </Box>
       )}
-      <Flex direction={direction} justify={justify} gap={{ base: "sm", sm: "lg" }} wrap="wrap">
+      <Flex direction={direction} gap={{ base: "sm", sm: "lg" }} wrap="wrap">
         {children}
       </Flex>
     </Box>

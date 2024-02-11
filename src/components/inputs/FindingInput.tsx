@@ -1,4 +1,4 @@
-import { Collapse, Stack, Switch } from "@mantine/core"
+import { Collapse, Flex, Stack, Switch } from "@mantine/core"
 import { ReactNode } from "react"
 import classes from "./FindingInput.module.css"
 import { InputLabel } from "./InputLabel"
@@ -8,6 +8,7 @@ interface FindingInputProps {
   extras?: ReactNode
   value: boolean
   onChange: (value: boolean) => void
+  direction?: "row" | "column"
   disabled?: boolean
   children: ReactNode
 }
@@ -18,6 +19,7 @@ export const FindingInput = ({
   value,
   onChange,
   disabled,
+  direction,
   children,
 }: FindingInputProps) => (
   <Stack className={classes.root} gap={0}>
@@ -37,9 +39,9 @@ export const FindingInput = ({
       }}
     />
     <Collapse in={value}>
-      <Stack gap="xs" p={children?.toString()?.length ? "sm" : 0}>
+      <Flex direction={direction} gap="xs" p={children?.toString()?.length ? "sm" : 0}>
         {children}
-      </Stack>
+      </Flex>
     </Collapse>
   </Stack>
 )

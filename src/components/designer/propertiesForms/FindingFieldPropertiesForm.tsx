@@ -1,5 +1,6 @@
 import { FindingFieldNode, findingFieldNodeSchema } from "~/schemas/structure"
 import { BooleanDefaultProperty } from "../properties/BooleanDefaultProperty"
+import { DirectionProperty } from "../properties/DirectionProperty"
 import { DisabledProperty } from "../properties/DisabledProperty"
 import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
@@ -22,6 +23,7 @@ export const FindingFieldPropertiesForm = ({ node }: FindingFieldPropertiesFormP
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <DirectionProperty />
     <BooleanDefaultProperty />
   </PropertiesForm>
 )
