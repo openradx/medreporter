@@ -1,4 +1,4 @@
-import { Title, Text, Card, Grid, Image } from "@mantine/core"
+import { Title, Text, Card, Grid, Image, Flex } from "@mantine/core"
 import NextImage from "next/image"
 import Link from "next/link"
 import { appConfig } from "~/appConfig"
@@ -6,6 +6,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
 import exampleImage2 from "~/images/exampleImage2.png"
 import exampleImage from "~/images/exampleImage.png"
+import logo from "~/images/logo.png"
 import toolsImage from "~/images/tools.png"
 import { LoginForm } from "../auth/LoginForm"
 import { InstituteSwitcher } from "./InstituteSwitcher"
@@ -19,10 +20,18 @@ export const Home = () => {
     <Grid>
       <Grid.Col span={12}>
         <Title ta="center" mt={10}>
-          {t("Home.welcomeText")}{" "}
-          <Text inherit variant="gradient" component="span">
-            {appConfig.medreporterTitle}
-          </Text>
+          <Flex direction="row" justify="center" align="center" gap="md">
+            {t("Home.welcomeText")}
+            <Image component={NextImage} src={logo} alt="Logo" h={64} w={64} />
+            <Text
+              inherit
+              variant="gradient"
+              gradient={{ from: "cyan", to: "teal", deg: 100 }}
+              component="span"
+            >
+              {appConfig.medreporterTitle}
+            </Text>
+          </Flex>
         </Title>
       </Grid.Col>
       {!loggedIn && (

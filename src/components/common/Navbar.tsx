@@ -1,8 +1,10 @@
 import { Burger, Group, AppShell, Text } from "@mantine/core"
+import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { appConfig } from "~/appConfig"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import logo from "~/images/logo.png"
 import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
@@ -30,6 +32,7 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
               onClick={() => setOpened(!opened)}
               size="sm"
             />
+            <Image src={logo} alt="Logo" width={32} height={32} />
             <Link href="/" legacyBehavior>
               <Text fw={500} fz="xl" style={{ userSelect: "none", cursor: "pointer" }}>
                 {appConfig.medreporterTitle}

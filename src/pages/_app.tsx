@@ -42,7 +42,7 @@ const MyApp = ({ Component, pageProps: { session, ...pageProps } }: MyAppProps) 
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <SessionProvider session={session}>
