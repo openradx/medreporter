@@ -39,7 +39,7 @@ export const FindingInput = ({
       }}
     />
     <Collapse in={value}>
-      <Flex direction={direction} gap="xs" p={children?.toString()?.length ? "sm" : 0}>
+      <Flex direction={direction} gap="xs" p={children?.toString()?.length ? "sm" : 0} wrap="wrap">
         {children}
       </Flex>
     </Collapse>
