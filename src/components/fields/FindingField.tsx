@@ -29,7 +29,7 @@ export const FindingField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width: "full" }}>
       <FindingInput {...{ label, extras, value, onChange, direction, disabled, children }} />
     </BaseField>
   )

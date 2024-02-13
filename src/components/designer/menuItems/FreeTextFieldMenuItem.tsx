@@ -24,6 +24,10 @@ export const FreeTextFieldMenuItem = ({ label }: FreeTextFieldMenuItemProps) => 
       hidden: "",
       width: "auto",
       multiline: false,
+      grow: true,
+      rows: 3,
+      minRows: 2,
+      maxRows: 7,
       default: "",
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

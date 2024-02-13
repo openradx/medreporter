@@ -39,6 +39,8 @@ FormatProperty:
   label: Format
 FreeTextDefaultProperty:
   label: Default
+GrowProperty:
+  label: Grow
 HiddenProperty:
   label: Hidden
   modalTitle: Hidden
@@ -61,6 +63,8 @@ MarkdownEditorModal:
   previewLabel: Preview
 MaxProperty:
   label: Maximal value
+MaxRowsProperty:
+  label: Maximal rows
 MenuPanel:
   booleanFieldLabel: Boolean
   components: Components
@@ -81,6 +85,8 @@ MenuPanel:
   statementLabel: Statement
 MinProperty:
   label: Minimal value
+MinRowsProperty:
+  label: Minimal rows
 MultilineProperty:
   label: Multiline
 MultipleChoiceDefaultProperty:
@@ -114,6 +120,8 @@ PreviewSwitch:
 PropertiesPanel:
   panelTitle: Properties
   deleteItemButtonLabel: Delete
+RowsProperty:
+  label: Rows
 ScriptEditorButton:
   buttonTooltip: Script Editor
 SingleChoiceDefaultProperty:

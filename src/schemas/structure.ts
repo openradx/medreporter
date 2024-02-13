@@ -92,6 +92,10 @@ export const freeTextFieldNodeSchema = nodeSchema.extend({
   ...fieldProperties,
   width: widthSchema,
   multiline: z.boolean(),
+  grow: z.boolean(),
+  rows: z.number(),
+  minRows: z.number(),
+  maxRows: z.number(),
   default: z.string().trim(),
 })
 

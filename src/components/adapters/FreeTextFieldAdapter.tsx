@@ -42,6 +42,10 @@ export const FreeTextFieldAdapter = ({ node }: FreeTextFieldAdapterProps) => {
       width={node.width}
       defaultValue={node.default}
       multiline={node.multiline}
+      grow={node.grow}
+      rows={node.rows}
+      minRows={node.minRows}
+      maxRows={node.maxRows}
     />
   )
 }

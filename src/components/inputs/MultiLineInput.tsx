@@ -8,6 +8,10 @@ interface MultiLineInputProps {
   value: string
   onChange: (value: string) => void
   disabled?: boolean
+  grow?: boolean
+  rows?: number
+  minRows?: number
+  maxRows?: number
 }
 
 export const MultiLineInput = ({
@@ -16,6 +20,10 @@ export const MultiLineInput = ({
   value,
   onChange,
   disabled,
+  grow,
+  rows,
+  minRows,
+  maxRows,
 }: MultiLineInputProps) => (
   <Textarea
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
@@ -24,7 +32,7 @@ export const MultiLineInput = ({
     value={value}
     onChange={(event) => onChange(event.target.value)}
     disabled={disabled}
-    minRows={2}
-    maxRows={7}
+    minRows={grow ? minRows : rows}
+    maxRows={grow ? maxRows : rows}
   />
 )
