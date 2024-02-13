@@ -10,7 +10,14 @@ export const NumberMetaProperty = ({ name, label }: NumberMetaPropertyProps) => 
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (
-      <NumberInput label={label} value={value} onChange={onChange} error={error?.message} />
+      <NumberInput
+        label={label}
+        value={value}
+        onChange={onChange}
+        error={error?.message}
+        stepHoldDelay={500}
+        stepHoldInterval={100}
+      />
     )}
   />
 )

@@ -58,6 +58,8 @@ export const NumberInput = ({
             }
           },
         }}
+        stepHoldDelay={500}
+        stepHoldInterval={100}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         value={value === null ? "" : value}

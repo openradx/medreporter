@@ -94,6 +94,7 @@
   -- https://www.rfc-editor.org/rfc/rfc3066
   -- https://www.rfc-editor.org/rfc/rfc5646.html
   -- https://www.w3.org/International/articles/language-tags/
+- Bug report Mantine: Value in Switch (vs checked)
 
 ## Julia
 
