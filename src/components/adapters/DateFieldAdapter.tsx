@@ -40,6 +40,7 @@ export const DateFieldAdapter = ({ node }: DateFieldAdapterProps) => {
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
+      width={node.width}
       format={node.format ?? undefined}
       defaultValue={node.default ? dayjs(node.default).toISOString() : undefined}
     />

@@ -22,6 +22,7 @@ export const FreeTextFieldMenuItem = ({ label }: FreeTextFieldMenuItemProps) => 
       info: "",
       disabled: "",
       hidden: "",
+      width: "auto",
       multiline: false,
       default: "",
     }),

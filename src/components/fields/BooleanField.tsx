@@ -4,7 +4,9 @@ import { BooleanInput } from "../inputs/BooleanInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 
-interface BooleanFieldProps extends CommonFieldProps<boolean> {}
+interface BooleanFieldProps extends CommonFieldProps<boolean> {
+  width?: "auto" | "small" | "medium" | "large" | "full"
+}
 
 export const BooleanField = ({
   id: fieldId,
@@ -13,6 +15,7 @@ export const BooleanField = ({
   defaultValue = false,
   disabled,
   hidden,
+  width,
 }: BooleanFieldProps) => {
   const { value, onChange } = useStructureController({
     fieldId,
@@ -23,7 +26,7 @@ export const BooleanField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width }}>
       <BooleanInput {...{ label, extras, value, onChange, disabled }} />
     </BaseField>
   )

@@ -5,6 +5,7 @@ import { FieldIdProperty } from "../properties/FieldIdProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { WidthProperty } from "../properties/WidthProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface BooleanFieldPropertiesFormProps {
@@ -22,6 +23,7 @@ export const BooleanFieldPropertiesForm = ({ node }: BooleanFieldPropertiesFormP
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <WidthProperty />
     <BooleanDefaultProperty />
   </PropertiesForm>
 )

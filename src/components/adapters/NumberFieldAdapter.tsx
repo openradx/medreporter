@@ -38,6 +38,7 @@ export const NumberFieldAdapter = ({ node }: NumberFieldAdapterProps) => {
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
+      width={node.width}
       defaultValue={node.default}
       min={node.min ?? undefined}
       max={node.max ?? undefined}

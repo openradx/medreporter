@@ -22,6 +22,7 @@ export const NumberFieldMenuItem = ({ label }: NumberFieldMenuItemProps) => {
       info: "",
       disabled: "",
       hidden: "",
+      width: "auto",
       min: null,
       max: null,
       precision: 0,

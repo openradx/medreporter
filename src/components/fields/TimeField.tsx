@@ -6,6 +6,7 @@ import { CommonFieldProps } from "./fieldTypes"
 
 interface TimeFieldProps extends CommonFieldProps<string | null> {
   withSeconds?: boolean
+  width?: "auto" | "small" | "medium" | "large" | "full"
 }
 
 export const TimeField = ({
@@ -16,6 +17,7 @@ export const TimeField = ({
   disabled,
   hidden,
   withSeconds,
+  width,
 }: TimeFieldProps) => {
   const { value, onChange } = useStructureController({
     fieldId,
@@ -26,7 +28,7 @@ export const TimeField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, defaultValue, value, onChange, hidden, width }}>
       <TimeInput {...{ label, extras, disabled, withSeconds, onChange }} value={value || ""} />
     </BaseField>
   )

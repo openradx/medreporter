@@ -10,6 +10,7 @@ interface NumberFieldProps extends CommonFieldProps<number | null> {
   precision?: number
   step?: number
   start?: number
+  width?: "auto" | "small" | "medium" | "large" | "full"
 }
 
 export const NumberField = ({
@@ -19,6 +20,7 @@ export const NumberField = ({
   defaultValue = null,
   disabled,
   hidden,
+  width,
   min,
   max,
   precision,
@@ -34,7 +36,7 @@ export const NumberField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width }}>
       <NumberInput
         {...{ label, extras, value, onChange, disabled, min, max, precision, start, step }}
       />

@@ -6,6 +6,7 @@ import { FormatProperty } from "../properties/FormatProperty"
 import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
+import { WidthProperty } from "../properties/WidthProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface DateFieldPropertiesFormProps {
@@ -23,6 +24,7 @@ export const DateFieldPropertiesForm = ({ node }: DateFieldPropertiesFormProps) 
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <WidthProperty />
     <FormatProperty />
     <DateDefaultProperty node={node} />
   </PropertiesForm>

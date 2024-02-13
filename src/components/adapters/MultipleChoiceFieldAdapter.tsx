@@ -48,6 +48,7 @@ export const MultipleChoiceFieldAdapter = ({ node }: MultipleChoiceFieldAdapterP
       extras={extras}
       disabled={disabled}
       hidden={hidden}
+      width={node.width}
       options={node.options}
       defaultValue={node.default}
     />

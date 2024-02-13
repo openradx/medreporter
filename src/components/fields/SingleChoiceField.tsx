@@ -12,6 +12,7 @@ const DEFAULT_OPTIONS: Option[] = []
 interface SingleChoiceFieldProps extends CommonFieldProps<string | null> {
   variant?: "radio" | "select"
   options?: Option[]
+  width?: "auto" | "small" | "medium" | "large" | "full"
 }
 
 export const SingleChoiceField = ({
@@ -23,6 +24,7 @@ export const SingleChoiceField = ({
   defaultValue = null,
   disabled,
   hidden,
+  width,
 }: SingleChoiceFieldProps) => {
   const { value, onChange } = useStructureController({
     fieldId,
@@ -33,7 +35,7 @@ export const SingleChoiceField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width }}>
       <ChoiceFieldContextProvider value={{ options }}>
         {variant === "select" && (
           <SingleSelectInput {...{ label, extras, options, value, onChange, disabled }} />

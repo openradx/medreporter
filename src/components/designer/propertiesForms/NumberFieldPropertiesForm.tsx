@@ -10,6 +10,7 @@ import { NumberDefaultProperty } from "../properties/NumberDefaultProperty"
 import { PrecisionProperty } from "../properties/PrecisionProperty"
 import { StartProperty } from "../properties/StartProperty"
 import { StepProperty } from "../properties/StepProperty"
+import { WidthProperty } from "../properties/WidthProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface NumberFieldPropertiesFormProps {
@@ -27,6 +28,7 @@ export const NumberFieldPropertiesForm = ({ node }: NumberFieldPropertiesFormPro
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <WidthProperty />
     <MinProperty />
     <MaxProperty />
     <PrecisionProperty />

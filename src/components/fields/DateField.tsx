@@ -7,6 +7,7 @@ import { CommonFieldProps } from "./fieldTypes"
 
 interface DateFieldProps extends CommonFieldProps<string | null> {
   format?: string
+  width?: "auto" | "small" | "medium" | "large" | "full"
 }
 
 export const DateField = ({
@@ -15,6 +16,7 @@ export const DateField = ({
   extras,
   disabled,
   hidden,
+  width,
   format,
   defaultValue = null,
 }: DateFieldProps) => {
@@ -32,7 +34,7 @@ export const DateField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, value, onChange, hidden, format, defaultValue }}>
+    <BaseField {...{ fieldId, label, value, onChange, hidden, format, defaultValue, width }}>
       <DateInput
         {...{ label, extras, disabled }}
         value={value ? new Date(value) : null}

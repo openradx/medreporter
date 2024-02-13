@@ -23,6 +23,7 @@ export const SingleChoiceFieldMenuItem = ({ label }: SingleChoiceFieldMenuItemPr
       info: "",
       disabled: "",
       hidden: "",
+      width: "auto",
       variant: "radio",
       figure: "",
       options: createExampleOptions(3),

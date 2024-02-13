@@ -39,6 +39,7 @@ export const FreeTextFieldAdapter = ({ node }: FreeTextFieldAdapterProps) => {
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
+      width={node.width}
       defaultValue={node.default}
       multiline={node.multiline}
     />

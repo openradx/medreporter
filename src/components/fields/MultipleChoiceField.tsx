@@ -11,6 +11,7 @@ const DEFAULT_OPTIONS: Option[] = []
 const DEFAULT_VALUE: string[] = []
 
 interface MultipleChoiceFieldProps extends CommonFieldProps<string[]> {
+  width?: "auto" | "small" | "medium" | "large" | "full"
   variant?: "checkbox" | "select"
   options?: Option[]
 }
@@ -24,6 +25,7 @@ export const MultipleChoiceField = ({
   defaultValue = DEFAULT_VALUE,
   disabled,
   hidden,
+  width,
 }: MultipleChoiceFieldProps) => {
   const { value, onChange } = useStructureController({
     fieldId,
@@ -34,7 +36,7 @@ export const MultipleChoiceField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width }}>
       <ChoiceFieldContextProvider value={{ options }}>
         {variant === "select" && (
           <MultipleSelectInput {...{ label, extras, options, value, onChange, disabled }} />

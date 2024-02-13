@@ -8,6 +8,7 @@ import { LabelProperty } from "../properties/LabelProperty"
 import { OptionsProperty } from "../properties/OptionsProperty"
 import { SingleChoiceDefaultProperty } from "../properties/SingleChoiceDefaultProperty"
 import { SingleChoiceVariantProperty } from "../properties/SingleChoiceVariantProperty"
+import { WidthProperty } from "../properties/WidthProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface SingleChoiceFieldPropertiesFormProps {
@@ -25,6 +26,7 @@ export const SingleChoiceFieldPropertiesForm = ({ node }: SingleChoiceFieldPrope
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <WidthProperty />
     <SingleChoiceVariantProperty />
     <FigureProperty />
     <OptionsProperty node={node} />

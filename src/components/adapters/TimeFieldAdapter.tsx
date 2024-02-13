@@ -39,6 +39,7 @@ export const TimeFieldAdapter = ({ node }: TimeFieldAdapterProps) => {
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
+      width={node.width}
       withSeconds={node.withSeconds}
       defaultValue={node.default}
     />

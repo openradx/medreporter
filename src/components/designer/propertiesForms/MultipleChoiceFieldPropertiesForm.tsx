@@ -8,6 +8,7 @@ import { LabelProperty } from "../properties/LabelProperty"
 import { MultipleChoiceDefaultProperty } from "../properties/MultipleChoiceDefaultProperty"
 import { MultipleChoiceVariantProperty } from "../properties/MultipleChoiceVariantProperty"
 import { OptionsProperty } from "../properties/OptionsProperty"
+import { WidthProperty } from "../properties/WidthProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface MultipleChoiceFieldPropertiesFormProps {
@@ -27,6 +28,7 @@ export const MultipleChoiceFieldPropertiesForm = ({
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <WidthProperty />
     <MultipleChoiceVariantProperty />
     <FigureProperty />
     <OptionsProperty node={node} />

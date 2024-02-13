@@ -6,6 +6,7 @@ import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
 import { MultilineProperty } from "../properties/MultilineProperty"
+import { WidthProperty } from "../properties/WidthProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
 interface FreeTextFieldPropertiesFormProps {
@@ -23,6 +24,7 @@ export const FreeTextFieldPropertiesForm = ({ node }: FreeTextFieldPropertiesFor
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <WidthProperty />
     <MultilineProperty />
     <FreeTextDefaultProperty />
   </PropertiesForm>

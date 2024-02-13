@@ -22,6 +22,7 @@ export const BooleanFieldMenuItem = ({ label }: BooleanFieldMenuItemProps) => {
       info: "",
       disabled: "",
       hidden: "",
+      width: "auto",
       default: false,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

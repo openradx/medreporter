@@ -7,6 +7,7 @@ import { CommonFieldProps } from "./fieldTypes"
 
 interface FreeTextFieldProps extends CommonFieldProps<string> {
   multiline?: boolean
+  width?: "auto" | "small" | "medium" | "large" | "full"
 }
 
 export const FreeTextField = ({
@@ -16,6 +17,7 @@ export const FreeTextField = ({
   defaultValue = "",
   disabled,
   hidden,
+  width,
   multiline,
 }: FreeTextFieldProps) => {
   const { value, onChange } = useStructureController({
@@ -27,7 +29,7 @@ export const FreeTextField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width }}>
       {!multiline && <SingleLineInput {...{ label, extras, value, onChange, disabled }} />}
       {multiline && <MultiLineInput {...{ label, extras, value, onChange, disabled }} />}
     </BaseField>

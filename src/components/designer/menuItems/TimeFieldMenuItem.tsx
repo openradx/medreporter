@@ -22,6 +22,7 @@ export const TimeFieldMenuItem = ({ label }: TimeFieldMenuItemProps) => {
       info: "",
       disabled: "",
       hidden: "",
+      width: "auto",
       withSeconds: false,
       default: "",
     }),

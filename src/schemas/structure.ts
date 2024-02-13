@@ -21,6 +21,7 @@ const disabledSchema = codeSchema
 const hiddenSchema = codeSchema
 const figureSchema = z.string().trim().max(10000)
 const directionSchema = z.enum(["row", "column"])
+const widthSchema = z.enum(["auto", "small", "medium", "large", "full"])
 
 const fieldProperties = {
   fieldId: requiredFieldIdSchema,
@@ -45,6 +46,7 @@ export type HintNode = z.infer<typeof hintNodeSchema>
 export const booleanFieldNodeSchema = nodeSchema.extend({
   type: z.literal("BooleanField"),
   ...fieldProperties,
+  width: widthSchema,
   default: z.boolean(),
 })
 
@@ -53,6 +55,7 @@ export type BooleanFieldNode = z.infer<typeof booleanFieldNodeSchema>
 export const numberFieldNodeSchema = nodeSchema.extend({
   type: z.literal("NumberField"),
   ...fieldProperties,
+  width: widthSchema,
   min: z.number().nullable(),
   max: z.number().nullable(),
   precision: z.number(),
@@ -66,6 +69,7 @@ export type NumberFieldNode = z.infer<typeof numberFieldNodeSchema>
 export const dateFieldNodeSchema = nodeSchema.extend({
   type: z.literal("DateField"),
   ...fieldProperties,
+  width: widthSchema,
   format: z.string().trim().nullable(),
   default: z.string().trim().nullable(),
 })
@@ -76,6 +80,7 @@ export type DateFieldNode = z.infer<typeof dateFieldNodeSchema>
 export const timeFieldNodeSchema = nodeSchema.extend({
   type: z.literal("TimeField"),
   ...fieldProperties,
+  width: widthSchema,
   withSeconds: z.boolean(),
   default: z.string().trim().nullable(),
 })
@@ -85,6 +90,7 @@ export type TimeFieldNode = z.infer<typeof timeFieldNodeSchema>
 export const freeTextFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FreeTextField"),
   ...fieldProperties,
+  width: widthSchema,
   multiline: z.boolean(),
   default: z.string().trim(),
 })
@@ -118,6 +124,7 @@ export const optionsSchema = z
 export const singleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("SingleChoiceField"),
   ...fieldProperties,
+  width: widthSchema,
   variant: z.enum(["radio", "select"]),
   figure: figureSchema,
   options: optionsSchema,
@@ -129,6 +136,7 @@ export type SingleChoiceFieldNode = z.infer<typeof singleChoiceFieldNodeSchema>
 export const multipleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MultipleChoiceField"),
   ...fieldProperties,
+  width: widthSchema,
   variant: z.enum(["checkbox", "select"]),
   figure: figureSchema,
   options: optionsSchema,

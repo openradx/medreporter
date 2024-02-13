@@ -5,6 +5,7 @@ import { HiddenProperty } from "../properties/HiddenProperty"
 import { InfoProperty } from "../properties/InfoProperty"
 import { LabelProperty } from "../properties/LabelProperty"
 import { TimeDefaultProperty } from "../properties/TimeDefaultProperty"
+import { WidthProperty } from "../properties/WidthProperty"
 import { WithSecondsProperty } from "../properties/WithSecondsProperty"
 import { PropertiesForm } from "./PropertiesForm"
 
@@ -23,6 +24,7 @@ export const TimeFieldPropertiesForm = ({ node }: TimeFieldPropertiesFormProps) 
     <InfoProperty />
     <DisabledProperty />
     <HiddenProperty />
+    <WidthProperty />
     <WithSecondsProperty />
     <TimeDefaultProperty node={node} />
   </PropertiesForm>
