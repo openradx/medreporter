@@ -29,11 +29,11 @@ export const NumberFieldPropertiesForm = ({ node }: NumberFieldPropertiesFormPro
     <DisabledProperty />
     <HiddenProperty />
     <WidthProperty />
-    <MinProperty />
-    <MaxProperty />
+    <MinProperty node={node} />
+    <MaxProperty node={node} />
     <PrecisionProperty />
-    <StartProperty />
+    <StartProperty node={node} />
     <StepProperty />
-    <NumberDefaultProperty />
+    <NumberDefaultProperty node={node} />
   </PropertiesForm>
 )

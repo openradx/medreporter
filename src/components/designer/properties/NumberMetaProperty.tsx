@@ -1,12 +1,21 @@
-import { NumberInput } from "@mantine/core"
 import { Controller } from "react-hook-form"
+import { NumberInput } from "~/components/inputs/NumberInput"
 
 interface NumberMetaPropertyProps {
   name: string
   label: string
+  precision?: number
+  min?: number
+  max?: number
 }
 
-export const NumberMetaProperty = ({ name, label }: NumberMetaPropertyProps) => (
+export const NumberMetaProperty = ({
+  name,
+  label,
+  precision,
+  min,
+  max,
+}: NumberMetaPropertyProps) => (
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (
@@ -15,8 +24,9 @@ export const NumberMetaProperty = ({ name, label }: NumberMetaPropertyProps) => 
         value={value}
         onChange={onChange}
         error={error?.message}
-        stepHoldDelay={500}
-        stepHoldInterval={100}
+        precision={precision}
+        min={min}
+        max={max}
       />
     )}
   />

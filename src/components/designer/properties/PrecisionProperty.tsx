@@ -3,5 +3,7 @@ import { NumberMetaProperty } from "./NumberMetaProperty"
 
 export const PrecisionProperty = () => {
   const { t } = useSiteTranslation()
-  return <NumberMetaProperty name="precision" label={t("PrecisionProperty.label")} />
+  return (
+    <NumberMetaProperty name="precision" label={t("PrecisionProperty.label")} min={0} max={3} />
+  )
 }

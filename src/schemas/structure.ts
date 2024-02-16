@@ -58,7 +58,7 @@ export const numberFieldNodeSchema = nodeSchema.extend({
   width: widthSchema,
   min: z.number().nullable(),
   max: z.number().nullable(),
-  precision: z.number(),
+  precision: z.number().min(0).max(3),
   start: z.number(),
   step: z.number(),
   default: z.number().nullable(),
