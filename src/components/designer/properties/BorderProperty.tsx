@@ -1,7 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { BooleanMetaProperty } from "./BooleanMetaProperty"
+import { BooleanPropertyInput } from "./BooleanPropertyInput"
 
 export const BorderProperty = () => {
   const { t } = useSiteTranslation()
-  return <BooleanMetaProperty name="border" label={t("BorderProperty.label")} />
+  return <BooleanPropertyInput name="border" label={t("BorderProperty.label")} />
 }

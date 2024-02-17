@@ -1,7 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { BooleanMetaProperty } from "./BooleanMetaProperty"
+import { BooleanPropertyInput } from "./BooleanPropertyInput"
 
 export const GrowProperty = () => {
   const { t } = useSiteTranslation()
-  return <BooleanMetaProperty name="grow" label={t("GrowProperty.label")} />
+  return <BooleanPropertyInput name="grow" label={t("GrowProperty.label")} />
 }

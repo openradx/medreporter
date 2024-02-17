@@ -1,11 +1,11 @@
 import { Switch } from "@mantine/core"
 import { Controller } from "react-hook-form"
 
-interface BooleanMetaPropertyProps {
+interface BooleanPropertyInputProps {
   name: string
   label: string
 }
-export const BooleanMetaProperty = ({ name, label }: BooleanMetaPropertyProps) => (
+export const BooleanPropertyInput = ({ name, label }: BooleanPropertyInputProps) => (
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (

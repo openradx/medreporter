@@ -4,7 +4,10 @@ import { ReactNode } from "react"
 
 interface TemplateProps {
   title: string
+  name: string
   description?: string
+  categories?: string[]
+  language?: string
   info?: string
   children: ReactNode
 }

@@ -1,10 +1,10 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { SelectMetaProperty } from "./SelectMetaProperty"
+import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const DirectionProperty = () => {
   const { t } = useSiteTranslation()
   return (
-    <SelectMetaProperty
+    <SelectPropertyInput
       name="direction"
       label={t("DirectionProperty.label")}
       data={[

@@ -1,6 +1,6 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { NumberFieldNode } from "~/schemas/structure"
-import { NumberMetaProperty } from "./NumberMetaProperty"
+import { NumberPropertyInput } from "./NumberPropertyInput"
 
 export type NumberDefaultPropertyProps = {
   node: NumberFieldNode
@@ -8,7 +8,7 @@ export type NumberDefaultPropertyProps = {
 export const NumberDefaultProperty = ({ node }: NumberDefaultPropertyProps) => {
   const { t } = useSiteTranslation()
   return (
-    <NumberMetaProperty
+    <NumberPropertyInput
       name="default"
       label={t("NumberDefaultProperty.label")}
       precision={node.precision}

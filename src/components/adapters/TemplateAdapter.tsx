@@ -10,7 +10,14 @@ interface TemplateAdapterProps {
 
 export const TemplateAdapter = ({ node }: TemplateAdapterProps) => (
   <InterpreterProvider>
-    <Template title={node.title} description={node.description}>
+    <Template
+      title={node.title}
+      name={node.name}
+      description={node.description}
+      categories={node.categories}
+      language={node.language}
+      info={node.info}
+    >
       <StructureAdapter node={node.structure} />
       <ReportAdapter node={node.report} />
     </Template>

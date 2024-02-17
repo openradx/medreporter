@@ -1,7 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { NumberMetaProperty } from "./NumberMetaProperty"
+import { NumberPropertyInput } from "./NumberPropertyInput"
 
 export const StepProperty = () => {
   const { t } = useSiteTranslation()
-  return <NumberMetaProperty name="step" label={t("StepProperty.label")} min={0} />
+  return <NumberPropertyInput name="step" label={t("StepProperty.label")} min={0} />
 }

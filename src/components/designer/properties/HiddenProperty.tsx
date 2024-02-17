@@ -1,11 +1,11 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { ScriptMetaProperty } from "./ScriptMetaProperty"
+import { ScriptPropertyInput } from "./ScriptPropertyInput"
 
 export const HiddenProperty = () => {
   const { t } = useSiteTranslation()
 
   return (
-    <ScriptMetaProperty
+    <ScriptPropertyInput
       name="hidden"
       label={t("HiddenProperty.label")}
       modalTitle={t("HiddenProperty.modalTitle")}

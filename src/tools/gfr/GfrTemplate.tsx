@@ -8,7 +8,7 @@ export const GfrTemplate = () => {
   const { t } = useMicroTranslation(i18nStructure)
 
   return (
-    <Template title={t("Gfr.toolTitle")}>
+    <Template title={t("Gfr.toolTitle")} name="gfr">
       <GfrStructure />
       <GfrReport />
     </Template>

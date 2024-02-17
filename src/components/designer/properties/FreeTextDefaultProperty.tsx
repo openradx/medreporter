@@ -1,7 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { TextInputMetaProperty } from "./TextInputMetaProperty"
+import { TextInputPropertyInput } from "./TextInputPropertyInput"
 
 export const FreeTextDefaultProperty = () => {
   const { t } = useSiteTranslation()
-  return <TextInputMetaProperty name="default" label={t("FreeTextDefaultProperty.label")} />
+  return <TextInputPropertyInput name="default" label={t("FreeTextDefaultProperty.label")} />
 }

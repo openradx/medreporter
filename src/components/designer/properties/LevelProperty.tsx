@@ -1,10 +1,10 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { SelectMetaProperty } from "./SelectMetaProperty"
+import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const LevelProperty = () => {
   const { t } = useSiteTranslation()
   return (
-    <SelectMetaProperty
+    <SelectPropertyInput
       name="level"
       label={t("LevelProperty.label")}
       data={[

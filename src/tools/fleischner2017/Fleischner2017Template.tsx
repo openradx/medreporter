@@ -15,7 +15,7 @@ export const Fleischner2017Template = () => {
   }[currentLanguage]
 
   return (
-    <Template title={t("Fleischner2017.toolTitle")} info={toolInfo}>
+    <Template title={t("Fleischner2017.toolTitle")} name="fleischner2017" info={toolInfo}>
       <Fleischner2017Structure />
       <Fleischner2017Report />
     </Template>

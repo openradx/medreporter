@@ -1,7 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { NumberMetaProperty } from "./NumberMetaProperty"
+import { NumberPropertyInput } from "./NumberPropertyInput"
 
 export const RowsProperty = () => {
   const { t } = useSiteTranslation()
-  return <NumberMetaProperty name="rows" label={t("RowsProperty.label")} />
+  return <NumberPropertyInput name="rows" label={t("RowsProperty.label")} />
 }

@@ -1,7 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { TextInputMetaProperty } from "./TextInputMetaProperty"
+import { TextInputPropertyInput } from "./TextInputPropertyInput"
 
 export const FormatProperty = () => {
   const { t } = useSiteTranslation()
-  return <TextInputMetaProperty name="format" label={t("FormatProperty.label")} />
+  return <TextInputPropertyInput name="format" label={t("FormatProperty.label")} />
 }

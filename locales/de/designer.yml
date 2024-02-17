@@ -145,8 +145,8 @@ TemplatePropertiesButton:
 TemplatePropertiesModal:
   categoriesLabel: Kategorien
   descriptionLabel: Beschreibung
-  identifierLabel: ID
   languageLabel: Sprache
+  nameLabel: Name
   titleLabel: Title
 TimeDefaultProperty:
   label: Default

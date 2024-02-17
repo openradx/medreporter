@@ -1,7 +1,7 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { TextareaMetaProperty } from "./TextareaMetaProperty"
+import { TextareaPropertyInput } from "./TextareaPropertyInput"
 
 export const ContentProperty = () => {
   const { t } = useSiteTranslation()
-  return <TextareaMetaProperty name="content" label={t("ContentProperty.label")} />
+  return <TextareaPropertyInput name="content" label={t("ContentProperty.label")} />
 }

@@ -1,6 +1,6 @@
-import { Button, Modal, MultiSelect, Select, TextInput, Textarea } from "@mantine/core"
-import { appConfig } from "~/appConfig"
+import { Button, Modal } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { TemplatePropertiesForm } from "./TemplatePropertiesForm"
 
 interface TemplatePropertiesModalProps {
   opened: boolean
@@ -9,33 +9,9 @@ interface TemplatePropertiesModalProps {
 
 export const TemplatePropertiesModal = ({ opened, onClose }: TemplatePropertiesModalProps) => {
   const { t } = useSiteTranslation()
-
   return (
     <Modal opened={opened} onClose={onClose} title="New Template - Properties">
-      <TextInput label={t("TemplatePropertiesModal.identifierLabel")} />
-      <TextInput label={t("TemplatePropertiesModal.titleLabel")} />
-      <Select
-        label={t("TemplatePropertiesModal.languageLabel")}
-        searchable
-        data={appConfig.supportedTemplateLanguages.map((language) => ({
-          value: language,
-          label: t(`languages.${language}`),
-        }))}
-        maxDropdownHeight={100}
-      />
-      <Textarea label={t("TemplatePropertiesModal.descriptionLabel")} />
-      <MultiSelect
-        label={t("TemplatePropertiesModal.categoriesLabel")}
-        searchable
-        data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
-          group: t(`categories.group.${group}`),
-          items: categories.map((category) => ({
-            value: category,
-            label: t(`categories.${category}`),
-          })),
-        }))}
-        clearable
-      />
+      <TemplatePropertiesForm />
       <Button onClick={onClose} mt={16}>
         {t("general.buttonClose")}
       </Button>

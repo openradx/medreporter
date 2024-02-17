@@ -8,7 +8,7 @@ export const KidneyVolumeTemplate = () => {
   const { t } = useMicroTranslation(i18nStructure)
 
   return (
-    <Template title={t("KidneyVolume.toolTitle")}>
+    <Template title={t("KidneyVolume.toolTitle")} name="kidneyvolume">
       <KidneyVolumeStructure />
       <KidneyVolumeReport />
     </Template>

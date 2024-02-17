@@ -2,18 +2,18 @@ import { Group, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
 import { ScriptEditorButton } from "../scriptEditor/ScriptEditorButton"
 
-interface ScriptEditorMetaPropertyProps {
+interface ScriptEditorPropertyInputProps {
   name: string
   label: string
   modalTitle: string
   modalDescription: string
 }
-export const ScriptMetaProperty = ({
+export const ScriptPropertyInput = ({
   name,
   label,
   modalTitle,
   modalDescription,
-}: ScriptEditorMetaPropertyProps) => (
+}: ScriptEditorPropertyInputProps) => (
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (

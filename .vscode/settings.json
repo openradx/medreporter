@@ -5,7 +5,17 @@
   "typescript.locale": "en",
   "i18n-ally.displayLanguage": "en",
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": ["locales", "src/tools/**/locales"],
+  "i18n-ally.localesPaths": [
+    "locales",
+    "src/tools/**/locales",
+    "src/tools/adrenalMri/locales",
+    "src/tools/adrenalWashout/locales",
+    "src/tools/fleischner2017/locales",
+    "src/tools/gfr/locales",
+    "src/tools/kidneyVolume/locales",
+    "src/tools/lungRads2022/locales",
+    "src/tools/measurementsTable/locales"
+  ],
   "i18n-ally.enabledParsers": ["yaml", "ts"],
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.language": "en, de-de",

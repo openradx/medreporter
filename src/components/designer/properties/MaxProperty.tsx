@@ -1,6 +1,6 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { NumberFieldNode } from "~/schemas/structure"
-import { NumberMetaProperty } from "./NumberMetaProperty"
+import { NumberPropertyInput } from "./NumberPropertyInput"
 
 interface MaxPropertyProps {
   node: NumberFieldNode
@@ -8,7 +8,7 @@ interface MaxPropertyProps {
 export const MaxProperty = ({ node }: MaxPropertyProps) => {
   const { t } = useSiteTranslation()
   return (
-    <NumberMetaProperty
+    <NumberPropertyInput
       name="max"
       label={t("MaxProperty.label")}
       precision={node.precision}

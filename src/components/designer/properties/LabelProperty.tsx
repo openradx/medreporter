@@ -1,8 +1,8 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { TextInputMetaProperty } from "./TextInputMetaProperty"
+import { TextInputPropertyInput } from "./TextInputPropertyInput"
 
 export const LabelProperty = () => {
   const { t } = useSiteTranslation()
 
-  return <TextInputMetaProperty name="label" label={t("LabelProperty.label")} />
+  return <TextInputPropertyInput name="label" label={t("LabelProperty.label")} />
 }

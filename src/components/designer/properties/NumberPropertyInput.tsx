@@ -1,7 +1,7 @@
 import { Controller } from "react-hook-form"
 import { NumberInput } from "~/components/inputs/NumberInput"
 
-interface NumberMetaPropertyProps {
+interface NumberPropertyInputProps {
   name: string
   label: string
   precision?: number
@@ -9,13 +9,13 @@ interface NumberMetaPropertyProps {
   max?: number
 }
 
-export const NumberMetaProperty = ({
+export const NumberPropertyInput = ({
   name,
   label,
   precision,
   min,
   max,
-}: NumberMetaPropertyProps) => (
+}: NumberPropertyInputProps) => (
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (

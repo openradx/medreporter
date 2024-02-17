@@ -1,6 +1,6 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { SingleChoiceFieldNode } from "~/schemas/structure"
-import { SelectMetaProperty } from "./SelectMetaProperty"
+import { SelectPropertyInput } from "./SelectPropertyInput"
 
 interface SingleChoiceDefaultPropertyProps {
   node: SingleChoiceFieldNode
@@ -10,7 +10,7 @@ export const SingleChoiceDefaultProperty = ({ node }: SingleChoiceDefaultPropert
   const { t } = useSiteTranslation()
 
   return (
-    <SelectMetaProperty
+    <SelectPropertyInput
       name="default"
       label={t("SingleChoiceDefaultProperty.label")}
       data={node.options}

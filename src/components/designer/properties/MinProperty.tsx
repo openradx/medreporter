@@ -1,6 +1,6 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { NumberFieldNode } from "~/schemas/structure"
-import { NumberMetaProperty } from "./NumberMetaProperty"
+import { NumberPropertyInput } from "./NumberPropertyInput"
 
 interface MinPropertyProps {
   node: NumberFieldNode
@@ -8,7 +8,7 @@ interface MinPropertyProps {
 export const MinProperty = ({ node }: MinPropertyProps) => {
   const { t } = useSiteTranslation()
   return (
-    <NumberMetaProperty
+    <NumberPropertyInput
       name="min"
       label={t("MinProperty.label")}
       precision={node.precision}

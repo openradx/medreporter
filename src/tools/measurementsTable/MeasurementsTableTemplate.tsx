@@ -8,7 +8,7 @@ export const MeasurementsTableTemplate = () => {
   const { t } = useMicroTranslation(i18nStructure)
 
   return (
-    <Template title={t("MeasurementsTable.toolTitle")}>
+    <Template title={t("MeasurementsTable.toolTitle")} name="measurementstable">
       <MeasurementsTableStructure />
       <MeasurementsTableReport />
     </Template>

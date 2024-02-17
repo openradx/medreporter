@@ -1,10 +1,10 @@
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { SelectMetaProperty } from "./SelectMetaProperty"
+import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const SingleChoiceVariantProperty = () => {
   const { t } = useSiteTranslation()
   return (
-    <SelectMetaProperty
+    <SelectPropertyInput
       name="variant"
       label={t("SingleChoiceVariantProperty.label")}
       data={[
