@@ -1,7 +1,6 @@
-import { MultiSelect } from "@mantine/core"
-import { Controller } from "react-hook-form"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MultipleChoiceFieldNode } from "~/schemas/structure"
+import { MultiSelectPropertyInput } from "./MultiSelectPropertyInput"
 
 interface MultipleChoiceDefaultPropertyProps {
   node: MultipleChoiceFieldNode
@@ -11,17 +10,10 @@ export const MultipleChoiceDefaultProperty = ({ node }: MultipleChoiceDefaultPro
   const { t } = useSiteTranslation()
 
   return (
-    <Controller
+    <MultiSelectPropertyInput
       name="default"
-      render={({ field: { value, onChange }, fieldState: { error } }) => (
-        <MultiSelect
-          label={t("MultipleChoiceDefaultProperty.label")}
-          data={node.options}
-          value={value}
-          onChange={onChange}
-          error={error?.message}
-        />
-      )}
+      label={t("MultipleChoiceDefaultProperty.label")}
+      node={node}
     />
   )
 }

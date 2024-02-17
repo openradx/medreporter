@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Button, Flex, MultiSelect, Tooltip } from "@mantine/core"
+import { Button, Flex, Tooltip } from "@mantine/core"
 import appConfig from "app.config"
 import copy from "fast-copy"
 import { useEffect } from "react"
@@ -11,6 +11,7 @@ import { templateNodeSchema } from "~/schemas/template"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectTemplate, updateNode } from "~/state/templateSlice"
 import { InfoProperty } from "./properties/InfoProperty"
+import { MultiSelectPropertyInput } from "./properties/MultiSelectPropertyInput"
 import { SelectPropertyInput } from "./properties/SelectPropertyInput"
 import { TextInputPropertyInput } from "./properties/TextInputPropertyInput"
 import { TextareaPropertyInput } from "./properties/TextareaPropertyInput"
@@ -60,9 +61,9 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
         name="description"
         label={t("TemplatePropertiesForm.descriptionLabel")}
       />
-      <MultiSelect
+      <MultiSelectPropertyInput
+        name="categories"
         label={t("TemplatePropertiesForm.categoriesLabel")}
-        searchable
         data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
           group: t(`categories.group.${group}`),
           items: categories.map((category) => ({
@@ -70,7 +71,6 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
             label: t(`categories.${category}`),
           })),
         }))}
-        clearable
       />
       <InfoProperty />
       <Flex justify="center">
