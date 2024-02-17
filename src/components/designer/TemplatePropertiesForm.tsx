@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { MultiSelect } from "@mantine/core"
+import { Button, Flex, MultiSelect, Tooltip } from "@mantine/core"
 import appConfig from "app.config"
 import copy from "fast-copy"
 import { useEffect } from "react"
@@ -15,7 +15,12 @@ import { SelectPropertyInput } from "./properties/SelectPropertyInput"
 import { TextInputPropertyInput } from "./properties/TextInputPropertyInput"
 import { TextareaPropertyInput } from "./properties/TextareaPropertyInput"
 
-export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>() => {
+export type TemplatePropertiesFormProps = {
+  onClose: () => void
+}
+export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
+  onClose,
+}: TemplatePropertiesFormProps) => {
   const { t } = useSiteTranslation()
 
   const template = useAppSelector(selectTemplate)
@@ -41,11 +46,11 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>() => {
 
   return (
     <FormProvider {...methods}>
-      <TextInputPropertyInput name="name" label={t("TemplatePropertiesModal.nameLabel")} />
-      <TextInputPropertyInput name="title" label={t("TemplatePropertiesModal.titleLabel")} />
+      <TextInputPropertyInput name="name" label={t("TemplatePropertiesForm.nameLabel")} />
+      <TextInputPropertyInput name="title" label={t("TemplatePropertiesForm.titleLabel")} />
       <SelectPropertyInput
         name="language"
-        label={t("TemplatePropertiesModal.languageLabel")}
+        label={t("TemplatePropertiesForm.languageLabel")}
         data={appConfig.supportedTemplateLanguages.map((language) => ({
           value: language,
           label: t(`languages.${language}`),
@@ -53,10 +58,10 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>() => {
       />
       <TextareaPropertyInput
         name="description"
-        label={t("TemplatePropertiesModal.descriptionLabel")}
+        label={t("TemplatePropertiesForm.descriptionLabel")}
       />
       <MultiSelect
-        label={t("TemplatePropertiesModal.categoriesLabel")}
+        label={t("TemplatePropertiesForm.categoriesLabel")}
         searchable
         data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
           group: t(`categories.group.${group}`),
@@ -68,6 +73,17 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>() => {
         clearable
       />
       <InfoProperty />
+      <Flex justify="center">
+        <Tooltip
+          label={t("general.errorFormTooltip")}
+          display={!methods.formState.isValid ? "inherit" : "none"}
+          withArrow
+        >
+          <Button onClick={onClose} mt={16} disabled={!methods.formState.isValid}>
+            {t("general.buttonClose")}
+          </Button>
+        </Tooltip>
+      </Flex>
     </FormProvider>
   )
 }

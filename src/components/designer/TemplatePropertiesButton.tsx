@@ -5,7 +5,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { TemplatePropertiesModal } from "./TemplatePropertiesModal"
 
 export const TemplatePropertiesButton = () => {
-  const [opened, { open, close }] = useDisclosure(false)
+  const [opened, { open, close }] = useDisclosure(true)
   const { t } = useSiteTranslation()
 
   return (

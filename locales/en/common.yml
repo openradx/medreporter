@@ -15,6 +15,7 @@ general:
   buttonClose: Close
   buttonDelete: Delete
   buttonSave: Save
+  errorFormTooltip: Please correct the errors in the form to continue.
   errorTitle: An error occurred
   miscNoData: No data available
 languages:

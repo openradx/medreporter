@@ -142,7 +142,7 @@ SvgEditorModal:
   previewLabel: Preview
 TemplatePropertiesButton:
   title: Template Properties
-TemplatePropertiesModal:
+TemplatePropertiesForm:
   categoriesLabel: Categories
   descriptionLabel: Description
   languageLabel: Language

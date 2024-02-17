@@ -15,6 +15,7 @@ general:
   buttonClose: Schließen
   buttonDelete: Löschen
   buttonSave: Sichern
+  errorFormTooltip: Bitte korrigieren Sie die Fehler im Formular um fortzufahren.
   errorTitle: Ein Fehler ist aufgetreten
   miscNoData: Keine Datensätze verfügbar
 languages:
