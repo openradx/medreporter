@@ -20,7 +20,7 @@ const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
   nodeId: createNodeId("template"),
   name: createFieldId("template"),
-  title: "",
+  title: "New Template",
   language: "en-US",
   description: "",
   categories: [],

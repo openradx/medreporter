@@ -148,6 +148,8 @@ TemplatePropertiesForm:
   languageLabel: Language
   nameLabel: Name
   titleLabel: Title
+TemplatePropertiesModal:
+  modalTitle: New Template - Properties
 TimeDefaultProperty:
   label: Default
 TitleProperty:
