@@ -8,7 +8,7 @@ const baseFieldIdSchema = z
   .string()
   .trim()
   .max(50)
-  .regex(/^[a-z0-9_]*$/i, "Field ID must only contain letters, numbers, and underscores")
+  .regex(/^[a-z0-9_]*$/i, "Field ID must only contain letters, numbers and underscores")
 const optionalFieldIdSchema = baseFieldIdSchema.refine(
   (fieldId) => fieldId.length === 0 || fieldId.length >= 3,
   { message: "Field ID must be at least 3 characters long" }
