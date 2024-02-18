@@ -41,7 +41,7 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <TextInputPropertyInput
           name="name"
           label={t("TemplatePropertiesForm.nameLabel")}
