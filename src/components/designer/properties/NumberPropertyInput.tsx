@@ -7,6 +7,7 @@ interface NumberPropertyInputProps {
   precision?: number
   min?: number
   max?: number
+  required?: boolean
 }
 
 export const NumberPropertyInput = ({
@@ -15,6 +16,7 @@ export const NumberPropertyInput = ({
   precision,
   min,
   max,
+  required,
 }: NumberPropertyInputProps) => (
   <Controller
     name={name}
@@ -27,6 +29,7 @@ export const NumberPropertyInput = ({
         precision={precision}
         min={min}
         max={max}
+        required={required}
       />
     )}
   />

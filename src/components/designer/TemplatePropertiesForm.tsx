@@ -1,10 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Button, Flex, Tooltip } from "@mantine/core"
+import { Button, Flex } from "@mantine/core"
 import appConfig from "app.config"
 import copy from "fast-copy"
-import { useEffect } from "react"
 import { FormProvider, useForm } from "react-hook-form"
-import { useDebouncedCallback } from "use-debounce"
 import { z } from "zod"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { templateNodeSchema } from "~/schemas/template"
@@ -34,56 +32,57 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
 
   const dispatch = useAppDispatch()
 
-  const { watch, handleSubmit } = methods
+  const { handleSubmit } = methods
 
-  const debounced = useDebouncedCallback((changedValues: z.infer<S>) => {
+  const onSubmit = (changedValues: z.infer<S>) => {
     dispatch(updateNode({ nodeId, data: copy(changedValues) }))
-  }, 200)
-
-  useEffect(() => {
-    const subscription = watch(() => handleSubmit(debounced)())
-    return () => subscription.unsubscribe()
-  }, [watch, handleSubmit, debounced])
+    onClose()
+  }
 
   return (
     <FormProvider {...methods}>
-      <TextInputPropertyInput name="name" label={t("TemplatePropertiesForm.nameLabel")} />
-      <TextInputPropertyInput name="title" label={t("TemplatePropertiesForm.titleLabel")} />
-      <SelectPropertyInput
-        name="language"
-        label={t("TemplatePropertiesForm.languageLabel")}
-        data={appConfig.supportedTemplateLanguages.map((language) => ({
-          value: language,
-          label: t(`languages.${language}`),
-        }))}
-      />
-      <TextareaPropertyInput
-        name="description"
-        label={t("TemplatePropertiesForm.descriptionLabel")}
-      />
-      <MultiSelectPropertyInput
-        name="categories"
-        label={t("TemplatePropertiesForm.categoriesLabel")}
-        data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
-          group: t(`categories.group.${group}`),
-          items: categories.map((category) => ({
-            value: category,
-            label: t(`categories.${category}`),
-          })),
-        }))}
-      />
-      <InfoProperty />
-      <Flex justify="center">
-        <Tooltip
-          label={t("general.errorFormTooltip")}
-          display={!methods.formState.isValid ? "inherit" : "none"}
-          withArrow
-        >
-          <Button onClick={onClose} mt={16} disabled={!methods.formState.isValid}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <TextInputPropertyInput
+          name="name"
+          label={t("TemplatePropertiesForm.nameLabel")}
+          required
+        />
+        <TextInputPropertyInput
+          name="title"
+          label={t("TemplatePropertiesForm.titleLabel")}
+          required
+        />
+        <SelectPropertyInput
+          name="language"
+          label={t("TemplatePropertiesForm.languageLabel")}
+          data={appConfig.supportedTemplateLanguages.map((language) => ({
+            value: language,
+            label: t(`languages.${language}`),
+          }))}
+          required
+        />
+        <TextareaPropertyInput
+          name="description"
+          label={t("TemplatePropertiesForm.descriptionLabel")}
+        />
+        <MultiSelectPropertyInput
+          name="categories"
+          label={t("TemplatePropertiesForm.categoriesLabel")}
+          data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
+            group: t(`categories.group.${group}`),
+            items: categories.map((category) => ({
+              value: category,
+              label: t(`categories.${category}`),
+            })),
+          }))}
+        />
+        <InfoProperty />
+        <Flex justify="center">
+          <Button type="submit" mt={16} disabled={!methods.formState.isValid}>
             {t("general.buttonClose")}
           </Button>
-        </Tooltip>
-      </Flex>
+        </Flex>
+      </form>
     </FormProvider>
   )
 }

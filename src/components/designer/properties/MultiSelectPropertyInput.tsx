@@ -7,6 +7,7 @@ interface MultiSelectPropertyInputProps {
   label: string
   node?: MultipleChoiceFieldNode
   data?: ComboboxData
+  required?: boolean
 }
 
 export const MultiSelectPropertyInput = ({
@@ -14,6 +15,7 @@ export const MultiSelectPropertyInput = ({
   label,
   node,
   data,
+  required
 }: MultiSelectPropertyInputProps) => (
   <Controller
     name={name}
@@ -27,6 +29,7 @@ export const MultiSelectPropertyInput = ({
         maxDropdownHeight={100}
         searchable
         clearable
+        required={required}
       />
     )}
   />

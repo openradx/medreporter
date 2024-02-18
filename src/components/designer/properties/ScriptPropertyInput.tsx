@@ -7,12 +7,14 @@ interface ScriptEditorPropertyInputProps {
   label: string
   modalTitle: string
   modalDescription: string
+  required?: boolean
 }
 export const ScriptPropertyInput = ({
   name,
   label,
   modalTitle,
   modalDescription,
+  required,
 }: ScriptEditorPropertyInputProps) => (
   <Controller
     name={name}
@@ -32,6 +34,7 @@ export const ScriptPropertyInput = ({
         value={value}
         onChange={onChange}
         error={error?.message}
+        required={required}
       />
     )}
   />

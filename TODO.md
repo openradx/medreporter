@@ -113,6 +113,7 @@
 - [Tools] Fazekas scale
 - [Tools] PI-RADS
 - [Tools] Liver Lab
+- Undoble false in template properties
 
 ## Maybe
 

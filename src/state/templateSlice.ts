@@ -3,7 +3,6 @@ import invariant from "tiny-invariant"
 import { TemplateNode } from "~/schemas/template"
 import {
   AddableNode,
-  createFieldId,
   createNodeId,
   findContainer,
   findNode,
@@ -19,9 +18,9 @@ const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
 const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
   nodeId: createNodeId("template"),
-  name: createFieldId("template"),
-  title: "New Template",
-  language: "en-US",
+  name: "",
+  title: "",
+  language: "",
   description: "",
   categories: [],
   info: "",
