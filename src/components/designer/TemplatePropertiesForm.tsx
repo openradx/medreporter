@@ -64,6 +64,9 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
         <TextareaPropertyInput
           name="description"
           label={t("TemplatePropertiesForm.descriptionLabel")}
+          autosize
+          minRows={4}
+          maxRows={4}
         />
         <MultiSelectPropertyInput
           name="categories"
