@@ -15,7 +15,7 @@ export const MultiSelectPropertyInput = ({
   label,
   node,
   data,
-  required
+  required,
 }: MultiSelectPropertyInputProps) => (
   <Controller
     name={name}
