@@ -1,5 +1,6 @@
 import { Group, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
+import { eslintConfig, eslintLinter } from "~/utils/eslintUtils"
 import { ScriptEditorButton } from "../scriptEditor/ScriptEditorButton"
 
 interface ScriptEditorPropertyInputProps {
@@ -18,6 +19,7 @@ export const ScriptPropertyInput = ({
 }: ScriptEditorPropertyInputProps) => (
   <Controller
     name={name}
+    rules={{ validate: (value) => eslintLinter.verify(value, eslintConfig).length === 0 }}
     render={({ field: { value, onChange }, fieldState: { error } }) => (
       <Textarea
         label={

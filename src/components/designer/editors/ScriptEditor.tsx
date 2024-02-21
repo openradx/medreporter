@@ -1,25 +1,12 @@
 import { javascript, esLint } from "@codemirror/lang-javascript"
 import { linter } from "@codemirror/lint"
 import { Stack } from "@mantine/core"
-import * as eslint from "eslint-linter-browserify"
 import { useDebouncedCallback } from "use-debounce"
+import { eslintConfig, eslintLinter } from "~/utils/eslintUtils"
 import { CodeEditor } from "./CodeEditor"
 import classes from "./ScriptEditor.module.css"
 
-const eslintLinter = new eslint.Linter()
-const config: eslint.Linter.Config = {
-  parserOptions: { ecmaVersion: 2020, sourceType: "script" },
-  env: { es2020: true },
-  globals: { fields: "readonly" },
-  rules: {
-    semi: ["error", "never"],
-  },
-}
-eslintLinter.getRules().forEach((desc: any, name: string) => {
-  if (desc.meta.docs.recommended) config.rules![name] = 2
-})
-
-const extensions = [javascript(), linter(esLint(eslintLinter, config))]
+const extensions = [javascript(), linter(esLint(eslintLinter, eslintConfig))]
 
 interface ScriptEditorProps {
   value: string
@@ -28,7 +15,7 @@ interface ScriptEditorProps {
 
 export const ScriptEditor = ({ value, onChange }: ScriptEditorProps) => {
   const handleChange = useDebouncedCallback((newValue) => {
-    const messages = eslintLinter.verify(newValue, config)
+    const messages = eslintLinter.verify(newValue, eslintConfig)
     if (!messages.some((message) => message.severity === 2)) {
       onChange(newValue)
     }
