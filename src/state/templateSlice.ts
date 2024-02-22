@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import copy from "fast-copy"
 import invariant from "tiny-invariant"
 import { TemplateNode } from "~/schemas/template"
 import {
@@ -49,7 +50,17 @@ const templateSlice = createSlice({
   reducers: {
     undo: templateHistoryAdapter.undo,
     redo: templateHistoryAdapter.redo,
-    resetTemplate: templateHistoryAdapter.undoable<{}>(() => initialState.present),
+    resetTemplate: templateHistoryAdapter.undoable<{}>((state) => {
+      const resetState = copy(initialState.present)
+      return Object.assign(resetState, {
+        name: state.name,
+        title: state.title,
+        language: state.language,
+        description: state.description,
+        categories: state.categories,
+        info: state.info,
+      })
+    }),
     setTemplate: templateHistoryAdapter.undoable<TemplateNode>((state, action) => action.payload),
     addNode: templateHistoryAdapter.undoable<{
       node: AddableNode
