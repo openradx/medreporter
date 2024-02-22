@@ -1,5 +1,5 @@
+import { MeasurementsData, MeasurementsRow } from "~/schemas/structure"
 import { checkDataRowEmpty, getMeasurementsDataParams } from "~/utils/measurementsUtils"
-import { MeasurementsData, MeasurementsRow } from "../../types/measurements"
 
 const NEWLINE_CHAR = "\n"
 const DELIMITER = " "

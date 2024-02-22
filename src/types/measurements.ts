@@ -2,20 +2,6 @@ export type Dimensions = 1 | 2 | 3
 
 export type Dimension = Dimensions
 
-export type MeasureValues =
-  | [number | null]
-  | [number | null, number | null]
-  | [number | null, number | null, number | null]
-
-export type MeasurementsRow = {
-  previous?: MeasureValues
-  current: MeasureValues
-  location: string
-  reference: string
-}
-
-export type MeasurementsData = MeasurementsRow[]
-
 export type MeasurementsDataParams = {
   rows: number
   dimensions: Dimensions

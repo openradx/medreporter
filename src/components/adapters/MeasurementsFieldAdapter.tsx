@@ -39,7 +39,7 @@ export const MeasurementsFieldAdapter = ({ node }: MeasurementsFieldAdapterProps
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
-      defaultValue={undefined}
+      defaultValue={node.default}
     />
   )
 }

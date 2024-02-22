@@ -1,7 +1,7 @@
 import { MeasurementsOutput } from "~/components/outputs/MeasurementsOutput"
 import { Report } from "~/components/template/Report"
 import { useStructureData } from "~/hooks/useStructureData"
-import { MeasurementsData } from "~/types/measurements"
+import { MeasurementsData } from "~/schemas/structure"
 
 type MeasurementsTableData = {
   measurements: MeasurementsData

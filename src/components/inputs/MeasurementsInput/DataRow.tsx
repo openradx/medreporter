@@ -1,5 +1,6 @@
 import { Box } from "@mantine/core"
-import { Dimension, Dimensions, MeasurementsAction, MeasurementsRow } from "~/types/measurements"
+import { MeasurementsRow } from "~/schemas/structure"
+import { Dimension, Dimensions, MeasurementsAction } from "~/types/measurements"
 import { NumberCell } from "./NumberCell"
 import { TextCell } from "./TextCell"
 

@@ -12,6 +12,7 @@ interface PropertiesFormProps<S extends z.ZodType<any, any>> {
   nodeId: string
   schema: S
   initialValues: z.infer<S>
+  manipulator?: (values: z.infer<S>) => any
   children: ReactNode
 }
 
@@ -19,6 +20,7 @@ export const PropertiesForm = <S extends z.ZodType<any, any>>({
   nodeId,
   schema,
   initialValues,
+  manipulator,
   children,
 }: PropertiesFormProps<S>) => {
   const methods = useForm({
@@ -32,7 +34,9 @@ export const PropertiesForm = <S extends z.ZodType<any, any>>({
   const { watch, handleSubmit } = methods
 
   const debounced = useDebouncedCallback((changedValues: z.infer<S>) => {
-    dispatch(updateNode({ nodeId, data: copy(changedValues) }))
+    let data = copy(changedValues)
+    if (manipulator) data = manipulator(data)
+    dispatch(updateNode({ nodeId, data }))
   }, 200)
 
   useEffect(() => {

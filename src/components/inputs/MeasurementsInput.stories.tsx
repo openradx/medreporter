@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react"
 import { ComponentProps, useState } from "react"
+import { MeasurementsData } from "~/schemas/structure"
 import { calcStats, createEmptyMeasurements, createStatsText } from "~/utils/measurementsUtils"
-import { MeasurementsData } from "../../types/measurements"
 import { SiteTranslations } from "../storybook/SiteTranslations"
 import { MeasurementsInput } from "./MeasurementsInput"
 

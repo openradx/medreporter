@@ -35,6 +35,8 @@ FigureProperty:
   label: Figure
 FindingDefaultProperty:
   label: Default
+FollowUpProperty:
+  label: Follow up
 FormatProperty:
   label: Format
 FreeTextDefaultProperty:
@@ -65,6 +67,10 @@ MaxProperty:
   label: Maximal value
 MaxRowsProperty:
   label: Maximal rows
+MeasurementDimensionsProperty:
+  label: Dimensions
+MeasurementRowsProperty:
+  label: Rows
 MenuPanel:
   components: Components
   dateFieldLabel: Date

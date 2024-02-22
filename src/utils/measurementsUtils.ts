@@ -1,12 +1,10 @@
 import { produce } from "immer"
+import { MeasureValues, MeasurementsData, MeasurementsRow } from "~/schemas/structure"
 import {
   Dimensions,
   MeasurementsAction,
-  MeasurementsData,
   MeasurementsDataParams,
-  MeasurementsRow,
   MeasurementsStats,
-  MeasureValues,
 } from "../types/measurements"
 
 export const getMeasurementsDataParams = (data: MeasurementsData): MeasurementsDataParams => {

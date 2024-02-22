@@ -1,7 +1,7 @@
 import { Box, Table } from "@mantine/core"
 import { ReactElement } from "react"
+import { MeasurementsData, MeasurementsRow } from "~/schemas/structure"
 import { checkDataRowEmpty, getMeasurementsDataParams } from "~/utils/measurementsUtils"
-import { MeasurementsData, MeasurementsRow } from "../../types/measurements"
 
 const MULTIPLICATOR = " x "
 

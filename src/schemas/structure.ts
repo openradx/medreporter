@@ -140,9 +140,30 @@ export const multipleChoiceFieldNodeSchema = nodeSchema.extend({
 
 export type MultipleChoiceFieldNode = z.infer<typeof multipleChoiceFieldNodeSchema>
 
+const measureValuesSchema = z
+  .tuple([z.number().nullable()])
+  .or(z.tuple([z.number().nullable(), z.number().nullable()]))
+  .or(z.tuple([z.number().nullable(), z.number().nullable(), z.number().nullable()]))
+
+export type MeasureValues = z.infer<typeof measureValuesSchema>
+
+const measurementsRowSchema = z.object({
+  previous: measureValuesSchema.optional(),
+  current: measureValuesSchema,
+  location: z.string(),
+  reference: z.string(),
+})
+
+export type MeasurementsRow = z.infer<typeof measurementsRowSchema>
+
+const measurementsDataSchema = z.array(measurementsRowSchema)
+
+export type MeasurementsData = z.infer<typeof measurementsDataSchema>
+
 export const measurementsFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MeasurementsField"),
   ...fieldProperties,
+  default: measurementsDataSchema,
 })
 
 export type MeasurementsFieldNode = z.infer<typeof measurementsFieldNodeSchema>
