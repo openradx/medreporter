@@ -5,8 +5,10 @@ import { NumberPropertyInput } from "./NumberPropertyInput"
 interface MinPropertyProps {
   node: NumberFieldNode
 }
+
 export const MinProperty = ({ node }: MinPropertyProps) => {
   const { t } = useSiteTranslation()
+
   return (
     <NumberPropertyInput
       name="min"

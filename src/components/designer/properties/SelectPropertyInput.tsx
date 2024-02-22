@@ -8,6 +8,7 @@ interface SelectPropertyInputProps {
   data: Option[]
   required?: boolean
 }
+
 export const SelectPropertyInput = ({ name, label, data, required }: SelectPropertyInputProps) => (
   <Controller
     name={name}

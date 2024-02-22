@@ -3,6 +3,7 @@ import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const DirectionProperty = () => {
   const { t } = useSiteTranslation()
+
   return (
     <SelectPropertyInput
       name="direction"

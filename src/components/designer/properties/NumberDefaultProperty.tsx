@@ -5,8 +5,10 @@ import { NumberPropertyInput } from "./NumberPropertyInput"
 export type NumberDefaultPropertyProps = {
   node: NumberFieldNode
 }
+
 export const NumberDefaultProperty = ({ node }: NumberDefaultPropertyProps) => {
   const { t } = useSiteTranslation()
+
   return (
     <NumberPropertyInput
       name="default"

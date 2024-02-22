@@ -7,8 +7,10 @@ import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
 interface OptionsPropertyProps {
   node: SingleChoiceFieldNode | MultipleChoiceFieldNode
 }
+
 export const OptionsProperty = ({ node }: OptionsPropertyProps) => {
   const { t } = useSiteTranslation()
+
   return (
     <Controller
       name="options"

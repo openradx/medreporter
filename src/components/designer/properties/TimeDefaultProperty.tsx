@@ -6,8 +6,10 @@ import { TimeFieldNode } from "~/schemas/structure"
 interface TimeDefaultPropertyProps {
   node: TimeFieldNode
 }
+
 export const TimeDefaultProperty = ({ node }: TimeDefaultPropertyProps) => {
   const { t } = useSiteTranslation()
+
   return (
     <Controller
       name="default"

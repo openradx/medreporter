@@ -3,6 +3,7 @@ import { ScriptPropertyInput } from "./ScriptPropertyInput"
 
 export const DisabledProperty = () => {
   const { t } = useSiteTranslation()
+
   return (
     <ScriptPropertyInput
       name="disabled"

@@ -5,6 +5,7 @@ import { SvgEditorButton } from "../svgEditor/SvgEditorButton"
 
 export const FigureProperty = () => {
   const { t } = useSiteTranslation()
+
   return (
     <Controller
       name="figure"

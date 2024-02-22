@@ -3,6 +3,7 @@ import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const MultipleChoiceVariantProperty = () => {
   const { t } = useSiteTranslation()
+
   return (
     <SelectPropertyInput
       name="variant"

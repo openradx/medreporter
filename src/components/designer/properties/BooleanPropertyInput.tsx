@@ -6,6 +6,7 @@ interface BooleanPropertyInputProps {
   label: string
   required?: boolean
 }
+
 export const BooleanPropertyInput = ({ name, label, required }: BooleanPropertyInputProps) => (
   <Controller
     name={name}

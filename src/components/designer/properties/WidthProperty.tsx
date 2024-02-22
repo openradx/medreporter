@@ -3,6 +3,7 @@ import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const WidthProperty = () => {
   const { t } = useSiteTranslation()
+
   return (
     <SelectPropertyInput
       name="width"

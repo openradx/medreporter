@@ -9,6 +9,7 @@ interface ScriptEditorPropertyInputProps {
   modalDescription: string
   required?: boolean
 }
+
 export const ScriptPropertyInput = ({
   name,
   label,
