@@ -27,7 +27,7 @@ export const MeasurementsField = ({
   disabled = disabled || groupDisabled
 
   return (
-    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden }}>
+    <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width: "full" }}>
       <MeasurementsInput
         {...{ label, extras, value, onChange, disabled }}
         footer={null} // TODO:

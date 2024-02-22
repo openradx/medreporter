@@ -140,7 +140,7 @@ export const multipleChoiceFieldNodeSchema = nodeSchema.extend({
 
 export type MultipleChoiceFieldNode = z.infer<typeof multipleChoiceFieldNodeSchema>
 
-const measurementsFieldNodeSchema = nodeSchema.extend({
+export const measurementsFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MeasurementsField"),
   ...fieldProperties,
 })

@@ -12,6 +12,7 @@ import { FindingFieldPropertiesForm } from "./propertiesForms/FindingFieldProper
 import { FreeTextFieldPropertiesForm } from "./propertiesForms/FreeTextFieldPropertiesForm"
 import { GroupPropertiesForm } from "./propertiesForms/GroupPropertiesForm"
 import { HintPropertiesForm } from "./propertiesForms/HintPropertiesForm"
+import { MeasurementsFieldPropertiesForm } from "./propertiesForms/MeasurementsFieldPropertiesForm"
 import { MultipleChoiceFieldPropertiesForm } from "./propertiesForms/MultipleChoiceFieldPropertiesForm"
 import { NumberFieldPropertiesForm } from "./propertiesForms/NumberFieldPropertiesForm"
 import { ParagraphPropertiesForm } from "./propertiesForms/ParagraphPropertiesForm"
@@ -56,6 +57,9 @@ export const PropertiesPanel = () => {
     ))
     .with({ type: "MultipleChoiceField" }, (node) => (
       <MultipleChoiceFieldPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "MeasurementsField" }, (node) => (
+      <MeasurementsFieldPropertiesForm key={node.nodeId} node={node} />
     ))
     .with({ type: "Statement" }, (node) => (
       <StatementPropertiesForm key={node.nodeId} node={node} />
