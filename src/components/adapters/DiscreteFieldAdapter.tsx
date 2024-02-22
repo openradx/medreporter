@@ -1,5 +1,4 @@
 import { DiscreteFieldNode } from "~/schemas/structure"
-import { BooleanFieldAdapter } from "./BooleanFieldAdapter"
 import { DateFieldAdapter } from "./DateFieldAdapter"
 import { FreeTextFieldAdapter } from "./FreeTextFieldAdapter"
 import { MeasurementsFieldAdapter } from "./MeasurementsFieldAdapter"
@@ -14,8 +13,6 @@ interface DiscreteFieldAdapterProps {
 
 export const DiscreteFieldAdapter = ({ node }: DiscreteFieldAdapterProps) => {
   switch (node.type) {
-    case "BooleanField":
-      return <BooleanFieldAdapter key={node.nodeId} node={node} />
     case "DateField":
       return <DateFieldAdapter key={node.nodeId} node={node} />
     case "FreeTextField":

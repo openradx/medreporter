@@ -1,7 +1,6 @@
 import { Flex, ScrollArea, Stack, Text } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { PanelToolbar } from "../template/PanelToolbar"
-import { BooleanFieldMenuItem } from "./menuItems/BooleanFieldMenuItem"
 import { DateFieldMenuItem } from "./menuItems/DateFieldMenuItem"
 import { FindingFieldMenuItem } from "./menuItems/FindingFieldMenuItem"
 import { FreeTextFieldMenuItem } from "./menuItems/FreeTextFieldMenuItem"
@@ -27,7 +26,6 @@ export const MenuPanel = () => {
           <FindingFieldMenuItem label={t("MenuPanel.findingFieldLabel")} />
           <DateFieldMenuItem label={t("MenuPanel.dateFieldLabel")} />
           <TimeFieldMenuItem label={t("MenuPanel.timeFieldLabel")} />
-          <BooleanFieldMenuItem label={t("MenuPanel.booleanFieldLabel")} />
           <FreeTextFieldMenuItem label={t("MenuPanel.freeTextFieldLabel")} />
           <NumberFieldMenuItem label={t("MenuPanel.numberFieldLabel")} />
           <SingleChoiceFieldMenuItem label={t("MenuPanel.singleChoiceFieldLabel")} />

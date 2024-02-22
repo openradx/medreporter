@@ -43,15 +43,6 @@ export const hintNodeSchema = nodeSchema.extend({
 
 export type HintNode = z.infer<typeof hintNodeSchema>
 
-export const booleanFieldNodeSchema = nodeSchema.extend({
-  type: z.literal("BooleanField"),
-  ...fieldProperties,
-  width: widthSchema,
-  default: z.boolean(),
-})
-
-export type BooleanFieldNode = z.infer<typeof booleanFieldNodeSchema>
-
 export const numberFieldNodeSchema = nodeSchema.extend({
   type: z.literal("NumberField"),
   ...fieldProperties,
@@ -157,7 +148,6 @@ const measurementsFieldNodeSchema = nodeSchema.extend({
 export type MeasurementsFieldNode = z.infer<typeof measurementsFieldNodeSchema>
 
 export type DiscreteFieldNode =
-  | BooleanFieldNode
   | NumberFieldNode
   | DateFieldNode
   | TimeFieldNode
@@ -167,7 +157,6 @@ export type DiscreteFieldNode =
   | MeasurementsFieldNode
 
 const discreteFieldNodeSchemas = [
-  booleanFieldNodeSchema,
   numberFieldNodeSchema,
   dateFieldNodeSchema,
   timeFieldNodeSchema,

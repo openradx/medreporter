@@ -67,7 +67,6 @@ export function createFieldId(prefix: string) {
 }
 
 const addableNodes: Set<AddableNode["type"]> = new Set([
-  "BooleanField",
   "DateField",
   "FreeTextField",
   "NumberField",

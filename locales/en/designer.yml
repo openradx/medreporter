@@ -1,5 +1,3 @@
-BooleanDefaultProperty:
-  label: Default
 BorderProperty:
   label: Border
 ContentProperty:
@@ -35,6 +33,8 @@ FieldIdProperty:
   label: ID
 FigureProperty:
   label: Figure
+FindingDefaultProperty:
+  label: Default
 FormatProperty:
   label: Format
 FreeTextDefaultProperty:
@@ -66,7 +66,6 @@ MaxProperty:
 MaxRowsProperty:
   label: Maximal rows
 MenuPanel:
-  booleanFieldLabel: Boolean
   components: Components
   dateFieldLabel: Date
   findingFieldLabel: Finding

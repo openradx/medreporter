@@ -7,7 +7,6 @@ import { useAppDispatch, useAppSelector } from "~/state/store"
 import { deleteNode, selectTemplate } from "~/state/templateSlice"
 import { findNode } from "~/utils/designerUtils"
 import { PanelToolbar } from "../template/PanelToolbar"
-import { BooleanFieldPropertiesForm } from "./propertiesForms/BooleanFieldPropertiesForm"
 import { DateFieldPropertiesForm } from "./propertiesForms/DateFieldPropertiesForm"
 import { FindingFieldPropertiesForm } from "./propertiesForms/FindingFieldPropertiesForm"
 import { FreeTextFieldPropertiesForm } from "./propertiesForms/FreeTextFieldPropertiesForm"
@@ -45,9 +44,6 @@ export const PropertiesPanel = () => {
     ))
     .with({ type: "TimeField" }, (node) => (
       <TimeFieldPropertiesForm key={node.nodeId} node={node} />
-    ))
-    .with({ type: "BooleanField" }, (node) => (
-      <BooleanFieldPropertiesForm key={node.nodeId} node={node} />
     ))
     .with({ type: "NumberField" }, (node) => (
       <NumberFieldPropertiesForm key={node.nodeId} node={node} />
