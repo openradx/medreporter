@@ -23,7 +23,7 @@ export const MultipleChoiceFieldMenuItem = ({ label }: MultipleChoiceFieldMenuIt
       info: "",
       disabled: "",
       hidden: "",
-      width: "auto",
+      width: "small",
       variant: "checkbox",
       figure: "",
       options: createExampleOptions(3),

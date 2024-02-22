@@ -22,7 +22,7 @@ export const DateFieldMenuItem = ({ label }: DateFieldMenuItemProps) => {
       info: "",
       disabled: "",
       hidden: "",
-      width: "auto",
+      width: "small",
       format: "YYYY-MM-DD",
       default: "",
     }),

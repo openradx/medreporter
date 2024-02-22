@@ -4,5 +4,5 @@ import { NumberPropertyInput } from "./NumberPropertyInput"
 export const MaxRowsProperty = () => {
   const { t } = useSiteTranslation()
 
-  return <NumberPropertyInput name="maxRows" label={t("MaxRowsProperty.label")} />
+  return <NumberPropertyInput name="maxRows" label={t("MaxRowsProperty.label")} min={1} />
 }
