@@ -2,7 +2,7 @@ import xmlPlugin from "@prettier/plugin-xml"
 import babelPlugin from "prettier/plugins/babel"
 import estreePlugin from "prettier/plugins/estree"
 import markdownPlugin from "prettier/plugins/markdown"
-import { formatWithCursor, format } from "prettier/standalone"
+import { formatWithCursor } from "prettier/standalone"
 
 async function formatScript(code: string, cursorOffset: number): Promise<[string, number]> {
   const result = await formatWithCursor(code, {
@@ -34,13 +34,12 @@ async function formatMarkdown(code: string, cursorOffset: number): Promise<[stri
 }
 
 async function formatSVG(code: string, cursorOffset: number): Promise<[string, number]> {
-  // TODO: formatWithCursor not working with plugin-xml, see https://github.com/prettier/plugin-xml/issues/753
-  const result = await format(code, {
+  const result = await formatWithCursor(code, {
     parser: "xml",
     cursorOffset,
     plugins: [xmlPlugin],
   })
-  return [result, result.length]
+  return [result.formatted, result.cursorOffset]
 }
 
 export async function formatCode(
