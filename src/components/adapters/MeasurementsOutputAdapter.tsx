@@ -1,19 +1,29 @@
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { MeasurementsOutputNode } from "~/schemas/report"
+import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
 import { MeasurementsOutput } from "../outputs/MeasurementsOutput"
 
 interface MeasurementsOutputAdapterProps {
   node: MeasurementsOutputNode
 }
 
-export const MeasurementsOutputAdapter = ({ node }: MeasurementsOutputAdapterProps) => (
-  <MeasurementsOutput
-    fieldId={node.link} // TODO: rename fieldId of MeasurementsOutput to link
-    data={[]} // TODO:
-    stats="" // TODO:
-    legend={node.legend}
-    previousLabel={node.previousLabel}
-    currentLabel={node.currentLabel}
-    locationLabel={node.locationLabel}
-    referenceLabel={node.referenceLabel}
-  />
-)
+export const MeasurementsOutputAdapter = ({ node }: MeasurementsOutputAdapterProps) => {
+  const isDesigning = useIsDesigning()
+
+  if (isDesigning) {
+    return <DraggableCanvasItem node={node} />
+  }
+
+  return (
+    <MeasurementsOutput
+      link={node.link}
+      data={[]} // TODO: data via link?
+      stats="" // TODO:
+      legend={node.legend}
+      previousLabel={node.previousLabel}
+      currentLabel={node.currentLabel}
+      locationLabel={node.locationLabel}
+      referenceLabel={node.referenceLabel}
+    />
+  )
+}

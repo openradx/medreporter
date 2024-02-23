@@ -2,6 +2,8 @@ BorderProperty:
   label: Berandung
 ContentProperty:
   label: Inhalt
+CurrentLabelProperty:
+  label: Label aktuell
 DateDefaultProperty:
   label: Default
 DesignerContainerItem:
@@ -51,12 +53,16 @@ InfoProperty:
   label: Info
 LabelProperty:
   label: Beschriftung
+LegendProperty:
+  label: Legende
 LevelProperty:
   label: Level
 LinkProperty:
   label: Link
 ListProperty:
   label: Liste
+LocationLabelProperty:
+  label: Label Lokalisation
 MarkdownEditorButton:
   buttonTooltip: Markdown Editor
 MarkdownEditorModal:
@@ -79,6 +85,7 @@ MenuPanel:
   groupLabel: Gruppe
   hintLabel: Hinweis
   measurementsFieldLabel: Messtabelle
+  measurementsOutputLabel: Messtabellenresultat
   multipleChoiceFieldLabel: Mehrfachauswahl
   numberFieldLabel: Zahl
   others: Sonstiges
@@ -120,11 +127,15 @@ OptionsTable:
   valueColumnHeader: Wert
 PrecisionProperty:
   label: Nachkommastellen
+PreviousLabelProperty:
+  label: Label zuvor
 PreviewSwitch:
   label: Vorschau
 PropertiesPanel:
   panelTitle: Eigenschaften
   deleteItemButtonLabel: Löschen
+ReferenceLabelProperty:
+  label: Label Referenz
 RowsProperty:
   label: Zeilen
 ScriptEditorButton:

@@ -2,6 +2,8 @@ BorderProperty:
   label: Border
 ContentProperty:
   label: Content
+CurrentLabelProperty:
+  label: Label current
 DateDefaultProperty:
   label: Default
 DirectionProperty:
@@ -51,12 +53,16 @@ InfoProperty:
   label: Info
 LabelProperty:
   label: Label
+LegendProperty:
+  label: Legend
 LevelProperty:
   label: Level
 LinkProperty:
   label: Link
 ListProperty:
   label: List
+LocationLabelProperty:
+  label: Label location
 MarkdownEditorButton:
   buttonTooltip: Markdown Editor
 MarkdownEditorModal:
@@ -79,6 +85,7 @@ MenuPanel:
   groupLabel: Group
   hintLabel: Hint
   measurementsFieldLabel: Measurements
+  measurementsOutputLabel: Measurements output
   multipleChoiceFieldLabel: Multiple choice
   numberFieldLabel: Number
   others: Others
@@ -120,11 +127,15 @@ OptionsTable:
   valueColumnHeader: Value
 PrecisionProperty:
   label: Precision
+PreviousLabelProperty:
+  label: Label previous
 PreviewSwitch:
   label: Preview
 PropertiesPanel:
   panelTitle: Properties
   deleteItemButtonLabel: Delete
+ReferenceLabelProperty:
+  label: Label reference
 RowsProperty:
   label: Rows
 ScriptEditorButton:

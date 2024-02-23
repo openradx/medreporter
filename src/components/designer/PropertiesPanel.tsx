@@ -13,6 +13,7 @@ import { FreeTextFieldPropertiesForm } from "./propertiesForms/FreeTextFieldProp
 import { GroupPropertiesForm } from "./propertiesForms/GroupPropertiesForm"
 import { HintPropertiesForm } from "./propertiesForms/HintPropertiesForm"
 import { MeasurementsFieldPropertiesForm } from "./propertiesForms/MeasurementsFieldPropertiesForm"
+import { MeasurementsOutputPropertiesForm } from "./propertiesForms/MeasurementsOutputPropertiesForm"
 import { MultipleChoiceFieldPropertiesForm } from "./propertiesForms/MultipleChoiceFieldPropertiesForm"
 import { NumberFieldPropertiesForm } from "./propertiesForms/NumberFieldPropertiesForm"
 import { ParagraphPropertiesForm } from "./propertiesForms/ParagraphPropertiesForm"
@@ -66,6 +67,9 @@ export const PropertiesPanel = () => {
     ))
     .with({ type: "Paragraph" }, (node) => (
       <ParagraphPropertiesForm key={node.nodeId} node={node} />
+    ))
+    .with({ type: "MeasurementsOutput" }, (node) => (
+      <MeasurementsOutputPropertiesForm key={node.nodeId} node={node} />
     ))
     .with({ type: "Hint" }, (node) => <HintPropertiesForm key={node.nodeId} node={node} />)
     .otherwise(() => {

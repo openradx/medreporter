@@ -7,6 +7,7 @@ import { FreeTextFieldMenuItem } from "./menuItems/FreeTextFieldMenuItem"
 import { GroupMenuItem } from "./menuItems/GroupMenuItem"
 import { HintMenuItem } from "./menuItems/HintMenuItem"
 import { MeasurementsMenuItem } from "./menuItems/MeasurementsMenuItem"
+import { MeasurementsOutputMenuItem } from "./menuItems/MeasurementsOutputMenuItem"
 import { MultipleChoiceFieldMenuItem } from "./menuItems/MultipleChoiceFieldMenuItem"
 import { NumberFieldMenuItem } from "./menuItems/NumberFieldMenuItem"
 import { ParagraphMenuItem } from "./menuItems/ParagraphMenuItem"
@@ -35,6 +36,7 @@ export const MenuPanel = () => {
           <Text c="dimmed">{t("MenuPanel.report")}</Text>
           <ParagraphMenuItem label={t("MenuPanel.paragraphLabel")} />
           <StatementMenuItem label={t("MenuPanel.statementLabel")} />
+          <MeasurementsOutputMenuItem label={t("MenuPanel.measurementsOutputLabel")} />
           <Text c="dimmed">{t("MenuPanel.others")}</Text>
           <HintMenuItem label={t("MenuPanel.hintLabel")} />
         </Stack>

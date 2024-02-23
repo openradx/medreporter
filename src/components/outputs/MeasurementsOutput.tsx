@@ -9,7 +9,7 @@ import { MeasurementsOutputHtml } from "./MeasurementsOutputHtml"
 import { MeasurementsOutputPlain } from "./MeasurmentsOutputPlain"
 
 interface MeasurementsOutputProps {
-  fieldId: string
+  link: string
   data: MeasurementsData
   legend?: string
   stats?: string
@@ -20,7 +20,7 @@ interface MeasurementsOutputProps {
 }
 
 export const MeasurementsOutput = ({
-  fieldId,
+  link,
   data,
   legend = "",
   stats = "",
@@ -29,7 +29,7 @@ export const MeasurementsOutput = ({
   locationLabel,
   referenceLabel,
 }: MeasurementsOutputProps) => {
-  const { activateLink } = useStructureLink({ link: fieldId })
+  const { activateLink } = useStructureLink({ link })
   const outputFormat = useAppSelector(selectOutputFormat)
   const { t } = useSiteTranslation()
 
