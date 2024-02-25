@@ -73,6 +73,12 @@ MaxProperty:
   label: Maximum
 MaxRowsProperty:
   label: Zeilen maximal
+MeasurementsDefaultButton:
+  label: Editor öffnen
+MeasurementsDefaultModal:
+  modalTitle: Messtabelle Default Editor
+MeasurementsDefaultProperty:
+  label: Default
 MeasurementDimensionsProperty:
   label: Dimensionen
 MeasurementRowsProperty:
