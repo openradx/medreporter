@@ -20,7 +20,7 @@ export const structureDataSlice = createSlice({
     resetStructureData() {
       return {
         past: [],
-        present: initialState,
+        present: initialState.present,
         future: [],
       }
     },
@@ -33,11 +33,21 @@ export const structureDataSlice = createSlice({
         state[fieldId] = value
       }
     ),
+    deleteFieldValue: structureDataHistoryAdapter.undoable<{ fieldId: string }>((state, action) => {
+      const { fieldId } = action.payload
+      delete state[fieldId]
+    }),
   },
 })
 
-export const { undo, redo, resetStructureData, setStructureData, changeStructureValue } =
-  structureDataSlice.actions
+export const {
+  undo,
+  redo,
+  resetStructureData,
+  setStructureData,
+  changeStructureValue,
+  deleteFieldValue,
+} = structureDataSlice.actions
 
 export default structureDataSlice.reducer
 

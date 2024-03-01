@@ -1,4 +1,4 @@
-import { Modal } from "@mantine/core"
+import { Modal, ScrollArea } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { TemplatePropertiesForm } from "./TemplatePropertiesForm"
 
@@ -17,6 +17,7 @@ export const TemplatePropertiesModal = ({ opened, onClose }: TemplatePropertiesM
       closeOnClickOutside={false}
       closeOnEscape={false}
       withCloseButton={false}
+      scrollAreaComponent={ScrollArea.Autosize}
     >
       <TemplatePropertiesForm onClose={onClose} />
     </Modal>
