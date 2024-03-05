@@ -5,6 +5,7 @@ import { ReactNode, useEffect } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
 import { z } from "zod"
+import { useDesigner } from "~/contexts/DesignerContext"
 import { useAppDispatch } from "~/state/store"
 import { updateNode } from "~/state/templateSlice"
 
@@ -31,7 +32,12 @@ export const PropertiesForm = <S extends z.ZodType<any, any>>({
 
   const { watch, handleSubmit } = methods
 
+  const designer = useDesigner()
+
   const debounced = useDebouncedCallback((changedValues: z.infer<S>) => {
+    if ("fieldId" in initialValues) {
+      designer?.structureFormRef.current?.resetField(initialValues.fieldId)
+    }
     dispatch(updateNode({ nodeId, data: copy(changedValues) }))
   }, 200)
 

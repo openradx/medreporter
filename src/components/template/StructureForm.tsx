@@ -2,6 +2,7 @@ import copy from "fast-copy"
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
+import { useDesigner } from "~/contexts/DesignerContext"
 import { StructureFormContextProvider } from "~/contexts/StructureFormContext"
 import { setDataInitialized } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
@@ -22,6 +23,7 @@ interface StructureFormProps {
 export const StructureForm = ({ children }: StructureFormProps) => {
   const methods = useForm<StructureDataState>()
   const dispatch = useAppDispatch()
+  const designer = useDesigner()
 
   const { getValues, watch, reset } = methods
 
@@ -75,6 +77,21 @@ export const StructureForm = ({ children }: StructureFormProps) => {
     dispatch(setStructureData(copy(data)))
     setModified(false)
   }, [changeStructureValueDebounced, dispatch, reset])
+
+  useEffect(() => {
+    const structureFormRef = designer?.structureFormRef
+    if (structureFormRef) {
+      structureFormRef.current = {
+        resetField: (fieldId: string) => {
+          methods.resetField(fieldId)
+        },
+        resetAllFields: () => {
+          methods.reset()
+          dispatch(setStructureData({}))
+        },
+      }
+    }
+  }, [designer, methods, dispatch])
 
   const canUndo = useAppSelector(selectCanUndo)
   const canRedo = useAppSelector(selectCanRedo)
