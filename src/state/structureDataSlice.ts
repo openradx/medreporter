@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { z } from "zod"
+import { StructureData } from "~/schemas/structure"
 import { createHistoryAdapter } from "./historyAdapter"
 import type { AppThunk, RootState } from "./store"
 
-export const structureDataSchema = z.record(z.any()) // {fieldId: value}
-
-export type StructureDataState = z.infer<typeof structureDataSchema>
+type StructureDataState = StructureData
 
 const structureDataHistoryAdapter = createHistoryAdapter<StructureDataState>()
 

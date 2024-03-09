@@ -1,8 +1,8 @@
 import { Visibility } from "@prisma/client"
 import { z } from "zod"
+import { structureDataSchema } from "~/schemas/structure"
 import { templateNodeSchema } from "~/schemas/template"
 import { outputFormatSchema } from "~/state/displaySlice"
-import { structureDataSchema } from "~/state/structureDataSlice"
 
 export const createReportSchema = z.object({
   visibility: z.nativeEnum(Visibility),

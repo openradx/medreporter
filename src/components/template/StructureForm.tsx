@@ -4,6 +4,7 @@ import { FormProvider, useForm } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
 import { useDesigner } from "~/contexts/DesignerContext"
 import { StructureFormContextProvider } from "~/contexts/StructureFormContext"
+import { StructureData } from "~/schemas/structure"
 import { setDataInitialized } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import {
@@ -12,7 +13,6 @@ import {
   selectCanRedo,
   selectCanUndo,
   setStructureData,
-  StructureDataState,
   undoAndSelect,
 } from "~/state/structureDataSlice"
 
@@ -21,7 +21,7 @@ interface StructureFormProps {
 }
 
 export const StructureForm = ({ children }: StructureFormProps) => {
-  const methods = useForm<StructureDataState>()
+  const methods = useForm<StructureData>()
   const dispatch = useAppDispatch()
   const designer = useDesigner()
 
@@ -56,7 +56,7 @@ export const StructureForm = ({ children }: StructureFormProps) => {
     dispatch(setDataInitialized())
   }, 800)
 
-  const defaultValuesRef = useRef<Record<string, Record<string, any>>>({})
+  const defaultValuesRef = useRef<StructureData>({})
 
   const registerDefaultValue = useCallback(
     (fieldId: string, defaultValue: any) => {

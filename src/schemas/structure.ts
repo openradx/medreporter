@@ -43,6 +43,8 @@ export const hintNodeSchema = nodeSchema.extend({
 
 export type HintNode = z.infer<typeof hintNodeSchema>
 
+const numberFieldValueSchema = z.number().nullable()
+
 export const numberFieldNodeSchema = nodeSchema.extend({
   type: z.literal("NumberField"),
   ...fieldProperties,
@@ -52,20 +54,24 @@ export const numberFieldNodeSchema = nodeSchema.extend({
   precision: z.number().min(0).max(3),
   start: z.number(),
   step: z.number(),
-  default: z.number().nullable(),
+  default: numberFieldValueSchema,
 })
 
 export type NumberFieldNode = z.infer<typeof numberFieldNodeSchema>
+
+const dateFieldValueSchema = z.string().trim().nullable()
 
 export const dateFieldNodeSchema = nodeSchema.extend({
   type: z.literal("DateField"),
   ...fieldProperties,
   width: widthSchema,
   format: z.string().trim().nullable(),
-  default: z.string().trim().nullable(),
+  default: dateFieldValueSchema,
 })
 
 export type DateFieldNode = z.infer<typeof dateFieldNodeSchema>
+
+const timeFieldValueSchema = z.string().trim().nullable()
 
 // TODO: refine default
 export const timeFieldNodeSchema = nodeSchema.extend({
@@ -73,10 +79,12 @@ export const timeFieldNodeSchema = nodeSchema.extend({
   ...fieldProperties,
   width: widthSchema,
   withSeconds: z.boolean(),
-  default: z.string().trim().nullable(),
+  default: timeFieldValueSchema,
 })
 
 export type TimeFieldNode = z.infer<typeof timeFieldNodeSchema>
+
+const freeTextFieldValueSchema = z.string().trim()
 
 export const freeTextFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FreeTextField"),
@@ -87,7 +95,7 @@ export const freeTextFieldNodeSchema = nodeSchema.extend({
   rows: z.number(),
   minRows: z.number(),
   maxRows: z.number(),
-  default: z.string().trim(),
+  default: freeTextFieldValueSchema,
 })
 
 export type FreeTextFieldNode = z.infer<typeof freeTextFieldNodeSchema>
@@ -116,6 +124,8 @@ export const optionsSchema = z
     })
   })
 
+const singleChoiceFieldValueSchema = z.string().trim().nullable()
+
 export const singleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("SingleChoiceField"),
   ...fieldProperties,
@@ -123,10 +133,12 @@ export const singleChoiceFieldNodeSchema = nodeSchema.extend({
   variant: z.enum(["radio", "select"]),
   figure: figureSchema,
   options: optionsSchema,
-  default: z.string().trim().nullable(),
+  default: singleChoiceFieldValueSchema,
 })
 
 export type SingleChoiceFieldNode = z.infer<typeof singleChoiceFieldNodeSchema>
+
+const multipleChoiceFieldValueSchema = z.array(z.string().trim())
 
 export const multipleChoiceFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MultipleChoiceField"),
@@ -135,7 +147,7 @@ export const multipleChoiceFieldNodeSchema = nodeSchema.extend({
   variant: z.enum(["checkbox", "select"]),
   figure: figureSchema,
   options: optionsSchema,
-  default: z.array(z.string().trim()),
+  default: multipleChoiceFieldValueSchema,
 })
 
 export type MultipleChoiceFieldNode = z.infer<typeof multipleChoiceFieldNodeSchema>
@@ -156,14 +168,15 @@ const measurementsRowSchema = z.object({
 
 export type MeasurementsRow = z.infer<typeof measurementsRowSchema>
 
-const measurementsDataSchema = z.array(measurementsRowSchema)
+const measurementsFieldValueSchema = z.array(measurementsRowSchema)
 
-export type MeasurementsData = z.infer<typeof measurementsDataSchema>
+// TODO: rename to MeasurementsFieldValue?!
+export type MeasurementsData = z.infer<typeof measurementsFieldValueSchema>
 
 export const measurementsFieldNodeSchema = nodeSchema.extend({
   type: z.literal("MeasurementsField"),
   ...fieldProperties,
-  default: measurementsDataSchema,
+  default: measurementsFieldValueSchema,
 })
 
 export type MeasurementsFieldNode = z.infer<typeof measurementsFieldNodeSchema>
@@ -203,10 +216,12 @@ export const groupChildrenTypes = new Set(
   groupNodeSchema.shape.children.element.options.map((o) => o.shape.type.value)
 )
 
+const findingFieldValueSchema = z.boolean()
+
 export const findingFieldNodeSchema = nodeSchema.extend({
   type: z.literal("FindingField"),
   ...fieldProperties,
-  default: z.boolean(),
+  default: findingFieldValueSchema,
   direction: directionSchema,
   children: z.array(z.union([hintNodeSchema, ...discreteFieldNodeSchemas, groupNodeSchema])),
 })
@@ -235,6 +250,21 @@ export const structureNodeSchema = nodeSchema.extend({
   type: z.literal("Structure"),
   children: z.array(sectionNodeSchema),
 })
+
+const structureValuesSchema = z.union([
+  numberFieldValueSchema,
+  dateFieldValueSchema,
+  timeFieldValueSchema,
+  freeTextFieldValueSchema,
+  singleChoiceFieldValueSchema,
+  multipleChoiceFieldValueSchema,
+  measurementsFieldValueSchema,
+  findingFieldValueSchema,
+])
+
+export const structureDataSchema = z.record(structureValuesSchema)
+
+export type StructureData = z.infer<typeof structureDataSchema>
 
 export type StructureNode = z.infer<typeof structureNodeSchema>
 
