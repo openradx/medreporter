@@ -2,13 +2,15 @@ import { configureStore, combineReducers, ThunkAction, Action } from "@reduxjs/t
 import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from "react-redux"
 import designerReducer from "./designerSlice"
 import displayReducer from "./displaySlice"
-import structureDataReducer from "./structureDataSlice"
+import structureHistoryDataReducer from "./structureHistoryDataSlice"
+import structureLiveDataReducer from "./structureLiveDataSlice"
 import templateReducer from "./templateSlice"
 
 const rootReducer = combineReducers({
   designer: designerReducer,
   display: displayReducer,
-  structureData: structureDataReducer,
+  structureHistoryData: structureHistoryDataReducer,
+  structureLiveData: structureLiveDataReducer,
   template: templateReducer,
 })
 

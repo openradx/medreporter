@@ -1,9 +1,7 @@
-import { Center, Loader, Paper, ScrollArea, Stack } from "@mantine/core"
+import { Paper, ScrollArea, Stack } from "@mantine/core"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { selectDataInitialized } from "~/state/displaySlice"
-import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
 import { OutputFormat } from "./OutputFormat"
@@ -19,7 +17,6 @@ interface ReportProps {
 
 export const Report = ({ actions, children, isDesigning = false }: ReportProps) => {
   const { t } = useSiteTranslation()
-  const dataInitialized = useAppSelector(selectDataInitialized)
 
   return (
     <Paper
@@ -43,12 +40,7 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
           )
         }
       />
-      {!dataInitialized && !isDesigning && (
-        <Center h="100%" style={{ flexGrow: 1 }}>
-          <Loader type="bars" />
-        </Center>
-      )}
-      {dataInitialized && !isDesigning && (
+      {!isDesigning && (
         <ScrollArea h="100%">
           <Stack
             id={REPORT_CONTENT_ID}

@@ -1,33 +1,41 @@
 import { useCallback, useEffect } from "react"
-import { useController } from "react-hook-form"
-import { useStructureForm } from "~/contexts/StructureFormContext"
+import { useStructure } from "~/contexts/StructureContext"
+import { StructureValue } from "~/schemas/structure"
+import { useAppDispatch, useAppSelector } from "~/state/store"
+import { changeStructureHistoryValue } from "~/state/structureHistoryDataSlice"
+import { changeStructureLiveValue, selectStructureLiveValue } from "~/state/structureLiveDataSlice"
+import { changeStructureValue, removeStructureValue } from "~/state/thunks"
 
-export const useStructureController = <T>({
+export const useStructureController = <T extends StructureValue>({
   fieldId,
   defaultValue,
 }: {
   fieldId: string
   defaultValue: T
 }): { value: T; onChange: (value: T) => void } => {
-  const {
-    field: { value, onChange },
-  } = useController({ name: `${fieldId}`, defaultValue })
-
-  const { registerDefaultValue, unregisterDefaultValue } = useStructureForm()
+  const value = useAppSelector(selectStructureLiveValue(fieldId))
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    registerDefaultValue(fieldId, defaultValue)
+    dispatch(changeStructureLiveValue({ fieldId, value: defaultValue }))
+    dispatch(changeStructureHistoryValue({ fieldId, value: defaultValue }, { undoable: false }))
     return () => {
-      unregisterDefaultValue(fieldId)
+      dispatch(removeStructureValue(fieldId))
     }
-  }, [registerDefaultValue, unregisterDefaultValue, fieldId, defaultValue])
+  }, [dispatch, fieldId, defaultValue])
+
+  const { defaultValuesRef } = useStructure()
+
+  useEffect(() => {
+    defaultValuesRef.current[fieldId] = defaultValue
+  }, [defaultValuesRef, fieldId, defaultValue])
 
   const handleChange = useCallback(
     (newValue: T) => {
-      onChange(newValue)
+      dispatch(changeStructureValue(fieldId, newValue))
     },
-    [onChange]
+    [dispatch, fieldId]
   )
 
-  return { value, onChange: handleChange }
+  return { value: value as T, onChange: handleChange }
 }

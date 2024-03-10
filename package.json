@@ -70,6 +70,7 @@
     "clsx": "^2.1.0",
     "cookies-next": "^4.1.1",
     "dayjs": "^1.11.10",
+    "debounce": "^2.0.0",
     "eslint-linter-browserify": "^8.56.0",
     "fast-copy": "^3.0.1",
     "file-watch-hmr": "^0.1.2",

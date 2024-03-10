@@ -1,15 +1,15 @@
 import { ActionIcon } from "@mantine/core"
 import { AiOutlineClear as ClearAllIcon } from "react-icons/ai"
-import { useDesigner } from "~/contexts/DesignerContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch } from "~/state/store"
+import { clearHistory } from "~/state/structureHistoryDataSlice"
 import { resetTemplate } from "~/state/templateSlice"
+import { setStructureData } from "~/state/thunks"
 
 export const ClearAllButton = () => {
   const { t } = useSiteTranslation()
   const dispatch = useAppDispatch()
-  const designer = useDesigner()
 
   return (
     <ActionIcon
@@ -17,7 +17,8 @@ export const ClearAllButton = () => {
       variant="default"
       // disabled={!modified}
       onClick={() => {
-        designer?.structureFormRef.current?.resetAllFields()
+        dispatch(setStructureData({}))
+        dispatch(clearHistory())
         dispatch(resetTemplate({}))
         dispatch(setSelectedItem(null))
       }}

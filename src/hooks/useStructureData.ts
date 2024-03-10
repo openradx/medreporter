@@ -1,4 +1,4 @@
 import { useAppSelector } from "~/state/store"
-import { selectStructureData } from "~/state/structureDataSlice"
+import { selectStructureHistoryData } from "~/state/structureHistoryDataSlice"
 
-export const useStructureData = () => useAppSelector(selectStructureData)
+export const useStructureData = () => useAppSelector(selectStructureHistoryData)
