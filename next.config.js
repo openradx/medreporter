@@ -13,9 +13,44 @@ const nextConfig = {
     defaultLocale: "en",
     localeDetection: false,
   },
+  swcMinify: true,
+  productionBrowserSourceMaps: false, // Disable source maps in development
+  optimizeFonts: false, // Disable font optimization
+
   env: {
     // make url available on the client
     NEXTAUTH_URL: env.NEXTAUTH_URL,
+  },
+  experimental: {
+    turbo: {
+      rules: {
+        // "*.svg": {
+        //   loaders: ["@svgr/webpack"],
+        //   as: "*.js",
+        // },
+        "*.svg": [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: "preset-default",
+                    params: {
+                      overrides: {
+                        cleanupIds: false,
+                        convertPathData: false,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        ],
+        "*.md": ["raw-loader"],
+      },
+    },
   },
   webpack(config, options) {
     // Watch changes of locales to reload i18next resources on the client

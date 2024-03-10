@@ -161,6 +161,7 @@
     "postcss-preset-mantine": "^1.13.0",
     "postcss-simple-vars": "^7.0.1",
     "prisma": "^5.10.2",
+    "raw-loader": "^4.0.2",
     "storybook": "^7.6.17",
     "storybook-dark-mode": "^3.0.3",
     "stylelint": "^16.2.1",
