@@ -3,18 +3,18 @@ import { openLintPanel } from "@codemirror/lint"
 import { openSearchPanel } from "@codemirror/search"
 import { ActionIcon, Divider, Group } from "@mantine/core"
 import { EditorView } from "@uiw/react-codemirror"
-import { MutableRefObject } from "react"
-import { IoMdHelp as HelpIcon } from "react-icons/io"
 import {
-  MdContentCopy as CopyIcon,
-  MdContentPaste as PasteIcon,
-  MdFormatPaint as FormatIcon,
-  MdRedo as RedoIcon,
-  MdSearch as SearchIcon,
-  MdUndo as UndoIcon,
-} from "react-icons/md"
-import { PiStethoscope as DiagnosticsIcon } from "react-icons/pi"
-import { TbSlashes as ToggleCommentIcon } from "react-icons/tb"
+  Search as SearchIcon,
+  Stethoscope as DiagnosticsIcon,
+  Redo as RedoIcon,
+  Undo as UndoIcon,
+  Copy as CopyIcon,
+  Clipboard as PasteIcon,
+  PaintRoller as FormatIcon,
+  HelpCircle as HelpIcon,
+  Hash as ToggleCommentIcon,
+} from "lucide-react"
+import { MutableRefObject } from "react"
 import invariant from "tiny-invariant"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { formatCode } from "~/utils/codeFormatting"
@@ -39,7 +39,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           openSearchPanel(view)
         }}
       >
-        <SearchIcon />
+        <SearchIcon size={16} />
       </ActionIcon>
       <ActionIcon
         variant="default"
@@ -51,7 +51,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           openLintPanel(view)
         }}
       >
-        <DiagnosticsIcon />
+        <DiagnosticsIcon size={16} />
       </ActionIcon>
       <Divider mx={2} labelPosition="center" orientation="vertical" />
       <ActionIcon
@@ -64,7 +64,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           undo(view)
         }}
       >
-        <UndoIcon />
+        <UndoIcon size={16} />
       </ActionIcon>
       <ActionIcon
         variant="default"
@@ -76,7 +76,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           redo(view)
         }}
       >
-        <RedoIcon />
+        <RedoIcon size={16} />
       </ActionIcon>
       <Divider mx={2} orientation="vertical" />
       <ActionIcon
@@ -91,7 +91,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           if (text) await navigator.clipboard.writeText(text)
         }}
       >
-        <CopyIcon />
+        <CopyIcon size={16} />
       </ActionIcon>
       <ActionIcon
         variant="default"
@@ -113,7 +113,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           })
         }}
       >
-        <PasteIcon />
+        <PasteIcon size={16} />
       </ActionIcon>
       <Divider mx={2} orientation="vertical" />
       <ActionIcon
@@ -138,7 +138,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           })
         }}
       >
-        <FormatIcon />
+        <FormatIcon size={16} />
       </ActionIcon>
       <ActionIcon
         variant="default"
@@ -150,7 +150,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           toggleComment(view)
         }}
       >
-        <ToggleCommentIcon />
+        <ToggleCommentIcon size={16} />
       </ActionIcon>
       <Divider mx={2} orientation="vertical" />
       <ActionIcon
@@ -160,7 +160,7 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
           viewRef.current?.focus()
         }}
       >
-        <HelpIcon />
+        <HelpIcon size={16} />
       </ActionIcon>
     </Group>
   )

@@ -1,5 +1,5 @@
 import { ActionIcon } from "@mantine/core"
-import { AiOutlineClear as ClearAllIcon } from "react-icons/ai"
+import { Eraser as ClearAllIcon } from "lucide-react"
 import { useDesigner } from "~/contexts/DesignerContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { setSelectedItem } from "~/state/designerSlice"

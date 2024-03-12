@@ -1,6 +1,6 @@
 import { ActionIcon } from "@mantine/core"
 import { showNotification } from "@mantine/notifications"
-import { MdContentCopy as CopyIcon } from "react-icons/md"
+import { Copy as CopyIcon } from "lucide-react"
 import { REPORT_CONTENT_ID } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
@@ -58,7 +58,7 @@ export const CopyButton = () => {
         }
       }}
     >
-      <CopyIcon />
+      <CopyIcon size={18} />
     </ActionIcon>
   )
 }

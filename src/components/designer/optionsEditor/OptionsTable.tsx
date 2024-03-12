@@ -50,10 +50,10 @@ export const OptionsTable = ({ control, fields, move, remove }: OptionsTableProp
       >
         <Table.Thead>
           <Table.Tr>
-            <Table.Th style={{ width: "7%" }} />
-            <Table.Th style={{ width: "43%" }}>{t("OptionsTable.labelColumnHeader")}</Table.Th>
-            <Table.Th style={{ width: "43%" }}>{t("OptionsTable.valueColumnHeader")}</Table.Th>
-            <Table.Th style={{ width: "7%" }} />
+            <Table.Th style={{ width: "5%" }} />
+            <Table.Th style={{ width: "45%" }}>{t("OptionsTable.labelColumnHeader")}</Table.Th>
+            <Table.Th style={{ width: "45%" }}>{t("OptionsTable.valueColumnHeader")}</Table.Th>
+            <Table.Th style={{ width: "5%" }} />
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>

@@ -1,13 +1,15 @@
 import DE from "flag-icons/flags/4x3/de.svg"
 import GB from "flag-icons/flags/4x3/gb.svg"
-import { MdOutlineTranslate as TranslationIcon } from "react-icons/md"
-import { TbBug as CiModeIcon, TbQuestionMark as OtherIcon } from "react-icons/tb"
-
-type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>
+import {
+  Languages as TranslationIcon,
+  Bug as CiModeIcon,
+  CircleHelp as OtherIcon,
+  LucideIcon,
+} from "lucide-react"
 
 // https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 // https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
-const flagIcons: { [language: string]: SVGComponent } = {
+const flagIcons: { [language: string]: LucideIcon } = {
   cimode: CiModeIcon,
   asSite: TranslationIcon,
   other: OtherIcon,

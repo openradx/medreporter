@@ -1,6 +1,6 @@
 import { ActionIcon } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import { MdAppRegistration as TemplatePropertiesIcon } from "react-icons/md"
+import { ClipboardList as TemplatePropertiesIcon } from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { TemplatePropertiesModal } from "./TemplatePropertiesModal"
 

@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
+import { Code as CodeIcon } from "lucide-react"
 import { memo } from "react"
-import { MdCode as CodeIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MarkdownEditorModal } from "./MarkdownEditorModal"
 
@@ -23,7 +23,7 @@ export const MarkdownEditorButton = memo(({ value, onChange }: MarkdownEditorBut
         onClick={open}
         aria-label="Open markdown editor"
       >
-        <CodeIcon size={20} />
+        <CodeIcon size={18} />
       </ActionIcon>
       <MarkdownEditorModal opened={opened} onClose={close} value={value} onChange={onChange} />
     </>

@@ -1,15 +1,15 @@
 import { ActionIcon, Menu } from "@mantine/core"
 import { MembershipRole, UserRole } from "@prisma/client"
+import {
+  Wrench as AdminIcon,
+  LogOut as LogoutIcon,
+  CircleUser as AccountIcon,
+  LogIn as LoginIcon,
+  User as ProfileIcon,
+} from "lucide-react"
 import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import {
-  MdBuild as AdminIcon,
-  MdLogout as LogoutIcon,
-  MdOutlineAccountCircle as AccountIcon,
-  MdOutlineLogin as LoginIcon,
-  MdPerson as ProfileIcon,
-} from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const AccountControl = () => {

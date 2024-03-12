@@ -1,7 +1,7 @@
 import { ActionIcon, Text } from "@mantine/core"
 import { openConfirmModal, openModal } from "@mantine/modals"
 import { Institute } from "@prisma/client"
-import { MdDelete as DeleteIcon } from "react-icons/md"
+import { Trash2 as DeleteIcon } from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 

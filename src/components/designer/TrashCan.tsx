@@ -1,7 +1,7 @@
 import { useDroppable } from "@dnd-kit/core"
 import { Center } from "@mantine/core"
+import { Trash2 as TrashCanIcon } from "lucide-react"
 import { CSSProperties } from "react"
-import { FaRegTrashCan as TrashCanIcon } from "react-icons/fa6"
 
 export const TrashCan = () => {
   const { isOver, active, setNodeRef } = useDroppable({
@@ -15,7 +15,7 @@ export const TrashCan = () => {
 
   return (
     <Center h="100%" ref={setNodeRef} style={style}>
-      <TrashCanIcon size={32} />
+      <TrashCanIcon size={48} />
     </Center>
   )
 }

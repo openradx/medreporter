@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { User } from "@prisma/client"
+import { Pencil as EditIcon } from "lucide-react"
 import { useState } from "react"
-import { MdEdit as EditIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { EditUserModal } from "./EditUserModal"
 
@@ -21,7 +21,7 @@ export const EditUserButton = ({ user }: EditUserButtonProps) => {
         color="gray"
         onClick={() => setOpened(true)}
       >
-        <EditIcon size={16} />
+        <EditIcon size={18} />
       </ActionIcon>
       {opened && <EditUserModal opened={opened} onClose={() => setOpened(false)} user={user} />}
     </>

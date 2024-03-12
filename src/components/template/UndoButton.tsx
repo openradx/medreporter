@@ -1,5 +1,5 @@
 import { ActionIcon } from "@mantine/core"
-import { MdUndo as UndoIcon } from "react-icons/md"
+import { Undo as UndoIcon } from "lucide-react"
 import { useStructureForm } from "~/contexts/StructureFormContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 

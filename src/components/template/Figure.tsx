@@ -1,6 +1,6 @@
 import { ActionIcon } from "@mantine/core"
+import { Image as ImageIcon } from "lucide-react"
 import { useState } from "react"
-import { BiImageAlt as ImageIcon } from "react-icons/bi"
 import { useChoiceField } from "~/contexts/ChoiceFieldContext"
 import { getFieldContext } from "~/contexts/FieldContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"

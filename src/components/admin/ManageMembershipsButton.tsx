@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { Institute } from "@prisma/client"
+import { UserCog as ManageMembershipsIcon } from "lucide-react"
 import { useState } from "react"
-import { MdManageAccounts as ManageMembershipsIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ManageMembershipsModal } from "./ManageMembershipsModal"
 
@@ -21,7 +21,7 @@ export const ManageMembershipsButton = ({ institute }: ManageMembershipsButtonPr
         color="gray"
         onClick={() => setOpened(true)}
       >
-        <ManageMembershipsIcon size={16} />
+        <ManageMembershipsIcon size={18} />
       </ActionIcon>
       {opened && (
         <ManageMembershipsModal

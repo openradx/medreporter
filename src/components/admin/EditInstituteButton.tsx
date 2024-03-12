@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { Institute } from "@prisma/client"
+import { Pencil as EditIcon } from "lucide-react"
 import { useState } from "react"
-import { MdEdit as EditIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { EditInstituteModal } from "./EditInstituteModal"
 
@@ -21,7 +21,7 @@ export const EditInstituteButton = ({ institute }: EditInstituteButtonProps) => 
         color="gray"
         onClick={() => setOpened(true)}
       >
-        <EditIcon />
+        <EditIcon size={18} />
       </ActionIcon>
       {opened && (
         <EditInstituteModal

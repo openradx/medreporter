@@ -1,5 +1,5 @@
 import { ActionIcon, Menu } from "@mantine/core"
-import { BsTools as ToolIcon } from "react-icons/bs"
+import { Wrench as ToolIcon } from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MeasurementsAction } from "~/types/measurements"
 
@@ -20,7 +20,7 @@ export const MeasurementsActions = ({ labels, dispatch, disabled }: Measurements
     <Menu>
       <Menu.Target>
         <ActionIcon title={t("MeasurementsActions.buttonActions")} mt={20} disabled={disabled}>
-          <ToolIcon />
+          <ToolIcon size={16} />
         </ActionIcon>
       </Menu.Target>
       <Menu.Dropdown>

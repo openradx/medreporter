@@ -1,5 +1,5 @@
 import { Group, Text, Tooltip } from "@mantine/core"
-import { MdInfoOutline as InfoIcon } from "react-icons/md"
+import { Info as InfoIcon } from "lucide-react"
 
 interface EditorModalTitleProps {
   title: string

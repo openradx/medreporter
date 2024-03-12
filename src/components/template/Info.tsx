@@ -1,6 +1,6 @@
-import { ActionIcon, Tooltip } from "@mantine/core"
+import { ActionIcon } from "@mantine/core"
+import { Info as InfoIcon } from "lucide-react"
 import { useState } from "react"
-import { AiOutlineInfoCircle as InfoIcon } from "react-icons/ai"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { InfoModal } from "./InfoModal"
 
@@ -14,21 +14,14 @@ export const Info = ({ children }: InfoProps) => {
 
   return (
     <>
-      <Tooltip
-        label="Open Info"
-        position="top"
-        transitionProps={{ transition: "pop" }}
-        openDelay={1000}
+      <ActionIcon
+        variant="transparent"
+        title={t("FieldInfo.buttonInfo")}
+        size={20}
+        onClick={() => setOpen(true)}
       >
-        <ActionIcon
-          variant="transparent"
-          title={t("FieldInfo.buttonInfo")}
-          size={20}
-          onClick={() => setOpen(true)}
-        >
-          <InfoIcon />
-        </ActionIcon>
-      </Tooltip>
+        <InfoIcon size={16} />
+      </ActionIcon>
       <InfoModal opened={open} onClose={() => setOpen(false)}>
         {children}
       </InfoModal>

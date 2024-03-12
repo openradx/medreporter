@@ -1,7 +1,7 @@
 import { ActionIcon, Loader, Select } from "@mantine/core"
 import { MembershipRole } from "@prisma/client"
+import { CirclePlus as AddIcon } from "lucide-react"
 import { useState } from "react"
-import { MdAddCircleOutline as AddIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 

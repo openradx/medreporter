@@ -1,5 +1,5 @@
 import { ActionIcon } from "@mantine/core"
-import { MdRedo as RedoIcon } from "react-icons/md"
+import { Redo as RedoIcon } from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"

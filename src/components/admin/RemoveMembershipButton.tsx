@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { openModal } from "@mantine/modals"
 import { Membership } from "@prisma/client"
-import { MdDelete as RemoveIcon } from "react-icons/md"
+import { Trash2 as RemoveIcon } from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 
@@ -34,7 +34,7 @@ export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonPro
         }
       }}
     >
-      <RemoveIcon />
+      <RemoveIcon size={18} />
     </ActionIcon>
   )
 }

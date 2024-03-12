@@ -1,6 +1,5 @@
 import { ActionIcon, Menu } from "@mantine/core"
-import { BsCardText as ReportFormatIcon } from "react-icons/bs"
-import { TbCheck as CheckIcon } from "react-icons/tb"
+import { SquareMenu as ReportFormatIcon, Check as CheckIcon } from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectOutputFormat, setOutputFormat } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
@@ -14,7 +13,7 @@ export const OutputFormat = () => {
     <Menu width={100}>
       <Menu.Target>
         <ActionIcon title={t("OutputFormat.buttonFormat")} variant="default">
-          <ReportFormatIcon />
+          <ReportFormatIcon size={18} />
         </ActionIcon>
       </Menu.Target>
       <Menu.Dropdown>

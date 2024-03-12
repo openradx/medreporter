@@ -1,5 +1,5 @@
 import { Group, Text } from "@mantine/core"
-import { MdCopyright as CopyrightIcon } from "react-icons/md"
+import { Copyright as CopyrightIcon } from "lucide-react"
 
 export const CopyrightMessage = () => (
   <Group p={4} gap={8} align="center" justify="center">

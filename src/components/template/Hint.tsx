@@ -1,7 +1,9 @@
 import { Alert } from "@mantine/core"
-import { AiOutlineWarning as WarningIcon } from "react-icons/ai"
-import { MdErrorOutline as ErrorIcon } from "react-icons/md"
-import { RiLightbulbLine as InfoIcon } from "react-icons/ri"
+import {
+  TriangleAlert as WarningIcon,
+  CircleAlert as ErrorIcon,
+  Lightbulb as InfoIcon,
+} from "lucide-react"
 
 interface HintProps {
   level?: "info" | "warning" | "error"

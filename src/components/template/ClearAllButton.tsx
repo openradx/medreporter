@@ -1,5 +1,5 @@
 import { ActionIcon } from "@mantine/core"
-import { AiOutlineClear as ClearAllIcon } from "react-icons/ai"
+import { Eraser as ClearAllIcon } from "lucide-react"
 import { useStructureForm } from "~/contexts/StructureFormContext"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 

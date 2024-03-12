@@ -1,8 +1,8 @@
 import { useSortable } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
-import { ActionIcon, MantineStyleProp, Table, TextInput } from "@mantine/core"
+import { ActionIcon, Flex, MantineStyleProp, Table, TextInput } from "@mantine/core"
+import { Trash2 as DeleteIcon, GripHorizontal as DragIcon } from "lucide-react"
 import { Control, Controller, FieldArrayWithId, UseFieldArrayRemove } from "react-hook-form"
-import { MdDelete as DeleteIcon, MdDragHandle as DragIcon } from "react-icons/md"
 import { Option } from "~/schemas/structure"
 
 interface DraggableOptionRowProps {
@@ -36,9 +36,15 @@ export const DraggableOptionRow = ({
   return (
     <Table.Tr key={item.id} style={style} ref={setNodeRef}>
       <Table.Td>
-        <div {...attributes} {...listeners} style={{ cursor: "grab" }}>
-          <DragIcon size={20} />
-        </div>
+        <Flex
+          {...attributes}
+          {...listeners}
+          style={{ cursor: "grab" }}
+          align="center"
+          justify="right"
+        >
+          <DragIcon size={18} />
+        </Flex>
       </Table.Td>
       <Table.Td style={{ verticalAlign: "top" }}>
         <Controller
@@ -71,7 +77,7 @@ export const DraggableOptionRow = ({
       <Table.Td>
         {deletable && (
           <ActionIcon variant="subtle" color="red" onClick={() => remove(index)}>
-            <DeleteIcon />
+            <DeleteIcon size={18} />
           </ActionIcon>
         )}
       </Table.Td>

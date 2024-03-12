@@ -1,7 +1,10 @@
 import { Select } from "@mantine/core"
 import { Visibility } from "@prisma/client"
-import { MdBusiness as InstituteIcon, MdOutlinePublic as PublicIcon } from "react-icons/md"
-import { RiGitRepositoryPrivateLine as PrivateIcon } from "react-icons/ri"
+import {
+  Building2 as InstituteIcon,
+  Earth as PublicIcon,
+  LockKeyhole as PrivateIcon,
+} from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 interface VisibilitySelectorProps {

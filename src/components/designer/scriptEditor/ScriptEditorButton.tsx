@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
+import { Code as CodeIcon } from "lucide-react"
 import { memo } from "react"
-import { MdCode as CodeIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ScriptEditorModal } from "./ScriptEditorModal"
 
@@ -27,7 +27,7 @@ export const ScriptEditorButton = memo(
           onClick={open}
           aria-label="Open script editor"
         >
-          <CodeIcon size={20} />
+          <CodeIcon size={18} />
         </ActionIcon>
         <ScriptEditorModal
           title={modalTitle}

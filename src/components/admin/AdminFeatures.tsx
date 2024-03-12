@@ -1,9 +1,9 @@
 import { Grid, Text } from "@mantine/core"
 import { MembershipRole, UserRole } from "@prisma/client"
+import { Building2 as InstituteIcon, Users as UserIcon } from "lucide-react"
 import { useSession } from "next-auth/react"
 import { Route } from "nextjs-routes"
 import { ReactNode } from "react"
-import { MdBusiness as InstituteIcon, MdPeople as UserIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { AdminFeatureCard } from "./AdminFeatureCard"
 

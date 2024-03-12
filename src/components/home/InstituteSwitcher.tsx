@@ -7,8 +7,7 @@ import {
   useCombobox,
 } from "@mantine/core"
 import { openModal } from "@mantine/modals"
-import { BsPersonSquare as IndividualIcon } from "react-icons/bs"
-import { MdBusiness as InstituteIcon } from "react-icons/md"
+import { SquareUser as IndividualIcon, Building2 as InstituteIcon } from "lucide-react"
 import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { reloadSession } from "~/utils/session"

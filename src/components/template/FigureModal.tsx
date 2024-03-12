@@ -1,6 +1,6 @@
 import { ActionIcon, Box, Flex, Modal, Tooltip } from "@mantine/core"
+import { RotateCcw as ResetIcon } from "lucide-react"
 import { MouseEvent, useState } from "react"
-import { GrRotateLeft as ResetIcon } from "react-icons/gr"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { Option } from "~/schemas/structure"
 

@@ -131,6 +131,9 @@ dependencies:
   immer:
     specifier: ^10.0.3
     version: 10.0.3
+  lucide-react:
+    specifier: ^0.356.0
+    version: 0.356.0(react@18.2.0)
   nanoid:
     specifier: ^5.0.6
     version: 5.0.6
@@ -170,9 +173,6 @@ dependencies:
   react-i18next:
     specifier: ^14.0.5
     version: 14.0.5(i18next@23.9.0)(react-dom@18.2.0)(react@18.2.0)
-  react-icons:
-    specifier: ^5.0.1
-    version: 5.0.1(react@18.2.0)
   react-inlinesvg:
     specifier: ^4.1.1
     version: 4.1.1(react@18.2.0)
@@ -10866,6 +10866,14 @@ packages:
     dependencies:
       yallist: 4.0.0
 
+  /lucide-react@0.356.0(react@18.2.0):
+    resolution: {integrity: sha512-MDInjLrmZToccH2UxEshntujBlFwtOofGB22FN/eg39FfGVYV1TT1eMIv2j4rdaTJBpYjUuX7fEo9pwYkNFgwA==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -12955,14 +12963,6 @@ packages:
       i18next: 23.9.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /react-icons@5.0.1(react@18.2.0):
-    resolution: {integrity: sha512-WqLZJ4bLzlhmsvme6iFdgO8gfZP17rfjYEJ2m9RsZjZ+cc4k1hTzknEz63YS1MeT50kVzoa1Nz36f4BEx+Wigw==}
-    peerDependencies:
-      react: '*'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /react-inlinesvg@4.1.1(react@18.2.0):

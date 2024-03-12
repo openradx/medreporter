@@ -1,5 +1,5 @@
 import { ActionIcon, Divider, Menu } from "@mantine/core"
-import { TbCheck as CheckIcon } from "react-icons/tb"
+import { Check as CheckIcon } from "lucide-react"
 import { appConfig } from "~/appConfig"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FlagIcon } from "./FlagIcon"

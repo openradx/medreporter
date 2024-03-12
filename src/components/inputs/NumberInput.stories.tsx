@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { Meta, StoryObj } from "@storybook/react"
+import { Info as InfoIcon } from "lucide-react"
 import { ComponentProps, useState } from "react"
-import { AiOutlineInfoCircle as InfoIcon } from "react-icons/ai"
 import { InputLayout } from "../storybook/InputLayout"
 import { NumberInput } from "./NumberInput"
 

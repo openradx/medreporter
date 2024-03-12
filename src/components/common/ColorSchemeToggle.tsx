@@ -1,5 +1,5 @@
 import { ActionIcon, useMantineColorScheme } from "@mantine/core"
-import { TbSun as SunIcon, TbMoon as MoonIcon } from "react-icons/tb"
+import { Moon as MoonIcon, Sun as SunIcon } from "lucide-react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import classes from "./ColorSchemeToggle.module.css"
 

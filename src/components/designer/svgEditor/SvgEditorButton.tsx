@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
+import { Code as CodeIcon } from "lucide-react"
 import { memo } from "react"
-import { MdCode as CodeIcon } from "react-icons/md"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { SvgEditorModal } from "./SvgEditorModal"
 
@@ -24,7 +24,7 @@ export const SvgEditorButton = memo(({ value, onChange }: SvgEditorButtonProps) 
         onClick={open}
         aria-label="Open SVG editor"
       >
-        <CodeIcon size={20} />
+        <CodeIcon size={18} />
       </ActionIcon>
       <SvgEditorModal opened={opened} onClose={close} value={value} onChange={onChange} />
     </>
