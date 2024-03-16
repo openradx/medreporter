@@ -1,3 +1,9 @@
 .designerReport > div > div {
   height: 100%;
 }
+
+.report > div > div {
+  display: block !important;
+  width: 100%;
+
+}

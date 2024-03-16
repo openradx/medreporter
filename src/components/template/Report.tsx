@@ -41,7 +41,7 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
         }
       />
       {!isDesigning && (
-        <ScrollArea h="100%">
+        <ScrollArea h="100%" className={classes.report}>
           <Stack
             id={REPORT_CONTENT_ID}
             h="100%"

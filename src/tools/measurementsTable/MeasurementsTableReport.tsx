@@ -12,7 +12,7 @@ export const MeasurementsTableReport = () => {
 
   return (
     <Report>
-      <MeasurementsOutput link="measurements" data={measurements} legend="foo" />
+      <MeasurementsOutput link="measurements" data={measurements} />
     </Report>
   )
 }
