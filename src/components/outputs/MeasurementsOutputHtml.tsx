@@ -1,4 +1,3 @@
-import { Box, Table } from "@mantine/core"
 import { ReactElement } from "react"
 import { MeasurementsData, MeasurementsRow } from "~/schemas/structure"
 import { checkDataRowEmpty, getMeasurementsDataParams } from "~/utils/measurementsUtils"
@@ -14,10 +13,10 @@ const createTableHeader = (
 ) => (
   <thead>
     <tr>
-      {followUp && <th>{previousLabel}</th>}
-      <th>{currentLabel}</th>
-      <th>{locationLabel}</th>
-      <th>{referenceLabel}</th>
+      {followUp && <th style={{ width: "25%", wordWrap: "break-word" }}>{previousLabel}</th>}
+      <th style={{ width: followUp ? "25%" : "1/3", wordWrap: "break-word" }}>{currentLabel}</th>
+      <th style={{ width: followUp ? "25%" : "1/3", wordWrap: "break-word" }}>{locationLabel}</th>
+      <th style={{ width: followUp ? "25%" : "1/3", wordWrap: "break-word" }}>{referenceLabel}</th>
     </tr>
   </thead>
 )
@@ -30,7 +29,11 @@ const createMeasureCellRow = (data: MeasurementsRow) => {
       continue
     }
     const measureText = values.filter((v) => v != null).join(MULTIPLICATOR)
-    measureCells.push(<td key={measureType}>{measureText}</td>)
+    measureCells.push(
+      <td key={measureType} style={{ wordWrap: "break-word" }}>
+        {measureText}
+      </td>
+    )
   }
   return <>{measureCells}</>
 }
@@ -39,7 +42,11 @@ const createDescriptionCellRow = (data: MeasurementsRow) => {
   const descriptionCells: ReactElement[] = []
   for (const descriptionType of ["location", "reference"] as const) {
     const value = data[descriptionType]
-    descriptionCells.push(<td key={descriptionType}>{value}</td>)
+    descriptionCells.push(
+      <td key={descriptionType} style={{ wordWrap: "break-word" }}>
+        {value}
+      </td>
+    )
   }
   return <>{descriptionCells}</>
 }
@@ -89,10 +96,7 @@ export const MeasurementsOutputHtml = ({
   const { followUp } = getMeasurementsDataParams(data)
 
   return (
-    <Table>
-      <Box component="caption" ta="left">
-        {legend}
-      </Box>
+    <table style={{ width: "100%", tableLayout: "fixed" }}>
       {createTableHeader(
         followUp,
         labels.previous,
@@ -102,6 +106,7 @@ export const MeasurementsOutputHtml = ({
       )}
       {createTableBody(data)}
       {createTableFooter(stats)}
-    </Table>
+      <legend>{legend}</legend>
+    </table>
   )
 }

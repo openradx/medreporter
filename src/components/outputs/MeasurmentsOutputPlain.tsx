@@ -158,7 +158,6 @@ export const MeasurementsOutputPlain = ({
 
   return (
     <>
-      {legend}
       {NEWLINE_CHAR}
       {createTableHeader(
         colSizes,
@@ -173,6 +172,7 @@ export const MeasurementsOutputPlain = ({
       {NEWLINE_CHAR}
       {stats && createTableFooter(stats)}
       {NEWLINE_CHAR}
+      {legend}
     </>
   )
 }
