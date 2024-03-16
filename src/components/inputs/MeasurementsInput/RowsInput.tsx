@@ -30,5 +30,6 @@ export const RowsInput = memo(({ label, rows, dispatch, disabled }: RowsInputPro
     }}
     disabled={disabled}
     width={80}
+    size="xs"
   />
 ))

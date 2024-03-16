@@ -21,6 +21,7 @@ interface NumberInputProps {
   autoHideControls?: boolean
   error?: string
   required?: boolean
+  size?: "xs" | "sm" | "md" | "lg"
 }
 
 export const NumberInput = ({
@@ -38,6 +39,7 @@ export const NumberInput = ({
   autoHideControls = false,
   error,
   required,
+  size = "sm",
 }: NumberInputProps) => {
   const [focus, setFocus] = useState(false)
   const [hovered, setHovered] = useState(false)
@@ -79,6 +81,7 @@ export const NumberInput = ({
           control: classes.control,
         }}
         error={error}
+        size={size}
         styles={{
           wrapper: { width },
           control: {
