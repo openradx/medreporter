@@ -24,7 +24,7 @@ export const Section = ({
         {children}
       </ScrollArea>
     ) : (
-      <ScrollArea h="100%" style={{ flexGrow: 1 }}>
+      <ScrollArea h="100%" style={{ flexGrow: 1 }} className={classes.Section}>
         <Stack h="100%" display={active ? "flex" : "none"} gap="sm" p="sm">
           {children}
         </Stack>

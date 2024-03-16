@@ -3,7 +3,7 @@ import { ComponentProps, useState } from "react"
 import { MeasurementsData } from "~/schemas/structure"
 import { calcStats, createEmptyMeasurements, createStatsText } from "~/utils/measurementsUtils"
 import { SiteTranslations } from "../storybook/SiteTranslations"
-import { MeasurementsInput } from "./MeasurementsInput"
+import { MeasurementsInput } from "./MeasurementsInput/MeasurementsInput"
 
 const meta: Meta<typeof MeasurementsInput> = {
   title: "Inputs / MeasurementsInput",

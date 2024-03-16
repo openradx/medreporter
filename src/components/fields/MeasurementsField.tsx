@@ -2,7 +2,7 @@ import { useGroup } from "~/contexts/GroupContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { MeasurementsData } from "~/schemas/structure"
 import { createEmptyMeasurements } from "~/utils/measurementsUtils"
-import { MeasurementsInput } from "../inputs/MeasurementsInput"
+import { MeasurementsInput } from "../inputs/MeasurementsInput/MeasurementsInput"
 import { BaseField } from "./BaseField"
 import { CommonFieldProps } from "./fieldTypes"
 

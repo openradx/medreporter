@@ -1,4 +1,4 @@
-import { Box, Group, Stack } from "@mantine/core"
+import { Box, Flex, Group, ScrollArea, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MeasurementsData } from "~/schemas/structure"
@@ -56,50 +56,59 @@ export const MeasurementsInput = ({
   }
 
   return (
-    <Stack
-      gap="xs"
+    <Flex
       component="fieldset"
       className={border ? classes.measurementsBorder : classes.measurementsNoBorder}
+      w="100%"
+      miw={0}
     >
       <Box component="legend">
         {(label || extras) && <InputLabel label={label} extras={extras} />}
       </Box>
-      <ControlPanel
-        labels={labels}
-        followUp={params.followUp}
-        rows={params.rows}
-        dimensions={params.dimensions}
-        dispatch={dispatch}
-        disabled={disabled === true}
-      />
-      <Box style={{ overflow: "auto" }}>
-        <table>
-          <tbody>
-            <HeaderRow labels={labels} followUp={params.followUp} dimensions={params.dimensions} />
-            {data.map((rowData, rowNumber) => (
-              <DataRow
-                key={rowNumber}
-                rowData={rowData}
-                rowNumber={rowNumber}
-                followUp={params.followUp}
-                dimensions={params.dimensions}
-                dispatch={dispatch}
-                disabled={disabled === true}
-              />
-            ))}
-          </tbody>
-          {footer && (
-            <tfoot>
-              <tr>
-                <th />
-                <th colSpan={8}>
-                  <Group>{footer}</Group>
-                </th>
-              </tr>
-            </tfoot>
-          )}
-        </table>
-      </Box>
-    </Stack>
+      <Stack w="100%" gap="xs">
+        <ControlPanel
+          labels={labels}
+          followUp={params.followUp}
+          rows={params.rows}
+          dimensions={params.dimensions}
+          dispatch={dispatch}
+          disabled={disabled === true}
+        />
+        <ScrollArea w="100%" scrollbars="x" offsetScrollbars scrollHideDelay={0}>
+          <Box>
+            <table>
+              <tbody>
+                <HeaderRow
+                  labels={labels}
+                  followUp={params.followUp}
+                  dimensions={params.dimensions}
+                />
+                {data.map((rowData, rowNumber) => (
+                  <DataRow
+                    key={rowNumber}
+                    rowData={rowData}
+                    rowNumber={rowNumber}
+                    followUp={params.followUp}
+                    dimensions={params.dimensions}
+                    dispatch={dispatch}
+                    disabled={disabled === true}
+                  />
+                ))}
+              </tbody>
+              {footer && (
+                <tfoot>
+                  <tr>
+                    <th />
+                    <th colSpan={8}>
+                      <Group>{footer}</Group>
+                    </th>
+                  </tr>
+                </tfoot>
+              )}
+            </table>
+          </Box>
+        </ScrollArea>
+      </Stack>
+    </Flex>
   )
 }

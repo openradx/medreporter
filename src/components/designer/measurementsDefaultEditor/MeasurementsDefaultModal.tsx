@@ -1,6 +1,6 @@
 import { Modal } from "@mantine/core"
 import { Controller, useFormContext } from "react-hook-form"
-import { MeasurementsInput } from "~/components/inputs/MeasurementsInput"
+import { MeasurementsInput } from "~/components/inputs/MeasurementsInput/MeasurementsInput"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MeasurementsData } from "~/schemas/structure"
 
