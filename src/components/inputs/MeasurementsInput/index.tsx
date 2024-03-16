@@ -8,6 +8,7 @@ import { InputLabel } from "../InputLabel"
 import { ControlPanel } from "./ControlPanel"
 import { DataRow } from "./DataRow"
 import { HeaderRow } from "./HeaderRow"
+import classes from "./MeasurementsInput.module.css"
 
 interface MeasurementsInputProps {
   label?: string
@@ -16,6 +17,7 @@ interface MeasurementsInputProps {
   onChange: (data: MeasurementsData) => void
   footer?: ReactNode
   disabled?: boolean
+  border?: boolean
 }
 
 export const MeasurementsInput = ({
@@ -25,6 +27,7 @@ export const MeasurementsInput = ({
   onChange,
   footer,
   disabled,
+  border = true,
 }: MeasurementsInputProps) => {
   const data = value
   const params = getMeasurementsDataParams(data)
@@ -53,8 +56,14 @@ export const MeasurementsInput = ({
   }
 
   return (
-    <Stack gap="xs">
-      <Box ml={35}>{(label || extras) && <InputLabel label={label} extras={extras} />}</Box>
+    <Stack
+      gap="xs"
+      component="fieldset"
+      className={border ? classes.measurementsBorder : classes.measurementsNoBorder}
+    >
+      <Box component="legend">
+        {(label || extras) && <InputLabel label={label} extras={extras} />}
+      </Box>
       <ControlPanel
         labels={labels}
         followUp={params.followUp}

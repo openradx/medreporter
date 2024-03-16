@@ -1,4 +1,4 @@
-import { Checkbox } from "@mantine/core"
+import { Switch } from "@mantine/core"
 import { memo } from "react"
 import { MeasurementsAction } from "~/types/measurements"
 
@@ -11,7 +11,8 @@ interface FollowUpToggleProps {
 
 export const FollowUpToggle = memo(
   ({ label, followUp, dispatch, disabled }: FollowUpToggleProps) => (
-    <Checkbox
+    <Switch
+      size="sm"
       label={label}
       checked={followUp}
       onChange={(event) => {
@@ -21,7 +22,6 @@ export const FollowUpToggle = memo(
         })
       }}
       disabled={disabled}
-      mt={20}
     />
   )
 )

@@ -12,6 +12,7 @@ interface MeasurementsFieldProps extends CommonFieldProps<MeasurementsData> {
   rows?: number
   dimensions?: 1 | 2 | 3
   followUp?: boolean
+  border?: boolean
 }
 
 export const MeasurementsField = ({
@@ -24,6 +25,7 @@ export const MeasurementsField = ({
   rows,
   dimensions,
   followUp,
+  border,
 }: MeasurementsFieldProps) => {
   let processedDefaultValue = defaultValue
   if (dimensions || rows || followUp) {
@@ -41,7 +43,7 @@ export const MeasurementsField = ({
   return (
     <BaseField {...{ fieldId, label, defaultValue, value, onChange, hidden, width: "full" }}>
       <MeasurementsInput
-        {...{ label, extras, value, onChange, disabled }}
+        {...{ label, extras, value, onChange, disabled, border }}
         footer={null} // TODO:
       />
     </BaseField>

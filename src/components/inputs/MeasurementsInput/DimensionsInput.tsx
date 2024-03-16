@@ -30,7 +30,7 @@ export const DimensionsInput = memo(
         })
       }}
       disabled={disabled}
-      width={60}
+      width={80}
     />
   )
 )

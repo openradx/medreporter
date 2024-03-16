@@ -3,6 +3,6 @@ import { Structure } from "~/components/template/Structure"
 
 export const MeasurementsTableStructure = () => (
   <Structure>
-    <MeasurementsField id="measurements" />
+    <MeasurementsField id="measurements" border={false} />
   </Structure>
 )

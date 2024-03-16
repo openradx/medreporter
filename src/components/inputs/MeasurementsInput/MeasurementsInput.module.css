@@ -1,0 +1,16 @@
+.measurementsBorder {
+  flex-basis: 100%;
+  border: 1px solid var(--mantine-color-gray-2);
+  border-radius: 4px;
+  margin: 0;
+
+  @mixin dark {
+    border: 1px solid var(--mantine-color-dark-5);
+  }
+}
+
+.measurementsNoBorder {
+  flex-basis: 100%;
+  border: 0px;
+  padding: 0;
+}

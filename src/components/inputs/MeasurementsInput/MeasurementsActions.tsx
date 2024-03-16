@@ -19,8 +19,8 @@ export const MeasurementsActions = ({ labels, dispatch, disabled }: Measurements
   return (
     <Menu>
       <Menu.Target>
-        <ActionIcon title={t("MeasurementsActions.buttonActions")} mt={20} disabled={disabled}>
-          <ToolIcon size={16} />
+        <ActionIcon title={t("MeasurementsActions.buttonActions")} disabled={disabled} size={36}>
+          <ToolIcon />
         </ActionIcon>
       </Menu.Target>
       <Menu.Dropdown>
