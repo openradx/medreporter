@@ -1,5 +1,5 @@
 import { ActionIcon } from "@mantine/core"
-import { showNotification } from "@mantine/notifications"
+import { notifications } from "@mantine/notifications"
 import { Copy as CopyIcon } from "lucide-react"
 import { REPORT_CONTENT_ID } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -46,12 +46,12 @@ export const CopyButton = () => {
             selection?.addRange(r)
           }
 
-          showNotification({
+          notifications.show({
             message: t("CopyButton.successMessageCopyReport"),
             color: "green",
           })
         } else {
-          showNotification({
+          notifications.show({
             message: t("CopyButton.errorMessageCopyReport"),
             color: "red",
           })
