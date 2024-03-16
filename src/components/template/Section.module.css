@@ -3,8 +3,8 @@
   height: 100%;
 }
 
-.Section > div > div {
+.section > div > div {
   display: block !important;
-  height: 100%;
+  width: 100%;
 }
 
