@@ -13,8 +13,9 @@ export const useStructureController = <T extends StructureValue>({
   fieldId: string
   defaultValue: T
 }): { value: T; onChange: (value: T) => void } => {
-  const value = useAppSelector(selectStructureLiveValue(fieldId))
   const dispatch = useAppDispatch()
+  let value = useAppSelector(selectStructureLiveValue(fieldId))
+  if (value === undefined) value = defaultValue
 
   useEffect(() => {
     dispatch(changeStructureLiveValue({ fieldId, value: defaultValue }))

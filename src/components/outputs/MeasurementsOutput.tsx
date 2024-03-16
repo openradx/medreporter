@@ -10,7 +10,7 @@ import { MeasurementsOutputPlain } from "./MeasurmentsOutputPlain"
 
 interface MeasurementsOutputProps {
   link: string
-  data: MeasurementsData
+  data?: MeasurementsData
   legend?: string
   stats?: string
   previousLabel?: string
@@ -32,6 +32,8 @@ export const MeasurementsOutput = ({
   const { activateLink } = useStructureLink({ link })
   const outputFormat = useAppSelector(selectOutputFormat)
   const { t } = useSiteTranslation()
+
+  if (!data) return null
 
   const labels = {
     previous: previousLabel || t("MeasurementsOutput.columnPrevious"),
