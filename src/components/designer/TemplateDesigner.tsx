@@ -11,9 +11,8 @@ import {
 } from "@dnd-kit/core"
 import { snapCenterToCursor } from "@dnd-kit/modifiers"
 import { Flex, Transition } from "@mantine/core"
-import { useRef } from "react"
 import invariant from "tiny-invariant"
-import { DesignerContextProvider, StructureFormRef } from "~/contexts/DesignerContext"
+import { DesignerContextProvider } from "~/contexts/DesignerContext"
 import { useGrabbingCursor } from "~/hooks/useGrabbingCursor"
 import { useMounted } from "~/hooks/useMounted"
 import { refreshMenu, selectPreview, setSelectedItem } from "~/state/designerSlice"
@@ -171,10 +170,8 @@ export const TemplateDesigner = () => {
     transitionProperty: "width, opacity",
   }
 
-  const structureFormRef = useRef<StructureFormRef>(null)
-
   return (
-    <DesignerContextProvider value={{ isInsideDesigner: true, structureFormRef }}>
+    <DesignerContextProvider value={{ isInsideDesigner: true }}>
       {mounted && (
         <DndContext
           sensors={sensors}

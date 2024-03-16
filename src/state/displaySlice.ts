@@ -7,17 +7,17 @@ export const outputFormatSchema = z.enum(["html", "plain"])
 export type OutputFormat = z.infer<typeof outputFormatSchema>
 
 interface DisplayState {
-  dataInitialized: boolean
   activeSectionId: null | string
-  showFieldId: null | string
   outputFormat: OutputFormat
+  showFieldId: null | string
+  structureDataModified: boolean
 }
 
 const initialState: DisplayState = {
-  dataInitialized: false,
   activeSectionId: null,
-  showFieldId: null,
   outputFormat: "html",
+  showFieldId: null,
+  structureDataModified: false,
 }
 
 export const displaySlice = createSlice({
@@ -27,9 +27,6 @@ export const displaySlice = createSlice({
     activateSection(state, action: PayloadAction<{ sectionId: string }>) {
       const { sectionId } = action.payload
       state.activeSectionId = sectionId
-    },
-    setDataInitialized(state) {
-      state.dataInitialized = true
     },
     setOutputFormat(state, action: PayloadAction<{ outputFormat: OutputFormat }>) {
       const { outputFormat } = action.payload
@@ -42,18 +39,21 @@ export const displaySlice = createSlice({
       }
       state.showFieldId = fieldId
     },
+    setStructureDataModified(state, action: PayloadAction<boolean>) {
+      state.structureDataModified = action.payload
+    },
   },
 })
 
-export const { activateSection, setDataInitialized, setOutputFormat, showField } =
+export const { activateSection, setOutputFormat, showField, setStructureDataModified } =
   displaySlice.actions
 
 export default displaySlice.reducer
 
-export const selectDataInitialized = (state: RootState) => state.display.dataInitialized
-
 export const selectActiveSectionId = (state: RootState) => state.display.activeSectionId
+
+export const selectOutputFormat = (state: RootState) => state.display.outputFormat
 
 export const selectShowFieldId = (state: RootState) => state.display.showFieldId
 
-export const selectOutputFormat = (state: RootState) => state.display.outputFormat
+export const selectStructureDataModified = (state: RootState) => state.display.structureDataModified

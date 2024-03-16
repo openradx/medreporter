@@ -251,7 +251,7 @@ export const structureNodeSchema = nodeSchema.extend({
   children: z.array(sectionNodeSchema),
 })
 
-const structureValuesSchema = z.union([
+const structureValueSchema = z.union([
   numberFieldValueSchema,
   dateFieldValueSchema,
   timeFieldValueSchema,
@@ -262,7 +262,9 @@ const structureValuesSchema = z.union([
   findingFieldValueSchema,
 ])
 
-export const structureDataSchema = z.record(structureValuesSchema)
+export type StructureValue = z.infer<typeof structureValueSchema>
+
+export const structureDataSchema = z.record(structureValueSchema)
 
 export type StructureData = z.infer<typeof structureDataSchema>
 
