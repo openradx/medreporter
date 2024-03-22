@@ -70,7 +70,7 @@ const createTableBody = (data: MeasurementsData) => {
 const createTableFooter = (stats: string) => (
   <tfoot>
     <tr>
-      <th colSpan={8}>{stats}</th>
+      <th>{stats}</th>
     </tr>
   </tfoot>
 )

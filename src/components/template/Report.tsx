@@ -1,7 +1,10 @@
 import { Paper, ScrollArea, Stack } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { selectOutputFormat } from "~/state/displaySlice"
+import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
 import { OutputFormat } from "./OutputFormat"
@@ -17,11 +20,13 @@ interface ReportProps {
 
 export const Report = ({ actions, children, isDesigning = false }: ReportProps) => {
   const { t } = useSiteTranslation()
+  const outputFormat = useAppSelector(selectOutputFormat)
+  const matches = useMediaQuery("(min-width: 88em)")
 
   return (
     <Paper
       style={{
-        flex: "1 1 0",
+        width: matches ? "40%" : "100%",
         display: "flex",
         flexDirection: "column",
       }}
@@ -41,13 +46,13 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
         }
       />
       {!isDesigning && (
-        <ScrollArea h="100%" className={classes.report}>
+        <ScrollArea h="100%" className={classes.report} scrollHideDelay={0}>
           <Stack
             id={REPORT_CONTENT_ID}
             h="100%"
+            mx="sm"
             ff="monospace"
-            p="sm"
-            style={{ whiteSpace: "pre-wrap", flexGrow: 1 }}
+            style={{ whiteSpace: outputFormat === "html" ? "pre-wrap" : "pre", flexGrow: 1 }}
           >
             {children}
           </Stack>

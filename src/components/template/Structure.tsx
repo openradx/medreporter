@@ -24,7 +24,7 @@ export const Structure = ({ actions, children }: StructureProps) => {
   return (
     <Paper
       style={{
-        width: matches ? "60%" : "100%",
+        width: matches ? "59%" : "100%",
         display: "flex",
         flexDirection: "column",
       }}
