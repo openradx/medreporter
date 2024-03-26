@@ -20,7 +20,9 @@ export const PanelToolbar = ({
     pos="relative"
     style={{ justifyContent: buttonPosition === "right" ? "space-between" : "inherit" }}
   >
-    <Text>{title}</Text>
+    <Text size="lg" fw={500}>
+      {title}
+    </Text>
     <Group gap="xs" className={buttonPosition === "center" ? classes.centerActions : undefined}>
       {actions}
     </Group>

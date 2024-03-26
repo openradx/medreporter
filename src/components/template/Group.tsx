@@ -30,7 +30,7 @@ export const Group = ({
       className={border ? classes.groupBorder : classes.groupNoBorder}
     >
       {(label || extras) && (
-        <Box component="legend" px={0} py={6}>
+        <Box component="legend">
           <InputLabel label={label} extras={extras} />
         </Box>
       )}
