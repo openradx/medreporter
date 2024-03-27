@@ -57,6 +57,8 @@ LegendProperty:
   label: Legend
 LevelProperty:
   label: Level
+LinkedMeasurementsFieldProperty:
+  label: Linked MeasurementsField
 LinkProperty:
   label: Link
 ListProperty:

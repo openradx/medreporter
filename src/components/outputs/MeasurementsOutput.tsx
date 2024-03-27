@@ -1,16 +1,19 @@
-import { ReactNode } from "react"
+import { ReactNode, useMemo } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useStructureLink } from "~/hooks/useStructureLink"
 import { MeasurementsData } from "~/schemas/structure"
 import { selectOutputFormat } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
+import { selectStructureHistoryData } from "~/state/structureHistoryDataSlice"
+import { selectTemplate } from "~/state/templateSlice"
+import { visitTemplate } from "~/utils/designerUtils"
 import { StructureLink } from "../template/StructureLink"
 import { MeasurementsOutputHtml } from "./MeasurementsOutputHtml"
 import { MeasurementsOutputPlain } from "./MeasurmentsOutputPlain"
 
 interface MeasurementsOutputProps {
   link: string
-  data?: MeasurementsData
+  linkedMeasurementsField: string
   legend?: string
   stats?: string
   previousLabel?: string
@@ -20,8 +23,8 @@ interface MeasurementsOutputProps {
 }
 
 export const MeasurementsOutput = ({
+  linkedMeasurementsField,
   link,
-  data,
   legend = "",
   stats = "",
   previousLabel,
@@ -31,9 +34,27 @@ export const MeasurementsOutput = ({
 }: MeasurementsOutputProps) => {
   const { activateLink } = useStructureLink({ link })
   const outputFormat = useAppSelector(selectOutputFormat)
+  const structureData = useAppSelector(selectStructureHistoryData)
+  const template = useAppSelector(selectTemplate)
   const { t } = useSiteTranslation()
 
-  if (!data) return null
+  const isMeasurementsField = useMemo(() => {
+    const path = visitTemplate(
+      template,
+      (node) => "fieldId" in node && node.fieldId === linkedMeasurementsField
+    )
+    if (path && path.length > 0) {
+      const node = path[path.length - 1]
+      return node.type === "MeasurementsField"
+    }
+    return false
+  }, [linkedMeasurementsField, template])
+
+  if (!(linkedMeasurementsField in structureData) || !isMeasurementsField) {
+    return null
+  }
+
+  const measurementsData = structureData[linkedMeasurementsField] as MeasurementsData
 
   const labels = {
     previous: previousLabel || t("MeasurementsOutput.columnPrevious"),
@@ -44,9 +65,13 @@ export const MeasurementsOutput = ({
 
   let output: ReactNode
   if (outputFormat === "html") {
-    output = <MeasurementsOutputHtml legend={legend} {...{ data, labels, stats }} />
+    output = (
+      <MeasurementsOutputHtml legend={legend} {...{ data: measurementsData, labels, stats }} />
+    )
   } else if (outputFormat === "plain") {
-    output = <MeasurementsOutputPlain legend={legend} {...{ data, labels, stats }} />
+    output = (
+      <MeasurementsOutputPlain legend={legend} {...{ data: measurementsData, labels, stats }} />
+    )
   } else {
     throw new Error(`Invalid output format: ${outputFormat}`)
   }

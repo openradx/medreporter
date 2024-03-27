@@ -27,6 +27,7 @@ export const paragraphChildrenTypes = new Set([
 
 export const measurementsOutputNodeSchema = nodeSchema.extend({
   type: z.literal("MeasurementsOutput"),
+  linkedMeasurementsField: z.string(),
   link: z.string(), // link to a field
   legend: z.string().optional(),
   previousLabel: z.string().optional(),

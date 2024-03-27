@@ -17,7 +17,7 @@ export const MeasurementsOutputAdapter = ({ node }: MeasurementsOutputAdapterPro
   return (
     <MeasurementsOutput
       link={node.link}
-      data={[]} // TODO: data via link?
+      linkedMeasurementsField={node.linkedMeasurementsField}
       stats="" // TODO:
       legend={node.legend}
       previousLabel={node.previousLabel}

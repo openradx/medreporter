@@ -147,7 +147,7 @@ export function isContainerNode(node: StructuredReportNode): node is ContainerNo
   return containerNodesAsStrings.has(node.type)
 }
 
-function visitTemplate(
+export function visitTemplate(
   templateNode: TemplateNode,
   callback: (node: StructuredReportNode) => boolean | void
 ): StructuredReportNode[] | undefined {
