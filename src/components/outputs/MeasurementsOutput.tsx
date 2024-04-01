@@ -1,12 +1,10 @@
-import { ReactNode, useMemo } from "react"
+import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useStructureLink } from "~/hooks/useStructureLink"
 import { MeasurementsData } from "~/schemas/structure"
 import { selectOutputFormat } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 import { selectStructureHistoryData } from "~/state/structureHistoryDataSlice"
-import { selectTemplate } from "~/state/templateSlice"
-import { visitTemplate } from "~/utils/designerUtils"
 import { StructureLink } from "../template/StructureLink"
 import { MeasurementsOutputHtml } from "./MeasurementsOutputHtml"
 import { MeasurementsOutputPlain } from "./MeasurmentsOutputPlain"
@@ -35,22 +33,9 @@ export const MeasurementsOutput = ({
   const { activateLink } = useStructureLink({ link })
   const outputFormat = useAppSelector(selectOutputFormat)
   const structureData = useAppSelector(selectStructureHistoryData)
-  const template = useAppSelector(selectTemplate)
   const { t } = useSiteTranslation()
 
-  const isMeasurementsField = useMemo(() => {
-    const path = visitTemplate(
-      template,
-      (node) => "fieldId" in node && node.fieldId === linkedMeasurementsField
-    )
-    if (path && path.length > 0) {
-      const node = path[path.length - 1]
-      return node.type === "MeasurementsField"
-    }
-    return false
-  }, [linkedMeasurementsField, template])
-
-  if (!(linkedMeasurementsField in structureData) || !isMeasurementsField) {
+  if (!(linkedMeasurementsField in structureData)) {
     return null
   }
 

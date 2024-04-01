@@ -210,6 +210,15 @@ export function getAllFieldIds(templateEl: TemplateNode): string[] {
   return Array.from(fieldIds)
 }
 
+export function isMeasurementsField(templateNode: TemplateNode, fieldId: string) {
+  const path = visitTemplate(templateNode, (node) => "fieldId" in node && node.fieldId === fieldId)
+  if (path && path.length > 0) {
+    const node = path[path.length - 1]
+    return node.type === "MeasurementsField"
+  }
+  return false
+}
+
 // function getElementPath(templateEl: TemplateEl, elementId: string): NodeElement[] | undefined {
 //   const visit = (element: NodeElement, currentPath: NodeElement[]): NodeElement[] | undefined => {
 //     if (element.elementId === elementId) {

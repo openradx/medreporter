@@ -1,4 +1,7 @@
 import { MeasurementsOutputNode, measurementsOutputNodeSchema } from "~/schemas/report"
+import { useAppSelector } from "~/state/store"
+import { selectTemplate } from "~/state/templateSlice"
+import { isMeasurementsField } from "~/utils/designerUtils"
 import { CurrentLabelProperty } from "../properties/CurrentLabelProperty"
 import { LabelProperty } from "../properties/LabelProperty"
 import { LegendProperty } from "../properties/LegendProperty"
@@ -15,19 +18,31 @@ interface MeasurementsOutputPropertiesFormProps {
 
 export const MeasurementsOutputPropertiesForm = ({
   node,
-}: MeasurementsOutputPropertiesFormProps) => (
-  <PropertiesForm
-    nodeId={node.nodeId}
-    schema={measurementsOutputNodeSchema.omit({ nodeId: true, type: true })}
-    initialValues={node}
-  >
-    <LabelProperty />
-    <LinkedMeasurementsFieldProperty />
-    <LinkProperty />
-    <LegendProperty />
-    <CurrentLabelProperty />
-    <PreviousLabelProperty />
-    <LocationLabelProperty />
-    <ReferenceLabelProperty />
-  </PropertiesForm>
-)
+}: MeasurementsOutputPropertiesFormProps) => {
+  const template = useAppSelector(selectTemplate)
+  const linkedMeasurementsFieldSchema =
+    measurementsOutputNodeSchema.shape.linkedMeasurementsField.refine(
+      (linkedMeasurementsField) =>
+        isMeasurementsField(template, linkedMeasurementsField) || linkedMeasurementsField === "",
+      { message: "Invalid linked measurements field" }
+    )
+
+  return (
+    <PropertiesForm
+      nodeId={node.nodeId}
+      schema={measurementsOutputNodeSchema
+        .omit({ nodeId: true, type: true })
+        .extend({ linkedMeasurementsField: linkedMeasurementsFieldSchema })}
+      initialValues={node}
+    >
+      <LabelProperty />
+      <LinkedMeasurementsFieldProperty />
+      <LinkProperty />
+      <LegendProperty />
+      <CurrentLabelProperty />
+      <PreviousLabelProperty />
+      <LocationLabelProperty />
+      <ReferenceLabelProperty />
+    </PropertiesForm>
+  )
+}
