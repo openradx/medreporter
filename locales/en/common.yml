@@ -151,6 +151,7 @@ ModulesPage:
 Navbar:
   openMainMenuTitle: Open main menu
 NavDrawer:
+  title: Navigation
   home: Home
   tools: Tools
 NewFigureForm:

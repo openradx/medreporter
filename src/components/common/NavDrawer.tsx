@@ -1,4 +1,4 @@
-import { Box, Drawer, Stack } from "@mantine/core"
+import { Drawer, Stack, Text } from "@mantine/core"
 import cx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -22,7 +22,7 @@ export const NavDrawer = ({ opened, setOpened }: NavDrawerProps) => {
 
   const links = linkData.map((link) => (
     <Link key={link.route.pathname} href={link.route} passHref legacyBehavior>
-      <Box
+      <Text
         component="a"
         className={cx(classes.link, {
           [classes.linkActive]:
@@ -35,13 +35,19 @@ export const NavDrawer = ({ opened, setOpened }: NavDrawerProps) => {
         }}
       >
         {link.label}
-      </Box>
+      </Text>
     </Link>
   ))
 
   return (
-    <Drawer opened={opened} onClose={() => setOpened(false)} title="Navigation" padding="md">
-      <Stack gap={4}>{links}</Stack>
+    <Drawer
+      opened={opened}
+      onClose={() => setOpened(false)}
+      title={t("NavDrawer.title")}
+      padding="md"
+      size="xs"
+    >
+      <Stack gap="sm">{links}</Stack>
     </Drawer>
   )
 }

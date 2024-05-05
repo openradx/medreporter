@@ -151,6 +151,7 @@ ModulesPage:
 Navbar:
   openMainMenuTitle: Hauptmenü öffnen
 NavDrawer:
+  title: Navigaion
   home: Startseite
   tools: Werkzeuge
 NewFigureForm:
