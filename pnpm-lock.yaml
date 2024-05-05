@@ -45,20 +45,20 @@ dependencies:
     specifier: ^3.3.4
     version: 3.3.4(react-hook-form@7.51.3)
   '@mantine/core':
-    specifier: ^7.8.0
-    version: 7.8.0(@mantine/hooks@7.8.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^7.9.0
+    version: 7.9.0(@mantine/hooks@7.9.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
   '@mantine/dates':
-    specifier: ^7.8.0
-    version: 7.8.0(@mantine/core@7.8.0)(@mantine/hooks@7.8.0)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^7.9.0
+    version: 7.9.0(@mantine/core@7.9.0)(@mantine/hooks@7.9.0)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
   '@mantine/hooks':
-    specifier: ^7.8.0
-    version: 7.8.0(react@18.2.0)
+    specifier: ^7.9.0
+    version: 7.9.0(react@18.2.0)
   '@mantine/modals':
-    specifier: ^7.8.0
-    version: 7.8.0(@mantine/core@7.8.0)(@mantine/hooks@7.8.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^7.9.0
+    version: 7.9.0(@mantine/core@7.9.0)(@mantine/hooks@7.9.0)(react-dom@18.2.0)(react@18.2.0)
   '@mantine/notifications':
-    specifier: ^7.8.0
-    version: 7.8.0(@mantine/core@7.8.0)(@mantine/hooks@7.8.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^7.9.0
+    version: 7.9.0(@mantine/core@7.9.0)(@mantine/hooks@7.9.0)(react-dom@18.2.0)(react@18.2.0)
   '@next-auth/prisma-adapter':
     specifier: ^1.0.7
     version: 1.0.7(@prisma/client@5.12.1)(next-auth@4.24.7)
@@ -88,7 +88,7 @@ dependencies:
     version: 10.45.2
   '@uiw/react-codemirror':
     specifier: ^4.21.25
-    version: 4.21.25(@babel/runtime@7.24.4)(@codemirror/autocomplete@6.16.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.5.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.26.3)(codemirror@6.0.1)(react-dom@18.2.0)(react@18.2.0)
+    version: 4.21.25(@babel/runtime@7.24.5)(@codemirror/autocomplete@6.16.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.5.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.26.3)(codemirror@6.0.1)(react-dom@18.2.0)(react@18.2.0)
   bcrypt:
     specifier: ^5.1.1
     version: 5.1.1
@@ -362,8 +362,8 @@ devDependencies:
     specifier: ^8.4.38
     version: 8.4.38
   postcss-preset-mantine:
-    specifier: ^1.14.4
-    version: 1.14.4(postcss@8.4.38)
+    specifier: ^1.15.0
+    version: 1.15.0(postcss@8.4.38)
   postcss-simple-vars:
     specifier: ^7.0.1
     version: 7.0.1(postcss@8.4.38)
@@ -1743,6 +1743,13 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  /@babel/runtime@7.24.5:
+    resolution: {integrity: sha512-Nms86NXrsaeU9vbBJKni6gXiEXZ4CVpYVzEjDH9Sb8vmZ3UljyA1GSOJl/6LGPO8EHLuSF9H+IxNXHPX8QHJ4g==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
+
   /@babel/template@7.24.0:
     resolution: {integrity: sha512-Bkf2q8lMB0AFpX0NFEqSbx1OkTHf0f+0j82mkw+ZpzBnkk7e9Ql0891vlfgi+kHwOk8tQjiQHpqh4LaSa0fKEA==}
     engines: {node: '>=6.9.0'}
@@ -1833,6 +1840,15 @@ packages:
       '@lezer/common': 1.2.1
     dev: false
 
+  /@codemirror/commands@6.5.0:
+    resolution: {integrity: sha512-rK+sj4fCAN/QfcY9BEzYMgp4wwL/q5aj/VfNSoH1RWPF9XS/dUwBkvlL3hpWgEjOqlpdN1uLC9UkjJ4tmyjJYg==}
+    dependencies:
+      '@codemirror/language': 6.10.1
+      '@codemirror/state': 6.4.1
+      '@codemirror/view': 6.26.3
+      '@lezer/common': 1.2.1
+    dev: false
+
   /@codemirror/lang-css@6.2.1(@codemirror/view@6.26.3):
     resolution: {integrity: sha512-/UNWDNV5Viwi/1lpr/dIXJNWiwDxpw13I4pTUAsNxZdg6E0mI2kTQb0P2iHczg1Tu+H4EBgJR+hYhKiHKko7qg==}
     dependencies:
@@ -1914,6 +1930,14 @@ packages:
 
   /@codemirror/lint@6.5.0:
     resolution: {integrity: sha512-+5YyicIaaAZKU8K43IQi8TBy6mF6giGeWAH7N96Z5LC30Wm5JMjqxOYIE9mxwMG1NbhT2mA3l9hA4uuKUM3E5g==}
+    dependencies:
+      '@codemirror/state': 6.4.1
+      '@codemirror/view': 6.26.3
+      crelt: 1.0.6
+    dev: false
+
+  /@codemirror/lint@6.7.0:
+    resolution: {integrity: sha512-LTLOL2nT41ADNSCCCCw8Q/UmdAFzB23OUYSjsHTdsVaH0XEo+orhuqbDNWzrzodm14w6FOxqxpmy4LF8Lixqjw==}
     dependencies:
       '@codemirror/state': 6.4.1
       '@codemirror/view': 6.26.3
@@ -2996,15 +3020,15 @@ packages:
       '@lezer/lr': 1.4.0
     dev: false
 
-  /@mantine/core@7.8.0(@mantine/hooks@7.8.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-19RKuNdJ/s8pZjy2w2rvTsl4ybi/XM6vf+Kc0WY7kpLFCvdG+/UxNi1MuJF8t2Zs0QSFeb/H5yZQNe0XPbegHw==}
+  /@mantine/core@7.9.0(@mantine/hooks@7.9.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-EhELO1uYq2s08H69h4BCcvE26mNLPaXUi6RAjApqBIynMcyJlmdluFtvGKFxjpgFZy3moeSYNrjEW//T0uTMZg==}
     peerDependencies:
-      '@mantine/hooks': 7.8.0
+      '@mantine/hooks': 7.9.0
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@floating-ui/react': 0.26.12(react-dom@18.2.0)(react@18.2.0)
-      '@mantine/hooks': 7.8.0(react@18.2.0)
+      '@mantine/hooks': 7.9.0(react@18.2.0)
       clsx: 2.1.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -3016,63 +3040,63 @@ packages:
       - '@types/react'
     dev: false
 
-  /@mantine/dates@7.8.0(@mantine/core@7.8.0)(@mantine/hooks@7.8.0)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-9jjiYMwP3jQOpOLKkjhp9uf2BGhtEbOnOzyAlpLOS0CJJlYtB0tO6dJ3JaogrOZ/Yfee7ZUBgouCG5EkR4/qtQ==}
+  /@mantine/dates@7.9.0(@mantine/core@7.9.0)(@mantine/hooks@7.9.0)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-+OOM8w6uZfBvlqPtwGIjG0Ef3z4E5QyWVmh7AhevgRS9RBdfa1YpxfRweDTDmrY9qYnim7fyM097Rwe30q/kpA==}
     peerDependencies:
-      '@mantine/core': 7.8.0
-      '@mantine/hooks': 7.8.0
+      '@mantine/core': 7.9.0
+      '@mantine/hooks': 7.9.0
       dayjs: '>=1.0.0'
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@mantine/core': 7.8.0(@mantine/hooks@7.8.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
-      '@mantine/hooks': 7.8.0(react@18.2.0)
+      '@mantine/core': 7.9.0(@mantine/hooks@7.9.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/hooks': 7.9.0(react@18.2.0)
       clsx: 2.1.0
       dayjs: 1.11.10
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@mantine/hooks@7.8.0(react@18.2.0):
-    resolution: {integrity: sha512-+70fkgjhVJeJ+nJqnburIM3UAsfvxat1Low9HMPobLbv64FIdB4Nzu5ct3qojNQ58r5sK01tg5UoFIJYslaVrg==}
+  /@mantine/hooks@7.9.0(react@18.2.0):
+    resolution: {integrity: sha512-LKgyrlaIK0S/gcn/VDbhqLBZOYjvhXfVcH7rMs4MIBVD+wuRo2LvvAYe3cUfQbBCfmlpRjqvewwvsIYYsjSofQ==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
       react: 18.2.0
     dev: false
 
-  /@mantine/modals@7.8.0(@mantine/core@7.8.0)(@mantine/hooks@7.8.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-/Kxquz8U7xau9PoqPi5Pjysfnq8b48VRAMp62B+SsPWNTH47R0F7dYRYpLQ2/0VU+OWGY0lOshxpgA61sZ3IPA==}
+  /@mantine/modals@7.9.0(@mantine/core@7.9.0)(@mantine/hooks@7.9.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-shPoUmuAj6587DbGjc3AWpGRnxDvHftw7Ps7Xqcoy7ScxQ8+HpynBk9j7ojyXMolovK4hThW4oZdysPfpjQyaA==}
     peerDependencies:
-      '@mantine/core': 7.8.0
-      '@mantine/hooks': 7.8.0
+      '@mantine/core': 7.9.0
+      '@mantine/hooks': 7.9.0
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@mantine/core': 7.8.0(@mantine/hooks@7.8.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
-      '@mantine/hooks': 7.8.0(react@18.2.0)
+      '@mantine/core': 7.9.0(@mantine/hooks@7.9.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/hooks': 7.9.0(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@mantine/notifications@7.8.0(@mantine/core@7.8.0)(@mantine/hooks@7.8.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-O7BnaCcwVg38fh+gSZ6GEsTFPPgJAiOTrRkOMXG+7pNqJT9YNa9KDZhiPZzn3WV4wexncjyK32a8gGSVtf+kdg==}
+  /@mantine/notifications@7.9.0(@mantine/core@7.9.0)(@mantine/hooks@7.9.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-jGwvPrLnHCQMmWuuiuLWr8mjVHnOoOlydqPSya9JB1FFJU+MJP+wP5ncKeIbAmu1h2VlOuGomToM6KzvxksUGw==}
     peerDependencies:
-      '@mantine/core': 7.8.0
-      '@mantine/hooks': 7.8.0
+      '@mantine/core': 7.9.0
+      '@mantine/hooks': 7.9.0
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@mantine/core': 7.8.0(@mantine/hooks@7.8.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
-      '@mantine/hooks': 7.8.0(react@18.2.0)
-      '@mantine/store': 7.8.0(react@18.2.0)
+      '@mantine/core': 7.9.0(@mantine/hooks@7.9.0)(@types/react@18.2.77)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/hooks': 7.9.0(react@18.2.0)
+      '@mantine/store': 7.9.0(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@mantine/store@7.8.0(react@18.2.0):
-    resolution: {integrity: sha512-oN/BXGYdUywRi0zj9ppaShv2sw5QON2DaRisB4ewJ5tDDz8qyeckgdE0NMaaU2TwpoScs8ibSnOVWV5y+vYkMA==}
+  /@mantine/store@7.9.0(react@18.2.0):
+    resolution: {integrity: sha512-FzZkjdpy3PEh9sS6WgQ4cTVl9MvUbPRQ1nov8PV3JWWMlGOJHFuHeG6IYYGMc9f1oxu38/lryiKIYk3jcRgTSQ==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
@@ -5254,7 +5278,7 @@ packages:
       '@tanstack/query-core': 4.36.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      use-sync-external-store: 1.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.2(react@18.2.0)
     dev: false
 
   /@testing-library/dom@9.3.4:
@@ -6013,7 +6037,7 @@ packages:
       '@codemirror/view': 6.26.3
     dev: false
 
-  /@uiw/react-codemirror@4.21.25(@babel/runtime@7.24.4)(@codemirror/autocomplete@6.16.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.5.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.26.3)(codemirror@6.0.1)(react-dom@18.2.0)(react@18.2.0):
+  /@uiw/react-codemirror@4.21.25(@babel/runtime@7.24.5)(@codemirror/autocomplete@6.16.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.5.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.26.3)(codemirror@6.0.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-mBrCoiffQ+hbTqV1JoixFEcH7BHXkS3PjTyNH7dE8Gzf3GSBRazhtSM5HrAFIiQ5FIRGFs8Gznc4UAdhtevMmw==}
     peerDependencies:
       '@babel/runtime': '>=7.11.0'
@@ -6024,7 +6048,7 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@babel/runtime': 7.24.4
+      '@babel/runtime': 7.24.5
       '@codemirror/commands': 6.3.3
       '@codemirror/state': 6.4.1
       '@codemirror/theme-one-dark': 6.1.2
@@ -6832,13 +6856,13 @@ packages:
     dev: true
     optional: true
 
-  /bare-fs@2.2.3:
-    resolution: {integrity: sha512-amG72llr9pstfXOBOHve1WjiuKKAMnebcmMbPWDZ7BCevAoJLpugjuAPRsDINEyjT0a6tbaVx3DctkXIRbLuJw==}
+  /bare-fs@2.3.0:
+    resolution: {integrity: sha512-TNFqa1B4N99pds2a5NYHR15o0ZpdNKbAeKTE/+G6ED/UeOavv8RY3dr/Fu99HW3zU3pXpo2kDNO8Sjsm2esfOw==}
     requiresBuild: true
     dependencies:
       bare-events: 2.2.2
-      bare-path: 2.1.1
-      streamx: 2.16.1
+      bare-path: 2.1.2
+      bare-stream: 1.0.0
     dev: true
     optional: true
 
@@ -6848,11 +6872,19 @@ packages:
     dev: true
     optional: true
 
-  /bare-path@2.1.1:
-    resolution: {integrity: sha512-OHM+iwRDRMDBsSW7kl3dO62JyHdBKO3B25FB9vNQBPcGHMo4+eA8Yj41Lfbk3pS/seDY+siNge0LdRTulAau/A==}
+  /bare-path@2.1.2:
+    resolution: {integrity: sha512-o7KSt4prEphWUHa3QUwCxUI00R86VdjiuxmJK0iNVDHYPGo+HsDaVCnqCmPbf/MiW1ok8F4p3m8RTHlWk8K2ig==}
     requiresBuild: true
     dependencies:
       bare-os: 2.2.1
+    dev: true
+    optional: true
+
+  /bare-stream@1.0.0:
+    resolution: {integrity: sha512-KhNUoDL40iP4gFaLSsoGE479t0jHijfYdIcxRn/XtezA2BaUD0NRf/JGRpsMq6dMNM+SrCrB0YSSo/5wBY4rOQ==}
+    requiresBuild: true
+    dependencies:
+      streamx: 2.16.1
     dev: true
     optional: true
 
@@ -7333,9 +7365,9 @@ packages:
     resolution: {integrity: sha512-J8j+nZ+CdWmIeFIGXEFbFPtpiYacFMDR8GlHK3IyHQJMCaVRfGx9NT+Hxivv1ckLWPvNdZqndbr/7lVhrf/Svg==}
     dependencies:
       '@codemirror/autocomplete': 6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
-      '@codemirror/commands': 6.3.3
+      '@codemirror/commands': 6.5.0
       '@codemirror/language': 6.10.1
-      '@codemirror/lint': 6.5.0
+      '@codemirror/lint': 6.7.0
       '@codemirror/search': 6.5.6
       '@codemirror/state': 6.4.1
       '@codemirror/view': 6.26.3
@@ -12639,8 +12671,8 @@ packages:
       postcss-selector-parser: 6.0.16
     dev: true
 
-  /postcss-preset-mantine@1.14.4(postcss@8.4.38):
-    resolution: {integrity: sha512-T1K3MVhU1hA9mJWfqoGvMcK5WKcHpVi4JUX6AYTbESvp78WneB/KFONUi+eXDG9Lpw62W/KNxEYl1ic3Dpm88w==}
+  /postcss-preset-mantine@1.15.0(postcss@8.4.38):
+    resolution: {integrity: sha512-OKPs6uoORSXlU/GFH1ZtFaslecHBPwuoSikdL5W3WKJm4ZPAQM0mw9x9m3toa/Mo1JhoBmYMM28i+zEdav5Edg==}
     peerDependencies:
       postcss: '>=8.0.0'
     dependencies:
@@ -14644,8 +14676,8 @@ packages:
       pump: 3.0.0
       tar-stream: 3.1.7
     optionalDependencies:
-      bare-fs: 2.2.3
-      bare-path: 2.1.1
+      bare-fs: 2.3.0
+      bare-path: 2.1.2
     dev: true
 
   /tar-stream@2.2.0:
@@ -15352,6 +15384,14 @@ packages:
 
   /use-sync-external-store@1.2.0(react@18.2.0):
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /use-sync-external-store@1.2.2(react@18.2.0):
+    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
