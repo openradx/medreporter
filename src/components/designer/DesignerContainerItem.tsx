@@ -21,11 +21,13 @@ export const DesignerContainerItem = ({ node, children }: DesignerContainerItemP
   return (
     <Card padding="xs" shadow="sm" style={{ width: 250 }} withBorder>
       <Text>
-        {t("DesignerContainerItem.id")}: {fieldId ?? "-"}
-      </Text>
-      <Text size="sm" c="dimmed">
         {t("DesignerContainerItem.type")}: {type}
       </Text>
+      {fieldId && (
+        <Text size="sm" c="dimmed">
+          {t("DesignerContainerItem.id")}: {fieldId}
+        </Text>
+      )}
       <Card>{children}</Card>
     </Card>
   )

@@ -106,13 +106,15 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
             left={0}
             opacity={0.5}
           />
-          <Stack gap={0}>
+          <Stack gap={0} py={4}>
             <Text>
               {t("DraggableCanvasContainer.type")}: {type}
             </Text>
-            <Text size="sm" c="dimmed" truncate>
-              {t("DraggableCanvasContainer.id")}: {fieldId ?? "-"}
-            </Text>
+            {fieldId && (
+              <Text size="sm" c="dimmed" truncate>
+                {t("DraggableCanvasContainer.id")}: {fieldId}
+              </Text>
+            )}
           </Stack>
         </Card.Section>
         <>

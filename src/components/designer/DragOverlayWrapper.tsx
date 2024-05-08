@@ -26,7 +26,7 @@ export const DragOverlayWrapper = () => {
     if (isContainerNode(node)) {
       item = <DesignerContainerItem node={node} />
     } else {
-      item = <div style={{ backgroundColor: "red", width: 50 }}>{node.type}</div>
+      item = <div style={{ backgroundColor: "red", width: 100 }}>{node.type}</div>
     }
   }
 
