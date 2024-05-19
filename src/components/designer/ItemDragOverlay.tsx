@@ -1,14 +1,12 @@
 import { Card, Text } from "@mantine/core"
-import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { ContainerNode } from "~/utils/designerUtils"
+import { StructuredReportNode } from "~/utils/designerUtils"
 
-interface DesignerContainerItemProps {
-  node: ContainerNode
-  children?: ReactNode
+interface ItemDragOverlayProps {
+  node: StructuredReportNode
 }
 
-export const DesignerContainerItem = ({ node, children }: DesignerContainerItemProps) => {
+export const ItemDragOverlay = ({ node }: ItemDragOverlayProps) => {
   const { t } = useSiteTranslation()
 
   const { type } = node
@@ -21,14 +19,13 @@ export const DesignerContainerItem = ({ node, children }: DesignerContainerItemP
   return (
     <Card padding="xs" shadow="sm" style={{ width: 250 }} withBorder>
       <Text>
-        {t("DesignerContainerItem.type")}: {type}
+        {t("ItemDragOverlay.type")}: {type}
       </Text>
       {fieldId && (
         <Text size="sm" c="dimmed">
-          {t("DesignerContainerItem.id")}: {fieldId}
+          {t("ItemDragOverlay.id")}: {fieldId}
         </Text>
       )}
-      <Card>{children}</Card>
     </Card>
   )
 }

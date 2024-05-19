@@ -1,14 +1,14 @@
 BorderProperty:
   label: Berandung
+ContainerDragOverlay:
+  id: ID
+  type: Typ
 ContentProperty:
   label: Inhalt
 CurrentLabelProperty:
   label: Label aktuell
 DateDefaultProperty:
   label: Default
-DesignerContainerItem:
-  id: ID
-  type: Typ
 DirectionProperty:
   label: Orientierung
 DisabledProperty:
@@ -51,6 +51,9 @@ HiddenProperty:
   modalDescription: Wenn das Skript zu wahr evaluiert, wird das Feld nicht angezeigt.
 InfoProperty:
   label: Info
+ItemDragOverlay:
+  id: ID
+  type: Typ
 LabelProperty:
   label: Beschriftung
 LegendProperty:

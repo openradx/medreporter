@@ -2,7 +2,8 @@ import { Active, DragOverlay, useDndMonitor } from "@dnd-kit/core"
 import { Portal } from "@mantine/core"
 import { ReactNode, useState } from "react"
 import { DraggableData, StructuredReportNode, isContainerNode } from "~/utils/designerUtils"
-import { DesignerContainerItem } from "./DesignerContainerItem"
+import { ContainerDragOverlay } from "./ContainerDragOverlay"
+import { ItemDragOverlay } from "./ItemDragOverlay"
 
 export const DragOverlayWrapper = () => {
   const [draggedItem, setDraggedItem] = useState<Active | null>(null)
@@ -24,9 +25,9 @@ export const DragOverlayWrapper = () => {
   let item: ReactNode = null
   if (node) {
     if (isContainerNode(node)) {
-      item = <DesignerContainerItem node={node} />
+      item = <ContainerDragOverlay node={node} />
     } else {
-      item = <div style={{ backgroundColor: "red", width: 100 }}>{node.type}</div>
+      item = <ItemDragOverlay node={node} />
     }
   }
 

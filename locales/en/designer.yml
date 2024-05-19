@@ -1,5 +1,8 @@
 BorderProperty:
   label: Border
+ContainerDragOverlay:
+  id: ID
+  type: Type
 ContentProperty:
   label: Content
 CurrentLabelProperty:
@@ -12,9 +15,6 @@ DisabledProperty:
   label: Disabled
   modalTitle: Disabled
   modalDescription: When the script evaluates to true the field is read-only.
-DesignerContainerItem:
-  id: ID
-  type: Type
 DraggableCanvasContainer:
   id: ID
   type: Type
@@ -51,6 +51,9 @@ HiddenProperty:
   modalDescription: When the script evaluates to true the field is not displayed.
 InfoProperty:
   label: Info
+ItemDragOverlay:
+  id: ID
+  type: Type
 LabelProperty:
   label: Label
 LegendProperty:
