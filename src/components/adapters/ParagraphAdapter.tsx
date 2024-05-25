@@ -2,7 +2,6 @@ import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { useIsDesigning } from "~/hooks/useIsDesigning"
-import { useSharedCode } from "~/hooks/useSharedCode"
 import { ParagraphNode } from "~/schemas/report"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
 import { Paragraph } from "../template/Paragraph"
@@ -15,12 +14,11 @@ interface ParagraphAdapterProps {
 export const ParagraphAdapter = ({ node }: ParagraphAdapterProps) => {
   const isDesigning = useIsDesigning()
   const interpreter = useInterpreter()
-  const sharedCode = useSharedCode()
   const fieldsCode = useFieldsCode()
 
   const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.hidden),
-    [interpreter, sharedCode, fieldsCode, node.hidden]
+    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
+    [interpreter, fieldsCode, node.hidden]
   )
 
   const children = node.children.map((child) => (

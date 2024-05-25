@@ -2,7 +2,6 @@ import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { useIsDesigning } from "~/hooks/useIsDesigning"
-import { useSharedCode } from "~/hooks/useSharedCode"
 import { FindingFieldNode } from "~/schemas/structure"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
 import { FindingField } from "../fields/FindingField"
@@ -18,17 +17,16 @@ interface FindingFieldAdapterProps {
 export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
   const isDesigning = useIsDesigning()
   const interpreter = useInterpreter()
-  const sharedCode = useSharedCode()
   const fieldsCode = useFieldsCode()
 
   const disabled = useMemo(
-    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.disabled),
-    [interpreter, sharedCode, fieldsCode, node.disabled]
+    () => interpreter.evalCodeToBoolean(fieldsCode, node.disabled),
+    [interpreter, fieldsCode, node.disabled]
   )
 
   const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.hidden),
-    [interpreter, sharedCode, fieldsCode, node.hidden]
+    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
+    [interpreter, fieldsCode, node.hidden]
   )
 
   const children = node.children.map((child) => {
