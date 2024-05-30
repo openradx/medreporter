@@ -5,6 +5,7 @@ import { InputLabel } from "../inputs/InputLabel"
 import classes from "./Group.module.css"
 
 interface GroupProps {
+  _id?: string
   label?: string
   extras?: ReactNode
   disabled?: boolean
@@ -13,8 +14,9 @@ interface GroupProps {
   direction?: "row" | "column"
   children?: ReactNode
 }
-
+//TODO: Needs ID?
 export const Group = ({
+  _id,
   label,
   extras,
   disabled,

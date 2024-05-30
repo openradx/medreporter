@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { MeasurementsOutputNode } from "~/schemas/report"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { MeasurementsOutput } from "../outputs/MeasurementsOutput"
+import { NodeMeasurementsOutput } from "../node_fields/NodeMeasurementsOutput"
 
 interface MeasurementsOutputAdapterProps {
   node: MeasurementsOutputNode
@@ -14,16 +14,5 @@ export const MeasurementsOutputAdapter = ({ node }: MeasurementsOutputAdapterPro
     return <DraggableCanvasItem node={node} />
   }
 
-  return (
-    <MeasurementsOutput
-      link={node.link}
-      data={[]} // TODO: data via link?
-      stats="" // TODO:
-      legend={node.legend}
-      previousLabel={node.previousLabel}
-      currentLabel={node.currentLabel}
-      locationLabel={node.locationLabel}
-      referenceLabel={node.referenceLabel}
-    />
-  )
+  return <NodeMeasurementsOutput node={node} />
 }

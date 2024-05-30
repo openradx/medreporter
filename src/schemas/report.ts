@@ -33,6 +33,7 @@ export const measurementsOutputNodeSchema = nodeSchema.extend({
   currentLabel: z.string().optional(),
   locationLabel: z.string().optional(),
   referenceLabel: z.string().optional(),
+  hidden: codeSchema,
 })
 
 export type MeasurementsOutputNode = z.infer<typeof measurementsOutputNodeSchema>
