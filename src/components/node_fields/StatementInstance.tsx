@@ -4,11 +4,11 @@ import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { StatementNode } from "~/schemas/report"
 import { Statement } from "../template/Statement"
 
-interface NodeStatementProps {
+interface StatementInstanceProps {
   node: StatementNode
 }
 
-export const NodeStatement = ({ node }: NodeStatementProps) => {
+export const StatementInstance = ({ node }: StatementInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 

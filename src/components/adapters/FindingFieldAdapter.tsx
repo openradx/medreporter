@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { FindingFieldNode } from "~/schemas/structure"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
-import { FindingNodeField } from "../node_fields/FindingNodeField"
+import { FindingFieldInstance } from "../node_fields/FindingFieldInstance"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { GroupAdapter } from "./GroupAdapter"
 import { HintAdapter } from "./HintAdapter"
@@ -27,5 +27,5 @@ export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
   if (isDesigning) {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
-  return <FindingNodeField node={node}>{children}</FindingNodeField>
+  return <FindingFieldInstance node={node}>{children}</FindingFieldInstance>
 }

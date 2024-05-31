@@ -6,11 +6,11 @@ import { MultipleChoiceField } from "../fields/MultipleChoiceField"
 import { Figure } from "../template/Figure"
 import { Info } from "../template/Info"
 
-interface MultipleChoiceNodeFieldProps {
+interface MultipleChoiceFieldInstanceProps {
   node: MultipleChoiceFieldNode
 }
 
-export const MultipleChoiceNodeField = ({ node }: MultipleChoiceNodeFieldProps) => {
+export const MultipleChoiceFieldInstance = ({ node }: MultipleChoiceFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 

@@ -4,11 +4,11 @@ import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { HintNode } from "~/schemas/structure"
 import { Hint } from "../template/Hint"
 
-interface NodeHintProps {
+interface HintInstanceProps {
   node: HintNode
 }
 
-export const NodeHint = ({ node }: NodeHintProps) => {
+export const HintInstance = ({ node }: HintInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 

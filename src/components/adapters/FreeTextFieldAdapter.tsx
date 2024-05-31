@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { FreeTextFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { FreeTextNodeField } from "../node_fields/FreeTextNodeField"
+import { FreeTextFieldInstance } from "../node_fields/FreeTextFieldInstance"
 
 interface FreeTextFieldAdapterProps {
   node: FreeTextFieldNode
@@ -14,5 +14,5 @@ export const FreeTextFieldAdapter = ({ node }: FreeTextFieldAdapterProps) => {
     return <DraggableCanvasItem node={node} />
   }
 
-  return <FreeTextNodeField node={node} />
+  return <FreeTextFieldInstance node={node} />
 }

@@ -5,12 +5,12 @@ import { FindingFieldNode } from "~/schemas/structure"
 import { FindingField } from "../fields/FindingField"
 import { Info } from "../template/Info"
 
-interface FindingNodeFieldProps {
+interface FindingFieldInstanceProps {
   node: FindingFieldNode
   children?: React.ReactNode
 }
 
-export const FindingNodeField = ({ node, children }: FindingNodeFieldProps) => {
+export const FindingFieldInstance = ({ node, children }: FindingFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 

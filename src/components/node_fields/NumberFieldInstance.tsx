@@ -1,16 +1,15 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
-import { SingleChoiceFieldNode } from "~/schemas/structure"
-import { SingleChoiceField } from "../fields/SingleChoiceField"
-import { Figure } from "../template/Figure"
+import { NumberFieldNode } from "~/schemas/structure"
+import { NumberField } from "../fields/NumberField"
 import { Info } from "../template/Info"
 
-interface SingleChoiceNodeFieldProps {
-  node: SingleChoiceFieldNode
+interface NumberFieldInstanceProps {
+  node: NumberFieldNode
 }
 
-export const SingleChoiceNodeField = ({ node }: SingleChoiceNodeFieldProps) => {
+export const NumberFieldInstance = ({ node }: NumberFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
@@ -24,24 +23,20 @@ export const SingleChoiceNodeField = ({ node }: SingleChoiceNodeFieldProps) => {
     [interpreter, fieldsCode, node.hidden]
   )
 
-  const extras = (
-    <>
-      {node.info?.trim() && <Info>{node.info}</Info>}
-      {node.figure?.trim() && <Figure>{node.figure}</Figure>}
-    </>
-  )
-
   return (
-    <SingleChoiceField
+    <NumberField
       id={node.fieldId}
       label={node.label}
-      variant={node.variant}
-      extras={extras}
+      extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
       width={node.width}
-      options={node.options}
       defaultValue={node.default}
+      min={node.min ?? undefined}
+      max={node.max ?? undefined}
+      precision={node.precision}
+      start={node.start}
+      step={node.step}
     />
   )
 }

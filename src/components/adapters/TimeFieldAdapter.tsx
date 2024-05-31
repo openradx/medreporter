@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { TimeFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { TimeNodeField } from "../node_fields/TimeNodeField"
+import { TimeFieldInstance } from "../node_fields/TimeFieldInstance"
 
 interface TimeFieldAdapterProps {
   node: TimeFieldNode
@@ -14,5 +14,5 @@ export const TimeFieldAdapter = ({ node }: TimeFieldAdapterProps) => {
     return <DraggableCanvasItem node={node} />
   }
 
-  return <TimeNodeField node={node} />
+  return <TimeFieldInstance node={node} />
 }

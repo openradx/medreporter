@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { GroupNode } from "~/schemas/structure"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
-import { NodeGroup } from "../node_fields/NodeGroup"
+import { GroupInstance } from "../node_fields/GroupInstance"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { HintAdapter } from "./HintAdapter"
 
@@ -24,5 +24,5 @@ export const GroupAdapter = ({ node }: GroupAdapterProps) => {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
 
-  return <NodeGroup node={node}>{children}</NodeGroup>
+  return <GroupInstance node={node}>{children}</GroupInstance>
 }

@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { ParagraphNode } from "~/schemas/report"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
-import { NodeParagraph } from "../node_fields/NodeParagraph"
+import { ParagraphInstance } from "../node_fields/ParagraphInstance"
 import { StatementAdapter } from "./StatementAdapter"
 
 interface ParagraphAdapterProps {
@@ -19,5 +19,5 @@ export const ParagraphAdapter = ({ node }: ParagraphAdapterProps) => {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
 
-  return <NodeParagraph node={node}>{children}</NodeParagraph>
+  return <ParagraphInstance node={node}>{children}</ParagraphInstance>
 }

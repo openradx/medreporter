@@ -1,16 +1,15 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
-import { GroupNode } from "~/schemas/structure"
-import { Group } from "../template/Group"
+import { MeasurementsFieldNode } from "~/schemas/structure"
+import { MeasurementsField } from "../fields/MeasurementsField"
 import { Info } from "../template/Info"
 
-interface NodeGroupProps {
-  node: GroupNode
-  children: React.ReactNode
+interface MeasurementsFieldInstanceProps {
+  node: MeasurementsFieldNode
 }
 
-export const NodeGroup = ({ node, children }: NodeGroupProps) => {
+export const MeasurementsFieldInstance = ({ node }: MeasurementsFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
@@ -25,16 +24,13 @@ export const NodeGroup = ({ node, children }: NodeGroupProps) => {
   )
 
   return (
-    <Group
-      _id={node.fieldId}
+    <MeasurementsField
+      id={node.fieldId}
       label={node.label}
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
-      direction={node.direction}
-      border={node.border}
-    >
-      {children}
-    </Group>
+      defaultValue={node.default}
+    />
   )
 }

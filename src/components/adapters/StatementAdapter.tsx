@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { StatementNode } from "~/schemas/report"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { NodeStatement } from "../node_fields/NodeStatement"
+import { StatementInstance } from "../node_fields/StatementInstance"
 
 interface StatementAdapterProps {
   node: StatementNode
@@ -14,5 +14,5 @@ export const StatementAdapter = ({ node }: StatementAdapterProps) => {
     return <DraggableCanvasItem node={node} />
   }
 
-  return <NodeStatement node={node} />
+  return <StatementInstance node={node} />
 }

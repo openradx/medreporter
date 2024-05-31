@@ -6,11 +6,11 @@ import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { DateFieldNode } from "~/schemas/structure"
 import { Info } from "../template/Info"
 
-interface DateNodeFieldProps {
+interface DateFieldInstanceProps {
   node: DateFieldNode
 }
 
-export const DateNodeField = ({ node }: DateNodeFieldProps) => {
+export const DateFieldInstance = ({ node }: DateFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 

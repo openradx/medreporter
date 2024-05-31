@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { SingleChoiceFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { SingleChoiceNodeField } from "../node_fields/SingleChoiceNodeField"
+import { SingleChoiceFieldInstance } from "../node_fields/SingleChoiceInstance"
 
 interface SingleChoiceFieldAdapterProps {
   node: SingleChoiceFieldNode
@@ -13,5 +13,5 @@ export const SingleChoiceFieldAdapter = ({ node }: SingleChoiceFieldAdapterProps
     return <DraggableCanvasItem node={node} />
   }
 
-  return <SingleChoiceNodeField node={node} />
+  return <SingleChoiceFieldInstance node={node} />
 }

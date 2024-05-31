@@ -1,15 +1,15 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
-import { NumberFieldNode } from "~/schemas/structure"
-import { NumberField } from "../fields/NumberField"
+import { TimeFieldNode } from "~/schemas/structure"
+import { TimeField } from "../fields/TimeField"
 import { Info } from "../template/Info"
 
-interface NumberNodeFieldProps {
-  node: NumberFieldNode
+interface TimeFieldInstanceProps {
+  node: TimeFieldNode
 }
 
-export const NumberNodeField = ({ node }: NumberNodeFieldProps) => {
+export const TimeFieldInstance = ({ node }: TimeFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
@@ -24,19 +24,15 @@ export const NumberNodeField = ({ node }: NumberNodeFieldProps) => {
   )
 
   return (
-    <NumberField
+    <TimeField
       id={node.fieldId}
       label={node.label}
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
       width={node.width}
+      withSeconds={node.withSeconds}
       defaultValue={node.default}
-      min={node.min ?? undefined}
-      max={node.max ?? undefined}
-      precision={node.precision}
-      start={node.start}
-      step={node.step}
     />
   )
 }

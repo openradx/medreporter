@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { MultipleChoiceFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { MultipleChoiceNodeField } from "../node_fields/MultipleChoiceNodeField"
+import { MultipleChoiceFieldInstance } from "../node_fields/MultipleChoiceFieldInstance"
 
 interface MultipleChoiceFieldAdapterProps {
   node: MultipleChoiceFieldNode
@@ -14,5 +14,5 @@ export const MultipleChoiceFieldAdapter = ({ node }: MultipleChoiceFieldAdapterP
     return <DraggableCanvasItem node={node} />
   }
 
-  return <MultipleChoiceNodeField node={node} />
+  return <MultipleChoiceFieldInstance node={node} />
 }

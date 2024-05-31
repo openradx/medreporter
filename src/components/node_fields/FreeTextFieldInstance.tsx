@@ -1,15 +1,15 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
-import { MeasurementsFieldNode } from "~/schemas/structure"
-import { MeasurementsField } from "../fields/MeasurementsField"
+import { FreeTextFieldNode } from "~/schemas/structure"
+import { FreeTextField } from "../fields/FreeTextField"
 import { Info } from "../template/Info"
 
-interface MeasurementsNodeFieldProps {
-  node: MeasurementsFieldNode
+interface FreeTextFieldInstanceProps {
+  node: FreeTextFieldNode
 }
 
-export const MeasurementsNodeField = ({ node }: MeasurementsNodeFieldProps) => {
+export const FreeTextFieldInstance = ({ node }: FreeTextFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
@@ -22,15 +22,20 @@ export const MeasurementsNodeField = ({ node }: MeasurementsNodeFieldProps) => {
     () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
     [interpreter, fieldsCode, node.hidden]
   )
-
   return (
-    <MeasurementsField
+    <FreeTextField
       id={node.fieldId}
       label={node.label}
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
+      width={node.width}
       defaultValue={node.default}
+      multiline={node.multiline}
+      grow={node.grow}
+      rows={node.rows}
+      minRows={node.minRows}
+      maxRows={node.maxRows}
     />
   )
 }

@@ -4,12 +4,12 @@ import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { ParagraphNode } from "~/schemas/report"
 import { Paragraph } from "../template/Paragraph"
 
-interface NodeParagraphProps {
+interface ParagraphInstanceProps {
   node: ParagraphNode
   children?: React.ReactNode
 }
 
-export const NodeParagraph = ({ node, children }: NodeParagraphProps) => {
+export const ParagraphInstance = ({ node, children }: ParagraphInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 

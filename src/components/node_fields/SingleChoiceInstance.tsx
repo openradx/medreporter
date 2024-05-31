@@ -1,15 +1,16 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
-import { TimeFieldNode } from "~/schemas/structure"
-import { TimeField } from "../fields/TimeField"
+import { SingleChoiceFieldNode } from "~/schemas/structure"
+import { SingleChoiceField } from "../fields/SingleChoiceField"
+import { Figure } from "../template/Figure"
 import { Info } from "../template/Info"
 
-interface TimeNodeFieldProps {
-  node: TimeFieldNode
+interface SingleChoiceFieldInstanceProps {
+  node: SingleChoiceFieldNode
 }
 
-export const TimeNodeField = ({ node }: TimeNodeFieldProps) => {
+export const SingleChoiceFieldInstance = ({ node }: SingleChoiceFieldInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
@@ -23,15 +24,23 @@ export const TimeNodeField = ({ node }: TimeNodeFieldProps) => {
     [interpreter, fieldsCode, node.hidden]
   )
 
+  const extras = (
+    <>
+      {node.info?.trim() && <Info>{node.info}</Info>}
+      {node.figure?.trim() && <Figure>{node.figure}</Figure>}
+    </>
+  )
+
   return (
-    <TimeField
+    <SingleChoiceField
       id={node.fieldId}
       label={node.label}
-      extras={node.info && <Info>{node.info}</Info>}
+      variant={node.variant}
+      extras={extras}
       disabled={disabled}
       hidden={hidden}
       width={node.width}
-      withSeconds={node.withSeconds}
+      options={node.options}
       defaultValue={node.default}
     />
   )

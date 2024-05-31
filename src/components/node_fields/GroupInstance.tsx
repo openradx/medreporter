@@ -1,15 +1,16 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
-import { FreeTextFieldNode } from "~/schemas/structure"
-import { FreeTextField } from "../fields/FreeTextField"
+import { GroupNode } from "~/schemas/structure"
+import { Group } from "../template/Group"
 import { Info } from "../template/Info"
 
-interface FreeTextNodeFieldProps {
-  node: FreeTextFieldNode
+interface GroupInstanceProps {
+  node: GroupNode
+  children: React.ReactNode
 }
 
-export const FreeTextNodeField = ({ node }: FreeTextNodeFieldProps) => {
+export const GroupInstance = ({ node, children }: GroupInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
@@ -22,20 +23,18 @@ export const FreeTextNodeField = ({ node }: FreeTextNodeFieldProps) => {
     () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
     [interpreter, fieldsCode, node.hidden]
   )
+
   return (
-    <FreeTextField
-      id={node.fieldId}
+    <Group
+      _id={node.fieldId}
       label={node.label}
       extras={node.info && <Info>{node.info}</Info>}
       disabled={disabled}
       hidden={hidden}
-      width={node.width}
-      defaultValue={node.default}
-      multiline={node.multiline}
-      grow={node.grow}
-      rows={node.rows}
-      minRows={node.minRows}
-      maxRows={node.maxRows}
-    />
+      direction={node.direction}
+      border={node.border}
+    >
+      {children}
+    </Group>
   )
 }

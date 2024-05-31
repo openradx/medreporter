@@ -4,11 +4,11 @@ import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { MeasurementsOutputNode } from "~/schemas/report"
 import { MeasurementsOutput } from "../outputs/MeasurementsOutput"
 
-interface NodeMeasurementsOutputProps {
+interface MeasurementsOutputInstanceProps {
   node: MeasurementsOutputNode
 }
 
-export const NodeMeasurementsOutput = ({ node }: NodeMeasurementsOutputProps) => {
+export const MeasurementsOutputInstance = ({ node }: MeasurementsOutputInstanceProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
