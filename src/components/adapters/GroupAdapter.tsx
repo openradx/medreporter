@@ -24,17 +24,5 @@ export const GroupAdapter = ({ node }: GroupAdapterProps) => {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
 
-  return (
-    <NodeGroup
-      fieldId={node.nodeId}
-      label={node.label}
-      info={node.info}
-      disabled={node.disabled}
-      hidden={node.hidden}
-      direction={node.direction}
-      border={node.border}
-    >
-      {children}
-    </NodeGroup>
-  )
+  return <NodeGroup node={node}>{children}</NodeGroup>
 }

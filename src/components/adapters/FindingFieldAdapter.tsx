@@ -27,17 +27,5 @@ export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
   if (isDesigning) {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
-  return (
-    <FindingNodeField
-      fieldId={node.nodeId}
-      label={node.label}
-      info={node.info}
-      disabled={node.disabled}
-      hidden={node.hidden}
-      direction={node.direction}
-      defaultValue={node.default}
-    >
-      {children}
-    </FindingNodeField>
-  )
+  return <FindingNodeField node={node}>{children}</FindingNodeField>
 }

@@ -19,9 +19,5 @@ export const ParagraphAdapter = ({ node }: ParagraphAdapterProps) => {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
 
-  return (
-    <NodeParagraph title={node.title} link={node.link} hidden={node.hidden} list={node.list}>
-      {children}
-    </NodeParagraph>
-  )
+  return <NodeParagraph node={node}>{children}</NodeParagraph>
 }

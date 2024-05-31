@@ -1,27 +1,25 @@
 import { useMemo } from "react"
 import { useInterpreter } from "~/contexts/InterpreterContext"
 import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { ParagraphNode } from "~/schemas/report"
 import { Paragraph } from "../template/Paragraph"
 
 interface NodeParagraphProps {
-  link: string | null
-  title: string
-  hidden: string
-  list: boolean
+  node: ParagraphNode
   children?: React.ReactNode
 }
 
-export const NodeParagraph = ({ link, title, hidden, list, children }: NodeParagraphProps) => {
+export const NodeParagraph = ({ node, children }: NodeParagraphProps) => {
   const interpreter = useInterpreter()
   const fieldsCode = useFieldsCode()
 
-  const hiddenEval = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, hidden),
-    [interpreter, fieldsCode, hidden]
+  const hidden = useMemo(
+    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
+    [interpreter, fieldsCode, node.hidden]
   )
 
   return (
-    <Paragraph title={title} link={link ?? undefined} hidden={hiddenEval} list={list}>
+    <Paragraph title={node.title} link={node.link ?? undefined} hidden={hidden} list={node.list}>
       {children}
     </Paragraph>
   )
