@@ -17,6 +17,8 @@ export const BooleanPropertyInput = ({ name, label, required }: BooleanPropertyI
         onChange={onChange}
         error={error?.message}
         required={required}
+        labelPosition="left"
+        fw={500}
       />
     )}
   />
