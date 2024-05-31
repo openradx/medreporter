@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { ParagraphNode } from "~/schemas/report"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
-import { ParagraphInstance } from "../node_fields/ParagraphInstance"
+import { ParagraphInstance } from "../field_instances/ParagraphInstance"
 import { StatementAdapter } from "./StatementAdapter"
 
 interface ParagraphAdapterProps {

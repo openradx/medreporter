@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { SingleChoiceFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { SingleChoiceFieldInstance } from "../node_fields/SingleChoiceInstance"
+import { SingleChoiceFieldInstance } from "../field_instances/SingleChoiceInstance"
 
 interface SingleChoiceFieldAdapterProps {
   node: SingleChoiceFieldNode

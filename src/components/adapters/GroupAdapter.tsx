@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { GroupNode } from "~/schemas/structure"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
-import { GroupInstance } from "../node_fields/GroupInstance"
+import { GroupInstance } from "../field_instances/GroupInstance"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { HintAdapter } from "./HintAdapter"
 

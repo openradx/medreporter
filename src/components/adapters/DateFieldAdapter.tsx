@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { DateFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { DateFieldInstance } from "../node_fields/DateFieldInstance"
+import { DateFieldInstance } from "../field_instances/DateFieldInstance"
 
 interface DateFieldAdapterProps {
   node: DateFieldNode

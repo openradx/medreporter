@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { NumberFieldNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { NumberFieldInstance } from "../node_fields/NumberFieldInstance"
+import { NumberFieldInstance } from "../field_instances/NumberFieldInstance"
 
 interface NumberFieldAdapterProps {
   node: NumberFieldNode

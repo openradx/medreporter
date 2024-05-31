@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { HintNode } from "~/schemas/structure"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { HintInstance } from "../node_fields/HintInstance"
+import { HintInstance } from "../field_instances/HintInstance"
 
 interface HintAdapterProps {
   node: HintNode

@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { MeasurementsOutputNode } from "~/schemas/report"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { MeasurementsOutputInstance } from "../node_fields/MeasurementsOutputInstance"
+import { MeasurementsOutputInstance } from "../field_instances/MeasurementsOutputInstance"
 
 interface MeasurementsOutputAdapterProps {
   node: MeasurementsOutputNode

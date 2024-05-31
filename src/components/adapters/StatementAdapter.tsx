@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { StatementNode } from "~/schemas/report"
 import { DraggableCanvasItem } from "../designer/DraggableCanvasItem"
-import { StatementInstance } from "../node_fields/StatementInstance"
+import { StatementInstance } from "../field_instances/StatementInstance"
 
 interface StatementAdapterProps {
   node: StatementNode

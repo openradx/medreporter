@@ -1,7 +1,7 @@
 import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { FindingFieldNode } from "~/schemas/structure"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
-import { FindingFieldInstance } from "../node_fields/FindingFieldInstance"
+import { FindingFieldInstance } from "../field_instances/FindingFieldInstance"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { GroupAdapter } from "./GroupAdapter"
 import { HintAdapter } from "./HintAdapter"
