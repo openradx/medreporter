@@ -1,28 +1,24 @@
 import dayjs from "dayjs"
-import { useMemo } from "react"
+import { useState } from "react"
 import { DateField } from "~/components/fields/DateField"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
 import { DateFieldNode } from "~/schemas/structure"
 import { Info } from "../template/Info"
+import { FieldInstanceError } from "./FieldInstanceError"
 
 interface DateFieldInstanceProps {
   node: DateFieldNode
 }
 
 export const DateFieldInstance = ({ node }: DateFieldInstanceProps) => {
-  const interpreter = useInterpreter()
-  const fieldsCode = useFieldsCode()
+  const [error, setError] = useState<Error | null>(null)
 
-  const disabled = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.disabled),
-    [interpreter, fieldsCode, node.disabled]
-  )
+  const disabled = useEvaluatedBoolean(node.disabled, false, setError)
+  const hidden = useEvaluatedBoolean(node.hidden, false, setError)
 
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
-    [interpreter, fieldsCode, node.hidden]
-  )
+  if (error) {
+    return <FieldInstanceError error={error} />
+  }
 
   return (
     <DateField

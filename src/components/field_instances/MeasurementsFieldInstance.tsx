@@ -1,27 +1,23 @@
-import { useMemo } from "react"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useState } from "react"
+import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
 import { MeasurementsFieldNode } from "~/schemas/structure"
 import { MeasurementsField } from "../fields/MeasurementsField"
 import { Info } from "../template/Info"
+import { FieldInstanceError } from "./FieldInstanceError"
 
 interface MeasurementsFieldInstanceProps {
   node: MeasurementsFieldNode
 }
 
 export const MeasurementsFieldInstance = ({ node }: MeasurementsFieldInstanceProps) => {
-  const interpreter = useInterpreter()
-  const fieldsCode = useFieldsCode()
+  const [error, setError] = useState<Error | null>(null)
 
-  const disabled = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.disabled),
-    [interpreter, fieldsCode, node.disabled]
-  )
+  const disabled = useEvaluatedBoolean(node.disabled, false, setError)
+  const hidden = useEvaluatedBoolean(node.hidden, false, setError)
 
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
-    [interpreter, fieldsCode, node.hidden]
-  )
+  if (error) {
+    return <FieldInstanceError error={error} />
+  }
 
   return (
     <MeasurementsField

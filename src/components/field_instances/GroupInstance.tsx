@@ -1,9 +1,9 @@
-import { useMemo } from "react"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useState } from "react"
+import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
 import { GroupNode } from "~/schemas/structure"
 import { Group } from "../template/Group"
 import { Info } from "../template/Info"
+import { FieldInstanceError } from "./FieldInstanceError"
 
 interface GroupInstanceProps {
   node: GroupNode
@@ -11,18 +11,14 @@ interface GroupInstanceProps {
 }
 
 export const GroupInstance = ({ node, children }: GroupInstanceProps) => {
-  const interpreter = useInterpreter()
-  const fieldsCode = useFieldsCode()
+  const [error, setError] = useState<Error | null>(null)
 
-  const disabled = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.disabled),
-    [interpreter, fieldsCode, node.disabled]
-  )
+  const disabled = useEvaluatedBoolean(node.disabled, false, setError)
+  const hidden = useEvaluatedBoolean(node.hidden, false, setError)
 
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
-    [interpreter, fieldsCode, node.hidden]
-  )
+  if (error) {
+    return <FieldInstanceError error={error} />
+  }
 
   return (
     <Group

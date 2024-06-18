@@ -1,9 +1,9 @@
-import { useMemo } from "react"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useState } from "react"
+import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
 import { FindingFieldNode } from "~/schemas/structure"
 import { FindingField } from "../fields/FindingField"
 import { Info } from "../template/Info"
+import { FieldInstanceError } from "./FieldInstanceError"
 
 interface FindingFieldInstanceProps {
   node: FindingFieldNode
@@ -11,18 +11,15 @@ interface FindingFieldInstanceProps {
 }
 
 export const FindingFieldInstance = ({ node, children }: FindingFieldInstanceProps) => {
-  const interpreter = useInterpreter()
-  const fieldsCode = useFieldsCode()
+  const [error, setError] = useState<Error | null>(null)
 
-  const disabled = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.disabled),
-    [interpreter, fieldsCode, node.disabled]
-  )
+  const disabled = useEvaluatedBoolean(node.disabled, false, setError)
 
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
-    [interpreter, fieldsCode, node.hidden]
-  )
+  const hidden = useEvaluatedBoolean(node.hidden, false, setError)
+
+  if (error) {
+    return <FieldInstanceError error={error} />
+  }
 
   return (
     <FindingField

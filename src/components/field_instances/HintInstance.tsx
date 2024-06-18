@@ -1,21 +1,21 @@
-import { useMemo } from "react"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useState } from "react"
+import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
 import { HintNode } from "~/schemas/structure"
 import { Hint } from "../template/Hint"
+import { FieldInstanceError } from "./FieldInstanceError"
 
 interface HintInstanceProps {
   node: HintNode
 }
 
 export const HintInstance = ({ node }: HintInstanceProps) => {
-  const interpreter = useInterpreter()
-  const fieldsCode = useFieldsCode()
+  const [error, setError] = useState<Error | null>(null)
 
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
-    [interpreter, fieldsCode, node.hidden]
-  )
+  const hidden = useEvaluatedBoolean(node.hidden, false, setError)
+
+  if (error) {
+    return <FieldInstanceError error={error} />
+  }
 
   return <Hint level={node.level} hidden={hidden} content={node.content} />
 }

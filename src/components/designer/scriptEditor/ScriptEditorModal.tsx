@@ -1,5 +1,5 @@
 import { Modal } from "@mantine/core"
-import { EditorModalTitle } from "../ModalHeader"
+import { EditorModalTitle } from "../EditorModalTitle"
 import { ScriptEditor } from "../editors/ScriptEditor"
 import classes from "./ScriptEditorModal.module.css"
 

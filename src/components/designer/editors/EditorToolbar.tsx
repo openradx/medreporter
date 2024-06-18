@@ -20,7 +20,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { formatCode } from "~/utils/codeFormatting"
 
 interface EditorToolbarProps {
-  codeType: "javascript" | "json" | "markdown" | "svg"
+  codeType: "javascript" | "json" | "markdown" | "svg" | "string"
   viewRef: MutableRefObject<undefined | EditorView>
 }
 

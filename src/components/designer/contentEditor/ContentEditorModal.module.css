@@ -1,0 +1,28 @@
+
+.scriptEditorModalTitle {
+  flex-grow: 1;
+}
+
+.scriptEditorModalHeader {
+  height: 68px;
+}
+
+.scriptEditorModalBody {
+  height: calc(100% - 68px);
+}
+
+.scriptEditorContent {
+  height: 90vh;
+}
+
+.stringEditor {
+  & :global(.cm-theme-light) {
+    height: calc(100% - 40px);
+    padding-top: 4px;
+  }
+
+  & :global(.cm-theme-dark) {
+    height: calc(100% - 40px);
+    padding-top: 4px;
+  }
+}

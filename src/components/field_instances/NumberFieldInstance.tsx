@@ -1,27 +1,23 @@
-import { useMemo } from "react"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useState } from "react"
+import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
 import { NumberFieldNode } from "~/schemas/structure"
 import { NumberField } from "../fields/NumberField"
 import { Info } from "../template/Info"
+import { FieldInstanceError } from "./FieldInstanceError"
 
 interface NumberFieldInstanceProps {
   node: NumberFieldNode
 }
 
 export const NumberFieldInstance = ({ node }: NumberFieldInstanceProps) => {
-  const interpreter = useInterpreter()
-  const fieldsCode = useFieldsCode()
+  const [error, setError] = useState<Error | null>(null)
 
-  const disabled = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.disabled),
-    [interpreter, fieldsCode, node.disabled]
-  )
+  const disabled = useEvaluatedBoolean(node.disabled, false, setError)
+  const hidden = useEvaluatedBoolean(node.hidden, false, setError)
 
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
-    [interpreter, fieldsCode, node.hidden]
-  )
+  if (error) {
+    return <FieldInstanceError error={error} />
+  }
 
   return (
     <NumberField

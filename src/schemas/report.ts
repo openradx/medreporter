@@ -1,11 +1,31 @@
 import { z } from "zod"
-import { codeSchema, nodeSchema } from "./common"
+import { eslintLinter, config } from "~/utils/linting"
+import { codeSchema, nodeSchema, sourceSchema } from "./common"
+
+export const contentSchema = z
+  .object({
+    contentType: z.enum(["text", "code"]),
+    contentValue: sourceSchema,
+  })
+  .refine(
+    (node) => {
+      if (node.contentType === "code") {
+        const messages = eslintLinter.verify(node.contentValue, config)
+        return !messages.some((message) => message.severity === 2)
+      }
+      return true
+    },
+    {
+      path: ["contentValue"],
+      message: "Invalid code",
+    }
+  )
 
 export const statementNodeSchema = nodeSchema.extend({
   type: z.literal("Statement"),
   hidden: codeSchema,
   link: z.string().nullable(), // link to a field
-  content: codeSchema,
+  content: contentSchema,
 })
 
 export type StatementNode = z.infer<typeof statementNodeSchema>

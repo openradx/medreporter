@@ -1,8 +1,8 @@
-import { useMemo } from "react"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
+import { useState } from "react"
+import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
 import { ParagraphNode } from "~/schemas/report"
 import { Paragraph } from "../template/Paragraph"
+import { FieldInstanceError } from "./FieldInstanceError"
 
 interface ParagraphInstanceProps {
   node: ParagraphNode
@@ -10,13 +10,13 @@ interface ParagraphInstanceProps {
 }
 
 export const ParagraphInstance = ({ node, children }: ParagraphInstanceProps) => {
-  const interpreter = useInterpreter()
-  const fieldsCode = useFieldsCode()
+  const [error, setError] = useState<Error | null>(null)
 
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(fieldsCode, node.hidden),
-    [interpreter, fieldsCode, node.hidden]
-  )
+  const hidden = useEvaluatedBoolean(node.hidden, false, setError)
+
+  if (error) {
+    return <FieldInstanceError error={error} />
+  }
 
   return (
     <Paragraph title={node.title} link={node.link ?? undefined} hidden={hidden} list={node.list}>
