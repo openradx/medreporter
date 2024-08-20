@@ -1,6 +1,7 @@
 import { Box, Flex, Modal, ScrollArea, SegmentedControl } from "@mantine/core"
 import { useState } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { EditorModalTitle } from "../EditorModalTitle"
 import { OptionsCodeEditor } from "./OptionsCodeEditor"
 import classes from "./OptionsEditorModal.module.css"
 import { OptionsFormEditor } from "./OptionsFormEditor"
@@ -19,7 +20,10 @@ export const OptionsEditorModal = ({ opened, onClose }: OptionsEditorModalProps)
       size="xl"
       title={
         <Flex p="xs" pos="relative">
-          {t("OptionsEditorModal.modalTitle")}
+          <EditorModalTitle
+            title={t("OptionsEditorModal.modalTitle")}
+            info={t("OptionsEditorModal.modalDescription")}
+          />
           <Box pos="absolute" top="50%" left="50%" style={{ transform: "translate(-50%, -50%)" }}>
             <SegmentedControl
               value={panel}

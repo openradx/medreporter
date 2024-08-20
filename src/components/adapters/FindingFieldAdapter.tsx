@@ -1,12 +1,7 @@
-import { useMemo } from "react"
-import { useInterpreter } from "~/contexts/InterpreterContext"
-import { useFieldsCode } from "~/hooks/useFieldsCode"
 import { useIsDesigning } from "~/hooks/useIsDesigning"
-import { useSharedCode } from "~/hooks/useSharedCode"
 import { FindingFieldNode } from "~/schemas/structure"
 import { DraggableCanvasContainer } from "../designer/DraggableCanvasContainer"
-import { FindingField } from "../fields/FindingField"
-import { Info } from "../template/Info"
+import { FindingFieldInstance } from "../field_instances/FindingFieldInstance"
 import { DiscreteFieldAdapter } from "./DiscreteFieldAdapter"
 import { GroupAdapter } from "./GroupAdapter"
 import { HintAdapter } from "./HintAdapter"
@@ -17,19 +12,6 @@ interface FindingFieldAdapterProps {
 
 export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
   const isDesigning = useIsDesigning()
-  const interpreter = useInterpreter()
-  const sharedCode = useSharedCode()
-  const fieldsCode = useFieldsCode()
-
-  const disabled = useMemo(
-    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.disabled),
-    [interpreter, sharedCode, fieldsCode, node.disabled]
-  )
-
-  const hidden = useMemo(
-    () => interpreter.evalCodeToBoolean(sharedCode, fieldsCode, node.hidden),
-    [interpreter, sharedCode, fieldsCode, node.hidden]
-  )
 
   const children = node.children.map((child) => {
     switch (child.type) {
@@ -45,17 +27,5 @@ export const FindingFieldAdapter = ({ node }: FindingFieldAdapterProps) => {
   if (isDesigning) {
     return <DraggableCanvasContainer node={node}>{children}</DraggableCanvasContainer>
   }
-  return (
-    <FindingField
-      id={node.fieldId}
-      label={node.label}
-      extras={node.info && <Info>{node.info}</Info>}
-      disabled={disabled}
-      hidden={hidden}
-      direction={node.direction}
-      defaultValue={node.default}
-    >
-      {children}
-    </FindingField>
-  )
+  return <FindingFieldInstance node={node}>{children}</FindingFieldInstance>
 }

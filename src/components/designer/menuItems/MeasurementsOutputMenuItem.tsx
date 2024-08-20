@@ -18,6 +18,7 @@ export const MeasurementsOutputMenuItem = ({ label }: MeasurementsOutputMenuItem
       type: "MeasurementsOutput",
       nodeId: createNodeId("measurements-output"),
       link: "",
+      hidden: "",
       label: "Measurements",
       legend: "",
       data: [], // TODO: data via link?

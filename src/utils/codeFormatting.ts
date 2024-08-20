@@ -43,7 +43,7 @@ async function formatSVG(code: string, cursorOffset: number): Promise<[string, n
 }
 
 export async function formatCode(
-  codeType: "javascript" | "json" | "markdown" | "svg",
+  codeType: "javascript" | "json" | "markdown" | "svg" | "string",
   code: string,
   cursorOffset: number
 ): Promise<[string, number]> {
@@ -56,6 +56,8 @@ export async function formatCode(
       return formatMarkdown(code, cursorOffset)
     case "svg":
       return formatSVG(code, cursorOffset)
+    case "string":
+      return [code, cursorOffset]
     default:
       throw new Error(`Unknown code type: ${codeType}`)
   }

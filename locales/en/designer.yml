@@ -5,6 +5,10 @@ ContainerDragOverlay:
   type: Type
 ContentProperty:
   label: Content
+  modalDescription: You can give a simple string or some javascript code to display the content.
+  modalTitle: Content
+  labelCode: Code
+  labelText: Text
 CurrentLabelProperty:
   label: Label current
 DateDefaultProperty:
@@ -127,6 +131,7 @@ OptionsEditorModal:
   codeEditorLabel: Code Editor
   formEditorLabel: Form Editor
   modalTitle: Options
+  modalDescription: Edit your options directly or give them as an object in the code editor.
 OptionsFormEditor:
   addOptionLabel: Add new option
 OptionsProperty:

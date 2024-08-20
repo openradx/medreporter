@@ -18,7 +18,10 @@ export const StatementMenuItem = ({ label }: StatementMenuItemProps) => {
       type: "Statement",
       nodeId: createNodeId("statement"),
       hidden: "",
-      content: "",
+      content: {
+        contentType: "code",
+        contentValue: "",
+      },
       link: "",
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

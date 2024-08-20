@@ -1,3 +1,4 @@
+import { Box } from "@mantine/core"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useStructureLink } from "~/hooks/useStructureLink"
@@ -17,6 +18,7 @@ interface MeasurementsOutputProps {
   currentLabel?: string
   locationLabel?: string
   referenceLabel?: string
+  hidden?: boolean
 }
 
 export const MeasurementsOutput = ({
@@ -28,6 +30,7 @@ export const MeasurementsOutput = ({
   currentLabel,
   locationLabel,
   referenceLabel,
+  hidden = false,
 }: MeasurementsOutputProps) => {
   const { activateLink } = useStructureLink({ link })
   const outputFormat = useAppSelector(selectOutputFormat)
@@ -51,5 +54,9 @@ export const MeasurementsOutput = ({
     throw new Error(`Invalid output format: ${outputFormat}`)
   }
 
-  return <StructureLink onClick={activateLink}>{output}</StructureLink>
+  return (
+    <Box display={hidden ? "none" : undefined}>
+      <StructureLink onClick={activateLink}>{output}</StructureLink>
+    </Box>
+  )
 }

@@ -1,5 +1,6 @@
 import { MeasurementsOutputNode, measurementsOutputNodeSchema } from "~/schemas/report"
 import { CurrentLabelProperty } from "../properties/CurrentLabelProperty"
+import { HiddenProperty } from "../properties/HiddenProperty"
 import { LabelProperty } from "../properties/LabelProperty"
 import { LegendProperty } from "../properties/LegendProperty"
 import { LinkProperty } from "../properties/LinkProperty"
@@ -22,6 +23,7 @@ export const MeasurementsOutputPropertiesForm = ({
   >
     <LabelProperty />
     <LinkProperty />
+    <HiddenProperty />
     <LegendProperty />
     <CurrentLabelProperty />
     <PreviousLabelProperty />

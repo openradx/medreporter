@@ -81,7 +81,11 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
         />
         <InfoProperty />
         <Flex justify="center">
-          <Button type="submit" mt={16} disabled={!methods.formState.isValid}>
+          <Button
+            type="submit"
+            mt={16}
+            // TODO: disabled={!methods.formState.isValid} inside production
+          >
             {t("general.buttonClose")}
           </Button>
         </Flex>

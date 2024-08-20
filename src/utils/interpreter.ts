@@ -5,21 +5,20 @@ export class InterpreterError extends Error {}
 export class ScriptInterpreter {
   constructor(private runtime: QuickJSRuntime) {}
 
-  evalCodeToBoolean(sharedCode: string, fieldsCode: string, scriptCode: string): boolean {
-    return Boolean(this.evalCode(sharedCode, fieldsCode, scriptCode))
+  evalCodeToBoolean(fieldsCode: string, scriptCode: string): boolean {
+    return Boolean(this.evalCode(fieldsCode, scriptCode))
   }
 
-  evalCodeToString(sharedCode: string, fieldsCode: string, scriptCode: string): string {
-    return String(this.evalCode(sharedCode, fieldsCode, scriptCode))
+  evalCodeToString(fieldsCode: string, scriptCode: string): string {
+    return String(this.evalCode(fieldsCode, scriptCode))
   }
 
   dispose() {
     this.runtime.dispose()
   }
 
-  private evalCode(commonCode: string, fieldsCode: string, scriptCode: string) {
+  private evalCode(fieldsCode: string, scriptCode: string) {
     const vm = this.runtime.newContext()
-    commonCode && vm.evalCode(commonCode, "common.js")
     fieldsCode && vm.evalCode(fieldsCode, "fields.js")
     const result = vm.evalCode(scriptCode, "script.js")
 

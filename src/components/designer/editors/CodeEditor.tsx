@@ -4,7 +4,7 @@ import { useRef } from "react"
 import { EditorToolbar } from "./EditorToolbar"
 
 interface CodeEditorProps {
-  codeType: "javascript" | "json" | "markdown" | "svg"
+  codeType: "javascript" | "json" | "markdown" | "svg" | "string"
   extensions: Extension[]
   value: string
   onChange: (value: string) => void
