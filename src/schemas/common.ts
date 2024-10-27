@@ -10,7 +10,7 @@ export const sourceSchema = z.string().trim().max(10000)
 export const codeSchema = sourceSchema.refine(
   (code) => {
     const messages = eslintLinter.verify(code, config)
-    return !messages.some((message) => message.severity === 2)
+    return !messages.some((message: { severity: number }) => message.severity === 2)
   },
   { message: "Invalid code" }
 )

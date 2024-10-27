@@ -11,7 +11,7 @@ export const contentSchema = z
     (node) => {
       if (node.contentType === "code") {
         const messages = eslintLinter.verify(node.contentValue, config)
-        return !messages.some((message) => message.severity === 2)
+        return !messages.some((message: { severity: number }) => message.severity === 2)
       }
       return true
     },
