@@ -22,7 +22,6 @@ export const InterpreterProvider = ({ children }: InterpreterProviderProps) => {
     return () => {
       interpreter?.dispose()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (!interpreter) {

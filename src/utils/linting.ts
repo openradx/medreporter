@@ -3,9 +3,7 @@ import * as eslint from "eslint-linter-browserify"
 export const eslintLinter = new eslint.Linter()
 
 export const config: eslint.Linter.Config = {
-  parserOptions: { ecmaVersion: 2020, sourceType: "script" },
-  env: { es2020: true },
-  globals: { fields: "readonly" },
+  languageOptions: { ecmaVersion: 2020, sourceType: "script", globals: { fields: "readonly" } },
   rules: {
     semi: ["error", "never"],
   },
