@@ -1,4 +1,6 @@
+import { ActionIcon } from "@mantine/core"
 import { Meta, StoryObj } from "@storybook/react"
+import { InfoIcon } from "lucide-react"
 import { ComponentProps, useState } from "react"
 import { InputLayout } from "../storybook/InputLayout"
 import { SingleSelectInput } from "./SingleSelectInput"
@@ -13,13 +15,19 @@ type Story = StoryObj<typeof SingleSelectInput>
 
 const SingleSelectInputWithState = ({
   label,
+  extras,
   options,
+  disabled,
 }: ComponentProps<typeof SingleSelectInput>) => {
   const [value, setValue] = useState<string | null>("")
 
   return (
     <InputLayout>
-      <SingleSelectInput value={value} onChange={setValue} {...{ label, options }} />
+      <SingleSelectInput
+        value={value}
+        onChange={setValue}
+        {...{ label, extras, options, disabled }}
+      />
     </InputLayout>
   )
 }
@@ -32,6 +40,11 @@ export const Basic: Story = {
   ...Template,
   args: {
     label: "Brain arteries",
+    extras: (
+      <ActionIcon variant="transparent" size={20}>
+        <InfoIcon size={16} />
+      </ActionIcon>
+    ),
     options: [
       { value: "aci", label: "A. carotis interna" },
       { value: "aca", label: "A. cerebri anterior" },
@@ -43,5 +56,6 @@ export const Basic: Story = {
       { value: "ba", label: "A. basilaris" },
       { value: "va", label: "A. vertebralis" },
     ],
+    disabled: false,
   },
 }

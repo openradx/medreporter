@@ -1,7 +1,7 @@
 import { Box } from "@mantine/core"
 import { ReactNode } from "react"
 
-interface InputLayoutProps {
+export interface InputLayoutProps {
   width?: number
   children: ReactNode
 }
