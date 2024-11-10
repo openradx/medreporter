@@ -1,4 +1,6 @@
+import { ActionIcon } from "@mantine/core"
 import { Meta, StoryObj } from "@storybook/react"
+import { InfoIcon } from "lucide-react"
 import { ComponentProps, useState } from "react"
 import { MeasurementsData } from "~/schemas/structure"
 import { calcStats, createEmptyMeasurements, createStatsText } from "~/utils/measurementsUtils"
@@ -17,6 +19,7 @@ const MeasurementsInputWithState = ({
   label,
   extras,
   disabled,
+  border,
 }: ComponentProps<typeof MeasurementsInput>) => {
   const [value, setValue] = useState<MeasurementsData>(createEmptyMeasurements(false, 3, 2))
   const stats = calcStats(value)
@@ -28,7 +31,7 @@ const MeasurementsInputWithState = ({
         value={value}
         onChange={setValue}
         footer={footer}
-        {...{ label, extras, disabled }}
+        {...{ label, extras, disabled, border }}
       />
     </SiteTranslations>
   )
@@ -42,5 +45,12 @@ export const Basic: Story = {
   ...Template,
   args: {
     label: "Primary targets",
+    extras: (
+      <ActionIcon variant="transparent" size={20}>
+        <InfoIcon size={16} />
+      </ActionIcon>
+    ),
+    disabled: false,
+    border: true,
   },
 }

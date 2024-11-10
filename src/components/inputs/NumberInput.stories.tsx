@@ -15,21 +15,32 @@ type Story = StoryObj<typeof NumberInput>
 
 const NumberInputWithState = ({
   label,
+  extras,
+  disabled,
   min,
   max,
-  precision,
   start,
   step,
-  extras,
+  precision,
+  width,
 }: ComponentProps<typeof NumberInput>) => {
   const [value, setValue] = useState<number | null>(0)
 
   return (
-    <InputLayout>
+    <InputLayout width={width}>
       <NumberInput
         value={value}
         onChange={setValue}
-        {...{ label, min, max, precision, start, step, extras }}
+        {...{
+          label,
+          extras,
+          disabled,
+          min,
+          max,
+          start,
+          step,
+          precision,
+        }}
       />
     </InputLayout>
   )
@@ -43,17 +54,17 @@ export const Basic: Story = {
   ...Template,
   args: {
     label: "Pneumothorax size",
-  },
-}
-
-export const WithExtras: Story = {
-  ...Template,
-  args: {
-    label: "Pneumothorax size",
     extras: (
-      <ActionIcon>
-        <InfoIcon />
+      <ActionIcon variant="transparent" size={20}>
+        <InfoIcon size={16} />
       </ActionIcon>
     ),
+    disabled: false,
+    min: 0,
+    max: 100,
+    start: 0,
+    step: 1,
+    precision: 0,
+    width: 250,
   },
 }

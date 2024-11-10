@@ -7,8 +7,8 @@ const DEFAULT_OPTIONS: Option[] = []
 
 interface SingleRadioInputProps {
   label?: string
-  options?: Option[]
   extras?: ReactNode
+  options?: Option[]
   value: string | null
   onChange: (value: string | null) => void
   disabled?: boolean

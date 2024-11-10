@@ -1,5 +1,7 @@
+import { ActionIcon } from "@mantine/core"
 import { Meta, StoryObj } from "@storybook/react"
 import "dayjs/locale/de"
+import { InfoIcon } from "lucide-react"
 import { ComponentProps, useState } from "react"
 import { InputLayout } from "../storybook/InputLayout"
 import { DateInput } from "./DateInput"
@@ -12,11 +14,21 @@ const meta: Meta<typeof DateInput> = {
 export default meta
 type Story = StoryObj<typeof DateInput>
 
-const DateInputWithState = ({ label }: ComponentProps<typeof DateInput>) => {
+const DateInputWithState = ({
+  label,
+  extras,
+  locale,
+  format,
+  disabled,
+}: ComponentProps<typeof DateInput>) => {
   const [value, setValue] = useState<Date | null>(new Date())
   return (
     <InputLayout>
-      <DateInput label={label} value={value} onChange={setValue} locale="de" />
+      <DateInput
+        value={value}
+        onChange={setValue}
+        {...{ label, extras, locale, format, disabled }}
+      />
     </InputLayout>
   )
 }
@@ -29,5 +41,13 @@ export const Basic: Story = {
   ...Template,
   args: {
     label: "Study date",
+    extras: (
+      <ActionIcon variant="transparent" size={20}>
+        <InfoIcon size={16} />
+      </ActionIcon>
+    ),
+    locale: "de",
+    format: "DD.MM.YYYY",
+    disabled: false,
   },
 }

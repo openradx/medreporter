@@ -4,17 +4,17 @@ import { Report } from "~/components/template/Report"
 import { useStructureData } from "~/hooks/useStructureData"
 
 type SandboxData = {
-  date: Date | null
+  today: string | null
   number: number | null
   text: string | null
 }
 
 export const SandboxReport = () => {
-  const { date, number, text } = useStructureData() as SandboxData
+  const { today, number, text } = useStructureData() as SandboxData
 
   return (
     <Report>
-      <Paragraph>Today: {date?.toDateString()}</Paragraph>
+      <Paragraph>Today: {today ? new Date(today).toLocaleDateString() : null}</Paragraph>
       <Paragraph>Random number: {number}</Paragraph>
       <Paragraph>Some text: {text}</Paragraph>
     </Report>

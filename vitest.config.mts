@@ -1,8 +1,9 @@
-import { loadEnvConfig } from "@next/env"
+import env from "@next/env"
 import tsconfigPaths from "vite-tsconfig-paths"
 import { configDefaults, defineConfig } from "vitest/config"
 
 const projectDir = process.cwd()
+const { loadEnvConfig } = env
 loadEnvConfig(projectDir)
 
 export default defineConfig({
