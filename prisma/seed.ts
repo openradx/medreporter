@@ -62,7 +62,7 @@ async function fetchSuperadmin() {
 
 async function createExampleUser(role: UserRole) {
   return createUser({
-    username: faker.internet.userName(),
+    username: faker.internet.username(),
     email: faker.internet.email().toLowerCase(),
     password: "medreporter",
     fullName: faker.person.fullName(),
