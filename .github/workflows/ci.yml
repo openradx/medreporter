@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [22.x]
     services:
       postgres:
         image: postgres
@@ -30,23 +30,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+          cache: npm
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps
+        run: npm exec playwright install --with-deps
       - name: Prepare database
-        run: pnpm run db:migrate
+        run: npm run db:migrate
       - name: Run CI
-        run: pnpm run ci
+        run: npm run ci
         env:
           # During e2e tests dev server is setup to run on port 3100,
           # see playwright.config.ts
