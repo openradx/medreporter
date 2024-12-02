@@ -16,7 +16,7 @@
     "test:unit": "vitest run",
     "test:watch": "vitest watch",
     "test:unit:cov": "vitest run --coverage",
-    "test:e2e": "npm exec playwright test",
+    "test:e2e": "playwright test",
     "test:e2e:report": "npm run test:e2e && npm exec playwright show-report",
     "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
