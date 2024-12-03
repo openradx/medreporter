@@ -5,8 +5,8 @@ tasks:
   - name: dev
     init: |
       npm install
-      echo "NEXTAUTH_URL=$(gp url 3000)" > .env.local
-      echo "NEXTAUTH_URL_INTERNAL=http://localhost:3000" >> .env.local
+      echo "NEXTAUTH_URL=$(gp url 3000)" > .env
+      echo "NEXTAUTH_URL_INTERNAL=http://localhost:3000" >> .env
       npm run db:migrate
       npm run db:seed
     command: |
