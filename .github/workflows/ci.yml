@@ -35,10 +35,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
       - name: Install dependencies
         run: npm install
-      - name: Install Playwright browsers
-        run: npm exec playwright install --with-deps
       - name: Prepare database
         run: npm run db:migrate
       - name: Run CI
