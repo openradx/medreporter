@@ -32,7 +32,7 @@
     "figure:extract": "tsx scripts/extractFigureTranslations.ts",
     "figure:process": "tsx scripts/processFigureTranslations.ts",
     "pkg:outdated": "npm outdated",
-    "pkg:interactive": "ncu --interactive"
+    "pkg:interactive": "ncu --interactive --format group"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
