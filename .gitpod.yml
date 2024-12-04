@@ -4,14 +4,14 @@ image:
 tasks:
   - name: dev
     init: |
-      pnpm install
-      echo "NEXTAUTH_URL=$(gp url 3000)" > .env.local
-      echo "NEXTAUTH_URL_INTERNAL=http://localhost:3000" >> .env.local
-      pnpm run db:migrate
-      pnpm run db:seed
+      npm install
+      echo "NEXTAUTH_URL=$(gp url 3000)" > .env
+      echo "NEXTAUTH_URL_INTERNAL=http://localhost:3000" >> .env
+      npm run db:migrate
+      npm run db:seed
     command: |
-      pnpm exec playwright install
-      pnpm run dev
+      npm exec playwright install
+      npm run dev
 
 vscode:
   extensions:

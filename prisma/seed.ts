@@ -151,13 +151,13 @@ async function seed() {
     console.info("Creating example memberships.")
     const combinations = await getInstituteUserCombinations()
     for (let i = 0; i < EXAMPLE_MEMBERSHIPS_MEMBER; i++) {
-      createExampleMembership(combinations.pop()!, MembershipRole.MEMBER)
+      await createExampleMembership(combinations.pop()!, MembershipRole.MEMBER)
     }
     for (let i = 0; i < EXAMPLE_MEMBERSHIPS_ADMIN; i++) {
-      createExampleMembership(combinations.pop()!, MembershipRole.ADMIN)
+      await createExampleMembership(combinations.pop()!, MembershipRole.ADMIN)
     }
     for (let i = 0; i < EXAMPLE_MEMBERSHIPS_OWNER; i++) {
-      createExampleMembership(combinations.pop()!, MembershipRole.OWNER)
+      await createExampleMembership(combinations.pop()!, MembershipRole.OWNER)
     }
   }
 }
