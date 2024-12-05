@@ -148,7 +148,7 @@
     "eslint-config-next": "^15.0.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-i18next": "^6.1.1",
-    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-storybook": "^0.11.1",
     "glob": "^11.0.0",
     "http-server": "^14.1.1",
     "js-yaml": "^4.1.0",
