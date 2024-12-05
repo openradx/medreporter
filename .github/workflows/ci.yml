@@ -48,7 +48,7 @@ jobs:
           # see playwright.config.ts
           NEXTAUTH_URL: http://localhost:3100
       - name: Upload Playwright report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
