@@ -1,4 +1,9 @@
 /*
+ * Account stuff
+ */
+export const RESERVED_USERNAMES = ["default"]
+
+/*
  * Layout stuff
  */
 export const NAVBAR_HEIGHT = 60

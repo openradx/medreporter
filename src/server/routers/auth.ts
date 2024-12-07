@@ -1,5 +1,6 @@
 import { User } from "@prisma/client"
 import { TRPCError } from "@trpc/server"
+import { RESERVED_USERNAMES } from "~/constants"
 import { forgotPasswordMailer } from "~/mailers/forgotPasswordMailer"
 import { getAdapter } from "~/pages/api/auth/[...nextauth]"
 import { checkUniqueConstraint } from "~/utils/constraints"
@@ -12,6 +13,13 @@ export const authRouter = router({
   signup: publicProcedure.input(SignupSchema).mutation(async ({ input }) => {
     const { username, email, password, fullName, about } = input
     const hashedPassword = await hashPassword(password)
+
+    if (RESERVED_USERNAMES.includes(username)) {
+      throw new TRPCError({
+        code: "BAD_REQUEST",
+        message: "This username is reserved. Please pick another.",
+      })
+    }
 
     try {
       const user = await prisma.user.create({
