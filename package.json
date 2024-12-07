@@ -9,7 +9,7 @@
     "analyze:view": "http-server ./.next/analyze/",
     "start": "next start",
     "export": "next build && next export",
-    "tc": "tsc --noEmit",
+    "tsc": "tsc --noEmit",
     "lint": "next lint && npm run lint:stylelint",
     "lint:stylelint": "stylelint '**/*.css' --cache",
     "test": "npm run test:unit && npm run test:e2e",
