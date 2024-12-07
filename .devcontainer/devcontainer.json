@@ -8,8 +8,8 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
-  "postCreateCommand": ".devcontainer/post-create.sh",
-  "postStartCommand": ".devcontainer/post-start.sh",
+  "postCreateCommand": "scripts/init-workspace.sh",
+  "postStartCommand": "npm exec playwright install",
   "forwardPorts": [3000, 5432],
   "customizations": {
     "vscode": {
