@@ -29,7 +29,7 @@ export const InstituteList = () => {
   })
 
   const user = useUser()
-  const canAddInstitute = user && hasRole(user, [UserRole.SUPERADMIN, UserRole.ORGANIZER])
+  const canAddInstitute = user && hasRole(user, [UserRole.SUPERUSER, UserRole.ORGANIZER])
 
   if (status === "loading") {
     return <DataLoader />

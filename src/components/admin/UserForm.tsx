@@ -89,7 +89,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
               data={[
                 { value: UserRole.USER, label: t("UserForm.optionUserRole") },
                 { value: UserRole.ORGANIZER, label: t("UserForm.optionOrganizerRole") },
-                { value: UserRole.SUPERADMIN, label: t("UserForm.optionSuperadminRole") },
+                { value: UserRole.SUPERUSER, label: t("UserForm.optionSuperuserRole") },
               ]}
             />
           )}

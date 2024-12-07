@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   const session = await getServerSideSession(req, res)
   const user = session?.user
 
-  if (!user || !hasRole(user, [UserRole.SUPERADMIN, UserRole.ORGANIZER])) {
+  if (!user || !hasRole(user, [UserRole.SUPERUSER, UserRole.ORGANIZER])) {
     return redirectToLogin(locale)
   }
 

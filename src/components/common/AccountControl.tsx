@@ -19,7 +19,7 @@ export const AccountControl = () => {
 
   const canAdministrate = session.data?.user.roles.some((role) => {
     const adminRoles: (UserRole | MembershipRole)[] = [
-      UserRole.SUPERADMIN,
+      UserRole.SUPERUSER,
       MembershipRole.ADMIN,
       MembershipRole.OWNER,
     ]
