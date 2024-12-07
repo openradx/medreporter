@@ -20,7 +20,7 @@
     "test:e2e:report": "npm run test:e2e && npm exec playwright show-report",
     "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
-    "ci": "npm run prettier:check && npm run lint && npm run tc && npm run test",
+    "ci": "npm run prettier:check && npm run lint && npm run tsc && npm run test",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:migrate:create-only": "prisma migrate dev --create-only",
