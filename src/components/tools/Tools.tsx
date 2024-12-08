@@ -15,49 +15,6 @@ export const Tools = () => {
 
   const tools: Tool[] = [
     {
-      route: { pathname: "/tools/adrenal-washout" },
-      title: t("AdrenalWashout.title"),
-      description: t("AdrenalWashout.description"),
-      tags: [t("tags.radiology"), t("tags.ct"), t("tags.adrenal")],
-    },
-    {
-      route: { pathname: "/tools/adrenal-mri" },
-      title: t("AdrenalMri.title"),
-      description: t("AdrenalMri.description"),
-      tags: [t("tags.radiology"), t("tags.mri"), t("tags.adrenal")],
-    },
-
-    {
-      route: { pathname: "/tools/fleischner2017" },
-      title: t("Fleischner2017.title"),
-      description: t("Fleischner2017.description"),
-      tags: [t("tags.radiology"), t("tags.ct"), t("tags.lung")],
-    },
-    {
-      route: { pathname: "/tools/gfr" },
-      title: t("Gfr.title"),
-      description: t("Gfr.description"),
-      tags: [t("tags.kidney")],
-    },
-    {
-      route: { pathname: "/tools/kidney-volume" },
-      title: t("KidneyVolume.title"),
-      description: t("KidneyVolume.description"),
-      tags: [t("tags.kidney")],
-    },
-    {
-      route: { pathname: "/tools/lung-rads2022" },
-      title: t("LungRads2022.title"),
-      description: t("LungRads2022.description"),
-      tags: [t("tags.radiology"), t("tags.lung")],
-    },
-    {
-      route: { pathname: "/tools/measurements-table" },
-      title: t("MeasurementsTable.title"),
-      description: t("MeasurementsTable.description"),
-      tags: [t("tags.radiology")],
-    },
-    {
       route: { pathname: "/tools/sandbox" },
       title: t("Sandbox.title"),
       description: t("Sandbox.description"),
