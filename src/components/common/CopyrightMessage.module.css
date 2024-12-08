@@ -1,0 +1,9 @@
+.copyrightMessage {
+  @mixin light {
+    color: var(--mantine-color-gray-8);
+  }
+
+  @mixin dark {
+    color: var(--mantine-color-gray-1);
+  }
+}

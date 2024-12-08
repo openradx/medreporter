@@ -1,7 +1,9 @@
 import { AppShell, Container, MantineSize } from "@mantine/core"
+import Image from "next/image"
 import { ReactNode } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 import { NAVBAR_HEIGHT } from "~/constants"
+import bgImage from "../../../public/exampleImage2.png"
 import { MainLayoutFallback } from "./MainLayoutFallback"
 import { Navbar } from "./Navbar"
 import { SmallFooter } from "./SmallFooter"
@@ -11,6 +13,7 @@ interface MainLayoutProps {
   size?: "full" | MantineSize
   withoutAccountControl?: boolean
   footerSize?: "small" | "tall"
+  backgroundImage?: boolean
   children: ReactNode
 }
 
@@ -19,6 +22,7 @@ export const MainLayout = ({
   withoutAccountControl,
   children,
   footerSize = "tall",
+  backgroundImage = false,
 }: MainLayoutProps) => (
   <AppShell
     padding="sm"
@@ -28,6 +32,15 @@ export const MainLayout = ({
   >
     <Navbar withoutAccountControl={withoutAccountControl} />
     <AppShell.Main pb={footerSize === "small" ? 30 : undefined}>
+      {backgroundImage && (
+        <Image
+          src={bgImage}
+          alt="Background"
+          fill
+          sizes="100vw"
+          style={{ objectFit: "cover", zIndex: -1, opacity: 0.5 }}
+        />
+      )}
       <ErrorBoundary FallbackComponent={MainLayoutFallback}>
         <Container size={size !== "full" ? size : undefined} fluid={size === "full"} h="100%">
           {children}

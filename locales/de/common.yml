@@ -88,15 +88,9 @@ GfrPage:
 GraphicsModal:
   buttonReset: Auswahl zurücksetzen
 Home:
-  about: Mehr über MedReporter
   newTitle: Neue Vorlage erstellen
-  newDescription: Nutze den Editor um neue Vorlagen zu erstellen.
-  reportsTitle: Reports
-  reportsDescription: Gehe zu deinen bzw. den Reports deines Instituts.
-  toolsTitle: Tools
-  toolsDescription: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren.
-  templatesTitle: Vorlagen
-  templatesDescription: Nutze eine Vorlage um einen Report zu erstellen.
+  templatesTitle: Entdecke die Vorlagen
+  homeDescription: Plattform für die Erstellung strukturierter medizinischer Befunde. Nutzen Sie unsere vorgefertigten Templates ohne Login oder registrieren Sie sich, um eigene Vorlagen zu erstellen, ausgefüllte Befunde zu speichern und diese mit Mitgliedern Ihrer Institution zu teilen.
   welcomeText: Willkommen bei
 HomePage:
   pageTitle: Startseite
