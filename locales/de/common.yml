@@ -214,6 +214,8 @@ Structure:
   title: Struktur
 StructureLanguageChooser:
   buttonLanguageStructure: Sprache Struktur
+TemplatesPage:
+  pageTitle: Vorlagen
 ToolsPage:
   pageTitle: Werkzeuge
 UndoButton:

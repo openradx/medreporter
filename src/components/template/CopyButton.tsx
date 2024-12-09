@@ -1,7 +1,7 @@
 import { ActionIcon } from "@mantine/core"
 import { notifications } from "@mantine/notifications"
 import { Copy as CopyIcon } from "lucide-react"
-import { REPORT_CONTENT_ID } from "~/constants"
+import { REPORT_CONTENT_ID } from "~/constants/misc"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const CopyButton = () => {

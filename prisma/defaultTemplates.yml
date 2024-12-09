@@ -1,0 +1,115 @@
+- slug: adrenal-mri--en
+  language: en
+  title: Adrenal gland MRI
+  description: >
+    Characterization of adrenal lesions in the MRI to detect adenomas.
+  categories: [radiology, mri, adrenal]
+
+- slug: adrenal-mri--de
+  language: de
+  title: Nebennieren MRT
+  description: >
+    Charakterisierung von Nebennierenläsionen in der MRT zur Erkennung von Adenomen.
+  categories: [radiology, mri, adrenal]
+
+- slug: adrenal-washout--en
+  language: en
+  title: Adrenal gland CT (washout)
+  description: >
+    Characterization of adrenal lesions in the CT to detect adenomas.
+  categories: [radiology, ct, adrenal]
+
+- slug: adrenal-washout--de
+  language: de
+  title: Nebennieren CT (Washout)
+  description: >
+    Charakterisierung von Nebennierenläsionen in der CT zur Erkennung von Adenomen.
+  categories: [radio, ct, adrenal]
+
+- slug: fleischner2017--en
+  language: en
+  title: Fleischner 2017 Guideline
+  description: >
+    Management recommendations of indeterminate pulmonary nodules
+    from the Fleischner society.
+  categories: [radiology, ct, lung]
+
+- slug: fleischner2017--de
+  language: de
+  title: Fleischner 2017 Richtlinien
+  description: >
+    Empfehlung der Fleischner Fachgesellschaft zum Management unbestimmter
+    Lungenrundherde.
+  categories: [radiology, ct, lung]
+
+- slug: gfr--en
+  language: en
+  title: GFR Calculator
+  description: >
+    A tool to calculate the GFR for adults (CKD-EPI, Mayo, Cockcroft-Gault) 
+    and children (Schwartz (orig./rev.), Counahan-Barret).
+  categories: [kidney]
+
+- slug: gfr--de
+  language: de
+  title: GFR Rechner
+  description: >
+    Berechnung der GFR für Erwachsene (CKD-EPI, Mayo, Cockcroft-Gault) 
+    und Kinder (Schwartz (orig./rev.), Counahan-Barret).
+  categories: [kidney]
+
+- slug: kidney-volume--en
+  language: en
+  title: Kidney volume (Mayo-Model)
+  description: >
+    Calculation of the kidney volume for patients with ADPKD (with or without correction against height).
+  categories: [kidney]
+
+- slug: kidney-volume--de
+  language: de
+  title: Nierenvolumen (Mayo-Modell)
+  description: >
+    Berechnung des Nierenvolumens bei ADPKD (mit/ohne Korrektur gegenüber der Körpergröße).
+  categories: [kidney]
+
+- slug: lung-rads2022--en
+  language: en
+  title: Lung-RADS 2022
+  description: >
+    Classification proposed to aid with findings in low-dose CT screening exams for lung cancer and to standarize the Follow-Up.
+  categories: [radiology, ct, lung]
+
+- slug: lung-rads2022--de
+  language: de
+  title: Lung-RADS 2022
+  description: >
+    Klassifizierung von Befunden in der Niedrigdosis-CT-Screeninguntersuchung auf Lungenkrebs und zur Standardisierung des Follow-up.
+  categories: [radiology, ct, lung]
+
+- slug: measurements-table--en
+  language: en
+  title: Measurements Table
+  description: >
+    Tabular acquisition of measurements with calculation of dynamics.
+  categories: [radiology]
+
+- slug: measurements-table--de
+  language: de
+  title: Messtabelle
+  description: >
+    Tabellarische Erfassung von Messwerten mit Dynamikberechnung.
+  categories: [radiology]
+
+- slug: sandbox--en
+  language: en
+  title: Sandbox
+  description: >
+    Testing environment for fields, groups, extras
+  categories: [radiology]
+
+- slug: sandbox--de
+  language: de
+  title: Sandbox
+  description: >
+    Testumgebung für Felder, Gruppen, Extras etc.
+  categories: [radiology]

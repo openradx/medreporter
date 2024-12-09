@@ -3,15 +3,18 @@ categories:
     modalities: Modalitäten
     organs: Organe
     specialties: Fachbereiche
+
   # Modalities
   ct: CT
   mri: MRI
   us: Ultraschall
   xray: Röntgen
+
   # Organs
   kidney: Niere
   liver: Leber
   lung: Lunge
+
   # Specialties
   internalMedicine: Innere Medizin
   radiology: Radiologie
