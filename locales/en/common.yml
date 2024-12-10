@@ -88,15 +88,9 @@ GfrPage:
 GraphicsModal:
   buttonReset: Reset selection
 Home:
-  about: Learn more about MedReporter
   newTitle: New template
-  newDescription: Go to the Editor to create new templates.
-  reportsTitle: Reports
-  reportsDescription: Go to your reports or the reports of your institute.
-  toolsTitle: Tools
-  toolsDescription: Use our tools to calculate or to classify results.
-  templatesTitle: Templates
-  templatesDescription: Use a template to build a report.
+  templatesTitle: Browse Templates
+  homeDescription: A platform for creating structured medical reports.  Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution.
   welcomeText: Welcome to
 HomePage:
   pageTitle: Home

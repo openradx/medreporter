@@ -1,0 +1,23 @@
+.copyrightMessage {
+  font-weight: 500;
+
+  line-clamp: 1;
+
+  @mixin light {
+    color: var(--mantine-color-gray-8);
+  }
+
+  @mixin dark {
+    color: var(--mantine-color-gray-1);
+  }
+}
+
+.copyrightIcon {
+  @mixin light {
+    color: var(--mantine-color-gray-8);
+  }
+
+  @mixin dark {
+    color: var(--mantine-color-gray-1);
+  }
+}

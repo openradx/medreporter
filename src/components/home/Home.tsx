@@ -1,15 +1,12 @@
-import { Title, Text, Card, Grid, Image, Flex } from "@mantine/core"
+import { Title, Text, Image, Flex, Container, Button } from "@mantine/core"
+import cx from "clsx"
 import NextImage from "next/image"
 import Link from "next/link"
 import { appConfig } from "~/appConfig"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
-import exampleImage2 from "~/images/exampleImage2.png"
-import exampleImage from "~/images/exampleImage.png"
 import logo from "~/images/logo.png"
-import toolsImage from "~/images/tools.png"
-import { LoginForm } from "../auth/LoginForm"
-import { InstituteSwitcher } from "./InstituteSwitcher"
+import classes from "./Home.module.css"
 
 export const Home = () => {
   const { t } = useSiteTranslation()
@@ -17,12 +14,12 @@ export const Home = () => {
   const loggedIn = !!user
 
   return (
-    <Grid>
-      <Grid.Col span={12}>
-        <Title ta="center" mt={10}>
+    <div className={classes.wrapper}>
+      <div className={classes.inner}>
+        <Title className={classes.title}>
           <Flex direction="row" justify="center" align="center" gap="md">
             {t("Home.welcomeText")}
-            <Image component={NextImage} src={logo} alt="Logo" h={64} w={64} />
+            <Image component={NextImage} src={logo} alt="Logo" h={100} w={100} />
             <Text
               inherit
               variant="gradient"
@@ -33,78 +30,28 @@ export const Home = () => {
             </Text>
           </Flex>
         </Title>
-      </Grid.Col>
-      {!loggedIn && (
-        <Grid.Col span={8} offset={2}>
-          <LoginForm />
-        </Grid.Col>
-      )}
-      {loggedIn && (
-        <Grid.Col span={8} offset={2}>
-          <InstituteSwitcher />
-        </Grid.Col>
-      )}
-      <Grid.Col span={{ xs: 12, sm: 6, xl: 6 }}>
-        <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
-          <Card.Section>
-            <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
-          </Card.Section>
-          <Text fw={500} pt="xs">
-            {t("Home.templatesTitle")}
+
+        <Container size={640}>
+          <Text size="lg" className={classes.description}>
+            {t("Home.homeDescription")}
           </Text>
-          <Text size="sm" c="dimmed">
-            {t("Home.templatesDescription")}
-          </Text>
-        </Card>
-      </Grid.Col>
-      {loggedIn && (
-        <Grid.Col span={{ xs: 12, sm: 6, xl: 6 }}>
-          <Link href="/templates/new" legacyBehavior>
-            <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
-              <Card.Section>
-                <Image component={NextImage} src={exampleImage} alt="Example image" h={160} />
-              </Card.Section>
-              <Text fw={500} pt="xs">
-                {" "}
-                {t("Home.newTitle")}
-              </Text>
-              <Text size="sm" c="dimmed">
-                {t("Home.newDescription")}
-              </Text>
-            </Card>
+        </Container>
+
+        <div className={classes.controls}>
+          <Link href="/tools" legacyBehavior>
+            <Button className={classes.control} variant="white" size="lg">
+              {t("Home.templatesTitle")}
+            </Button>
           </Link>
-        </Grid.Col>
-      )}
-      {loggedIn && (
-        <Grid.Col span={{ xs: 12, sm: 6 }}>
-          <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
-            <Card.Section>
-              <Image component={NextImage} src={exampleImage2} alt="Example image" h={160} />
-            </Card.Section>
-            <Text fw={500} pt="xs">
-              {t("Home.reportsTitle")}
-            </Text>
-            <Text size="sm" c="dimmed">
-              {t("Home.reportsDescription")}
-            </Text>
-          </Card>
-        </Grid.Col>
-      )}
-      <Grid.Col span={{ xs: 12, sm: 6 }}>
-        <Link href="/tools" legacyBehavior>
-          <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
-            <Card.Section>
-              <Image component={NextImage} src={toolsImage} alt="Tools Image" h={160} />
-            </Card.Section>
-            <Text fw={500} pt="xs">
-              {t("Home.toolsTitle")}
-            </Text>
-            <Text size="sm" c="dimmed">
-              {t("Home.toolsDescription")}
-            </Text>
-          </Card>
-        </Link>
-      </Grid.Col>
-    </Grid>
+          {loggedIn && (
+            <Link href="/templates/new" legacyBehavior>
+              <Button className={cx(classes.control, classes.secondaryControl)} size="lg">
+                {t("Home.newTitle")}
+              </Button>
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
   )
 }
