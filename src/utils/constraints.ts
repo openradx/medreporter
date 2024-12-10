@@ -14,7 +14,7 @@ export function checkUniqueConstraint<M extends Record<string, any>>(
         if (error.code === "P2002" && target.includes(field)) {
           throw new TRPCError({
             code: "BAD_REQUEST",
-            message: `Unique constraint failed on field "${String(field)}"`,
+            message: `Unique constraint failed on field "${String(field)}".`,
           })
         }
       }

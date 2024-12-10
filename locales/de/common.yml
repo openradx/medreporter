@@ -198,6 +198,7 @@ SignupForm:
   inputLabelPassword: Passwort
   inputLabelUsername: Benutzername
   messageUsernameAlreadyUsed: Dieser Benutzername ist bereits vergeben.
+  messageUsernameReserved: Dieser Benutzername ist reserviert. Bitte wähle einen anderen.
   messageEmailAlreadyUsed: Ein Account mit dieser Email ist bereits vorhanden.
 SignupPage:
   pageTitle: Registrierung

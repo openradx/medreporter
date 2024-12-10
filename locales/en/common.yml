@@ -198,6 +198,7 @@ SignupForm:
   inputLabelPassword: Password
   inputLabelUsername: Username
   messageUsernameAlreadyUsed: This username is already being used.
+  messageUsernameReserved: This username is reserved. Please pick another one.
   messageEmailAlreadyUsed: An account with this Email already exists.
 SignupPage:
   pageTitle: Signup

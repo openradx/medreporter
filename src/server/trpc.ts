@@ -13,21 +13,21 @@ const t = initTRPC.context<Context>().create({
 
 export const { middleware, mergeRouters, procedure: publicProcedure, router } = t
 
-const isSuperadmin = middleware(({ next, ctx }) => {
+const isSuperuser = middleware(({ next, ctx }) => {
   const { user } = ctx
 
   if (!user) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
-  if (!hasRole(user, [UserRole.SUPERADMIN])) {
+  if (!hasRole(user, [UserRole.SUPERUSER])) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
   return next({ ctx: { user } })
 })
 
-export const superadminProcedure = t.procedure.use(isSuperadmin)
+export const superuserProcedure = t.procedure.use(isSuperuser)
 
 const isAdmin = middleware(({ next, ctx }) => {
   const { user } = ctx
@@ -36,7 +36,7 @@ const isAdmin = middleware(({ next, ctx }) => {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
-  if (!hasRole(user, [UserRole.SUPERADMIN, UserRole.ORGANIZER])) {
+  if (!hasRole(user, [UserRole.SUPERUSER, UserRole.ORGANIZER])) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 

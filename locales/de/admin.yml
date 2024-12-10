@@ -64,7 +64,7 @@ UserForm:
   inputLabelPassword: Passwort
   inputLabelUsername: Benutzername
   optionOrganizerRole: Organisator
-  optionSuperadminRole: Superadmin
+  optionSuperuserRole: Superuser
   optionUserRole: Normaler Nutzer
 UsersManager:
   inputLabelFilterUsers: Benutzer filtern

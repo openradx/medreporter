@@ -4,10 +4,6 @@ import { loadEnvConfig } from "@next/env"
 import { Institute, MembershipRole, PrismaClient, User, UserRole } from "@prisma/client"
 import { hashPassword } from "~/utils/cryptography"
 
-const SUPERADMIN_USERNAME = "medreporter"
-const SUPERADMIN_EMAIL = "medreporter@medreporter.org"
-const SUPERADMIN_PASSWORD = "medreporter"
-
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
 
@@ -45,19 +41,27 @@ async function createUser(data: UserData) {
   return user
 }
 
-async function createSuperadmin() {
+async function createSuperuser() {
+  const username = process.env.SUPERUSER_USERNAME
+  if (!username) {
+    throw new Error("SUPERUSER_USERNAME is not set.")
+  }
+  const email = process.env.SUPERUSER_EMAIL
+  if (!email) {
+    throw new Error("SUPERUSER_EMAIL is not set.")
+  }
+  const password = process.env.SUPERUSER_PASSWORD
+  if (!password) {
+    throw new Error("SUPERUSER_PASSWORD is not set.")
+  }
   return createUser({
-    username: SUPERADMIN_USERNAME,
-    email: SUPERADMIN_EMAIL,
-    password: SUPERADMIN_PASSWORD,
-    role: UserRole.SUPERADMIN,
+    username,
+    email,
+    password,
+    role: UserRole.SUPERUSER,
     fullName: "Admin",
     about: "The main admin of MedReporter",
   })
-}
-
-async function fetchSuperadmin() {
-  return prisma.user.findUniqueOrThrow({ where: { username: SUPERADMIN_USERNAME } })
 }
 
 async function createExampleUser(role: UserRole) {
@@ -105,15 +109,12 @@ async function seed() {
   /*
    * Users
    */
-  let superadmin: User
   const userCount = await prisma.user.count()
   if (userCount) {
     console.info("Users present. Skipping user creation.")
-    superadmin = await fetchSuperadmin()
   } else {
-    console.info("Creating superadmin.")
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    superadmin = await createSuperadmin()
+    console.info("Creating superuser.")
+    await createSuperuser()
 
     console.info("Creating example users.")
     const promises: Promise<User>[] = []

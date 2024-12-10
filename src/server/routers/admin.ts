@@ -19,7 +19,7 @@ import {
   UpdateUserSchema,
 } from "~/validations/admin"
 import { prisma } from "../prisma"
-import { adminProcedure, authedProcedure, router, superadminProcedure } from "../trpc"
+import { adminProcedure, authedProcedure, router, superuserProcedure } from "../trpc"
 
 export const adminRouter = router({
   createInstitute: adminProcedure.input(CreateInstituteSchema).mutation(async ({ input, ctx }) => {
@@ -51,8 +51,8 @@ export const adminRouter = router({
       const { instituteId } = input
       const { user } = ctx
 
-      // SUPERADMIN can create any membership
-      if (hasRole(user, UserRole.SUPERADMIN)) {
+      // SUPERUSER can create any membership
+      if (hasRole(user, UserRole.SUPERUSER)) {
         return await prisma.membership.create({ data: input })
       }
 
@@ -66,7 +66,7 @@ export const adminRouter = router({
 
       throw new TRPCError({ code: "UNAUTHORIZED" })
     }),
-  createUser: superadminProcedure.input(CreateUserSchema).mutation(async ({ input }) => {
+  createUser: superuserProcedure.input(CreateUserSchema).mutation(async ({ input }) => {
     const { username, email, password, ...data } = input
     const hashedPassword = await hashPassword(password)
 
@@ -88,8 +88,8 @@ export const adminRouter = router({
     const { id: instituteId } = input
     const { user } = ctx
 
-    // A SUPERADMIN can delete any institute
-    if (user.roles.includes(UserRole.SUPERADMIN)) {
+    // A SUPERUSER can delete any institute
+    if (user.roles.includes(UserRole.SUPERUSER)) {
       return await prisma.institute.deleteMany({ where: { id: instituteId } })
     }
 
@@ -111,8 +111,8 @@ export const adminRouter = router({
       const { id: membershipId } = input
       const { user } = ctx
 
-      // SUPERADMIN can delete any membership
-      if (hasRole(user, UserRole.SUPERADMIN)) {
+      // SUPERUSER can delete any membership
+      if (hasRole(user, UserRole.SUPERUSER)) {
         return await prisma.membership.deleteMany({ where: { id: membershipId } })
       }
 
@@ -139,7 +139,7 @@ export const adminRouter = router({
 
       throw new TRPCError({ code: "UNAUTHORIZED" })
     }),
-  deleteUser: superadminProcedure.input(DeleteUserSchema).mutation(async ({ input }) => {
+  deleteUser: superuserProcedure.input(DeleteUserSchema).mutation(async ({ input }) => {
     const { id: userId } = input
     return await prisma.user.deleteMany({ where: { id: userId } })
   }),
@@ -151,7 +151,7 @@ export const adminRouter = router({
       name: filter ? { contains: filter, mode: "insensitive" } : {},
     }
 
-    if (!hasRole(user, UserRole.SUPERADMIN)) {
+    if (!hasRole(user, UserRole.SUPERUSER)) {
       where.memberships = {
         some: {
           userId: user.id,
@@ -183,8 +183,8 @@ export const adminRouter = router({
     const { instituteId, role, skip, take } = input
     const { user } = ctx
 
-    // Check that current user is a SUPERADMIN or OWNER / ADMIN of that institute
-    if (!hasRole(user, UserRole.SUPERADMIN)) {
+    // Check that current user is a SUPERUSER or OWNER / ADMIN of that institute
+    if (!hasRole(user, UserRole.SUPERUSER)) {
       const membership = await prisma.membership.findFirst({
         where: {
           instituteId,
@@ -227,7 +227,7 @@ export const adminRouter = router({
       count,
     }
   }),
-  getUsers: superadminProcedure.input(GetUsersSchema).query(async ({ input }) => {
+  getUsers: superuserProcedure.input(GetUsersSchema).query(async ({ input }) => {
     const { filter, skip, take } = input
 
     const where: Prisma.UserWhereInput = filter
@@ -265,8 +265,8 @@ export const adminRouter = router({
       const { instituteId, skip, take } = input
       const { user } = ctx
 
-      // Check that current user is a SUPERADMIN or OWNER / ADMIN of that institute
-      if (!hasRole(user, [UserRole.SUPERADMIN])) {
+      // Check that current user is a SUPERUSER or OWNER / ADMIN of that institute
+      if (!hasRole(user, [UserRole.SUPERUSER])) {
         const membership = await prisma.membership.findFirst({
           where: {
             instituteId,
@@ -307,8 +307,8 @@ export const adminRouter = router({
     const { id: instituteId, ...data } = input
     const { user } = ctx
 
-    // A SUPERADMIN can update any institute
-    if (hasRole(user, UserRole.SUPERADMIN)) {
+    // A SUPERUSER can update any institute
+    if (hasRole(user, UserRole.SUPERUSER)) {
       return await prisma.institute.update({ where: { id: instituteId }, data })
     }
 
@@ -322,7 +322,7 @@ export const adminRouter = router({
 
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }),
-  updateUser: superadminProcedure.input(UpdateUserSchema).mutation(async ({ input }) => {
+  updateUser: superuserProcedure.input(UpdateUserSchema).mutation(async ({ input }) => {
     const { id: userId, username, email, password, fullName, about, role } = input
 
     const data: Partial<User> = {

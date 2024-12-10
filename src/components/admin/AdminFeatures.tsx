@@ -19,13 +19,13 @@ export const AdminFeatures = () => {
   const session = useSession()
 
   const roles = session.data?.user.roles
-  const isSuperadmin = roles?.includes(UserRole.SUPERADMIN) ?? false
+  const isSuperuser = roles?.includes(UserRole.SUPERUSER) ?? false
   const canManageInstitutes =
     (roles?.includes(MembershipRole.OWNER) || roles?.includes(MembershipRole.ADMIN)) ?? false
 
   const features: AdminFeature[] = []
 
-  if (isSuperadmin) {
+  if (isSuperuser) {
     features.push({
       route: { pathname: "/admin/manage-users" },
       icon: <UserIcon size={18} />,
@@ -34,7 +34,7 @@ export const AdminFeatures = () => {
     })
   }
 
-  if (isSuperadmin || canManageInstitutes) {
+  if (isSuperuser || canManageInstitutes) {
     features.push({
       route: { pathname: "/admin/manage-institutes" },
       icon: <InstituteIcon size={18} />,

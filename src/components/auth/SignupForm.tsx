@@ -28,6 +28,9 @@ export const SignupForm = (props: SignupFormProps) => {
             props.onSuccess?.()
           } catch (error) {
             if (error instanceof TRPCClientError) {
+              if (error.message === "This username is reserved. Please pick another.") {
+                throw new FormSubmitError({ username: t("SignupForm.messageUsernameReserved") })
+              }
               if (error.message.match(/Unique constrained failed.*"username"/)) {
                 throw new FormSubmitError({ username: t("SignupForm.messageUsernameAlreadyUsed") })
               }
