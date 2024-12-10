@@ -124,7 +124,7 @@
     "@storybook/react": "^8.4.6",
     "@storybook/test": "^8.4.6",
     "@svgr/webpack": "^8.1.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.0.0",
     "@types/bcrypt": "^5.0.2",
     "@types/glob": "^8.1.0",
     "@types/hoist-non-react-statics": "^3.3.5",
