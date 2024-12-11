@@ -91,13 +91,13 @@ export const Home = () => {
         </Grid.Col>
       )}
       <Grid.Col span={{ xs: 12, sm: 6 }}>
-        <Link href="/tools" legacyBehavior>
+        <Link href="/templates" legacyBehavior>
           <Card shadow="sm" p="lg" radius="md" mih={192} style={{ cursor: "pointer" }} withBorder>
             <Card.Section>
               <Image component={NextImage} src={toolsImage} alt="Tools Image" h={160} />
             </Card.Section>
             <Text fw={500} pt="xs">
-              {t("Home.toolsTitle")}
+              {t("Home.templatesTitle")}
             </Text>
             <Text size="sm" c="dimmed">
               {t("Home.toolsDescription")}

@@ -24,16 +24,18 @@ declare module "nextjs-routes" {
     | StaticRoute<"/auth/reset-password">
     | StaticRoute<"/auth/signup">
     | StaticRoute<"/templates">
-    | StaticRoute<"/templates/new">
-    | StaticRoute<"/tools">
-    | StaticRoute<"/tools/adrenal-mri">
-    | StaticRoute<"/tools/adrenal-washout">
-    | StaticRoute<"/tools/fleischner2017">
-    | StaticRoute<"/tools/gfr">
-    | StaticRoute<"/tools/kidney-volume">
-    | StaticRoute<"/tools/lung-rads2022">
-    | StaticRoute<"/tools/measurements-table">
-    | StaticRoute<"/tools/sandbox">;
+    | DynamicRoute<"/templates/[username]", { "username": string }>
+    | DynamicRoute<"/templates/[username]/[slug]", { "username": string; "slug": string }>
+    | DynamicRoute<"/templates/default/[slug]", { "slug": string }>
+    | StaticRoute<"/templates/default/adrenal-mri">
+    | StaticRoute<"/templates/default/adrenal-washout">
+    | StaticRoute<"/templates/default/fleischner2017">
+    | StaticRoute<"/templates/default/gfr">
+    | StaticRoute<"/templates/default/kidney-volume">
+    | StaticRoute<"/templates/default/lung-rads2022">
+    | StaticRoute<"/templates/default/measurements-table">
+    | StaticRoute<"/templates/default/sandbox">
+    | StaticRoute<"/templates/new">;
 
   interface StaticRoute<Pathname> {
     pathname: Pathname;

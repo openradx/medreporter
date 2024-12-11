@@ -4,8 +4,8 @@ import { GetCategoriesSchema } from "~/validations/categories"
 import { prisma } from "../prisma"
 import { publicProcedure, router } from "../trpc"
 
-export const categoriesRouter = router({
-  getTags: publicProcedure.input(GetCategoriesSchema).query(async ({ input }) => {
+export const categoryRouter = router({
+  getCategories: publicProcedure.input(GetCategoriesSchema).query(async ({ input }) => {
     const { language, filter, skip, take } = input
 
     const where: Prisma.CategoryWhereInput = {

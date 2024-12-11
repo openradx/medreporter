@@ -1,8 +1,8 @@
 import { GetServerSideProps } from "next"
+import { useRouter } from "next/router"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { Tools } from "~/components/tools/Tools"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
@@ -16,21 +16,31 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 }) => ({
   props: {
     session: await getServerSideSession(req, res),
-    i18nSite: await getServerSideSiteTranslations(locale, locales, ["tools"]),
+    i18nSite: await getServerSideSiteTranslations(locale, locales, ["template"]),
+    preloadedReduxState: {},
   },
 })
 
-const ToolsPage: PageWithLayout = () => {
+const TemplatePage: PageWithLayout = () => {
+  const router = useRouter()
+  const username = router.query.username as string
+  const slug = router.query.slug as string
   const { t } = useSiteTranslation()
 
   return (
     <>
-      <PageHead title={t("ToolsPage.pageTitle")} />
-      <Tools />
+      <PageHead title={t("AdrenalMriPage.toolTitle")} />
+      <div>
+        {username} - {slug}
+      </div>
     </>
   )
 }
 
-ToolsPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>
+TemplatePage.getLayout = (page: ReactElement) => (
+  <MainLayout size="full" footerSize="small">
+    {page}
+  </MainLayout>
+)
 
-export default ToolsPage
+export default TemplatePage

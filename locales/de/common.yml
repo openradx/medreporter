@@ -93,7 +93,7 @@ Home:
   newDescription: Nutze den Editor um neue Vorlagen zu erstellen.
   reportsTitle: Reports
   reportsDescription: Gehe zu deinen bzw. den Reports deines Instituts.
-  toolsTitle: Tools
+  templatesTitle: Vorlagen
   toolsDescription: Nutze unsere Tools um Berechnungen zu machen oder Befunde zu klassifizieren.
   templatesTitle: Vorlagen
   templatesDescription: Nutze eine Vorlage um einen Report zu erstellen.
@@ -153,7 +153,7 @@ Navbar:
 NavDrawer:
   title: Navigaion
   home: Startseite
-  tools: Werkzeuge
+  templates: Vorlagen
 NewFigureForm:
   formTitle: Neue Abbildung erstellen
 NewFigurePage:
@@ -214,6 +214,8 @@ Structure:
   title: Struktur
 StructureLanguageChooser:
   buttonLanguageStructure: Sprache Struktur
+TemplatesPage:
+  pageTitle: Vorlagen
 ToolsPage:
   pageTitle: Werkzeuge
 UndoButton:

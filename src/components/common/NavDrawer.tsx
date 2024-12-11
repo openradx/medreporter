@@ -17,7 +17,7 @@ export const NavDrawer = ({ opened, setOpened }: NavDrawerProps) => {
 
   const linkData: { route: Route; label: string }[] = [
     { route: { pathname: "/" }, label: t("NavDrawer.home") },
-    { route: { pathname: "/tools" }, label: t("NavDrawer.tools") },
+    { route: { pathname: "/templates" }, label: t("NavDrawer.templates") },
   ]
 
   const links = linkData.map((link) => (

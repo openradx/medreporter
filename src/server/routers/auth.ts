@@ -1,6 +1,6 @@
 import { User } from "@prisma/client"
 import { TRPCError } from "@trpc/server"
-import { RESERVED_USERNAMES } from "~/constants"
+import { RESERVED_USERNAMES } from "~/constants/reserved-usernames"
 import { forgotPasswordMailer } from "~/mailers/forgotPasswordMailer"
 import { getAdapter } from "~/pages/api/auth/[...nextauth]"
 import { checkUniqueConstraint } from "~/utils/constraints"

@@ -93,7 +93,7 @@ Home:
   newDescription: Go to the Editor to create new templates.
   reportsTitle: Reports
   reportsDescription: Go to your reports or the reports of your institute.
-  toolsTitle: Tools
+  templatesTitle: Templates
   toolsDescription: Use our tools to calculate or to classify results.
   templatesTitle: Templates
   templatesDescription: Use a template to build a report.
@@ -153,7 +153,7 @@ Navbar:
 NavDrawer:
   title: Navigation
   home: Home
-  tools: Tools
+  templates: Templates
 NewFigureForm:
   formTitle: Create new figure
 NewFigurePage:
@@ -214,6 +214,8 @@ Structure:
   title: Structure
 StructureLanguageChooser:
   buttonLanguageStructure: Structure language
+TemplatesPage:
+  pageTitle: Templates
 ToolsPage:
   pageTitle: Tools
 UndoButton:

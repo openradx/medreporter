@@ -1,8 +1,19 @@
 /* eslint-disable no-console */
 import { faker } from "@faker-js/faker"
 import { loadEnvConfig } from "@next/env"
-import { Institute, MembershipRole, PrismaClient, User, UserRole } from "@prisma/client"
-import { hashPassword } from "~/utils/cryptography"
+import {
+  Institute,
+  MembershipRole,
+  PrismaClient,
+  ReleaseStatus,
+  User,
+  UserRole,
+  Visibility,
+} from "@prisma/client"
+import fs from "fs"
+import yaml from "js-yaml"
+import path from "path"
+import { hashPassword, randomString } from "~/utils/cryptography"
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -16,6 +27,14 @@ const projectDir = process.cwd()
 loadEnvConfig(projectDir)
 
 const prisma = new PrismaClient()
+
+interface DefaultTemplate {
+  slug: string
+  language: string
+  title: string
+  description: string
+  categories: string[]
+}
 
 interface UserData extends Pick<User, "username" | "email" | "role" | "fullName" | "about"> {
   password: string
@@ -44,16 +63,20 @@ async function createUser(data: UserData) {
 async function createSuperuser() {
   const username = process.env.SUPERUSER_USERNAME
   if (!username) {
-    throw new Error("SUPERUSER_USERNAME is not set.")
+    console.info("SUPERUSER_USERNAME is not set. Skipping superuser creation.")
+    return null
   }
   const email = process.env.SUPERUSER_EMAIL
   if (!email) {
-    throw new Error("SUPERUSER_EMAIL is not set.")
+    console.info("SUPERUSER_EMAIL is not set. Skipping superuser creation.")
+    return null
   }
   const password = process.env.SUPERUSER_PASSWORD
   if (!password) {
-    throw new Error("SUPERUSER_PASSWORD is not set.")
+    console.info("SUPERUSER_PASSWORD is not set. Skipping superuser creation.")
+    return null
   }
+
   return createUser({
     username,
     email,
@@ -61,6 +84,17 @@ async function createSuperuser() {
     role: UserRole.SUPERUSER,
     fullName: "Admin",
     about: "The main admin of MedReporter",
+  })
+}
+
+async function createDefaultUser() {
+  return createUser({
+    username: "default",
+    email: "",
+    password: randomString(32),
+    fullName: "Default User",
+    about: "The default user of MedReporter",
+    role: UserRole.USER,
   })
 }
 
@@ -105,16 +139,16 @@ async function createExampleMembership(
   })
 }
 
-async function seed() {
-  /*
-   * Users
-   */
+async function seedUsers() {
   const userCount = await prisma.user.count()
   if (userCount) {
     console.info("Users present. Skipping user creation.")
   } else {
     console.info("Creating superuser.")
     await createSuperuser()
+
+    console.info("Creating default user.")
+    await createDefaultUser()
 
     console.info("Creating example users.")
     const promises: Promise<User>[] = []
@@ -123,13 +157,9 @@ async function seed() {
     }
     await Promise.all(promises)
   }
+}
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const users = await prisma.user.findMany()
-
-  /*
-   * Institutes
-   */
+async function seedInstitutes() {
   const instituteCount = await prisma.institute.count()
   if (instituteCount > 0) {
     console.info("Institutes present. Skipping institute creation.")
@@ -141,10 +171,9 @@ async function seed() {
     }
     await Promise.all(promises)
   }
+}
 
-  /*
-   * Memberships
-   */
+async function seedMemberships() {
   const membershipCount = await prisma.membership.count()
   if (membershipCount) {
     console.info("Memberships present. Skipping membership creation.")
@@ -161,6 +190,55 @@ async function seed() {
       await createExampleMembership(combinations.pop()!, MembershipRole.OWNER)
     }
   }
+}
+
+async function seedDefaultTemplates() {
+  const defaultUser = await prisma.user.findFirst({ where: { username: "default" } })
+  if (!defaultUser) {
+    throw new Error("Default user not found.")
+  }
+
+  console.info("Creating or updating default templates.")
+  const templatesFile = path.join(projectDir, "prisma", "defaultTemplates.yml")
+  const templates = yaml.load(fs.readFileSync(templatesFile).toString()) as DefaultTemplate[]
+  for (const template of templates) {
+    const additionalData = {
+      authorId: defaultUser.id,
+      document: {},
+      visibility: Visibility.PUBLIC,
+      releaseStatus: ReleaseStatus.PUBLISHED,
+      categories: {
+        connectOrCreate: template.categories.map((category) => ({
+          where: { key: category },
+          create: { key: category },
+        })),
+      },
+    }
+
+    await prisma.template.upsert({
+      create: {
+        ...template,
+        ...additionalData,
+      },
+      update: {
+        ...template,
+        ...additionalData,
+      },
+      where: {
+        authorId_slug: {
+          authorId: defaultUser.id,
+          slug: template.slug,
+        },
+      },
+    })
+  }
+}
+
+async function seed() {
+  await seedUsers()
+  await seedInstitutes()
+  await seedMemberships()
+  await seedDefaultTemplates()
 }
 
 seed()
