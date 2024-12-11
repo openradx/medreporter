@@ -3,9 +3,11 @@ import { Group } from "~/components/template/Group"
 import { Hint } from "~/components/template/Hint"
 import { Section } from "~/components/template/Section"
 import { Structure } from "~/components/template/Structure"
-import { MAX_HU, MIN_HU } from "~/constants"
 import { useMicroTranslation } from "~/hooks/useMicroTranslation"
 import { i18nStructure } from "./locales"
+
+export const MIN_HU = -1024
+export const MAX_HU = 3071
 
 export const AdrenalWashoutStructure = () => {
   const { t } = useMicroTranslation(i18nStructure)

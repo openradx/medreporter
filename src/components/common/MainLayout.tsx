@@ -1,7 +1,6 @@
 import { AppShell, Container, MantineSize } from "@mantine/core"
 import { ReactNode } from "react"
 import { ErrorBoundary } from "react-error-boundary"
-import { NAVBAR_HEIGHT } from "~/constants"
 import { BackgroundImage } from "./BackgroundImage"
 import { MainLayoutFallback } from "./MainLayoutFallback"
 import { Navbar } from "./Navbar"
@@ -25,7 +24,7 @@ export const MainLayout = ({
 }: MainLayoutProps) => (
   <AppShell
     padding="sm"
-    header={{ height: NAVBAR_HEIGHT }}
+    header={{ height: 60 }}
     footer={{ height: 30 }}
     styles={{ main: { height: "100vh" } }}
   >
