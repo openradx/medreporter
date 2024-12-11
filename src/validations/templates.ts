@@ -36,15 +36,15 @@ export const UpdateTemplateSchema = z.object({
 })
 
 export const FetchOwnTemplateSchema = z.object({
-  name: z.string(),
+  slug: z.string(),
 })
 
 export const GetTemplateSchema = z.object({
-  author: z.string(), // username of author
-  name: z.string(),
+  username: z.string(), // username of author
+  slug: z.string(),
 })
 
 export const GetTemplatesSchema = PaginationSchema.extend({
-  locale: z.string().optional(),
+  language: z.string().optional(),
   filter: z.string().optional(),
 })

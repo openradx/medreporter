@@ -38,7 +38,7 @@ export const Home = () => {
         </Container>
 
         <div className={classes.controls}>
-          <Link href="/tools" legacyBehavior>
+          <Link href="/templates" legacyBehavior>
             <Button className={classes.control} variant="white" size="lg">
               {t("Home.templatesTitle")}
             </Button>

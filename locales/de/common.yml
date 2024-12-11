@@ -147,7 +147,7 @@ Navbar:
 NavDrawer:
   title: Navigaion
   home: Startseite
-  tools: Werkzeuge
+  templates: Vorlagen
 NewFigureForm:
   formTitle: Neue Abbildung erstellen
 NewFigurePage:
@@ -208,8 +208,8 @@ Structure:
   title: Struktur
 StructureLanguageChooser:
   buttonLanguageStructure: Sprache Struktur
-ToolsPage:
-  pageTitle: Werkzeuge
+TemplatesPage:
+  pageTitle: Vorlagen
 UndoButton:
   title: Rückgängig machen
 VisibilitySelector:

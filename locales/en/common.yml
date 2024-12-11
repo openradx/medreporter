@@ -147,7 +147,7 @@ Navbar:
 NavDrawer:
   title: Navigation
   home: Home
-  tools: Tools
+  templates: Templates
 NewFigureForm:
   formTitle: Create new figure
 NewFigurePage:
@@ -208,8 +208,8 @@ Structure:
   title: Structure
 StructureLanguageChooser:
   buttonLanguageStructure: Structure language
-ToolsPage:
-  pageTitle: Tools
+TemplatesPage:
+  pageTitle: Templates
 UndoButton:
   title: Undo
 VisibilitySelector:
