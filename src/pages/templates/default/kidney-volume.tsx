@@ -2,10 +2,10 @@ import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
+import { KidneyVolume } from "~/default-templates/kidneyVolume/KidneyVolume"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
-import { KidneyVolume } from "~/tools/kidneyVolume/KidneyVolume"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
