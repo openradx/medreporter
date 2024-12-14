@@ -8,7 +8,7 @@
   }
 
   @mixin dark {
-    color: var(--mantine-color-gray-1);
+    color: var(--mantine-color-white);
   }
 }
 
@@ -18,6 +18,6 @@
   }
 
   @mixin dark {
-    color: var(--mantine-color-gray-1);
+    color: var(--mantine-color-white);
   }
 }
