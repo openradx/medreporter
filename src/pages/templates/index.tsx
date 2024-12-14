@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   return {
     props: {
       session,
-      i18nSite: await getServerSideSiteTranslations(locale, locales, []),
+      i18nSite: await getServerSideSiteTranslations(locale, locales, ["categories"]),
     },
   }
 }

@@ -24,7 +24,7 @@
   title: Nebennieren CT (Washout)
   description: >
     Charakterisierung von Nebennierenläsionen in der CT zur Erkennung von Adenomen.
-  categories: [radio, ct, adrenal]
+  categories: [radiology, ct, adrenal]
 
 - slug: fleischner2017--en
   language: en

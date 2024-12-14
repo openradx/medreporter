@@ -1,17 +1,32 @@
 categories:
   group:
-    modalities: Modalities
+    examination: Examination
     organs: Organs
     specialties: Specialties
+
   # Modalities
+  angiography: Angiography
   ct: CT
+  fluoroscopy: Fluoroscopy
   mri: MRI
   us: Ultrasound
   xray: X-Ray
+
   # Organs
+  adrenal: Adrenal Gland
+  arteries: Arteries
+  brain: Brain
+  heart: Heart
   kidney: Kidney
   liver: Liver
+  lowerExtremity: Lower Extremity
   lung: Lung
+  pancreas: Pancreas
+  prostate: Prostate
+  spleen: Spleen
+  upperExtremity: Upper Extremity
+  veins: Veins
+
   # Specialties
   internalMedicine: Internal Medicine
   radiology: Radiology

@@ -42,6 +42,7 @@ export const TemplateList = () => {
             title={template.title}
             description={template.description}
             categories={template.categories.map((category) => category.key)}
+            updatedAt={template.updatedAt}
           />
         ))}
       <Group justify="space-between">

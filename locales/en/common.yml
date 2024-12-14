@@ -208,6 +208,9 @@ Structure:
   title: Structure
 StructureLanguageChooser:
   buttonLanguageStructure: Structure language
+TemplateItem:
+  authoredBy: Authored by
+  updatedAt: Last modified
 TemplatesPage:
   pageTitle: Templates
 UndoButton:
