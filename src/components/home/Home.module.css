@@ -29,11 +29,11 @@
   }
 
   @mixin light {
-    color: var(--mantine-color-gray-8);
+    color: var(--mantine-color-gray-9);
   }
 
   @mixin dark {
-    color: var(--mantine-color-gray-1);
+    color: var(--mantine-color-gray-2);
   }
 }
 
@@ -42,7 +42,6 @@
 }
 
 .description {
-  color: var(--mantine-color-gray-0);
   text-align: center;
   font-weight: 500;
   font-size: var(--mantine-font-size-xl);
@@ -53,7 +52,7 @@
   }
 
   @mixin light {
-    color: var(--mantine-color-gray-8);
+    color: var(--mantine-color-black);
   }
 
   @mixin dark {
@@ -96,9 +95,5 @@
 
 .secondaryControl {
   color: var(--mantine-color-white);
-  background-color: rgba(255, 255, 255, 0.4);
-
-  @mixin hover {
-    background-color: rgba(255, 255, 255, 0.45);
-  }
+  background-color: var(--mantine-color-gray-5);
 }

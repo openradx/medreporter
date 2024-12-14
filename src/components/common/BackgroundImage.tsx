@@ -1,12 +1,14 @@
 import { Overlay } from "@mantine/core"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import bgImage1 from "../../../public/exampleImage1.png"
 import bgImage2 from "../../../public/exampleImage2.png"
-import bgImage from "../../../public/exampleImage.png"
+import bgImage3 from "../../../public/exampleImage3.png"
+import bgImage4 from "../../../public/exampleImage4.png"
 import classes from "./BackgroundImage.module.css"
 
 export const BackgroundImage = () => {
-  const images = [bgImage, bgImage2]
+  const images = [bgImage1, bgImage2, bgImage3, bgImage4]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -18,7 +20,7 @@ export const BackgroundImage = () => {
   }, [images.length])
   return (
     <>
-      <Overlay color="#000" opacity={0.65} zIndex={1} />
+      <Overlay className={classes.overlay} />
       {images.map((image, index) => (
         <Image
           key={index}
