@@ -6,7 +6,12 @@ interface FilterProviderProps {
 }
 
 export const FilterProvider = ({ children }: FilterProviderProps) => {
-  const [filter, setFilter] = useState("")
+  const [search, setSearch] = useState("")
+  const [language, setLanguage] = useState("")
 
-  return <FilterContextProvider value={{ filter, setFilter }}>{children}</FilterContextProvider>
+  return (
+    <FilterContextProvider value={{ search, setSearch, language, setLanguage }}>
+      {children}
+    </FilterContextProvider>
+  )
 }

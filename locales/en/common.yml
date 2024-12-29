@@ -21,7 +21,7 @@ languages:
   asSite: As page
   other: Other
   de: German
-  en: English (GB)
+  en-GB: English (GB)
   en-US: English (US)
   es: Spanish
   fr: French
@@ -105,6 +105,8 @@ KidneyVolumePage:
 LanguageChooser:
   menuTitleLanguages: Language
   menuLabelDebugMode: Debug translations
+LanguageFilter:
+  inputLabel: Language
 LanguageSelector:
   inputLabelLanguage: Language
 Loading:
@@ -208,6 +210,8 @@ Structure:
   title: Structure
 StructureLanguageChooser:
   buttonLanguageStructure: Structure language
+TemplateFilters:
+  title: Filters
 TemplateItem:
   authoredBy: Authored by
   updatedAt: Last modified

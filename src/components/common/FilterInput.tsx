@@ -7,7 +7,7 @@ interface FilterInputProps {
 }
 
 export const FilterInput = ({ label }: FilterInputProps) => {
-  const { filter, setFilter } = useFilter()
+  const { search: filter, setSearch: setFilter } = useFilter()
 
   return (
     <TextInput

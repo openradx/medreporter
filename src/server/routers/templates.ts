@@ -4,11 +4,11 @@ import { publicProcedure, router } from "../trpc"
 
 export const templatesRouter = router({
   getTemplates: publicProcedure.input(GetTemplatesSchema).query(async ({ input }) => {
-    const { language, filter, skip, take } = input
+    const { search, language, skip, take } = input
 
     const where = {
-      language,
-      title: filter ? { contains: filter } : {},
+      language: language ? { equals: language } : {},
+      title: search ? { contains: search } : {},
     }
 
     const templates = await prisma.template.findMany({

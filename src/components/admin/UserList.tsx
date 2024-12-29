@@ -16,7 +16,7 @@ export const UserList = () => {
   const { t } = useSiteTranslation()
   const router = useRouter()
   const activePage = Number(router.query.page) || 1
-  const { filter } = useFilter()
+  const { search: filter } = useFilter()
   const [filterDebounced] = useDebounce(filter.trim(), 500)
   const { data, error, status } = trpc.admin.getUsers.useQuery({
     filter: filterDebounced,

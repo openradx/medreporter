@@ -1,0 +1,4 @@
+.templateList > div > div {
+  display: block !important;
+  width: 100%;
+}
