@@ -21,6 +21,7 @@ languages:
   asSite: wie Seite
   other: Andere
   de: Deutsch
+  en: Englisch
   en-GB: Englisch (GB)
   en-US: Englisch (US)
   es: Spanisch
@@ -39,8 +40,8 @@ AdrenalMriPage:
   toolTitle: Nebennieren MRT
 AdrenalWashoutPage:
   toolTitle: Nebennieren Washout
-CategoriesSelector:
-  inputLabelCategories: Kategorien
+CategoriesFilter:
+  inputLabel: Kategorien
 ClearAllButton:
   title: Alles löschen
 ColorSchemeToggle:

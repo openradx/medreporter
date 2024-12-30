@@ -15,11 +15,12 @@ export const TemplateList = () => {
   const { t } = useSiteTranslation()
   const router = useRouter()
   const activePage = Number(router.query.page) || 1
-  const { search, language } = useFilter()
+  const { categories, language, search } = useFilter()
   const [searchDebounced] = useDebounce(search.trim(), 500)
   const { data, error, status } = trpc.templates.getTemplates.useQuery({
-    search: searchDebounced,
+    categories,
     language,
+    search: searchDebounced,
     skip: ITEMS_PER_PAGE * (activePage - 1),
     take: ITEMS_PER_PAGE,
   })

@@ -6,11 +6,14 @@ interface FilterProviderProps {
 }
 
 export const FilterProvider = ({ children }: FilterProviderProps) => {
-  const [search, setSearch] = useState("")
+  const [categories, setCategories] = useState<string[]>([])
   const [language, setLanguage] = useState("")
+  const [search, setSearch] = useState("")
 
   return (
-    <FilterContextProvider value={{ search, setSearch, language, setLanguage }}>
+    <FilterContextProvider
+      value={{ categories, setCategories, language, setLanguage, search, setSearch }}
+    >
       {children}
     </FilterContextProvider>
   )

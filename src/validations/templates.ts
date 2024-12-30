@@ -45,6 +45,7 @@ export const GetTemplateSchema = z.object({
 })
 
 export const GetTemplatesSchema = PaginationSchema.extend({
-  search: z.string().optional(),
-  language: z.string().optional(),
+  categories: z.string().array(),
+  language: z.string(),
+  search: z.string(),
 })

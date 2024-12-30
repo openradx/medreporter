@@ -21,6 +21,7 @@ languages:
   asSite: As page
   other: Other
   de: German
+  en: English
   en-GB: English (GB)
   en-US: English (US)
   es: Spanish
@@ -39,8 +40,8 @@ AdrenalMriPage:
   toolTitle: Adrenal gland MRI
 AdrenalWashoutPage:
   toolTitle: Adrenal washout
-CategoriesSelector:
-  inputLabelCategories: Categories
+CategoriesFilter:
+  inputLabel: Categories
 ClearAllButton:
   title: Clear all
 ColorSchemeToggle:

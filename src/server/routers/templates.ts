@@ -4,9 +4,12 @@ import { publicProcedure, router } from "../trpc"
 
 export const templatesRouter = router({
   getTemplates: publicProcedure.input(GetTemplatesSchema).query(async ({ input }) => {
-    const { search, language, skip, take } = input
+    const { categories, language, search, skip, take } = input
 
     const where = {
+      AND: categories.map((category) => ({
+        categories: { some: { key: category } },
+      })),
       language: language ? { equals: language } : {},
       title: search ? { contains: search } : {},
     }

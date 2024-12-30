@@ -1,10 +1,12 @@
 import { createRequiredContext } from "~/utils/createRequiredContext"
 
 interface FilterContext {
-  search: string
-  setSearch: (filter: string) => void
+  categories: string[]
+  setCategories: (categories: string[]) => void
   language: string
   setLanguage: (language: string) => void
+  search: string
+  setSearch: (filter: string) => void
 }
 
 export const [useFilter, FilterContextProvider] =
