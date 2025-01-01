@@ -10,6 +10,7 @@ export const FilterProvider = ({ children }: FilterProviderProps) => {
   const [language, setLanguage] = useState("")
   const [search, setSearch] = useState("")
   const [username, setUsername] = useState("")
+  const [sorting, setSorting] = useState("")
 
   return (
     <FilterContextProvider
@@ -22,6 +23,8 @@ export const FilterProvider = ({ children }: FilterProviderProps) => {
         setSearch,
         username,
         setUsername,
+        sorting,
+        setSorting,
       }}
     >
       {children}

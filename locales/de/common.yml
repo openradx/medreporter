@@ -214,12 +214,22 @@ Structure:
 StructureLanguageChooser:
   buttonLanguageStructure: Sprache Struktur
 TemplateFilters:
-  title: Filter
+  filtersTitle: Filter
+  sortingTitle: Sortierung
 TemplateItem:
   authoredBy: Erstellt von
   updatedAt: Zuletzt geändert
 TemplatesPage:
   pageTitle: Vorlagen
+TemplatesSorting:
+  inputLabel: Sortieren nach...
+  inputPlaceholder: Sortierung auswählen
+  optionAuthorAsc: Autor (aufsteigend)
+  optionAuthorDesc: Autor (absteigend)
+  optionCreatedDesc: Neueste zuerst
+  optionCreatedAsc: Älteste zuerst
+  optionTitleAsc: Titel (aufsteigend)
+  optionTitleDesc: Titel (absteigend)
 UndoButton:
   title: Rückgängig machen
 UserFilter:

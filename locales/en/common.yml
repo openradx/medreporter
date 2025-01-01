@@ -214,12 +214,22 @@ Structure:
 StructureLanguageChooser:
   buttonLanguageStructure: Structure language
 TemplateFilters:
-  title: Filters
+  filtersTitle: Filters
+  sortingTitle: Sorting
 TemplateItem:
   authoredBy: Authored by
   updatedAt: Last modified
 TemplatesPage:
   pageTitle: Templates
+TemplatesSorting:
+  inputLabel: Sort by...
+  inputPlaceholder: Choose sorting strategy
+  optionAuthorAsc: Author (A-Z)
+  optionAuthorDesc: Author (Z-A)
+  optionCreatedAsc: Oldest first
+  optionCreatedDesc: Newest first
+  optionTitleAsc: Title (A-Z)
+  optionTitleDesc: Title (Z-A)
 UndoButton:
   title: Undo
 UserFilter:

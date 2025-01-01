@@ -3,6 +3,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { PanelToolbar } from "../template/PanelToolbar"
 import { CategoriesFilter } from "./CategoriesFilter"
 import { LanguageFilter } from "./LanguageFilter"
+import { TemplatesSorting } from "./TemplatesSorting"
 import { UserFilter } from "./UserFilter"
 
 export const TemplateFilters = () => {
@@ -17,11 +18,15 @@ export const TemplateFilters = () => {
       w="100%"
       style={{ flexDirection: "column" }}
     >
-      <PanelToolbar title={t("TemplateFilters.title")} />
-      <Stack p="xs" gap="xs">
+      <PanelToolbar title={t("TemplateFilters.filtersTitle")} />
+      <Stack p="xs" pb="xl" gap="xs">
         <LanguageFilter />
         <CategoriesFilter />
         <UserFilter />
+      </Stack>
+      <PanelToolbar title={t("TemplateFilters.sortingTitle")} />
+      <Stack p="xs" gap="xs">
+        <TemplatesSorting />
       </Stack>
     </Paper>
   )

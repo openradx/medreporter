@@ -9,6 +9,8 @@ interface FilterContext {
   setSearch: (filter: string) => void
   username: string
   setUsername: (user: string) => void
+  sorting: string
+  setSorting: (sorting: string) => void
 }
 
 export const [useFilter, FilterContextProvider] =

@@ -1,0 +1,6 @@
+export const AUTHOR_ASC = "authorAsc"
+export const AUTHOR_DESC = "authorDesc"
+export const CREATED_ASC = "createdAsc"
+export const CREATED_DESC = "createdDesc"
+export const TITLE_ASC = "titleAsc"
+export const TITLE_DESC = "titleDesc"
