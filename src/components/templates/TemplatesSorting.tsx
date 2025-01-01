@@ -40,6 +40,9 @@ export const TemplatesSorting = () => {
       onChange={(value) => filter.setSorting(value ?? "")}
       label={t("TemplatesSorting.inputLabel")}
       placeholder={t("TemplatesSorting.inputPlaceholder")}
+      clearable
+      searchable
+      allowDeselect
     />
   )
 }

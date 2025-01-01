@@ -19,6 +19,7 @@ export const UserFilter = () => {
       searchValue={prefix}
       onSearchChange={(value) => setPrefix(value)}
       data={data?.users.map((user) => user.username!) ?? []}
+      value={filter.username === "" ? null : filter.username}
       onChange={(value) => filter.setUsername(value ?? "")}
       searchable
       clearable

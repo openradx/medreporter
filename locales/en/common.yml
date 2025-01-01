@@ -45,6 +45,8 @@ CategoriesFilter:
   inputPlaceholder: Filter by categories
 ClearAllButton:
   title: Clear all
+ClearFiltersButton:
+  title: Clear filters
 ColorSchemeToggle:
   buttonToggleTheme: Toggle theme
 CopyButton:

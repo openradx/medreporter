@@ -2,6 +2,7 @@ import { Paper, Stack } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { PanelToolbar } from "../template/PanelToolbar"
 import { CategoriesFilter } from "./CategoriesFilter"
+import { ClearFiltersButton } from "./ClearFiltersButton"
 import { LanguageFilter } from "./LanguageFilter"
 import { TemplatesSorting } from "./TemplatesSorting"
 import { UserFilter } from "./UserFilter"
@@ -18,7 +19,11 @@ export const TemplateFilters = () => {
       w="100%"
       style={{ flexDirection: "column" }}
     >
-      <PanelToolbar title={t("TemplateFilters.filtersTitle")} />
+      <PanelToolbar
+        title={t("TemplateFilters.filtersTitle")}
+        actions={<ClearFiltersButton />}
+        actionsPosition="right"
+      />
       <Stack p="xs" pb="xl" gap="xs">
         <LanguageFilter />
         <CategoriesFilter />

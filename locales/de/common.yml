@@ -45,6 +45,8 @@ CategoriesFilter:
   inputPlaceholder: Nach Kategorien filtern
 ClearAllButton:
   title: Alles löschen
+ClearFiltersButton:
+  title: Filter löschen
 ColorSchemeToggle:
   buttonToggleTheme: Farbschema wechseln
 CopyButton:
