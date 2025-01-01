@@ -42,6 +42,7 @@ AdrenalWashoutPage:
   toolTitle: Nebennieren Washout
 CategoriesFilter:
   inputLabel: Kategorien
+  inputPlaceholder: Nach Kategorien filtern
 ClearAllButton:
   title: Alles löschen
 ColorSchemeToggle:
@@ -108,6 +109,7 @@ LanguageChooser:
   menuLabelDebugMode: Debug translations
 LanguageFilter:
   inputLabel: Sprache
+  inputPlaceholder: Nach Templatesprache filtern
 LanguageSelector:
   inputLabelLanguage: Sprache
 Loading:
@@ -220,6 +222,9 @@ TemplatesPage:
   pageTitle: Vorlagen
 UndoButton:
   title: Rückgängig machen
+UserFilter:
+  inputLabel: Autor
+  inputPlaceholder: Nach Templateautor filtern
 VisibilitySelector:
   inputLabelVisibility: Sichtbarkeit
   optionPublic: Öffentlich

@@ -7,6 +7,8 @@ interface FilterContext {
   setLanguage: (language: string) => void
   search: string
   setSearch: (filter: string) => void
+  username: string
+  setUsername: (user: string) => void
 }
 
 export const [useFilter, FilterContextProvider] =

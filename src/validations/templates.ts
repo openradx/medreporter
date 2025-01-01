@@ -48,4 +48,5 @@ export const GetTemplatesSchema = PaginationSchema.extend({
   categories: z.string().array(),
   language: z.string(),
   search: z.string(),
+  username: z.string(),
 })

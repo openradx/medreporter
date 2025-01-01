@@ -10,6 +10,7 @@ export const CategoriesFilter = () => {
   return (
     <MultiSelect
       label={t("CategoriesFilter.inputLabel")}
+      placeholder={t("CategoriesFilter.inputPlaceholder")}
       value={filter.categories}
       onChange={(value) => filter.setCategories(value)}
       data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({

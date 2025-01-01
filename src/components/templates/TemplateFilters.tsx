@@ -3,6 +3,7 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { PanelToolbar } from "../template/PanelToolbar"
 import { CategoriesFilter } from "./CategoriesFilter"
 import { LanguageFilter } from "./LanguageFilter"
+import { UserFilter } from "./UserFilter"
 
 export const TemplateFilters = () => {
   const { t } = useSiteTranslation()
@@ -20,6 +21,7 @@ export const TemplateFilters = () => {
       <Stack p="xs" gap="xs">
         <LanguageFilter />
         <CategoriesFilter />
+        <UserFilter />
       </Stack>
     </Paper>
   )
