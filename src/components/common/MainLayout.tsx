@@ -10,7 +10,7 @@ import { TallFooter } from "./TallFooter"
 interface MainLayoutProps {
   size?: "full" | MantineSize
   withoutAccountControl?: boolean
-  footerSize?: "small" | "tall"
+  footerSize?: "small" | "tall" | "none"
   backgroundImage?: boolean
   children: ReactNode
 }

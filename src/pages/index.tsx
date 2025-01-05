@@ -31,6 +31,10 @@ const HomePage: PageWithLayout = () => {
   )
 }
 
-HomePage.getLayout = (page: ReactElement) => <MainLayout backgroundImage>{page}</MainLayout>
+HomePage.getLayout = (page: ReactElement) => (
+  <MainLayout backgroundImage footerSize="none">
+    {page}
+  </MainLayout>
+)
 
 export default HomePage

@@ -40,6 +40,6 @@ const TemplatesPage: PageWithLayout = () => {
   )
 }
 
-TemplatesPage.getLayout = (page) => <MainLayout size="full">{page}</MainLayout>
+TemplatesPage.getLayout = (page) => <MainLayout size="xl">{page}</MainLayout>
 
 export default TemplatesPage
