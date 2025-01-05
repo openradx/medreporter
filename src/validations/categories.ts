@@ -1,7 +1,6 @@
 import { z } from "zod"
-import { PaginationSchema } from "./common"
 
-export const GetCategoriesSchema = PaginationSchema.extend({
+export const GetCategoriesSchema = z.object({
   language: z.string(),
-  filter: z.string().optional(),
+  prefix: z.string(),
 })

@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client"
 import {
   AUTHOR_ASC,
   AUTHOR_DESC,
@@ -14,7 +15,7 @@ export const templatesRouter = router({
   getTemplates: publicProcedure.input(GetTemplatesSchema).query(async ({ input }) => {
     const { categories, language, search, username, sorting, skip, take } = input
 
-    const where = {
+    const where: Prisma.TemplateWhereInput = {
       AND: categories.map((category) => ({
         categories: { some: { key: category } },
       })),
