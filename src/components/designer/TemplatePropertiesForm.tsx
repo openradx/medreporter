@@ -5,7 +5,7 @@ import copy from "fast-copy"
 import { FormProvider, useForm } from "react-hook-form"
 import { z } from "zod"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { templateNodeSchema } from "~/schemas/template"
+import { buildTemplateNodeSchema } from "~/schemas/template"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectTemplate, updateNode } from "~/state/templateSlice"
 import { InfoProperty } from "./properties/InfoProperty"
@@ -26,7 +26,7 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
   const { nodeId } = template
   const methods = useForm({
     mode: "all",
-    resolver: zodResolver(templateNodeSchema.omit({ nodeId: true, type: true })),
+    resolver: zodResolver(buildTemplateNodeSchema(t).omit({ nodeId: true, type: true })),
     defaultValues: template,
   })
 

@@ -1,3 +1,4 @@
+import { ReleaseStatus, Visibility } from "@prisma/client"
 import { createSlice } from "@reduxjs/toolkit"
 import copy from "fast-copy"
 import invariant from "tiny-invariant"
@@ -19,12 +20,10 @@ const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
 const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
   nodeId: createNodeId("template"),
-  name: "",
+  slug: "",
   title: "",
   language: "",
   description: "",
-  categories: [],
-  info: "",
   structure: {
     type: "Structure",
     nodeId: createNodeId("structure"),
@@ -42,6 +41,9 @@ const initialState = templateHistoryAdapter.getInitialState({
     nodeId: createNodeId("report"),
     children: [],
   },
+  visibility: Visibility.PRIVATE,
+  releaseStatus: ReleaseStatus.DRAFT,
+  categories: [],
 })
 
 const templateSlice = createSlice({
@@ -53,12 +55,11 @@ const templateSlice = createSlice({
     resetTemplate: templateHistoryAdapter.undoable<{}>((state) => {
       const resetState = copy(initialState.present)
       return Object.assign(resetState, {
-        name: state.name,
+        slug: state.slug,
         title: state.title,
         language: state.language,
         description: state.description,
         categories: state.categories,
-        info: state.info,
       })
     }),
     setTemplate: templateHistoryAdapter.undoable<TemplateNode>((state, action) => action.payload),
