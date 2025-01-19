@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Button, Flex } from "@mantine/core"
+import { Visibility, ReleaseStatus } from "@prisma/client"
 import appConfig from "app.config"
 import copy from "fast-copy"
 import { FormProvider, useForm } from "react-hook-form"
@@ -8,7 +9,6 @@ import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { buildTemplateNodeSchema } from "~/schemas/template"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectTemplate, updateNode } from "~/state/templateSlice"
-import { InfoProperty } from "./properties/InfoProperty"
 import { MultiSelectPropertyInput } from "./properties/MultiSelectPropertyInput"
 import { SelectPropertyInput } from "./properties/SelectPropertyInput"
 import { TextInputPropertyInput } from "./properties/TextInputPropertyInput"
@@ -43,8 +43,8 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <TextInputPropertyInput
-          name="name"
-          label={t("TemplatePropertiesForm.nameLabel")}
+          name="slug"
+          label={t("TemplatePropertiesForm.slugLabel")}
           required
         />
         <TextInputPropertyInput
@@ -79,13 +79,24 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
             })),
           }))}
         />
-        <InfoProperty />
+        <SelectPropertyInput
+          name="visibility"
+          label={t("TemplatePropertiesForm.visibilityLabel")}
+          data={Object.entries(Visibility).map(([value, label]) => ({
+            value,
+            label: t(`visibility.${label}`),
+          }))}
+        />
+        <SelectPropertyInput
+          name="releaseStatus"
+          label={t("TemplatePropertiesForm.releaseStatusLabel")}
+          data={Object.entries(ReleaseStatus).map(([value, label]) => ({
+            value,
+            label: t(`releaseStatus.${label}`),
+          }))}
+        />
         <Flex justify="center">
-          <Button
-            type="submit"
-            mt={16}
-            // TODO: disabled={!methods.formState.isValid} inside production
-          >
+          <Button type="submit" mt={16} disabled={!methods.formState.isValid}>
             {t("general.buttonClose")}
           </Button>
         </Flex>

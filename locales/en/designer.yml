@@ -176,8 +176,10 @@ TemplatePropertiesForm:
   categoriesLabel: Categories
   descriptionLabel: Description
   languageLabel: Language
-  nameLabel: Name
+  releaseStatusLabel: Release status
+  slugLabel: URL Slug
   titleLabel: Title
+  visibilityLabel: Visibility
 TemplatePropertiesModal:
   modalTitle: New Template - Properties
 TimeDefaultProperty:
