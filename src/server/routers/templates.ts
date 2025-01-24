@@ -1,5 +1,6 @@
 import { Prisma, Template } from "@prisma/client"
 import { InputJsonValue } from "@prisma/client/runtime/library"
+import { TRPCError } from "@trpc/server"
 import {
   AUTHOR_ASC,
   AUTHOR_DESC,
@@ -102,10 +103,22 @@ export const templatesRouter = router({
     return languages.map((lang) => lang.language)
   }),
 
-  createTemplate: authedProcedure
+  createOrUpdateTemplate: authedProcedure
     .input(buildTemplateNodeSchema())
     .mutation(async ({ input, ctx }) => {
       const { user } = ctx
+
+      if (input.id) {
+        const template = await prisma.template.findUnique({
+          where: {
+            id: input.id,
+            authorId: user.id,
+          },
+        })
+        if (!template) {
+          throw new TRPCError({ code: "UNAUTHORIZED" })
+        }
+      }
 
       const content: TemplateContent = {
         structure: input.structure,
@@ -113,8 +126,23 @@ export const templatesRouter = router({
       }
 
       try {
-        return await prisma.template.create({
-          data: {
+        return await prisma.template.upsert({
+          where: {
+            id: input.id,
+          },
+          update: {
+            slug: input.slug,
+            language: input.language,
+            title: input.title,
+            description: input.description,
+            document: content as unknown as InputJsonValue,
+            visibility: input.visibility,
+            releaseStatus: input.releaseStatus,
+            categories: {
+              set: input.categories.map((category) => ({ key: category })),
+            },
+          },
+          create: {
             slug: input.slug,
             language: input.language,
             title: input.title,
@@ -126,6 +154,9 @@ export const templatesRouter = router({
               connect: input.categories.map((category) => ({ key: category })),
             },
             authorId: user.id,
+          },
+          select: {
+            id: true,
           },
         })
       } catch (error) {

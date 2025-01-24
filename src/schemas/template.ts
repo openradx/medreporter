@@ -8,6 +8,7 @@ import { structureNodeSchema } from "./structure"
 export const buildTemplateNodeSchema = (t?: TFunction) =>
   nodeSchema.extend({
     type: z.literal("Template"),
+    id: z.literal("").or(z.string().cuid2()),
     slug: z
       .string()
       .trim()

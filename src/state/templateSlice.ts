@@ -1,5 +1,5 @@
 import { ReleaseStatus, Visibility } from "@prisma/client"
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import copy from "fast-copy"
 import invariant from "tiny-invariant"
 import { TemplateNode } from "~/schemas/template"
@@ -20,6 +20,7 @@ const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
 const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
   nodeId: createNodeId("template"),
+  id: "",
   slug: "",
   title: "",
   language: "",
@@ -55,6 +56,7 @@ const templateSlice = createSlice({
     resetTemplate: templateHistoryAdapter.undoable<{}>((state) => {
       const resetState = copy(initialState.present)
       return Object.assign(resetState, {
+        id: state.id,
         slug: state.slug,
         title: state.title,
         language: state.language,
@@ -63,6 +65,9 @@ const templateSlice = createSlice({
       })
     }),
     setTemplate: templateHistoryAdapter.undoable<TemplateNode>((state, action) => action.payload),
+    setId(state, action: PayloadAction<string>) {
+      state.present.id = action.payload
+    },
     addNode: templateHistoryAdapter.undoable<{
       node: AddableNode
       containerId: string
@@ -128,8 +133,17 @@ const templateSlice = createSlice({
   },
 })
 
-export const { undo, redo, resetTemplate, setTemplate, addNode, deleteNode, moveNode, updateNode } =
-  templateSlice.actions
+export const {
+  undo,
+  redo,
+  resetTemplate,
+  setTemplate,
+  setId,
+  addNode,
+  deleteNode,
+  moveNode,
+  updateNode,
+} = templateSlice.actions
 
 export default templateSlice.reducer
 

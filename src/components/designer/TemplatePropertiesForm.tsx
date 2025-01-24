@@ -36,7 +36,7 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
 
   const onSubmit = (changedValues: z.infer<S>) => {
     dispatch(updateNode({ nodeId, data: copy(changedValues) }, { undoable: false }))
-    methods.formState.isValid && onClose()
+    onClose()
   }
 
   return (

@@ -47,7 +47,7 @@ const MyApp = ({ Component, pageProps: { session, ...pageProps } }: MyAppProps) 
       </Head>
 
       <SessionProvider session={session}>
-        <Notifications />
+        <Notifications limit={3} />
         <ModalsProvider>{getLayout(<Component {...pageProps} />)}</ModalsProvider>
       </SessionProvider>
     </MantineProvider>

@@ -1,9 +1,10 @@
 import { configureStore, combineReducers, ThunkAction, Action } from "@reduxjs/toolkit"
-import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from "react-redux"
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
 import designerReducer from "./designerSlice"
 import displayReducer from "./displaySlice"
 import structureHistoryDataReducer from "./structureHistoryDataSlice"
 import structureLiveDataReducer from "./structureLiveDataSlice"
+import { templateMiddleware } from "./templateMiddleware"
 import templateReducer from "./templateSlice"
 
 const rootReducer = combineReducers({
@@ -20,6 +21,8 @@ export function initStore(preloadedState?: Partial<RootState>) {
   const store = configureStore({
     reducer: rootReducer,
     preloadedState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().prepend(templateMiddleware.middleware),
   })
 
   return store
@@ -30,6 +33,5 @@ export type AppDispatch = AppStore["dispatch"]
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
-export const useAppStore: () => AppStore = useStore
 
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action>

@@ -11,6 +11,7 @@ interface DisplayState {
   outputFormat: OutputFormat
   showFieldId: null | string
   structureDataModified: boolean
+  syncingState: "syncing" | "synced" | "error"
 }
 
 const initialState: DisplayState = {
@@ -18,6 +19,7 @@ const initialState: DisplayState = {
   outputFormat: "html",
   showFieldId: null,
   structureDataModified: false,
+  syncingState: "synced",
 }
 
 export const displaySlice = createSlice({
@@ -42,11 +44,19 @@ export const displaySlice = createSlice({
     setStructureDataModified(state, action: PayloadAction<boolean>) {
       state.structureDataModified = action.payload
     },
+    setSyncingState(state, action: PayloadAction<DisplayState["syncingState"]>) {
+      state.syncingState = action.payload
+    },
   },
 })
 
-export const { activateSection, setOutputFormat, showField, setStructureDataModified } =
-  displaySlice.actions
+export const {
+  activateSection,
+  setOutputFormat,
+  showField,
+  setStructureDataModified,
+  setSyncingState,
+} = displaySlice.actions
 
 export default displaySlice.reducer
 
@@ -57,3 +67,5 @@ export const selectOutputFormat = (state: RootState) => state.display.outputForm
 export const selectShowFieldId = (state: RootState) => state.display.showFieldId
 
 export const selectStructureDataModified = (state: RootState) => state.display.structureDataModified
+
+export const selectSyncingState = (state: RootState) => state.display.syncingState
