@@ -18,13 +18,14 @@ interface StructureProps {
 
 export const Structure = ({ actions, children }: StructureProps) => {
   const { t } = useSiteTranslation()
-  const matches = useMediaQuery("(min-width: 88em)")
+  const matches = useMediaQuery("(min-width: 68em)")
   const defaultValuesRef = useRef<StructureData>({})
 
   return (
     <Paper
       style={{
         width: matches ? "59%" : "100%",
+        height: matches ? "100%" : "50%",
         display: "flex",
         flexDirection: "column",
       }}
