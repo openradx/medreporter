@@ -1,7 +1,7 @@
 import { notifications } from "@mantine/notifications"
 import { createListenerMiddleware, isAnyOf } from "@reduxjs/toolkit"
 import { trpcVanilla } from "~/utils/trpc"
-import { setSyncingState } from "./displaySlice"
+import { appendLog, setSyncingState } from "./displaySlice"
 import { type AppDispatch, type RootState } from "./store"
 import {
   undo,
@@ -37,8 +37,23 @@ startAppListening({
         color: "red",
       })
       dispatch(setSyncingState("error"))
+      dispatch(
+        appendLog({
+          message: `Error: ${(error as Error).message}`,
+          level: "error",
+        })
+      )
     } finally {
-      if (!hasError) dispatch(setSyncingState("synced"))
+      if (!hasError)
+        dispatch(
+          setSyncingState("synced"),
+          dispatch(
+            appendLog({
+              message: `Saved template with Slug: ${currentState.template.present.slug}`,
+              level: "success",
+            })
+          )
+        )
     }
   },
 })

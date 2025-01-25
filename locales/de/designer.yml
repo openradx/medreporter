@@ -70,6 +70,9 @@ ListProperty:
   label: Liste
 LocationLabelProperty:
   label: Label Lokalisation
+LogModal:
+  emptyMessage: Noch keine Einträge
+  modalTitle: Synchronisierungsprotokoll
 MarkdownEditorButton:
   buttonTooltip: Markdown Editor
 MarkdownEditorModal:
@@ -170,6 +173,8 @@ SvgEditorModal:
   modalTitle: SVG-Editor
   editorLabel: Editor
   previewLabel: Vorschau
+SyncingStateDisplay:
+  title: Öffne das Synchronisierungsprotokoll
 TemplatePropertiesButton:
   title: Vorlageneigenschaften
 TemplatePropertiesForm:

@@ -6,12 +6,19 @@ export const outputFormatSchema = z.enum(["html", "plain"])
 
 export type OutputFormat = z.infer<typeof outputFormatSchema>
 
+interface LogMessage {
+  message: string
+  level: "info" | "error" | "success"
+  timestamp: number
+}
+
 interface DisplayState {
   activeSectionId: null | string
   outputFormat: OutputFormat
   showFieldId: null | string
   structureDataModified: boolean
   syncingState: "syncing" | "synced" | "error"
+  log: LogMessage[]
 }
 
 const initialState: DisplayState = {
@@ -20,6 +27,7 @@ const initialState: DisplayState = {
   showFieldId: null,
   structureDataModified: false,
   syncingState: "synced",
+  log: [],
 }
 
 export const displaySlice = createSlice({
@@ -47,6 +55,18 @@ export const displaySlice = createSlice({
     setSyncingState(state, action: PayloadAction<DisplayState["syncingState"]>) {
       state.syncingState = action.payload
     },
+    appendLog(
+      state,
+      action: PayloadAction<{ message: string; level: "info" | "error" | "success" }>
+    ) {
+      const timestamp = Date.now()
+      if (state.log.length > 100) {
+        state.log.push({ ...action.payload, timestamp })
+        state.log.shift()
+      } else {
+        state.log.push({ ...action.payload, timestamp })
+      }
+    },
   },
 })
 
@@ -56,6 +76,7 @@ export const {
   showField,
   setStructureDataModified,
   setSyncingState,
+  appendLog,
 } = displaySlice.actions
 
 export default displaySlice.reducer
@@ -69,3 +90,5 @@ export const selectShowFieldId = (state: RootState) => state.display.showFieldId
 export const selectStructureDataModified = (state: RootState) => state.display.structureDataModified
 
 export const selectSyncingState = (state: RootState) => state.display.syncingState
+
+export const selectLog = (state: RootState) => state.display.log
