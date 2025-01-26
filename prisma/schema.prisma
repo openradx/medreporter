@@ -113,7 +113,7 @@ enum Visibility {
 enum ReleaseStatus {
   DRAFT
   PUBLISHED
-  DEPRECIATED
+  DEPRECATED
 }
 
 model Template {

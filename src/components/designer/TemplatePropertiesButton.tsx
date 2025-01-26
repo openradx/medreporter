@@ -15,6 +15,7 @@ export const TemplatePropertiesButton = () => {
         variant="default"
         onClick={open}
         aria-label="Open template properties modal"
+        size="md"
       >
         <TemplatePropertiesIcon size={20} />
       </ActionIcon>

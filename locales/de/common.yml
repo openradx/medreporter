@@ -30,6 +30,14 @@ languages:
   nl: Holländisch
   pt: Portugiesisch
   sv: Schwedisch
+releaseStatus:
+  DRAFT: Entwurf
+  PUBLISHED: Veröffentlicht
+  DEPRECATED: Veraltet
+visibility:
+  PRIVATE: Privat
+  INSTITUTE: Institut
+  PUBLIC: Öffentlich
 AccountControl:
   menuTitleAccout: Benutzerkonto
   optionProfile: Benutzerprofil
@@ -237,8 +245,3 @@ UndoButton:
 UserFilter:
   inputLabel: Autor
   inputPlaceholder: Nach Templateautor filtern
-VisibilitySelector:
-  inputLabelVisibility: Sichtbarkeit
-  optionPublic: Öffentlich
-  optionInstitute: Institut
-  optionPrivate: Privat

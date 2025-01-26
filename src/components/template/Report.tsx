@@ -21,12 +21,13 @@ interface ReportProps {
 export const Report = ({ actions, children, isDesigning = false }: ReportProps) => {
   const { t } = useSiteTranslation()
   const outputFormat = useAppSelector(selectOutputFormat)
-  const matches = useMediaQuery("(min-width: 88em)")
+  const matches = useMediaQuery("(min-width: 68em)")
 
   return (
     <Paper
       style={{
         width: matches ? "40%" : "100%",
+        height: matches ? "100%" : "49%",
         display: "flex",
         flexDirection: "column",
       }}

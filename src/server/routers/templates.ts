@@ -1,4 +1,6 @@
-import { Prisma } from "@prisma/client"
+import { Prisma, Template } from "@prisma/client"
+import { InputJsonValue } from "@prisma/client/runtime/library"
+import { TRPCError } from "@trpc/server"
 import {
   AUTHOR_ASC,
   AUTHOR_DESC,
@@ -7,9 +9,18 @@ import {
   TITLE_ASC,
   TITLE_DESC,
 } from "~/constants/sorting-options"
+import { ReportNode } from "~/schemas/report"
+import { StructureNode } from "~/schemas/structure"
+import { buildTemplateNodeSchema } from "~/schemas/template"
+import { checkUniqueConstraint } from "~/utils/constraints"
 import { GetTemplatesSchema } from "~/validations/templates"
 import { prisma } from "../prisma"
-import { publicProcedure, router } from "../trpc"
+import { authedProcedure, publicProcedure, router } from "../trpc"
+
+interface TemplateContent {
+  structure: StructureNode
+  report: ReportNode
+}
 
 export const templatesRouter = router({
   getTemplates: publicProcedure.input(GetTemplatesSchema).query(async ({ input }) => {
@@ -91,4 +102,66 @@ export const templatesRouter = router({
 
     return languages.map((lang) => lang.language)
   }),
+
+  createOrUpdateTemplate: authedProcedure
+    .input(buildTemplateNodeSchema())
+    .mutation(async ({ input, ctx }) => {
+      const { user } = ctx
+
+      if (input.id) {
+        const template = await prisma.template.findUnique({
+          where: {
+            id: input.id,
+            authorId: user.id,
+          },
+        })
+        if (!template) {
+          throw new TRPCError({ code: "UNAUTHORIZED" })
+        }
+      }
+
+      const content: TemplateContent = {
+        structure: input.structure,
+        report: input.report,
+      }
+
+      try {
+        return await prisma.template.upsert({
+          where: {
+            id: input.id,
+          },
+          update: {
+            slug: input.slug,
+            language: input.language,
+            title: input.title,
+            description: input.description,
+            document: content as unknown as InputJsonValue,
+            visibility: input.visibility,
+            releaseStatus: input.releaseStatus,
+            categories: {
+              set: input.categories.map((category) => ({ key: category })),
+            },
+          },
+          create: {
+            slug: input.slug,
+            language: input.language,
+            title: input.title,
+            description: input.description,
+            document: content as unknown as InputJsonValue,
+            visibility: input.visibility,
+            releaseStatus: input.releaseStatus,
+            categories: {
+              connect: input.categories.map((category) => ({ key: category })),
+            },
+            authorId: user.id,
+          },
+          select: {
+            id: true,
+          },
+        })
+      } catch (error) {
+        checkUniqueConstraint<Template>(error, ["authorId", "slug"])
+        throw error
+      }
+    }),
 })

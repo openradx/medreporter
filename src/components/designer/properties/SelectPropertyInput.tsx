@@ -7,9 +7,18 @@ interface SelectPropertyInputProps {
   label: string
   data: Option[]
   required?: boolean
+  clearable?: boolean
+  allowDeselect?: boolean
 }
 
-export const SelectPropertyInput = ({ name, label, data, required }: SelectPropertyInputProps) => (
+export const SelectPropertyInput = ({
+  name,
+  label,
+  data,
+  required,
+  clearable,
+  allowDeselect,
+}: SelectPropertyInputProps) => (
   <Controller
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (
@@ -20,7 +29,8 @@ export const SelectPropertyInput = ({ name, label, data, required }: SelectPrope
         onChange={onChange}
         error={error?.message}
         searchable
-        clearable
+        clearable={clearable}
+        allowDeselect={allowDeselect}
         maxDropdownHeight={100}
         required={required}
       />

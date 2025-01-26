@@ -6,7 +6,6 @@ import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { ClearAllButton } from "../designer/ClearAllButton"
 import { RedoButton } from "../designer/RedoButton"
-import { TemplatePropertiesButton } from "../designer/TemplatePropertiesButton"
 import { UndoButton } from "../designer/UndoButton"
 import { Structure } from "../template/Structure"
 import { SectionAdapter } from "./SectionAdapter"
@@ -26,7 +25,6 @@ export const StructureAdapter = ({ node }: StructureAdapterProps) => {
         <ClearAllButton />
         <UndoButton />
         <RedoButton />
-        <TemplatePropertiesButton />
       </ActionsGroup>
     )
   }
