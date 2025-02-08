@@ -15,7 +15,7 @@ export const AdrenalMriTemplate = () => {
   }[currentLanguage]
 
   return (
-    <Template title={t("AdrenalMri.toolTitle")} name="adrenalmri" info={toolInfo}>
+    <Template slug="adrenalmri" title={t("AdrenalMri.toolTitle")} info={toolInfo}>
       <AdrenalMriStructure />
       <AdrenalMriReport />
     </Template>

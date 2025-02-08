@@ -69,6 +69,8 @@ EditFigurePage:
   pageTitle: Edit figure
 EditModulePage:
   pageTitle: Edit module
+EditTemplateButton:
+  title: Edit template
 ExternalLink:
   buttonExternalLink: Open external link
 FieldGraphics:

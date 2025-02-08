@@ -9,18 +9,11 @@ import {
   TITLE_ASC,
   TITLE_DESC,
 } from "~/constants/sorting-options"
-import { ReportNode } from "~/schemas/report"
-import { StructureNode } from "~/schemas/structure"
 import { buildTemplateNodeSchema } from "~/schemas/template"
 import { checkUniqueConstraint } from "~/utils/constraints"
 import { GetTemplatesSchema } from "~/validations/templates"
 import { prisma } from "../prisma"
 import { authedProcedure, publicProcedure, router } from "../trpc"
-
-interface TemplateContent {
-  structure: StructureNode
-  report: ReportNode
-}
 
 export const templatesRouter = router({
   getTemplates: publicProcedure.input(GetTemplatesSchema).query(async ({ input }) => {
@@ -120,11 +113,6 @@ export const templatesRouter = router({
         }
       }
 
-      const content: TemplateContent = {
-        structure: input.structure,
-        report: input.report,
-      }
-
       try {
         return await prisma.template.upsert({
           where: {
@@ -135,7 +123,7 @@ export const templatesRouter = router({
             language: input.language,
             title: input.title,
             description: input.description,
-            document: content as unknown as InputJsonValue,
+            document: input as unknown as InputJsonValue,
             visibility: input.visibility,
             releaseStatus: input.releaseStatus,
             categories: {
@@ -147,7 +135,7 @@ export const templatesRouter = router({
             language: input.language,
             title: input.title,
             description: input.description,
-            document: content as unknown as InputJsonValue,
+            document: input as unknown as InputJsonValue,
             visibility: input.visibility,
             releaseStatus: input.releaseStatus,
             categories: {

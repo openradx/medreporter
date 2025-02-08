@@ -69,6 +69,8 @@ EditFigurePage:
   pageTitle: Abbildung editieren
 EditModulePage:
   pageTitle: Modul editieren
+EditTemplateButton:
+  title: Template editieren
 ExternalLink:
   buttonExternalLink: Externen Link öffnen
 FieldGraphics:

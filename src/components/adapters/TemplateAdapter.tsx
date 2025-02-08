@@ -11,8 +11,8 @@ interface TemplateAdapterProps {
 export const TemplateAdapter = ({ node }: TemplateAdapterProps) => (
   <InterpreterProvider>
     <Template
+      slug={node.slug}
       title={node.title}
-      name={node.slug}
       description={node.description}
       categories={node.categories}
       language={node.language}
