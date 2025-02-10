@@ -1,6 +1,6 @@
 import { Divider, Group } from "@mantine/core"
 import { NavbarCenter } from "../common/NavbarCenter"
-import { EditTemplateButton } from "./EditTemplateButton"
+import { ToggleEditModeButton } from "./ToggleEditModeButton"
 
 interface TemplateNavbarCenterProps {
   title: string
@@ -14,7 +14,7 @@ export const TemplateNavbarCenter = ({ title, isOwnTemplate }: TemplateNavbarCen
       {isOwnTemplate && (
         <>
           <Divider orientation="vertical" size="sm" />
-          <EditTemplateButton />
+          <ToggleEditModeButton />
         </>
       )}
     </Group>

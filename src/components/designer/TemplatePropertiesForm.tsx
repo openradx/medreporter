@@ -3,9 +3,11 @@ import { Button, Flex } from "@mantine/core"
 import { Visibility, ReleaseStatus } from "@prisma/client"
 import appConfig from "app.config"
 import copy from "fast-copy"
+import { useRouter } from "next/router"
 import { FormProvider, useForm } from "react-hook-form"
 import { z } from "zod"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useUser } from "~/hooks/useUser"
 import { buildTemplateNodeSchema } from "~/schemas/template"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectTemplate, updateNode } from "~/state/templateSlice"
@@ -32,10 +34,20 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
 
   const dispatch = useAppDispatch()
 
+  const router = useRouter()
+  const user = useUser()
+
   const { handleSubmit } = methods
 
   const onSubmit = (changedValues: z.infer<S>) => {
     dispatch(updateNode({ nodeId, data: copy(changedValues) }, { undoable: false }))
+
+    const { username } = user!
+    if (!username) throw new Error("User must be logged in to create a template.")
+    const slug = changedValues.slug as string
+    const newPath = `/templates/${username}/${slug}` as any
+    router.replace({ pathname: newPath, query: { edit: "true" } }, undefined, { shallow: true })
+
     onClose()
   }
 

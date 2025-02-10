@@ -186,7 +186,7 @@ TemplatePropertiesForm:
   titleLabel: Title
   visibilityLabel: Visibility
 TemplatePropertiesModal:
-  modalTitle: New Template - Properties
+  modalTitle: Template Properties
 TimeDefaultProperty:
   label: Default
 TitleProperty:

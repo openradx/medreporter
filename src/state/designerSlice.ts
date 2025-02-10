@@ -20,20 +20,15 @@ export const designerSlice = createSlice({
     refreshMenu(state) {
       state.menuTimestamp = Date.now()
     },
-    setPreview(state, action: PayloadAction<boolean>) {
-      state.preview = action.payload
-    },
     setSelectedItem(state, action: PayloadAction<string | null>) {
       state.selectedItem = action.payload
     },
   },
 })
 
-export const { refreshMenu, setPreview, setSelectedItem } = designerSlice.actions
+export const { refreshMenu, setSelectedItem } = designerSlice.actions
 
 export default designerSlice.reducer
-
-export const selectPreview = (state: RootState) => state.designer.preview
 
 export const selectMenuTimestamp = (state: RootState) => state.designer.menuTimestamp
 

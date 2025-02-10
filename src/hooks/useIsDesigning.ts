@@ -1,10 +1,14 @@
-import { useDesigner } from "~/contexts/DesignerContext"
-import { selectPreview } from "~/state/designerSlice"
-import { useAppSelector } from "~/state/store"
+import { useRouter } from "next/router"
 
 export const useIsDesigning = () => {
-  const designer = useDesigner()
-  const preview = useAppSelector(selectPreview)
+  const router = useRouter()
+  const { pathname, query } = router
 
-  return designer?.isInsideDesigner && !preview
+  const isEditTemplateQuery = typeof query.edit === "string" && query.edit.toLowerCase() === "true"
+  const isNewTemplatePath = pathname === "/templates/new"
+
+  if (isEditTemplateQuery || isNewTemplatePath) {
+    return true
+  }
+  return false
 }

@@ -69,8 +69,6 @@ EditFigurePage:
   pageTitle: Abbildung editieren
 EditModulePage:
   pageTitle: Modul editieren
-EditTemplateButton:
-  title: Template editieren
 ExternalLink:
   buttonExternalLink: Externen Link öffnen
 FieldGraphics:
@@ -242,6 +240,9 @@ TemplatesSorting:
   optionCreatedAsc: Älteste zuerst
   optionTitleAsc: Titel (aufsteigend)
   optionTitleDesc: Titel (absteigend)
+ToggleEditModeButton:
+  titleEdit: Vorlage bearbeiten
+  titleStop: Bearbeitung beenden
 UndoButton:
   title: Rückgängig machen
 UserFilter:

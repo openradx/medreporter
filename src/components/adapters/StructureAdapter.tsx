@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { useDesigner } from "~/contexts/DesignerContext"
+import { useIsDesigning } from "~/hooks/useIsDesigning"
 import { StructureNode } from "~/schemas/structure"
 import { selectActiveSectionId } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
@@ -15,11 +15,11 @@ interface StructureAdapterProps {
 }
 
 export const StructureAdapter = ({ node }: StructureAdapterProps) => {
-  const designer = useDesigner()
+  const isDesigning = useIsDesigning()
   const activeSectionId = useAppSelector(selectActiveSectionId)
 
   let actions: ReactNode | undefined
-  if (designer?.isInsideDesigner) {
+  if (isDesigning) {
     actions = (
       <ActionsGroup grow>
         <ClearAllButton />
