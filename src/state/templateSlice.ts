@@ -17,7 +17,7 @@ type TemplateState = TemplateNode
 
 const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
 
-export const createEmptyTemplate = (): TemplateNode => ({
+const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
   nodeId: createNodeId("template"),
   id: "",
@@ -46,8 +46,6 @@ export const createEmptyTemplate = (): TemplateNode => ({
   releaseStatus: ReleaseStatus.DRAFT,
   categories: [],
 })
-
-const initialState = templateHistoryAdapter.getInitialState(createEmptyTemplate())
 
 const templateSlice = createSlice({
   name: "template",

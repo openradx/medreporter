@@ -6,9 +6,9 @@ import { useRouter } from "next/router"
 import { FormProvider, useForm } from "react-hook-form"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
-import { buildTemplateNodeSchema } from "~/schemas/template"
+import { buildTemplateNodeSchema, TemplateNode } from "~/schemas/template"
 import { useAppSelector } from "~/state/store"
-import { createEmptyTemplate, selectTemplate } from "~/state/templateSlice"
+import { selectTemplate } from "~/state/templateSlice"
 import { trpc } from "~/utils/trpc"
 import { MultiSelectPropertyInput } from "./properties/MultiSelectPropertyInput"
 import { SelectPropertyInput } from "./properties/SelectPropertyInput"
@@ -42,15 +42,16 @@ export const NewTemplate = () => {
   const createTemplateMutation = trpc.templates.createTemplate.useMutation()
 
   const onSubmit = (changedValues: FormValues) => {
-    const newTemplate = createEmptyTemplate()
-    newTemplate.id = "" as const
-    newTemplate.slug = changedValues.slug
-    newTemplate.title = changedValues.title
-    newTemplate.language = changedValues.language
-    newTemplate.description = changedValues.description
-    newTemplate.visibility = changedValues.visibility
-    newTemplate.releaseStatus = changedValues.releaseStatus
-    newTemplate.categories = changedValues.categories
+    const newTemplate: TemplateNode = {
+      ...template,
+      slug: changedValues.slug,
+      title: changedValues.title,
+      language: changedValues.language,
+      description: changedValues.description,
+      visibility: changedValues.visibility,
+      releaseStatus: changedValues.releaseStatus,
+      categories: changedValues.categories,
+    }
     createTemplateMutation.mutate(newTemplate, {
       onSuccess: () => {
         const { username } = user!
