@@ -96,15 +96,47 @@ export const templatesRouter = router({
     return languages.map((lang) => lang.language)
   }),
 
-  createOrUpdateTemplate: authedProcedure
+  createTemplate: authedProcedure
     .input(buildTemplateNodeSchema())
     .mutation(async ({ input, ctx }) => {
       const { user } = ctx
+      const { id: _, ...document } = input
 
-      if (input.id) {
+      try {
+        return await prisma.template.create({
+          data: {
+            slug: input.slug,
+            language: input.language,
+            title: input.title,
+            description: input.description,
+            document: document as unknown as InputJsonValue,
+            visibility: input.visibility,
+            releaseStatus: input.releaseStatus,
+            categories: {
+              connect: input.categories.map((category) => ({ key: category })),
+            },
+            authorId: user.id,
+          },
+          select: {
+            id: true,
+          },
+        })
+      } catch (error) {
+        checkUniqueConstraint<Template>(error, ["authorId", "slug"])
+        throw error
+      }
+    }),
+
+  updateTemplate: authedProcedure
+    .input(buildTemplateNodeSchema())
+    .mutation(async ({ input, ctx }) => {
+      const { user } = ctx
+      const { id, ...document } = input
+
+      if (id) {
         const template = await prisma.template.findUnique({
           where: {
-            id: input.id,
+            id,
             authorId: user.id,
           },
         })
@@ -114,34 +146,21 @@ export const templatesRouter = router({
       }
 
       try {
-        return await prisma.template.upsert({
+        return await prisma.template.update({
           where: {
-            id: input.id,
+            id,
           },
-          update: {
+          data: {
             slug: input.slug,
             language: input.language,
             title: input.title,
             description: input.description,
-            document: input as unknown as InputJsonValue,
+            document: document as unknown as InputJsonValue,
             visibility: input.visibility,
             releaseStatus: input.releaseStatus,
             categories: {
               set: input.categories.map((category) => ({ key: category })),
             },
-          },
-          create: {
-            slug: input.slug,
-            language: input.language,
-            title: input.title,
-            description: input.description,
-            document: input as unknown as InputJsonValue,
-            visibility: input.visibility,
-            releaseStatus: input.releaseStatus,
-            categories: {
-              connect: input.categories.map((category) => ({ key: category })),
-            },
-            authorId: user.id,
           },
           select: {
             id: true,

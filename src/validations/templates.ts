@@ -1,15 +1,5 @@
-import { ReleaseStatus, Visibility } from "@prisma/client"
 import { z } from "zod"
 import { PaginationSchema } from "./common"
-
-// TODO: allow to update locale and maybe name
-export const UpdateTemplateSchema = z.object({
-  id: z.string(),
-  document: z.any(), // TODO: add proper schema
-  tags: z.string().array().optional(),
-  visibility: z.nativeEnum(Visibility).optional(),
-  releaseStatus: z.nativeEnum(ReleaseStatus).optional(),
-})
 
 export const FetchOwnTemplateSchema = z.object({
   slug: z.string(),

@@ -17,7 +17,7 @@ type TemplateState = TemplateNode
 
 const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
 
-const initialState = templateHistoryAdapter.getInitialState({
+export const createEmptyTemplate = (): TemplateNode => ({
   type: "Template",
   nodeId: createNodeId("template"),
   id: "",
@@ -47,6 +47,8 @@ const initialState = templateHistoryAdapter.getInitialState({
   categories: [],
 })
 
+const initialState = templateHistoryAdapter.getInitialState(createEmptyTemplate())
+
 const templateSlice = createSlice({
   name: "template",
   initialState,
@@ -64,7 +66,6 @@ const templateSlice = createSlice({
         categories: state.categories,
       })
     }),
-    setTemplate: templateHistoryAdapter.undoable<TemplateNode>((state, action) => action.payload),
     setId(state, action: PayloadAction<string>) {
       state.present.id = action.payload
     },
@@ -133,17 +134,8 @@ const templateSlice = createSlice({
   },
 })
 
-export const {
-  undo,
-  redo,
-  resetTemplate,
-  setTemplate,
-  setId,
-  addNode,
-  deleteNode,
-  moveNode,
-  updateNode,
-} = templateSlice.actions
+export const { undo, redo, resetTemplate, setId, addNode, deleteNode, moveNode, updateNode } =
+  templateSlice.actions
 
 export default templateSlice.reducer
 

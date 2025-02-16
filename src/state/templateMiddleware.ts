@@ -11,7 +11,6 @@ import {
   deleteNode,
   moveNode,
   updateNode,
-  setId,
 } from "./templateSlice"
 
 export const templateMiddleware = createListenerMiddleware()
@@ -22,13 +21,16 @@ startAppListening({
     const currentState = listenerApi.getState()
     const { dispatch } = listenerApi
 
+    // This middleware is only executed for already existing templates.
+    // New templates are created directly in NewTemplate component.
+    if (!currentState.template.present.id) {
+      throw new Error("Missing template id in template middleware.")
+    }
+
     let hasError = false
     try {
       dispatch(setSyncingState("syncing"))
-      const { id } = await trpcVanilla.templates.createOrUpdateTemplate.mutate(
-        currentState.template.present
-      )
-      dispatch(setId(id))
+      await trpcVanilla.templates.updateTemplate.mutate(currentState.template.present)
     } catch (error) {
       hasError = true
       notifications.show({
