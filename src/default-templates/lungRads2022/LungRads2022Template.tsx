@@ -15,7 +15,7 @@ export const LungRads2022Template = () => {
   }[currentLanguage]
 
   return (
-    <Template title={t("LungRads2022.toolTitle")} name="lungrads2022" info={toolInfo}>
+    <Template slug="lungrads2022" title={t("LungRads2022.toolTitle")} info={toolInfo}>
       <LungRads2022Structure />
       <LungRads2022Report />
     </Template>

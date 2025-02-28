@@ -3,7 +3,7 @@ import { SandboxReport } from "./SandboxReport"
 import { SandboxStructure } from "./SandboxStructure"
 
 export const SandboxTemplate = () => (
-  <Template title="Sandbox" name="sandbox">
+  <Template slug="sandbox" title="Sandbox">
     <SandboxStructure />
     <SandboxReport />
   </Template>

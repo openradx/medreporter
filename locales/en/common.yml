@@ -240,6 +240,9 @@ TemplatesSorting:
   optionCreatedDesc: Newest first
   optionTitleAsc: Title (A-Z)
   optionTitleDesc: Title (Z-A)
+ToggleEditModeButton:
+  titleEdit: Edit template
+  titleStop: Stop editing
 UndoButton:
   title: Undo
 UserFilter:

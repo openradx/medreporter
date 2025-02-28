@@ -179,6 +179,7 @@ TemplatePropertiesButton:
   title: Template Properties
 TemplatePropertiesForm:
   categoriesLabel: Categories
+  createButtonLabel: Create template
   descriptionLabel: Description
   languageLabel: Language
   releaseStatusLabel: Release status
@@ -186,7 +187,7 @@ TemplatePropertiesForm:
   titleLabel: Title
   visibilityLabel: Visibility
 TemplatePropertiesModal:
-  modalTitle: New Template - Properties
+  modalTitle: Template Properties
 TimeDefaultProperty:
   label: Default
 TitleProperty:

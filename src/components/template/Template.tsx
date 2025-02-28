@@ -3,8 +3,8 @@ import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 
 interface TemplateProps {
+  slug: string
   title: string
-  name: string
   description?: string
   categories?: string[]
   language?: string

@@ -98,6 +98,8 @@
 
 ## Julia
 
+- name -> slug
+- tool title
 - Layout:
   -- direction in Finding
   -- two layers of containers: finding > group or group > group

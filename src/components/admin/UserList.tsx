@@ -33,7 +33,7 @@ export const UserList = () => {
   }
 
   return (
-    <Stack>
+    <Stack h="90%" mih={0}>
       {!data?.users.length && <Text>{t("general.miscNoData")}</Text>}
       {data?.users.length && (
         <ScrollArea>
@@ -45,7 +45,7 @@ export const UserList = () => {
                   <Table.Td>{user.email}</Table.Td>
                   <Table.Td>{user.role}</Table.Td>
                   <Table.Td>
-                    <Group gap={0} justify="flex-end">
+                    <Group gap={0} style={{ flexWrap: "nowrap", justifyContent: "flex-end" }}>
                       <EditUserButton user={user} />
                       <DeleteUserButton user={user} />
                     </Group>

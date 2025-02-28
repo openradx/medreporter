@@ -15,7 +15,7 @@ export const AdrenalWashoutTemplate = () => {
   }[currentLanguage]
 
   return (
-    <Template title={t("AdrenalWashout.toolTitle")} name="adrenalwashout" info={toolInfo}>
+    <Template slug="adrenalwashout" title={t("AdrenalWashout.toolTitle")} info={toolInfo}>
       <AdrenalWashoutStructure />
       <AdrenalWashoutReport />
     </Template>

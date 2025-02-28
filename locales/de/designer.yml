@@ -179,6 +179,7 @@ TemplatePropertiesButton:
   title: Vorlageneigenschaften
 TemplatePropertiesForm:
   categoriesLabel: Kategorien
+  createButtonLabel: Template erstellen
   descriptionLabel: Beschreibung
   languageLabel: Sprache
   releaseStatusLabel: Veröffentlichungsstatus
@@ -186,7 +187,7 @@ TemplatePropertiesForm:
   titleLabel: Title
   visibilityLabel: Sichtbarkeit
 TemplatePropertiesModal:
-  modalTitle: Neue Vorlage - Eigenschaften
+  modalTitle: Vorlageneigenschaften
 TimeDefaultProperty:
   label: Default
 TitleProperty:
