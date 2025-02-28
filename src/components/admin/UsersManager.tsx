@@ -9,7 +9,7 @@ export const UsersManager = () => {
 
   return (
     <FilterProvider>
-      <Stack>
+      <Stack h="95%" mih={0}>
         <FilterInput label={t("UsersManager.inputLabelFilterUsers")} />
         <UserList />
       </Stack>

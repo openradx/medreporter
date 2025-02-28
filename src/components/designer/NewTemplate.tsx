@@ -1,8 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Button, Flex } from "@mantine/core"
+import { Button, Container, Flex, ScrollArea } from "@mantine/core"
 import { ReleaseStatus, Visibility } from "@prisma/client"
 import appConfig from "app.config"
 import { useRouter } from "next/router"
+import { useRef } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
@@ -41,7 +42,9 @@ export const NewTemplate = () => {
 
   const createTemplateMutation = trpc.templates.createTemplate.useMutation()
 
+  const isMutationLoadingRef = useRef(false)
   const onSubmit = (changedValues: FormValues) => {
+    isMutationLoadingRef.current = true
     const newTemplate: TemplateNode = {
       ...template,
       slug: changedValues.slug,
@@ -65,67 +68,77 @@ export const NewTemplate = () => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <TextInputPropertyInput
-          name="slug"
-          label={t("TemplatePropertiesForm.slugLabel")}
-          required
-        />
-        <TextInputPropertyInput
-          name="title"
-          label={t("TemplatePropertiesForm.titleLabel")}
-          required
-        />
-        <SelectPropertyInput
-          name="language"
-          label={t("TemplatePropertiesForm.languageLabel")}
-          data={appConfig.supportedTemplateLanguages.map((language) => ({
-            value: language,
-            label: t(`languages.${language}`),
-          }))}
-          required
-        />
-        <TextareaPropertyInput
-          name="description"
-          label={t("TemplatePropertiesForm.descriptionLabel")}
-          autosize
-          minRows={4}
-          maxRows={4}
-        />
-        <MultiSelectPropertyInput
-          name="categories"
-          label={t("TemplatePropertiesForm.categoriesLabel")}
-          data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
-            group: t(`categories.group.${group}`),
-            items: categories.map((category) => ({
-              value: category,
-              label: t(`categories.${category}`),
-            })),
-          }))}
-        />
-        <SelectPropertyInput
-          name="visibility"
-          label={t("TemplatePropertiesForm.visibilityLabel")}
-          data={Object.entries(Visibility).map(([value, label]) => ({
-            value,
-            label: t(`visibility.${label}`),
-          }))}
-        />
-        <SelectPropertyInput
-          name="releaseStatus"
-          label={t("TemplatePropertiesForm.releaseStatusLabel")}
-          data={Object.entries(ReleaseStatus).map(([value, label]) => ({
-            value,
-            label: t(`releaseStatus.${label}`),
-          }))}
-        />
+      <Container size="xs" h="100%" mih={0}>
+        <ScrollArea h="100%" mih={0}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <TextInputPropertyInput
+              name="slug"
+              label={t("TemplatePropertiesForm.slugLabel")}
+              required
+            />
+            <TextInputPropertyInput
+              name="title"
+              label={t("TemplatePropertiesForm.titleLabel")}
+              required
+            />
+            <SelectPropertyInput
+              name="language"
+              label={t("TemplatePropertiesForm.languageLabel")}
+              data={appConfig.supportedTemplateLanguages.map((language) => ({
+                value: language,
+                label: t(`languages.${language}`),
+              }))}
+              required
+            />
+            <TextareaPropertyInput
+              name="description"
+              label={t("TemplatePropertiesForm.descriptionLabel")}
+              autosize
+              minRows={6}
+              maxRows={6}
+            />
+            <MultiSelectPropertyInput
+              name="categories"
+              label={t("TemplatePropertiesForm.categoriesLabel")}
+              data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
+                group: t(`categories.group.${group}`),
+                items: categories.map((category) => ({
+                  value: category,
+                  label: t(`categories.${category}`),
+                })),
+              }))}
+            />
+            <SelectPropertyInput
+              name="visibility"
+              label={t("TemplatePropertiesForm.visibilityLabel")}
+              data={Object.entries(Visibility).map(([value, label]) => ({
+                value,
+                label: t(`visibility.${label}`),
+              }))}
+            />
+            <SelectPropertyInput
+              name="releaseStatus"
+              label={t("TemplatePropertiesForm.releaseStatusLabel")}
+              data={Object.entries(ReleaseStatus).map(([value, label]) => ({
+                value,
+                label: t(`releaseStatus.${label}`),
+              }))}
+            />
 
-        <Flex justify="center">
-          <Button type="submit" mt={16} disabled={!methods.formState.isValid}>
-            {t("general.buttonClose")}
-          </Button>
-        </Flex>
-      </form>
+            <Flex justify="center">
+              <Button
+                type="submit"
+                variant="light"
+                mt={16}
+                disabled={!methods.formState.isValid}
+                loading={isMutationLoadingRef.current}
+              >
+                {t("TemplatePropertiesForm.createButtonLabel")}
+              </Button>
+            </Flex>
+          </form>
+        </ScrollArea>
+      </Container>
     </FormProvider>
   )
 }

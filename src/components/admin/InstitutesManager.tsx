@@ -9,7 +9,7 @@ export const InstitutesManager = () => {
 
   return (
     <FilterProvider>
-      <Stack>
+      <Stack h="95%" mih={0}>
         <FilterInput label={t("InstitutesManager.inputLabelFilterInstitutes")} />
         <InstituteList />
       </Stack>

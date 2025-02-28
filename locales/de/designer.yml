@@ -179,6 +179,7 @@ TemplatePropertiesButton:
   title: Vorlageneigenschaften
 TemplatePropertiesForm:
   categoriesLabel: Kategorien
+  createButtonLabel: Template erstellen
   descriptionLabel: Beschreibung
   languageLabel: Sprache
   releaseStatusLabel: Veröffentlichungsstatus

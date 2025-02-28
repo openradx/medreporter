@@ -40,17 +40,17 @@ export const InstituteList = () => {
   }
 
   return (
-    <Stack>
+    <Stack h="90%" mih={0}>
       {!data?.institutes.length && <Text>{t("general.miscNoData")}</Text>}
       {data?.institutes.length && (
         <ScrollArea>
-          <Table miw={800}>
+          <Table miw={500}>
             <Table.Tbody>
               {data.institutes.map((institute) => (
                 <Table.Tr key={institute.id}>
                   <Table.Td>{institute.name}</Table.Td>
                   <Table.Td>
-                    <Group gap={0} justify="flex-end">
+                    <Group gap={0} style={{ flexWrap: "nowrap", justifyContent: "flex-end" }}>
                       <ManageMembershipsButton institute={institute} />
                       <EditInstituteButton institute={institute} />
                       <DeleteInstituteButton institute={institute} />
