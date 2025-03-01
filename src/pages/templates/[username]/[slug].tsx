@@ -19,7 +19,6 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   locales,
   params,
 }) => {
-  console.log("slug page")
   const { username, slug } = params as { username: string; slug: string }
 
   const session = await getServerSideSession(req, res)
@@ -64,6 +63,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
           past: [],
           present: content,
           future: [],
+          paused: false,
         },
       },
     },

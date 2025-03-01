@@ -19,7 +19,7 @@ export const useStructureController = <T extends StructureValue>({
 
   useEffect(() => {
     dispatch(changeStructureLiveValue({ fieldId, value: defaultValue }))
-    dispatch(changeStructureHistoryValue({ fieldId, value: defaultValue }, { undoable: false }))
+    dispatch(changeStructureHistoryValue({ fieldId, value: defaultValue }, false))
     return () => {
       dispatch(removeStructureValue(fieldId))
     }

@@ -40,7 +40,7 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
   const { handleSubmit } = methods
 
   const onSubmit = (changedValues: z.infer<S>) => {
-    dispatch(updateNode({ nodeId, data: copy(changedValues) }, { undoable: false }))
+    dispatch(updateNode({ nodeId, data: copy(changedValues) }, false))
 
     const { username } = user!
     if (!username) throw new Error("User must be logged in to create a template.")

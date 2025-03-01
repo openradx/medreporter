@@ -75,5 +75,5 @@ export const removeStructureValue =
   (fieldId: string): AppThunk<void> =>
   (dispatch) => {
     dispatch(removeStructureLiveValue({ fieldId }))
-    dispatch(removeStructureHistoryValue({ fieldId }, { undoable: false }))
+    dispatch(removeStructureHistoryValue({ fieldId }, false))
   }
