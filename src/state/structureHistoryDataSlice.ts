@@ -1,7 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createHistoryAdapter } from "history-adapter/redux"
 import { StructureData } from "~/schemas/structure"
-import { createHistoryAdapter } from "./historyAdapter"
-import type { RootState } from "./store"
 
 export type StructureHistoryDataState = StructureData
 
@@ -15,26 +14,31 @@ export const structureHistoryDataSlice = createSlice({
   reducers: {
     undoHistoryData: structureDataHistoryAdapter.undo,
     redoHistoryData: structureDataHistoryAdapter.redo,
-    clearHistory(state) {
-      state.past = []
-      state.future = []
-    },
-    setStructureHistoryData: structureDataHistoryAdapter.undoable<StructureHistoryDataState>(
+    clearHistory: structureDataHistoryAdapter.clearHistory,
+    setStructureHistoryData: structureDataHistoryAdapter.undoableReducer(
       (_, action) => action.payload
     ),
-    changeStructureHistoryValue: structureDataHistoryAdapter.undoable<{
-      fieldId: string
-      value: any
-    }>((state, action) => {
-      const { fieldId, value } = action.payload
-      state[fieldId] = value
-    }),
-    removeStructureHistoryValue: structureDataHistoryAdapter.undoable<{ fieldId: string }>(
-      (state, action) => {
-        const { fieldId } = action.payload
-        delete state[fieldId]
-      }
-    ),
+    changeStructureHistoryValue: {
+      prepare: structureDataHistoryAdapter.withPayload<{ fieldId: string; value: any }>(),
+      reducer: structureDataHistoryAdapter.undoableReducer(
+        (state, action: PayloadAction<{ fieldId: string; value: any }>) => {
+          const { fieldId, value } = action.payload
+          state[fieldId] = value
+        }
+      ),
+    },
+    removeStructureHistoryValue: {
+      prepare: structureDataHistoryAdapter.withPayload<{ fieldId: string }>(),
+      reducer: structureDataHistoryAdapter.undoableReducer(
+        (state, action: PayloadAction<{ fieldId: string }>) => {
+          const { fieldId } = action.payload
+          delete state[fieldId]
+        }
+      ),
+    },
+  },
+  selectors: {
+    ...structureDataHistoryAdapter.getSelectors(),
   },
 })
 
@@ -49,8 +53,8 @@ export const {
 
 export default structureHistoryDataSlice.reducer
 
-export const selectStructureHistoryData = (state: RootState) => state.structureHistoryData.present
-export const selectCanUndoHistoryData = (state: RootState) =>
-  state.structureHistoryData.past.length > 0
-export const selectCanRedoHistoryData = (state: RootState) =>
-  state.structureHistoryData.future.length > 0
+export const {
+  selectCanUndo: selectCanUndoHistoryData,
+  selectCanRedo: selectCanRedoHistoryData,
+  selectPresent: selectStructureHistoryData,
+} = structureHistoryDataSlice.selectors
