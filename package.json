@@ -73,7 +73,7 @@
     "cookies-next": "^5.1.0",
     "dayjs": "^1.11.13",
     "debounce": "^2.2.0",
-    "eslint-linter-browserify": "^8.57.0",
+    "eslint-linter-browserify": "^9.0.0",
     "fast-copy": "^3.0.2",
     "file-watch-hmr": "^0.1.2",
     "flag-icons": "^7.3.2",
