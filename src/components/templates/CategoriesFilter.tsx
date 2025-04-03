@@ -11,7 +11,7 @@ export const CategoriesFilter = () => {
   const filter = useFilter()
   const [prefix, setPrefix] = useState("")
   const [prefixDebounced] = useDebounce(prefix, 500)
-  const { data, error, status } = trpc.categories.getCategories.useQuery({
+  const { data, error, isPending } = trpc.categories.getCategories.useQuery({
     language: filter.language,
     prefix: prefixDebounced,
   })
@@ -39,7 +39,7 @@ export const CategoriesFilter = () => {
       }))}
       searchable
       clearable
-      rightSection={status === "loading" ? <Loader size="xs" /> : null}
+      rightSection={isPending ? <Loader size="xs" /> : null}
       error={error?.message}
     />
   )

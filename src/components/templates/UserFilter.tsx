@@ -10,7 +10,7 @@ export const UserFilter = () => {
   const filter = useFilter()
   const [prefix, setPrefix] = useState("")
   const [prefixDebounced] = useDebounce(prefix, 500)
-  const { data, error, status } = trpc.users.getUsernames.useQuery({ prefix: prefixDebounced })
+  const { isPending, data, error } = trpc.users.getUsernames.useQuery({ prefix: prefixDebounced })
 
   return (
     <Select
@@ -24,7 +24,7 @@ export const UserFilter = () => {
       searchable
       clearable
       allowDeselect
-      rightSection={status === "loading" ? <Loader size="xs" /> : null}
+      rightSection={isPending ? <Loader size="xs" /> : null}
       error={error?.message}
     />
   )

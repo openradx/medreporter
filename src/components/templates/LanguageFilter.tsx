@@ -6,7 +6,7 @@ import { trpc } from "~/utils/trpc"
 export const LanguageFilter = () => {
   const { t } = useSiteTranslation()
   const filter = useFilter()
-  const { data, error, status } = trpc.templates.getTemplateLanguages.useQuery()
+  const { isPending, data, error } = trpc.templates.getTemplateLanguages.useQuery()
 
   return (
     <Select
@@ -21,7 +21,7 @@ export const LanguageFilter = () => {
       searchable
       clearable
       allowDeselect
-      rightSection={status === "loading" ? <Loader size="xs" /> : null}
+      rightSection={isPending ? <Loader size="xs" /> : null}
       error={error?.message}
     />
   )

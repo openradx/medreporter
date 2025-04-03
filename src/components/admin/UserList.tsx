@@ -18,17 +18,17 @@ export const UserList = () => {
   const activePage = Number(router.query.page) || 1
   const { search: filter } = useFilter()
   const [filterDebounced] = useDebounce(filter.trim(), 500)
-  const { data, error, status } = trpc.admin.getUsers.useQuery({
+  const { isPending, isError, data, error } = trpc.admin.getUsers.useQuery({
     filter: filterDebounced,
     skip: ITEMS_PER_PAGE * (activePage - 1),
     take: ITEMS_PER_PAGE,
   })
 
-  if (status === "loading") {
+  if (isPending) {
     return <DataLoader />
   }
 
-  if (status === "error") {
+  if (isError) {
     return <QueryError message={error.message} />
   }
 

@@ -22,7 +22,7 @@ export const InstituteList = () => {
   const activePage = Number(router.query.page) || 1
   const { search: filter } = useFilter()
   const [filterDebounced] = useDebounce(filter.trim(), 500)
-  const { data, error, status } = trpc.admin.getInstitutes.useQuery({
+  const { isPending, isError, data, error } = trpc.admin.getInstitutes.useQuery({
     filter: filterDebounced,
     skip: ITEMS_PER_PAGE * (activePage - 1),
     take: ITEMS_PER_PAGE,
@@ -31,11 +31,11 @@ export const InstituteList = () => {
   const user = useUser()
   const canAddInstitute = user && hasRole(user, [UserRole.SUPERUSER, UserRole.ORGANIZER])
 
-  if (status === "loading") {
+  if (isPending) {
     return <DataLoader />
   }
 
-  if (status === "error") {
+  if (isError) {
     return <QueryError message={error.message} />
   }
 

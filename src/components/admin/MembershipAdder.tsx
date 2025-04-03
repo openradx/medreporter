@@ -12,7 +12,7 @@ interface MembershipAdderProps {
 
 export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => {
   const { t } = useSiteTranslation()
-  const { data, status } = trpc.admin.getUsersForMembership.useQuery({ instituteId })
+  const { isPending, data } = trpc.admin.getUsersForMembership.useQuery({ instituteId })
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null)
   const createMembership = trpc.admin.createMembership.useMutation()
   const utils = trpc.useUtils()
@@ -28,7 +28,7 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
 
   return (
     <Select
-      leftSection={status === "loading" ? <Loader type="bars" size="sm" /> : undefined}
+      leftSection={isPending ? <Loader type="bars" size="sm" /> : undefined}
       label={t("MembershipAdder.inputLabelAddMember")}
       data={data?.users.map((user) => ({ value: user.id.toString(), label: user.username! })) ?? []}
       value={selectedUserId}

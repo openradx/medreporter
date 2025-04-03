@@ -13,13 +13,16 @@ interface MembershipListProps {
 
 export const MembershipList = ({ instituteId, role }: MembershipListProps) => {
   const { t } = useSiteTranslation()
-  const { data, error, status } = trpc.admin.getMemberships.useQuery({ instituteId, role })
+  const { isPending, isError, data, error } = trpc.admin.getMemberships.useQuery({
+    instituteId,
+    role,
+  })
 
-  if (status === "loading") {
+  if (isPending) {
     return <DataLoader />
   }
 
-  if (status === "error") {
+  if (isError) {
     return <QueryError message={error.message} />
   }
 

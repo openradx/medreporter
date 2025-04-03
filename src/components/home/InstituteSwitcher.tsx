@@ -62,7 +62,7 @@ export const InstituteSwitcher = () => {
           pointer
           label={t("InstituteSwitcher.inputLabel")}
           leftSection={
-            ownMemberships.isLoading || updateCurrentInstitute.isLoading ? (
+            ownMemberships.isPending || updateCurrentInstitute.isPending ? (
               <Loader type="bars" size="sm" />
             ) : currentInstituteId ? (
               <InstituteIcon size={20} />

@@ -17,7 +17,7 @@ export const TemplateList = () => {
   const activePage = Number(router.query.page) || 1
   const { categories, language, search, username, sorting } = useFilter()
   const [searchDebounced] = useDebounce(search.trim(), 500)
-  const { data, error, status } = trpc.templates.getTemplates.useQuery({
+  const { isPending, isError, data, error } = trpc.templates.getTemplates.useQuery({
     categories,
     language,
     search: searchDebounced,
@@ -27,11 +27,11 @@ export const TemplateList = () => {
     take: ITEMS_PER_PAGE,
   })
 
-  if (status === "loading") {
+  if (isPending) {
     return <DataLoader />
   }
 
-  if (status === "error") {
+  if (isError) {
     return <QueryError message={error.message} />
   }
 
