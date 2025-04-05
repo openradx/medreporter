@@ -1,6 +1,5 @@
 /**
- * This file is included in `/next.config.js` which ensures the app isn't built with invalid env vars.
- * It has to be a `.js`-file to be imported there.
+ * This module is also included in `/next.config.ts`.
  */
 import { z } from "zod"
 

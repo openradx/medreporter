@@ -2,7 +2,7 @@
 // TODO: delete file ... unneeded
 import chalk from "chalk"
 import fs from "fs"
-import glob from "glob"
+import { glob } from "glob"
 import yaml from "js-yaml"
 import { JSDOM } from "jsdom"
 import path from "path"
