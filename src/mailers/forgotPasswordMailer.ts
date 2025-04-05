@@ -4,7 +4,7 @@
  * and then export it. That way you can import here and anywhere else
  * and use it straight away.
  */
-import { env } from "~/server/env"
+import env from "~/server/env"
 
 type ResetPasswordMailer = {
   to: string

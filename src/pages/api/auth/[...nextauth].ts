@@ -7,7 +7,7 @@ import NextAuth, { NextAuthOptions } from "next-auth"
 import { Adapter } from "next-auth/adapters"
 import { encode, decode } from "next-auth/jwt"
 import CredentialsProvider from "next-auth/providers/credentials"
-import { env } from "~/server/env"
+import env from "~/server/env"
 import { prisma } from "~/server/prisma"
 import { comparePassword } from "~/utils/cryptography"
 

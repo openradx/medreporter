@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Alert, Button, Group, Stack } from "@mantine/core"
-import { useState, ReactNode, PropsWithoutRef } from "react"
+import { useState, ReactNode, PropsWithoutRef, JSX } from "react"
 import { FormProvider, useForm, UseFormProps } from "react-hook-form"
 import { z } from "zod"
 import { FormSubmitError, SUBMIT_FORM_ERROR } from "~/utils/formErrors"

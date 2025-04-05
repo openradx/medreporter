@@ -28,7 +28,6 @@ export const DiscreteFieldAdapter = ({ node }: DiscreteFieldAdapterProps) => {
     case "TimeField":
       return <TimeFieldAdapter key={node.nodeId} node={node} />
     default:
-      // @ts-ignore
-      throw new Error(`Invalid discrete field type: ${node.type}`)
+      throw new Error("Invalid discrete field type")
   }
 }

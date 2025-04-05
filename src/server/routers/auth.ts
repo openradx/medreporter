@@ -72,7 +72,6 @@ export const authRouter = router({
       await forgotPasswordMailer({ to: user.email!, token: hashedToken }).send()
     } else {
       // 7. If no user found wait the same time so attackers can't tell the difference
-      // eslint-disable-next-line no-promise-executor-return
       await new Promise((resolve) => setTimeout(resolve, 750))
     }
 

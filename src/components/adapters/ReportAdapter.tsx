@@ -22,8 +22,7 @@ export const ReportAdapter = ({ node }: ReportAdapterProps) => {
       case "MeasurementsOutput":
         return <MeasurementsOutputAdapter key={child.nodeId} node={child} />
       default:
-        // @ts-ignore
-        throw new Error(`Invalid report node with type: ${child.type}`)
+        throw new Error("Invalid report node")
     }
   })
 

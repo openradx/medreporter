@@ -12,8 +12,6 @@ interface TemplateProps {
   children: ReactNode
 }
 
-// TODO: use title and info, remove eslint disable
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Template = ({ children }: TemplateProps) => {
   const matches = useMediaQuery("(max-width: 68em)")
 

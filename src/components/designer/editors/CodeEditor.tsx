@@ -13,7 +13,7 @@ interface CodeEditorProps {
 export const CodeEditor = ({ codeType, extensions, value, onChange }: CodeEditorProps) => {
   const { colorScheme } = useMantineColorScheme()
   const valueRef = useRef(value)
-  const viewRef = useRef<EditorView>()
+  const viewRef = useRef<EditorView>(undefined)
 
   const minHeight = "200px"
 

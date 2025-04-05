@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { ActionIcon } from "@mantine/core"
 import { Meta, StoryObj } from "@storybook/react"
 import { InfoIcon } from "lucide-react"

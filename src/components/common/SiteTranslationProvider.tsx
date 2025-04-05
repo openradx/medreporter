@@ -21,7 +21,7 @@ export const SiteTranslationProvider = ({
     i18nSiteProps.initialSiteLanguage!
   )
 
-  const i18nInstance = useRef<{ i18nSite: i18n }>()
+  const i18nInstance = useRef<{ i18nSite: i18n } | null>(null)
 
   if (!i18nInstance.current) {
     const { initialSiteLanguage, siteNamespaces, siteStore } = i18nSiteProps
@@ -41,7 +41,7 @@ export const SiteTranslationProvider = ({
   useOnRouteChange(() => {
     // Reset i18n store on route change so that it can be re-initialized with
     // the language resources for the new page (sent from the server with SSR).
-    i18nInstance.current = undefined
+    i18nInstance.current = null
   })
 
   const setCurrentSiteLanguage = useCallback(

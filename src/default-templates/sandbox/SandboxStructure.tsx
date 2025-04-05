@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { DateField } from "~/components/fields/DateField"
 import { FreeTextField } from "~/components/fields/FreeTextField"
 import { NumberField } from "~/components/fields/NumberField"

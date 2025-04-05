@@ -43,7 +43,7 @@ export const NumberInput = ({
 }: NumberInputProps) => {
   const [focus, setFocus] = useState(false)
   const [hovered, setHovered] = useState(false)
-  const handlers = useRef<NumberInputHandlers>()
+  const handlers = useRef<NumberInputHandlers>(null)
 
   return (
     <ScrollBlocker focus={focus}>

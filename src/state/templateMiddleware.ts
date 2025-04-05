@@ -17,7 +17,7 @@ export const templateMiddleware = createListenerMiddleware()
 const startAppListening = templateMiddleware.startListening.withTypes<RootState, AppDispatch>()
 startAppListening({
   matcher: isAnyOf(undo, redo, resetTemplate, addNode, deleteNode, moveNode, updateNode),
-  effect: async (action, listenerApi) => {
+  effect: async (_, listenerApi) => {
     const currentState = listenerApi.getState()
     const { dispatch } = listenerApi
 

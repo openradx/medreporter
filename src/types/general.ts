@@ -29,7 +29,7 @@ export interface StaticProps {
   i18nSite?: I18nSite
 }
 
-export type PageWithLayout<P = {}> = NextPage<P> & {
+export type PageWithLayout<P = unknown> = NextPage<P> & {
   getLayout?: (page: ReactElement) => ReactNode
 }
 

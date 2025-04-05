@@ -42,6 +42,7 @@ export const TemplateList = () => {
         {data?.templates.length &&
           data.templates.map((template) => (
             <TemplateItem
+              key={template.slug}
               username={template.author.username!}
               slug={template.slug}
               language={template.language}

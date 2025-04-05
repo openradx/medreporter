@@ -10,7 +10,7 @@ export const structureLiveDataSlice = createSlice({
   name: "structureLiveData",
   initialState,
   reducers: {
-    setStructureLiveData(state, action: PayloadAction<StructureLiveDataState>) {
+    setStructureLiveData(_, action: PayloadAction<StructureLiveDataState>) {
       return action.payload
     },
     changeStructureLiveValue(state, action: PayloadAction<{ fieldId: string; value: any }>) {

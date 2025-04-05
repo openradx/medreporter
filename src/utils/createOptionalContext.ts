@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react"
 
-export function createOptionalContext<T extends {} | null>(contextName: string) {
+export function createOptionalContext<T extends object | null>(contextName: string) {
   const optionalContext = createContext<T | undefined>(undefined)
 
   function useOptionalContext() {
