@@ -14,14 +14,14 @@ import {
   HelpCircle as HelpIcon,
   Hash as ToggleCommentIcon,
 } from "lucide-react"
-import { MutableRefObject } from "react"
+import { RefObject } from "react"
 import invariant from "tiny-invariant"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { formatCode } from "~/utils/codeFormatting"
 
 interface EditorToolbarProps {
   codeType: "javascript" | "json" | "markdown" | "svg" | "string"
-  viewRef: MutableRefObject<undefined | EditorView>
+  viewRef: RefObject<undefined | EditorView>
 }
 
 export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
