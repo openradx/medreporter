@@ -1,8 +1,8 @@
 import { undo, redo, toggleComment } from "@codemirror/commands"
 import { openLintPanel } from "@codemirror/lint"
 import { openSearchPanel } from "@codemirror/search"
+import { EditorView } from "@codemirror/view"
 import { ActionIcon, Divider, Group } from "@mantine/core"
-import { EditorView } from "@uiw/react-codemirror"
 import {
   Search as SearchIcon,
   Stethoscope as DiagnosticsIcon,
@@ -21,11 +21,12 @@ import { formatCode } from "~/utils/codeFormatting"
 
 interface EditorToolbarProps {
   codeType: "javascript" | "json" | "markdown" | "svg" | "string"
-  viewRef: RefObject<undefined | EditorView>
+  editorRef: RefObject<EditorView | null>
 }
 
-export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
+export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
   const { t } = useSiteTranslation()
+  const editor = editorRef.current
 
   return (
     <Group gap={4}>
@@ -33,10 +34,9 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.searchTooltip")}
         onClick={() => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
-          openSearchPanel(view)
+          invariant(editor)
+          editor.focus()
+          openSearchPanel(editor)
         }}
       >
         <SearchIcon size={16} />
@@ -45,10 +45,9 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.diagnosticsTooltip")}
         onClick={() => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
-          openLintPanel(view)
+          invariant(editor)
+          editor.focus()
+          openLintPanel(editor)
         }}
       >
         <DiagnosticsIcon size={16} />
@@ -58,10 +57,9 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.undoTooltip")}
         onClick={() => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
-          undo(view)
+          invariant(editor)
+          editor.focus()
+          undo(editor)
         }}
       >
         <UndoIcon size={16} />
@@ -70,10 +68,9 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.redoTooltip")}
         onClick={() => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
-          redo(view)
+          invariant(editor)
+          editor.focus()
+          redo(editor)
         }}
       >
         <RedoIcon size={16} />
@@ -83,10 +80,9 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.copyTooltip")}
         onClick={async () => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
-          const { state } = view
+          invariant(editor)
+          editor.focus()
+          const { state } = editor
           const text = state.sliceDoc(state.selection.main.from, state.selection.main.to)
           if (text) await navigator.clipboard.writeText(text)
         }}
@@ -97,13 +93,12 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.pasteTooltip")}
         onClick={async () => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
+          invariant(editor)
+          editor.focus()
           const text = await navigator.clipboard.readText()
-          const { from } = view.state.selection.main
-          const { to } = view.state.selection.main
-          view.dispatch({
+          const { from } = editor.state.selection.main
+          const { to } = editor.state.selection.main
+          editor.dispatch({
             changes: {
               from,
               to,
@@ -120,18 +115,17 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.formatTooltip")}
         onClick={async () => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
+          invariant(editor)
+          editor.focus()
           const result = await formatCode(
             codeType,
-            view.state.doc.toString(),
-            view.state.selection.main.anchor
+            editor.state.doc.toString(),
+            editor.state.selection.main.anchor
           )
-          view.dispatch({
+          editor.dispatch({
             changes: {
               from: 0,
-              to: view.state.doc.length,
+              to: editor.state.doc.length,
               insert: result[0],
             },
             selection: { anchor: result[1], head: result[1] },
@@ -144,10 +138,9 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.toggleCommentTooltip")}
         onClick={() => {
-          invariant(viewRef.current, "Editor view is undefined")
-          const view = viewRef.current
-          view.focus()
-          toggleComment(view)
+          invariant(editor)
+          editor.focus()
+          toggleComment(editor)
         }}
       >
         <ToggleCommentIcon size={16} />
@@ -157,7 +150,8 @@ export const EditorToolbar = ({ codeType, viewRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.helpTooltip")}
         onClick={() => {
-          viewRef.current?.focus()
+          invariant(editor)
+          editor.focus()
         }}
       >
         <HelpIcon size={16} />

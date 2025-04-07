@@ -1,6 +1,8 @@
+import { Extension } from "@codemirror/state"
+import { EditorView } from "@codemirror/view"
 import { Stack, useMantineColorScheme } from "@mantine/core"
-import CodeMirror, { EditorView, Extension } from "@uiw/react-codemirror"
 import { useRef } from "react"
+import { CodeMirror } from "./CodeMirror"
 import { EditorToolbar } from "./EditorToolbar"
 
 interface CodeEditorProps {
@@ -13,29 +15,18 @@ interface CodeEditorProps {
 export const CodeEditor = ({ codeType, extensions, value, onChange }: CodeEditorProps) => {
   const { colorScheme } = useMantineColorScheme()
   const valueRef = useRef(value)
-  const viewRef = useRef<EditorView>(undefined)
-
-  const minHeight = "200px"
-
-  const theme = EditorView.theme({
-    "& div.cm-scroller": {
-      minHeight: `${minHeight} !important`,
-    },
-    "&": { height: "100%" },
-    ".cm-scroller": { overflow: "auto" },
-  })
+  const editorRef = useRef<EditorView>(null)
 
   return (
     <Stack gap="xs" h="calc(100% - 32px)" style={{ flexGrow: 1 }}>
-      <EditorToolbar codeType={codeType} viewRef={viewRef} />
+      <EditorToolbar codeType={codeType} editorRef={editorRef} />
       <CodeMirror
-        minHeight={minHeight}
         theme={colorScheme === "dark" ? "dark" : "light"}
-        extensions={[theme, ...extensions]}
+        extensions={extensions}
         value={valueRef.current}
         onChange={onChange}
-        onCreateEditor={(view) => {
-          viewRef.current = view
+        onCreateEditor={(editor) => {
+          editorRef.current = editor
         }}
       />
     </Stack>
