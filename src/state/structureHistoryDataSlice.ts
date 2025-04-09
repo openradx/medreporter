@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { createHistoryAdapter } from "history-adapter/redux"
+import { createPatchHistoryAdapter } from "history-adapter/redux"
 import { StructureData } from "~/schemas/structure"
 
 export type StructureHistoryDataState = StructureData
 
-const structureDataHistoryAdapter = createHistoryAdapter<StructureHistoryDataState>()
+const structureDataHistoryAdapter = createPatchHistoryAdapter<StructureHistoryDataState>()
 
 const initialState = structureDataHistoryAdapter.getInitialState({})
 

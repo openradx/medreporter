@@ -1,7 +1,7 @@
 import { ReleaseStatus, Visibility } from "@prisma/client"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import copy from "fast-copy"
-import { createHistoryAdapter } from "history-adapter/redux"
+import { createPatchHistoryAdapter } from "history-adapter/redux"
 import invariant from "tiny-invariant"
 import { TemplateNode } from "~/schemas/template"
 import {
@@ -14,7 +14,7 @@ import {
 
 type TemplateState = TemplateNode
 
-const templateHistoryAdapter = createHistoryAdapter<TemplateState>()
+const templateHistoryAdapter = createPatchHistoryAdapter<TemplateState>()
 
 const initialState = templateHistoryAdapter.getInitialState({
   type: "Template",
