@@ -1,4 +1,3 @@
-import { notifications } from "@mantine/notifications"
 import { createListenerMiddleware, isAnyOf } from "@reduxjs/toolkit"
 import { trpcVanilla } from "~/utils/trpc"
 import { appendLog, setSyncingState } from "./displaySlice"
@@ -27,17 +26,17 @@ startAppListening({
       throw new Error("Missing template id in template middleware.")
     }
 
-    let hasError = false
     try {
       dispatch(setSyncingState("syncing"))
       await trpcVanilla.templates.updateTemplate.mutate(currentState.template.present)
+      dispatch(setSyncingState("synced"))
+      dispatch(
+        appendLog({
+          message: `Saved template with Slug: ${currentState.template.present.slug}`,
+          level: "success",
+        })
+      )
     } catch (error) {
-      hasError = true
-      notifications.show({
-        title: "Error",
-        message: "An error occurred while syncing your changes with the server",
-        color: "red",
-      })
       dispatch(setSyncingState("error"))
       dispatch(
         appendLog({
@@ -45,17 +44,6 @@ startAppListening({
           level: "error",
         })
       )
-    } finally {
-      if (!hasError)
-        dispatch(
-          setSyncingState("synced"),
-          dispatch(
-            appendLog({
-              message: `Saved template with Slug: ${currentState.template.present.slug}`,
-              level: "success",
-            })
-          )
-        )
     }
   },
 })
