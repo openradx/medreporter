@@ -70,4 +70,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-module.exports = withBundleAnalyzer(withRoutes(nextConfig))
+export default withBundleAnalyzer(withRoutes(nextConfig))
