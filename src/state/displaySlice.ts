@@ -12,12 +12,17 @@ interface LogMessage {
   timestamp: number
 }
 
+interface Status {
+  message: string
+  state: "doing" | "ok" | "error"
+}
+
 interface DisplayState {
   activeSectionId: null | string
   outputFormat: OutputFormat
   showFieldId: null | string
   structureDataModified: boolean
-  syncingState: "syncing" | "synced" | "error"
+  status: { [statusId: string]: Status }
   log: LogMessage[]
 }
 
@@ -26,7 +31,7 @@ const initialState: DisplayState = {
   outputFormat: "html",
   showFieldId: null,
   structureDataModified: false,
-  syncingState: "synced",
+  status: {},
   log: [],
 }
 
@@ -52,10 +57,15 @@ export const displaySlice = createSlice({
     setStructureDataModified(state, action: PayloadAction<boolean>) {
       state.structureDataModified = action.payload
     },
-    setSyncingState(state, action: PayloadAction<DisplayState["syncingState"]>) {
-      state.syncingState = action.payload
+    updateStatus(state, action: PayloadAction<{ statusId: string; status: Status }>) {
+      const { statusId, status } = action.payload
+      state.status[statusId] = status
     },
-    appendLog(
+    deleteStatus(state, action: PayloadAction<{ statusId: string }>) {
+      const { statusId } = action.payload
+      delete state.status[statusId]
+    },
+    appendToLog(
       state,
       action: PayloadAction<{ message: string; level: "info" | "error" | "success" }>
     ) {
@@ -67,6 +77,9 @@ export const displaySlice = createSlice({
         state.log.push({ ...action.payload, timestamp })
       }
     },
+    clearLog(state) {
+      state.log = []
+    },
   },
 })
 
@@ -75,8 +88,10 @@ export const {
   setOutputFormat,
   showField,
   setStructureDataModified,
-  setSyncingState,
-  appendLog,
+  updateStatus,
+  deleteStatus,
+  appendToLog,
+  clearLog,
 } = displaySlice.actions
 
 export default displaySlice.reducer
@@ -89,6 +104,6 @@ export const selectShowFieldId = (state: RootState) => state.display.showFieldId
 
 export const selectStructureDataModified = (state: RootState) => state.display.structureDataModified
 
-export const selectSyncingState = (state: RootState) => state.display.syncingState
+export const selectStatus = (state: RootState) => state.display.status
 
 export const selectLog = (state: RootState) => state.display.log

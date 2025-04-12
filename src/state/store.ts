@@ -4,7 +4,6 @@ import designerReducer from "./designerSlice"
 import displayReducer from "./displaySlice"
 import structureHistoryDataReducer from "./structureHistoryDataSlice"
 import structureLiveDataReducer from "./structureLiveDataSlice"
-import { templateMiddleware } from "./templateMiddleware"
 import templateReducer from "./templateSlice"
 
 const rootReducer = combineReducers({
@@ -21,8 +20,6 @@ export function initStore(preloadedState?: Partial<RootState>) {
   const store = configureStore({
     reducer: rootReducer,
     preloadedState,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().prepend(templateMiddleware.middleware),
   })
 
   return store

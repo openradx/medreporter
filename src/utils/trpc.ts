@@ -1,4 +1,4 @@
-import { createTRPCClient, httpBatchLink } from "@trpc/client"
+import { httpBatchLink } from "@trpc/client"
 import { createTRPCNext } from "@trpc/next"
 import superjson from "superjson"
 import type { AppRouter } from "~/server/routers/_app"
@@ -33,13 +33,4 @@ export const trpc = createTRPCNext<AppRouter>({
   },
   transformer: superjson,
   ssr: false,
-})
-
-export const trpcVanilla = createTRPCClient<AppRouter>({
-  links: [
-    httpBatchLink({
-      url: `${getBaseUrl()}/api/trpc`,
-      transformer: superjson,
-    }),
-  ],
 })

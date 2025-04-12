@@ -2,7 +2,7 @@ import { Divider, Group } from "@mantine/core"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { NavbarCenter } from "../common/NavbarCenter"
 import { ToggleEditModeButton } from "../template/ToggleEditModeButton"
-import { SyncingStateDisplay } from "./SyncingStateDisplay"
+import { StatusIndicator } from "./StatusIndicator"
 import { TemplatePropertiesButton } from "./TemplatePropertiesButton"
 
 interface DesignerNavbarCenterProps {
@@ -15,7 +15,7 @@ export const DesignerNavbarCenter = ({ title }: DesignerNavbarCenterProps) => {
   return (
     <NavbarCenter>
       <Group gap="xl">
-        <SyncingStateDisplay />
+        <StatusIndicator />
         <span>{title || t("NewTemplate.navbarTitle")}</span>
         <Divider orientation="vertical" size="sm" />
         <ToggleEditModeButton />

@@ -28,23 +28,20 @@ export const PropertiesForm = <S extends z.ZodType<any, any>>({
   })
 
   const dispatch = useAppDispatch()
+  const updateNodeDebounced = useDebouncedCallback((values) => {
+    try {
+      dispatch(updateNode({ nodeId, data: copy(schema.parse(values)) }))
+    } catch (error) {}
+  }, 500)
 
-  const {
-    formState,
-    formState: { isValidating },
-    getValues,
-  } = methods
-
-  const debounced = useDebouncedCallback((changedValues: z.infer<S>) => {
-    dispatch(updateNode({ nodeId, data: copy(changedValues) }))
-  }, 200)
-
+  const { watch } = methods
   useEffect(() => {
-    if (!isValidating && formState.isValid) {
-      const changedValues = getValues()
-      debounced(changedValues)
-    }
-  }, [isValidating, formState, getValues, debounced])
+    const subscription = watch((value) => {
+      updateNodeDebounced(value)
+    })
+    return () => subscription.unsubscribe()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <FormProvider {...methods}>
