@@ -1,6 +1,7 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
 import { ComponentType } from "react"
 import { SiteTranslationProvider } from "~/components/common/SiteTranslationProvider"
+import { SiteTranslationProviderNew } from "~/components/common/SiteTranslationProviderNew"
 import { ServerSideProps } from "~/types/general"
 
 interface AppProps {
@@ -18,9 +19,11 @@ export const withTranslations = <T extends AppProps>(
     }
 
     return (
-      <SiteTranslationProvider i18nSiteProps={i18nSiteProps}>
-        <WrappedComponent {...(props as T)} />
-      </SiteTranslationProvider>
+      <SiteTranslationProviderNew i18nSiteProps={i18nSiteProps}>
+        <SiteTranslationProvider i18nSiteProps={i18nSiteProps}>
+          <WrappedComponent {...(props as T)} />
+        </SiteTranslationProvider>
+      </SiteTranslationProviderNew>
     )
   }
 

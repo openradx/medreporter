@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-04-13 17:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: de\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/home/Home.tsx:33
+msgid "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
+msgstr "Plattform für die Erstellung strukturierter medizinischer Befunde. Nutzen Sie unsere vorgefertigten Templates ohne Login oder registrieren Sie sich, um eigene Vorlagen zu erstellen, ausgefüllte Befunde zu speichern und diese mit Mitgliedern Ihrer Institution zu teilen."
+
+#: src/components/home/Home.tsx:42
+msgid "Browse Templates"
+msgstr "Entdecke Templates"
+
+#: src/components/home/Home.tsx:48
+msgid "New Template"
+msgstr "Neues Template"
+
+#: src/components/home/Home.tsx:20
+msgid "Welcome to"
+msgstr "Willkommen bei"
