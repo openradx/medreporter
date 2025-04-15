@@ -1,7 +1,7 @@
 import type { Resource } from "i18next"
 import type { NextPage } from "next"
-import type { Session } from "next-auth"
 import type { ReactElement, ReactNode } from "react"
+import { authClient } from "~/auth-client"
 import type { RootState } from "~/state/store"
 
 export interface AppConfig {
@@ -19,9 +19,11 @@ export interface I18nSite {
   siteStore: Resource
 }
 
+export type Session = typeof authClient.$Infer.Session
+
 export interface ServerSideProps {
-  session?: Session | null
-  i18nSite?: I18nSite
+  session: Session | null
+  i18nSite: I18nSite
   preloadedReduxState?: Partial<RootState>
 }
 

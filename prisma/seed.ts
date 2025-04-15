@@ -2,7 +2,6 @@
 import { faker } from "@faker-js/faker"
 import { loadEnvConfig } from "@next/env"
 import {
-  Institute,
   MembershipRole,
   PrismaClient,
   ReleaseStatus,
@@ -13,7 +12,8 @@ import {
 import fs from "fs"
 import yaml from "js-yaml"
 import path from "path"
-import { hashPassword, randomString } from "~/utils/cryptography"
+import { auth } from "~/server/auth"
+import { randomString } from "~/utils/cryptography"
 
 const EXAMPLE_USERS = 100
 const EXAMPLE_INSTITUTES = 10
@@ -42,22 +42,17 @@ interface UserData extends Pick<User, "username" | "email" | "role" | "fullName"
 
 async function createUser(data: UserData) {
   const { password, ...rest } = data
-  const hashedPassword = await hashPassword(password)
-  const user = await prisma.user.create({
-    data: {
-      ...rest,
-      hashedPassword,
+
+  await auth.api.signUpEmail({
+    body: {
+      email: rest.email,
+      password,
+      username: rest.username,
+      fullName: "",
+      about: "",
+      name: "",
     },
   })
-  await prisma.account.create({
-    data: {
-      userId: user.id,
-      type: "credentials",
-      provider: "credentials",
-      providerAccountId: user.id,
-    },
-  })
-  return user
 }
 
 async function createSuperuser() {
@@ -87,13 +82,13 @@ async function createSuperuser() {
   })
 }
 
-async function createDefaultUser() {
+async function createSystemUser() {
   return createUser({
-    username: "default",
-    email: "",
+    username: "system",
+    email: "system@medreporter.org",
     password: randomString(32),
-    fullName: "Default User",
-    about: "The default user of MedReporter",
+    fullName: "System User",
+    about: "The system user of MedReporter (used for predefined templates)",
     role: UserRole.USER,
   })
 }
@@ -110,7 +105,7 @@ async function createExampleUser(role: UserRole) {
 }
 
 async function createExampleInstitute() {
-  return prisma.institute.create({
+  await prisma.institute.create({
     data: { name: faker.company.name() },
   })
 }
@@ -147,11 +142,11 @@ async function seedUsers() {
     console.info("Creating superuser.")
     await createSuperuser()
 
-    console.info("Creating default user.")
-    await createDefaultUser()
+    console.info("Creating system user.")
+    await createSystemUser()
 
     console.info("Creating example users.")
-    const promises: Promise<User>[] = []
+    const promises: Promise<void>[] = []
     for (let i = 0; i < EXAMPLE_USERS; i++) {
       promises.push(createExampleUser(UserRole.USER))
     }
@@ -165,7 +160,7 @@ async function seedInstitutes() {
     console.info("Institutes present. Skipping institute creation.")
   } else {
     console.info("Creating example institutes.")
-    const promises: Promise<Institute>[] = []
+    const promises: Promise<void>[] = []
     for (let i = 0; i < EXAMPLE_INSTITUTES; i++) {
       promises.push(createExampleInstitute())
     }
@@ -193,7 +188,7 @@ async function seedMemberships() {
 }
 
 async function seedDefaultTemplates() {
-  const defaultUser = await prisma.user.findFirst({ where: { username: "default" } })
+  const defaultUser = await prisma.user.findFirst({ where: { username: "system" } })
   if (!defaultUser) {
     throw new Error("Default user not found.")
   }

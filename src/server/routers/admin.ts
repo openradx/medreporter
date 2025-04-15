@@ -24,7 +24,7 @@ import { adminProcedure, authedProcedure, router, superuserProcedure } from "../
 export const adminRouter = router({
   createInstitute: adminProcedure.input(CreateInstituteSchema).mutation(async ({ input, ctx }) => {
     const { name } = input
-    const { user } = ctx
+    const { session } = ctx
 
     try {
       return await prisma.institute.create({

@@ -99,7 +99,7 @@ export const templatesRouter = router({
   createTemplate: authedProcedure
     .input(buildTemplateNodeSchema())
     .mutation(async ({ input, ctx }) => {
-      const { user } = ctx
+      const { session } = ctx
       const { id: _, ...document } = input
 
       try {
@@ -115,7 +115,7 @@ export const templatesRouter = router({
             categories: {
               connect: input.categories.map((category) => ({ key: category })),
             },
-            authorId: user.id,
+            authorId: session.user.id,
           },
           select: {
             id: true,
@@ -130,14 +130,14 @@ export const templatesRouter = router({
   updateTemplate: authedProcedure
     .input(buildTemplateNodeSchema())
     .mutation(async ({ input, ctx }) => {
-      const { user } = ctx
+      const { session } = ctx
       const { id, ...document } = input
 
       if (id) {
         const template = await prisma.template.findUnique({
           where: {
             id,
-            authorId: user.id,
+            authorId: session.user.id,
           },
         })
         if (!template) {

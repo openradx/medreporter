@@ -1,10 +1,10 @@
 import { Stack, Textarea, TextInput, Title } from "@mantine/core"
 import { TRPCClientError } from "@trpc/client"
 import { Controller } from "react-hook-form"
+import { authClient } from "~/auth-client"
 import { SubmitForm } from "~/components/common/SubmitForm"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
-import { trpc } from "~/utils/trpc"
 import { SignupSchema } from "~/validations/auth"
 
 type SignupFormProps = {
@@ -13,7 +13,6 @@ type SignupFormProps = {
 
 export const SignupForm = (props: SignupFormProps) => {
   const { t } = useSiteTranslation()
-  const signup = trpc.auth.signup.useMutation()
 
   return (
     <Stack gap="md">
@@ -24,7 +23,14 @@ export const SignupForm = (props: SignupFormProps) => {
         initialValues={{ username: "", email: "", password: "", fullName: "", about: "" }}
         onSubmit={async (values) => {
           try {
-            await signup.mutateAsync(values)
+            await authClient.signUp.email({
+              username: values.username,
+              email: values.email,
+              password: values.password,
+              name: "",
+              about: values.about,
+              fullName: values.fullName,
+            })
             props.onSuccess?.()
           } catch (error) {
             if (error instanceof TRPCClientError) {

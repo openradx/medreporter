@@ -498,7 +498,7 @@ export const RESERVED_USERNAMES = [
   "sys",
   "sysadmin",
   "sysadministrator",
-  "system",
+  // "system", // "system" user is used for predefined templates
   "tablet",
   "tablets",
   "tag",

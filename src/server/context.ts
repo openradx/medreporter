@@ -1,28 +1,25 @@
-import * as trpc from "@trpc/server"
 import * as trpcNext from "@trpc/server/adapters/next"
-import { User } from "next-auth"
-import { getServerSideSession } from "~/server/utils/sessionUtils"
+import { fromNodeHeaders } from "better-auth/node"
+import { Session } from "~/types/general"
+import { auth } from "./auth"
 
 /**
  * Inner function for `createContext` where we create the context.
  * This is useful for testing when we don't want to mock Next.js' request/response
  */
-export async function createContextInner(user: User | null) {
-  return { user }
+export async function createContextInner(session: Session | null) {
+  return { session }
 }
 
-export type Context = trpc.inferAsyncReturnType<typeof createContextInner>
+export type Context = Awaited<ReturnType<typeof createContextInner>>
 
 /**
  * Creates context for an incoming request
  * @link https://trpc.io/docs/context
  */
-export async function createContext({
-  req,
-  res,
-}: trpcNext.CreateNextContextOptions): Promise<Context> {
+export async function createContext({ req }: trpcNext.CreateNextContextOptions): Promise<Context> {
   // for API-response caching see https://trpc.io/docs/caching
-  const session = await getServerSideSession(req, res)
+  const session = await auth.api.getSession({ headers: fromNodeHeaders(req.headers) })
 
-  return await createContextInner(session?.user ?? null)
+  return await createContextInner(session)
 }

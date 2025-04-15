@@ -5,7 +5,7 @@ import { initStore } from "~/state/store"
 import { ServerSideProps } from "~/types/general"
 
 interface AppProps {
-  pageProps: Partial<ServerSideProps>
+  pageProps: ServerSideProps
 }
 
 export const withReduxState = <T extends AppProps>(

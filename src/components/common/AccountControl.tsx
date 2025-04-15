@@ -7,17 +7,19 @@ import {
   LogIn as LoginIcon,
   User as ProfileIcon,
 } from "lucide-react"
-import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { authClient } from "~/auth-client"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useUser } from "~/hooks/useUser"
 
 export const AccountControl = () => {
   const { t } = useSiteTranslation()
-  const session = useSession()
   const router = useRouter()
 
-  const canAdministrate = session.data?.user.roles.some((role) => {
+  const user = useUser()
+
+  const canAdministrate = !!user?.roles.some((role) => {
     const adminRoles: (UserRole | MembershipRole)[] = [
       UserRole.SUPERUSER,
       MembershipRole.ADMIN,
@@ -28,8 +30,7 @@ export const AccountControl = () => {
 
   return (
     <>
-      {session.status === "loading" && <ActionIcon variant="default" loading />}
-      {session.status === "unauthenticated" && (
+      {!user && (
         <ActionIcon
           title={t("AccountControl.optionLogIn")}
           variant="default"
@@ -43,7 +44,7 @@ export const AccountControl = () => {
           <LoginIcon size={18} />
         </ActionIcon>
       )}
-      {session.status === "authenticated" && (
+      {user && (
         <Menu width={250}>
           <Menu.Target>
             <ActionIcon title={t("AccountControl.menuTitleAccout")} variant="default">
@@ -52,7 +53,7 @@ export const AccountControl = () => {
           </Menu.Target>
 
           <Menu.Dropdown>
-            <Menu.Label>{session.data.user.username}</Menu.Label>
+            <Menu.Label>{user.username}</Menu.Label>
             <Menu.Item leftSection={<ProfileIcon size={18} />}>
               {t("AccountControl.optionProfile")}
             </Menu.Item>
@@ -68,8 +69,13 @@ export const AccountControl = () => {
             <Menu.Item
               leftSection={<LogoutIcon size={18} />}
               onClick={async () => {
-                await signOut({ redirect: false })
-                router.push("/")
+                await authClient.signOut({
+                  fetchOptions: {
+                    onSuccess: () => {
+                      router.push("/")
+                    },
+                  },
+                })
               }}
             >
               {t("AccountControl.optionLogOut")}

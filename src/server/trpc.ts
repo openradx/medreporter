@@ -14,45 +14,45 @@ const t = initTRPC.context<Context>().create({
 export const { middleware, mergeRouters, procedure: publicProcedure, router } = t
 
 const isSuperuser = middleware(({ next, ctx }) => {
-  const { user } = ctx
+  const { session } = ctx
 
-  if (!user) {
+  if (!session) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
-  if (!hasRole(user, [UserRole.SUPERUSER])) {
+  if (!hasRole(session.user, [UserRole.SUPERUSER])) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
-  return next({ ctx: { user } })
+  return next({ ctx: { session } })
 })
 
 export const superuserProcedure = t.procedure.use(isSuperuser)
 
 const isAdmin = middleware(({ next, ctx }) => {
-  const { user } = ctx
+  const { session } = ctx
 
-  if (!user) {
+  if (!session) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
-  if (!hasRole(user, [UserRole.SUPERUSER, UserRole.ORGANIZER])) {
+  if (!hasRole(session.user, [UserRole.SUPERUSER, UserRole.ORGANIZER])) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
-  return next({ ctx: { user } })
+  return next({ ctx: { session } })
 })
 
 export const adminProcedure = t.procedure.use(isAdmin)
 
 const isAuthed = middleware(({ next, ctx }) => {
-  const { user } = ctx
+  const { session } = ctx
 
-  if (!user) {
+  if (!session) {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
-  return next({ ctx: { user } })
+  return next({ ctx: { session } })
 })
 
 export const authedProcedure = t.procedure.use(isAuthed)

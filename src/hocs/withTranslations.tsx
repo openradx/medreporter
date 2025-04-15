@@ -4,7 +4,7 @@ import { SiteTranslationProvider } from "~/components/common/SiteTranslationProv
 import { ServerSideProps } from "~/types/general"
 
 interface AppProps {
-  pageProps: Partial<ServerSideProps>
+  pageProps: ServerSideProps
 }
 
 export const withTranslations = <T extends AppProps>(
