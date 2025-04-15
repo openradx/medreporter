@@ -1,4 +1,3 @@
-import * as trpc from "@trpc/server"
 import * as trpcNext from "@trpc/server/adapters/next"
 import { User } from "next-auth"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
@@ -11,7 +10,7 @@ export async function createContextInner(user: User | null) {
   return { user }
 }
 
-export type Context = trpc.inferAsyncReturnType<typeof createContextInner>
+export type Context = Awaited<ReturnType<typeof createContextInner>>
 
 /**
  * Creates context for an incoming request
