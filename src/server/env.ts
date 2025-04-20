@@ -6,6 +6,7 @@ import { z } from "zod"
 /*eslint sort-keys: "error"*/
 const envSchema = z.object({
   DATABASE_URL: z.string().url(),
+  DEBUG_DATABASE_QUERIES: z.boolean().default(false),
   NEXTAUTH_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
 })
