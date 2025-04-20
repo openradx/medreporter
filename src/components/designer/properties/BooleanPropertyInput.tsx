@@ -12,12 +12,12 @@ export const BooleanPropertyInput = ({ name, label, required }: BooleanPropertyI
     name={name}
     render={({ field: { value, onChange }, fieldState: { error } }) => (
       <Switch
+        p={2}
         label={label}
         checked={value}
         onChange={onChange}
         error={error?.message}
         required={required}
-        labelPosition="left"
         fw={500}
       />
     )}
