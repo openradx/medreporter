@@ -1,6 +1,6 @@
+import { useLingui } from "@lingui/react/macro"
 import { Box, Flex, Modal, SegmentedControl, Stack } from "@mantine/core"
 import { Controller, useWatch } from "react-hook-form"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { EditorModalTitle } from "../EditorModalTitle"
 import { CodeEditor } from "../editors/CodeEditor"
 import { ScriptEditor } from "../editors/ScriptEditor"
@@ -23,7 +23,7 @@ export const ContentEditorModal = ({
   value,
   onChange,
 }: ContentEditorModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const contentType = useWatch({ name: "content.contentType" })
 
   return (
@@ -39,8 +39,8 @@ export const ContentEditorModal = ({
                 <SegmentedControl
                   size="xs"
                   data={[
-                    { label: t("ContentProperty.labelCode"), value: "code" },
-                    { label: t("ContentProperty.labelText"), value: "text" },
+                    { label: t`Code`, value: "code" },
+                    { label: t`Text`, value: "text" },
                   ]}
                   value={panel}
                   onChange={onSwitch}

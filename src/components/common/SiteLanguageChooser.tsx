@@ -1,13 +1,15 @@
+import { useLingui } from "@lingui/react/macro"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { LanguageChooser } from "./LanguageChooser"
 
 export const SiteLanguageChooser = () => {
-  const { t, supportedSiteLanguages, currentSiteLanguage, setCurrentSiteLanguage } =
+  const { supportedSiteLanguages, currentSiteLanguage, setCurrentSiteLanguage } =
     useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <LanguageChooser
-      actionTitle={t("SiteLanguageChooser.buttonLanguageGeneral")}
+      actionTitle={t`General language`}
       currentLanguage={currentSiteLanguage}
       supportedLanguages={supportedSiteLanguages}
       onLanguageChanged={setCurrentSiteLanguage}

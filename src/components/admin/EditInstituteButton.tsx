@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Institute } from "@prisma/client"
 import { Pencil as EditIcon } from "lucide-react"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { EditInstituteModal } from "./EditInstituteModal"
 
 interface EditInstituteButtonProps {
@@ -10,13 +10,13 @@ interface EditInstituteButtonProps {
 }
 
 export const EditInstituteButton = ({ institute }: EditInstituteButtonProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const [opened, setOpened] = useState(false)
 
   return (
     <>
       <ActionIcon
-        title={t("EditInstituteButton.buttonEditInstitute")}
+        title={t`Edit institute`}
         variant="subtle"
         color="gray"
         onClick={() => setOpened(true)}

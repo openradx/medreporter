@@ -1,9 +1,9 @@
+import { useLingui } from "@lingui/react/macro"
 import { UserRole } from "@prisma/client"
 import { GetServerSideProps } from "next"
 import { AdminFeatures } from "~/components/admin/AdminFeatures"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
@@ -32,11 +32,11 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 }
 
 const AdminPage: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
-      <PageHead title={t("AdminPage.pageTitle")} />
+      <PageHead title={t`Administration`} />
       <AdminFeatures />
     </>
   )

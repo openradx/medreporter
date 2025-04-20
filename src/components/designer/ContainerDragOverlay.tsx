@@ -1,6 +1,6 @@
+import { Trans } from "@lingui/react/macro"
 import { Card, Text } from "@mantine/core"
 import { ReactNode } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ContainerNode } from "~/utils/designerUtils"
 
 interface ContainerDragOverlayProps {
@@ -9,8 +9,6 @@ interface ContainerDragOverlayProps {
 }
 
 export const ContainerDragOverlay = ({ node, children }: ContainerDragOverlayProps) => {
-  const { t } = useSiteTranslation()
-
   const { type } = node
 
   let fieldId: string | undefined
@@ -21,11 +19,13 @@ export const ContainerDragOverlay = ({ node, children }: ContainerDragOverlayPro
   return (
     <Card padding="xs" shadow="sm" style={{ width: 250 }} withBorder>
       <Text>
-        {t("ContainerDragOverlay.type")}: {type}
+        <Trans>Type: </Trans>
+        {type}
       </Text>
       {fieldId && (
         <Text size="sm" c="dimmed">
-          {t("ContainerDragOverlay.id")}: {fieldId}
+          <Trans>Field ID: </Trans>
+          {fieldId}
         </Text>
       )}
       <Card>{children}</Card>

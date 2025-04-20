@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { NumberPropertyInput } from "./NumberPropertyInput"
 
 export const RowsProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <NumberPropertyInput name="rows" label={t("RowsProperty.label")} />
+  return <NumberPropertyInput name="rows" label={t`Rows`} />
 }

@@ -1,7 +1,7 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon, Box, Flex, Modal, Tooltip } from "@mantine/core"
 import { RotateCcw as ResetIcon } from "lucide-react"
 import { MouseEvent, useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { Option } from "~/schemas/structure"
 
 interface GraphicsModalProps {
@@ -24,7 +24,7 @@ export const FigureModal = ({
   const [tooltipTitle, setTooltipTitle] = useState("")
   const [hoverTagName, setHoverTagName] = useState("")
 
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
     const target = event.target as HTMLElement
@@ -45,7 +45,7 @@ export const FigureModal = ({
     if (optionValue) {
       if (multiple) {
         if (!Array.isArray(value)) {
-          throw new Error("Value in multiple must be an array.")
+          throw new Error(t`Value in multiple must be an array.`)
         }
         const indexToRemove = value.indexOf(optionValue)
         if (indexToRemove === -1) {
@@ -55,7 +55,7 @@ export const FigureModal = ({
         }
       } else {
         if (typeof value !== "string" && value !== null) {
-          throw new Error("Value in single must be a string or null.")
+          throw new Error(t`Value in single must be a string or null.`)
         }
         if (optionValue !== value) {
           onChange?.(optionValue)
@@ -129,7 +129,7 @@ export const FigureModal = ({
           >
             {children}
             <ActionIcon
-              title={t("GraphicsModal.buttonReset")}
+              title={t`Reset selection`}
               onClick={(event: { stopPropagation: () => void }) => {
                 event.stopPropagation()
                 onChange?.(multiple ? [] : null)

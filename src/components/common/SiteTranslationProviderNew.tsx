@@ -18,7 +18,9 @@ export const SiteTranslationProviderNew = ({
   i18nSiteProps,
   children,
 }: SiteTranslationProviderNewProps) => {
-  const [currentSiteLanguage, setCurrentSiteLanguage] = useState(i18nSiteProps.initialSiteLanguage!)
+  const [currentSiteLanguage, _setCurrentSiteLanguage] = useState(
+    i18nSiteProps.initialSiteLanguage!
+  )
 
   useEffect(() => {
     dynamicActivate(currentSiteLanguage)

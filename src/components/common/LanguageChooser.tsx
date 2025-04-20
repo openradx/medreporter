@@ -1,7 +1,9 @@
+import { useLingui } from "@lingui/react"
+import { Trans } from "@lingui/react/macro"
 import { ActionIcon, Divider, Menu } from "@mantine/core"
 import { Check as CheckIcon } from "lucide-react"
 import { appConfig } from "~/appConfig"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { LANGUAGES } from "~/constants/lazy-translations"
 import { FlagIcon } from "./FlagIcon"
 
 interface LanguageChooserProps {
@@ -19,11 +21,11 @@ export const LanguageChooser = ({
   onLanguageChanged,
   disableDebugMode,
 }: LanguageChooserProps) => {
-  const { t } = useSiteTranslation()
-
+  const { _ } = useLingui()
   const allLanguages = [...supportedLanguages]
   const items = allLanguages
-    .map((language) => ({ language, label: t(`languages.${language}`) }))
+    // @ts-expect-error language is a string by next.js
+    .map((language) => ({ language, label: _(LANGUAGES[language]) }))
     .sort((item1, item2) => {
       if (item1.language === "asSite") return 0
       if (item2.language === "asSite") return 1
@@ -49,7 +51,9 @@ export const LanguageChooser = ({
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Label>{t("LanguageChooser.menuTitleLanguages")}</Menu.Label>
+        <Menu.Label>
+          <Trans>Language</Trans>
+        </Menu.Label>
 
         {items}
 
@@ -60,7 +64,7 @@ export const LanguageChooser = ({
               leftSection={<FlagIcon language="cimode" />}
               onClick={() => onLanguageChanged("cimode")}
             >
-              {t("LanguageChooser.menuLabelDebugMode")}
+              <Trans>Debug translations</Trans>
             </Menu.Item>
           </>
         )}

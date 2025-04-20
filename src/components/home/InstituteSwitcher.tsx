@@ -1,3 +1,4 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import {
   Combobox,
   ComboboxItem,
@@ -9,12 +10,11 @@ import {
 import { openModal } from "@mantine/modals"
 import { SquareUser as IndividualIcon, Building2 as InstituteIcon } from "lucide-react"
 import { useAuthenticatedUser } from "~/hooks/useAuthenticatedUser"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { reloadSession } from "~/utils/session"
 import { trpc } from "~/utils/trpc"
 
 export const InstituteSwitcher = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const user = useAuthenticatedUser()
   const { currentInstituteId } = user
   const ownMemberships = trpc.profile.getOwnMemberships.useQuery()
@@ -47,7 +47,7 @@ export const InstituteSwitcher = () => {
             },
             onError: (error) => {
               openModal({
-                title: t("general.errorTitle"),
+                title: t`An error occurred.`,
                 children: error.message,
               })
             },
@@ -60,7 +60,7 @@ export const InstituteSwitcher = () => {
         <InputBase
           component="button"
           pointer
-          label={t("InstituteSwitcher.inputLabel")}
+          label={t`Current institute`}
           leftSection={
             ownMemberships.isPending || updateCurrentInstitute.isPending ? (
               <Loader type="bars" size="sm" />
@@ -76,18 +76,18 @@ export const InstituteSwitcher = () => {
           onFocus={() => combobox.openDropdown()}
           onBlur={() => combobox.closeDropdown()}
         >
-          {currentInstituteName ?? t("InstituteSwitcher.optionIndividual")}
+          {currentInstituteName ?? t`Individual`}
         </InputBase>
       </Combobox.Target>
 
       <Combobox.Dropdown>
         <Combobox.Options>
-          <Combobox.Group label={t("InstituteSwitcher.groupIndividual")}>
+          <Combobox.Group label={t`Individual`}>
             <Combobox.Option value="" key="">
-              {t("InstituteSwitcher.optionIndividual")}
+              <Trans>Individual</Trans>
             </Combobox.Option>
           </Combobox.Group>
-          <Combobox.Group label={t("InstituteSwitcher.groupInstitutes")}>
+          <Combobox.Group label={t`Institutes`}>
             {options.length > 0 &&
               options.map((option) => (
                 <ComboboxOption key={option.value} value={option.value}>
@@ -96,7 +96,7 @@ export const InstituteSwitcher = () => {
               ))}
             {options.length === 0 && (
               <ComboboxOption value="none" key="none">
-                {t("InstituteSwitcher.optionNoInstituteAvailable")}
+                <Trans>No institute available</Trans>
               </ComboboxOption>
             )}
           </Combobox.Group>

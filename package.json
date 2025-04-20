@@ -32,6 +32,7 @@
     "figure:extract": "tsx scripts/extractFigureTranslations.ts",
     "figure:process": "tsx scripts/processFigureTranslations.ts",
     "lng:extract": "lingui extract",
+    "lng:clean": "lingui extract --clean",
     "lng:compile": "lingui compile --typescript",
     "pkg:outdated": "npm outdated",
     "pkg:interactive": "ncu --interactive --format group"

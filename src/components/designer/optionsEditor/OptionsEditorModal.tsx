@@ -1,6 +1,6 @@
+import { useLingui } from "@lingui/react/macro"
 import { Box, Flex, Modal, ScrollArea, SegmentedControl } from "@mantine/core"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { EditorModalTitle } from "../EditorModalTitle"
 import { OptionsCodeEditor } from "./OptionsCodeEditor"
 import classes from "./OptionsEditorModal.module.css"
@@ -12,7 +12,7 @@ interface OptionsEditorModalProps {
 }
 
 export const OptionsEditorModal = ({ opened, onClose }: OptionsEditorModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const [panel, setPanel] = useState<"formEditor" | "codeEditor">("formEditor")
 
   return (
@@ -21,16 +21,16 @@ export const OptionsEditorModal = ({ opened, onClose }: OptionsEditorModalProps)
       title={
         <Flex p="xs" pos="relative">
           <EditorModalTitle
-            title={t("OptionsEditorModal.modalTitle")}
-            info={t("OptionsEditorModal.modalDescription")}
+            title={t`Options`}
+            info={t`Edit your options directly or give them as an object in the code editor.`}
           />
           <Box pos="absolute" top="50%" left="50%" style={{ transform: "translate(-50%, -50%)" }}>
             <SegmentedControl
               value={panel}
               onChange={(value) => setPanel(value as any)}
               data={[
-                { value: "formEditor", label: t("OptionsEditorModal.formEditorLabel") },
-                { value: "codeEditor", label: t("OptionsEditorModal.codeEditorLabel") },
+                { value: "formEditor", label: t`Form editor` },
+                { value: "codeEditor", label: t`Code editor` },
               ]}
             />
           </Box>

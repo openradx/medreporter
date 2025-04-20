@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import { Code as CodeIcon } from "lucide-react"
 import { memo } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ContentEditorModal } from "./ContentEditorModal"
 
 interface ContentEditorButtonProps {
@@ -14,7 +14,7 @@ interface ContentEditorButtonProps {
 
 export const ContentEditorButton = memo(
   ({ modalTitle, modalDescription, value, onChange }: ContentEditorButtonProps) => {
-    const { t } = useSiteTranslation()
+    const { t } = useLingui()
     const [opened, { open, close }] = useDisclosure(false)
 
     return (
@@ -23,7 +23,7 @@ export const ContentEditorButton = memo(
           color="yellow"
           size="sm"
           variant="subtle"
-          title={t("ScriptEditorButton.buttonTooltip")}
+          title={t`Script editor`}
           onClick={open}
           aria-label="Open script editor"
         >

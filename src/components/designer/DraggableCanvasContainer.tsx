@@ -1,9 +1,9 @@
 import { useDraggable, useDroppable } from "@dnd-kit/core"
+import { Trans } from "@lingui/react/macro"
 import { Box, Card, Stack, Text } from "@mantine/core"
 import { ReactNode, useMemo } from "react"
 import { match } from "ts-pattern"
 import { useContainer } from "~/contexts/ContainerContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectSelectedItem, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectTemplate } from "~/state/templateSlice"
@@ -22,7 +22,6 @@ interface DraggableCanvasContainerProps {
 }
 
 export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasContainerProps) => {
-  const { t } = useSiteTranslation()
   const selectedItem = useAppSelector(selectSelectedItem)
   const template = useAppSelector(selectTemplate)
   const dispatch = useAppDispatch()
@@ -108,11 +107,13 @@ export const DraggableCanvasContainer = ({ node, children }: DraggableCanvasCont
           />
           <Stack gap={0} py={4}>
             <Text>
-              {t("DraggableCanvasContainer.type")}: {type}
+              <Trans>Type: </Trans>
+              {type}
             </Text>
             {fieldId && (
               <Text size="sm" c="dimmed" truncate>
-                {t("DraggableCanvasContainer.id")}: {fieldId}
+                <Trans>Field ID: </Trans>
+                {fieldId}
               </Text>
             )}
           </Stack>

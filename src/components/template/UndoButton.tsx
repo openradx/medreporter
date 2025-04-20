@@ -1,6 +1,6 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Undo as UndoIcon } from "lucide-react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { setStructureDataModified } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectCanUndoHistoryData } from "~/state/structureHistoryDataSlice"
@@ -8,13 +8,13 @@ import { setStructureLiveData } from "~/state/structureLiveDataSlice"
 import { changeHistoryDebounced, undoAndSelect } from "~/state/thunks"
 
 export const UndoButton = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const canUndo = useAppSelector(selectCanUndoHistoryData)
   const dispatch = useAppDispatch()
 
   return (
     <ActionIcon
-      title={t("UndoButton.title")}
+      title={t`Undo`}
       variant="default"
       disabled={!canUndo}
       onClick={() => {

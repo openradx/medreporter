@@ -1,14 +1,14 @@
+import { useLingui } from "@lingui/react/macro"
 import { Controller } from "react-hook-form"
 import { NumberInput } from "~/components/inputs/NumberInput"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getMeasurementsDataParams, measurementsReducer } from "~/utils/measurementsUtils"
 
 export const MeasurementRowsProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <Controller
-      name="default"
+      name="rows"
       render={({ field: { value, onChange }, fieldState: { error } }) => {
         const { rows } = getMeasurementsDataParams(value)
         const handleChange = (newRows: number | null) => {
@@ -17,7 +17,7 @@ export const MeasurementRowsProperty = () => {
         }
         return (
           <NumberInput
-            label={t("MeasurementRowsProperty.label")}
+            label={t`Rows`}
             value={rows}
             onChange={handleChange}
             error={error?.message}

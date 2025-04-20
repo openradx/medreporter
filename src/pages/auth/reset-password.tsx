@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { GetServerSideProps } from "next"
 import { ResetPasswordForm } from "~/components/auth/ResetPasswordForm"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
@@ -20,11 +20,11 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 })
 
 const ResetPasswordPage: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
-      <PageHead title={t("ResetPasswordPage.pageTitle")} />
+      <PageHead title={t`Reset password`} />
       <ResetPasswordForm />
     </>
   )

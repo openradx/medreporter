@@ -1,9 +1,9 @@
+import { useLingui } from "@lingui/react/macro"
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { Fleischner2017 } from "~/default-templates/fleischner2017/Fleischner2017"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
@@ -22,11 +22,11 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 })
 
 const Fleischner2017Page: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
-      <PageHead title={t("Fleischner2017Page.toolTitle")} />
+      <PageHead title={t`Fleischner 2017`} />
       <Fleischner2017 />
     </>
   )

@@ -1,13 +1,13 @@
+import { useLingui, Trans } from "@lingui/react/macro"
 import { Alert, Container } from "@mantine/core"
 import { useTimeout } from "@mantine/hooks"
 import { useRouter } from "next/router"
 import { ReactNode, useEffect } from "react"
 import { FallbackProps } from "react-error-boundary"
 import { AuthenticationError, AuthorizationError } from "~/errors"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const MainLayoutFallback = ({ error }: FallbackProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const router = useRouter()
 
   const { start, clear } = useTimeout(() => {
@@ -33,15 +33,18 @@ export const MainLayoutFallback = ({ error }: FallbackProps) => {
 
   if (error instanceof AuthenticationError) {
     node = (
-      <Alert title={t("MainLayoutFallback.titleAuthenticationError")}>
-        {t("MainLayoutFallback.messageAuthenticationError")}
+      <Alert title={t`Authentication Error`} color="red">
+        <Trans>
+          Only authenticated users can access this page. You will be redirected to the login page in
+          10 seconds.
+        </Trans>
       </Alert>
     )
     start()
   } else if (error instanceof AuthorizationError) {
     node = (
-      <Alert title={t("MainLayoutFallback.titleAuthorizationError")}>
-        {t("MainLayoutFallback.messageAuthorizationError")}
+      <Alert title={t`Permission Denied`} color="red">
+        <Trans>You are not authorized to access this page.</Trans>
       </Alert>
     )
   } else {

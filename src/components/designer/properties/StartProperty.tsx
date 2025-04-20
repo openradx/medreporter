@@ -1,4 +1,4 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { NumberFieldNode } from "~/schemas/structure"
 import { NumberPropertyInput } from "./NumberPropertyInput"
 
@@ -7,12 +7,12 @@ interface StartPropertyProps {
 }
 
 export const StartProperty = ({ node }: StartPropertyProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <NumberPropertyInput
       name="start"
-      label={t("StartProperty.label")}
+      label={t`Start`}
       precision={node.precision}
       min={node.min ?? undefined}
       max={node.max ?? undefined}

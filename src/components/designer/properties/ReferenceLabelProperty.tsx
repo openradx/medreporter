@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { TextInputPropertyInput } from "./TextInputPropertyInput"
 
 export const ReferenceLabelProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <TextInputPropertyInput name="referenceLabel" label={t("ReferenceLabelProperty.label")} />
+  return <TextInputPropertyInput name="referenceLabel" label={t`Label reference`} />
 }

@@ -1,9 +1,9 @@
+import { Trans } from "@lingui/react/macro"
 import { Group, Pagination, ScrollArea, Stack, Table, Text } from "@mantine/core"
 import { UserRole } from "@prisma/client"
 import { useRouter } from "next/router"
 import { useDebounce } from "use-debounce"
 import { useFilter } from "~/contexts/FilterContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
 import { hasRole } from "~/utils/authorization"
 import { trpc } from "~/utils/trpc"
@@ -17,7 +17,6 @@ import { ManageMembershipsButton } from "./ManageMembershipsButton"
 const ITEMS_PER_PAGE = 10
 
 export const InstituteList = () => {
-  const { t } = useSiteTranslation()
   const router = useRouter()
   const activePage = Number(router.query.page) || 1
   const { search: filter } = useFilter()
@@ -41,7 +40,11 @@ export const InstituteList = () => {
 
   return (
     <Stack h="90%" mih={0}>
-      {!data?.institutes.length && <Text>{t("general.miscNoData")}</Text>}
+      {!data?.institutes.length && (
+        <Text>
+          <Trans>No data available</Trans>
+        </Text>
+      )}
       {data?.institutes.length && (
         <ScrollArea>
           <Table miw={500}>

@@ -1,10 +1,10 @@
 import { DndContext, DragEndEvent } from "@dnd-kit/core"
 import { restrictToParentElement, restrictToVerticalAxis } from "@dnd-kit/modifiers"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
+import { Trans } from "@lingui/react/macro"
 import { Table } from "@mantine/core"
 import { Control, FieldArrayWithId, UseFieldArrayMove, UseFieldArrayRemove } from "react-hook-form"
 import { useGrabbingCursor } from "~/hooks/useGrabbingCursor"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { Option } from "~/schemas/structure"
 import { DraggableOptionRow } from "./DraggableOptionRow"
 
@@ -16,7 +16,6 @@ interface OptionsTableProps {
 }
 
 export const OptionsTable = ({ control, fields, move, remove }: OptionsTableProps) => {
-  const { t } = useSiteTranslation()
   const [grabbingCursorOn, grabbingCursorOff] = useGrabbingCursor()
 
   const handleDragStart = () => {
@@ -51,8 +50,12 @@ export const OptionsTable = ({ control, fields, move, remove }: OptionsTableProp
         <Table.Thead>
           <Table.Tr>
             <Table.Th style={{ width: "5%" }} />
-            <Table.Th style={{ width: "45%" }}>{t("OptionsTable.labelColumnHeader")}</Table.Th>
-            <Table.Th style={{ width: "45%" }}>{t("OptionsTable.valueColumnHeader")}</Table.Th>
+            <Table.Th style={{ width: "45%" }}>
+              <Trans>Label</Trans>
+            </Table.Th>
+            <Table.Th style={{ width: "45%" }}>
+              <Trans>Value</Trans>
+            </Table.Th>
             <Table.Th style={{ width: "5%" }} />
           </Table.Tr>
         </Table.Thead>

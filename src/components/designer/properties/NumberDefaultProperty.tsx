@@ -1,4 +1,4 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { NumberFieldNode } from "~/schemas/structure"
 import { NumberPropertyInput } from "./NumberPropertyInput"
 
@@ -7,12 +7,12 @@ export type NumberDefaultPropertyProps = {
 }
 
 export const NumberDefaultProperty = ({ node }: NumberDefaultPropertyProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <NumberPropertyInput
       name="default"
-      label={t("NumberDefaultProperty.label")}
+      label={t`Default value`}
       precision={node.precision}
       min={node.min ?? undefined}
       max={node.max ?? undefined}

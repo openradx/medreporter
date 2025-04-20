@@ -1,22 +1,24 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Stack, TextInput, Title } from "@mantine/core"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/router"
 import { Controller } from "react-hook-form"
 import { PageLink } from "~/components/common/PageLink"
 import { SubmitForm } from "~/components/common/SubmitForm"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { LoginSchema } from "~/validations/auth"
 
 export const LoginForm = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const router = useRouter()
 
   return (
     <Stack gap="md">
-      <Title order={3}>{t("LoginForm.formTitle")}</Title>
+      <Title order={3}>
+        <Trans>Login</Trans>
+      </Title>
       <SubmitForm
-        submitText={t("LoginForm.buttonLogIn")}
+        submitText={t`Login`}
         schema={LoginSchema}
         initialValues={{ usernameOrEmail: "", password: "" }}
         onSubmit={async (values) => {
@@ -28,10 +30,10 @@ export const LoginForm = () => {
 
           if (!result?.ok) {
             if (result?.status === 401) {
-              const message = t("LoginForm.authErrorMessage")
+              const message = t`Invalid username or password`
               throw new FormSubmitError(message)
             }
-            const message = `t("formError.unexpected") ${result?.status}`
+            const message = t`An error occurred: ${result?.status}`
             throw new FormSubmitError(message)
           }
 
@@ -48,7 +50,7 @@ export const LoginForm = () => {
             name="usernameOrEmail"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("LoginForm.inputLabelUsernameOrEmail")}
+                label={t`Username or email`}
                 value={value}
                 onChange={onChange}
                 error={error?.message}
@@ -60,7 +62,7 @@ export const LoginForm = () => {
             name="password"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("LoginForm.inputLabelPassword")}
+                label={t`Password`}
                 value={value}
                 onChange={onChange}
                 error={error?.message}
@@ -72,9 +74,11 @@ export const LoginForm = () => {
       </SubmitForm>
       <Stack gap="xs">
         <PageLink url={{ pathname: "/auth/forgot-password" }}>
-          {t("LoginForm.linkForgotPassword")}
+          <Trans>Forgot your password?</Trans>{" "}
         </PageLink>
-        <PageLink url={{ pathname: "/auth/signup" }}>{t("LoginForm.linkSignUp")}</PageLink>
+        <PageLink url={{ pathname: "/auth/signup" }}>
+          <Trans>Sign up</Trans>
+        </PageLink>
       </Stack>
     </Stack>
   )

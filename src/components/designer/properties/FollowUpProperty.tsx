@@ -1,11 +1,11 @@
+import { useLingui } from "@lingui/react/macro"
 import { Switch } from "@mantine/core"
 import { ChangeEvent } from "react"
 import { Controller } from "react-hook-form"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getMeasurementsDataParams, measurementsReducer } from "~/utils/measurementsUtils"
 
 export const FollowUpProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <Controller
@@ -21,7 +21,7 @@ export const FollowUpProperty = () => {
         }
         return (
           <Switch
-            label={t("FollowUpProperty.label")}
+            label={t`Follow up`}
             checked={followUp}
             onChange={handleChange}
             error={error?.message}

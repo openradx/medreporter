@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { TextInputPropertyInput } from "./TextInputPropertyInput"
 
 export const PreviousLabelProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <TextInputPropertyInput name="previousLabel" label={t("PreviousLabelProperty.label")} />
+  return <TextInputPropertyInput name="previousLabel" label={t`Label previous`} />
 }

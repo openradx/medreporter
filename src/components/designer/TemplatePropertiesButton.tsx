@@ -1,17 +1,17 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
 import { ClipboardList as TemplatePropertiesIcon } from "lucide-react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { TemplatePropertiesModal } from "./TemplatePropertiesModal"
 
 export const TemplatePropertiesButton = () => {
   const [opened, { open, close }] = useDisclosure(false)
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
       <ActionIcon
-        title={t("TemplatePropertiesButton.title")}
+        title={t`Template properties`}
         variant="default"
         onClick={open}
         aria-label="Open template properties modal"

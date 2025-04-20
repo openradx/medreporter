@@ -13,18 +13,1291 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/pages/404.tsx:24
+msgid "- Page Not Found"
+msgstr "- Seite nicht gefunden"
+
+#. placeholder {0}: node.options.length
+#: src/components/designer/optionsEditor/OptionsEditorButton.tsx:18
+msgid "{0, plural, one {Option} other {Options}}"
+msgstr "{0, plural, one {Option} other {Optionen}}"
+
+#: src/components/common/CopyrightMessage.tsx:10
+msgid "2024 MedReporter. All Rights Reserved."
+msgstr "2024 MedReporter. Alle Rechte vorbehalten."
+
 #: src/components/home/Home.tsx:33
 msgid "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
 msgstr "Plattform für die Erstellung strukturierter medizinischer Befunde. Nutzen Sie unsere vorgefertigten Templates ohne Login oder registrieren Sie sich, um eigene Vorlagen zu erstellen, ausgefüllte Befunde zu speichern und diese mit Mitgliedern Ihrer Institution zu teilen."
+
+#: src/components/auth/SignupForm.tsx:110
+#: src/components/admin/UserForm.tsx:71
+msgid "About yourself"
+msgstr "Über dich"
+
+#: src/components/common/AccountControl.tsx:49
+msgid "Accout"
+msgstr "Konto"
+
+#: src/components/admin/AddUserModal.tsx:50
+#: src/components/admin/AddInstituteModal.tsx:49
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: src/components/admin/AddInstituteModal.tsx:20
+msgid "Add institute"
+msgstr "Institute hinzufügen"
+
+#: src/components/admin/AddInstituteButton.tsx:12
+msgid "Add new institute"
+msgstr "Neues Institut hinzufügen"
+
+#: src/components/designer/optionsEditor/OptionsFormEditor.tsx:25
+msgid "Add new option"
+msgstr "Option hinzufügen"
+
+#: src/components/admin/AddUserButton.tsx:12
+msgid "Add new user"
+msgstr "Neuen User hinzufügen"
+
+#: src/components/admin/MembershipAdder.tsx:41
+msgid "Add selected user"
+msgstr "Ausgewählten User hinzufügen"
+
+#: src/components/admin/MembershipAdder.tsx:32
+#: src/components/admin/AddUserModal.tsx:21
+msgid "Add user"
+msgstr "User hinzufügen"
+
+#: src/components/admin/AdminFeatures.tsx:43
+msgid "Add, edit and remove institutes and their members"
+msgstr "Institute und deren Mitglieder hinzufügen, bearbeiten und entfernen"
+
+#: src/components/admin/AdminFeatures.tsx:34
+msgid "Add, edit and remove users"
+msgstr "User hinzufügen, bearbeiten und entfernen"
+
+#: src/components/template/Info.tsx:19
+msgid "Additional info"
+msgstr "Ergänzende Informationen"
+
+#: src/components/common/AccountControl.tsx:65
+msgid "Admin"
+msgstr "Admin"
+
+#: src/pages/admin/index.tsx:39
+msgid "Administration"
+msgstr "Administration"
+
+#: src/components/admin/ManageMembershipsModal.tsx:25
+msgid "Admins"
+msgstr "Admins"
+
+#: src/constants/lazy-translations.ts:19
+msgid "Adrenal"
+msgstr "Nebenniere"
+
+#: src/pages/templates/default/adrenal-mri.tsx:29
+msgid "Adrenal MRI"
+msgstr "MRT der Nebenniere"
+
+#: src/pages/templates/default/adrenal-washout.tsx:29
+msgid "Adrenal Washout on CT"
+msgstr "CT der Nebenniere mit Washout-Berechnung"
+
+#. placeholder {0}: error.message
+#. placeholder {0}: result?.status
+#: src/components/auth/SignupForm.tsx:46
+#: src/components/auth/ResetPasswordForm.tsx:50
+#: src/components/auth/LoginForm.tsx:36
+#: src/components/auth/ForgotPasswordForm.tsx:37
+#: src/components/admin/EditUserModal.tsx:48
+#: src/components/admin/EditInstituteModal.tsx:40
+#: src/components/admin/AddInstituteModal.tsx:38
+msgid "An error occurred: {0}"
+msgstr "Ein Fehler ist aufgetreten: {0}"
+
+#: src/components/home/InstituteSwitcher.tsx:50
+#: src/components/admin/RemoveMembershipButton.tsx:29
+#: src/components/admin/DeleteUserButton.tsx:44
+#: src/components/admin/DeleteInstituteButton.tsx:43
+msgid "An error occurred."
+msgstr "Ein Fehler ist aufgetreten."
+
+#: src/components/common/QueryError.tsx:15
+msgid "An unexpected error occurred during data fetching{reason}"
+msgstr "Ein unerwarteter Fehler ist aufgetreten beim Abrufen der Daten{reason}"
+
+#: src/constants/lazy-translations.ts:11
+msgid "Angiography"
+msgstr "Angiographie"
+
+#: src/constants/lazy-translations.ts:20
+msgid "Arteries"
+msgstr "Arterien"
+
+#: src/components/common/MainLayoutFallback.tsx:36
+msgid "Authentication Error"
+msgstr "Authentifikationsfehler"
+
+#: src/components/templates/UserFilter.tsx:17
+msgid "Author"
+msgstr "Autor"
+
+#: src/components/templates/TemplatesSorting.tsx:32
+msgid "Author (A-Z)"
+msgstr "Autor (A-Z)"
+
+#: src/components/templates/TemplatesSorting.tsx:36
+msgid "Author (Z-A)"
+msgstr "Autor (Z-A)"
+
+#: src/components/templates/TemplateItem.tsx:58
+msgid "Authored by:"
+msgstr "Erstellt von:"
+
+#: src/components/designer/properties/WidthProperty.tsx:12
+msgid "Auto"
+msgstr "Automatisch"
+
+#: src/components/designer/properties/BorderProperty.tsx:6
+msgid "Border"
+msgstr "Umrandung"
+
+#: src/constants/lazy-translations.ts:21
+msgid "Brain"
+msgstr "Gehirn"
 
 #: src/components/home/Home.tsx:42
 msgid "Browse Templates"
 msgstr "Entdecke Templates"
 
+#: src/components/admin/EditUserModal.tsx:56
+#: src/components/admin/EditInstituteModal.tsx:48
+#: src/components/admin/DeleteUserButton.tsx:33
+#: src/components/admin/DeleteInstituteButton.tsx:32
+#: src/components/admin/AddUserModal.tsx:47
+#: src/components/admin/AddInstituteModal.tsx:46
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/components/templates/CategoriesFilter.tsx:30
+#: src/components/designer/TemplatePropertiesForm.tsx:89
+#: src/components/designer/NewTemplate.tsx:107
+msgid "Categories"
+msgstr "Kategorien"
+
+#: src/components/common/ColorSchemeToggle.tsx:12
+msgid "Change color scheme"
+msgstr "Farbschema wechseln"
+
+#: src/components/template/OutputFormat.tsx:15
+msgid "Change output format"
+msgstr "Ausgabeformat wechseln"
+
+#: src/components/designer/properties/MultipleChoiceVariantProperty.tsx:13
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: src/components/templates/TemplatesSorting.tsx:42
+msgid "Choose sorting strategy"
+msgstr "Sortierstrategie wählen"
+
+#: src/components/template/ClearAllButton.tsx:17
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:48
+msgid "Clear all"
+msgstr "Alles leeren"
+
+#: src/components/templates/ClearFiltersButton.tsx:12
+msgid "Clear filters"
+msgstr "Filter leeren"
+
+#: src/components/designer/ClearAllButton.tsx:16
+msgid "Clear form"
+msgstr "Formular leeren"
+
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:49
+msgid "Clear references"
+msgstr "Referenzen leeren"
+
+#: src/components/designer/TemplatePropertiesForm.tsx:118
+#: src/components/admin/ManageMembershipsModal.tsx:46
+msgid "Close"
+msgstr "Schließen"
+
+#: src/components/designer/properties/ContentProperty.tsx:35
+#: src/components/designer/contentEditor/ContentEditorModal.tsx:42
+msgid "Code"
+msgstr "Code"
+
+#: src/components/designer/optionsEditor/OptionsEditorModal.tsx:33
+msgid "Code editor"
+msgstr "Code-Editor"
+
+#: src/components/designer/MenuPanel.tsx:23
+msgid "Components"
+msgstr "Komponenten"
+
+#: src/components/auth/ResetPasswordForm.tsx:74
+msgid "Confirm new password"
+msgstr "Neues Password bestätigen"
+
+#: src/components/designer/properties/ContentProperty.tsx:21
+#: src/components/designer/properties/ContentProperty.tsx:23
+msgid "Content"
+msgstr "Inhalt"
+
+#: src/components/template/CopyButton.tsx:50
+msgid "Copied report to clipboard"
+msgstr "Report in die Zwischenablage kopiert"
+
+#: src/components/designer/editors/EditorToolbar.tsx:81
+msgid "Copy"
+msgstr "Kopieren"
+
+#: src/components/template/CopyButton.tsx:12
+msgid "Copy report to clipboard"
+msgstr "Report in die Zwischenablage kopieren"
+
+#: src/components/template/CopyButton.tsx:55
+msgid "Copy to clipboard failed. Please copy manually."
+msgstr "Kopieren in die Zwischenablage fehlgeschlagen. Bitte kopieren Sie den Report manuell."
+
+#: src/components/designer/NewTemplate.tsx:143
+msgid "Create"
+msgstr "Erstellen"
+
+#: src/components/auth/SignupForm.tsx:24
+msgid "Create account"
+msgstr "Account erstellen"
+
+#: src/components/auth/SignupForm.tsx:21
+msgid "Create an account"
+msgstr "Account erstellen"
+
+#: src/pages/templates/new.tsx:34
+msgid "Create new template"
+msgstr "Neues Template erstellen"
+
+#: src/constants/lazy-translations.ts:12
+msgid "CT"
+msgstr "CT"
+
+#: src/components/outputs/MeasurementsOutput.tsx:43
+msgid "Current"
+msgstr "Aktuell"
+
+#: src/components/home/InstituteSwitcher.tsx:63
+msgid "Current institute"
+msgstr "Aktuelles Institut"
+
+#: src/components/common/QueryError.tsx:14
+msgid "Data fetching error"
+msgstr "Fehler beim Laden der Daten"
+
+#: src/components/designer/MenuPanel.tsx:31
+msgid "Date"
+msgstr "Datum"
+
+#: src/components/common/LanguageChooser.tsx:67
+msgid "Debug translations"
+msgstr "Übersetzungen anzeigen"
+
+#: src/components/designer/properties/SingleChoiceDefaultProperty.tsx:12
+#: src/components/designer/properties/MultipleChoiceDefaultProperty.tsx:12
+#: src/components/designer/properties/MeasurementsDefaultProperty.tsx:13
+#: src/components/designer/properties/FindingDefaultProperty.tsx:6
+msgid "Default"
+msgstr "Voreinstellung"
+
+#: src/components/designer/properties/TimeDefaultProperty.tsx:18
+#: src/components/designer/properties/NumberDefaultProperty.tsx:15
+#: src/components/designer/properties/FreeTextDefaultProperty.tsx:7
+#: src/components/designer/properties/DateDefaultProperty.tsx:18
+msgid "Default value"
+msgstr "Voreingestellter Wert"
+
+#: src/components/designer/PropertiesPanel.tsx:97
+#: src/components/admin/DeleteUserButton.tsx:32
+#: src/components/admin/DeleteInstituteButton.tsx:31
+msgid "Delete"
+msgstr "Löschen"
+
+#: src/components/admin/DeleteInstituteButton.tsx:19
+#: src/components/admin/DeleteInstituteButton.tsx:24
+msgid "Delete institute"
+msgstr "Institut löschen"
+
+#: src/components/admin/DeleteUserButton.tsx:20
+#: src/components/admin/DeleteUserButton.tsx:25
+msgid "Delete user"
+msgstr "User löschen"
+
+#: src/constants/lazy-translations.ts:57
+msgid "Deprecated"
+msgstr "Veraltet"
+
+#: src/components/designer/TemplatePropertiesForm.tsx:82
+#: src/components/designer/NewTemplate.tsx:100
+msgid "Description"
+msgstr "Beschreibung"
+
+#: src/components/designer/editors/EditorToolbar.tsx:46
+msgid "Diagnostics"
+msgstr "Diagnostik"
+
+#: src/components/designer/properties/MeasurementDimensionsProperty.tsx:24
+msgid "Dimensions"
+msgstr "Dimensionen"
+
+#: src/components/designer/properties/DirectionProperty.tsx:10
+msgid "Direction"
+msgstr "Ausrichtung"
+
+#: src/components/designer/properties/DisabledProperty.tsx:10
+#: src/components/designer/properties/DisabledProperty.tsx:11
+msgid "Disabled"
+msgstr "Ausgegraut"
+
+#. placeholder {0}: institute.name
+#: src/components/admin/DeleteInstituteButton.tsx:27
+msgid "Do you really want to delete the institute {0}?"
+msgstr "Möchtest du das Institut {0} wirklich löschen?"
+
+#. placeholder {0}: user.username
+#: src/components/admin/DeleteUserButton.tsx:28
+msgid "Do you really want to delete the user {0}?"
+msgstr "Möchtest du den User {0} wirklich löschen?"
+
+#: src/constants/lazy-translations.ts:55
+msgid "Draft"
+msgstr "Entwurf"
+
+#: src/constants/lazy-translations.ts:49
+msgid "Dutch"
+msgstr "Niederländisch"
+
+#: src/components/admin/EditInstituteModal.tsx:22
+#: src/components/admin/EditInstituteButton.tsx:19
+msgid "Edit institute"
+msgstr "Institut bearbeiten"
+
+#: src/components/template/ToggleEditModeButton.tsx:25
+msgid "Edit template"
+msgstr "Template bearbeiten"
+
+#: src/components/admin/EditUserModal.tsx:22
+#: src/components/admin/EditUserButton.tsx:19
+msgid "Edit user"
+msgstr "User bearbeiten"
+
+#: src/components/designer/optionsEditor/OptionsEditorModal.tsx:25
+msgid "Edit your options directly or give them as an object in the code editor."
+msgstr "Bearbeite deine Optionen direkt oder gebe sie als Objekt im Code Editor an."
+
+#: src/components/designer/svgEditor/SvgEditorModal.tsx:30
+#: src/components/designer/markdownEditor/MarkdownEditorModal.tsx:35
+msgid "Editor"
+msgstr "Editor"
+
+#: src/components/auth/SignupForm.tsx:70
+#: src/components/auth/ForgotPasswordForm.tsx:47
+#: src/components/admin/UserForm.tsx:31
+msgid "Email"
+msgstr "E-Mail"
+
+#: src/constants/lazy-translations.ts:45
+msgid "English"
+msgstr "Englisch"
+
+#: src/components/designer/properties/LevelProperty.tsx:14
+msgid "Error"
+msgstr "Fehler"
+
+#: src/constants/lazy-translations.ts:5
+msgid "Examination"
+msgstr "Untersuchungstechnik"
+
+#: src/components/designer/ItemDragOverlay.tsx:25
+#: src/components/designer/DraggableCanvasItem.tsx:115
+#: src/components/designer/DraggableCanvasContainer.tsx:115
+#: src/components/designer/ContainerDragOverlay.tsx:27
+msgid "Field ID: "
+msgstr "Feld-ID: "
+
+#: src/components/designer/properties/FigureProperty.tsx:14
+msgid "Figure"
+msgstr "Abbildung"
+
+#: src/components/templates/CategoriesFilter.tsx:31
+msgid "Filter by categories"
+msgstr "Nach Kategorien filtern"
+
+#: src/components/templates/LanguageFilter.tsx:17
+msgid "Filter by language"
+msgstr "Nach Sprache filtern"
+
+#: src/components/templates/UserFilter.tsx:18
+msgid "Filter by username of the author"
+msgstr "Nach Username des Autors filtern"
+
+#: src/components/admin/InstitutesManager.tsx:13
+msgid "Filter institutes"
+msgstr "Institute filtern"
+
+#: src/components/admin/UsersManager.tsx:13
+msgid "Filter users"
+msgstr "User filtern"
+
+#: src/components/templates/TemplateFilters.tsx:22
+msgid "Filters"
+msgstr "Filter"
+
+#: src/components/designer/MenuPanel.tsx:30
+msgid "Finding"
+msgstr "Finding"
+
+#: src/pages/templates/default/fleischner2017.tsx:29
+msgid "Fleischner 2017"
+msgstr "Fleischner 2017"
+
+#: src/constants/lazy-translations.ts:13
+msgid "Fluoroscopy"
+msgstr "Fluoroskopie"
+
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:51
+#: src/components/designer/properties/FollowUpProperty.tsx:24
+msgid "Follow up"
+msgstr "Follow up"
+
+#: src/pages/auth/forgot-password.tsx:28
+msgid "Forgot password"
+msgstr "Passwort vergessen"
+
+#: src/components/auth/LoginForm.tsx:77
+#: src/components/auth/ForgotPasswordForm.tsx:17
+msgid "Forgot your password?"
+msgstr "Passwort vergessen?"
+
+#: src/components/designer/optionsEditor/OptionsEditorModal.tsx:32
+msgid "Form editor"
+msgstr "Formular-Editor"
+
+#: src/components/designer/properties/FormatProperty.tsx:7
+msgid "Format"
+msgstr "Format"
+
+#: src/components/designer/editors/EditorToolbar.tsx:116
+msgid "Format code"
+msgstr "Code formatieren"
+
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:50
+msgid "Format dimensions"
+msgstr "Dimensionen formatieren"
+
+#: src/components/designer/MenuPanel.tsx:33
+msgid "Free text"
+msgstr "Freitext"
+
+#: src/constants/lazy-translations.ts:47
+msgid "French"
+msgstr "Französisch"
+
+#: src/components/designer/properties/WidthProperty.tsx:16
+msgid "Full"
+msgstr "Volle Breite"
+
+#: src/components/auth/SignupForm.tsx:97
+#: src/components/admin/UserForm.tsx:58
+msgid "Full name"
+msgstr "Vollständiger Name"
+
+#: src/components/common/SiteLanguageChooser.tsx:12
+msgid "General language"
+msgstr "Sprache der Website"
+
+#: src/constants/lazy-translations.ts:44
+msgid "German"
+msgstr "Deutsch"
+
+#: src/pages/templates/default/gfr.tsx:29
+msgid "GFR Calculator"
+msgstr "GFR Rechner"
+
+#: src/pages/404.tsx:27
+msgid "Go back to homepage"
+msgstr "Zurück zur Startseite"
+
+#: src/components/designer/MenuPanel.tsx:29
+msgid "Group"
+msgstr "Gruppe"
+
+#: src/components/designer/properties/GrowProperty.tsx:7
+msgid "Grow"
+msgstr "Wachsen"
+
+#: src/constants/lazy-translations.ts:22
+msgid "Heart"
+msgstr "Herz"
+
+#: src/components/designer/editors/EditorToolbar.tsx:151
+msgid "Help"
+msgstr "Hilfe"
+
+#: src/components/designer/properties/HiddenProperty.tsx:10
+#: src/components/designer/properties/HiddenProperty.tsx:11
+msgid "Hidden"
+msgstr "Ausgeblendet"
+
+#: src/components/designer/MenuPanel.tsx:45
+msgid "Hint"
+msgstr "Hinweis"
+
+#: src/pages/index.tsx:28
+#: src/components/common/NavDrawer.tsx:19
+msgid "Home"
+msgstr "Startseite"
+
+#: src/components/template/OutputFormat.tsx:24
+msgid "HTML"
+msgstr "HTML"
+
+#: src/components/designer/properties/FieldIdProperty.tsx:7
+msgid "ID"
+msgstr "ID"
+
+#: src/components/auth/ForgotPasswordForm.tsx:21
+#: src/components/auth/ForgotPasswordForm.tsx:29
+msgid "If that email is in our system, you will receive instructions to reset your password shortly."
+msgstr "Wenn diese E-Mail in unserem System ist, erhalten Sie in Kürze Anweisungen, um Ihr Passwort zurückzusetzen."
+
+#: src/components/home/InstituteSwitcher.tsx:79
+#: src/components/home/InstituteSwitcher.tsx:85
+#: src/components/home/InstituteSwitcher.tsx:87
+msgid "Individual"
+msgstr "Individuell"
+
+#: src/components/designer/properties/LevelProperty.tsx:12
+#: src/components/designer/properties/InfoProperty.tsx:13
+msgid "Info"
+msgstr "Information"
+
+#: src/constants/lazy-translations.ts:62
+msgid "Institute"
+msgstr "Institut"
+
+#: src/components/admin/AdminFeatures.tsx:42
+msgid "Institute management"
+msgstr "Institutsverwaltung"
+
+#: src/components/admin/InstituteForm.tsx:16
+msgid "Institute name"
+msgstr "Institutsname"
+
+#: src/components/admin/EditInstituteModal.tsx:36
+#: src/components/admin/AddInstituteModal.tsx:34
+msgid "Institute name already exists"
+msgstr "Institutsname bereits vorhanden"
+
+#: src/components/home/InstituteSwitcher.tsx:90
+msgid "Institutes"
+msgstr "Institute"
+
+#: src/constants/lazy-translations.ts:34
+msgid "Internal Medicine"
+msgstr "Innere Medizin"
+
+#: src/components/auth/ResetPasswordForm.tsx:46
+msgid "Invalid or expired token"
+msgstr "Ungültiger oder abgelaufener Token"
+
+#: src/components/outputs/MeasurementsOutput.tsx:54
+msgid "Invalid output format: {outputFormat}"
+msgstr "Ungültiges Ausgabeformat: {outputFormat}"
+
+#: src/constants/lazy-translations.ts:40
+msgid "Invalid slug. Only letters, numbers, dashes and underscores are allowed (\"- _ a-z A-Z 0-9\")."
+msgstr "Ungültiger Slug. Nur Buchstaben, Zahlen, Binde- und Unterstriche sind erlaubt (\"- _ a-z A-Z 0-9\")."
+
+#: src/components/auth/LoginForm.tsx:33
+msgid "Invalid username or password"
+msgstr "Ungültiger Benutzername oder Passwort"
+
+#: src/constants/lazy-translations.ts:48
+msgid "Italian"
+msgstr "Italienisch"
+
+#: src/constants/lazy-translations.ts:23
+msgid "Kidney"
+msgstr "Niere"
+
+#: src/pages/templates/default/kidney-volume.tsx:29
+msgid "Kidney volume (Mayo-Model)"
+msgstr "Nierenvolume (Mayo-Model)"
+
+#: src/components/designer/properties/LabelProperty.tsx:7
+#: src/components/designer/optionsEditor/OptionsTable.tsx:54
+msgid "Label"
+msgstr "Label"
+
+#: src/components/designer/properties/CurrentLabelProperty.tsx:7
+msgid "Label current"
+msgstr "Label aktuell"
+
+#: src/components/designer/properties/LocationLabel.tsx:7
+msgid "Label location"
+msgstr "Label Lokalisation"
+
+#: src/components/designer/properties/PreviousLabelProperty.tsx:7
+msgid "Label previous"
+msgstr "Label zuvor"
+
+#: src/components/designer/properties/ReferenceLabelProperty.tsx:7
+msgid "Label reference"
+msgstr "Label Referenz"
+
+#: src/components/templates/LanguageFilter.tsx:16
+#: src/components/designer/NewTemplate.tsx:90
+#: src/components/common/LanguageChooser.tsx:55
+msgid "Language"
+msgstr "Sprache"
+
+#: src/components/designer/TemplatePropertiesForm.tsx:72
+msgid "Languages"
+msgstr "Sprachen"
+
+#: src/components/designer/properties/WidthProperty.tsx:15
+msgid "Large"
+msgstr "Groß"
+
+#: src/components/templates/TemplateItem.tsx:64
+msgid "Last modified:"
+msgstr "Zuletzt bearbeitet:"
+
+#: src/components/designer/properties/LegendProperty.tsx:7
+msgid "Legend"
+msgstr "Legende"
+
+#: src/components/designer/properties/LevelProperty.tsx:10
+msgid "Level"
+msgstr "Level"
+
+#: src/components/designer/properties/LinkProperty.tsx:7
+msgid "Link"
+msgstr "Verknüpfung"
+
+#: src/components/designer/properties/ListProperty.tsx:7
+msgid "List"
+msgstr "Liste"
+
+#: src/constants/lazy-translations.ts:24
+msgid "Liver"
+msgstr "Leber"
+
+#: src/components/common/DataLoader.tsx:9
+msgid "Loading..."
+msgstr "Laden..."
+
+#: src/components/outputs/MeasurementsOutput.tsx:44
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:52
+msgid "Location"
+msgstr "Lokalisation"
+
+#: src/components/designer/LogModal.tsx:30
+msgid "Log"
+msgstr "Log"
+
+#: src/components/designer/LogModal.tsx:34
+msgid "Log is empty"
+msgstr "Log ist leer"
+
+#: src/components/common/AccountControl.tsx:75
+msgid "Log out"
+msgstr "Abmelden"
+
+#: src/pages/auth/login.tsx:37
+#: src/components/common/AccountControl.tsx:34
+#: src/components/auth/LoginLink.tsx:10
+#: src/components/auth/LoginForm.tsx:18
+#: src/components/auth/LoginForm.tsx:21
+msgid "Login"
+msgstr "Anmelden"
+
+#: src/constants/lazy-translations.ts:25
+msgid "Lower Extremity"
+msgstr "Untere Extremität"
+
+#: src/constants/lazy-translations.ts:26
+msgid "Lung"
+msgstr "Lunge"
+
+#: src/pages/templates/default/lung-rads2022.tsx:29
+msgid "Lung-RADS 2022"
+msgstr "Lung-RADS 2022"
+
+#: src/pages/admin/manage-institutes.tsx:39
+msgid "Manage institutes"
+msgstr "Institute verwalten"
+
+#: src/components/admin/ManageMembershipsButton.tsx:19
+msgid "Manage memberships"
+msgstr "Mitgliedschaften verwalten"
+
+#: src/pages/admin/manage-users.tsx:39
+msgid "Manage users"
+msgstr "User verwalten"
+
+#: src/components/designer/markdownEditor/MarkdownEditorModal.tsx:29
+#: src/components/designer/markdownEditor/MarkdownEditorButton.tsx:22
+msgid "Markdown editor"
+msgstr "Markdown-Editor"
+
+#: src/components/designer/properties/MaxRowsProperty.tsx:7
+msgid "Maximum rows"
+msgstr "Maximale Zeilenanzahl"
+
+#: src/components/designer/properties/MaxProperty.tsx:15
+msgid "Maximum value"
+msgstr "Maximalwert"
+
+#: src/components/inputs/MeasurementsInput/MeasurementsActions.tsx:22
+msgid "Measurement actions"
+msgstr "Aktionen"
+
+#: src/components/designer/MenuPanel.tsx:37
+msgid "Measurements"
+msgstr "Messungen"
+
+#: src/components/designer/measurementsDefaultEditor/MeasurementsDefaultModal.tsx:18
+msgid "Measurements default editor"
+msgstr "Editor für voreingestellte Werte"
+
+#: src/components/designer/MenuPanel.tsx:43
+msgid "Measurements output"
+msgstr "Messtabellen-Ausgabe"
+
+#: src/pages/templates/default/measurements-table.tsx:29
+msgid "Measurements table"
+msgstr "Messtabelle"
+
+#: src/components/designer/properties/WidthProperty.tsx:14
+msgid "Medium"
+msgstr "Mittel"
+
+#: src/components/admin/ManageMembershipsModal.tsx:24
+msgid "Members"
+msgstr "Mitglieder"
+
+#: src/components/designer/properties/MinRowsProperty.tsx:7
+msgid "Minimum rows"
+msgstr "Minimale Zeilenanzahl"
+
+#: src/components/designer/properties/MinProperty.tsx:15
+msgid "Minimum value"
+msgstr "Minimalwert"
+
+#: src/constants/lazy-translations.ts:14
+msgid "MRI"
+msgstr "MRT"
+
+#: src/components/designer/properties/MultilineProperty.tsx:7
+msgid "Multiline"
+msgstr "Mehrzeilig"
+
+#: src/components/designer/MenuPanel.tsx:36
+msgid "Multiple choice"
+msgstr "Mehrfachauswahl"
+
+#: src/components/common/NavDrawer.tsx:46
+msgid "Navigation"
+msgstr "Navigation"
+
+#: src/components/auth/ResetPasswordForm.tsx:61
+msgid "New password"
+msgstr "Neues Passwort"
+
 #: src/components/home/Home.tsx:48
+#: src/components/designer/DesignerNavbarCenter.tsx:16
 msgid "New Template"
 msgstr "Neues Template"
+
+#: src/components/templates/TemplatesSorting.tsx:20
+msgid "Newest first"
+msgstr "Neueste zuerst"
+
+#: src/components/admin/AdminFeatures.tsx:51
+msgid "No admin rights"
+msgstr "Keine Adminrechte"
+
+#: src/components/templates/TemplateList.tsx:42
+#: src/components/admin/UserList.tsx:38
+#: src/components/admin/MembershipList.tsx:32
+#: src/components/admin/InstituteList.tsx:45
+msgid "No data available"
+msgstr "Keine Daten verfügbar"
+
+#: src/components/home/InstituteSwitcher.tsx:99
+msgid "No institute available"
+msgstr "Kein Institut vorhanden"
+
+#: src/components/designer/MenuPanel.tsx:34
+msgid "Number"
+msgstr "Zahl"
+
+#: src/components/templates/TemplatesSorting.tsx:21
+msgid "Oldest first"
+msgstr "Älteste zuerst"
+
+#: src/components/common/MainLayoutFallback.tsx:37
+msgid "Only authenticated users can access this page. You will be redirected to the login page in 10 seconds."
+msgstr "Nur authorisierte Benutzer haben Zugriff auf diese Seite. Sie werden in 10 Sekunden zur Anmeldeseite weitergeleitet."
+
+#: src/components/designer/measurementsDefaultEditor/MeasurementsDefaultButton.tsx:12
+msgid "Open editor"
+msgstr "Editor öffnen"
+
+#: src/components/template/Figure.tsx:28
+msgid "Open figure to select"
+msgstr "Abbildung zum auswählen öffnen"
+
+#: src/components/designer/StatusIndicator.tsx:24
+msgid "Open log"
+msgstr "Log öffnen"
+
+#: src/components/common/Navbar.tsx:31
+msgid "Open main menu"
+msgstr "Hauptmenü öffnen"
+
+#: src/components/designer/properties/OptionsProperty.tsx:18
+#: src/components/designer/optionsEditor/OptionsEditorModal.tsx:24
+msgid "Options"
+msgstr "Optionen"
+
+#: src/components/admin/UserForm.tsx:91
+msgid "Organizer"
+msgstr "Organisator"
+
+#: src/constants/lazy-translations.ts:6
+msgid "Organs"
+msgstr "Organe"
+
+#: src/components/designer/MenuPanel.tsx:44
+msgid "Others"
+msgstr "Andere"
+
+#: src/components/admin/ManageMembershipsModal.tsx:26
+msgid "Owners"
+msgstr "Eigentümer"
+
+#: src/constants/lazy-translations.ts:27
+msgid "Pancreas"
+msgstr "Pankreas"
+
+#: src/components/designer/MenuPanel.tsx:41
+msgid "Paragraph"
+msgstr "Absatz"
+
+#: src/components/auth/SignupForm.tsx:83
+#: src/components/auth/LoginForm.tsx:65
+#: src/components/admin/UserForm.tsx:44
+msgid "Password"
+msgstr "Passwort"
+
+#: src/components/auth/ResetPasswordForm.tsx:26
+msgid "Password reset successfully"
+msgstr "Passwort erfolgreich zurückgesetzt"
+
+#: src/components/designer/editors/EditorToolbar.tsx:94
+msgid "Paste"
+msgstr "Einfügen"
+
+#: src/components/common/MainLayoutFallback.tsx:46
+msgid "Permission Denied"
+msgstr "Zugriff verweigert"
+
+#: src/constants/lazy-translations.ts:50
+msgid "Portuguese"
+msgstr "Portugiesisch"
+
+#: src/components/designer/properties/PrecisionProperty.tsx:7
+msgid "Precision"
+msgstr "Genauigkeit (Nachkommastellen)"
+
+#: src/components/designer/svgEditor/SvgEditorModal.tsx:31
+#: src/components/designer/markdownEditor/MarkdownEditorModal.tsx:36
+msgid "Preview"
+msgstr "Vorschau"
+
+#: src/components/outputs/MeasurementsOutput.tsx:42
+msgid "Previous"
+msgstr "Zuvor"
+
+#: src/constants/lazy-translations.ts:63
+msgid "Private"
+msgstr "Privat"
+
+#: src/components/designer/PropertiesPanel.tsx:82
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#. placeholder {0}: selectedNode.type
+#: src/components/designer/PropertiesPanel.tsx:76
+msgid "Properties panel not implemented for node type {0}"
+msgstr "Eigenschaften-Panel nicht implementiert für Knoten-Typ {0}"
+
+#: src/constants/lazy-translations.ts:28
+msgid "Prostate"
+msgstr "Prostata"
+
+#: src/constants/lazy-translations.ts:61
+msgid "Public"
+msgstr "Öffentlich"
+
+#: src/constants/lazy-translations.ts:56
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: src/components/designer/properties/SingleChoiceVariantProperty.tsx:13
+msgid "Radio"
+msgstr "Radio"
+
+#: src/constants/lazy-translations.ts:35
+msgid "Radiology"
+msgstr "Radiologie"
+
+#: src/components/template/RedoButton.tsx:17
+#: src/components/designer/RedoButton.tsx:15
+#: src/components/designer/editors/EditorToolbar.tsx:69
+msgid "Redo"
+msgstr "Wiederherstellen"
+
+#: src/components/outputs/MeasurementsOutput.tsx:45
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:53
+msgid "Reference"
+msgstr "Referenz"
+
+#: src/components/designer/TemplatePropertiesForm.tsx:110
+#: src/components/designer/NewTemplate.tsx:128
+msgid "Release status"
+msgstr "Veröffentlichungsstatus"
+
+#: src/components/admin/RemoveMembershipButton.tsx:19
+msgid "Remove membership"
+msgstr "Mitgliedschaft entfernen"
+
+#: src/components/template/Report.tsx:38
+#: src/components/designer/MenuPanel.tsx:39
+msgid "Report"
+msgstr "Bericht"
+
+#: src/components/template/ReportLanguageChooser.tsx:14
+msgid "Report language"
+msgstr "Sprache des Berichts"
+
+#: src/components/auth/ForgotPasswordForm.tsx:20
+msgid "Request submitted"
+msgstr "Anfrage eingereicht"
+
+#: src/pages/auth/reset-password.tsx:27
+#: src/components/auth/ResetPasswordForm.tsx:23
+#: src/components/auth/ResetPasswordForm.tsx:32
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+#: src/components/template/FigureModal.tsx:132
+msgid "Reset selection"
+msgstr "Auswahl zurücksetzen"
+
+#: src/components/admin/UserForm.tsx:86
+msgid "Role"
+msgstr "Rolle"
+
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:54
+#: src/components/designer/properties/RowsProperty.tsx:7
+#: src/components/designer/properties/MeasurementRowsProperty.tsx:20
+msgid "Rows"
+msgstr "Zeilen"
+
+#: src/components/admin/EditUserModal.tsx:59
+#: src/components/admin/EditInstituteModal.tsx:51
+msgid "Save"
+msgstr "Speichern"
+
+#: src/components/designer/scriptEditor/ScriptEditorButton.tsx:22
+#: src/components/designer/contentEditor/ContentEditorButton.tsx:26
+msgid "Script editor"
+msgstr "Script-Editor"
+
+#: src/components/designer/editors/EditorToolbar.tsx:35
+msgid "Search"
+msgstr "Suchen"
+
+#: src/components/designer/properties/SingleChoiceVariantProperty.tsx:12
+#: src/components/designer/properties/MultipleChoiceVariantProperty.tsx:12
+msgid "Select"
+msgstr "Auswählen"
+
+#: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:55
+msgid "Shift current"
+msgstr "Aktuell zu Zuvor verschieben"
+
+#: src/pages/auth/signup.tsx:26
+#: src/components/auth/LoginForm.tsx:80
+msgid "Sign up"
+msgstr "Registrieren"
+
+#: src/components/designer/MenuPanel.tsx:35
+msgid "Single choice"
+msgstr "Einfachauswahl"
+
+#: src/components/designer/properties/WidthProperty.tsx:13
+msgid "Small"
+msgstr "Klein"
+
+#: src/components/templates/TemplatesSorting.tsx:41
+msgid "Sort by..."
+msgstr "Sortieren nach..."
+
+#: src/components/templates/TemplateFilters.tsx:28
+msgid "Sorting"
+msgstr "Sortierung"
+
+#: src/constants/lazy-translations.ts:46
+msgid "Spanish"
+msgstr "Spanisch"
+
+#: src/constants/lazy-translations.ts:7
+msgid "Specialties"
+msgstr "Spezialisationen"
+
+#: src/constants/lazy-translations.ts:29
+msgid "Spleen"
+msgstr "Milz"
+
+#: src/components/designer/properties/StartProperty.tsx:15
+msgid "Start"
+msgstr "Start"
+
+#: src/components/designer/MenuPanel.tsx:42
+msgid "Statement"
+msgstr "Aussage"
+
+#: src/components/designer/properties/StepProperty.tsx:7
+msgid "Step"
+msgstr "Schritt"
+
+#: src/components/template/ToggleEditModeButton.tsx:25
+msgid "Stop editing"
+msgstr "Bearbeitung stoppen"
+
+#: src/components/template/StructureLanguageChooser.tsx:14
+msgid "Structure language"
+msgstr "Sprache des Formulars"
+
+#: src/components/designer/MenuPanel.tsx:27
+msgid "Strucuture"
+msgstr "Formular"
+
+#: src/components/admin/UserForm.tsx:92
+msgid "Superuser"
+msgstr "Superuser"
+
+#: src/constants/lazy-translations.ts:36
+msgid "Surgery"
+msgstr "Chirurgie"
+
+#: src/components/designer/svgEditor/SvgEditorModal.tsx:24
+#: src/components/designer/svgEditor/SvgEditorButton.tsx:19
+msgid "SVG Editor"
+msgstr "SVG-Editor"
+
+#: src/constants/lazy-translations.ts:51
+msgid "Swedish"
+msgstr "Schwedisch"
+
+#: src/hooks/useSyncTemplate.ts:32
+#: src/hooks/useSyncTemplate.ts:35
+msgid "Sync done"
+msgstr "Synchronisierung abgeschlossen"
+
+#. placeholder {0}: error.message
+#: src/hooks/useSyncTemplate.ts:44
+msgid "Sync error: {0}"
+msgstr "Synchronisierungsfehler: {0}"
+
+#: src/hooks/useSyncTemplate.ts:21
+#: src/hooks/useSyncTemplate.ts:26
+msgid "Syncing template..."
+msgstr "Template wird synchronisiert..."
+
+#: src/components/designer/TemplatePropertiesModal.tsx:16
+#: src/components/designer/TemplatePropertiesButton.tsx:14
+msgid "Template properties"
+msgstr "Template-Eigenschaften"
+
+#: src/pages/templates/index.tsx:37
+#: src/components/common/NavDrawer.tsx:20
+msgid "Templates"
+msgstr "Templates"
+
+#: src/components/template/OutputFormat.tsx:30
+#: src/components/designer/properties/ContentProperty.tsx:36
+#: src/components/designer/contentEditor/ContentEditorModal.tsx:43
+msgid "Text"
+msgstr "Text"
+
+#: src/components/auth/SignupForm.tsx:42
+#: src/components/admin/EditUserModal.tsx:44
+#: src/components/admin/AddUserModal.tsx:38
+msgid "This email is already being used."
+msgstr "Diese E-Mail wird bereits verwendet."
+
+#: src/components/auth/SignupForm.tsx:39
+#: src/components/admin/EditUserModal.tsx:41
+#: src/components/admin/AddUserModal.tsx:35
+msgid "This username is already being used."
+msgstr "Dieser Benutzername wird bereits verwendet."
+
+#: src/components/auth/SignupForm.tsx:35
+msgid "This username is reserved. Please pick another one."
+msgstr "Dieser Benutzername ist reserviert. Bitte wählen Sie einen anderen."
+
+#: src/components/designer/MenuPanel.tsx:32
+msgid "Time"
+msgstr "Zeit"
+
+#: src/components/template/Structure.tsx:38
+#: src/components/designer/TemplatePropertiesForm.tsx:69
+#: src/components/designer/NewTemplate.tsx:87
+#: src/components/designer/properties/TitleProperty.tsx:7
+msgid "Title"
+msgstr "Titel"
+
+#: src/components/templates/TemplatesSorting.tsx:28
+msgid "Title (Z-A)"
+msgstr "Titel (Z-A)"
+
+#: src/components/templates/TemplatesSorting.tsx:24
+msgid "Title(A-Z)"
+msgstr "Titel(A-Z)"
+
+#: src/components/designer/editors/EditorToolbar.tsx:139
+msgid "Toggle comment"
+msgstr "Kommentar ein-/ausschalten"
+
+#: src/components/designer/ItemDragOverlay.tsx:20
+#: src/components/designer/DraggableCanvasItem.tsx:111
+#: src/components/designer/DraggableCanvasContainer.tsx:110
+#: src/components/designer/ContainerDragOverlay.tsx:22
+msgid "Type: "
+msgstr "Typ: "
+
+#: src/constants/lazy-translations.ts:15
+msgid "Ultrasound"
+msgstr "Ultraschall"
+
+#: src/components/template/UndoButton.tsx:17
+#: src/components/designer/UndoButton.tsx:15
+#: src/components/designer/editors/EditorToolbar.tsx:58
+msgid "Undo"
+msgstr "Rückgängig machen"
+
+#: src/constants/lazy-translations.ts:30
+msgid "Upper Extremity"
+msgstr "Obere Extremität"
+
+#: src/components/designer/TemplatePropertiesForm.tsx:68
+#: src/components/designer/NewTemplate.tsx:86
+msgid "URL Slug"
+msgstr "URL Slug"
+
+#: src/components/admin/UserForm.tsx:90
+msgid "User"
+msgstr "Benutzer"
+
+#: src/components/admin/AdminFeatures.tsx:33
+msgid "User management"
+msgstr "Benutzerverwaltung"
+
+#: src/components/designer/TemplatePropertiesForm.tsx:57
+msgid "User must be logged in to create a template."
+msgstr "Benutzer muss angemeldet sein, um ein Template zu erstellen."
+
+#: src/components/common/AccountControl.tsx:57
+msgid "User profile"
+msgstr "Benutzerprofil"
+
+#: src/components/auth/SignupForm.tsx:57
+#: src/components/admin/UserForm.tsx:18
+msgid "Username"
+msgstr "Benutzername"
+
+#: src/components/auth/LoginForm.tsx:53
+msgid "Username or email"
+msgstr "Benutzername oder E-Mail"
+
+#: src/components/designer/optionsEditor/OptionsTable.tsx:57
+msgid "Value"
+msgstr "Wert"
+
+#: src/components/template/FigureModal.tsx:48
+msgid "Value in multiple must be an array."
+msgstr "Wert in Mehrfachauswahl muss ein Array sein."
+
+#: src/components/template/FigureModal.tsx:58
+msgid "Value in single must be a string or null."
+msgstr "Wert in Einfachauswahl muss ein String oder Null sein."
+
+#: src/components/designer/properties/SingleChoiceVariantProperty.tsx:10
+#: src/components/designer/properties/MultipleChoiceVariantProperty.tsx:10
+msgid "Variant"
+msgstr "Variante"
+
+#: src/constants/lazy-translations.ts:31
+msgid "Veins"
+msgstr "Venen"
+
+#: src/components/designer/TemplatePropertiesForm.tsx:102
+#: src/components/designer/NewTemplate.tsx:120
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+#: src/components/designer/properties/LevelProperty.tsx:13
+msgid "Warning"
+msgstr "Warnung"
 
 #: src/components/home/Home.tsx:20
 msgid "Welcome to"
 msgstr "Willkommen bei"
+
+#: src/components/designer/properties/HiddenProperty.tsx:12
+msgid "When the script evaluates to true the field is not displayed."
+msgstr "Wenn das Skript wahr zu 'wahr' evaluiert, wird das Feld nicht angezeigt."
+
+#: src/components/designer/properties/DisabledProperty.tsx:12
+msgid "When the script evaluates to true the field is read-only."
+msgstr "Wenn das Skript wahr zu 'wahr' evaluiert, wird das Feld nicht editierbar."
+
+#: src/components/designer/properties/WidthProperty.tsx:10
+msgid "Width"
+msgstr "Breite"
+
+#: src/components/designer/properties/WithSecondsProperty.tsx:7
+msgid "withSeconds"
+msgstr "mit Sekunden"
+
+#: src/constants/lazy-translations.ts:16
+msgid "X-Ray"
+msgstr "Röntgen"
+
+#: src/components/common/MainLayoutFallback.tsx:47
+msgid "You are not authorized to access this page."
+msgstr "Sie haben keine Berechtigung, diese Seite zu besuchen."
+
+#: src/components/designer/properties/ContentProperty.tsx:24
+msgid "You can give a simple string or some javascript code to display the content."
+msgstr "Sie konnen eine einfache Zeichenkette oder ein Skript geben, um den Inhalt anzuzeigen."
+
+#: src/components/auth/ResetPasswordForm.tsx:27
+msgid "You can now log in with your new password. Go to "
+msgstr "Sie können sich jetzt mit Ihrem neuen Passwort anmelden. Gehen Sie zu "

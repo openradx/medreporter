@@ -1,12 +1,12 @@
+import { useLingui } from "@lingui/react/macro"
 import { Select, Loader } from "@mantine/core"
 import { useState } from "react"
 import { useDebounce } from "use-debounce"
 import { useFilter } from "~/contexts/FilterContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 
 export const UserFilter = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const filter = useFilter()
   const [prefix, setPrefix] = useState("")
   const [prefixDebounced] = useDebounce(prefix, 500)
@@ -14,8 +14,8 @@ export const UserFilter = () => {
 
   return (
     <Select
-      label={t("UserFilter.inputLabel")}
-      placeholder={t("UserFilter.inputPlaceholder")}
+      label={t`Author`}
+      placeholder={t`Filter by username of the author`}
       searchValue={prefix}
       onSearchChange={(value) => setPrefix(value)}
       data={data?.users.map((user) => user.username!) ?? []}

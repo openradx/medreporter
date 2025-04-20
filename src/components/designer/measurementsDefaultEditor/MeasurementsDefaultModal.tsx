@@ -1,7 +1,7 @@
+import { useLingui } from "@lingui/react/macro"
 import { Modal } from "@mantine/core"
 import { Controller, useFormContext } from "react-hook-form"
 import { MeasurementsInput } from "~/components/inputs/MeasurementsInput/MeasurementsInput"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MeasurementsData } from "~/schemas/structure"
 
 interface MeasurementsDefaultModalProps {
@@ -10,17 +10,12 @@ interface MeasurementsDefaultModalProps {
 }
 
 export const MeasurementsDefaultModal = ({ opened, onClose }: MeasurementsDefaultModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   const { control } = useFormContext<{ default: MeasurementsData }>()
 
   return (
-    <Modal
-      size="xl"
-      opened={opened}
-      onClose={onClose}
-      title={t("MeasurementsDefaultModal.modalTitle")}
-    >
+    <Modal size="xl" opened={opened} onClose={onClose} title={t`Measurements default editor`}>
       <Controller
         control={control}
         name="default"

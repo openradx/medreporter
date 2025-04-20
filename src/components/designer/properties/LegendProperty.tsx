@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { TextInputPropertyInput } from "./TextInputPropertyInput"
 
 export const LegendProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <TextInputPropertyInput name="legend" label={t("LegendProperty.label")} />
+  return <TextInputPropertyInput name="legend" label={t`Legend`} />
 }

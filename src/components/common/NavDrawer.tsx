@@ -1,9 +1,9 @@
+import { useLingui } from "@lingui/react/macro"
 import { Drawer, Stack, Text } from "@mantine/core"
 import cx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { Route } from "nextjs-routes"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import classes from "./NavDrawer.module.css"
 
 interface NavDrawerProps {
@@ -12,12 +12,12 @@ interface NavDrawerProps {
 }
 
 export const NavDrawer = ({ opened, setOpened }: NavDrawerProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const { pathname } = useRouter()
 
   const linkData: { route: Route; label: string }[] = [
-    { route: { pathname: "/" }, label: t("NavDrawer.home") },
-    { route: { pathname: "/templates" }, label: t("NavDrawer.templates") },
+    { route: { pathname: "/" }, label: t`Home` },
+    { route: { pathname: "/templates" }, label: t`Templates` },
   ]
 
   const links = linkData.map((link) => (
@@ -43,7 +43,7 @@ export const NavDrawer = ({ opened, setOpened }: NavDrawerProps) => {
     <Drawer
       opened={opened}
       onClose={() => setOpened(false)}
-      title={t("NavDrawer.title")}
+      title={t`Navigation`}
       padding="md"
       size="xs"
     >

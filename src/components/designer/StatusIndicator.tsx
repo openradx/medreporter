@@ -1,13 +1,13 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useSyncTemplate } from "~/hooks/useSyncTemplate"
 import { selectStatus } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 import { LogModal } from "./LogModal"
 
 export const StatusIndicator = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const [opened, { open, close }] = useDisclosure(false)
   const status = useAppSelector(selectStatus)
   const states = new Set(Object.values(status).map((s) => s.state))
@@ -21,7 +21,7 @@ export const StatusIndicator = () => {
   return (
     <>
       <ActionIcon
-        title={t("SyncingStateDisplay.title")}
+        title={t`Open log`}
         size="xs"
         variant="default"
         style={{

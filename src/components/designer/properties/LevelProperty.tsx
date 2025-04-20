@@ -1,17 +1,17 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const LevelProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <SelectPropertyInput
       name="level"
-      label={t("LevelProperty.label")}
+      label={t`Level`}
       data={[
-        { label: "Info", value: "info" },
-        { label: "Warning", value: "warning" },
-        { label: "Error", value: "error" },
+        { label: t`Info`, value: "info" },
+        { label: t`Warning`, value: "warning" },
+        { label: t`Error`, value: "error" },
       ]}
     />
   )

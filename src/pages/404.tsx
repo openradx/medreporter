@@ -1,4 +1,4 @@
-/* eslint-disable i18next/no-literal-string */
+import { Trans } from "@lingui/react/macro"
 import { Text, Title } from "@mantine/core"
 import { GetStaticProps } from "next"
 import Link from "next/link"
@@ -19,12 +19,12 @@ const Custom404: PageWithLayout = () => (
     <PageHead title="404" />
     <Title ta="center" mt={100}>
       <Text inherit variant="gradient" span>
-        404{" "}
+        404
       </Text>
-      - Page Not Found
+      <Trans>- Page Not Found</Trans>
       <Link href="/" style={{ textDecoration: "none" }}>
         <Text fz="md" c="blue">
-          Go back to homepage
+          <Trans>Go back to homepage</Trans>
         </Text>
       </Link>
     </Title>

@@ -1,20 +1,20 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Eraser as ClearAllIcon } from "lucide-react"
 import { useStructure } from "~/contexts/StructureContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectStructureDataModified, setStructureDataModified } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { changeHistoryDebounced, setStructureData } from "~/state/thunks"
 
 export const ClearAllButton = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const { defaultValuesRef } = useStructure()
   const modified = useAppSelector(selectStructureDataModified)
   const dispatch = useAppDispatch()
 
   return (
     <ActionIcon
-      title={t("ClearAllButton.title")}
+      title={t`Clear all`}
       variant="default"
       disabled={!modified}
       onClick={() => {

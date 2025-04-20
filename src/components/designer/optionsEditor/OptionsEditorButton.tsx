@@ -1,6 +1,6 @@
+import { Plural } from "@lingui/react/macro"
 import { Input } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MultipleChoiceFieldNode, SingleChoiceFieldNode } from "~/schemas/structure"
 import { OptionsEditorModal } from "./OptionsEditorModal"
 
@@ -9,14 +9,13 @@ interface OptionsEditorButtonProps {
 }
 
 export const OptionsEditorButton = ({ node }: OptionsEditorButtonProps) => {
-  const { t } = useSiteTranslation()
   const [opened, { open, close }] = useDisclosure(false)
 
   return (
     <>
       <Input component="button" type="button" onClick={open} pointer>
-        {/* OptionsEditorButton.label can't be found by i18n Ally as it is pluralized */}
-        {t("OptionsEditorButton.label", { count: node.options.length })}
+        {node.options.length + " "}
+        <Plural value={node.options.length} one="Option" other="Options" />
       </Input>
       {opened && <OptionsEditorModal opened={opened} onClose={close} />}
     </>

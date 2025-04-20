@@ -1,7 +1,7 @@
+import { useLingui } from "@lingui/react/macro"
 import { Button, CloseButton, Stack, ScrollArea, Flex } from "@mantine/core"
 import invariant from "tiny-invariant"
 import { match } from "ts-pattern"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectSelectedItem, setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { deleteNode, selectTemplate } from "~/state/templateSlice"
@@ -25,7 +25,7 @@ export const PropertiesPanel = () => {
   const selectedItem = useAppSelector(selectSelectedItem)
   const template = useAppSelector(selectTemplate)
   const dispatch = useAppDispatch()
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   if (!selectedItem) return null
 
@@ -73,13 +73,13 @@ export const PropertiesPanel = () => {
     ))
     .with({ type: "Hint" }, (node) => <HintPropertiesForm key={node.nodeId} node={node} />)
     .otherwise(() => {
-      throw new Error(`Properties panel not implemented for node type ${selectedNode.type}`)
+      throw new Error(t`Properties panel not implemented for node type ${selectedNode.type}`)
     })
 
   return (
     <Flex pos="relative" h="100%" direction="column">
       <PanelToolbar
-        title={t("PropertiesPanel.panelTitle")}
+        title={t`Properties`}
         actions={<CloseButton onClick={() => dispatch(setSelectedItem(null))} />}
         actionsPosition="right"
       />
@@ -94,7 +94,7 @@ export const PropertiesPanel = () => {
               dispatch(deleteNode({ nodeId: selectedItem }))
             }}
           >
-            {t("PropertiesPanel.deleteItemButtonLabel")}
+            {t`Delete`}
           </Button>
         </Stack>
       </ScrollArea>

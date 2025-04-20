@@ -1,9 +1,9 @@
+import { useLingui } from "@lingui/react/macro"
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { KidneyVolume } from "~/default-templates/kidneyVolume/KidneyVolume"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
@@ -22,11 +22,11 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 })
 
 const KidneyVolumePage: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
-      <PageHead title={t("KidneyVolumePage.toolTitle")} />
+      <PageHead title={t`Kidney volume (Mayo-Model)`} />
       <KidneyVolume />
     </>
   )

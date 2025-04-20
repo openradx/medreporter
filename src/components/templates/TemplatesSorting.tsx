@@ -1,3 +1,4 @@
+import { useLingui } from "@lingui/react/macro"
 import { Select } from "@mantine/core"
 import {
   AUTHOR_ASC,
@@ -8,38 +9,37 @@ import {
   TITLE_DESC,
 } from "~/constants/sorting-options"
 import { useFilter } from "~/contexts/FilterContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const TemplatesSorting = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const filter = useFilter()
 
   return (
     <Select
       data={[
-        { value: CREATED_DESC, label: t("TemplatesSorting.optionCreatedDesc") },
-        { value: CREATED_ASC, label: t("TemplatesSorting.optionCreatedAsc") },
+        { value: CREATED_DESC, label: t`Newest first` },
+        { value: CREATED_ASC, label: t`Oldest first` },
         {
           value: TITLE_ASC,
-          label: t("TemplatesSorting.optionTitleAsc"),
+          label: t`Title(A-Z)`,
         },
         {
           value: TITLE_DESC,
-          label: t("TemplatesSorting.optionTitleDesc"),
+          label: t`Title (Z-A)`,
         },
         {
           value: AUTHOR_ASC,
-          label: t("TemplatesSorting.optionAuthorAsc"),
+          label: t`Author (A-Z)`,
         },
         {
           value: AUTHOR_DESC,
-          label: t("TemplatesSorting.optionAuthorDesc"),
+          label: t`Author (Z-A)`,
         },
       ]}
       value={filter.sorting}
       onChange={(value) => filter.setSorting(value ?? "")}
-      label={t("TemplatesSorting.inputLabel")}
-      placeholder={t("TemplatesSorting.inputPlaceholder")}
+      label={t`Sort by...`}
+      placeholder={t`Choose sorting strategy`}
       clearable
       searchable
       allowDeselect

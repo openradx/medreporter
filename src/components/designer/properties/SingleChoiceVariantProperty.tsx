@@ -1,16 +1,16 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const SingleChoiceVariantProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <SelectPropertyInput
       name="variant"
-      label={t("SingleChoiceVariantProperty.label")}
+      label={t`Variant`}
       data={[
-        { label: t("SingleChoiceVariantProperty.selectLabel"), value: "select" },
-        { label: t("SingleChoiceVariantProperty.radioLabel"), value: "radio" },
+        { label: t`Select`, value: "select" },
+        { label: t`Radio`, value: "radio" },
       ]}
     />
   )

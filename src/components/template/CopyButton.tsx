@@ -1,15 +1,15 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { notifications } from "@mantine/notifications"
 import { Copy as CopyIcon } from "lucide-react"
 import { REPORT_CONTENT_ID } from "~/constants/misc"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const CopyButton = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <ActionIcon
-      title={t("CopyButton.buttonCopy")}
+      title={t`Copy report to clipboard`}
       variant="default"
       onClick={() => {
         // Copy to clipboard is a tricky thing. There is an old API used
@@ -47,12 +47,12 @@ export const CopyButton = () => {
           }
 
           notifications.show({
-            message: t("CopyButton.successMessageCopyReport"),
+            message: t`Copied report to clipboard`,
             color: "green",
           })
         } else {
           notifications.show({
-            message: t("CopyButton.errorMessageCopyReport"),
+            message: t`Copy to clipboard failed. Please copy manually.`,
             color: "red",
           })
         }

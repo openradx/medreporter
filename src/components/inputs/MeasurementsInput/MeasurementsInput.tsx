@@ -1,6 +1,6 @@
+import { useLingui } from "@lingui/react/macro"
 import { Box, Flex, Group, ScrollArea, Stack } from "@mantine/core"
 import { ReactNode, useCallback, useRef } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MeasurementsData } from "~/schemas/structure"
 import { MeasurementsAction } from "~/types/measurements"
 import { getMeasurementsDataParams, measurementsReducer } from "~/utils/measurementsUtils"
@@ -42,17 +42,17 @@ export const MeasurementsInput = ({
     [onChange]
   )
 
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   // TODO: make label configurable props
   const labels = {
-    clearAll: t("MeasurementsInput.toolClearAll"),
-    clearReferences: t("MeasurementsInput.toolClearReferences"),
-    dimensions: t("MeasurementsInput.formatDimensions"),
-    followUp: t("MeasurementsInput.formatFollowUp"),
-    location: t("MeasurementsInput.columnLocation"),
-    reference: t("MeasurementsInput.columnReference"),
-    rows: t("MeasurementsInput.formatRows"),
-    shiftCurrent: t("MeasurementsInput.toolShiftCurrent"),
+    clearAll: t`Clear all`,
+    clearReferences: t`Clear references`,
+    dimensions: t`Format dimensions`,
+    followUp: t`Follow up`,
+    location: t`Location`,
+    reference: t`Reference`,
+    rows: t`Rows`,
+    shiftCurrent: t`Shift current`,
   }
 
   return (

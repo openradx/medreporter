@@ -1,15 +1,15 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon, useMantineColorScheme } from "@mantine/core"
 import { Moon as MoonIcon, Sun as SunIcon } from "lucide-react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import classes from "./ColorSchemeToggle.module.css"
 
 export function ColorSchemeToggle() {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const { toggleColorScheme } = useMantineColorScheme()
 
   return (
     <ActionIcon
-      title={t("ColorSchemeToggle.buttonToggleTheme")}
+      title={t`Change color scheme`}
       aria-label="Change color scheme"
       className={classes.root}
       size="md"

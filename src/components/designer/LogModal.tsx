@@ -1,17 +1,17 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Alert, Modal, ScrollArea, Stack } from "@mantine/core"
 import { CircleAlert as ErrorIcon, CircleCheck as SuccessIcon } from "lucide-react"
 import { useEffect, useRef } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectLog } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 
-interface SyncingLogModalProps {
+interface LogModalProps {
   opened: boolean
   onClose: () => void
 }
 
-export const LogModal = ({ opened, onClose }: SyncingLogModalProps) => {
-  const { t } = useSiteTranslation()
+export const LogModal = ({ opened, onClose }: LogModalProps) => {
+  const { t } = useLingui()
   const log = useAppSelector(selectLog)
 
   const viewport = useRef<HTMLDivElement>(null)
@@ -27,11 +27,11 @@ export const LogModal = ({ opened, onClose }: SyncingLogModalProps) => {
     <Modal
       opened={opened}
       onClose={onClose}
-      title={t("LogModal.modalTitle")}
+      title={t`Log`}
       scrollAreaComponent={(props) => <ScrollArea.Autosize {...props} viewportRef={viewport} />}
     >
       <Stack gap="xs">
-        {!log.length && t("LogModal.emptyMessage")}
+        {!log.length && <Trans>Log is empty</Trans>}
         {log.map((logEntry, index) => (
           <Alert
             key={index}

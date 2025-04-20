@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { BooleanPropertyInput } from "./BooleanPropertyInput"
 
 export const GrowProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <BooleanPropertyInput name="grow" label={t("GrowProperty.label")} />
+  return <BooleanPropertyInput name="grow" label={t`Grow`} />
 }

@@ -1,15 +1,15 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Eraser as ClearAllIcon } from "lucide-react"
 import { useFilter } from "~/contexts/FilterContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const ClearFiltersButton = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const filter = useFilter()
 
   return (
     <ActionIcon
-      title={t("ClearFiltersButton.title")}
+      title={t`Clear filters`}
       variant="default"
       onClick={() => {
         filter.setCategories([])

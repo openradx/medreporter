@@ -1,4 +1,4 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { NumberFieldNode } from "~/schemas/structure"
 import { NumberPropertyInput } from "./NumberPropertyInput"
 
@@ -7,12 +7,12 @@ interface MaxPropertyProps {
 }
 
 export const MaxProperty = ({ node }: MaxPropertyProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <NumberPropertyInput
       name="max"
-      label={t("MaxProperty.label")}
+      label={t`Maximum value`}
       precision={node.precision}
       min={node.min ?? undefined}
     />

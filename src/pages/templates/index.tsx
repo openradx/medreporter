@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { GetServerSideProps } from "next"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { Templates } from "~/components/templates/Templates"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
@@ -30,11 +30,11 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 }
 
 const TemplatesPage: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
-      <PageHead title={t("TemplatesPage.pageTitle")} />
+      <PageHead title={t`Templates`} />
       <Templates />
     </>
   )

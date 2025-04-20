@@ -1,3 +1,4 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { ActionIcon, Menu } from "@mantine/core"
 import { MembershipRole, UserRole } from "@prisma/client"
 import {
@@ -10,10 +11,9 @@ import {
 import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const AccountControl = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const session = useSession()
   const router = useRouter()
 
@@ -31,7 +31,7 @@ export const AccountControl = () => {
       {session.status === "loading" && <ActionIcon variant="default" loading />}
       {session.status === "unauthenticated" && (
         <ActionIcon
-          title={t("AccountControl.optionLogIn")}
+          title={t`Login`}
           variant="default"
           onClick={() => {
             router.push({
@@ -46,7 +46,7 @@ export const AccountControl = () => {
       {session.status === "authenticated" && (
         <Menu width={250}>
           <Menu.Target>
-            <ActionIcon title={t("AccountControl.menuTitleAccout")} variant="default">
+            <ActionIcon title={t`Accout`} variant="default">
               <AccountIcon size={20} />
             </ActionIcon>
           </Menu.Target>
@@ -54,7 +54,7 @@ export const AccountControl = () => {
           <Menu.Dropdown>
             <Menu.Label>{session.data.user.username}</Menu.Label>
             <Menu.Item leftSection={<ProfileIcon size={18} />}>
-              {t("AccountControl.optionProfile")}
+              <Trans>User profile</Trans>
             </Menu.Item>
             {canAdministrate && (
               <Menu.Item
@@ -62,7 +62,7 @@ export const AccountControl = () => {
                 href={{ pathname: "/admin" }}
                 leftSection={<AdminIcon size={18} />}
               >
-                {t("AccountControl.optionAdmin")}
+                <Trans>Admin</Trans>
               </Menu.Item>
             )}
             <Menu.Item
@@ -72,7 +72,7 @@ export const AccountControl = () => {
                 router.push("/")
               }}
             >
-              {t("AccountControl.optionLogOut")}
+              <Trans>Log out</Trans>
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>

@@ -1,6 +1,8 @@
+import { useLingui as useLinguiLazy } from "@lingui/react"
+import { useLingui as useLinguiMacro } from "@lingui/react/macro"
 import { Badge, Card, Flex, Group, Stack, Text } from "@mantine/core"
 import Link from "next/link"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { CATEGORIES } from "~/constants/lazy-translations"
 import { ItemFlagIcon } from "./ItemFlagIcon"
 
 interface ToolCardProps {
@@ -22,7 +24,8 @@ export const TemplateItem = ({
   categories,
   updatedAt,
 }: ToolCardProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLinguiMacro()
+  const { _ } = useLinguiLazy()
 
   return (
     <Link
@@ -45,19 +48,20 @@ export const TemplateItem = ({
             <Group gap="xs">
               {categories.map((category) => (
                 <Badge variant="light" style={{ cursor: "pointer" }} key={category}>
-                  {t(`categories.${category}`)}
+                  {/* @ts-expect-error group is a string by next.js */}
+                  {_(CATEGORIES[category])}
                 </Badge>
               ))}
             </Group>
             <Stack gap={2} align="flex-end">
               <Group>
-                <Text size="xs">{t("TemplateItem.authoredBy")}:</Text>
+                <Text size="xs">{t`Authored by:`}:</Text>
                 <Text size="xs" fw={500}>
                   {username}
                 </Text>
               </Group>
               <Group>
-                <Text size="xs">{t("TemplateItem.updatedAt")}:</Text>
+                <Text size="xs">{t`Last modified:`}:</Text>
                 <Text size="xs" fw={500}>
                   {updatedAt.toLocaleDateString()}
                 </Text>

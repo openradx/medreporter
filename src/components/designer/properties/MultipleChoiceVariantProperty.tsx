@@ -1,16 +1,16 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const MultipleChoiceVariantProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <SelectPropertyInput
       name="variant"
-      label={t("MultipleChoiceVariantProperty.label")}
+      label={t`Variant`}
       data={[
-        { label: t("MultipleChoiceVariantProperty.selectLabel"), value: "select" },
-        { label: t("MultipleChoiceVariantProperty.checkboxLabel"), value: "checkbox" },
+        { label: t`Select`, value: "select" },
+        { label: t`Checkbox`, value: "checkbox" },
       ]}
     />
   )

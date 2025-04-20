@@ -1,8 +1,8 @@
+import { Trans } from "@lingui/react/macro"
 import { Group, Pagination, ScrollArea, Stack, Text } from "@mantine/core"
 import { useRouter } from "next/router"
 import { useDebounce } from "use-debounce"
 import { useFilter } from "~/contexts/FilterContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 import { DataLoader } from "../common/DataLoader"
 import { QueryError } from "../common/QueryError"
@@ -12,7 +12,6 @@ import classes from "./TemplateList.module.css"
 const ITEMS_PER_PAGE = 15
 
 export const TemplateList = () => {
-  const { t } = useSiteTranslation()
   const router = useRouter()
   const activePage = Number(router.query.page) || 1
   const { categories, language, search, username, sorting } = useFilter()
@@ -38,7 +37,11 @@ export const TemplateList = () => {
   return (
     <ScrollArea h="100%" scrollHideDelay={0} className={classes.templateList}>
       <Stack gap="xs">
-        {!data?.templates.length && <Text>{t("general.miscNoData")}</Text>}
+        {!data?.templates.length && (
+          <Text>
+            <Trans>No data available</Trans>
+          </Text>
+        )}
         {data?.templates.length &&
           data.templates.map((template) => (
             <TemplateItem

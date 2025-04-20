@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { BooleanPropertyInput } from "./BooleanPropertyInput"
 
 export const MultilineProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <BooleanPropertyInput name="multiline" label={t("MultilineProperty.label")} />
+  return <BooleanPropertyInput name="multiline" label={t`Multiline`} />
 }

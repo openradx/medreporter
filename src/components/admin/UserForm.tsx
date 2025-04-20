@@ -1,12 +1,12 @@
+import { useLingui } from "@lingui/react/macro"
 import { Select, Stack, Textarea, TextInput } from "@mantine/core"
 import { UserRole } from "@prisma/client"
 import { Controller } from "react-hook-form"
 import { z } from "zod"
 import { SubmitForm, SubmitFormProps } from "~/components/common/SubmitForm"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S>) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <SubmitForm<S> {...props}>
@@ -15,7 +15,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="username"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.inputLabelUsername")}
+              label={t`Username`}
               value={value}
               onChange={onChange}
               error={error?.message}
@@ -28,7 +28,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="email"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.inputLabelEmail")}
+              label={t`Email`}
               value={value}
               onChange={onChange}
               error={error?.message}
@@ -41,7 +41,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="password"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.inputLabelPassword")}
+              label={t`Password`}
               value={value}
               onChange={onChange}
               error={error?.message}
@@ -55,7 +55,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="fullName"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <TextInput
-              label={t("UserForm.inputLabelFullName")}
+              label={t`Full name`}
               value={value}
               onChange={onChange}
               error={error?.message}
@@ -68,7 +68,7 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           name="about"
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <Textarea
-              label={t("UserForm.inputLabelAbout")}
+              label={t`About yourself`}
               minRows={2}
               value={value}
               onChange={onChange}
@@ -83,13 +83,13 @@ export const UserForm = <S extends z.ZodType<any, any>>(props: SubmitFormProps<S
           render={({ field: { value, onChange } }) => (
             <Select
               id="user-form-role"
-              label={t("UserForm.inputLabelRole")}
+              label={t`Role`}
               value={value}
               onChange={onChange}
               data={[
-                { value: UserRole.USER, label: t("UserForm.optionUserRole") },
-                { value: UserRole.ORGANIZER, label: t("UserForm.optionOrganizerRole") },
-                { value: UserRole.SUPERUSER, label: t("UserForm.optionSuperuserRole") },
+                { value: UserRole.USER, label: t`User` },
+                { value: UserRole.ORGANIZER, label: t`Organizer` },
+                { value: UserRole.SUPERUSER, label: t`Superuser` },
               ]}
             />
           )}

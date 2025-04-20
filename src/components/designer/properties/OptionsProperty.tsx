@@ -1,6 +1,6 @@
+import { useLingui } from "@lingui/react/macro"
 import { Input } from "@mantine/core"
 import { Controller } from "react-hook-form"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MultipleChoiceFieldNode, SingleChoiceFieldNode } from "~/schemas/structure"
 import { OptionsEditorButton } from "../optionsEditor/OptionsEditorButton"
 
@@ -9,13 +9,13 @@ interface OptionsPropertyProps {
 }
 
 export const OptionsProperty = ({ node }: OptionsPropertyProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <Controller
       name="options"
       render={({ fieldState: { error } }) => (
-        <Input.Wrapper label={t("OptionsProperty.label")} error={error?.message}>
+        <Input.Wrapper label={t`Options`} error={error?.message}>
           <OptionsEditorButton node={node} />
         </Input.Wrapper>
       )}
