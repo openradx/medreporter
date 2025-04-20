@@ -16,6 +16,9 @@ const eslintConfig = [
   ...storybook.configs["flat/recommended"],
   i18next.configs["flat/recommended"],
   {
+    ignores: ["src/locales/*"],
+  },
+  {
     // ESLint specific rules
     // https://eslint.org/docs/latest/rules/
     rules: {
