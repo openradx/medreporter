@@ -26,7 +26,6 @@ interface EditorToolbarProps {
 
 export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
   const { t } = useSiteTranslation()
-  const editor = editorRef.current
 
   return (
     <Group gap={4}>
@@ -34,6 +33,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.searchTooltip")}
         onClick={() => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           openSearchPanel(editor)
@@ -45,6 +45,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.diagnosticsTooltip")}
         onClick={() => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           openLintPanel(editor)
@@ -57,6 +58,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.undoTooltip")}
         onClick={() => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           undo(editor)
@@ -68,6 +70,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.redoTooltip")}
         onClick={() => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           redo(editor)
@@ -80,6 +83,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.copyTooltip")}
         onClick={async () => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           const { state } = editor
@@ -93,6 +97,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.pasteTooltip")}
         onClick={async () => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           const text = await navigator.clipboard.readText()
@@ -115,6 +120,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.formatTooltip")}
         onClick={async () => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           const result = await formatCode(
@@ -138,6 +144,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.toggleCommentTooltip")}
         onClick={() => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
           toggleComment(editor)
@@ -150,6 +157,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
         variant="default"
         title={t("EditorToolbar.helpTooltip")}
         onClick={() => {
+          const editor = editorRef.current
           invariant(editor)
           editor.focus()
         }}
