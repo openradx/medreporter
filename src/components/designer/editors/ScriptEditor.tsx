@@ -14,6 +14,6 @@ interface ScriptEditorProps {
 
 export const ScriptEditor = ({ value, onChange }: ScriptEditorProps) => (
   <Stack h="100%" w="100%" gap={0} className={classes.scriptEditor}>
-    <CodeEditor codeType="javascript" extensions={extensions} value={value} onChange={onChange} />
+    <CodeEditor codeType="script" extensions={extensions} value={value} onChange={onChange} />
   </Stack>
 )

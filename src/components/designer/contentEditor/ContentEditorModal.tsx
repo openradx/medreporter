@@ -1,9 +1,9 @@
-import { Box, Flex, Modal, SegmentedControl, Stack } from "@mantine/core"
+import { Box, Flex, Modal, SegmentedControl } from "@mantine/core"
 import { Controller, useWatch } from "react-hook-form"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { EditorModalTitle } from "../EditorModalTitle"
-import { CodeEditor } from "../editors/CodeEditor"
 import { ScriptEditor } from "../editors/ScriptEditor"
+import { TextEditor } from "../editors/TextEditor"
 import classes from "./ContentEditorModal.module.css"
 
 interface ContentEditorModalProps {
@@ -63,9 +63,7 @@ export const ContentEditorModal = ({
         <ScriptEditor value={value} onChange={onChange} />
       </Box>
       <Box display={contentType === "text" ? "block" : "none"} h="100%">
-        <Stack h="100%" w="100%" gap={0} className={classes.stringEditor}>
-          <CodeEditor codeType="string" extensions={[]} value={value} onChange={onChange} />
-        </Stack>
+        <TextEditor value={value} onChange={onChange} />
       </Box>
     </Modal>
   )

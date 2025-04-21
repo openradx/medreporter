@@ -34,3 +34,5 @@ export type PageWithLayout<P = unknown> = NextPage<P> & {
 }
 
 export type OutputFormat = "html" | "plain"
+
+export type CodeType = "script" | "json" | "markdown" | "svg" | "text"

@@ -2,11 +2,12 @@ import { Extension } from "@codemirror/state"
 import { EditorView } from "@codemirror/view"
 import { Stack, useMantineColorScheme } from "@mantine/core"
 import { useRef } from "react"
+import { CodeType } from "~/types/general"
 import { CodeMirror } from "./CodeMirror"
 import { EditorToolbar } from "./EditorToolbar"
 
 interface CodeEditorProps {
-  codeType: "javascript" | "json" | "markdown" | "svg" | "string"
+  codeType: CodeType
   extensions: Extension[]
   value: string
   onChange: (value: string) => void

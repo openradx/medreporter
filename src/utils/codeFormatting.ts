@@ -3,6 +3,7 @@ import babelPlugin from "prettier/plugins/babel"
 import estreePlugin from "prettier/plugins/estree"
 import markdownPlugin from "prettier/plugins/markdown"
 import { formatWithCursor } from "prettier/standalone"
+import { CodeType } from "~/types/general"
 
 async function formatScript(code: string, cursorOffset: number): Promise<[string, number]> {
   const result = await formatWithCursor(code, {
@@ -43,12 +44,12 @@ async function formatSVG(code: string, cursorOffset: number): Promise<[string, n
 }
 
 export async function formatCode(
-  codeType: "javascript" | "json" | "markdown" | "svg" | "string",
+  codeType: CodeType,
   code: string,
   cursorOffset: number
 ): Promise<[string, number]> {
   switch (codeType) {
-    case "javascript":
+    case "script":
       return formatScript(code, cursorOffset)
     case "json":
       return formatJSON(code, cursorOffset)
@@ -56,7 +57,7 @@ export async function formatCode(
       return formatMarkdown(code, cursorOffset)
     case "svg":
       return formatSVG(code, cursorOffset)
-    case "string":
+    case "text":
       return [code, cursorOffset]
     default:
       throw new Error(`Unknown code type: ${codeType}`)

@@ -17,10 +17,11 @@ import {
 import { RefObject } from "react"
 import invariant from "tiny-invariant"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { CodeType } from "~/types/general"
 import { formatCode } from "~/utils/codeFormatting"
 
 interface EditorToolbarProps {
-  codeType: "javascript" | "json" | "markdown" | "svg" | "string"
+  codeType: CodeType
   editorRef: RefObject<EditorView | null>
 }
 
