@@ -1,6 +1,6 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Redo as RedoIcon } from "lucide-react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { setStructureDataModified } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectCanRedoHistoryData } from "~/state/structureHistoryDataSlice"
@@ -8,13 +8,13 @@ import { setStructureLiveData } from "~/state/structureLiveDataSlice"
 import { changeHistoryDebounced, redoAndSelect } from "~/state/thunks"
 
 export const RedoButton = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const canRedo = useAppSelector(selectCanRedoHistoryData)
   const dispatch = useAppDispatch()
 
   return (
     <ActionIcon
-      title={t("RedoButton.title")}
+      title={t`Redo`}
       variant="default"
       disabled={!canRedo}
       onClick={() => {

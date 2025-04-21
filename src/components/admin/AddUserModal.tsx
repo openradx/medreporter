@@ -1,7 +1,7 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Button, Group, Modal, Stack } from "@mantine/core"
 import { UserRole } from "@prisma/client"
 import { TRPCClientError } from "@trpc/client"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { trpc } from "~/utils/trpc"
 import { CreateUserSchema } from "~/validations/admin"
@@ -13,12 +13,12 @@ interface AddUserModalProps {
 }
 
 export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const createUser = trpc.admin.createUser.useMutation()
   const utils = trpc.useUtils()
 
   return (
-    <Modal title={t("AddUserModal.formTitle")} opened={opened} onClose={onClose}>
+    <Modal title={t`Add user`} opened={opened} onClose={onClose}>
       <Stack>
         <UserForm
           id="add-user-form"
@@ -32,10 +32,10 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
             } catch (error) {
               if (error instanceof TRPCClientError) {
                 if (error.message.match(/Unique constrained failed.*"username"/)) {
-                  throw new FormSubmitError({ email: t("AddUserModal.messageDuplicateUsername") })
+                  throw new FormSubmitError({ email: t`This username is already being used.` })
                 }
                 if (error.message.match(/Unique constrained failed.*"email"/)) {
-                  throw new FormSubmitError({ email: t("AddUserModal.messageDuplicateEmail") })
+                  throw new FormSubmitError({ email: t`This email is already being used.` })
                 }
               }
               throw error
@@ -44,10 +44,10 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
         />
         <Group justify="flex-end">
           <Button variant="transparent" onClick={onClose}>
-            {t("general.buttonCancel")}
+            <Trans>Cancel</Trans>
           </Button>
           <Button variant="outline" form="add-user-form" type="submit">
-            {t("general.buttonAdd")}
+            <Trans>Add</Trans>
           </Button>
         </Group>
       </Stack>

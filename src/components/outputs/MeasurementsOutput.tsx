@@ -1,6 +1,6 @@
+import { useLingui } from "@lingui/react/macro"
 import { Box } from "@mantine/core"
 import { ReactNode } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useStructureLink } from "~/hooks/useStructureLink"
 import { MeasurementsData } from "~/schemas/structure"
 import { selectOutputFormat } from "~/state/displaySlice"
@@ -34,15 +34,15 @@ export const MeasurementsOutput = ({
 }: MeasurementsOutputProps) => {
   const { activateLink } = useStructureLink({ link })
   const outputFormat = useAppSelector(selectOutputFormat)
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   if (!data) return null
 
   const labels = {
-    previous: previousLabel || t("MeasurementsOutput.columnPrevious"),
-    current: currentLabel || t("MeasurementsOutput.columnCurrent"),
-    location: locationLabel || t("MeasurementsOutput.columnLocation"),
-    reference: referenceLabel || t("MeasurementsOutput.columnReference"),
+    previous: previousLabel || t`Previous`,
+    current: currentLabel || t`Current`,
+    location: locationLabel || t`Location`,
+    reference: referenceLabel || t`Reference`,
   }
 
   let output: ReactNode
@@ -51,7 +51,7 @@ export const MeasurementsOutput = ({
   } else if (outputFormat === "plain") {
     output = <MeasurementsOutputPlain legend={legend} {...{ data, labels, stats }} />
   } else {
-    throw new Error(`Invalid output format: ${outputFormat}`)
+    throw new Error(t`Invalid output format: ${outputFormat}`)
   }
 
   return (

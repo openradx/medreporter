@@ -1,6 +1,6 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Button, Group, Modal, Stack, Tabs, Text } from "@mantine/core"
 import { Institute, MembershipRole } from "@prisma/client"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MembershipsTabPanel } from "./MembershipsTabPanel"
 
 interface ManageMembershipsModalProps {
@@ -14,25 +14,16 @@ export const ManageMembershipsModal = ({
   opened,
   onClose,
 }: ManageMembershipsModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
-    <Modal
-      size="lg"
-      title={
-        <Stack>
-          <Text>{institute.name}</Text>
-        </Stack>
-      }
-      opened={opened}
-      onClose={onClose}
-    >
+    <Modal size="lg" title={<Text>{institute.name}</Text>} opened={opened} onClose={onClose}>
       <Stack>
         <Tabs defaultValue="members">
           <Tabs.List aria-label="Memberships">
-            <Tabs.Tab value="members">{t("ManageMembershipsModal.tabTitleMembers")}</Tabs.Tab>
-            <Tabs.Tab value="admins">{t("ManageMembershipsModal.tabTitleAdmins")}</Tabs.Tab>
-            <Tabs.Tab value="owners">{t("ManageMembershipsModal.tabTitleOwners")}</Tabs.Tab>
+            <Tabs.Tab value="members">{t`Members`}</Tabs.Tab>
+            <Tabs.Tab value="admins">{t`Admins`}</Tabs.Tab>
+            <Tabs.Tab value="owners">{t`Owners`}</Tabs.Tab>
           </Tabs.List>
           <MembershipsTabPanel
             tabValue="members"
@@ -52,7 +43,7 @@ export const ManageMembershipsModal = ({
         </Tabs>
         <Group justify="flex-end">
           <Button variant="outline" onClick={onClose}>
-            {t("general.buttonClose")}
+            <Trans>Close</Trans>
           </Button>
         </Group>
       </Stack>

@@ -1,8 +1,8 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Stack, Textarea, TextInput, Title } from "@mantine/core"
 import { TRPCClientError } from "@trpc/client"
 import { Controller } from "react-hook-form"
 import { SubmitForm } from "~/components/common/SubmitForm"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { trpc } from "~/utils/trpc"
 import { SignupSchema } from "~/validations/auth"
@@ -12,14 +12,16 @@ type SignupFormProps = {
 }
 
 export const SignupForm = (props: SignupFormProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const signup = trpc.auth.signup.useMutation()
 
   return (
     <Stack gap="md">
-      <Title order={3}>{t("SignupForm.formTitle")}</Title>
+      <Title order={3}>
+        <Trans>Create an account</Trans>
+      </Title>
       <SubmitForm
-        submitText={t("SignupForm.buttonSubmit")}
+        submitText={t`Create account`}
         schema={SignupSchema}
         initialValues={{ username: "", email: "", password: "", fullName: "", about: "" }}
         onSubmit={async (values) => {
@@ -29,17 +31,19 @@ export const SignupForm = (props: SignupFormProps) => {
           } catch (error) {
             if (error instanceof TRPCClientError) {
               if (error.message === "This username is reserved. Please pick another.") {
-                throw new FormSubmitError({ username: t("SignupForm.messageUsernameReserved") })
+                throw new FormSubmitError({
+                  username: t`This username is reserved. Please pick another one.`,
+                })
               }
               if (error.message.match(/Unique constrained failed.*"username"/)) {
-                throw new FormSubmitError({ username: t("SignupForm.messageUsernameAlreadyUsed") })
+                throw new FormSubmitError({ username: t`This username is already being used.` })
               }
               if (error.message.match(/Unique constrained failed.*"email"/)) {
-                throw new FormSubmitError({ email: t("SignupForm.messageEmailAlreadyUsed") })
+                throw new FormSubmitError({ email: t`This email is already being used.` })
               }
             }
             if (error instanceof Error) {
-              throw new FormSubmitError(t("formError.unexpected") + error.message)
+              throw new FormSubmitError(t`An error occurred: ${error.message}`)
             }
             throw error
           }
@@ -50,7 +54,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="username"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.inputLabelUsername")}
+                label={t`Username`}
                 value={value}
                 onChange={onChange}
                 error={error?.message}
@@ -63,7 +67,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="email"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.inputLabelEmail")}
+                label={t`Email`}
                 value={value}
                 onChange={onChange}
                 error={error?.message}
@@ -76,7 +80,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="password"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.inputLabelPassword")}
+                label={t`Password`}
                 value={value}
                 onChange={onChange}
                 error={error?.message}
@@ -90,7 +94,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="fullName"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <TextInput
-                label={t("SignupForm.inputLabelFullName")}
+                label={t`Full name`}
                 value={value}
                 onChange={onChange}
                 error={error?.message}
@@ -103,7 +107,7 @@ export const SignupForm = (props: SignupFormProps) => {
             name="about"
             render={({ field: { value, onChange }, fieldState: { error } }) => (
               <Textarea
-                label={t("SignupForm.inputLabelAbout")}
+                label={t`About yourself`}
                 minRows={2}
                 value={value}
                 onChange={onChange}

@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { Paper, ScrollArea, Stack } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants/misc"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { selectOutputFormat } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
@@ -19,7 +19,7 @@ interface ReportProps {
 }
 
 export const Report = ({ actions, children, isDesigning = false }: ReportProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const outputFormat = useAppSelector(selectOutputFormat)
   const matches = useMediaQuery("(min-width: 68em)")
 
@@ -35,7 +35,7 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
       withBorder
     >
       <PanelToolbar
-        title={t("Report.title")}
+        title={t`Report`}
         actions={
           actions || (
             <ActionsGroup grow>

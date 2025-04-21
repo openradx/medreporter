@@ -1,18 +1,18 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Undo as UndoIcon } from "lucide-react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { setSelectedItem } from "~/state/designerSlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { undo, selectCanUndo } from "~/state/templateSlice"
 
 export const UndoButton = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const canUndo = useAppSelector(selectCanUndo)
   const dispatch = useAppDispatch()
 
   return (
     <ActionIcon
-      title={t("UndoButton.title")}
+      title={t`Undo`}
       variant="default"
       disabled={!canUndo}
       onClick={() => {

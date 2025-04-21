@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { openModal } from "@mantine/modals"
 import { Membership } from "@prisma/client"
 import { Trash2 as RemoveIcon } from "lucide-react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 
 interface RemoveMembershipButtonProps {
@@ -10,13 +10,13 @@ interface RemoveMembershipButtonProps {
 }
 
 export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const deleteMembership = trpc.admin.deleteMembership.useMutation()
   const utils = trpc.useUtils()
 
   return (
     <ActionIcon
-      title={t("RemoveMembershipButton.buttonRemoveMember")}
+      title={t`Remove membership`}
       variant="subtle"
       color="red"
       onClick={async () => {
@@ -26,7 +26,7 @@ export const RemoveMembershipButton = ({ membership }: RemoveMembershipButtonPro
         } catch (error) {
           if (error instanceof Error) {
             openModal({
-              title: t("general.errorTitle"),
+              title: t`An error occurred.`,
               children: error.message,
             })
           }

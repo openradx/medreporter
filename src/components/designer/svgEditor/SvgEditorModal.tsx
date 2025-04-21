@@ -1,6 +1,6 @@
+import { useLingui, Trans } from "@lingui/react/macro"
 import { Box, Flex, Modal, SegmentedControl } from "@mantine/core"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { SvgEditor } from "../editors/SvgEditor"
 import classes from "./SvgEditorModal.module.css"
 import { SvgPreview } from "./SvgPreview"
@@ -13,7 +13,7 @@ interface SvgEditorModalProps {
 }
 
 export const SvgEditorModal = ({ opened, onClose, value, onChange }: SvgEditorModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const [panel, setPanel] = useState<"editor" | "preview">("editor")
 
   return (
@@ -21,14 +21,14 @@ export const SvgEditorModal = ({ opened, onClose, value, onChange }: SvgEditorMo
       size="xl"
       title={
         <Flex p="xs" pos="relative">
-          {t("SvgEditorModal.modalTitle")}
+          <Trans>SVG Editor</Trans>
           <Box pos="absolute" top="50%" left="50%" style={{ transform: "translate(-50%, -50%)" }}>
             <SegmentedControl
               value={panel}
               onChange={setPanel as any}
               data={[
-                { value: "editor", label: t("SvgEditorModal.editorLabel") },
-                { value: "preview", label: t("SvgEditorModal.previewLabel") },
+                { value: "editor", label: t`Editor` },
+                { value: "preview", label: t`Preview` },
               ]}
             />
           </Box>

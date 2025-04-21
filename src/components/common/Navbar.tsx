@@ -1,9 +1,9 @@
+import { useLingui } from "@lingui/react/macro"
 import { Burger, Group, AppShell, Text } from "@mantine/core"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { appConfig } from "~/appConfig"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import logo from "~/images/logo.png"
 import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
@@ -18,7 +18,7 @@ interface NavBarProps {
 }
 
 export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const [opened, setOpened] = useState(false)
 
   return (
@@ -28,7 +28,7 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
           <Group>
             <Burger
               opened={false}
-              title={t("Navbar.openMainMenuTitle")}
+              title={t`Open main menu`}
               onClick={() => setOpened(!opened)}
               size="sm"
             />

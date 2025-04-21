@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { NumberPropertyInput } from "./NumberPropertyInput"
 
 export const MinRowsProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <NumberPropertyInput name="minRows" label={t("MinRowsProperty.label")} min={1} />
+  return <NumberPropertyInput name="minRows" label={t`Minimum rows`} min={1} />
 }

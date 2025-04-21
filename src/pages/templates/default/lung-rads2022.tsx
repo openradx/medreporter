@@ -1,32 +1,31 @@
+import { useLingui } from "@lingui/react/macro"
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { LungRads2022 } from "~/default-templates/lungRads2022/LungRads2022"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
   res,
   locale,
-  locales,
 }) => ({
   props: {
     session: await getServerSideSession(req, res),
-    i18nSite: await getServerSideSiteTranslations(locale, locales, ["template"]),
+    translation: await loadSiteTranslation(locale),
     preloadedReduxState: {},
   },
 })
 
 const LungRads2022Page: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
-      <PageHead title={t("LungRads2022Page.toolTitle")} />
+      <PageHead title={t`Lung-RADS 2022`} />
       <LungRads2022 />
     </>
   )

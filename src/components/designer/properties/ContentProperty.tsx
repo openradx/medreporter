@@ -1,11 +1,11 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Textarea, Group, SegmentedControl } from "@mantine/core"
 import { Controller } from "react-hook-form"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ContentEditorButton } from "../contentEditor/ContentEditorButton"
 import classes from "./ContentProperty.module.css"
 
 export const ContentProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <Controller
@@ -18,10 +18,10 @@ export const ContentProperty = () => {
           label={
             <Group gap="lg" align="center" justify="space-between">
               <Group gap="xs">
-                {t("ContentProperty.label")}
+                <Trans>Content</Trans>
                 <ContentEditorButton
-                  modalTitle={t("ContentProperty.modalTitle")}
-                  modalDescription={t("ContentProperty.modalDescription")}
+                  modalTitle={t`Content`}
+                  modalDescription={t`You can give a simple string or some javascript code to display the content.`}
                   value={contentValue}
                   onChange={onChangeContentValue}
                 />
@@ -32,8 +32,8 @@ export const ContentProperty = () => {
                   <SegmentedControl
                     size="xs"
                     data={[
-                      { label: t("ContentProperty.labelCode"), value: "code" },
-                      { label: t("ContentProperty.labelText"), value: "text" },
+                      { label: t`Code`, value: "code" },
+                      { label: t`Text`, value: "text" },
                     ]}
                     value={contentType}
                     onChange={onChangeContentType}

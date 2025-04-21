@@ -1,7 +1,7 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Info as InfoIcon } from "lucide-react"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { InfoModal } from "./InfoModal"
 
 interface InfoProps {
@@ -10,13 +10,13 @@ interface InfoProps {
 
 export const Info = ({ children }: InfoProps) => {
   const [open, setOpen] = useState(false)
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
       <ActionIcon
         variant="transparent"
-        title={t("FieldInfo.buttonInfo")}
+        title={t`Additional info`}
         size={20}
         onClick={() => setOpen(true)}
       >

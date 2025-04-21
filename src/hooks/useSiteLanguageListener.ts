@@ -1,15 +1,20 @@
+import { Locale } from "@lingui/core"
+import { useLingui } from "@lingui/react"
 import { useEffect } from "react"
-import { useSiteTranslation } from "./useSiteTranslation"
 
-type Callback = (language: string) => void
+type Callback = (language: Locale) => void
 
 export const useSiteLanguageListener = (callback: Callback) => {
-  const { i18n } = useSiteTranslation()
+  const { i18n } = useLingui()
 
   useEffect(() => {
-    i18n.on("languageChanged", callback)
+    const callCallback = () => {
+      callback(i18n.locale)
+    }
+
+    i18n.on("change", callCallback)
     return () => {
-      i18n.off("languageChanged", callback)
+      i18n.removeListener("change", callCallback)
     }
   }, [i18n, callback])
 }

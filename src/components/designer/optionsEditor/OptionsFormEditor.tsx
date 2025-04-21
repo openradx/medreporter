@@ -1,12 +1,10 @@
+import { Trans } from "@lingui/react/macro"
 import { Button, Group, Stack } from "@mantine/core"
 import { useFieldArray, useFormContext } from "react-hook-form"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { Option } from "~/schemas/structure"
 import { OptionsTable } from "./OptionsTable"
 
 export const OptionsFormEditor = () => {
-  const { t } = useSiteTranslation()
-
   const { control, getValues } = useFormContext<{ options: Option[] }>()
 
   const { fields, append, remove, move } = useFieldArray<{ options: Option[] }, "options">({
@@ -24,7 +22,7 @@ export const OptionsFormEditor = () => {
         <OptionsTable control={control} fields={fields} move={move} remove={remove} />
         <Group justify="center">
           <Button variant="outline" type="button" onClick={appendOption}>
-            {t("OptionsFormEditor.addOptionLabel")}
+            <Trans>Add new option</Trans>
           </Button>
         </Group>
       </Stack>

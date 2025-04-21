@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { NumberPropertyInput } from "./NumberPropertyInput"
 
 export const StepProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <NumberPropertyInput name="step" label={t("StepProperty.label")} min={0} />
+  return <NumberPropertyInput name="step" label={t`Step`} min={0} />
 }

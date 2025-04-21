@@ -1,43 +1,16 @@
-import { ReactNode, Suspense, useMemo } from "react"
-import { I18nSiteContextProvider } from "~/contexts/I18nSiteContext"
-import { createClient } from "~/utils/i18nStorybookClient"
-
-const DEFAULT_ADDITIONAL_NAMESPACES: string[] = []
+import { setupI18n } from "@lingui/core"
+import { I18nProvider } from "@lingui/react"
+import { ReactNode, useState } from "react"
+import { messages } from "~/locales/en/messages"
 
 interface SiteTranslationsProps {
-  language?: string
-  additionalNamespaces?: string[]
   children: ReactNode
 }
 
-export const SiteTranslations = ({
-  language = "en",
-  additionalNamespaces = DEFAULT_ADDITIONAL_NAMESPACES,
-  children,
-}: SiteTranslationsProps) => {
-  const i18n = useMemo(() => {
-    const namespaces = [...additionalNamespaces, "common"]
-
-    const client = createClient({
-      lng: language,
-      ns: namespaces,
-      fallbackNS: namespaces,
-    })
-    return client.i18n
-  }, [additionalNamespaces, language])
-
-  return (
-    <Suspense fallback="Loading translations ...">
-      <I18nSiteContextProvider
-        value={{
-          i18nSite: i18n,
-          supportedSiteLanguages: [language],
-          currentSiteLanguage: language,
-          setCurrentSiteLanguage: () => {},
-        }}
-      >
-        {children}
-      </I18nSiteContextProvider>
-    </Suspense>
-  )
+export const SiteTranslations = ({ children }: SiteTranslationsProps) => {
+  const [i18n] = useState(() => {
+    const i18n = setupI18n({ locale: "en", messages: { en: messages } })
+    return i18n
+  })
+  return <I18nProvider i18n={i18n}>{children}</I18nProvider>
 }

@@ -1,8 +1,8 @@
+import { Trans } from "@lingui/react/macro"
 import { Group, Pagination, ScrollArea, Stack, Table, Text } from "@mantine/core"
 import { useRouter } from "next/router"
 import { useDebounce } from "use-debounce"
 import { useFilter } from "~/contexts/FilterContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 import { DataLoader } from "../common/DataLoader"
 import { QueryError } from "../common/QueryError"
@@ -13,7 +13,6 @@ import { EditUserButton } from "./EditUserButton"
 const ITEMS_PER_PAGE = 15
 
 export const UserList = () => {
-  const { t } = useSiteTranslation()
   const router = useRouter()
   const activePage = Number(router.query.page) || 1
   const { search: filter } = useFilter()
@@ -34,7 +33,11 @@ export const UserList = () => {
 
   return (
     <Stack h="90%" mih={0}>
-      {!data?.users.length && <Text>{t("general.miscNoData")}</Text>}
+      {!data?.users.length && (
+        <Text>
+          <Trans>No data available</Trans>
+        </Text>
+      )}
       {data?.users.length && (
         <ScrollArea>
           <Table miw={800}>

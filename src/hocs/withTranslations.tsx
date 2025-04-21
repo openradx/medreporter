@@ -11,14 +11,14 @@ export const withTranslations = <T extends AppProps>(
   WrappedComponent: ComponentType<T>
 ): ComponentType<T> => {
   const WithTranslations = (props: AppProps) => {
-    const i18nSiteProps = props.pageProps?.i18nSite
+    const translation = props.pageProps?.translation
 
-    if (!i18nSiteProps) {
+    if (!translation) {
       return <WrappedComponent {...(props as T)} />
     }
 
     return (
-      <SiteTranslationProvider i18nSiteProps={i18nSiteProps}>
+      <SiteTranslationProvider translation={translation}>
         <WrappedComponent {...(props as T)} />
       </SiteTranslationProvider>
     )

@@ -1,6 +1,6 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Box, Flex, Modal, ScrollArea, SegmentedControl } from "@mantine/core"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MarkdownEditor } from "../editors/MarkdownEditor"
 import classes from "./MarkdownEditorModal.module.css"
 import { MarkdownPreview } from "./MarkdownPreview"
@@ -18,7 +18,7 @@ export const MarkdownEditorModal = ({
   value,
   onChange,
 }: MarkdownEditorModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const [panel, setPanel] = useState<"editor" | "preview">("editor")
 
   return (
@@ -26,14 +26,14 @@ export const MarkdownEditorModal = ({
       size="xl"
       title={
         <Flex p="xs" pos="relative">
-          {t("MarkdownEditorModal.modalTitle")}
+          <Trans>Markdown editor</Trans>{" "}
           <Box pos="absolute" top="50%" left="50%" style={{ transform: "translate(-50%, -50%)" }}>
             <SegmentedControl
               value={panel}
               onChange={setPanel as any}
               data={[
-                { value: "editor", label: t("MarkdownEditorModal.editorLabel") },
-                { value: "preview", label: t("MarkdownEditorModal.previewLabel") },
+                { value: "editor", label: t`Editor` },
+                { value: "preview", label: t`Preview` },
               ]}
             />
           </Box>

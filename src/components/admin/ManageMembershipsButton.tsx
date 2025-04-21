@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Institute } from "@prisma/client"
 import { UserCog as ManageMembershipsIcon } from "lucide-react"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { ManageMembershipsModal } from "./ManageMembershipsModal"
 
 interface ManageMembershipsButtonProps {
@@ -10,13 +10,13 @@ interface ManageMembershipsButtonProps {
 }
 
 export const ManageMembershipsButton = ({ institute }: ManageMembershipsButtonProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const [opened, setOpened] = useState(false)
 
   return (
     <>
       <ActionIcon
-        title={t("ManageMembershipsButton.buttonManageMemberships")}
+        title={t`Manage memberships`}
         variant="subtle"
         color="gray"
         onClick={() => setOpened(true)}

@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { BooleanPropertyInput } from "./BooleanPropertyInput"
 
 export const WithSecondsProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <BooleanPropertyInput name="withSeconds" label={t("WithSecondsProperty.label")} />
+  return <BooleanPropertyInput name="withSeconds" label={t`withSeconds`} />
 }

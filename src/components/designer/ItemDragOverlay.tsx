@@ -1,5 +1,5 @@
+import { Trans } from "@lingui/react/macro"
 import { Card, Text } from "@mantine/core"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { StructuredReportNode } from "~/utils/designerUtils"
 
 interface ItemDragOverlayProps {
@@ -7,8 +7,6 @@ interface ItemDragOverlayProps {
 }
 
 export const ItemDragOverlay = ({ node }: ItemDragOverlayProps) => {
-  const { t } = useSiteTranslation()
-
   const { type } = node
 
   let fieldId: string | undefined
@@ -19,11 +17,13 @@ export const ItemDragOverlay = ({ node }: ItemDragOverlayProps) => {
   return (
     <Card padding="xs" shadow="sm" style={{ width: 250 }} withBorder>
       <Text>
-        {t("ItemDragOverlay.type")}: {type}
+        <Trans>Type: </Trans>
+        {type}
       </Text>
       {fieldId && (
         <Text size="sm" c="dimmed">
-          {t("ItemDragOverlay.id")}: {fieldId}
+          <Trans>Field ID: </Trans>
+          {fieldId}
         </Text>
       )}
     </Card>

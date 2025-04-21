@@ -1,6 +1,6 @@
+import { Trans } from "@lingui/react/macro"
 import { Group, ScrollArea, Stack, Table, Text } from "@mantine/core"
 import { MembershipRole } from "@prisma/client"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 import { DataLoader } from "../common/DataLoader"
 import { QueryError } from "../common/QueryError"
@@ -12,7 +12,6 @@ interface MembershipListProps {
 }
 
 export const MembershipList = ({ instituteId, role }: MembershipListProps) => {
-  const { t } = useSiteTranslation()
   const { isPending, isError, data, error } = trpc.admin.getMemberships.useQuery({
     instituteId,
     role,
@@ -28,7 +27,11 @@ export const MembershipList = ({ instituteId, role }: MembershipListProps) => {
 
   return (
     <Stack h="90%" mih={0}>
-      {!data?.memberships.length && <Text>{t("general.miscNoData")}</Text>}
+      {!data?.memberships.length && (
+        <Text>
+          <Trans>No data available</Trans>
+        </Text>
+      )}
       {data?.memberships.length && (
         <ScrollArea>
           <Table miw={500}>

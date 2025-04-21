@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon, Loader, Select } from "@mantine/core"
 import { MembershipRole } from "@prisma/client"
 import { CirclePlus as AddIcon } from "lucide-react"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 
 interface MembershipAdderProps {
@@ -11,7 +11,7 @@ interface MembershipAdderProps {
 }
 
 export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const { isPending, data } = trpc.admin.getUsersForMembership.useQuery({ instituteId })
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null)
   const createMembership = trpc.admin.createMembership.useMutation()
@@ -29,7 +29,7 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
   return (
     <Select
       leftSection={isPending ? <Loader type="bars" size="sm" /> : undefined}
-      label={t("MembershipAdder.inputLabelAddMember")}
+      label={t`Add user`}
       data={data?.users.map((user) => ({ value: user.id.toString(), label: user.username! })) ?? []}
       value={selectedUserId}
       onChange={setSelectedUserId}
@@ -38,7 +38,7 @@ export const MembershipAdder = ({ instituteId, role }: MembershipAdderProps) => 
       rightSectionPointerEvents="all"
       rightSection={
         <ActionIcon
-          title={t("MembershipAdder.buttonAddMember")}
+          title={t`Add selected user`}
           variant="transparent"
           color="green"
           onClick={handleAddMembership}

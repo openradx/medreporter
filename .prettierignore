@@ -1,0 +1,2 @@
+# Ignore by lingui.js generated translations
+src/locales/**/*.ts

@@ -1,30 +1,29 @@
-/* eslint-disable i18next/no-literal-string */
+import { Trans } from "@lingui/react/macro"
 import { Text, Title } from "@mantine/core"
 import { GetStaticProps } from "next"
 import Link from "next/link"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, StaticProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
-export const getStaticProps: GetStaticProps = async ({ locale, locales }) => {
-  const props: StaticProps = {
-    i18nSite: await getServerSideSiteTranslations(locale, locales),
-  }
-  return { props }
-}
+export const getStaticProps: GetStaticProps<StaticProps> = async ({ locale }) => ({
+  props: {
+    translation: await loadSiteTranslation(locale),
+  },
+})
 
 const Custom404: PageWithLayout = () => (
   <>
     <PageHead title="404" />
     <Title ta="center" mt={100}>
       <Text inherit variant="gradient" span>
-        404{" "}
+        404
       </Text>
-      - Page Not Found
+      <Trans>- Page Not Found</Trans>
       <Link href="/" style={{ textDecoration: "none" }}>
         <Text fz="md" c="blue">
-          Go back to homepage
+          <Trans>Go back to homepage</Trans>
         </Text>
       </Link>
     </Title>

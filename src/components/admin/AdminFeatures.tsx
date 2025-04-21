@@ -1,10 +1,10 @@
+import { useLingui, Trans } from "@lingui/react/macro"
 import { Grid, Text } from "@mantine/core"
 import { MembershipRole, UserRole } from "@prisma/client"
 import { Building2 as InstituteIcon, Users as UserIcon } from "lucide-react"
 import { useSession } from "next-auth/react"
 import { Route } from "nextjs-routes"
 import { ReactNode } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { AdminFeatureCard } from "./AdminFeatureCard"
 
 interface AdminFeature {
@@ -15,7 +15,8 @@ interface AdminFeature {
 }
 
 export const AdminFeatures = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
+
   const session = useSession()
 
   const roles = session.data?.user.roles
@@ -29,8 +30,8 @@ export const AdminFeatures = () => {
     features.push({
       route: { pathname: "/admin/manage-users" },
       icon: <UserIcon size={18} />,
-      title: t("AdminFeatures.titleManageUsers"),
-      description: t("AdminFeatures.descriptionManageUsers"),
+      title: t`User management`,
+      description: t`Add, edit and remove users`,
     })
   }
 
@@ -38,14 +39,18 @@ export const AdminFeatures = () => {
     features.push({
       route: { pathname: "/admin/manage-institutes" },
       icon: <InstituteIcon size={18} />,
-      title: t("AdminFeatures.titleManageInstitutes"),
-      description: t("AdminFeatures.descriptionManageInstitutes"),
+      title: t`Institute management`,
+      description: t`Add, edit and remove institutes and their members`,
     })
   }
 
   return (
     <>
-      {features.length === 0 && <Text>{t("AdminFeatures.messageNoAdminRights")}</Text>}
+      {features.length === 0 && (
+        <Text>
+          <Trans>No admin rights</Trans>
+        </Text>
+      )}
       {features.length > 0 && (
         <Grid>
           {features.map((feature) => (

@@ -1,20 +1,19 @@
+import { useLingui } from "@lingui/react/macro"
 import { UserRole } from "@prisma/client"
 import { GetServerSideProps } from "next"
 import { AdminFeatures } from "~/components/admin/AdminFeatures"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
 import { hasRole } from "~/utils/authorization"
+import { loadSiteTranslation } from "~/utils/i18n"
 import { redirectToLogin } from "~/utils/redirects"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
   res,
   locale,
-  locales,
 }) => {
   const session = await getServerSideSession(req, res)
   const user = session?.user
@@ -26,17 +25,17 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   return {
     props: {
       session,
-      i18nSite: await getServerSideSiteTranslations(locale, locales, ["admin"]),
+      translation: await loadSiteTranslation(locale),
     },
   }
 }
 
 const AdminPage: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <>
-      <PageHead title={t("AdminPage.pageTitle")} />
+      <PageHead title={t`Administration`} />
       <AdminFeatures />
     </>
   )

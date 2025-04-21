@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { Paragraph } from "~/components/template/Paragraph"
 import { Report } from "~/components/template/Report"
 import { useStructureData } from "~/hooks/useStructureData"

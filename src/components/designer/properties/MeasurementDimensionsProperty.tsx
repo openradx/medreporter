@@ -1,11 +1,11 @@
+import { useLingui } from "@lingui/react/macro"
 import { Controller } from "react-hook-form"
 import { NumberInput } from "~/components/inputs/NumberInput"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { Dimensions } from "~/types/measurements"
 import { getMeasurementsDataParams, measurementsReducer } from "~/utils/measurementsUtils"
 
 export const MeasurementDimensionsProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <Controller
@@ -21,7 +21,7 @@ export const MeasurementDimensionsProperty = () => {
         }
         return (
           <NumberInput
-            label={t("MeasurementDimensionsProperty.label")}
+            label={t`Dimensions`}
             value={dimensions}
             onChange={handleChange}
             error={error?.message}

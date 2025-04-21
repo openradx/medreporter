@@ -1,7 +1,7 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Button, Group, Modal, Stack } from "@mantine/core"
 import { User } from "@prisma/client"
 import { TRPCClientError } from "@trpc/client"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { trpc } from "~/utils/trpc"
 import { UpdateUserSchema } from "~/validations/admin"
@@ -14,12 +14,12 @@ interface EditUserModalProps {
 }
 
 export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const updateUser = trpc.admin.updateUser.useMutation()
   const utils = trpc.useUtils()
 
   return (
-    <Modal title={t("EditUserModal.formTitle")} opened={opened} onClose={onClose}>
+    <Modal title={t`Edit user`} opened={opened} onClose={onClose}>
       <Stack>
         <UserForm
           id="edit-user-form"
@@ -38,14 +38,14 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
             } catch (error) {
               if (error instanceof TRPCClientError) {
                 if (error.message.match(/Unique constrained failed.*"username"/)) {
-                  throw new FormSubmitError({ email: t("EditUserModal.messageDuplicateUsername") })
+                  throw new FormSubmitError({ email: t`This username is already being used.` })
                 }
                 if (error.message.match(/Unique constrained failed.*"email"/)) {
-                  throw new FormSubmitError({ email: t("EditUserModal.messageDuplicateEmail") })
+                  throw new FormSubmitError({ email: t`This email is already being used.` })
                 }
               }
               if (error instanceof Error) {
-                throw new FormSubmitError(t("formError.unexpected") + error.message)
+                throw new FormSubmitError(t`An error occurred: ${error.message}`)
               }
               throw error
             }
@@ -53,10 +53,10 @@ export const EditUserModal = ({ user, opened, onClose }: EditUserModalProps) => 
         />
         <Group justify="flex-end">
           <Button variant="transparent" onClick={onClose}>
-            {t("general.buttonCancel")}
+            <Trans>Cancel</Trans>
           </Button>
           <Button variant="outline" form="edit-user-form" type="submit">
-            {t("general.buttonSave")}
+            <Trans>Save</Trans>
           </Button>
         </Group>
       </Stack>

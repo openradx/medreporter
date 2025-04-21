@@ -1,4 +1,4 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { MultipleChoiceFieldNode } from "~/schemas/structure"
 import { MultiSelectPropertyInput } from "./MultiSelectPropertyInput"
 
@@ -7,13 +7,7 @@ interface MultipleChoiceDefaultPropertyProps {
 }
 
 export const MultipleChoiceDefaultProperty = ({ node }: MultipleChoiceDefaultPropertyProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return (
-    <MultiSelectPropertyInput
-      name="default"
-      label={t("MultipleChoiceDefaultProperty.label")}
-      node={node}
-    />
-  )
+  return <MultiSelectPropertyInput name="default" label={t`Default`} node={node} />
 }

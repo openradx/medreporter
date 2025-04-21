@@ -1,8 +1,8 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { NumberPropertyInput } from "./NumberPropertyInput"
 
 export const MaxRowsProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return <NumberPropertyInput name="maxRows" label={t("MaxRowsProperty.label")} min={1} />
+  return <NumberPropertyInput name="maxRows" label={t`Maximum rows`} min={1} />
 }

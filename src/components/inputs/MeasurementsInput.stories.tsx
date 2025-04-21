@@ -26,7 +26,7 @@ const MeasurementsInputWithState = ({
   const footer = createStatsText(stats)
 
   return (
-    <SiteTranslations additionalNamespaces={["template"]}>
+    <SiteTranslations>
       <MeasurementsInput
         value={value}
         onChange={setValue}

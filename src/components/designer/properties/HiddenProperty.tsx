@@ -1,15 +1,15 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { ScriptPropertyInput } from "./ScriptPropertyInput"
 
 export const HiddenProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <ScriptPropertyInput
       name="hidden"
-      label={t("HiddenProperty.label")}
-      modalTitle={t("HiddenProperty.modalTitle")}
-      modalDescription={t("HiddenProperty.modalDescription")}
+      label={t`Hidden`}
+      modalTitle={t`Hidden`}
+      modalDescription={t`When the script evaluates to true the field is not displayed.`}
     />
   )
 }

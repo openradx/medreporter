@@ -1,7 +1,7 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Button, Group, Modal, Stack } from "@mantine/core"
 import { Institute } from "@prisma/client"
 import { TRPCClientError } from "@trpc/client"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { trpc } from "~/utils/trpc"
 import { UpdateInstituteSchema } from "~/validations/admin"
@@ -14,12 +14,12 @@ interface EditInstituteModalProps {
 }
 
 export const EditInstituteModal = ({ institute, opened, onClose }: EditInstituteModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const updateInstitute = trpc.admin.updateInstitute.useMutation()
   const utils = trpc.useUtils()
 
   return (
-    <Modal title={t("EditInstituteModal.formTitle")} opened={opened} onClose={onClose}>
+    <Modal title={t`Edit institute`} opened={opened} onClose={onClose}>
       <Stack>
         <InstituteForm
           id="edit-institute-form"
@@ -33,11 +33,11 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
             } catch (error) {
               if (error instanceof TRPCClientError) {
                 if (error.message.match(/Unique constrained failed.*"name"/)) {
-                  throw new FormSubmitError({ name: t("EditInstituteModal.messageDuplicateName") })
+                  throw new FormSubmitError({ name: t`Institute name already exists` })
                 }
               }
               if (error instanceof Error) {
-                throw new FormSubmitError(`t("formError.unexpected" ${error.message}`)
+                throw new FormSubmitError(t`An error occurred: ${error.message}`)
               }
               throw error
             }
@@ -45,10 +45,10 @@ export const EditInstituteModal = ({ institute, opened, onClose }: EditInstitute
         />
         <Group justify="flex-end">
           <Button variant="transparent" onClick={onClose}>
-            {t("general.buttonCancel")}
+            <Trans>Cancel</Trans>
           </Button>
           <Button variant="outline" form="edit-institute-form" type="submit">
-            {t("general.buttonSave")}
+            <Trans>Save</Trans>
           </Button>
         </Group>
       </Stack>

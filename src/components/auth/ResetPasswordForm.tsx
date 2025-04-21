@@ -1,16 +1,16 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Alert, Stack, TextInput, Title } from "@mantine/core"
 import { TRPCClientError } from "@trpc/client"
 import { useRouter } from "next/router"
 import { Controller } from "react-hook-form"
 import { SubmitForm } from "~/components/common/SubmitForm"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { trpc } from "~/utils/trpc"
 import { ResetPasswordSchema } from "~/validations/auth"
 import { LoginLink } from "./LoginLink"
 
 export const ResetPasswordForm = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const router = useRouter()
   const resetPassword = trpc.auth.resetPassword.useMutation()
 
@@ -19,14 +19,17 @@ export const ResetPasswordForm = () => {
 
   return (
     <Stack gap="md">
-      <Title order={3}>{t("ResetPasswordForm.formTitle")}</Title>
+      <Title order={3}>
+        <Trans>Reset password</Trans>
+      </Title>
       {resetPassword.isSuccess ? (
-        <Alert title={t("ResetPasswordForm.messageSuccess")}>
-          {t("ResetPasswordForm.textRedirect")} <LoginLink />
+        <Alert title={t`Password reset successfully`} color="green">
+          <Trans>You can now log in with your new password. Go to </Trans>
+          <LoginLink />
         </Alert>
       ) : (
         <SubmitForm
-          submitText={t("ResetPasswordForm.buttonReset")}
+          submitText={t`Reset password`}
           schema={ResetPasswordSchema}
           initialValues={{
             email,
@@ -40,11 +43,11 @@ export const ResetPasswordForm = () => {
             } catch (error) {
               if (error instanceof TRPCClientError) {
                 if (error.message.match(/Invalid token/) || error.message.match(/token expired/)) {
-                  throw new FormSubmitError(t("ResetPasswordForm.messageError"))
+                  throw new FormSubmitError(t`Invalid or expired token`)
                 }
               }
               if (error instanceof Error) {
-                throw new FormSubmitError(t("formError.unexpected") + error.message)
+                throw new FormSubmitError(t`An error occurred: ${error.message}`)
               }
               throw error
             }
@@ -55,7 +58,7 @@ export const ResetPasswordForm = () => {
               name="password"
               render={({ field: { value, onChange }, fieldState: { error } }) => (
                 <TextInput
-                  label={t("ResetPasswordForm.inputLabelNewPassword")}
+                  label={t`New password`}
                   value={value}
                   onChange={onChange}
                   error={error?.message}
@@ -68,7 +71,7 @@ export const ResetPasswordForm = () => {
               name="passwordConfirmation"
               render={({ field: { value, onChange }, fieldState: { error } }) => (
                 <TextInput
-                  label={t("ResetPasswordForm.inputLabelConfirmPassword")}
+                  label={t`Confirm new password`}
                   value={value}
                   onChange={onChange}
                   error={error?.message}

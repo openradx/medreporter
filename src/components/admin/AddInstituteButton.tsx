@@ -1,16 +1,15 @@
+import { Trans } from "@lingui/react/macro"
 import { Button } from "@mantine/core"
 import { useState } from "react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { AddInstituteModal } from "./AddInstituteModal"
 
 export const AddInstituteButton = () => {
-  const { t } = useSiteTranslation()
   const [opened, setOpened] = useState(false)
 
   return (
     <>
       <Button variant="light" onClick={() => setOpened(true)}>
-        {t("AddInstituteButton.buttonAddInstitute")}
+        <Trans>Add new institute</Trans>
       </Button>
       {opened && <AddInstituteModal opened={opened} onClose={() => setOpened(false)} />}
     </>

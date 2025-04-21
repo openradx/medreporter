@@ -1,5 +1,5 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Flex, ScrollArea, Stack, Text } from "@mantine/core"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { PanelToolbar } from "../template/PanelToolbar"
 import { DateFieldMenuItem } from "./menuItems/DateFieldMenuItem"
 import { FindingFieldMenuItem } from "./menuItems/FindingFieldMenuItem"
@@ -16,29 +16,33 @@ import { StatementMenuItem } from "./menuItems/StatementMenuItem"
 import { TimeFieldMenuItem } from "./menuItems/TimeFieldMenuItem"
 
 export const MenuPanel = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <Flex component="form" pos="relative" h="100%" direction="column">
-      <PanelToolbar title={t("MenuPanel.components")} />
+      <PanelToolbar title={t`Components`} />
       <ScrollArea h="100%">
         <Stack gap="xs" p="xs">
-          <Text c="dimmed">{t("MenuPanel.structure")}</Text>
-          <GroupMenuItem label={t("MenuPanel.groupLabel")} />
-          <FindingFieldMenuItem label={t("MenuPanel.findingFieldLabel")} />
-          <DateFieldMenuItem label={t("MenuPanel.dateFieldLabel")} />
-          <TimeFieldMenuItem label={t("MenuPanel.timeFieldLabel")} />
-          <FreeTextFieldMenuItem label={t("MenuPanel.freeTextFieldLabel")} />
-          <NumberFieldMenuItem label={t("MenuPanel.numberFieldLabel")} />
-          <SingleChoiceFieldMenuItem label={t("MenuPanel.singleChoiceFieldLabel")} />
-          <MultipleChoiceFieldMenuItem label={t("MenuPanel.multipleChoiceFieldLabel")} />
-          <MeasurementsMenuItem label={t("MenuPanel.measurementsFieldLabel")} />
-          <Text c="dimmed">{t("MenuPanel.report")}</Text>
-          <ParagraphMenuItem label={t("MenuPanel.paragraphLabel")} />
-          <StatementMenuItem label={t("MenuPanel.statementLabel")} />
-          <MeasurementsOutputMenuItem label={t("MenuPanel.measurementsOutputLabel")} />
-          <Text c="dimmed">{t("MenuPanel.others")}</Text>
-          <HintMenuItem label={t("MenuPanel.hintLabel")} />
+          <Text c="dimmed">
+            <Trans>Strucuture</Trans>
+          </Text>
+          <GroupMenuItem label={t`Group`} />
+          <FindingFieldMenuItem label={t`Finding`} />
+          <DateFieldMenuItem label={t`Date`} />
+          <TimeFieldMenuItem label={t`Time`} />
+          <FreeTextFieldMenuItem label={t`Free text`} />
+          <NumberFieldMenuItem label={t`Number`} />
+          <SingleChoiceFieldMenuItem label={t`Single choice`} />
+          <MultipleChoiceFieldMenuItem label={t`Multiple choice`} />
+          <MeasurementsMenuItem label={t`Measurements`} />
+          <Text c="dimmed">
+            <Trans>Report</Trans>
+          </Text>
+          <ParagraphMenuItem label={t`Paragraph`} />
+          <StatementMenuItem label={t`Statement`} />
+          <MeasurementsOutputMenuItem label={t`Measurements output`} />
+          <Text c="dimmed">{t`Others`}</Text>
+          <HintMenuItem label={t`Hint`} />
         </Stack>
       </ScrollArea>
     </Flex>

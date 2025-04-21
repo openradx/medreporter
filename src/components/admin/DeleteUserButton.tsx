@@ -1,8 +1,8 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { ActionIcon, Text } from "@mantine/core"
 import { openConfirmModal, openModal } from "@mantine/modals"
 import { User } from "@prisma/client"
 import { Trash2 as DeleteIcon } from "lucide-react"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { trpc } from "~/utils/trpc"
 
 interface DeleteUserButtonProps {
@@ -10,24 +10,27 @@ interface DeleteUserButtonProps {
 }
 
 export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
+
   const deleteUser = trpc.admin.deleteUser.useMutation()
   const utils = trpc.useUtils()
 
   return (
     <ActionIcon
-      title={t("DeleteUserButton.buttonDeleteUser")}
+      title={t`Delete user`}
       variant="subtle"
       color="red"
       onClick={() =>
         openConfirmModal({
-          title: t("DeleteUserButton.titleConfirmDialog"),
+          title: t`Delete user`,
           children: (
-            <Text>{t("DeleteUserButton.messageConfirmDialog", { username: user.username })}</Text>
+            <Text>
+              <Trans>Do you really want to delete the user {user.username}?</Trans>
+            </Text>
           ),
           labels: {
-            confirm: t("general.buttonDelete"),
-            cancel: t("general.buttonCancel"),
+            confirm: t`Delete`,
+            cancel: t`Cancel`,
           },
           confirmProps: { color: "red", variant: "outline" },
           cancelProps: { color: "gray", variant: "transparent" },
@@ -38,7 +41,7 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
             } catch (error) {
               if (error instanceof Error) {
                 openModal({
-                  title: t("general.errorTitle"),
+                  title: t`An error occurred.`,
                   children: error.message,
                 })
               }

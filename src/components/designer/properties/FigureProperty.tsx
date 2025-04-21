@@ -1,11 +1,9 @@
+import { Trans } from "@lingui/react/macro"
 import { Group, Textarea } from "@mantine/core"
 import { Controller } from "react-hook-form"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { SvgEditorButton } from "../svgEditor/SvgEditorButton"
 
 export const FigureProperty = () => {
-  const { t } = useSiteTranslation()
-
   return (
     <Controller
       name="figure"
@@ -13,7 +11,7 @@ export const FigureProperty = () => {
         <Textarea
           label={
             <Group gap="xs" align="center">
-              {t("FigureProperty.label")}
+              <Trans>Figure</Trans>
               <SvgEditorButton value={value} onChange={onChange} />
             </Group>
           }

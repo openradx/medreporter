@@ -1,8 +1,8 @@
+import { useLingui } from "@lingui/react/macro"
 import { Flex, Paper } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode, useRef } from "react"
 import { StructureContextProvider } from "~/contexts/StructureContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { StructureData } from "~/schemas/structure"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { ClearAllButton } from "./ClearAllButton"
@@ -17,7 +17,7 @@ interface StructureProps {
 }
 
 export const Structure = ({ actions, children }: StructureProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const matches = useMediaQuery("(min-width: 68em)")
   const defaultValuesRef = useRef<StructureData>({})
 
@@ -35,7 +35,7 @@ export const Structure = ({ actions, children }: StructureProps) => {
       <StructureContextProvider value={{ defaultValuesRef }}>
         <Flex component="form" pos="relative" h="100%" direction="column">
           <PanelToolbar
-            title={t("Structure.title")}
+            title={t`Title`}
             actions={
               actions || (
                 <ActionsGroup grow>

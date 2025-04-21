@@ -1,4 +1,4 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { SingleChoiceFieldNode } from "~/schemas/structure"
 import { SelectPropertyInput } from "./SelectPropertyInput"
 
@@ -7,13 +7,7 @@ interface SingleChoiceDefaultPropertyProps {
 }
 
 export const SingleChoiceDefaultProperty = ({ node }: SingleChoiceDefaultPropertyProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
-  return (
-    <SelectPropertyInput
-      name="default"
-      label={t("SingleChoiceDefaultProperty.label")}
-      data={node.options}
-    />
-  )
+  return <SelectPropertyInput name="default" label={t`Default`} data={node.options} />
 }

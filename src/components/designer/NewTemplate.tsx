@@ -1,11 +1,19 @@
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useLingui as useLinguiLazy } from "@lingui/react"
+import { useLingui as useLinguiMacro } from "@lingui/react/macro"
 import { Button, Container, Flex, ScrollArea } from "@mantine/core"
 import { ReleaseStatus, Visibility } from "@prisma/client"
 import appConfig from "app.config"
 import { useRouter } from "next/router"
 import { useRef } from "react"
 import { FormProvider, useForm } from "react-hook-form"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import {
+  CATEGORIES,
+  ERROR_MESSAGES,
+  LANGUAGES,
+  RELEASE_STATUS,
+  VISIBILITY,
+} from "~/constants/lazy-translations"
 import { useUser } from "~/hooks/useUser"
 import { buildTemplateNodeSchema, TemplateNode } from "~/schemas/template"
 import { useAppSelector } from "~/state/store"
@@ -27,14 +35,18 @@ interface FormValues {
 }
 
 export const NewTemplate = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLinguiMacro()
+  const { _ } = useLinguiLazy()
+
   const user = useUser()
   const router = useRouter()
   const template = useAppSelector(selectTemplate)
 
   const methods = useForm({
     mode: "all",
-    resolver: zodResolver(buildTemplateNodeSchema(t).omit({ nodeId: true, type: true })),
+    resolver: zodResolver(
+      buildTemplateNodeSchema(_(ERROR_MESSAGES["invalidSlug"])).omit({ nodeId: true, type: true })
+    ),
     defaultValues: template,
   })
 
@@ -71,57 +83,52 @@ export const NewTemplate = () => {
       <Container size="xs" h="100%" mih={0}>
         <ScrollArea h="100%" mih={0}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <TextInputPropertyInput
-              name="slug"
-              label={t("TemplatePropertiesForm.slugLabel")}
-              required
-            />
-            <TextInputPropertyInput
-              name="title"
-              label={t("TemplatePropertiesForm.titleLabel")}
-              required
-            />
+            <TextInputPropertyInput name="slug" label={t`URL Slug`} required />
+            <TextInputPropertyInput name="title" label={t`Title`} required />
             <SelectPropertyInput
               name="language"
-              label={t("TemplatePropertiesForm.languageLabel")}
+              label={t`Language`}
               data={appConfig.supportedTemplateLanguages.map((language) => ({
                 value: language,
-                label: t(`languages.${language}`),
+                // @ts-expect-error language is a string by next.js
+                label: _(LANGUAGES[language]),
               }))}
               required
             />
             <TextareaPropertyInput
               name="description"
-              label={t("TemplatePropertiesForm.descriptionLabel")}
+              label={t`Description`}
               autosize
               minRows={6}
               maxRows={6}
             />
             <MultiSelectPropertyInput
               name="categories"
-              label={t("TemplatePropertiesForm.categoriesLabel")}
+              label={t`Categories`}
               data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
-                group: t(`categories.group.${group}`),
+                // @ts-expect-error group is a string by next.js
+                group: _(CATEGORIES[group]),
                 items: categories.map((category) => ({
                   value: category,
-                  label: t(`categories.${category}`),
+                  // @ts-expect-error category is a string by next.js
+                  label: _(CATEGORIES[category]),
                 })),
               }))}
             />
             <SelectPropertyInput
               name="visibility"
-              label={t("TemplatePropertiesForm.visibilityLabel")}
+              label={t`Visibility`}
               data={Object.entries(Visibility).map(([value, label]) => ({
                 value,
-                label: t(`visibility.${label}`),
+                label: _(VISIBILITY[label]),
               }))}
             />
             <SelectPropertyInput
               name="releaseStatus"
-              label={t("TemplatePropertiesForm.releaseStatusLabel")}
+              label={t`Release status`}
               data={Object.entries(ReleaseStatus).map(([value, label]) => ({
                 value,
-                label: t(`releaseStatus.${label}`),
+                label: _(RELEASE_STATUS[label]),
               }))}
             />
 
@@ -133,7 +140,7 @@ export const NewTemplate = () => {
                 disabled={!methods.formState.isValid}
                 loading={isMutationLoadingRef.current}
               >
-                {t("TemplatePropertiesForm.createButtonLabel")}
+                {t`Create`}
               </Button>
             </Flex>
           </form>

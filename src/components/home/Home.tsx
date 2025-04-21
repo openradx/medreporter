@@ -1,16 +1,15 @@
+import { Trans } from "@lingui/react/macro"
 import { Title, Text, Image, Flex, Container, Button, Group } from "@mantine/core"
 import cx from "clsx"
 import NextImage from "next/image"
 import Link from "next/link"
 import { appConfig } from "~/appConfig"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { useUser } from "~/hooks/useUser"
 import logo from "~/images/logo.png"
 import { CopyrightMessage } from "../common/CopyrightMessage"
 import classes from "./Home.module.css"
 
 export const Home = () => {
-  const { t } = useSiteTranslation()
   const user = useUser()
   const loggedIn = !!user
 
@@ -18,7 +17,7 @@ export const Home = () => {
     <Container className={classes.container} size="md">
       <Title className={classes.title}>
         <Flex direction="row" justify="center" align="center" gap="md">
-          {t("Home.welcomeText")}
+          <Trans>Welcome to</Trans>
           <Image component={NextImage} src={logo} alt="Logo" h={100} w={100} />
           <Text
             inherit
@@ -31,18 +30,22 @@ export const Home = () => {
         </Flex>
       </Title>
       <Text size="xl" mt="xl" className={classes.description}>
-        {t("Home.homeDescription")}
+        <Trans>
+          A platform for creating structured medical reports. Use our pre-designed templates without
+          logging in, or sign up to create your own templates, save completed reports, and share
+          them with members of your institution.
+        </Trans>
       </Text>
       <Group className={classes.controls}>
         <Link href="/templates" legacyBehavior>
           <Button className={classes.control} variant="white" size="lg">
-            {t("Home.templatesTitle")}
+            <Trans>Browse Templates</Trans>
           </Button>
         </Link>
         {loggedIn && (
           <Link href="/templates/new" legacyBehavior>
             <Button className={cx(classes.control, classes.secondaryControl)} size="lg">
-              {t("Home.newTitle")}
+              <Trans>New Template</Trans>
             </Button>
           </Link>
         )}

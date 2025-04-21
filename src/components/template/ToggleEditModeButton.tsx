@@ -1,10 +1,10 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Pencil as EditIcon, PencilOff as StopEditIcon } from "lucide-react"
 import { useRouter } from "next/router"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 
 export const ToggleEditModeButton = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const router = useRouter()
 
   const toggleEditMode = () => {
@@ -22,7 +22,7 @@ export const ToggleEditModeButton = () => {
 
   return (
     <ActionIcon
-      title={edit ? t("ToggleEditModeButton.titleStop") : t("ToggleEditModeButton.titleEdit")}
+      title={edit ? t`Stop editing` : t`Edit template`}
       variant="default"
       aria-label="Edit template"
       size="md"

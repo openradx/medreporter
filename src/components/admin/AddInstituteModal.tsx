@@ -1,6 +1,6 @@
+import { Trans, useLingui } from "@lingui/react/macro"
 import { Button, Group, Modal, Stack } from "@mantine/core"
 import { TRPCClientError } from "@trpc/client"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
 import { trpc } from "~/utils/trpc"
 import { CreateInstituteSchema } from "~/validations/admin"
@@ -12,12 +12,12 @@ interface AddInstituteModalProps {
 }
 
 export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const createInstitute = trpc.admin.createInstitute.useMutation()
   const utils = trpc.useUtils()
 
   return (
-    <Modal title={t("AddInstituteModal.formTitle")} opened={opened} onClose={onClose}>
+    <Modal title={t`Add institute`} opened={opened} onClose={onClose}>
       <Stack>
         <InstituteForm
           id="add-institute-form"
@@ -31,11 +31,11 @@ export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) =
             } catch (error) {
               if (error instanceof TRPCClientError) {
                 if (error.message.match(/Unique constrained failed.*"name"/)) {
-                  throw new FormSubmitError({ name: t("AddInstituteModal.messageDuplicateName") })
+                  throw new FormSubmitError({ name: t`Institute name already exists` })
                 }
               }
               if (error instanceof Error) {
-                throw new FormSubmitError(`t("formError.unexpected" ${error.message}`)
+                throw new FormSubmitError(t`An error occurred: ${error.message}`)
               }
               throw error
             }
@@ -43,10 +43,10 @@ export const AddInstituteModal = ({ opened, onClose }: AddInstituteModalProps) =
         />
         <Group justify="flex-end">
           <Button variant="transparent" onClick={onClose}>
-            {t("general.buttonCancel")}
+            <Trans>Cancel</Trans>
           </Button>
           <Button variant="outline" form="add-institute-form" type="submit">
-            {t("general.buttonAdd")}
+            <Trans>Add</Trans>
           </Button>
         </Group>
       </Stack>

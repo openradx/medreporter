@@ -1,19 +1,19 @@
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useLingui } from "@lingui/react/macro"
 import { SelectPropertyInput } from "./SelectPropertyInput"
 
 export const WidthProperty = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <SelectPropertyInput
       name="width"
-      label={t("WidthProperty.label")}
+      label={t`Width`}
       data={[
-        { label: "Auto", value: "auto" },
-        { label: "Small", value: "small" },
-        { label: "Medium", value: "medium" },
-        { label: "Large", value: "large" },
-        { label: "Full", value: "full" },
+        { label: t`Auto`, value: "auto" },
+        { label: t`Small`, value: "small" },
+        { label: t`Medium`, value: "medium" },
+        { label: t`Large`, value: "large" },
+        { label: t`Full`, value: "full" },
       ]}
     />
   )

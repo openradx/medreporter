@@ -1,9 +1,9 @@
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Image as ImageIcon } from "lucide-react"
 import { useState } from "react"
 import { useChoiceField } from "~/contexts/ChoiceFieldContext"
 import { getFieldContext } from "~/contexts/FieldContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FigureModal } from "./FigureModal"
 
 interface FigureProps {
@@ -16,7 +16,7 @@ export const Figure = ({ children }: FigureProps) => {
   const { useField } = getFieldContext<string[] | string | null>()
   const { value, onChange } = useField()
 
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -25,7 +25,7 @@ export const Figure = ({ children }: FigureProps) => {
   return (
     <>
       <ActionIcon
-        title={t("FieldGraphics.buttonGraphic")}
+        title={t`Open figure to select`}
         onClick={handleClickOpen}
         style={{ pointerEvents: "auto" }}
         size={20}

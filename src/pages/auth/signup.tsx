@@ -1,29 +1,26 @@
+import { useLingui } from "@lingui/react/macro"
 import { GetServerSideProps } from "next"
 import { useRouter } from "next/router"
 import { ReactElement } from "react"
 import { SignupForm } from "~/components/auth/SignupForm"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
-export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
-  locale,
-  locales,
-}) => ({
+export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({ locale }) => ({
   props: {
-    i18nSite: await getServerSideSiteTranslations(locale, locales),
+    translation: await loadSiteTranslation(locale),
   },
 })
 
 const SignupPage: PageWithLayout = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
   const router = useRouter()
 
   return (
     <>
-      <PageHead title={t("SignupPage.pageTitle")} />
+      <PageHead title={t`Sign up`} />
       <SignupForm onSuccess={() => router.push("/")} />
     </>
   )

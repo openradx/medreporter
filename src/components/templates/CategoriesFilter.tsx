@@ -1,13 +1,16 @@
+import { useLingui as useLinguiLazy } from "@lingui/react"
+import { useLingui as useLinguiMacro } from "@lingui/react/macro"
 import { Loader, MultiSelect } from "@mantine/core"
 import { useState } from "react"
 import { useDebounce } from "use-debounce"
+import { CATEGORIES } from "~/constants/lazy-translations"
 import { useFilter } from "~/contexts/FilterContext"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { getEmptyCategoryGroups, getGroupForCategory } from "~/utils/categoryUtils"
 import { trpc } from "~/utils/trpc"
 
 export const CategoriesFilter = () => {
-  const { t } = useSiteTranslation()
+  const { t } = useLinguiMacro()
+  const { _ } = useLinguiLazy()
   const filter = useFilter()
   const [prefix, setPrefix] = useState("")
   const [prefixDebounced] = useDebounce(prefix, 500)
@@ -24,17 +27,19 @@ export const CategoriesFilter = () => {
 
   return (
     <MultiSelect
-      label={t("CategoriesFilter.inputLabel")}
-      placeholder={t("CategoriesFilter.inputPlaceholder")}
+      label={t`Categories`}
+      placeholder={t`Filter by categories`}
       searchValue={prefix}
       onSearchChange={(value) => setPrefix(value)}
       value={filter.categories}
       onChange={(value) => filter.setCategories(value)}
       data={Object.entries(groupsWithCategories).map(([group, categories]) => ({
-        group: t(`categories.group.${group}`),
+        // @ts-expect-error group is a string by next.js
+        group: _(CATEGORIES[group]),
         items: categories.map((category) => ({
           value: category,
-          label: t(`categories.${category}`),
+          // @ts-expect-error category is a string by next.js
+          label: _(CATEGORIES[category]),
         })),
       }))}
       searchable

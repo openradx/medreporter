@@ -2,6 +2,7 @@ import { undo, redo, toggleComment } from "@codemirror/commands"
 import { openLintPanel } from "@codemirror/lint"
 import { openSearchPanel } from "@codemirror/search"
 import { EditorView } from "@codemirror/view"
+import { useLingui } from "@lingui/react/macro"
 import { ActionIcon, Divider, Group } from "@mantine/core"
 import {
   Search as SearchIcon,
@@ -16,7 +17,6 @@ import {
 } from "lucide-react"
 import { RefObject } from "react"
 import invariant from "tiny-invariant"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { CodeType } from "~/types/general"
 import { formatCode } from "~/utils/codeFormatting"
 
@@ -26,13 +26,13 @@ interface EditorToolbarProps {
 }
 
 export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
-  const { t } = useSiteTranslation()
+  const { t } = useLingui()
 
   return (
     <Group gap={4}>
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.searchTooltip")}
+        title={t`Search`}
         onClick={() => {
           const editor = editorRef.current
           invariant(editor)
@@ -44,7 +44,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       </ActionIcon>
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.diagnosticsTooltip")}
+        title={t`Diagnostics`}
         onClick={() => {
           const editor = editorRef.current
           invariant(editor)
@@ -57,7 +57,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       <Divider mx={2} labelPosition="center" orientation="vertical" />
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.undoTooltip")}
+        title={t`Undo`}
         onClick={() => {
           const editor = editorRef.current
           invariant(editor)
@@ -69,7 +69,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       </ActionIcon>
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.redoTooltip")}
+        title={t`Redo`}
         onClick={() => {
           const editor = editorRef.current
           invariant(editor)
@@ -82,7 +82,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       <Divider mx={2} orientation="vertical" />
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.copyTooltip")}
+        title={t`Copy`}
         onClick={async () => {
           const editor = editorRef.current
           invariant(editor)
@@ -96,7 +96,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       </ActionIcon>
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.pasteTooltip")}
+        title={t`Paste`}
         onClick={async () => {
           const editor = editorRef.current
           invariant(editor)
@@ -119,7 +119,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       <Divider mx={2} orientation="vertical" />
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.formatTooltip")}
+        title={t`Format code`}
         onClick={async () => {
           const editor = editorRef.current
           invariant(editor)
@@ -143,7 +143,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       </ActionIcon>
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.toggleCommentTooltip")}
+        title={t`Toggle comment`}
         onClick={() => {
           const editor = editorRef.current
           invariant(editor)
@@ -156,7 +156,7 @@ export const EditorToolbar = ({ codeType, editorRef }: EditorToolbarProps) => {
       <Divider mx={2} orientation="vertical" />
       <ActionIcon
         variant="default"
-        title={t("EditorToolbar.helpTooltip")}
+        title={t`Help`}
         onClick={() => {
           const editor = editorRef.current
           invariant(editor)

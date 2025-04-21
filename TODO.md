@@ -76,7 +76,6 @@
 - Modules: Show deprecated, Only starred, Add tags, Sort by [Title, Author, Creation date], only language
 - switch to npm
 - check where useMemo is really needed
-- Add https://github.com/edvardchen/eslint-plugin-i18next
 - MeasurementsTable -> MeasurementsTool
 - AccountControl -> AccountOptions
 - ...Button -> ...Action (e.g. UndoButton -> UndoAction)
