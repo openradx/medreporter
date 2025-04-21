@@ -1,7 +1,7 @@
+import { useRouter } from "next/router"
 import { ReactNode, useCallback, useRef, useState } from "react"
 import { MicroI18nTemplateContextProvider } from "~/contexts/MicroI18nTemplateContext"
 import { useSiteLanguageListener } from "~/hooks/useSiteLanguageListener"
-import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { MicroI18n } from "~/utils/microI18n"
 
 type TemplateLanguage = string | "asSite" | "cimode"
@@ -19,8 +19,7 @@ export const TemplateTranslationProvider = ({
 }: TemplateTranslationProviderProps) => {
   const [structureLanguage, _setStructureLanguage] = useState<TemplateLanguage>("asSite")
   const [reportLanguage, _setReportLanguage] = useState<TemplateLanguage>("asSite")
-
-  const { currentSiteLanguage } = useSiteTranslation()
+  const { locale: currentSiteLanguage } = useRouter()
 
   const setStructureLanguage = useCallback(
     (language: TemplateLanguage) => {

@@ -5,18 +5,17 @@ import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { Fleischner2017 } from "~/default-templates/fleischner2017/Fleischner2017"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
   res,
   locale,
-  locales,
 }) => ({
   props: {
     session: await getServerSideSession(req, res),
-    i18nSite: await getServerSideSiteTranslations(locale, locales, ["template"]),
+    translation: await loadSiteTranslation(locale),
     preloadedReduxState: {},
   },
 })

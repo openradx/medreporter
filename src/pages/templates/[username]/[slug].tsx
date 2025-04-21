@@ -7,16 +7,15 @@ import { PageHead } from "~/components/common/PageHead"
 import { TemplateNode } from "~/schemas/template"
 import { prisma } from "~/server/prisma"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { useAppSelector } from "~/state/store"
 import { selectTemplate } from "~/state/templateSlice"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
   res,
   locale,
-  locales,
   params,
 }) => {
   const { username, slug } = params as { username: string; slug: string }
@@ -57,7 +56,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   return {
     props: {
       session: await getServerSideSession(req, res),
-      i18nSite: await getServerSideSiteTranslations(locale, locales, ["template", "designer"]),
+      translation: await loadSiteTranslation(locale),
       preloadedReduxState: {
         template: {
           past: [],

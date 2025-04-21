@@ -4,15 +4,14 @@ import { GetStaticProps } from "next"
 import Link from "next/link"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, StaticProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
-export const getStaticProps: GetStaticProps = async ({ locale, locales }) => {
-  const props: StaticProps = {
-    i18nSite: await getServerSideSiteTranslations(locale, locales),
-  }
-  return { props }
-}
+export const getStaticProps: GetStaticProps<StaticProps> = async ({ locale }) => ({
+  props: {
+    translation: await loadSiteTranslation(locale),
+  },
+})
 
 const Custom404: PageWithLayout = () => (
   <>

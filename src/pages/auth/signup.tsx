@@ -5,15 +5,12 @@ import { ReactElement } from "react"
 import { SignupForm } from "~/components/auth/SignupForm"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
-export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
-  locale,
-  locales,
-}) => ({
+export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({ locale }) => ({
   props: {
-    i18nSite: await getServerSideSiteTranslations(locale, locales),
+    translation: await loadSiteTranslation(locale),
   },
 })
 

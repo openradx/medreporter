@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/404.tsx:24
+#: src/pages/404.tsx:23
 msgid "- Page Not Found"
 msgstr "- Page Not Found"
 
@@ -85,7 +85,7 @@ msgstr "Additional info"
 msgid "Admin"
 msgstr "Admin"
 
-#: src/pages/admin/index.tsx:39
+#: src/pages/admin/index.tsx:38
 msgid "Administration"
 msgstr "Administration"
 
@@ -97,11 +97,11 @@ msgstr "Admins"
 msgid "Adrenal"
 msgstr "Adrenal"
 
-#: src/pages/templates/default/adrenal-mri.tsx:29
+#: src/pages/templates/default/adrenal-mri.tsx:28
 msgid "Adrenal MRI"
 msgstr "Adrenal MRI"
 
-#: src/pages/templates/default/adrenal-washout.tsx:29
+#: src/pages/templates/default/adrenal-washout.tsx:28
 msgid "Adrenal Washout on CT"
 msgstr "Adrenal Washout on CT"
 
@@ -275,7 +275,7 @@ msgstr "Create account"
 msgid "Create an account"
 msgstr "Create an account"
 
-#: src/pages/templates/new.tsx:34
+#: src/pages/templates/new.tsx:28
 msgid "Create new template"
 msgstr "Create new template"
 
@@ -457,7 +457,7 @@ msgstr "Filters"
 msgid "Finding"
 msgstr "Finding"
 
-#: src/pages/templates/default/fleischner2017.tsx:29
+#: src/pages/templates/default/fleischner2017.tsx:28
 msgid "Fleischner 2017"
 msgstr "Fleischner 2017"
 
@@ -470,7 +470,7 @@ msgstr "Fluoroscopy"
 msgid "Follow up"
 msgstr "Follow up"
 
-#: src/pages/auth/forgot-password.tsx:28
+#: src/pages/auth/forgot-password.tsx:27
 msgid "Forgot password"
 msgstr "Forgot password"
 
@@ -512,7 +512,7 @@ msgstr "Full"
 msgid "Full name"
 msgstr "Full name"
 
-#: src/components/common/SiteLanguageChooser.tsx:12
+#: src/components/common/SiteLanguageChooser.tsx:13
 msgid "General language"
 msgstr "General language"
 
@@ -520,11 +520,11 @@ msgstr "General language"
 msgid "German"
 msgstr "German"
 
-#: src/pages/templates/default/gfr.tsx:29
+#: src/pages/templates/default/gfr.tsx:28
 msgid "GFR Calculator"
 msgstr "GFR Calculator"
 
-#: src/pages/404.tsx:27
+#: src/pages/404.tsx:26
 msgid "Go back to homepage"
 msgstr "Go back to homepage"
 
@@ -553,7 +553,7 @@ msgstr "Hidden"
 msgid "Hint"
 msgstr "Hint"
 
-#: src/pages/index.tsx:28
+#: src/pages/index.tsx:27
 #: src/components/common/NavDrawer.tsx:19
 msgid "Home"
 msgstr "Home"
@@ -631,7 +631,7 @@ msgstr "Italian"
 msgid "Kidney"
 msgstr "Kidney"
 
-#: src/pages/templates/default/kidney-volume.tsx:29
+#: src/pages/templates/default/kidney-volume.tsx:28
 msgid "Kidney volume (Mayo-Model)"
 msgstr "Kidney volume (Mayo-Model)"
 
@@ -715,7 +715,7 @@ msgstr "Log is empty"
 msgid "Log out"
 msgstr "Log out"
 
-#: src/pages/auth/login.tsx:37
+#: src/pages/auth/login.tsx:36
 #: src/components/common/AccountControl.tsx:34
 #: src/components/auth/LoginLink.tsx:10
 #: src/components/auth/LoginForm.tsx:18
@@ -731,11 +731,11 @@ msgstr "Lower Extremity"
 msgid "Lung"
 msgstr "Lung"
 
-#: src/pages/templates/default/lung-rads2022.tsx:29
+#: src/pages/templates/default/lung-rads2022.tsx:28
 msgid "Lung-RADS 2022"
 msgstr "Lung-RADS 2022"
 
-#: src/pages/admin/manage-institutes.tsx:39
+#: src/pages/admin/manage-institutes.tsx:38
 msgid "Manage institutes"
 msgstr "Manage institutes"
 
@@ -743,7 +743,7 @@ msgstr "Manage institutes"
 msgid "Manage memberships"
 msgstr "Manage memberships"
 
-#: src/pages/admin/manage-users.tsx:39
+#: src/pages/admin/manage-users.tsx:38
 msgid "Manage users"
 msgstr "Manage users"
 
@@ -776,7 +776,7 @@ msgstr "Measurements default editor"
 msgid "Measurements output"
 msgstr "Measurements output"
 
-#: src/pages/templates/default/measurements-table.tsx:29
+#: src/pages/templates/default/measurements-table.tsx:28
 msgid "Measurements table"
 msgstr "Measurements table"
 
@@ -998,7 +998,7 @@ msgstr "Report language"
 msgid "Request submitted"
 msgstr "Request submitted"
 
-#: src/pages/auth/reset-password.tsx:27
+#: src/pages/auth/reset-password.tsx:26
 #: src/components/auth/ResetPasswordForm.tsx:23
 #: src/components/auth/ResetPasswordForm.tsx:32
 msgid "Reset password"
@@ -1041,7 +1041,7 @@ msgstr "Select"
 msgid "Shift current"
 msgstr "Shift current"
 
-#: src/pages/auth/signup.tsx:26
+#: src/pages/auth/signup.tsx:23
 #: src/components/auth/LoginForm.tsx:80
 msgid "Sign up"
 msgstr "Sign up"
@@ -1135,7 +1135,7 @@ msgstr "Syncing template..."
 msgid "Template properties"
 msgstr "Template properties"
 
-#: src/pages/templates/index.tsx:37
+#: src/pages/templates/index.tsx:36
 #: src/components/common/NavDrawer.tsx:20
 msgid "Templates"
 msgstr "Templates"

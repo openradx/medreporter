@@ -4,7 +4,7 @@ import { nodeSchema } from "./common"
 import { reportNodeSchema } from "./report"
 import { structureNodeSchema } from "./structure"
 
-export const buildTemplateNodeSchema = (message: string) =>
+export const buildTemplateNodeSchema = (message?: string) =>
   nodeSchema.extend({
     type: z.literal("Template"),
     id: z.literal("").or(z.string().cuid2()),

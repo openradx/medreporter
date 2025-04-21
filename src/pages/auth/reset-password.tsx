@@ -4,18 +4,17 @@ import { ResetPasswordForm } from "~/components/auth/ResetPasswordForm"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { getServerSideSession } from "~/server/utils/sessionUtils"
-import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { PageWithLayout, ServerSideProps } from "~/types/general"
+import { loadSiteTranslation } from "~/utils/i18n"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
   res,
   locale,
-  locales,
 }) => ({
   props: {
     session: await getServerSideSession(req, res),
-    i18nSite: await getServerSideSiteTranslations(locale, locales),
+    translation: await loadSiteTranslation(locale),
   },
 })
 

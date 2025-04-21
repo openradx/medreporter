@@ -1,5 +1,4 @@
 import { FlatCompat } from "@eslint/eslintrc"
-import i18next from "eslint-plugin-i18next"
 import storybook from "eslint-plugin-storybook"
 import { dirname } from "path"
 import { fileURLToPath } from "url"
@@ -14,7 +13,6 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
   ...storybook.configs["flat/recommended"],
-  i18next.configs["flat/recommended"],
   {
     ignores: ["src/locales/*"],
   },
