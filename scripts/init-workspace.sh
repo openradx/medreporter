@@ -18,6 +18,9 @@ else
   fi
 fi
 
+# Setup tab completion for npm
+source <(npm completion)
+
 npm install
 npm run db:migrate
 npm run db:seed
