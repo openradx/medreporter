@@ -251,7 +251,7 @@ msgstr "Content"
 msgid "Copied report to clipboard"
 msgstr "Copied report to clipboard"
 
-#: src/components/designer/editors/EditorToolbar.tsx:81
+#: src/components/designer/editors/EditorToolbar.tsx:85
 msgid "Copy"
 msgstr "Copy"
 
@@ -342,7 +342,7 @@ msgstr "Deprecated"
 msgid "Description"
 msgstr "Description"
 
-#: src/components/designer/editors/EditorToolbar.tsx:46
+#: src/components/designer/editors/EditorToolbar.tsx:47
 msgid "Diagnostics"
 msgstr "Diagnostics"
 
@@ -487,7 +487,7 @@ msgstr "Form editor"
 msgid "Format"
 msgstr "Format"
 
-#: src/components/designer/editors/EditorToolbar.tsx:116
+#: src/components/designer/editors/EditorToolbar.tsx:122
 msgid "Format code"
 msgstr "Format code"
 
@@ -540,7 +540,7 @@ msgstr "Grow"
 msgid "Heart"
 msgstr "Heart"
 
-#: src/components/designer/editors/EditorToolbar.tsx:151
+#: src/components/designer/editors/EditorToolbar.tsx:159
 msgid "Help"
 msgstr "Help"
 
@@ -907,7 +907,7 @@ msgstr "Password"
 msgid "Password reset successfully"
 msgstr "Password reset successfully"
 
-#: src/components/designer/editors/EditorToolbar.tsx:94
+#: src/components/designer/editors/EditorToolbar.tsx:99
 msgid "Paste"
 msgstr "Paste"
 
@@ -967,7 +967,7 @@ msgstr "Radiology"
 
 #: src/components/template/RedoButton.tsx:17
 #: src/components/designer/RedoButton.tsx:15
-#: src/components/designer/editors/EditorToolbar.tsx:69
+#: src/components/designer/editors/EditorToolbar.tsx:72
 msgid "Redo"
 msgstr "Redo"
 
@@ -1181,7 +1181,7 @@ msgstr "Title (Z-A)"
 msgid "Title(A-Z)"
 msgstr "Title(A-Z)"
 
-#: src/components/designer/editors/EditorToolbar.tsx:139
+#: src/components/designer/editors/EditorToolbar.tsx:146
 msgid "Toggle comment"
 msgstr "Toggle comment"
 
@@ -1198,7 +1198,7 @@ msgstr "Ultrasound"
 
 #: src/components/template/UndoButton.tsx:17
 #: src/components/designer/UndoButton.tsx:15
-#: src/components/designer/editors/EditorToolbar.tsx:58
+#: src/components/designer/editors/EditorToolbar.tsx:60
 msgid "Undo"
 msgstr "Undo"
 

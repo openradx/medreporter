@@ -251,7 +251,7 @@ msgstr "Inhalt"
 msgid "Copied report to clipboard"
 msgstr "Report in die Zwischenablage kopiert"
 
-#: src/components/designer/editors/EditorToolbar.tsx:81
+#: src/components/designer/editors/EditorToolbar.tsx:85
 msgid "Copy"
 msgstr "Kopieren"
 
@@ -342,7 +342,7 @@ msgstr "Veraltet"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: src/components/designer/editors/EditorToolbar.tsx:46
+#: src/components/designer/editors/EditorToolbar.tsx:47
 msgid "Diagnostics"
 msgstr "Diagnostik"
 
@@ -487,7 +487,7 @@ msgstr "Formular-Editor"
 msgid "Format"
 msgstr "Format"
 
-#: src/components/designer/editors/EditorToolbar.tsx:116
+#: src/components/designer/editors/EditorToolbar.tsx:122
 msgid "Format code"
 msgstr "Code formatieren"
 
@@ -540,7 +540,7 @@ msgstr "Wachsen"
 msgid "Heart"
 msgstr "Herz"
 
-#: src/components/designer/editors/EditorToolbar.tsx:151
+#: src/components/designer/editors/EditorToolbar.tsx:159
 msgid "Help"
 msgstr "Hilfe"
 
@@ -907,7 +907,7 @@ msgstr "Passwort"
 msgid "Password reset successfully"
 msgstr "Passwort erfolgreich zurückgesetzt"
 
-#: src/components/designer/editors/EditorToolbar.tsx:94
+#: src/components/designer/editors/EditorToolbar.tsx:99
 msgid "Paste"
 msgstr "Einfügen"
 
@@ -967,7 +967,7 @@ msgstr "Radiologie"
 
 #: src/components/template/RedoButton.tsx:17
 #: src/components/designer/RedoButton.tsx:15
-#: src/components/designer/editors/EditorToolbar.tsx:69
+#: src/components/designer/editors/EditorToolbar.tsx:72
 msgid "Redo"
 msgstr "Wiederherstellen"
 
@@ -1181,7 +1181,7 @@ msgstr "Titel (Z-A)"
 msgid "Title(A-Z)"
 msgstr "Titel(A-Z)"
 
-#: src/components/designer/editors/EditorToolbar.tsx:139
+#: src/components/designer/editors/EditorToolbar.tsx:146
 msgid "Toggle comment"
 msgstr "Kommentar ein-/ausschalten"
 
@@ -1198,7 +1198,7 @@ msgstr "Ultraschall"
 
 #: src/components/template/UndoButton.tsx:17
 #: src/components/designer/UndoButton.tsx:15
-#: src/components/designer/editors/EditorToolbar.tsx:58
+#: src/components/designer/editors/EditorToolbar.tsx:60
 msgid "Undo"
 msgstr "Rückgängig machen"
 
