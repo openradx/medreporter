@@ -9,7 +9,8 @@ const MIN_HEIGHT = "200px"
 export interface CodeMirrorProps {
   theme: "dark" | "light"
   extensions: Extension[]
-  value: string
+  initialValue?: string
+  value?: string
   onChange: (value: string) => void
   onCreateEditor?: (editor: EditorView) => void
 }
@@ -17,12 +18,14 @@ export interface CodeMirrorProps {
 export const CodeMirror = ({
   theme,
   extensions: customExtensions,
+  initialValue,
   value,
   onChange,
   onCreateEditor,
 }: CodeMirrorProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [editor, setEditor] = useState<EditorView | null>(null)
+  const initialValueRef = useRef(initialValue)
 
   const preparedExtensions = useMemo(() => {
     const updateListener = EditorView.updateListener.of((vu) => {
@@ -52,8 +55,9 @@ export const CodeMirror = ({
   }, [theme, customExtensions, onChange])
 
   useLayoutEffect(() => {
+    const doc = initialValueRef.current ?? value
     const view = new EditorView({
-      doc: value,
+      doc,
       extensions: preparedExtensions,
       parent: containerRef.current!,
     })

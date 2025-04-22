@@ -15,7 +15,6 @@ interface CodeEditorProps {
 
 export const CodeEditor = ({ codeType, extensions, value, onChange }: CodeEditorProps) => {
   const { colorScheme } = useMantineColorScheme()
-  const valueRef = useRef(value)
   const editorRef = useRef<EditorView>(null)
 
   return (
@@ -24,7 +23,7 @@ export const CodeEditor = ({ codeType, extensions, value, onChange }: CodeEditor
       <CodeMirror
         theme={colorScheme === "dark" ? "dark" : "light"}
         extensions={extensions}
-        value={valueRef.current}
+        value={value}
         onChange={onChange}
         onCreateEditor={(editor) => {
           editorRef.current = editor
