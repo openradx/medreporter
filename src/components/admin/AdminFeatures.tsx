@@ -1,10 +1,10 @@
 import { Grid, Text } from "@mantine/core"
 import { MembershipRole, UserRole } from "@prisma/client"
 import { Building2 as InstituteIcon, Users as UserIcon } from "lucide-react"
-import { useSession } from "next-auth/react"
 import { Route } from "nextjs-routes"
 import { ReactNode } from "react"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
+import { useUser } from "~/hooks/useUser"
 import { AdminFeatureCard } from "./AdminFeatureCard"
 
 interface AdminFeature {
@@ -16,9 +16,8 @@ interface AdminFeature {
 
 export const AdminFeatures = () => {
   const { t } = useSiteTranslation()
-  const session = useSession()
-
-  const roles = session.data?.user.roles
+  const user = useUser()
+  const roles = user?.roles
   const isSuperuser = roles?.includes(UserRole.SUPERUSER) ?? false
   const canManageInstitutes =
     (roles?.includes(MembershipRole.OWNER) || roles?.includes(MembershipRole.ADMIN)) ?? false

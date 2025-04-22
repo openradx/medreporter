@@ -1,12 +1,13 @@
 import { Visibility } from "@prisma/client"
+import { fromNodeHeaders } from "better-auth/node"
 import { GetServerSideProps } from "next"
 import { ReactElement } from "react"
 import { TemplateAdapter } from "~/components/adapters/TemplateAdapter"
 import { MainLayout } from "~/components/common/MainLayout"
 import { PageHead } from "~/components/common/PageHead"
 import { TemplateNode } from "~/schemas/template"
+import { auth } from "~/server/auth"
 import { prisma } from "~/server/prisma"
-import { getServerSideSession } from "~/server/utils/sessionUtils"
 import { getServerSideSiteTranslations } from "~/server/utils/siteTranslations"
 import { useAppSelector } from "~/state/store"
 import { selectTemplate } from "~/state/templateSlice"
@@ -14,14 +15,13 @@ import { PageWithLayout, ServerSideProps } from "~/types/general"
 
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   req,
-  res,
   locale,
   locales,
   params,
 }) => {
   const { username, slug } = params as { username: string; slug: string }
 
-  const session = await getServerSideSession(req, res)
+  const session = await auth.api.getSession({ headers: fromNodeHeaders(req.headers) })
 
   const templateUser = await prisma.user.findUnique({
     where: {
@@ -47,8 +47,12 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   }
 
   if (template.visibility === Visibility.PRIVATE && session?.user.id !== template.authorId) {
-    res.statusCode = 403 // Forbidden
-    return { props: {} } // TODO:
+    return {
+      redirect: {
+        destination: "/403", // TODO: add a 403 page
+        permanent: false,
+      },
+    }
   }
 
   const content = template.document as TemplateNode
@@ -56,7 +60,7 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
 
   return {
     props: {
-      session: await getServerSideSession(req, res),
+      session,
       i18nSite: await getServerSideSiteTranslations(locale, locales, ["template", "designer"]),
       preloadedReduxState: {
         template: {

@@ -5,10 +5,10 @@ import { authedProcedure, router } from "../trpc"
 
 export const profileRouter = router({
   getOwnMemberships: authedProcedure.query(async ({ ctx }) => {
-    const { user } = ctx
+    const { session } = ctx
 
     const memberships = await prisma.membership.findMany({
-      where: { userId: user.id },
+      where: { userId: session.user.id },
       include: { institute: true },
     })
 
@@ -18,11 +18,11 @@ export const profileRouter = router({
     .input(UpdateCurrentInstituteSchema)
     .mutation(async ({ input, ctx }) => {
       const { instituteId } = input
-      const { user } = ctx
+      const { session } = ctx
 
       if (instituteId) {
         const membership = await prisma.membership.findUnique({
-          where: { instituteId_userId: { instituteId, userId: user.id } },
+          where: { instituteId_userId: { instituteId, userId: session.user.id } },
         })
         if (!membership) {
           throw new TRPCError({
@@ -34,7 +34,7 @@ export const profileRouter = router({
 
       return await prisma.user.update({
         data: { currentInstituteId: instituteId },
-        where: { id: user.id },
+        where: { id: session.user.id },
         select: { id: true },
       })
     }),

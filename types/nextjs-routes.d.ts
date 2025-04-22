@@ -16,7 +16,7 @@ declare module "nextjs-routes" {
     | StaticRoute<"/admin">
     | StaticRoute<"/admin/manage-institutes">
     | StaticRoute<"/admin/manage-users">
-    | DynamicRoute<"/api/auth/[...nextauth]", { "nextauth": string[] }>
+    | DynamicRoute<"/api/auth/[...all]", { "all": string[] }>
     | StaticRoute<"/api/locales">
     | DynamicRoute<"/api/trpc/[trpc]", { "trpc": string }>
     | StaticRoute<"/auth/forgot-password">

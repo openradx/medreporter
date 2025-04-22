@@ -7,10 +7,8 @@ import { paginate } from "~/utils/pagination"
 import {
   CreateInstituteSchema,
   CreateMembershipSchema,
-  CreateUserSchema,
   DeleteInstituteSchema,
   DeleteMembershipSchema,
-  DeleteUserSchema,
   GetInstitutesSchema,
   GetMembershipsSchema,
   GetUsersForMembershipSchema,
@@ -24,7 +22,6 @@ import { adminProcedure, authedProcedure, router, superuserProcedure } from "../
 export const adminRouter = router({
   createInstitute: adminProcedure.input(CreateInstituteSchema).mutation(async ({ input, ctx }) => {
     const { name } = input
-    const { user } = ctx
 
     try {
       return await prisma.institute.create({
@@ -66,24 +63,6 @@ export const adminRouter = router({
 
       throw new TRPCError({ code: "UNAUTHORIZED" })
     }),
-  createUser: superuserProcedure.input(CreateUserSchema).mutation(async ({ input }) => {
-    const { username, email, password, ...data } = input
-    const hashedPassword = await hashPassword(password)
-
-    try {
-      return await prisma.user.create({
-        data: {
-          username: username.trim(),
-          email: email.toLowerCase().trim(),
-          hashedPassword,
-          ...data,
-        },
-      })
-    } catch (error) {
-      checkUniqueConstraint<User>(error, ["username", "email"])
-      throw error
-    }
-  }),
   deleteInstitute: adminProcedure.input(DeleteInstituteSchema).mutation(async ({ input, ctx }) => {
     const { id: instituteId } = input
     const { user } = ctx
@@ -139,10 +118,6 @@ export const adminRouter = router({
 
       throw new TRPCError({ code: "UNAUTHORIZED" })
     }),
-  deleteUser: superuserProcedure.input(DeleteUserSchema).mutation(async ({ input }) => {
-    const { id: userId } = input
-    return await prisma.user.deleteMany({ where: { id: userId } })
-  }),
   getInstitutes: authedProcedure.input(GetInstitutesSchema).query(async ({ input, ctx }) => {
     const { filter, skip, take } = input
     const { user } = ctx

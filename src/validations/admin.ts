@@ -1,4 +1,4 @@
-import { MembershipRole, UserRole } from "@prisma/client"
+import { MembershipRole } from "@prisma/client"
 import { z } from "zod"
 import { PasswordSchema, SignupSchema } from "./auth"
 import { PaginationSchema } from "./common"
@@ -18,10 +18,6 @@ export const DeleteInstituteSchema = z.object({
 })
 
 export const DeleteMembershipSchema = z.object({
-  id: z.string(),
-})
-
-export const DeleteUserSchema = z.object({
   id: z.string(),
 })
 

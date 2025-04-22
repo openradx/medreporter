@@ -1,9 +1,8 @@
 import { Button, Group, Modal, Stack } from "@mantine/core"
-import { UserRole } from "@prisma/client"
 import { TRPCClientError } from "@trpc/client"
+import { authClient } from "~/auth-client"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
 import { FormSubmitError } from "~/utils/formErrors"
-import { trpc } from "~/utils/trpc"
 import { CreateUserSchema } from "~/validations/admin"
 import { UserForm } from "./UserForm"
 
@@ -14,8 +13,6 @@ interface AddUserModalProps {
 
 export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
   const { t } = useSiteTranslation()
-  const createUser = trpc.admin.createUser.useMutation()
-  const utils = trpc.useUtils()
 
   return (
     <Modal title={t("AddUserModal.formTitle")} opened={opened} onClose={onClose}>
@@ -26,8 +23,16 @@ export const AddUserModal = ({ opened, onClose }: AddUserModalProps) => {
           initialValues={{ username: "", email: "", password: "", role: UserRole.USER }}
           onSubmit={async (values) => {
             try {
-              await createUser.mutateAsync(values)
-              utils.admin.getUsers.invalidate()
+              await authClient.admin.createUser({
+                email: values.email,
+                password: values.password,
+                name: values.fullName,
+                role: "user",
+                data: {
+                  username: values.username,
+                  fullName: values.fullName,
+                },
+              })
               onClose()
             } catch (error) {
               if (error instanceof TRPCClientError) {

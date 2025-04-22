@@ -1,17 +1,12 @@
 import { z } from "zod"
+import { RESERVED_USERNAMES } from "~/constants/reserved-usernames"
 
 export const UsernameSchema = z
   .string()
   .min(3)
   .max(25)
-  .regex(/^[a-zA-Z0-9]+[a-zA-Z0-9_-]+[a-zA-Z0-9]+$/)
-  .refine(
-    (value) => {
-      const reserved = ["new"]
-      return !reserved.includes(value)
-    },
-    { message: "Reserved keyword" }
-  )
+  .regex(/^[a-zA-Z0-9]+[a-zA-Z0-9._-]+[a-zA-Z0-9]+$/)
+  .refine((value) => !RESERVED_USERNAMES.includes(value), { message: "Reserved username" })
 
 export const EmailSchema = z
   .string()
@@ -28,7 +23,7 @@ export const SignupSchema = z.object({
   username: UsernameSchema,
   email: EmailSchema,
   password: PasswordSchema,
-  fullName: z.string(),
+  name: z.string(),
   about: z.string(),
 })
 

@@ -2,8 +2,8 @@ import { ActionIcon, Text } from "@mantine/core"
 import { openConfirmModal, openModal } from "@mantine/modals"
 import { User } from "@prisma/client"
 import { Trash2 as DeleteIcon } from "lucide-react"
+import { authClient } from "~/auth-client"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
-import { trpc } from "~/utils/trpc"
 
 interface DeleteUserButtonProps {
   user: User
@@ -11,8 +11,6 @@ interface DeleteUserButtonProps {
 
 export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
   const { t } = useSiteTranslation()
-  const deleteUser = trpc.admin.deleteUser.useMutation()
-  const utils = trpc.useUtils()
 
   return (
     <ActionIcon
@@ -33,8 +31,9 @@ export const DeleteUserButton = ({ user }: DeleteUserButtonProps) => {
           cancelProps: { color: "gray", variant: "transparent" },
           onConfirm: async () => {
             try {
-              await deleteUser.mutateAsync({ id: user.id })
-              utils.admin.getUsers.invalidate()
+              await authClient.admin.removeUser({
+                userId: user.id,
+              })
             } catch (error) {
               if (error instanceof Error) {
                 openModal({

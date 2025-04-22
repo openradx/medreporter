@@ -1,7 +1,7 @@
 import { Stack, TextInput, Title } from "@mantine/core"
-import { signIn } from "next-auth/react"
 import { useRouter } from "next/router"
 import { Controller } from "react-hook-form"
+import { authClient } from "~/auth-client"
 import { PageLink } from "~/components/common/PageLink"
 import { SubmitForm } from "~/components/common/SubmitForm"
 import { useSiteTranslation } from "~/hooks/useSiteTranslation"
@@ -20,18 +20,17 @@ export const LoginForm = () => {
         schema={LoginSchema}
         initialValues={{ usernameOrEmail: "", password: "" }}
         onSubmit={async (values) => {
-          const result = await signIn("credentials", {
-            usernameOrEmail: values.usernameOrEmail,
+          const { error } = await authClient.signIn.username({
+            username: values.usernameOrEmail,
             password: values.password,
-            redirect: false,
           })
 
-          if (!result?.ok) {
-            if (result?.status === 401) {
+          if (error) {
+            if (error.status === 401) {
               const message = t("LoginForm.authErrorMessage")
               throw new FormSubmitError(message)
             }
-            const message = `t("formError.unexpected") ${result?.status}`
+            const message = `t("formError.unexpected") ${error.status}`
             throw new FormSubmitError(message)
           }
 

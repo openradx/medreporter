@@ -1,3 +1,4 @@
+// TODO: check what is still needed and what can be removed
 import bcrypt from "bcrypt"
 
 export async function hashPassword(rawPassword: string) {

@@ -1,7 +1,9 @@
-import { User } from "next-auth"
-import { Role } from "types/next-auth"
+import { MembershipRole, UserRole } from "@prisma/client"
+import { Session } from "~/types/general"
 
-export function hasRole(user: User, roleOrRoles: Role | Role[]) {
+type Role = MembershipRole | UserRole
+
+export function hasRole(user: Session["user"], roleOrRoles: Role | Role[]) {
   for (const role of user.roles) {
     if (Array.isArray(roleOrRoles)) {
       if (roleOrRoles.includes(role)) {
