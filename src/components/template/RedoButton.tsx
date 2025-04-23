@@ -1,11 +1,9 @@
 import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Redo as RedoIcon } from "lucide-react"
-import { setStructureDataModified } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
 import { selectCanRedoHistoryData } from "~/state/structureHistoryDataSlice"
-import { setStructureLiveData } from "~/state/structureLiveDataSlice"
-import { changeHistoryDebounced, redoAndSelect } from "~/state/thunks"
+import { redoStructure } from "~/state/thunks"
 
 export const RedoButton = () => {
   const { t } = useLingui()
@@ -18,10 +16,7 @@ export const RedoButton = () => {
       variant="default"
       disabled={!canRedo}
       onClick={() => {
-        changeHistoryDebounced.flush()
-        const structureData = dispatch(redoAndSelect())
-        dispatch(setStructureLiveData(structureData))
-        dispatch(setStructureDataModified(true))
+        dispatch(redoStructure())
       }}
       aria-label="Redo"
     >

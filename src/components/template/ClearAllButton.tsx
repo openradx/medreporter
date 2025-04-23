@@ -2,9 +2,9 @@ import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
 import { Eraser as ClearAllIcon } from "lucide-react"
 import { useStructure } from "~/contexts/StructureContext"
-import { selectStructureDataModified, setStructureDataModified } from "~/state/displaySlice"
+import { selectStructureDataModified } from "~/state/displaySlice"
 import { useAppDispatch, useAppSelector } from "~/state/store"
-import { changeHistoryDebounced, setStructureData } from "~/state/thunks"
+import { clearStructure } from "~/state/thunks"
 
 export const ClearAllButton = () => {
   const { t } = useLingui()
@@ -18,10 +18,7 @@ export const ClearAllButton = () => {
       variant="default"
       disabled={!modified}
       onClick={() => {
-        changeHistoryDebounced.flush()
-        const structureData = defaultValuesRef.current
-        dispatch(setStructureData(structureData))
-        dispatch(setStructureDataModified(true))
+        dispatch(clearStructure(defaultValuesRef.current))
       }}
       aria-label="Clear form"
     >

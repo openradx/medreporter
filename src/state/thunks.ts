@@ -4,7 +4,6 @@ import { StructureData, StructureValue } from "~/schemas/structure"
 import { setStructureDataModified } from "./displaySlice"
 import { AppThunk } from "./store"
 import {
-  StructureHistoryDataState,
   changeStructureHistoryValue,
   redoHistoryData,
   removeStructureHistoryValue,
@@ -19,24 +18,6 @@ import {
   removeStructureLiveValue,
   setStructureLiveData,
 } from "./structureLiveDataSlice"
-
-export const undoAndSelect = (): AppThunk<StructureHistoryDataState> => (dispatch, getState) => {
-  const state = getState()
-  const canUndo = selectCanUndoHistoryData(state)
-  if (canUndo) {
-    dispatch(undoHistoryData())
-  }
-  return selectStructureHistoryData(getState())
-}
-
-export const redoAndSelect = (): AppThunk<StructureHistoryDataState> => (dispatch, getState) => {
-  const state = getState()
-  const canRedo = selectCanRedoHistoryData(state)
-  if (canRedo) {
-    dispatch(redoHistoryData())
-  }
-  return selectStructureHistoryData(getState())
-}
 
 export const setStructureData =
   (data: StructureData): AppThunk<void> =>
@@ -53,7 +34,7 @@ const changeHistory = (
   dispatch(changeStructureHistoryValue({ fieldId, value }))
 }
 
-export const changeHistoryDebounced = debounce(changeHistory, 500)
+const changeHistoryDebounced = debounce(changeHistory, 500)
 
 let prevFieldId = ""
 
@@ -76,4 +57,36 @@ export const removeStructureValue =
   (dispatch) => {
     dispatch(removeStructureLiveValue({ fieldId }))
     dispatch(removeStructureHistoryValue({ fieldId }, false))
+  }
+
+export const undoStructure = (): AppThunk<void> => (dispatch, getState) => {
+  changeHistoryDebounced.flush()
+  const state = getState()
+  const canUndo = selectCanUndoHistoryData(state)
+  if (canUndo) {
+    dispatch(undoHistoryData())
+  }
+  const structureData = selectStructureHistoryData(getState())
+  dispatch(setStructureLiveData(structureData))
+  dispatch(setStructureDataModified(true))
+}
+
+export const redoStructure = (): AppThunk<void> => (dispatch, getState) => {
+  changeHistoryDebounced.flush()
+  const state = getState()
+  const canRedo = selectCanRedoHistoryData(state)
+  if (canRedo) {
+    dispatch(redoHistoryData())
+  }
+  const structureData = selectStructureHistoryData(getState())
+  dispatch(setStructureLiveData(structureData))
+  dispatch(setStructureDataModified(true))
+}
+
+export const clearStructure =
+  (defaultValues: StructureData): AppThunk<void> =>
+  (dispatch) => {
+    changeHistoryDebounced.flush()
+    dispatch(setStructureData(defaultValues))
+    dispatch(setStructureDataModified(true))
   }
