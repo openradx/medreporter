@@ -2,9 +2,16 @@ import { useCallback, useEffect } from "react"
 import { useStructure } from "~/contexts/StructureContext"
 import { StructureValue } from "~/schemas/structure"
 import { useAppDispatch, useAppSelector } from "~/state/store"
-import { changeStructureHistoryValue } from "~/state/structureHistoryDataSlice"
-import { changeStructureLiveValue, selectStructureLiveValue } from "~/state/structureLiveDataSlice"
-import { changeStructureValue, removeStructureValue } from "~/state/thunks"
+import {
+  changeStructureHistoryValue,
+  removeStructureHistoryValue,
+} from "~/state/structureHistoryDataSlice"
+import {
+  changeStructureLiveValue,
+  removeStructureLiveValue,
+  selectStructureLiveValue,
+} from "~/state/structureLiveDataSlice"
+import { changeStructureValue } from "~/state/thunks"
 
 export const useStructureController = <T extends StructureValue>({
   fieldId,
@@ -21,7 +28,8 @@ export const useStructureController = <T extends StructureValue>({
     dispatch(changeStructureLiveValue({ fieldId, value: defaultValue }))
     dispatch(changeStructureHistoryValue({ fieldId, value: defaultValue }, false))
     return () => {
-      dispatch(removeStructureValue(fieldId))
+      dispatch(removeStructureLiveValue({ fieldId }))
+      dispatch(removeStructureHistoryValue({ fieldId }, false))
     }
   }, [dispatch, fieldId, defaultValue])
 

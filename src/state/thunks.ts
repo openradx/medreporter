@@ -6,18 +6,13 @@ import { AppThunk } from "./store"
 import {
   changeStructureHistoryValue,
   redoHistoryData,
-  removeStructureHistoryValue,
   selectCanRedoHistoryData,
   selectCanUndoHistoryData,
   selectStructureHistoryData,
   setStructureHistoryData,
   undoHistoryData,
 } from "./structureHistoryDataSlice"
-import {
-  changeStructureLiveValue,
-  removeStructureLiveValue,
-  setStructureLiveData,
-} from "./structureLiveDataSlice"
+import { changeStructureLiveValue, setStructureLiveData } from "./structureLiveDataSlice"
 
 export const setStructureData =
   (data: StructureData): AppThunk<void> =>
@@ -50,13 +45,6 @@ export const changeStructureValue =
     changeHistoryDebounced(dispatch, fieldId, value)
 
     dispatch(setStructureDataModified(true))
-  }
-
-export const removeStructureValue =
-  (fieldId: string): AppThunk<void> =>
-  (dispatch) => {
-    dispatch(removeStructureLiveValue({ fieldId }))
-    dispatch(removeStructureHistoryValue({ fieldId }, false))
   }
 
 export const undoStructure = (): AppThunk<void> => (dispatch, getState) => {
