@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
   env: {
     // make url available on the client
     NEXTAUTH_URL: env.NEXTAUTH_URL,
+    CURRENT_YEAR: new Date().getFullYear().toString(),
   },
   webpack(config: Configuration) {
     // Import Markdown files as strings,

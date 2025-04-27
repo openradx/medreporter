@@ -7,7 +7,7 @@ export const CopyrightMessage = () => (
   <Group p={4} gap={8} align="center" justify="center">
     <CopyrightIcon size={16} className={classes.copyrightIcon} />
     <Text size="sm" className={classes.copyrightMessage}>
-      <Trans>2024 MedReporter. All Rights Reserved.</Trans>
+      <Trans>{process.env.CURRENT_YEAR} MedReporter. All Rights Reserved.</Trans>
     </Text>
   </Group>
 )
