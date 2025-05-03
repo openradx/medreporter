@@ -43,6 +43,8 @@ export const ERROR_MESSAGES = {
 export const LANGUAGES = {
   de: msg`German`,
   en: msg`English`,
+  "en-US": msg`English (US)`,
+  "en-GB": msg`English (GB)`,
   es: msg`Spanish`,
   fr: msg`French`,
   it: msg`Italian`,

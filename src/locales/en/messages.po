@@ -334,7 +334,7 @@ msgstr "Delete institute"
 msgid "Delete user"
 msgstr "Delete user"
 
-#: src/constants/lazy-translations.ts:57
+#: src/constants/lazy-translations.ts:59
 msgid "Deprecated"
 msgstr "Deprecated"
 
@@ -370,11 +370,11 @@ msgstr "Do you really want to delete the institute {0}?"
 msgid "Do you really want to delete the user {0}?"
 msgstr "Do you really want to delete the user {0}?"
 
-#: src/constants/lazy-translations.ts:55
+#: src/constants/lazy-translations.ts:57
 msgid "Draft"
 msgstr "Draft"
 
-#: src/constants/lazy-translations.ts:49
+#: src/constants/lazy-translations.ts:51
 msgid "Dutch"
 msgstr "Dutch"
 
@@ -410,6 +410,14 @@ msgstr "Email"
 #: src/constants/lazy-translations.ts:45
 msgid "English"
 msgstr "English"
+
+#: src/constants/lazy-translations.ts:47
+msgid "English (GB)"
+msgstr "English (GB)"
+
+#: src/constants/lazy-translations.ts:46
+msgid "English (US)"
+msgstr "English (US)"
 
 #: src/components/designer/properties/LevelProperty.tsx:14
 msgid "Error"
@@ -500,7 +508,7 @@ msgstr "Format dimensions"
 msgid "Free text"
 msgstr "Free text"
 
-#: src/constants/lazy-translations.ts:47
+#: src/constants/lazy-translations.ts:49
 msgid "French"
 msgstr "French"
 
@@ -583,7 +591,7 @@ msgstr "Individual"
 msgid "Info"
 msgstr "Info"
 
-#: src/constants/lazy-translations.ts:62
+#: src/constants/lazy-translations.ts:64
 msgid "Institute"
 msgstr "Institute"
 
@@ -624,7 +632,7 @@ msgstr "Invalid slug. Only letters, numbers, dashes and underscores are allowed 
 msgid "Invalid username or password"
 msgstr "Invalid username or password"
 
-#: src/constants/lazy-translations.ts:48
+#: src/constants/lazy-translations.ts:50
 msgid "Italian"
 msgstr "Italian"
 
@@ -916,7 +924,7 @@ msgstr "Paste"
 msgid "Permission Denied"
 msgstr "Permission Denied"
 
-#: src/constants/lazy-translations.ts:50
+#: src/constants/lazy-translations.ts:52
 msgid "Portuguese"
 msgstr "Portuguese"
 
@@ -933,7 +941,7 @@ msgstr "Preview"
 msgid "Previous"
 msgstr "Previous"
 
-#: src/constants/lazy-translations.ts:63
+#: src/constants/lazy-translations.ts:65
 msgid "Private"
 msgstr "Private"
 
@@ -950,11 +958,11 @@ msgstr "Properties panel not implemented for node type {0}"
 msgid "Prostate"
 msgstr "Prostate"
 
-#: src/constants/lazy-translations.ts:61
+#: src/constants/lazy-translations.ts:63
 msgid "Public"
 msgstr "Public"
 
-#: src/constants/lazy-translations.ts:56
+#: src/constants/lazy-translations.ts:58
 msgid "Published"
 msgstr "Published"
 
@@ -1063,7 +1071,7 @@ msgstr "Sort by..."
 msgid "Sorting"
 msgstr "Sorting"
 
-#: src/constants/lazy-translations.ts:46
+#: src/constants/lazy-translations.ts:48
 msgid "Spanish"
 msgstr "Spanish"
 
@@ -1112,7 +1120,7 @@ msgstr "Surgery"
 msgid "SVG Editor"
 msgstr "SVG Editor"
 
-#: src/constants/lazy-translations.ts:51
+#: src/constants/lazy-translations.ts:53
 msgid "Swedish"
 msgstr "Swedish"
 
