@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from "react"
+import { useFieldNode } from "~/contexts/FieldNodeContext"
 import { useStructure } from "~/contexts/StructureContext"
 import { StructureValue } from "~/schemas/structure"
 import { useAppDispatch, useAppSelector } from "~/state/store"
@@ -21,30 +22,41 @@ export const useStructureController = <T extends StructureValue>({
   defaultValue: T
 }): { value: T; onChange: (value: T) => void } => {
   const dispatch = useAppDispatch()
-  let value = useAppSelector(selectStructureLiveValue(fieldId))
-  if (value === undefined) value = defaultValue
+  const { backupValuesRef, defaultValuesRef } = useStructure()
+  const liveValue = useAppSelector(selectStructureLiveValue(fieldId))
+  const fieldNode = useFieldNode()
 
   useEffect(() => {
-    dispatch(changeStructureLiveValue({ fieldId, value: defaultValue }))
-    dispatch(changeStructureHistoryValue({ fieldId, value: defaultValue }, false))
+    defaultValuesRef.current[fieldId] = defaultValue
+  }, [fieldId, defaultValue, defaultValuesRef])
+
+  useEffect(() => {
+    let initialValue = liveValue
+    if (fieldNode) {
+      initialValue = backupValuesRef.current[fieldNode.node.nodeId]
+    }
+    if (initialValue === undefined) initialValue = defaultValue
+
+    dispatch(changeStructureLiveValue({ fieldId, value: initialValue }))
+    dispatch(changeStructureHistoryValue({ fieldId, value: initialValue }, false))
+
     return () => {
       dispatch(removeStructureLiveValue({ fieldId }))
       dispatch(removeStructureHistoryValue({ fieldId }, false))
     }
-  }, [dispatch, fieldId, defaultValue])
-
-  const { defaultValuesRef } = useStructure()
-
-  useEffect(() => {
-    defaultValuesRef.current[fieldId] = defaultValue
-  }, [defaultValuesRef, fieldId, defaultValue])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, fieldId, defaultValue, fieldNode])
 
   const handleChange = useCallback(
     (newValue: T) => {
       dispatch(changeStructureValue(fieldId, newValue))
+
+      if (fieldNode) {
+        backupValuesRef.current[fieldNode.node.nodeId] = newValue
+      }
     },
-    [dispatch, fieldId]
+    [dispatch, fieldId, fieldNode, backupValuesRef]
   )
 
-  return { value: value as T, onChange: handleChange }
+  return { value: liveValue as T, onChange: handleChange }
 }

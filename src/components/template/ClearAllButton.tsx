@@ -1,5 +1,6 @@
 import { useLingui } from "@lingui/react/macro"
 import { ActionIcon } from "@mantine/core"
+import copy from "fast-copy"
 import { Eraser as ClearAllIcon } from "lucide-react"
 import { useStructure } from "~/contexts/StructureContext"
 import { selectStructureDataModified } from "~/state/displaySlice"
@@ -8,7 +9,7 @@ import { clearStructure } from "~/state/thunks"
 
 export const ClearAllButton = () => {
   const { t } = useLingui()
-  const { defaultValuesRef } = useStructure()
+  const { backupValuesRef, defaultValuesRef } = useStructure()
   const modified = useAppSelector(selectStructureDataModified)
   const dispatch = useAppDispatch()
 
@@ -18,7 +19,8 @@ export const ClearAllButton = () => {
       variant="default"
       disabled={!modified}
       onClick={() => {
-        dispatch(clearStructure(defaultValuesRef.current))
+        dispatch(clearStructure(copy(defaultValuesRef.current)))
+        backupValuesRef.current = {}
       }}
       aria-label="Clear form"
     >

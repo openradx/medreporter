@@ -1,3 +1,4 @@
+import { FieldNodeContextProvider } from "~/contexts/FieldNodeContext"
 import { DiscreteFieldNode } from "~/schemas/structure"
 import { DateFieldAdapter } from "./DateFieldAdapter"
 import { FreeTextFieldAdapter } from "./FreeTextFieldAdapter"
@@ -12,22 +13,26 @@ interface DiscreteFieldAdapterProps {
 }
 
 export const DiscreteFieldAdapter = ({ node }: DiscreteFieldAdapterProps) => {
-  switch (node.type) {
-    case "DateField":
-      return <DateFieldAdapter key={node.nodeId} node={node} />
-    case "FreeTextField":
-      return <FreeTextFieldAdapter key={node.nodeId} node={node} />
-    case "MeasurementsField":
-      return <MeasurementsFieldAdapter key={node.nodeId} node={node} />
-    case "MultipleChoiceField":
-      return <MultipleChoiceFieldAdapter key={node.nodeId} node={node} />
-    case "NumberField":
-      return <NumberFieldAdapter key={node.nodeId} node={node} />
-    case "SingleChoiceField":
-      return <SingleChoiceFieldAdapter key={node.nodeId} node={node} />
-    case "TimeField":
-      return <TimeFieldAdapter key={node.nodeId} node={node} />
-    default:
-      throw new Error("Invalid discrete field type")
+  function getFieldType() {
+    switch (node.type) {
+      case "DateField":
+        return <DateFieldAdapter key={node.nodeId} node={node} />
+      case "FreeTextField":
+        return <FreeTextFieldAdapter key={node.nodeId} node={node} />
+      case "MeasurementsField":
+        return <MeasurementsFieldAdapter key={node.nodeId} node={node} />
+      case "MultipleChoiceField":
+        return <MultipleChoiceFieldAdapter key={node.nodeId} node={node} />
+      case "NumberField":
+        return <NumberFieldAdapter key={node.nodeId} node={node} />
+      case "SingleChoiceField":
+        return <SingleChoiceFieldAdapter key={node.nodeId} node={node} />
+      case "TimeField":
+        return <TimeFieldAdapter key={node.nodeId} node={node} />
+      default:
+        throw new Error("Invalid discrete field type")
+    }
   }
+
+  return <FieldNodeContextProvider value={{ node }}>{getFieldType()}</FieldNodeContextProvider>
 }
