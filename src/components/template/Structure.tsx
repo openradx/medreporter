@@ -20,6 +20,7 @@ export const Structure = ({ actions, children }: StructureProps) => {
   const { t } = useLingui()
   const matches = useMediaQuery("(min-width: 68em)")
   const defaultValuesRef = useRef<StructureData>({})
+  const backupValuesRef = useRef<StructureData>({})
 
   return (
     <Paper
@@ -32,7 +33,7 @@ export const Structure = ({ actions, children }: StructureProps) => {
       shadow="sm"
       withBorder
     >
-      <StructureContextProvider value={{ defaultValuesRef }}>
+      <StructureContextProvider value={{ defaultValuesRef, backupValuesRef }}>
         <Flex component="form" pos="relative" h="100%" direction="column">
           <PanelToolbar
             title={t`Title`}
