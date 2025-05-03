@@ -107,7 +107,7 @@ export const NewTemplate = () => {
               label={t`Categories`}
               data={Object.entries(appConfig.availableCategories).map(([group, categories]) => ({
                 // @ts-expect-error group is a string by next.js
-                group: _(CATEGORIES[group]),
+                group: _(CATEGORIES.group[group]),
                 items: categories.map((category) => ({
                   value: category,
                   // @ts-expect-error category is a string by next.js

@@ -2,7 +2,7 @@ import { msg } from "@lingui/core/macro"
 
 export const CATEGORIES = {
   group: {
-    examination: msg`Examination`,
+    examinations: msg`Examination`,
     organs: msg`Organs`,
     specialties: msg`Specialties`,
   },
