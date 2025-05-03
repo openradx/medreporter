@@ -9,6 +9,7 @@ import { AccountControl } from "./AccountControl"
 import { ActionsGroup } from "./ActionsGroup"
 import { ColorSchemeToggle } from "./ColorSchemeToggle"
 import { NavDrawer } from "./NavDrawer"
+import classes from "./Navbar.module.css"
 import { SiteLanguageChooser } from "./SiteLanguageChooser"
 
 export const NAVBAR_CENTER_ID = "navbar-center"
@@ -33,7 +34,7 @@ export const Navbar = ({ withoutAccountControl }: NavBarProps) => {
               size="sm"
             />
             <Image src={logo} alt="Logo" width={32} height={32} />
-            <Link href="/" legacyBehavior>
+            <Link href="/" className={classes.legacyLink}>
               <Text fw={500} fz="xl" style={{ userSelect: "none", cursor: "pointer" }}>
                 {appConfig.medreporterTitle}
               </Text>

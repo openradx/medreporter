@@ -35,7 +35,7 @@ export const CategoriesFilter = () => {
       onChange={(value) => filter.setCategories(value)}
       data={Object.entries(groupsWithCategories).map(([group, categories]) => ({
         // @ts-expect-error group is a string by next.js
-        group: _(CATEGORIES[group]),
+        group: _(CATEGORIES.group[group]),
         items: categories.map((category) => ({
           value: category,
           // @ts-expect-error category is a string by next.js
