@@ -4,6 +4,7 @@ import { Badge, Card, Flex, Group, Stack, Text } from "@mantine/core"
 import Link from "next/link"
 import { CATEGORIES } from "~/constants/lazy-translations"
 import { ItemFlagIcon } from "./ItemFlagIcon"
+import classes from "./TemplateItem.module.css"
 
 interface ToolCardProps {
   username: string
@@ -31,9 +32,9 @@ export const TemplateItem = ({
     <Link
       href={{ pathname: "/templates/[username]/[slug]", query: { username, slug } }}
       passHref
-      legacyBehavior
+      className={classes.legacyLink}
     >
-      <Card component="a" withBorder>
+      <Card withBorder>
         <Stack gap={4} h={130} justify="space-between">
           <Flex justify="space-between">
             <Text fw={500} size="xl" truncate="end">

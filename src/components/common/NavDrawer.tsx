@@ -21,9 +21,8 @@ export const NavDrawer = ({ opened, setOpened }: NavDrawerProps) => {
   ]
 
   const links = linkData.map((link) => (
-    <Link key={link.route.pathname} href={link.route} passHref legacyBehavior>
+    <Link key={link.route.pathname} href={link.route} passHref className={classes.legacyLink}>
       <Text
-        component="a"
         className={cx(classes.link, {
           [classes.linkActive]:
             link.route.pathname === "/"

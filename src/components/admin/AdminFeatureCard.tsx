@@ -2,6 +2,7 @@ import { Card, Group, Stack, Text } from "@mantine/core"
 import Link from "next/link"
 import { Route } from "nextjs-routes"
 import { ReactNode } from "react"
+import classes from "./AdminFeatureCard.module.css"
 
 interface AdminFeatureCardProps {
   route: Route
@@ -11,8 +12,8 @@ interface AdminFeatureCardProps {
 }
 
 export const AdminFeatureCard = ({ route, icon, title, description }: AdminFeatureCardProps) => (
-  <Link href={route} passHref legacyBehavior>
-    <Card component="a" withBorder>
+  <Link href={route} passHref className={classes.legacyLink}>
+    <Card withBorder>
       <Stack gap={4} h={100}>
         <Group gap="sm">
           {icon}

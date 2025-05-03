@@ -14,17 +14,18 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/404.tsx:23
-msgid "- Page Not Found"
-msgstr "- Page Not Found"
+msgid " - Page Not Found"
+msgstr " - Page Not Found"
 
 #. placeholder {0}: node.options.length
 #: src/components/designer/optionsEditor/OptionsEditorButton.tsx:18
 msgid "{0, plural, one {Option} other {Options}}"
 msgstr "{0, plural, one {Option} other {Options}}"
 
+#. placeholder {0}: process.env.CURRENT_YEAR
 #: src/components/common/CopyrightMessage.tsx:10
-msgid "2024 MedReporter. All Rights Reserved."
-msgstr "2024 MedReporter. All Rights Reserved."
+msgid "{0} MedReporter. All Rights Reserved."
+msgstr "{0} MedReporter. All Rights Reserved."
 
 #: src/components/home/Home.tsx:33
 msgid "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
@@ -152,7 +153,7 @@ msgstr "Author (A-Z)"
 msgid "Author (Z-A)"
 msgstr "Author (Z-A)"
 
-#: src/components/templates/TemplateItem.tsx:58
+#: src/components/templates/TemplateItem.tsx:59
 msgid "Authored by:"
 msgstr "Authored by:"
 
@@ -670,7 +671,7 @@ msgstr "Languages"
 msgid "Large"
 msgstr "Large"
 
-#: src/components/templates/TemplateItem.tsx:64
+#: src/components/templates/TemplateItem.tsx:65
 msgid "Last modified:"
 msgstr "Last modified:"
 
@@ -808,7 +809,7 @@ msgstr "Multiline"
 msgid "Multiple choice"
 msgstr "Multiple choice"
 
-#: src/components/common/NavDrawer.tsx:46
+#: src/components/common/NavDrawer.tsx:45
 msgid "Navigation"
 msgstr "Navigation"
 
@@ -864,7 +865,7 @@ msgstr "Open figure to select"
 msgid "Open log"
 msgstr "Open log"
 
-#: src/components/common/Navbar.tsx:31
+#: src/components/common/Navbar.tsx:32
 msgid "Open main menu"
 msgstr "Open main menu"
 
@@ -965,7 +966,7 @@ msgstr "Radio"
 msgid "Radiology"
 msgstr "Radiology"
 
-#: src/components/template/RedoButton.tsx:17
+#: src/components/template/RedoButton.tsx:15
 #: src/components/designer/RedoButton.tsx:15
 #: src/components/designer/editors/EditorToolbar.tsx:72
 msgid "Redo"
@@ -1196,7 +1197,7 @@ msgstr "Type: "
 msgid "Ultrasound"
 msgstr "Ultrasound"
 
-#: src/components/template/UndoButton.tsx:17
+#: src/components/template/UndoButton.tsx:15
 #: src/components/designer/UndoButton.tsx:15
 #: src/components/designer/editors/EditorToolbar.tsx:60
 msgid "Undo"

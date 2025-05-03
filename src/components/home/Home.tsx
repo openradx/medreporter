@@ -37,13 +37,13 @@ export const Home = () => {
         </Trans>
       </Text>
       <Group className={classes.controls}>
-        <Link href="/templates" legacyBehavior>
+        <Link href="/templates" className={classes.legacyLink}>
           <Button className={classes.control} variant="white" size="lg">
             <Trans>Browse Templates</Trans>
           </Button>
         </Link>
         {loggedIn && (
-          <Link href="/templates/new" legacyBehavior>
+          <Link href="/templates/new" className={classes.legacyLink}>
             <Button className={cx(classes.control, classes.secondaryControl)} size="lg">
               <Trans>New Template</Trans>
             </Button>

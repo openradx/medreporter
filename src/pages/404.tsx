@@ -20,7 +20,7 @@ const Custom404: PageWithLayout = () => (
       <Text inherit variant="gradient" span>
         404
       </Text>
-      <Trans>- Page Not Found</Trans>
+      <Trans> - Page Not Found</Trans>
       <Link href="/" style={{ textDecoration: "none" }}>
         <Text fz="md" c="blue">
           <Trans>Go back to homepage</Trans>
