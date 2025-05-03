@@ -1,7 +1,8 @@
 import hoistNonReactStatics from "hoist-non-react-statics"
-import { ComponentType, useMemo } from "react"
+import { ComponentType, useRef } from "react"
 import { Provider as ReduxProvider } from "react-redux"
-import { initStore } from "~/state/store"
+import { resetState } from "~/state/actions"
+import { AppStore, makeStore, RootState } from "~/state/store"
 import { ServerSideProps } from "~/types/general"
 
 interface AppProps {
@@ -13,18 +14,21 @@ export const withReduxState = <T extends AppProps>(
 ): ComponentType<T> => {
   const WithReduxState = (props: AppProps) => {
     const preloadedState = props.pageProps?.preloadedReduxState
-    const store = useMemo(() => {
-      if (!preloadedState) return null
 
-      return initStore(preloadedState)
-    }, [preloadedState])
+    // see https://redux-toolkit.js.org/usage/nextjs
+    const storeRef = useRef<AppStore>(undefined)
+    if (!storeRef.current) {
+      storeRef.current = makeStore()
+    }
 
-    if (!store) {
-      return <WrappedComponent {...(props as T)} />
+    const preloadedStateRef = useRef<Partial<RootState> | undefined>(undefined)
+    if (preloadedStateRef.current !== preloadedState) {
+      storeRef.current.dispatch(resetState(preloadedState))
+      preloadedStateRef.current = preloadedState
     }
 
     return (
-      <ReduxProvider store={store}>
+      <ReduxProvider store={storeRef.current}>
         <WrappedComponent {...(props as T)} />
       </ReduxProvider>
     )
