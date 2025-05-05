@@ -101,7 +101,7 @@
     "quickjs-emscripten": "^0.31.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-error-boundary": "^5.0.0",
+    "react-error-boundary": "^6.0.0",
     "react-hook-form": "^7.56.0",
     "react-inlinesvg": "^4.2.0",
     "react-markdown": "^10.1.0",
