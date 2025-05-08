@@ -16,8 +16,8 @@ export const DateDefaultProperty = ({ node }: DateDefaultPropertyProps) => {
       render={({ field: { value, onChange }, fieldState: { error } }) => (
         <DateInput
           label={t`Default value`}
-          value={value ? new Date(value) : null}
-          onChange={(newValue) => onChange(newValue?.toISOString() ?? null)}
+          value={value}
+          onChange={onChange}
           error={error?.message}
           clearable
           valueFormat={node.format || "YYYY-MM-DD"}

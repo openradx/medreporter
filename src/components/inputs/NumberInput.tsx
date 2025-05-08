@@ -54,7 +54,7 @@ export const NumberInput = ({
         wrapperProps={{
           onMouseEnter: () => setHovered(true),
           onMouseLeave: () => setHovered(false),
-          onWheel: (event: WheelEvent) => {
+          onWheel: (event) => {
             if (focus && event.currentTarget instanceof Element) {
               if (event.deltaY < -SCROLL_SENSITIVITY) {
                 handlers.current?.increment()

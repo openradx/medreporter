@@ -6,8 +6,8 @@ interface DateInputProps {
   label?: string
   extras?: ReactNode
   locale?: string
-  value: Date | null
-  onChange: (value: Date | null) => void
+  value: string | null
+  onChange: (value: string | null) => void
   disabled?: boolean
   format?: string
 }
@@ -28,5 +28,6 @@ export const DateInput = ({
     onChange={onChange}
     valueFormat={format || "MM/DD/YYYY"}
     disabled={disabled}
+    clearable
   />
 )

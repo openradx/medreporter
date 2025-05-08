@@ -1,4 +1,3 @@
-import dayjs from "dayjs"
 import { useGroup } from "~/contexts/GroupContext"
 import { useStructureController } from "~/hooks/useStructureController"
 import { DateInput } from "../inputs/DateInput"
@@ -20,14 +19,9 @@ export const DateField = ({
   format,
   defaultValue = null,
 }: DateFieldProps) => {
-  let serializableDefaultValue: string | null = null
-  if (defaultValue) {
-    serializableDefaultValue = dayjs(defaultValue).toISOString()
-  }
-
   const { value, onChange } = useStructureController({
     fieldId,
-    defaultValue: serializableDefaultValue,
+    defaultValue,
   })
 
   const groupDisabled = useGroup()?.disabled
@@ -37,9 +31,9 @@ export const DateField = ({
     <BaseField {...{ fieldId, label, value, onChange, hidden, format, defaultValue, width }}>
       <DateInput
         {...{ label, extras, disabled }}
-        value={value ? new Date(value) : null}
+        value={value}
         format={format}
-        onChange={(date) => onChange(date ? date.toISOString() : null)}
+        onChange={onChange}
       />
     </BaseField>
   )
