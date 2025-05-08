@@ -21,7 +21,7 @@ const DateInputWithState = ({
   format,
   disabled,
 }: ComponentProps<typeof DateInput>) => {
-  const [value, setValue] = useState<Date | null>(new Date())
+  const [value, setValue] = useState<string | null>(null)
   return (
     <InputLayout>
       <DateInput
