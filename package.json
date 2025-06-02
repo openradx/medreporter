@@ -79,7 +79,7 @@
     "bcrypt": "^6.0.0",
     "clsx": "^2.1.1",
     "codemirror": "^6.0.1",
-    "cookies-next": "^5.1.0",
+    "cookies-next": "^6.0.0",
     "dayjs": "^1.11.13",
     "debounce": "^2.2.0",
     "eslint-linter-browserify": "^9.26.0",
