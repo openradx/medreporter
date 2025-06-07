@@ -27,7 +27,7 @@ msgstr "{0, plural, one {Option} other {Optionen}}"
 msgid "{0} MedReporter. All Rights Reserved."
 msgstr "{0} Medreporter. Alle Rechte vorbehalten."
 
-#: src/components/home/Home.tsx:33
+#: src/components/home/Home.tsx:50
 msgid "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
 msgstr "Plattform für die Erstellung strukturierter medizinischer Befunde. Nutzen Sie unsere vorgefertigten Templates ohne Login oder registrieren Sie sich, um eigene Vorlagen zu erstellen, ausgefüllte Befunde zu speichern und diese mit Mitgliedern Ihrer Institution zu teilen."
 
@@ -169,7 +169,7 @@ msgstr "Umrandung"
 msgid "Brain"
 msgstr "Gehirn"
 
-#: src/components/home/Home.tsx:42
+#: src/components/home/Home.tsx:63
 msgid "Browse Templates"
 msgstr "Entdecke Templates"
 
@@ -204,7 +204,7 @@ msgstr "Checkbox"
 msgid "Choose sorting strategy"
 msgstr "Sortierstrategie wählen"
 
-#: src/components/template/ClearAllButton.tsx:17
+#: src/components/template/ClearAllButton.tsx:18
 #: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:48
 msgid "Clear all"
 msgstr "Alles leeren"
@@ -383,9 +383,9 @@ msgstr "Niederländisch"
 msgid "Edit institute"
 msgstr "Institut bearbeiten"
 
-#: src/components/template/ToggleEditModeButton.tsx:25
-msgid "Edit template"
-msgstr "Template bearbeiten"
+#: src/components/template/ToggleEditModeButton.tsx:24
+msgid "Edit mode"
+msgstr "Editiermodus"
 
 #: src/components/admin/EditUserModal.tsx:22
 #: src/components/admin/EditUserButton.tsx:19
@@ -825,7 +825,7 @@ msgstr "Navigation"
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: src/components/home/Home.tsx:48
+#: src/components/home/Home.tsx:72
 #: src/components/designer/DesignerNavbarCenter.tsx:16
 msgid "New Template"
 msgstr "Neues Template"
@@ -1095,10 +1095,6 @@ msgstr "Aussage"
 msgid "Step"
 msgstr "Schritt"
 
-#: src/components/template/ToggleEditModeButton.tsx:25
-msgid "Stop editing"
-msgstr "Bearbeitung stoppen"
-
 #: src/components/template/StructureLanguageChooser.tsx:14
 msgid "Structure language"
 msgstr "Sprache des Formulars"
@@ -1175,7 +1171,7 @@ msgstr "Dieser Benutzername ist reserviert. Bitte wählen Sie einen anderen."
 msgid "Time"
 msgstr "Zeit"
 
-#: src/components/template/Structure.tsx:38
+#: src/components/template/Structure.tsx:39
 #: src/components/designer/TemplatePropertiesForm.tsx:69
 #: src/components/designer/NewTemplate.tsx:87
 #: src/components/designer/properties/TitleProperty.tsx:7
@@ -1275,7 +1271,7 @@ msgstr "Sichtbarkeit"
 msgid "Warning"
 msgstr "Warnung"
 
-#: src/components/home/Home.tsx:20
+#: src/components/home/Home.tsx:37
 msgid "Welcome to"
 msgstr "Willkommen bei"
 

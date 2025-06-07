@@ -1,6 +1,5 @@
 import { useLingui } from "@lingui/react/macro"
-import { ActionIcon } from "@mantine/core"
-import { Pencil as EditIcon, PencilOff as StopEditIcon } from "lucide-react"
+import { Switch } from "@mantine/core"
 import { useRouter } from "next/router"
 
 export const ToggleEditModeButton = () => {
@@ -21,14 +20,12 @@ export const ToggleEditModeButton = () => {
   const { edit } = router.query
 
   return (
-    <ActionIcon
-      title={edit ? t`Stop editing` : t`Edit template`}
-      variant="default"
-      aria-label="Edit template"
-      size="md"
-      onClick={toggleEditMode}
-    >
-      {edit ? <StopEditIcon size={20} /> : <EditIcon size={20} />}
-    </ActionIcon>
+    <Switch
+      label={t`Edit mode`}
+      checked={edit === "true"}
+      onChange={toggleEditMode}
+      size="sm"
+      withThumbIndicator={false}
+    />
   )
 }

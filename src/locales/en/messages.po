@@ -27,7 +27,7 @@ msgstr "{0, plural, one {Option} other {Options}}"
 msgid "{0} MedReporter. All Rights Reserved."
 msgstr "{0} MedReporter. All Rights Reserved."
 
-#: src/components/home/Home.tsx:33
+#: src/components/home/Home.tsx:50
 msgid "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
 msgstr "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
 
@@ -169,7 +169,7 @@ msgstr "Border"
 msgid "Brain"
 msgstr "Brain"
 
-#: src/components/home/Home.tsx:42
+#: src/components/home/Home.tsx:63
 msgid "Browse Templates"
 msgstr "Browse Templates"
 
@@ -204,7 +204,7 @@ msgstr "Checkbox"
 msgid "Choose sorting strategy"
 msgstr "Choose sorting strategy"
 
-#: src/components/template/ClearAllButton.tsx:17
+#: src/components/template/ClearAllButton.tsx:18
 #: src/components/inputs/MeasurementsInput/MeasurementsInput.tsx:48
 msgid "Clear all"
 msgstr "Clear all"
@@ -383,9 +383,9 @@ msgstr "Dutch"
 msgid "Edit institute"
 msgstr "Edit institute"
 
-#: src/components/template/ToggleEditModeButton.tsx:25
-msgid "Edit template"
-msgstr "Edit template"
+#: src/components/template/ToggleEditModeButton.tsx:24
+msgid "Edit mode"
+msgstr "Edit mode"
 
 #: src/components/admin/EditUserModal.tsx:22
 #: src/components/admin/EditUserButton.tsx:19
@@ -825,7 +825,7 @@ msgstr "Navigation"
 msgid "New password"
 msgstr "New password"
 
-#: src/components/home/Home.tsx:48
+#: src/components/home/Home.tsx:72
 #: src/components/designer/DesignerNavbarCenter.tsx:16
 msgid "New Template"
 msgstr "New Template"
@@ -1095,10 +1095,6 @@ msgstr "Statement"
 msgid "Step"
 msgstr "Step"
 
-#: src/components/template/ToggleEditModeButton.tsx:25
-msgid "Stop editing"
-msgstr "Stop editing"
-
 #: src/components/template/StructureLanguageChooser.tsx:14
 msgid "Structure language"
 msgstr "Structure language"
@@ -1175,7 +1171,7 @@ msgstr "This username is reserved. Please pick another one."
 msgid "Time"
 msgstr "Time"
 
-#: src/components/template/Structure.tsx:38
+#: src/components/template/Structure.tsx:39
 #: src/components/designer/TemplatePropertiesForm.tsx:69
 #: src/components/designer/NewTemplate.tsx:87
 #: src/components/designer/properties/TitleProperty.tsx:7
@@ -1275,7 +1271,7 @@ msgstr "Visibility"
 msgid "Warning"
 msgstr "Warning"
 
-#: src/components/home/Home.tsx:20
+#: src/components/home/Home.tsx:37
 msgid "Welcome to"
 msgstr "Welcome to"
 
