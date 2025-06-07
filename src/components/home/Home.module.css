@@ -5,18 +5,23 @@
 }
 
 .container {
-  height: rem(700px);
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding-bottom: calc(var(--mantine-spacing-xl) * 6);
-  z-index: 1;
   position: relative;
+  z-index: 1;
+}
 
-  @media (max-width: $mantine-breakpoint-sm) {
-    height: rem(500px);
-    padding-bottom: calc(var(--mantine-spacing-xl) * 3);
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: var(--mantine-spacing-xl);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    padding: var(--mantine-spacing-md);
   }
 }
 
@@ -25,15 +30,14 @@
   font-size: rem(50px);
   font-weight: 900;
   line-height: 1.1;
+  text-align: center;
 
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: rem(40px);
-    line-height: 1.2;
   }
 
   @media (max-width: $mantine-breakpoint-xs) {
-    font-size: rem(28px);
-    line-height: 1.3;
+    font-size: rem(32px);
   }
 
   @mixin light {
@@ -54,10 +58,14 @@
   max-width: rem(600px);
   font-weight: 500;
   text-align: center;
+  margin: 0 auto;
 
   @media (max-width: $mantine-breakpoint-sm) {
+    max-width: rem(400px);
+  }
+
+  @media (max-width: $mantine-breakpoint-xs) {
     max-width: 100%;
-    font-size: var(--mantine-font-size-sm);
   }
 
   @mixin light {
@@ -71,9 +79,12 @@
 
 .controls {
   margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  display: flex;
+  gap: var(--mantine-spacing-md);
 
-  @media (max-width: $mantine-breakpoint-sm) {
-    width: 100%;
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -81,21 +92,15 @@
   height: 42px;
   font-size: var(--mantine-font-size-md);
   color: var(--mantine-color-gray-7);
-
-  &:not(:first-of-type) {
-    margin-left: var(--mantine-spacing-md);
-  }
+  width: auto;
 
   @media (max-width: $mantine-breakpoint-xs) {
-    &:not(:first-of-type) {
-      margin-top: var(--mantine-spacing-md);
-      margin-left: 0;
-    }
+    width: 100%;
   }
-}
 
-.control:hover {
-  color: var(--mantine-color-gray-9);
+  &:hover {
+    color: var(--mantine-color-gray-10);
+  }
 }
 
 .secondaryControl {
@@ -104,13 +109,18 @@
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding: var(--mantine-spacing-md);
 }
 
 .legacyLink {
   color: inherit;
   text-decoration: none;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    width: 100%;
+  }
 }
