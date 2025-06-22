@@ -12,6 +12,8 @@ export const DirectionProperty = () => {
         { label: "Row", value: "row" },
         { label: "Column", value: "column" },
       ]}
+      allowDeselect={false}
+      clearable={false}
     />
   )
 }
