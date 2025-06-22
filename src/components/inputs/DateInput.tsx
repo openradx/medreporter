@@ -10,6 +10,7 @@ interface DateInputProps {
   onChange: (value: string | null) => void
   disabled?: boolean
   format?: string
+  error?: string
 }
 
 export const DateInput = ({
@@ -20,6 +21,7 @@ export const DateInput = ({
   onChange,
   disabled,
   format,
+  error,
 }: DateInputProps) => (
   <MantineDateInput
     label={(label || extras) && <InputLabel label={label} extras={extras} />}
@@ -29,5 +31,6 @@ export const DateInput = ({
     valueFormat={format || "MM/DD/YYYY"}
     disabled={disabled}
     clearable
+    error={error}
   />
 )
