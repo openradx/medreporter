@@ -3,8 +3,10 @@ import { z } from "zod"
 import type { RootState } from "./store"
 
 export const outputFormatSchema = z.enum(["html", "plain"])
+export const viewModeSchema = z.enum(["structure", "report"])
 
 export type OutputFormat = z.infer<typeof outputFormatSchema>
+export type ViewMode = z.infer<typeof viewModeSchema>
 
 interface LogMessage {
   message: string
@@ -24,6 +26,7 @@ interface DisplayState {
   structureDataModified: boolean
   status: { [statusId: string]: Status }
   log: LogMessage[]
+  viewMode: ViewMode
 }
 
 const initialState: DisplayState = {
@@ -33,6 +36,7 @@ const initialState: DisplayState = {
   structureDataModified: false,
   status: {},
   log: [],
+  viewMode: "structure",
 }
 
 export const displaySlice = createSlice({
@@ -80,6 +84,9 @@ export const displaySlice = createSlice({
     clearLog(state) {
       state.log = []
     },
+    setViewMode(state, action: PayloadAction<ViewMode>) {
+      state.viewMode = action.payload
+    },
   },
 })
 
@@ -92,6 +99,7 @@ export const {
   deleteStatus,
   appendToLog,
   clearLog,
+  setViewMode,
 } = displaySlice.actions
 
 export default displaySlice.reducer
@@ -107,3 +115,5 @@ export const selectStructureDataModified = (state: RootState) => state.display.s
 export const selectStatus = (state: RootState) => state.display.status
 
 export const selectLog = (state: RootState) => state.display.log
+
+export const selectViewMode = (state: RootState) => state.display.viewMode

@@ -3,7 +3,7 @@ import { Paper, ScrollArea, Stack } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode } from "react"
 import { REPORT_CONTENT_ID } from "~/constants/misc"
-import { selectOutputFormat } from "~/state/displaySlice"
+import { selectOutputFormat, selectViewMode } from "~/state/displaySlice"
 import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { CopyButton } from "./CopyButton"
@@ -21,6 +21,7 @@ interface ReportProps {
 export const Report = ({ actions, children, isDesigning = false }: ReportProps) => {
   const { t } = useLingui()
   const outputFormat = useAppSelector(selectOutputFormat)
+  const viewMode = useAppSelector(selectViewMode)
   const matches = useMediaQuery("(min-width: 68em)")
 
   return (
@@ -30,8 +31,9 @@ export const Report = ({ actions, children, isDesigning = false }: ReportProps) 
         height: matches ? "100%" : "49%",
         display: "flex",
         flexDirection: "column",
+        opacity: viewMode === "report" ? 1 : 0.5,
       }}
-      shadow="sm"
+      shadow={viewMode === "report" ? "md" : "sm"}
       withBorder
     >
       <PanelToolbar

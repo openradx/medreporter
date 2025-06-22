@@ -4,6 +4,8 @@ import { useMediaQuery } from "@mantine/hooks"
 import { ReactNode, useRef } from "react"
 import { StructureContextProvider } from "~/contexts/StructureContext"
 import { StructureData } from "~/schemas/structure"
+import { selectViewMode } from "~/state/displaySlice"
+import { useAppSelector } from "~/state/store"
 import { ActionsGroup } from "../common/ActionsGroup"
 import { ClearAllButton } from "./ClearAllButton"
 import { PanelToolbar } from "./PanelToolbar"
@@ -19,6 +21,7 @@ interface StructureProps {
 export const Structure = ({ actions, children }: StructureProps) => {
   const { t } = useLingui()
   const matches = useMediaQuery("(min-width: 68em)")
+  const viewMode = useAppSelector(selectViewMode)
   const defaultValuesRef = useRef<StructureData>({})
   const backupValuesRef = useRef<StructureData>({})
 
@@ -29,14 +32,15 @@ export const Structure = ({ actions, children }: StructureProps) => {
         height: matches ? "100%" : "50%",
         display: "flex",
         flexDirection: "column",
+        opacity: viewMode === "structure" ? 1 : 0.5,
       }}
-      shadow="sm"
+      shadow={viewMode === "structure" ? "xl" : "sm"}
       withBorder
     >
       <StructureContextProvider value={{ defaultValuesRef, backupValuesRef }}>
         <Flex component="form" pos="relative" h="100%" direction="column">
           <PanelToolbar
-            title={t`Title`}
+            title={t`Structure`}
             actions={
               actions || (
                 <ActionsGroup grow>
