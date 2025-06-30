@@ -33,7 +33,7 @@ export const NumberFieldPropertiesForm = ({ node }: NumberFieldPropertiesFormPro
     <MaxProperty node={node} />
     <PrecisionProperty />
     <StartProperty node={node} />
-    <StepProperty />
+    <StepProperty node={node} />
     <NumberDefaultProperty node={node} />
   </PropertiesForm>
 )
