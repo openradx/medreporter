@@ -31,8 +31,8 @@ export const NumberFieldInstance = ({ node }: NumberFieldInstanceProps) => {
       min={node.min ?? undefined}
       max={node.max ?? undefined}
       precision={node.precision}
-      start={node.start}
-      step={node.step}
+      start={node.start ?? undefined}
+      step={node.step ?? undefined}
     />
   )
 }

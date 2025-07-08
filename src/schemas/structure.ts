@@ -52,8 +52,8 @@ export const numberFieldNodeSchema = nodeSchema.extend({
   min: z.number().nullable(),
   max: z.number().nullable(),
   precision: z.number().min(0).max(3),
-  start: z.number(),
-  step: z.number(),
+  start: z.number().nullable(),
+  step: z.number().nullable(),
   default: numberFieldValueSchema,
 })
 
