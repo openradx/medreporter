@@ -1,5 +1,5 @@
 import { NumberInput as MantineNumberInput, NumberInputHandlers } from "@mantine/core"
-import { ReactNode, useRef, useState } from "react"
+import { ReactNode, useEffect, useRef, useState } from "react"
 import { ScrollBlocker } from "../common/ScrollBlocker"
 import { InputLabel } from "./InputLabel"
 import classes from "./NumberInput.module.css"
@@ -44,6 +44,39 @@ export const NumberInput = ({
   const [focus, setFocus] = useState(false)
   const [hovered, setHovered] = useState(false)
   const handlers = useRef<NumberInputHandlers>(null)
+  const [internalValue, setInternalValue] = useState<number | string | null>(value)
+
+  useEffect(() => {
+    if (!focus) {
+      setInternalValue(value)
+    }
+  }, [value, focus])
+
+  const formatAndSetValue = (val: number | string | null) => {
+    if (val === null || val === "") {
+      setInternalValue("")
+      onChange(null)
+      return
+    }
+
+    let s = String(val)
+    if (s.includes(".")) {
+      while (s.endsWith("0")) {
+        s = s.slice(0, -1)
+      }
+      if (s.endsWith(".")) {
+        s = s.slice(0, -1)
+      }
+    }
+
+    setInternalValue(s)
+    const numericValue = parseFloat(s)
+    if (!isNaN(numericValue)) {
+      onChange(numericValue)
+    } else {
+      onChange(null)
+    }
+  }
 
   return (
     <ScrollBlocker focus={focus}>
@@ -67,9 +100,19 @@ export const NumberInput = ({
         stepHoldDelay={500}
         stepHoldInterval={100}
         onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-        value={value === null ? "" : value}
-        onChange={(newValue) => onChange(typeof newValue === "string" ? null : newValue)}
+        onBlur={() => {
+          setFocus(false)
+          formatAndSetValue(internalValue)
+        }}
+        value={internalValue === null ? "" : internalValue}
+        onChange={(newValue) => {
+          setInternalValue(newValue)
+          if (typeof newValue === "number") {
+            onChange(newValue)
+          } else if (newValue === "") {
+            onChange(null)
+          }
+        }}
         disabled={disabled}
         min={min}
         max={max}
