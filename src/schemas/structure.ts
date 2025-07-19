@@ -110,14 +110,15 @@ export type Option = z.infer<typeof optionSchema>
 export const optionsSchema = z
   .array(optionSchema)
   .min(1)
-  .superRefine((options, ctx) => {
+  .check((ctx) => {
     const values = new Set()
-    options.forEach((option, index) => {
+    ctx.value.forEach((option, index) => {
       if (option.value && values.has(option.value)) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
+        ctx.issues.push({
+          code: "custom",
           message: "Duplicate option value", // TODO: i18n
           path: [index, "value"],
+          input: option.value,
         })
       }
       values.add(option.value)
@@ -264,7 +265,7 @@ const structureValueSchema = z.union([
 
 export type StructureValue = z.infer<typeof structureValueSchema>
 
-export const structureDataSchema = z.record(structureValueSchema)
+export const structureDataSchema = z.record(z.string(), structureValueSchema)
 
 export type StructureData = z.infer<typeof structureDataSchema>
 
