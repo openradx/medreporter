@@ -30,7 +30,7 @@
   }
 
   @mixin dark {
-    background-color: rgba(var(--mantine-color-blue-9), 0.25);
+    background-color: rgb(var(--mantine-color-blue-9), 0.25);
     color: var(--mantine-color-blue-3);
   }
 }
