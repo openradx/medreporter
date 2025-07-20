@@ -14,6 +14,13 @@ export const InterpreterProvider = ({ children }: InterpreterProviderProps) => {
     const initInterpreter = async () => {
       const QuickJS = await getQuickJS()
       const runtime = QuickJS.newRuntime()
+      // "Should be enough for everyone" -- attributed to B. Gates
+      runtime.setMemoryLimit(1024 * 640)
+      // Limit stack size
+      runtime.setMaxStackSize(1024 * 320)
+      // Interrupt computation after 1024 calls to the interrupt handler
+      let interruptCycles = 0
+      runtime.setInterruptHandler(() => ++interruptCycles > 1024)
 
       setInterpreter(new ScriptInterpreter(runtime))
     }
