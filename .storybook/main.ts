@@ -2,17 +2,16 @@ import type { StorybookConfig } from "@storybook/nextjs"
 
 const config: StorybookConfig = {
   stories: ["../src/components/**/*.(stories|story).@(js|jsx|ts|tsx)"],
+
   addons: [
-    "@storybook/addon-essentials",
-    "storybook-dark-mode",
+    "@storybook-community/storybook-dark-mode",
     "@storybook/addon-styling-webpack",
+    "@storybook/addon-docs",
   ],
+
   framework: {
     name: "@storybook/nextjs",
     options: {},
-  },
-  docs: {
-    autodocs: "tag",
   },
 }
 export default config

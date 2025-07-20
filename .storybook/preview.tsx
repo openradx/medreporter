@@ -1,9 +1,9 @@
 import { MantineProvider, useMantineColorScheme } from "@mantine/core"
 import "@mantine/core/styles.css"
 import "@mantine/dates/styles.css"
-import { addons } from "@storybook/preview-api"
+import { DARK_MODE_EVENT_NAME } from "@storybook-community/storybook-dark-mode"
 import React, { useEffect } from "react"
-import { DARK_MODE_EVENT_NAME } from "storybook-dark-mode"
+import { addons } from "storybook/preview-api"
 import { theme } from "../src/theme"
 
 const channel = addons.getChannel()

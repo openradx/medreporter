@@ -1,5 +1,5 @@
 import { ActionIcon } from "@mantine/core"
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/nextjs"
 import { InfoIcon } from "lucide-react"
 import { ComponentProps, useState } from "react"
 import { MeasurementsData } from "~/schemas/structure"
