@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/nextjs"
 import { Hint } from "./Hint"
 
 const meta: Meta<typeof Hint> = {
