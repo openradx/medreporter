@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Alert, Button, Group, Stack } from "@mantine/core"
-import { useState, ReactNode, PropsWithoutRef, JSX } from "react"
+import { JSX, PropsWithoutRef, ReactNode, useState } from "react"
 import { FormProvider, useForm, UseFormProps } from "react-hook-form"
 import { z } from "zod"
 import { FormSubmitError, SUBMIT_FORM_ERROR } from "~/utils/formErrors"
@@ -9,8 +9,8 @@ export interface SubmitFormProps<S extends z.ZodType<any, any>>
   extends Omit<PropsWithoutRef<JSX.IntrinsicElements["form"]>, "onSubmit"> {
   submitText?: string
   schema?: S
-  onSubmit: (values: z.infer<S>) => Promise<void>
-  initialValues?: UseFormProps<z.infer<S>>["defaultValues"]
+  onSubmit: (values: z.output<S>) => Promise<void>
+  initialValues?: UseFormProps<z.input<S>>["defaultValues"]
   children?: ReactNode
 }
 
@@ -22,7 +22,7 @@ export const SubmitForm = <S extends z.ZodType<any, any>>({
   onSubmit,
   ...props
 }: SubmitFormProps<S>) => {
-  const methods = useForm<z.infer<S>>({
+  const methods = useForm<z.input<S>, any, z.output<S>>({
     resolver: schema ? zodResolver(schema) : undefined,
     defaultValues: initialValues,
   })

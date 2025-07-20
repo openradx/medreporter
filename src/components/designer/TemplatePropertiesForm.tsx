@@ -27,19 +27,21 @@ import { TextareaPropertyInput } from "./properties/TextareaPropertyInput"
 export type TemplatePropertiesFormProps = {
   onClose: () => void
 }
-export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
-  onClose,
-}: TemplatePropertiesFormProps) => {
+export const TemplatePropertiesForm = ({ onClose }: TemplatePropertiesFormProps) => {
   const { t } = useLinguiMacro()
   const { _ } = useLinguiLazy()
 
   const template = useAppSelector(selectTemplate)
   const { nodeId } = template
+
+  const schema = buildTemplateNodeSchema(_(ERROR_MESSAGES["invalidSlug"])).omit({
+    nodeId: true,
+    type: true,
+  })
+
   const methods = useForm({
     mode: "all",
-    resolver: zodResolver(
-      buildTemplateNodeSchema(_(ERROR_MESSAGES["invalidSlug"])).omit({ nodeId: true, type: true })
-    ),
+    resolver: zodResolver(schema),
     defaultValues: template,
   })
 
@@ -50,7 +52,7 @@ export const TemplatePropertiesForm = <S extends z.ZodType<any, any>>({
 
   const { handleSubmit } = methods
 
-  const onSubmit = (changedValues: z.infer<S>) => {
+  const onSubmit = (changedValues: z.infer<typeof schema>) => {
     dispatch(updateNode({ nodeId, data: copy(changedValues) }, false))
 
     const { username } = user!
