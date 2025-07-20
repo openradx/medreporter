@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Stack } from "@mantine/core"
 import copy from "fast-copy"
 import { ReactNode, useEffect } from "react"
-import { FormProvider, useForm } from "react-hook-form"
+import { FormProvider, useForm, UseFormProps } from "react-hook-form"
 import { useDebouncedCallback } from "use-debounce"
 import { z } from "zod"
 import { useAppDispatch } from "~/state/store"
@@ -11,7 +11,7 @@ import { updateNode } from "~/state/templateSlice"
 interface PropertiesFormProps<S extends z.ZodType<any, any>> {
   nodeId: string
   schema: S
-  initialValues: z.infer<S>
+  initialValues: UseFormProps<z.input<S>>["defaultValues"]
   children: ReactNode
 }
 
@@ -21,7 +21,7 @@ export const PropertiesForm = <S extends z.ZodType<any, any>>({
   initialValues,
   children,
 }: PropertiesFormProps<S>) => {
-  const methods = useForm({
+  const methods = useForm<z.input<S>, any, z.output<S>>({
     mode: "onChange",
     resolver: zodResolver(schema),
     defaultValues: initialValues,
