@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
+FROM mcr.microsoft.com/devcontainers/javascript-node:3-22-bookworm
 
 # Additional dependencies
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
