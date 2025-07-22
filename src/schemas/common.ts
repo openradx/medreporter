@@ -33,3 +33,5 @@ export const contentSchema = z
       message: "Invalid code",
     }
   )
+
+export type Content = z.infer<typeof contentSchema>

@@ -1,6 +1,6 @@
 import { useState } from "react"
+import { useContent } from "~/hooks/useContent"
 import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
-import { useEvaluatedString } from "~/hooks/useEvaluatedString"
 import { HintNode } from "~/schemas/structure"
 import { Hint } from "../template/Hint"
 import { FieldInstanceError } from "./FieldInstanceError"
@@ -14,7 +14,7 @@ export const HintInstance = ({ node }: HintInstanceProps) => {
 
   const hidden = useEvaluatedBoolean(node.hidden, false, setError)
 
-  const content = useEvaluatedString(node.content.contentValue, "", setError)
+  const content = useContent(node.content, setError)
 
   if (error) {
     return <FieldInstanceError error={error} />

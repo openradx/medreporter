@@ -1,6 +1,6 @@
 import { useState } from "react"
+import { useContent } from "~/hooks/useContent"
 import { useEvaluatedBoolean } from "~/hooks/useEvaluatedBoolean"
-import { useEvaluatedString } from "~/hooks/useEvaluatedString"
 import { StatementNode } from "~/schemas/report"
 import { Statement } from "../template/Statement"
 import { FieldInstanceError } from "./FieldInstanceError"
@@ -14,7 +14,7 @@ export const StatementInstance = ({ node }: StatementInstanceProps) => {
 
   const hidden = useEvaluatedBoolean(node.hidden, false, setError)
 
-  const content = useEvaluatedString(node.content.contentValue, "", setError)
+  const content = useContent(node.content, setError)
 
   if (error) {
     return <FieldInstanceError error={error} />
