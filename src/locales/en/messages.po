@@ -199,7 +199,7 @@ msgid "Cancel"
 msgstr "Cancel"
 
 #: src/components/templates/CategoriesFilter.tsx:30
-#: src/components/designer/TemplatePropertiesForm.tsx:89
+#: src/components/designer/TemplatePropertiesForm.tsx:91
 #: src/components/designer/NewTemplate.tsx:107
 msgid "Categories"
 msgstr "Categories"
@@ -237,7 +237,7 @@ msgstr "Clear form"
 msgid "Clear references"
 msgstr "Clear references"
 
-#: src/components/designer/TemplatePropertiesForm.tsx:118
+#: src/components/designer/TemplatePropertiesForm.tsx:120
 #: src/components/admin/ManageMembershipsModal.tsx:46
 msgid "Close"
 msgstr "Close"
@@ -354,7 +354,7 @@ msgstr "Delete user"
 msgid "Deprecated"
 msgstr "Deprecated"
 
-#: src/components/designer/TemplatePropertiesForm.tsx:82
+#: src/components/designer/TemplatePropertiesForm.tsx:84
 #: src/components/designer/NewTemplate.tsx:100
 msgid "Description"
 msgstr "Description"
@@ -691,7 +691,7 @@ msgstr "Label reference"
 msgid "Language"
 msgstr "Language"
 
-#: src/components/designer/TemplatePropertiesForm.tsx:72
+#: src/components/designer/TemplatePropertiesForm.tsx:74
 msgid "Languages"
 msgstr "Languages"
 
@@ -1005,7 +1005,7 @@ msgstr "Redo"
 msgid "Reference"
 msgstr "Reference"
 
-#: src/components/designer/TemplatePropertiesForm.tsx:110
+#: src/components/designer/TemplatePropertiesForm.tsx:112
 #: src/components/designer/NewTemplate.tsx:128
 msgid "Release status"
 msgstr "Release status"
@@ -1115,13 +1115,13 @@ msgstr "Statement"
 msgid "Step"
 msgstr "Step"
 
+#: src/components/designer/MenuPanel.tsx:27
+msgid "Structure"
+msgstr "Structure"
+
 #: src/components/template/StructureLanguageChooser.tsx:14
 msgid "Structure language"
 msgstr "Structure language"
-
-#: src/components/designer/MenuPanel.tsx:27
-msgid "Strucuture"
-msgstr "Strucuture"
 
 #: src/components/admin/UserForm.tsx:92
 msgid "Superuser"
@@ -1192,7 +1192,7 @@ msgid "Time"
 msgstr "Time"
 
 #: src/components/template/Structure.tsx:39
-#: src/components/designer/TemplatePropertiesForm.tsx:69
+#: src/components/designer/TemplatePropertiesForm.tsx:71
 #: src/components/designer/NewTemplate.tsx:87
 #: src/components/designer/properties/TitleProperty.tsx:7
 msgid "Title"
@@ -1231,7 +1231,7 @@ msgstr "Undo"
 msgid "Upper Extremity"
 msgstr "Upper Extremity"
 
-#: src/components/designer/TemplatePropertiesForm.tsx:68
+#: src/components/designer/TemplatePropertiesForm.tsx:70
 #: src/components/designer/NewTemplate.tsx:86
 msgid "URL Slug"
 msgstr "URL Slug"
@@ -1244,7 +1244,7 @@ msgstr "User"
 msgid "User management"
 msgstr "User management"
 
-#: src/components/designer/TemplatePropertiesForm.tsx:57
+#: src/components/designer/TemplatePropertiesForm.tsx:59
 msgid "User must be logged in to create a template."
 msgstr "User must be logged in to create a template."
 
@@ -1282,7 +1282,7 @@ msgstr "Variant"
 msgid "Veins"
 msgstr "Veins"
 
-#: src/components/designer/TemplatePropertiesForm.tsx:102
+#: src/components/designer/TemplatePropertiesForm.tsx:104
 #: src/components/designer/NewTemplate.tsx:120
 msgid "Visibility"
 msgstr "Visibility"

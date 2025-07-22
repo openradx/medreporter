@@ -24,7 +24,7 @@ export const MenuPanel = () => {
       <ScrollArea h="100%">
         <Stack gap="xs" p="xs">
           <Text c="dimmed">
-            <Trans>Strucuture</Trans>
+            <Trans>Structure</Trans>
           </Text>
           <GroupMenuItem label={t`Group`} />
           <FindingFieldMenuItem label={t`Finding`} />
