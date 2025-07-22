@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { codeSchema, nodeSchema } from "./common"
+import { codeSchema, contentSchema, nodeSchema } from "./common"
 
 /**
  * Shared properties
@@ -38,7 +38,7 @@ export const hintNodeSchema = nodeSchema.extend({
   type: z.literal("Hint"),
   level: z.enum(["info", "warning", "error"]),
   hidden: hiddenSchema,
-  content: z.string().trim().max(1000),
+  content: contentSchema,
 })
 
 export type HintNode = z.infer<typeof hintNodeSchema>

@@ -1,8 +1,8 @@
 import { Alert } from "@mantine/core"
 import {
-  TriangleAlert as WarningIcon,
   CircleAlert as ErrorIcon,
   Lightbulb as InfoIcon,
+  TriangleAlert as WarningIcon,
 } from "lucide-react"
 
 interface HintProps {
