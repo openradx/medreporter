@@ -27,6 +27,22 @@ msgstr "{0, plural, one {Option} other {Options}}"
 msgid "{0} MedReporter. All Rights Reserved."
 msgstr "{0} MedReporter. All Rights Reserved."
 
+#: src/components/designer/properties/PrecisionProperty.tsx:22
+msgid "0"
+msgstr "0"
+
+#: src/components/designer/properties/PrecisionProperty.tsx:23
+msgid "1"
+msgstr "1"
+
+#: src/components/designer/properties/PrecisionProperty.tsx:24
+msgid "2"
+msgstr "2"
+
+#: src/components/designer/properties/PrecisionProperty.tsx:25
+msgid "3"
+msgstr "3"
+
 #: src/components/home/Home.tsx:50
 msgid "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
 msgstr "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
@@ -153,7 +169,7 @@ msgstr "Author (A-Z)"
 msgid "Author (Z-A)"
 msgstr "Author (Z-A)"
 
-#: src/components/templates/TemplateItem.tsx:59
+#: src/components/templates/TemplateItem.tsx:78
 msgid "Authored by:"
 msgstr "Authored by:"
 
@@ -386,6 +402,10 @@ msgstr "Edit institute"
 #: src/components/template/ToggleEditModeButton.tsx:24
 msgid "Edit mode"
 msgstr "Edit mode"
+
+#: src/components/templates/TemplateItem.tsx:56
+msgid "Edit template"
+msgstr "Edit template"
 
 #: src/components/admin/EditUserModal.tsx:22
 #: src/components/admin/EditUserButton.tsx:19
@@ -679,7 +699,7 @@ msgstr "Languages"
 msgid "Large"
 msgstr "Large"
 
-#: src/components/templates/TemplateItem.tsx:65
+#: src/components/templates/TemplateItem.tsx:84
 msgid "Last modified:"
 msgstr "Last modified:"
 
@@ -928,7 +948,7 @@ msgstr "Permission Denied"
 msgid "Portuguese"
 msgstr "Portuguese"
 
-#: src/components/designer/properties/PrecisionProperty.tsx:7
+#: src/components/designer/properties/PrecisionProperty.tsx:14
 msgid "Precision"
 msgstr "Precision"
 
@@ -1091,7 +1111,7 @@ msgstr "Start"
 msgid "Statement"
 msgstr "Statement"
 
-#: src/components/designer/properties/StepProperty.tsx:7
+#: src/components/designer/properties/StepProperty.tsx:11
 msgid "Step"
 msgstr "Step"
 

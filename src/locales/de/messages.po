@@ -27,6 +27,22 @@ msgstr "{0, plural, one {Option} other {Optionen}}"
 msgid "{0} MedReporter. All Rights Reserved."
 msgstr "{0} Medreporter. Alle Rechte vorbehalten."
 
+#: src/components/designer/properties/PrecisionProperty.tsx:22
+msgid "0"
+msgstr "0"
+
+#: src/components/designer/properties/PrecisionProperty.tsx:23
+msgid "1"
+msgstr "1"
+
+#: src/components/designer/properties/PrecisionProperty.tsx:24
+msgid "2"
+msgstr "2"
+
+#: src/components/designer/properties/PrecisionProperty.tsx:25
+msgid "3"
+msgstr "3"
+
 #: src/components/home/Home.tsx:50
 msgid "A platform for creating structured medical reports. Use our pre-designed templates without logging in, or sign up to create your own templates, save completed reports, and share them with members of your institution."
 msgstr "Plattform für die Erstellung strukturierter medizinischer Befunde. Nutzen Sie unsere vorgefertigten Templates ohne Login oder registrieren Sie sich, um eigene Vorlagen zu erstellen, ausgefüllte Befunde zu speichern und diese mit Mitgliedern Ihrer Institution zu teilen."
@@ -153,7 +169,7 @@ msgstr "Autor (A-Z)"
 msgid "Author (Z-A)"
 msgstr "Autor (Z-A)"
 
-#: src/components/templates/TemplateItem.tsx:59
+#: src/components/templates/TemplateItem.tsx:78
 msgid "Authored by:"
 msgstr "Erstellt von:"
 
@@ -386,6 +402,10 @@ msgstr "Institut bearbeiten"
 #: src/components/template/ToggleEditModeButton.tsx:24
 msgid "Edit mode"
 msgstr "Editiermodus"
+
+#: src/components/templates/TemplateItem.tsx:56
+msgid "Edit template"
+msgstr "Template bearbeiten"
 
 #: src/components/admin/EditUserModal.tsx:22
 #: src/components/admin/EditUserButton.tsx:19
@@ -679,7 +699,7 @@ msgstr "Sprachen"
 msgid "Large"
 msgstr "Groß"
 
-#: src/components/templates/TemplateItem.tsx:65
+#: src/components/templates/TemplateItem.tsx:84
 msgid "Last modified:"
 msgstr "Zuletzt bearbeitet:"
 
@@ -928,7 +948,7 @@ msgstr "Zugriff verweigert"
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
-#: src/components/designer/properties/PrecisionProperty.tsx:7
+#: src/components/designer/properties/PrecisionProperty.tsx:14
 msgid "Precision"
 msgstr "Genauigkeit (Nachkommastellen)"
 
@@ -1091,7 +1111,7 @@ msgstr "Start"
 msgid "Statement"
 msgstr "Aussage"
 
-#: src/components/designer/properties/StepProperty.tsx:7
+#: src/components/designer/properties/StepProperty.tsx:11
 msgid "Step"
 msgstr "Schritt"
 
