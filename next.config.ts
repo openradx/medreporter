@@ -22,6 +22,16 @@ const nextConfig: NextConfig = {
     NEXTAUTH_URL: env.NEXTAUTH_URL,
     CURRENT_YEAR: new Date().getFullYear().toString(),
   },
+  experimental: {
+    swcPlugins: [
+      [
+        "@lingui/swc-plugin",
+        {
+          // Additional Configuration
+        },
+      ],
+    ],
+  },
   webpack(config: Configuration) {
     // Import Markdown files as strings,
     // see https://webpack.js.org/guides/asset-modules/#source-assets
