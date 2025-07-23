@@ -67,7 +67,7 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: "next dev --port 3100",
+    command: "next dev --turbopack --port 3100",
     port: 3100,
     env: {
       NEXTAUTH_URL: "http://localhost:3100",

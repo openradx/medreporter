@@ -1,7 +1,6 @@
 import bundleAnalyzer from "@next/bundle-analyzer"
 import type { NextConfig } from "next"
 import routesConfig from "nextjs-routes/config"
-import { Configuration } from "webpack"
 import appConfig from "./app.config"
 import env from "./src/server/env"
 
@@ -32,41 +31,39 @@ const nextConfig: NextConfig = {
       ],
     ],
   },
-  webpack(config: Configuration) {
-    // Import Markdown files as strings,
-    // see https://webpack.js.org/guides/asset-modules/#source-assets
-    config.module?.rules?.unshift({
-      test: /\.md$/,
-      type: "asset/source",
-    })
 
-    // Load SVG graphics with SVGR and configure SVGO (SVG optimizer) used by SVGR
-    config.module?.rules?.push({
-      test: /\.svg$/,
-      resourceQuery: { not: /raw/ },
-      use: [
-        {
-          loader: "@svgr/webpack",
-          options: {
-            svgoConfig: {
-              plugins: [
-                {
-                  name: "preset-default",
-                  params: {
-                    overrides: {
-                      cleanupIds: false,
-                      convertPathData: false,
+  // Used for development server
+  turbopack: {
+    rules: {
+      "*.md": {
+        loaders: ["raw-loader"],
+        as: "*.js",
+      },
+      "*.svg": {
+        as: "*.js",
+        loaders: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              svgo: true,
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: "preset-default",
+                    params: {
+                      overrides: {
+                        cleanupIds: false,
+                        convertPathData: false,
+                      },
                     },
                   },
-                },
-              ],
+                ],
+              },
             },
           },
-        },
-      ],
-    })
-
-    return config
+        ],
+      },
+    },
   },
 }
 
